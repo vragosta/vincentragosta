@@ -7,6 +7,7 @@
  */
 
 @import url('https://fonts.googleapis.com/css?family=Wellfleet');
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two');
 
 /**
  *===== GLOBAL DEPENDENCIES =====*
@@ -105,4 +106,42 @@ section.nav-menu a.menu-item i {
 
 section.nav-menu a.menu-item i.small {
 	font-size: 1.3em;
+}
+
+/**
+ *===== ABOUT =====*
+ */
+main.about-container {
+	min-height: 640px;
+	background: #fcf9fa;
+}
+
+section.about-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 40px 0;
+}
+
+section.about-title h1 {
+	font-size: 3.5em;
+}
+
+section.column > div {
+	box-shadow: -10px 10px 0 0 rgba(0,0,0,.3);
+	border: 2px solid #333;
+	padding: 20px;
+	min-height: 350px;
+}
+
+section.column h3 {
+	text-decoration: underline;
+	margin-top: 0
+}
+
+section.column summary,
+section.column div.contact-menu {
+	font-family: 'Shadows Into Light Two', cursive;
+	line-height: 2.0;
+	font-size: 18px;
 }
