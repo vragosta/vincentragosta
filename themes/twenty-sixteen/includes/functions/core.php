@@ -16,17 +16,15 @@ function setup() {
 	};
 
 	add_action( 'after_setup_theme',  $n( 'vincentragosta_setup' ) );
-	add_action( 'wp_enqueue_scripts', $n( 'scripts'              ) );
-	add_action( 'wp_enqueue_scripts', $n( 'styles'               ) );
+	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
+	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 }
 
 /**
  * Declare theme support.
  *
- * @uses add_theme_support(), set_post_thumbnail_size(), add_image_size(), and add_post_type_support() to set theme options.
- *
- * @since 0.1.0
- *
+ * @since  0.1.0
+ * @uses   add_theme_support(), set_post_thumbnail_size(), add_image_size(), and add_post_type_support() to set theme options.
  * @return void
  */
 function vincentragosta_setup() {
@@ -64,10 +62,8 @@ function vincentragosta_setup() {
 /**
  * Enqueue scripts for front-end.
  *
- * @uses wp_enqueue_script() to load front end scripts.
- *
- * @since 0.1.0
- *
+ * @since  0.1.0
+ * @uses   wp_enqueue_script() to load front end scripts.
  * @return void
  */
 function scripts() {
@@ -93,10 +89,8 @@ function scripts() {
 /**
  * Enqueue styles for front-end.
  *
- * @uses wp_enqueue_style() to load front end styles.
- *
- * @since 0.1.0
- *
+ * @since  0.1.0
+ * @uses   wp_enqueue_style() to load front end styles.
  * @return void
  */
 function styles() {

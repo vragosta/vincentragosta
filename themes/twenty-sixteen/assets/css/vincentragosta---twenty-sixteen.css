@@ -6,142 +6,81 @@
  * Licensed under the GPL-2.0+ license.
  */
 
-@import url('https://fonts.googleapis.com/css?family=Wellfleet');
-@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two');
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Montserrat');
+
+/*font-family: 'Montserrat', sans-serif;
+font-family: 'EB Garamond', serif;*/
 
 /**
- *===== GLOBAL DEPENDENCIES =====*
+ *===== Header =====*
  */
-body {
-	background: #414A4C;
-	font-family: 'Wellfleet', cursive;
+
+main.nav-container {
+	position: relative;
+	padding-bottom: 45%;
 }
 
-/**
- *===== HEADER =====*
- */
-nav.nav-container {
-	padding: 80px 0 0 0;
+main.nav-container section {
+	background-position: center;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	filter: grayscale( 100% );
 }
 
-section.nav-section {
+.navbar-default {
+	background: none;
+	border: none;
+}
+
+.navbar-default .navbar-nav {
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	margin: 0 auto;
-	max-width: 700px;
-	height: 200px;
-	border: 2px solid #333;
-	background: #F8F8FF;
-	box-shadow: -10px 10px 0 0 rgba(0,0,0,.3);
 }
 
-section.nav-section h1 {
+.navbar-default .navbar-nav li {
+	min-width: 80px;
+}
+
+.navbar-default .navbar-nav span {
+	padding: 10px 15px;
+}
+
+.navbar-default .navbar-nav a {
+	color: #fff;
 	text-transform: uppercase;
-	color: #333;
-	font-size: 4.5em;
-}
-
-section.nav-title {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 50px auto;
-	max-width: 400px;
-	height: 50px;
-	border: 2px solid #333;
-	background: #F8F8FF;
-	box-shadow: -10px 10px 0 0 rgba(0,0,0,.3);
-}
-
-section.nav-title h1 {
-	text-transform: uppercase;
-	color: #333;
-	font-size: 2.0em;
-}
-
-section.nav-menu {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	margin: 50px auto;
-	max-width: 550px;
-	height: 100px;
-	border: 2px solid #333;
-	background: #F8F8FF;
-	box-shadow: -10px 10px 0 0 rgba(0,0,0,.3);
-}
-
-section.nav-menu a.menu-item {
+	font-weight: 400;
 	text-decoration: none;
-	display: inline-flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background: 0 0;
-	border: .4rem solid #333;
-	border-radius: 100%;
-	color: #333;
-	font-size: 2.4rem;
-	line-height: 5.2rem;
-	width: 60px;
-	height: 60px;
-	transition: 0.15s ease-in-out;
+	cursor: pointer;
+	opacity: 0.8;
 }
 
-section.nav-menu a.menu-item:hover {
-	border-color: #ED2939;
-	color: #ED2939;
+.navbar-default .navbar-nav a:hover {
+	opacity: 1.0;
 }
 
-section.nav-menu a.menu-item:hover i {
-	color: #ED2939;
+.navbar-default .navbar-nav a.active {
+	border-bottom: 2px solid #fff;
+	padding-bottom: 5px;
 }
 
-section.nav-menu a.menu-item i {
-	transition: 0.15s ease-in-out;
-	font-size: 1.5em;
-	color: #333;
+#contact a {
+	color: #fff;
+	border: 2px solid #fff;
+	transition: color 0.2s ease-in-out, background 0.2s ease-in-out;
 }
 
-section.nav-menu a.menu-item i.small {
-	font-size: 1.3em;
+#contact:hover a {
+	color: #686868;
+	background: #fff;
+	cursor: pointer;
 }
 
-/**
- *===== ABOUT =====*
- */
-main.about-container {
-	min-height: 640px;
-	background: #fcf9fa;
-}
-
-section.about-title {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 40px 0;
-}
-
-section.about-title h1 {
-	font-size: 3.5em;
-}
-
-section.column > div {
-	box-shadow: -10px 10px 0 0 rgba(0,0,0,.3);
-	border: 2px solid #333;
-	padding: 20px;
-	min-height: 350px;
-}
-
-section.column h3 {
-	text-decoration: underline;
-	margin-top: 0
-}
-
-section.column summary,
-section.column div.contact-menu {
-	font-family: 'Shadows Into Light Two', cursive;
-	line-height: 2.0;
-	font-size: 18px;
+@media only screen and ( min-width: 768px ) {
+	.navbar-default {
+		margin-top: 20px;
+	}
 }
