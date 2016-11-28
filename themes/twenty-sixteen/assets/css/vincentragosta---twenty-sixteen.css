@@ -6,7 +6,7 @@
  * Licensed under the GPL-2.0+ license.
  */
 
-@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Montserrat');
+/*@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Montserrat');*/
 
 /*font-family: 'Montserrat', sans-serif;
 font-family: 'EB Garamond', serif;*/
@@ -15,12 +15,12 @@ font-family: 'EB Garamond', serif;*/
  *===== Header =====*
  */
 
-main.nav-container {
+header.header {
 	position: relative;
-	padding-bottom: 45%;
+	padding-bottom: 40%;
 }
 
-main.nav-container section {
+header.header > main {
 	background-position: center;
 	background-size: cover;
 	position: absolute;
@@ -31,56 +31,120 @@ main.nav-container section {
 	filter: grayscale( 100% );
 }
 
-.navbar-default {
-	background: none;
-	border: none;
+nav.nav-container {
+	height: 90px;
+	width: 100%;
+	position: absolute;
 }
 
-.navbar-default .navbar-nav {
+nav.nav-container section {
+	height: 100%;
+	transition: width 0.5s ease-in-out, margin 0.5s ease-in-out;
+}
+
+nav.nav-container #menu {
 	display: flex;
+	justify-content: space-around;
 	align-items: center;
+	height: 100%;
+	visibility: visible;
+	opacity: 1;
+	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-.navbar-default .navbar-nav li {
-	min-width: 80px;
+nav.nav-container #menu > span {
+	height: 35%;
 }
 
-.navbar-default .navbar-nav span {
-	padding: 10px 15px;
-}
-
-.navbar-default .navbar-nav a {
+nav.nav-container span > a {
 	color: #fff;
-	text-transform: uppercase;
-	font-weight: 400;
 	text-decoration: none;
-	cursor: pointer;
-	opacity: 0.8;
+	font-size: 1.7rem;
+	font-weight: 100;
+	letter-spacing: 2px;
+	border: 0px solid #fff;
 }
 
-.navbar-default .navbar-nav a:hover {
-	opacity: 1.0;
-}
-
-.navbar-default .navbar-nav a.active {
+nav.nav-container span > a.active,
+nav.nav-container span > a:hover {
 	border-bottom: 2px solid #fff;
-	padding-bottom: 5px;
 }
 
-#contact a {
-	color: #fff;
+span#contact a {
+	padding: 10px;
 	border: 2px solid #fff;
-	transition: color 0.2s ease-in-out, background 0.2s ease-in-out;
+	transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
-#contact:hover a {
-	color: #686868;
+span#contact:hover a {
 	background: #fff;
-	cursor: pointer;
+	color: #686868;
 }
 
-@media only screen and ( min-width: 768px ) {
-	.navbar-default {
-		margin-top: 20px;
+nav.nav-container #drop-menu {
+	position: absolute;
+	right: 0;
+	display: flex;
+	height: 60px;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 0 15px;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+nav.nav-container #drop-menu button {
+	background-color: #fff;
+	height: 30px;
+	padding: 6px 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	border-radius: 4px;
+}
+
+.icon-bar {
+	background-color: #888;
+	display: block;
+	width: 22px;
+	height: 2px;
+	border-radius: 1px;
+}
+
+@media only screen and ( max-width: 768px ) {
+	nav.nav-container #menu {
+		visibility: hidden;
+		opacity: 0;
 	}
+
+	nav.nav-container #drop-menu {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+.heading-container {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.heading-container .sub-heading {
+	color: #fff;
+	font-size: 1.3vw;
+	font-style: italic;
+	margin: 0;
+}
+
+.heading-container .heading {
+	margin: 0;
+	color: #fff;
+	font-size: 4vw;
+	text-transform: uppercase;
+	width: 55%;
+	text-align: center;
+	font-weight: 500;
 }

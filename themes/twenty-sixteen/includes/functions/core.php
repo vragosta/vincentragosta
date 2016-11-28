@@ -1,13 +1,19 @@
 <?php
+/**
+ * Vincent Ragosta - Twenty Sixteen core functions.
+ * This file contains theme configuration functions.
+ *
+ * @package VincentRagosta - Twenty Sixteen
+ * @since   0.1.0
+ */
+
 namespace vincentragosta_com\Twenty_Sixteen\Core;
 
 /**
  * Set up theme defaults and register supported WordPress features.
  *
- * @since 0.1.0
- *
- * @uses add_action()
- *
+ * @since  0.1.0
+ * @uses   add_action()
  * @return void
  */
 function setup() {

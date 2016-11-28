@@ -7,34 +7,38 @@
  * @since 0.1.0
  */
 
-$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'full' )[0]; ?>
+$image      = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'full' )[0];
+$sub_header = esc_html( get_post_meta( $post->ID, 'sub_header', true ) );
+$excerpt    = esc_html( get_the_excerpt() ); ?>
 
-<main class="nav-container">
-  <section style="background-image: url( '<?php echo $image ?>' );">
+<header class="header">
+  <main style="background-image: url( '<?php echo $image ?>' );">
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+    <nav class="nav-container">
+      <section class="col-xs-offset-4 col-xs-8 col-sm-offset-3 col-sm-9 col-md-offset-5 col-md-7 col-lg-offset-6 col-lg-6">
+        <div id="menu">
+          <span><a href="" class="<?php echo ( is_front_page() ) ? 'active' : ''; ?>">Home</a></span>
+          <span><a href="">Code Shop</a></span>
+          <span><a href="">Portfolio</a></span>
+          <span><a href="">About</a></span>
+          <span><a href="">Resume</a></span>
+          <span><a href="">Blog</a></span>
+          <span id="contact"><a href="">Contact</a></span>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav navbar-right">
-            <li><span><a href="" class="<?php echo ( is_front_page() ) ? 'active' : ''; ?>">Home</a></span></li>
-            <li><span><a href="">Code Shop</a></span></li>
-            <li><span><a href="">Portfolio</a></span></li>
-            <li><span><a href="">About</a></span></li>
-            <li><span><a href="">Resume</a></span></li>
-            <li><span><a href="">Blog</a></span></li>
-            <li id="contact"><a href="">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav> <!-- .navbar -->
+      </section>
+      <div id="drop-menu">
+        <button type="button">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+         </button>
+       </div>
+    </nav>
 
-  </section>
-</main>
+    <section class="heading-container">
+      <p class="sub-heading"><?php echo $sub_header; ?></p>
+      <p class="heading"><?php echo $excerpt; ?></p>
+    </section>
+
+  </main>
+</header>
