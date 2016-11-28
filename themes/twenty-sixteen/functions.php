@@ -22,5 +22,11 @@ define( 'VINCENTRAGOSTA_COM_INC',          VINCENTRAGOSTA_COM_PATH . 'includes/'
 // Include compartmentalized functions.
 require_once VINCENTRAGOSTA_COM_INC . 'functions/core.php';
 
+// Metaboxes for the various custom post types.
+require_once VINCENTRAGOSTA_COM_INC . 'metaboxes/metabox-page.php';
+
 // Run the setup functions.
 vincentragosta_com\Twenty_Sixteen\Core\setup();
+
+// Run the essential functions.
+// vincentragosta_com\Twenty_Sixteen\Essentials\setup();
