@@ -27,11 +27,12 @@ $excerpt    = esc_html( get_the_excerpt() ); ?>
         </div>
       </section>
       <div id="drop-menu">
-        <button type="button">
+        <button type="button" data-toggle="true">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
          </button>
+         <i class="fa fa-times" data-toggle="false"></i>
        </div>
     </nav>
 
