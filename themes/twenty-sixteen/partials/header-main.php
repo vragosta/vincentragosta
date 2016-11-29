@@ -28,19 +28,12 @@ $excerpt    = esc_html( get_the_excerpt() ); ?>
         </div>
       </section>
 
-      <!-- Mobile Menu -->
-      <section id="mobile-menu">
-        <div>
-          <button type="button" class="drop-down" data-toggle="true">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <button type="button" class="close">
-            <i class="fa fa-times" data-toggle="false"></i>
-          </button>
-        </div>
-      </section>
+      <!-- Drop down toggle -->
+      <button type="button" class="drop-down">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </nav>
 
     <section class="heading-container">

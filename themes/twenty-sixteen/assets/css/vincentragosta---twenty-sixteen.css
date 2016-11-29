@@ -15,6 +15,16 @@ button {
 	outline: none;
 }
 
+.fade-in {
+	visibility: visible !important;
+	opacity: 1 !important;
+}
+
+.fade-out {
+	visibility: hidden !important;
+	opacity: 0 !important;
+}
+
 /**
  *===== Header =====*
  */
@@ -105,17 +115,20 @@ span#contact:hover a {
 	visibility: hidden;
 	opacity: 0;
 	height: inherit;
-	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
+	background: #686868;
+	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out, background 0.5s ease-in-out;
 }
 
-#mobile-menu > div {
+/*#mobile-menu .button-container {
 	width: 100%;
 	padding: 25px 20px;
 	display: flex;
 	justify-content: flex-end;
-}
+}*/
 
-#mobile-menu button.drop-down {
+button.drop-down {
+	visibility: hidden;
+	opacity: 0;
 	height: 30px;
 	padding: 6px 5px;
 	display: flex;
@@ -123,33 +136,19 @@ span#contact:hover a {
 	justify-content: space-around;
 	border-radius: 4px;
 	outline: none;
-}
-
-#mobile-menu button.close {
-	visibility: hidden;
-	opacity: 0;
-	color: #fff;
-	font-size: 2.3rem;
 	position: absolute;
-	cursor: pointer;
+	top: 24px;
+	right: 24px;
+	bottom: 0;
 	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-#mobile-menu button.fade-in {
-	visibility: visible;
-	opacity: 1;
-}
-
-#mobile-menu button.fade-out {
-	visibility: hidden;
-	opacity: 0;
-}
-
-@media only screen and ( max-width: 768px ) {
-	#mobile-menu {
-		visibility: visible;
-		opacity: 1;
-	}
+#mobile-menu button.close-menu {
+	padding: 3px 7px;
+	color: #fff;
+	font-size: 2.3rem;
+	cursor: pointer;
+	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .icon-bar {
@@ -164,6 +163,11 @@ span#contact:hover a {
 	#menu {
 		visibility: hidden;
 		opacity: 0;
+	}
+
+	button.drop-down {
+		visibility: visible;
+		opacity: 1;
 	}
 }
 
