@@ -15,7 +15,8 @@ $excerpt    = esc_html( get_the_excerpt() ); ?>
   <main style="background-image: url( '<?php echo $image ?>' );">
 
     <nav class="nav-container">
-      <section class="col-xs-offset-4 col-xs-8 col-sm-offset-3 col-sm-9 col-md-offset-5 col-md-7 col-lg-offset-6 col-lg-6">
+      <!-- Menu -->
+      <section class="col-xs-offset-4 col-xs-8 col-sm-offset-4 col-sm-8 col-md-offset-5 col-md-7 col-lg-offset-6 col-lg-6">
         <div id="menu">
           <span><a href="" class="<?php echo ( is_front_page() ) ? 'active' : ''; ?>">Home</a></span>
           <span><a href="">Code Shop</a></span>
@@ -26,19 +27,32 @@ $excerpt    = esc_html( get_the_excerpt() ); ?>
           <span id="contact"><a href="">Contact</a></span>
         </div>
       </section>
-      <div id="drop-menu">
-        <button type="button" data-toggle="true">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-         </button>
-         <i class="fa fa-times" data-toggle="false"></i>
-       </div>
+
+      <!-- Mobile Menu -->
+      <section id="mobile-menu">
+        <div>
+          <button type="button" class="drop-down" data-toggle="true">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <button type="button" class="close">
+            <i class="fa fa-times" data-toggle="false"></i>
+          </button>
+        </div>
+      </section>
     </nav>
 
     <section class="heading-container">
-      <p class="sub-heading"><?php echo $sub_header; ?></p>
-      <p class="heading"><?php echo $excerpt; ?></p>
+      <!-- Sub Heading -->
+      <p class="sub-heading">
+        <?php echo $sub_header; ?>
+      </p>
+
+      <!-- Heading -->
+      <p class="heading">
+        <?php echo $excerpt; ?>
+      </p>
     </section>
 
   </main>

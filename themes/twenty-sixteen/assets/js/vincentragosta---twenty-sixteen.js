@@ -6,26 +6,14 @@
 ( function( win ) {
 	jQuery( document ).ready( function() {
 		$ = jQuery;
-		$( '#drop-menu button' ).click( function() {
+		$( 'button.drop-down' ).click( function() {
 			$( this ).removeClass( 'fade-in' ).addClass( 'fade-out' );
-			$( this ).siblings( 'i' ).removeClass( 'fade-out' ).addClass( 'fade-in' );
+			$( this ).siblings( 'button.close' ).removeClass( 'fade-out' ).addClass( 'fade-in' );
 		});
 
-		$( '#drop-menu i' ).click( function () {
+		$( 'button.close' ).click( function () {
 			$( this ).removeClass( 'fade-in' ).addClass( 'fade-out' );
-			$( this ).siblings( 'button' ).removeClass( 'fade-out' ).addClass( 'fade-in' );
+			$( this ).siblings( 'button.drop-down' ).removeClass( 'fade-out' ).addClass( 'fade-in' );
 		});
-		// $( '#drop-menu' ).click( function() {
-		// 	console.log( $( this ).data( 'toggle' ) );
-		// 	if ( $( this ).find( ':first-child' ).data( 'toggle' ) ) {
-		// 		console.log( 'true' );
-		// 		$( this ).find( 'button' ).addClass( 'fade-out' );
-		// 		$( this ).find( 'i' ).addClass( 'fade-in' );
-		// 	} else {
-		// 		console.log( 'false' );
-				// $( this ).find( 'button' ).addClass( 'fade-in' );
-				// $( this ).find( 'i' ).addClass( 'fade-out' );
-		// 	}
-		// });
 	} );
 } )( this );
