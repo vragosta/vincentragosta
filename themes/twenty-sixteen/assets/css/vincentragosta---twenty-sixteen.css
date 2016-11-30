@@ -11,18 +11,11 @@
 /*font-family: 'Montserrat', sans-serif;
 font-family: 'EB Garamond', serif;*/
 
+/**
+ *===== Core Components =====*
+ */
 button {
 	outline: none;
-}
-
-.fade-in {
-	visibility: visible !important;
-	opacity: 1 !important;
-}
-
-.fade-out {
-	visibility: hidden !important;
-	opacity: 0 !important;
 }
 
 /**
@@ -45,7 +38,7 @@ header.header {
 	}
 }
 
-header.header > main {
+header.header main {
 	background-position: center;
 	background-size: cover;
 	position: absolute;
@@ -67,31 +60,64 @@ nav.nav-container section {
 	transition: width 0.5s ease-in-out, margin 0.5s ease-in-out;
 }
 
-#menu {
+/*--- Menu ---*/
+.menu {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	height: 100%;
-	visibility: visible;
-	opacity: 1;
 	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-#menu > span {
+#mobile-menu .menu {
+	display: flex;
+	visibility: visible;
+	opacity: 1;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 400px;
+}
+
+@media only screen and ( min-width: 768px ) {
+	.menu {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+@media only screen and ( max-width: 768px ) {
+	.menu {
+		visibility: hidden;
+		opacity: 0;
+	}
+}
+
+.menu > span {
 	height: 35%;
 }
 
-nav.nav-container span > a {
+.menu span > a {
 	color: #fff;
 	text-decoration: none;
-	font-size: 1.4vw;
 	font-weight: 100;
 	letter-spacing: 2px;
 	border: 0px solid #fff;
 }
 
-nav.nav-container span > a.active,
-nav.nav-container span > a:hover {
+@media only screen and ( min-width: 768px ) {
+	.menu span > a {
+		font-size: 1.4vw;
+	}
+}
+
+@media only screen and ( max-width: 768px ) {
+	.menu span > a {
+		font-size: 4vw;
+	}
+}
+
+.menu span > a.active,
+.menu span > a:hover {
 	border-bottom: 2px solid #fff;
 }
 
@@ -106,25 +132,27 @@ span#contact:hover a {
 	color: #686868;
 }
 
+/*--- Mobile Menu ---*/
 #mobile-menu {
+	visibility: hidden;
+	opacity: 0;
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	visibility: hidden;
-	opacity: 0;
 	height: inherit;
 	background: #686868;
 	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out, background 0.5s ease-in-out;
 }
 
-/*#mobile-menu .button-container {
-	width: 100%;
-	padding: 25px 20px;
-	display: flex;
-	justify-content: flex-end;
-}*/
+@media only screen and ( min-width: 768px ) {
+	#mobile-menu {
+		visibility: hidden;
+		opacity: 0;
+		z-index: -10; /*--- Needed for inspect element ---*/
+	}
+}
 
 button.drop-down {
 	visibility: hidden;
@@ -143,6 +171,14 @@ button.drop-down {
 	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
 }
 
+/*--- Needed if the click event has occured and the page increases in size ---*/
+@media only screen and ( max-width: 768px ) {
+	button.drop-down {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
 #mobile-menu button.close-menu {
 	padding: 3px 7px;
 	color: #fff;
@@ -157,18 +193,22 @@ button.drop-down {
 	width: 22px;
 	height: 2px;
 	border-radius: 1px;
+	margin: 2px;
 }
 
+/*--- Needed if the click event has occured and the page increases in size ---*/
 @media only screen and ( max-width: 768px ) {
-	#menu {
-		visibility: hidden;
-		opacity: 0;
-	}
-
-	button.drop-down {
+	.home .fade-in,
+	.home #mobile-menu.fade-in {
 		visibility: visible;
 		opacity: 1;
 	}
+}
+
+.home .fade-out,
+.home #mobile-menu.fade-out {
+	visibility: hidden;
+	opacity: 0;
 }
 
 .heading-container {
