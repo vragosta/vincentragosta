@@ -1,7 +1,5 @@
-<?php
+<?php get_header(); ?>
 
-get_header();
+<?php get_template_part( 'partials/content', 'mobile-menu' ); ?>
 
-get_footer();
-
-?>
+<?php get_footer(); ?>

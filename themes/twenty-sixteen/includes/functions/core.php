@@ -63,6 +63,9 @@ function vincentragosta_setup() {
 
 	// Add excerpt support to...
 	add_post_type_support( 'page', 'excerpt' );
+
+	// If set to 'false', the admin bar will not display on front end.
+	show_admin_bar( false );
 }
 
 /**
