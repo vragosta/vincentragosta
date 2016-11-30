@@ -1,4 +1,3 @@
-
 <?php
 /**
  * Main header navigation for both desktop and mobile designs.

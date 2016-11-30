@@ -26,7 +26,7 @@ header.header {
 	transition: padding-bottom 0.5s ease-in-out;
 }
 
-@media only screen and ( min-width: 768px ) {
+@media only screen and ( min-width: 767px ) {
 	header.header {
 		padding-bottom: 40%;
 	}
@@ -78,7 +78,7 @@ nav.nav-container section {
 	min-height: 400px;
 }
 
-@media only screen and ( min-width: 768px ) {
+@media only screen and ( min-width: 767px ) {
 	.menu {
 		visibility: visible;
 		opacity: 1;
@@ -104,7 +104,7 @@ nav.nav-container section {
 	border: 0px solid #fff;
 }
 
-@media only screen and ( min-width: 768px ) {
+@media only screen and ( min-width: 767px ) {
 	.menu span > a {
 		font-size: 1.4vw;
 	}
@@ -146,7 +146,7 @@ span#contact:hover a {
 	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out, background 0.5s ease-in-out;
 }
 
-@media only screen and ( min-width: 768px ) {
+@media only screen and ( min-width: 767px ) {
 	#mobile-menu {
 		visibility: hidden;
 		opacity: 0;
@@ -234,7 +234,7 @@ button.drop-down {
 }
 
 
-@media only screen and ( min-width: 768px ) {
+@media only screen and ( min-width: 767px ) {
 	.heading-container .sub-heading {
 		font-size: 1.3vw;
 	}
