@@ -24,6 +24,7 @@ function setup() {
 	add_action( 'after_setup_theme',  $n( 'vincentragosta_setup' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
+	add_action( 'widgets_init',       $n( 'sidebars' ) );
 }
 
 /**
@@ -130,4 +131,26 @@ function styles() {
 		array( 'bootstrap', 'fontawesome', 'sanitize' ),
 		VINCENTRAGOSTA_COM_VERSION
 	);
+}
+
+/**
+ * Create sidebars for back-end.
+ *
+ * @since  0.1.0
+ * @uses   register_sidebar()
+ * @return void
+ */
+function sidebars() {
+	$cta_a = array(
+		'name'          => __( 'Call To Action A ( Front Page )', 'theme_text_domain' ),
+		'id'            => 'cta-a',
+		'description'   => 'Call To Action sidebar on the frontpage.',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	register_sidebar( $cta_a );
 }
