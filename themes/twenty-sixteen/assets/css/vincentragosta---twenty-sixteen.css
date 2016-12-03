@@ -6,7 +6,7 @@
  * Licensed under the GPL-2.0+ license.
  */
 
-/*@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Montserrat');*/
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Montserrat');
 
 /*font-family: 'Montserrat', sans-serif;
 font-family: 'EB Garamond', serif;*/
@@ -18,6 +18,10 @@ button {
 	outline: none;
 }
 
+h2 {
+	font-size: 2.2vw;
+}
+
 /**
  *===== Header =====*
  */
@@ -26,7 +30,7 @@ header.header {
 	transition: padding-bottom 0.5s ease-in-out;
 }
 
-@media only screen and ( min-width: 768px ) {
+@media only screen and ( min-width: 767px ) {
 	header.header {
 		padding-bottom: 40%;
 	}
@@ -78,7 +82,7 @@ nav.nav-container section {
 	min-height: 400px;
 }
 
-@media only screen and ( min-width: 768px ) {
+@media only screen and ( min-width: 767px ) {
 	.menu {
 		visibility: visible;
 		opacity: 1;
@@ -104,7 +108,7 @@ nav.nav-container section {
 	border: 0px solid #fff;
 }
 
-@media only screen and ( min-width: 768px ) {
+@media only screen and ( min-width: 767px ) {
 	.menu span > a {
 		font-size: 1.4vw;
 	}
@@ -146,7 +150,7 @@ span#contact:hover a {
 	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out, background 0.5s ease-in-out;
 }
 
-@media only screen and ( min-width: 768px ) {
+@media only screen and ( min-width: 767px ) {
 	#mobile-menu {
 		visibility: hidden;
 		opacity: 0;
@@ -234,7 +238,7 @@ button.drop-down {
 }
 
 
-@media only screen and ( min-width: 768px ) {
+@media only screen and ( min-width: 767px ) {
 	.heading-container .sub-heading {
 		font-size: 1.3vw;
 	}
@@ -254,4 +258,32 @@ button.drop-down {
 		font-size: 6.5vw;
 		width: 85%;
 	}
+}
+
+
+/**
+ *===== Header =====*
+ */
+ /*--- Call To Action Widget ---*/
+.cta {
+	height: 325px;
+	background: #edeeef;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 40px;
+}
+
+.cta h2 {
+	margin-bottom: 2rem;
+}
+
+.cta p {
+	line-height: 2.2;
+	opacity: 0.7;
+	text-align: center;
+	max-width: 1100px;
+	width: 100%;
+	font-size: .9vw;
 }
