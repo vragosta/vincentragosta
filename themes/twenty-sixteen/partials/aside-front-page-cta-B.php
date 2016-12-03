@@ -1,6 +1,6 @@
 <?php
 /**
- * Call To Action A ( Front Page )
+ * Call To Action B ( Front Page )
  *
  * @package VincentRagosta.com 2016
  * @since   0.1.0
@@ -8,5 +8,5 @@
 ?>
 
 <section class="cta">
-	<?php dynamic_sidebar( 'Call To Action A ( Front Page )' ); ?>
+	<?php dynamic_sidebar( 'Call To Action B ( Front Page )' ); ?>
 </section>
