@@ -141,7 +141,7 @@ function styles() {
  * @return void
  */
 function sidebars() {
-	$cta_a = array(
+	$cta_front_page_a = array(
 		'name'          => __( 'Call To Action A ( Front Page )', 'theme_text_domain' ),
 		'id'            => 'cta-a',
 		'description'   => 'Call To Action sidebar on the frontpage.',
@@ -152,5 +152,17 @@ function sidebars() {
 		'after_title'   => '</h2>',
 	);
 
-	register_sidebar( $cta_a );
+	$cta_front_page_b = array(
+		'name'          => __( 'Call To Action B ( Front Page )', 'theme_text_domain' ),
+		'id'            => 'cta-b',
+		'description'   => 'Call To Action sidebar on the frontpage.',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	register_sidebar( $cta_front_page_a );
+	register_sidebar( $cta_front_page_b );
 }
