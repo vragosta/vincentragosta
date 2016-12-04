@@ -7,6 +7,6 @@
  */
 ?>
 
-<section class="cta">
+<section class="cta b">
 	<?php dynamic_sidebar( 'Call To Action B ( Front Page )' ); ?>
 </section>
