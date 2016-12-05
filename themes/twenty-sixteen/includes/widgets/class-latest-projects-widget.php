@@ -62,6 +62,12 @@ class Latest_Projects_Widget extends WP_Widget {
 					<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'full' )[0]; ?>
 					<div class="col-xs-4">
 						<div class="featured-image">
+							<div class="overlay flex-center">
+								<!-- Make dynamic using taxonomies -->
+								<span class="type">Wordpress Site</span>
+								<span class="title"><?php echo esc_html( $post->post_title ); ?></span>
+								<a href="">View Project</a>
+							</div>
 							<div class="projects" style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 						</div>
 					</div>

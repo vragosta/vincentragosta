@@ -337,7 +337,7 @@ button.drop-down {
 /*--- CTA Links ---*/
 .cta a {
 	border: 2px solid #686868;
-	background: #fff;
+	background: transparent;
 	color: #686868;
 	font-size: 1.1vw;
 	padding: 10px 20px;
@@ -375,8 +375,61 @@ button.drop-down {
 	bottom: 10px;
 	left: 10px;
 	right: 10px;
+	opacity: 1;
+	transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+#latest-projects-widget .featured-image:hover .projects {
+	-webkit-filter: brightness( 50% );
+	filter: brightness( 50% );
+}
+
+#latest-projects-widget .overlay {
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	background: transparent;
+	transition: visibility 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+#latest-projects-widget .featured-image:hover .overlay {
+	visibility: visible;
+	opacity: 1;
+}
+
+#latest-projects-widget .overlay .type {
+	font-size: 1.2rem;
+	font-style: italic;
+	letter-spacing: 1px;
+}
+
+#latest-projects-widget .overlay .title {
+	font-size: 2.5rem;
+}
+
+#latest-projects-widget span {
+	color: #fff;
 }
 
 #latest-projects-widget .view-more {
 	padding: 2rem;
+}
+
+#latest-projects-widget .overlay a {
+	background: transparent;
+	border-color: #fff;
+	color: #fff;
+	margin-top: 1rem;
+	font-size: 1.5rem;
+	transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+#latest-projects-widget .overlay a:hover {
+	background: #fff;
+	color: #686868;
 }
