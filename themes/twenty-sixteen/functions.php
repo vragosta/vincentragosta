@@ -25,6 +25,9 @@ require_once VINCENTRAGOSTA_COM_INC . 'functions/core.php';
 // Metaboxes for the various custom post types.
 require_once VINCENTRAGOSTA_COM_INC . 'metaboxes/metabox-page.php';
 
+// Include widgets.
+require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-latest-projects-widget.php';
+
 // Run the setup functions.
 vincentragosta_com\Twenty_Sixteen\Core\setup();
 
