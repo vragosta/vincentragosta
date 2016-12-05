@@ -333,15 +333,45 @@ button.drop-down {
 	margin: 2rem auto;
 }
 
-.cta p > button {
+.cta a {
 	border: 2px solid #686868;
 	background: #fff;
 	color: #686868;
-	padding: 0 20px;
+	font-size: 1.1vw;
+	padding: 10px 20px;
+	text-transform: uppercase;
+	text-decoration: none;
 	transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
-.cta p > button:hover {
+.cta a:hover {
 	background: #686868;
 	color: #fff;
+}
+
+/*--- Latest Projects Widget ---*/
+#latest-projects-widget {
+	width: 100%;
+}
+
+#latest-projects-widget .featured-image {
+	padding-bottom: 100%;
+}
+
+#latest-projects-widget .projects {
+	background-position: center;
+	background-size: cover;
+	position: absolute;
+	top: 10px;
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
+}
+
+#latest-projects-widget .view-more {
+	width: 100%;
+	display: flex;
+	padding: 2rem;
+	justify-content: center;
+	align-items: center;
 }
