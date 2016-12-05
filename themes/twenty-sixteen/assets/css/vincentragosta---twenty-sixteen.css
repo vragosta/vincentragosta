@@ -6,29 +6,12 @@
  * Licensed under the GPL-2.0+ license.
  */
 
-/*@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Montserrat');*/
-/*@import url('https://fonts.googleapis.com/css?family=Lato');*/
-/*@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i');*/
-/*@import url('https://fonts.googleapis.com/css?family=Libre+Franklin:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');*/
-/*@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700');*/
-/*@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');*/
-/*@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i');*/
-@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i');
-
-/*font-family: 'Montserrat', sans-serif;
-font-family: 'EB Garamond', serif;*/
+@import url( 'https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i' );
 
 /**
  *===== Core Components =====*
  */
 body {
-	/*font-family: 'EB Garamond', serif;*/
-	/*font-family: 'Lato', sans-serif;*/
-	/*font-family: 'Playfair Display', serif;*/
-	/*font-family: 'Libre Franklin', sans-serif;*/
-	/*font-family: 'Libre Baskerville', serif;*/
-	/*font-family: 'Montserrat', sans-serif;*/
-	/*font-family: 'PT Sans', sans-serif;*/
 	font-family: 'Cormorant Garamond', serif;
 }
 
@@ -38,6 +21,20 @@ button {
 
 h2 {
 	font-size: 2.2vw;
+}
+
+/**
+ *===== Helper CSS =====*
+ */
+.full-width {
+	width: 100%;
+}
+
+.flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
 
 /**
@@ -74,7 +71,6 @@ header.header main {
 
 nav.nav-container {
 	height: 100%;
-	width: 100%;
 	position: absolute;
 }
 
@@ -269,7 +265,7 @@ button.drop-down {
 
 	.heading-container .heading {
 		font-size: 4vw;
-		width: 55%;
+		max-width: 1000px;
 	}
 }
 
@@ -280,14 +276,9 @@ button.drop-down {
 
 	.heading-container .heading {
 		font-size: 6.5vw;
-		width: 85%;
 	}
 }
 
-
-/**
- *===== Header =====*
- */
  /*--- Call To Action Widget ---*/
 .cta {
 	height: 100%;
@@ -311,28 +302,39 @@ button.drop-down {
 	margin-bottom: 2rem;
 }
 
+/*--- CTA Titles ---*/
+.cta.d h2 {
+	max-width: 800px;
+	text-align: center;
+}
+
 /*--- CTA Paragraphs ---*/
 .cta p {
 	line-height: 2.2;
 	opacity: 0.7;
 	text-align: center;
 	max-width: 1100px;
-	width: 100%;
 	font-size: 1.05vw;
 }
 
 .cta.b p {
-	width: 65%;
+	max-width: 800px;
 }
 
 .cta.b p:first-child {
 	margin: 0 auto;
 }
 
+.cta.d p {
+	max-width: 300px;
+	line-height: 1.9;
+}
+
 .cta p + p {
 	margin: 2rem auto;
 }
 
+/*--- CTA Links ---*/
 .cta a {
 	border: 2px solid #686868;
 	background: #fff;
@@ -349,11 +351,18 @@ button.drop-down {
 	color: #fff;
 }
 
-/*--- Latest Projects Widget ---*/
-#latest-projects-widget {
-	width: 100%;
+.cta.d .col-xs-4 {
+	margin: 3rem 0;
 }
 
+.cta.d h4 {
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-top: 3rem;
+}
+
+/*--- Latest Projects Widget ---*/
 #latest-projects-widget .featured-image {
 	padding-bottom: 100%;
 }
@@ -369,9 +378,5 @@ button.drop-down {
 }
 
 #latest-projects-widget .view-more {
-	width: 100%;
-	display: flex;
 	padding: 2rem;
-	justify-content: center;
-	align-items: center;
 }

@@ -56,7 +56,7 @@ class Latest_Projects_Widget extends WP_Widget {
 		// Initialize query.
 		$query = new WP_Query( $args ); ?>
 
-		<div id="latest-projects-widget">
+		<div id="latest-projects-widget" class="full-width">
 			<?php if ( $query->have_posts() ) : ?>
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 					<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'full' )[0]; ?>
@@ -68,7 +68,7 @@ class Latest_Projects_Widget extends WP_Widget {
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>
 			<?php endif;?>
-			<div class="view-more">
+			<div class="full-width flex-center view-more">
 				<a href="">View more projects</a>
 			</div>
 		</div>
