@@ -13,7 +13,7 @@ $excerpt    = esc_html( get_the_excerpt() ); ?>
 <header class="header">
   <main style="background-image: url( '<?php echo $image ?>' );">
 
-    <nav class="nav-container">
+    <nav class="nav-container full-width">
       <!-- Menu -->
       <section class="col-xs-offset-4 col-xs-8 col-sm-offset-4 col-sm-8 col-md-offset-5 col-md-7 col-lg-offset-6 col-lg-6">
         <div class="menu">
