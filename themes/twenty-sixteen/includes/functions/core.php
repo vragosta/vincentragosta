@@ -25,6 +25,7 @@ function setup() {
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'widgets_init',       $n( 'sidebars' ) );
+	add_action( 'widgets_init',       $n( 'widgets' ) );
 }
 
 /**
@@ -134,7 +135,7 @@ function styles() {
 }
 
 /**
- * Create sidebars for back-end.
+ * Register sidebars for back-end.
  *
  * @since  0.1.0
  * @uses   register_sidebar()
@@ -163,6 +164,29 @@ function sidebars() {
 		'after_title'   => '</h2>',
 	);
 
+	$cta_front_page_c = array(
+		'name'          => __( 'Call To Action C ( Front Page )', 'theme_text_domain' ),
+		'id'            => 'cta-c',
+		'description'   => 'Call To Action sidebar on the frontpage.',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
 	register_sidebar( $cta_front_page_a );
 	register_sidebar( $cta_front_page_b );
+	register_sidebar( $cta_front_page_c );
+}
+
+/**
+ * Register widgets for back-end.
+ *
+ * @since  0.1.0
+ * @uses   register_sidebar()
+ * @return void
+ */
+function widgets() {
+	register_widget( 'Latest_Projects_Widget' );
 }
