@@ -1,6 +1,6 @@
 <?php
 /**
- * Builds custom Latest Projects Widget
+ * Builds custom Latest Projects Widget.
  *
  * @package Vincent Raogsta - Twenty Sixteen
  * @since   0.1.0
@@ -56,25 +56,25 @@ class Latest_Projects_Widget extends WP_Widget {
 		// Initialize query.
 		$query = new WP_Query( $args ); ?>
 
-		<div id="latest-projects-widget" class="full-width">
+		<div id="latest-projects-widget" class="custom-widget full-width">
 			<?php if ( $query->have_posts() ) : ?>
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 					<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'full' )[0]; ?>
 					<div class="col-xs-4">
-						<div class="featured-image">
+						<div class="featured-image aspect-ratio-1x1">
 							<div class="overlay flex-center">
 								<!-- Make dynamic using taxonomies -->
 								<span class="type">Wordpress Site</span>
 								<span class="title"><?php echo esc_html( $post->post_title ); ?></span>
 								<a href="">View Project</a>
 							</div>
-							<div class="projects" style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+							<div class="projects normalize-image" style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 						</div>
 					</div>
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>
 			<?php endif;?>
-			<div class="full-width flex-center view-more">
+			<div class="full-width flex-center">
 				<a href="">View more projects</a>
 			</div>
 		</div>

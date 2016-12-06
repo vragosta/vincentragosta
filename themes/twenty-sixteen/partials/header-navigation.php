@@ -11,7 +11,7 @@ $sub_header = esc_html( get_post_meta( $post->ID, 'sub_header', true ) );
 $excerpt    = esc_html( get_the_excerpt() ); ?>
 
 <header class="header">
-  <main style="background-image: url( '<?php echo $image ?>' );">
+  <main class="normalize-image" style="background-image: url( '<?php echo $image ?>' );">
 
     <nav class="nav-container full-width">
       <!-- Menu -->
@@ -35,7 +35,7 @@ $excerpt    = esc_html( get_the_excerpt() ); ?>
       </button>
     </nav>
 
-    <section class="heading-container">
+    <section class="heading-container flex-center">
       <!-- Sub Heading -->
       <p class="sub-heading">
         <?php echo $sub_header; ?>

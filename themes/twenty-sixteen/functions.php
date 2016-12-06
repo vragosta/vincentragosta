@@ -27,6 +27,7 @@ require_once VINCENTRAGOSTA_COM_INC . 'metaboxes/metabox-page.php';
 
 // Include widgets.
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-latest-projects-widget.php';
+require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-featured-post-widget.php';
 
 // Run the setup functions.
 vincentragosta_com\Twenty_Sixteen\Core\setup();
