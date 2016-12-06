@@ -186,19 +186,32 @@ function sidebars() {
 		'after_title'   => '</h2>',
 	);
 
+	$cta_front_page_e = array(
+		'name'          => __( 'Call To Action E ( Front Page )', 'theme_text_domain' ),
+		'id'            => 'cta-e',
+		'description'   => 'Call To Action sidebar on the frontpage.',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
 	register_sidebar( $cta_front_page_a );
 	register_sidebar( $cta_front_page_b );
 	register_sidebar( $cta_front_page_c );
 	register_sidebar( $cta_front_page_d );
+	register_sidebar( $cta_front_page_e );
 }
 
 /**
- * Register widgets for back-end.
+ * Register custom widgets for back-end.
  *
  * @since  0.1.0
- * @uses   register_sidebar()
+ * @uses   register_widget()
  * @return void
  */
 function widgets() {
 	register_widget( 'Latest_Projects_Widget' );
+	register_widget( 'Featured_Post_Widget' );
 }
