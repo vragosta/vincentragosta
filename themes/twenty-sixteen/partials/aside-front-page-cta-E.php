@@ -1,6 +1,6 @@
 <?php
 /**
- * Call To Action D ( Front Page )
+ * Call To Action E ( Front Page )
  *
  * @package VincentRagosta.com 2016
  * @since   0.1.0
