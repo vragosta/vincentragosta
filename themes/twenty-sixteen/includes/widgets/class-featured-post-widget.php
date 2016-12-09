@@ -51,7 +51,7 @@ class Featured_Post_Widget extends WP_Widget {
 		);
 
 		// If the ID is set add it to the query, otherwise it will return the latest project/post.
-		( ! empty( $instance['id'] ) ) ? $args['posts__in'] = $instance['id'] : '';
+		( ! empty( $instance['id'] ) ) ? $args['post__in'] = array( $instance['id'] ) : '';
 
 		// Initialize query.
 		$query = new WP_Query( $args ); ?>
