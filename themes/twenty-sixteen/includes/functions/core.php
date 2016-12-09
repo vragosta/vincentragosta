@@ -224,7 +224,6 @@ function sidebars() {
  * @return void
  */
 function widgets() {
-	register_widget( 'Latest_Projects_Widget' );
+	register_widget( 'News_And_Updates_Widget' );
 	register_widget( 'Featured_Post_Widget' );
-	register_widget( 'Latest_Posts_Widget' );
 }

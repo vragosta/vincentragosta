@@ -8,9 +8,9 @@
  */
 
 /* Projects Post Type */
-function register_post_type_projects() {
-	register_post_type( 'projects', array(
-			'label' => 'Projects',
+function register_post_type_project() {
+	register_post_type( 'project', array(
+			'label' => 'Project',
 			'description' => '',
 			'public' => true,
 			'show_ui' => true,
@@ -43,4 +43,4 @@ function register_post_type_projects() {
 		)
 	);
 }
-add_action( 'init', 'register_post_type_projects' );
+add_action( 'init', 'register_post_type_project' );

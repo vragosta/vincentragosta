@@ -18,6 +18,7 @@ define( 'VINCENTRAGOSTA_COM_URL',          get_stylesheet_directory_uri() );
 define( 'VINCENTRAGOSTA_COM_TEMPLATE_URL', get_template_directory_uri() );
 define( 'VINCENTRAGOSTA_COM_PATH',         get_template_directory() . '/' );
 define( 'VINCENTRAGOSTA_COM_INC',          VINCENTRAGOSTA_COM_PATH . 'includes/' );
+define( 'VINCENTRAGOSTA_COM_IMAGE_SIZE',   'full' );
 
 // Include compartmentalized functions.
 require_once VINCENTRAGOSTA_COM_INC . 'functions/core.php';
@@ -26,9 +27,8 @@ require_once VINCENTRAGOSTA_COM_INC . 'functions/core.php';
 require_once VINCENTRAGOSTA_COM_INC . 'metaboxes/metabox-page.php';
 
 // Include widgets.
-require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-latest-projects-widget.php';
-require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-latest-posts-widget.php';
-require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-featured-post-widget.php';
+require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-news-and-updates.php';
+require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-featured-post.php';
 
 // Run the setup functions.
 vincentragosta_com\Twenty_Sixteen\Core\setup();
