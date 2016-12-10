@@ -302,7 +302,7 @@ button.drop-down {
 
 .cta.a,
 .cta.c,
-.cta.e {
+.cta.f {
 	background: #edeeef;
 }
 
@@ -312,6 +312,10 @@ button.drop-down {
 
 .cta.e {
 	padding: 0;
+}
+
+.cta.f {
+	padding: 60px 100px;
 }
 
 /*--- CTA Titles ---*/
@@ -374,8 +378,8 @@ button.drop-down {
 	margin-top: 3rem;
 }
 
-/*--- Latest Projects Widget ---*/
-#latest-projects-widget .projects {
+/*--- News & Updates Widget ---*/
+#news-and-updates .post-type {
 	top: 10px;
 	bottom: 10px;
 	left: 10px;
@@ -384,7 +388,7 @@ button.drop-down {
 	transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
 }
 
-#latest-projects-widget .featured-image:hover .projects {
+#news-and-updates .featured-image:hover .post-type {
 	-webkit-filter: brightness( 50% );
 	filter: brightness( 50% );
 }
@@ -402,22 +406,22 @@ button.drop-down {
 	transition: visibility 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-#latest-projects-widget .featured-image:hover .overlay {
+#news-and-updates .featured-image:hover .overlay {
 	visibility: visible;
 	opacity: 1;
 }
 
-#latest-projects-widget .overlay .type {
+#news-and-updates .overlay .sub-title {
 	font-size: 1.2rem;
 	font-style: italic;
 	letter-spacing: 1px;
 }
 
-#latest-projects-widget .overlay .title {
+#news-and-updates .overlay .title {
 	font-size: 2.5rem;
 }
 
-#latest-projects-widget span {
+#news-and-updates span {
 	color: #fff;
 }
 
@@ -441,6 +445,7 @@ button.drop-down {
 	color: #686868;
 }
 
+/*--- Featured Post Widget ---*/
 #featured-post-widget .overlay {
 	visibility: visible;
 	opacity: 1;
