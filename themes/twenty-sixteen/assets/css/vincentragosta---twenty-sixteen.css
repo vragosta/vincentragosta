@@ -1,8 +1,8 @@
 /**
- * StoryCorps - Twenty Sixteen
+ * VincentRagosta - Twenty Sixteen
  * https://storycorps.org
  *
- * Copyright (c) 2016 10up
+ * Copyright (c) 2016
  * Licensed under the GPL-2.0+ license.
  */
 
@@ -419,6 +419,11 @@ button.drop-down {
 
 #news-and-updates .overlay .title {
 	font-size: 2.5rem;
+}
+
+#news-and-updates .col-xs-3 .overlay .title {
+	width: 250px;
+	text-align: center;
 }
 
 #news-and-updates span {
