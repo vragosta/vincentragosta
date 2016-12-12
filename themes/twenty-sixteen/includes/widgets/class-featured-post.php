@@ -44,7 +44,7 @@ class Featured_Post_Widget extends WP_Widget {
 		// If the 'button_text' field is set, obtain its value.
 		$button_text = ( ! empty( $instance['button_text'] ) ) ? $button_text = esc_html( $instance['button_text'] ) : 'Find Out How';
 
-		// Assign the default arguements to the query.
+		// Assign the default arguments to the query.
 		$args = array(
 			'post_type'      => array( 'post' ),
 			'posts_per_page' => 1

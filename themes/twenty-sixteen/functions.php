@@ -9,7 +9,7 @@
  * theme's file, so the child theme functions would be used.
  *
  * @package Vincent Ragosta - Twenty Sixteen
- * @since 0.1.0
+ * @since   0.1.0
  */
 
 // Useful global constants.
@@ -29,6 +29,9 @@ require_once VINCENTRAGOSTA_COM_INC . 'metaboxes/metabox-page.php';
 // Include widgets.
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-news-and-updates.php';
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-featured-post.php';
+
+// Helper functions.
+require_once VINCENTRAGOSTA_COM_INC . 'functions/helpers.php';
 
 // Run the setup functions.
 vincentragosta_com\Twenty_Sixteen\Core\setup();

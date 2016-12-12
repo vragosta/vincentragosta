@@ -21,11 +21,12 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
-	add_action( 'after_setup_theme',  $n( 'vincentragosta_setup' ) );
-	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
-	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
-	add_action( 'widgets_init',       $n( 'sidebars' ) );
-	add_action( 'widgets_init',       $n( 'widgets' ) );
+	add_action( 'after_setup_theme',     $n( 'vincentragosta_setup' ) );
+	add_action( 'wp_enqueue_scripts',    $n( 'scripts' ) );
+	add_action( 'wp_enqueue_scripts',    $n( 'styles' ) );
+	add_action( 'admin_enqueue_scripts', $n( 'admin_styles' ) );
+	add_action( 'widgets_init',          $n( 'sidebars' ) );
+	add_action( 'widgets_init',          $n( 'widgets' ) );
 }
 
 /**
@@ -131,6 +132,21 @@ function styles() {
 		VINCENTRAGOSTA_COM_URL . "/assets/css/vincentragosta---twenty-sixteen.css",
 		array( 'bootstrap', 'fontawesome', 'sanitize' ),
 		VINCENTRAGOSTA_COM_VERSION
+	);
+}
+
+/**
+ * Allows for custom CSS in wp-admin.
+ *
+ * @uses   wp_enqueue_style()
+ * @since  0.1.0
+ * @return void
+ */
+function admin_styles() {
+	wp_enqueue_style(
+		'admin',
+		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---admin.css",
+		VINCENTRAGOSTA_VERSION
 	);
 }
 
