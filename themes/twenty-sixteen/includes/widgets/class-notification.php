@@ -76,7 +76,7 @@ class Notification_Widget extends WP_Widget {
 		echo ( isset( $args['before_widget'] ) ) ? $args['before_widget'] : ''; ?>
 
 		<div id="notification-widget" class="custom-widget full-width">
-
+			
 		</div>
 
 		<?php echo ( isset( $args['after_widget'] ) ) ? $args['after_widget'] : '';

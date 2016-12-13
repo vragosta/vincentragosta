@@ -19,7 +19,7 @@
 <?php get_template_part( 'partials/aside-front-page-cta', 'F' ); ?>
 
 <!-- TODO -->
-<?php get_template_part( 'partials/aside-front-page-cta', 'G' ); ?>
+<?php get_template_part( 'partials/aside-pre', 'footer' ); ?>
 
 <!-- TODO -->
 <?php get_template_part( 'partials/content', 'mobile-menu' ); ?>

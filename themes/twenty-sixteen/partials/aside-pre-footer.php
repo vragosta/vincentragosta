@@ -7,6 +7,6 @@
  */
 ?>
 
-<section class="cta g">
-	<?php dynamic_sidebar( 'Call To Action G ( Front Page )' ); ?>
+<section class="pre-footer">
+	<?php dynamic_sidebar( 'Pre Footer' ); ?>
 </section>

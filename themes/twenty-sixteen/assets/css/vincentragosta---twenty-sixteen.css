@@ -297,7 +297,10 @@ button.drop-down {
 	}
 }
 
- /*--- Call To Action Widgets ---*/
+/**
+ *===== Sidebars =====*
+ */
+ /*--- Call To Action Sidebars ---*/
 .cta {
 	height: 100%;
 	display: flex;
@@ -313,7 +316,9 @@ button.drop-down {
 	background: #edeeef;
 }
 
-.cta.b {
+.cta.b,
+.cta.d,
+.cta.e {
 	background: #fff;
 }
 
@@ -391,6 +396,13 @@ button.drop-down {
 	margin-top: 3rem;
 }
 
+.pre-footer {
+	background: #353439;
+}
+
+/**
+ *===== Widgets =====*
+ */
 /*--- News & Updates Widget ---*/
 #news-and-updates .post-type {
 	top: 10px;
