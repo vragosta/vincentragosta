@@ -224,12 +224,24 @@ function sidebars() {
 		'after_title'   => '</h2>',
 	);
 
+	$cta_front_page_g = array(
+		'name'          => __( 'Call To Action G ( Front Page )', 'theme_text_domain' ),
+		'id'            => 'cta-g',
+		'description'   => 'Call To Action sidebar on the frontpage.',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
 	register_sidebar( $cta_front_page_a );
 	register_sidebar( $cta_front_page_b );
 	register_sidebar( $cta_front_page_c );
 	register_sidebar( $cta_front_page_d );
 	register_sidebar( $cta_front_page_e );
 	register_sidebar( $cta_front_page_f );
+	register_sidebar( $cta_front_page_g );
 }
 
 /**

@@ -10,7 +10,7 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Widget to return the the project based upon ID passed in,
+ * Returns the the project based upon ID passed in,
  * if no ID is entered, most recent post will be returned.
  *
  * @package Vincent Raogsta - Twenty Sixteen
