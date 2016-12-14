@@ -34,9 +34,10 @@ class Notification_Widget extends WP_Widget {
 	 * @return void
 	 */
 	public function form( $instance ) {
-		$content     = ( ! empty( $instance['content'] ) ) ? $instance['content'] : '';
-		$button_text = ( ! empty( $instance['button_text'] ) ) ? $instance['button_text'] : '';
-		// background_color ?>
+		$content          = ( ! empty( $instance['content'] ) ) ? $instance['content'] : '';
+		$button_text      = ( ! empty( $instance['button_text'] ) ) ? $instance['button_text'] : '';
+		$button_link      = ( ! empty( $instance['button_link'] ) ) ? $instance['button_link'] : '';
+		$background_color = ( ! empty( $instance['background_color'] ) ) ? $instance['background_color'] : ''; ?>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'content' ) ); ?>"><?php echo esc_html( __( 'Content:', 'vincentragosta' ) ); ?></label>
 			<textarea class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'content' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'content' ) ); ?>" type="text"><?php echo esc_textarea( $content ); ?></textarea>
@@ -44,6 +45,14 @@ class Notification_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'button_text' ) ); ?>"><?php echo esc_html( __( 'Button Text:', 'vincentragosta' ) ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'button_text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'button_text' ) ); ?>" type="text" value="<?php echo esc_attr( $button_text ); ?>">
+		</p>
+		<p>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'button_link' ) ); ?>"><?php echo esc_html( __( 'Button Link:', 'vincentragosta' ) ); ?></label>
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'button_link' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'button_link' ) ); ?>" type="text" value="<?php echo esc_attr( $button_link ); ?>">
+		</p>
+		<p>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'background_color' ) ); ?>"><?php echo esc_html( __( 'Background Color:', 'vincentragosta' ) ); ?></label>
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'background_color' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'background_color' ) ); ?>" type="text" value="<?php echo esc_attr( $background_color ); ?>">
 		</p>
 		<?php
 	}
@@ -59,6 +68,8 @@ class Notification_Widget extends WP_Widget {
 		$instance                = array();
 		$instance['content']     = ( ! empty( $new_instance['content'] ) ) ? $new_instance['content'] : '';
 		$instance['button_text'] = ( ! empty( $new_instance['button_text'] ) ) ? $new_instance['button_text'] : '';
+		$instance['button_link'] = ( ! empty( $new_instance['button_link'] ) ) ? $new_instance['button_link'] : '';
+		$instance['background_color'] = ( ! empty( $new_instance['background_color'] ) ) ? $new_instance['background_color'] : '';
 		return $instance;
 	}
 
@@ -75,8 +86,10 @@ class Notification_Widget extends WP_Widget {
 		// If the 'before_widget' field is set, display it.
 		echo ( isset( $args['before_widget'] ) ) ? $args['before_widget'] : ''; ?>
 
-		<div id="notification-widget" class="custom-widget full-width">
-			
+		<div id="notification-widget" class="custom-widget full-width" style="background-color: <?php echo esc_attr( $instance['background_color'] ); ?>; display: flex; justify-content: center; align-items: center; padding: 60px 100px;">
+				<p style="color: #fff; font-size: 3rem; width: 100%; max-width: 800px;"><?php echo esc_html( $instance['content'] ); ?></p>
+				<a href="<?php echo esc_url( $instance['button_link'] ); ?>" style="border: 2px solid #686868; background: transparent; color: #686868; font-size: 2.2rem; padding: 10px 20px; text-transform: uppercase; text-decoration: none; transition: background 0.5s ease-in-out, color 0.5s ease-in-out;"><?php echo esc_html( $instance['button_text'] ); ?></a>
+			</div>
 		</div>
 
 		<?php echo ( isset( $args['after_widget'] ) ) ? $args['after_widget'] : '';
