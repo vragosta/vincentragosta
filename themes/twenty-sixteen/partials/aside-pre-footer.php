@@ -7,6 +7,6 @@
  */
 ?>
 
-<section class="pre-footer">
+<section class="sidebar pre-footer">
 	<?php dynamic_sidebar( 'Pre Footer' ); ?>
 </section>

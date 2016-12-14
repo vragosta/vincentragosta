@@ -65,13 +65,16 @@ class Notification_Widget extends WP_Widget {
 	 * @return array $instance     Updated safe values to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
-		$instance                = array();
-		$instance['content']     = ( ! empty( $new_instance['content'] ) ) ? $new_instance['content'] : '';
-		$instance['button_text'] = ( ! empty( $new_instance['button_text'] ) ) ? $new_instance['button_text'] : '';
-		$instance['button_link'] = ( ! empty( $new_instance['button_link'] ) ) ? $new_instance['button_link'] : '';
+		$instance                     = array();
+		$instance['content']          = ( ! empty( $new_instance['content'] ) ) ? $new_instance['content'] : '';
+		$instance['button_text']      = ( ! empty( $new_instance['button_text'] ) ) ? $new_instance['button_text'] : '';
+		$instance['button_link']      = ( ! empty( $new_instance['button_link'] ) ) ? $new_instance['button_link'] : '';
 		$instance['background_color'] = ( ! empty( $new_instance['background_color'] ) ) ? $new_instance['background_color'] : '';
 		return $instance;
 	}
+
+
+	// style="border: 2px solid #686868; background: transparent; color: #686868; font-size: 2.2rem; padding: 10px 20px; text-transform: uppercase; text-decoration: none; transition: background 0.5s ease-in-out, color 0.5s ease-in-out;"
 
 	/**
 	 * Front-end display of widget.
@@ -87,9 +90,8 @@ class Notification_Widget extends WP_Widget {
 		echo ( isset( $args['before_widget'] ) ) ? $args['before_widget'] : ''; ?>
 
 		<div id="notification-widget" class="custom-widget full-width" style="background-color: <?php echo esc_attr( $instance['background_color'] ); ?>; display: flex; justify-content: center; align-items: center; padding: 60px 100px;">
-				<p style="color: #fff; font-size: 3rem; width: 100%; max-width: 800px;"><?php echo esc_html( $instance['content'] ); ?></p>
-				<a href="<?php echo esc_url( $instance['button_link'] ); ?>" style="border: 2px solid #686868; background: transparent; color: #686868; font-size: 2.2rem; padding: 10px 20px; text-transform: uppercase; text-decoration: none; transition: background 0.5s ease-in-out, color 0.5s ease-in-out;"><?php echo esc_html( $instance['button_text'] ); ?></a>
-			</div>
+			<p><?php echo esc_html( $instance['content'] ); ?></p>
+			<a href="<?php echo esc_url( $instance['button_link'] ); ?>"><?php echo esc_html( $instance['button_text'] ); ?></a>
 		</div>
 
 		<?php echo ( isset( $args['after_widget'] ) ) ? $args['after_widget'] : '';
