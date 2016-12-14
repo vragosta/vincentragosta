@@ -224,12 +224,24 @@ function sidebars() {
 		'after_title'   => '</h2>',
 	);
 
+	$pre_footer = array(
+		'name'          => __( 'Pre Footer', 'theme_text_domain' ),
+		'id'            => 'cta-g',
+		'description'   => 'Call To Action sidebar that site above the footer.',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
 	register_sidebar( $cta_front_page_a );
 	register_sidebar( $cta_front_page_b );
 	register_sidebar( $cta_front_page_c );
 	register_sidebar( $cta_front_page_d );
 	register_sidebar( $cta_front_page_e );
 	register_sidebar( $cta_front_page_f );
+	register_sidebar( $pre_footer );
 }
 
 /**
@@ -242,4 +254,5 @@ function sidebars() {
 function widgets() {
 	register_widget( 'News_And_Updates_Widget' );
 	register_widget( 'Featured_Post_Widget' );
+	register_widget( 'Notification_Widget' );
 }

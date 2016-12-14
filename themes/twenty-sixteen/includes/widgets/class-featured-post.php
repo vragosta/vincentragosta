@@ -10,7 +10,7 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Widget to return the the project based upon ID passed in,
+ * Returns the the project based upon ID passed in,
  * if no ID is entered, most recent post will be returned.
  *
  * @package Vincent Raogsta - Twenty Sixteen
@@ -26,6 +26,40 @@ class Featured_Post_Widget extends WP_Widget {
 			__( 'Featured Post', 'vincentragosta' ),
 			array( 'description' => __( 'A custom widget for a featured post.', 'vincentragosta' ), )
 		);
+	}
+
+	/**
+	 * Back-end widget form.
+	 *
+	 * @param  array $instance Previously saved values from database.
+	 * @return void
+	 */
+	public function form( $instance ) {
+		$id          = ( ! empty( $instance['id'] ) ) ? $instance['id'] : '';
+		$button_text = ( ! empty( $instance['button_text'] ) ) ? $instance['button_text'] : ''; ?>
+		<p>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>"><?php echo esc_html( __( 'ID:', 'vincentragosta' ) ); ?></label>
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'id' ) ); ?>" type="text" value="<?php echo esc_attr( $id ); ?>">
+		</p>
+		<p>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'button_text' ) ); ?>"><?php echo esc_html( __( 'Button Text:', 'vincentragosta' ) ); ?></label>
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'button_text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'button_text' ) ); ?>" type="text" value="<?php echo esc_attr( $button_text ); ?>">
+		</p>
+		<?php
+	}
+
+	/**
+	 * Sanitize widget form values as they are saved.
+	 *
+	 * @param  array $new_instance Values just sent to be saved.
+	 * @param  array $old_instance Previously saved values from database.
+	 * @return array $instance     Updated safe values to be saved.
+	 */
+	public function update( $new_instance, $old_instance ) {
+		$instance                = array();
+		$instance['id']          = ( ! empty( $new_instance['id'] ) ) ? $new_instance['id'] : '';
+		$instance['button_text'] = ( ! empty( $new_instance['button_text'] ) ) ? $new_instance['button_text'] : '';
+		return $instance;
 	}
 
 	/**
@@ -79,39 +113,5 @@ class Featured_Post_Widget extends WP_Widget {
 		</div>
 
 		<?php echo ( isset( $args['after_widget'] ) ) ? $args['after_widget'] : '';
-	}
-
-	/**
-	 * Back-end widget form.
-	 *
-	 * @param  array $instance Previously saved values from database.
-	 * @return void
-	 */
-	public function form( $instance ) {
-		$id          = ( ! empty( $instance['id'] ) ) ? $instance['id'] : '';
-		$button_text = ( ! empty( $instance['button_text'] ) ) ? $instance['button_text'] : ''; ?>
-		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>"><?php echo esc_html( __( 'ID:', 'vincentragosta' ) ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'id' ) ); ?>" type="text" value="<?php echo esc_attr( $id ); ?>">
-		</p>
-		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'button_text' ) ); ?>"><?php echo esc_html( __( 'Button Text:', 'vincentragosta' ) ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'button_text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'button_text' ) ); ?>" type="text" value="<?php echo esc_attr( $button_text ); ?>">
-		</p>
-		<?php
-	}
-
-	/**
-	 * Sanitize widget form values as they are saved.
-	 *
-	 * @param  array $new_instance Values just sent to be saved.
-	 * @param  array $old_instance Previously saved values from database.
-	 * @return array $instance     Updated safe values to be saved.
-	 */
-	public function update( $new_instance, $old_instance ) {
-		$instance                = array();
-		$instance['id']          = ( ! empty( $new_instance['id'] ) ) ? $new_instance['id'] : '';
-		$instance['button_text'] = ( ! empty( $new_instance['button_text'] ) ) ? $new_instance['button_text'] : '';
-		return $instance;
 	}
 }
