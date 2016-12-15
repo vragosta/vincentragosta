@@ -129,11 +129,10 @@ class News_And_Updates_Widget extends WP_Widget {
 		$posts_per_page = ( $post__in_count ) ? $post__in_count : ( ( $instance['posts_per_page'] ) ? $instance['posts_per_page'] : POSTS_PER_PAGE_DEFAULT );
 
 		// If 'post_type' is not set, default 'post'.
-		// $instance['post_type'] = ( $instance['post_type'] ) ? $instance['post_type'] : POST_TYPE_DEFAULT;
 		$post_type = ( $instance['post_type'] ) ? $instance['post_type'] : POST_TYPE_DEFAULT;
 
 		// Set bootstrap grid, divide 12 ( max bootstrap col size ) by 'posts_per_page'.
-		$class = 'col-xs-' . ( BOOTSTRAP_GRID_COL_MAX / $bootstrap_grid_col );
+		$class = 'col-sm-' . ( BOOTSTRAP_GRID_COL_MAX / $bootstrap_grid_col );
 
 		// Create arguments array for query.
 		$args                   = array();
@@ -148,7 +147,7 @@ class News_And_Updates_Widget extends WP_Widget {
 			<?php if ( $query->have_posts() ) : ?>
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 					<?php $image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post->ID ); ?>
-					<div class="<?php echo esc_attr( $class ); ?>">
+					<div class="col-xs-12 <?php echo esc_attr( $class ); ?>">
 						<div class="featured-image aspect-ratio-1x1">
 							<div class="overlay flex-center">
 								<span class="sub-title"><?php echo ( $instance['post_type'] === 'project' ) ? 'Wordpress Site' : get_the_date(); ?></span>

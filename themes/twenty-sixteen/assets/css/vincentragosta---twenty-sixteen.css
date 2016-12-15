@@ -7,12 +7,16 @@
  */
 
 @import url( 'https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i' );
+/*@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:100,100i,300,300i,400,400i,600,600i,700,700i');*/
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
 
 /**
  *===== Core Components =====*
  */
 body {
 	font-family: 'Cormorant Garamond', serif;
+	/*font-family: 'Josefin Slab', serif;*/
+	/*font-family: 'Lato', sans-serif;*/
 }
 
 button {
@@ -22,10 +26,12 @@ button {
 h2,
 h3 {
 	margin: 0;
+	text-align: center;
 }
 
 h2 {
-	font-size: 4rem;
+	/*font-size: 4rem;*/
+	font-size: 3.5rem;
 }
 
 a,
@@ -78,20 +84,22 @@ a:active:focus {
 header.header {
 	position: relative;
 	transition: padding-bottom 0.5s ease-in-out;
+	min-height: 600px;
 }
 
 /*@media only screen and ( min-width: 767px ) {*/
-@media only screen and ( min-width: 768px ) {
+/*@media only screen and ( min-width: 768px ) {*/
+@media only screen and ( min-width: 992px ) {
 	header.header {
 		padding-bottom: 40%;
 	}
 }
 
-@media only screen and ( max-width: 768px ) {
+/*@media only screen and ( max-width: 768px ) {
 	header.header {
 		padding-bottom: 100%;
 	}
-}
+}*/
 
 header.header main {
 	filter: grayscale( 100% );
@@ -103,8 +111,11 @@ nav.nav-container {
 }
 
 nav.nav-container section {
-	height: 90px;
-	transition: width 0.5s ease-in-out, margin 0.5s ease-in-out;
+	/*height: 90px;*/
+	/*transition: width 0.5s ease-in-out, margin 0.5s ease-in-out;*/
+	display: flex;
+	justify-content: flex-end;
+	padding: 60px 20px;
 }
 
 /*--- Menu ---*/
@@ -113,6 +124,8 @@ nav.nav-container section {
 	justify-content: space-around;
 	align-items: center;
 	height: 100%;
+	/*min-width: 700px;*/
+	min-width: 750px;
 	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
 }
 
@@ -126,35 +139,58 @@ nav.nav-container section {
 }
 
 /*@media only screen and ( min-width: 767px ) {*/
-@media only screen and ( min-width: 768px ) {
+/*@media only screen and ( min-width: 768px ) {*/
+@media only screen and ( min-width: 992px ) {
 	.menu {
 		visibility: visible;
 		opacity: 1;
 	}
 }
 
-@media only screen and ( max-width: 768px ) {
+/*@media only screen and ( max-width: 768px ) {*/
+@media only screen and ( max-width: 992px ) {
 	.menu {
 		visibility: hidden;
 		opacity: 0;
 	}
 }
 
-.menu > span {
+/*.menu > span {
 	height: 35%;
-}
+}*/
 
 .menu span > a {
 	color: #fff;
 	font-weight: 100;
 	letter-spacing: 2px;
 	border: 0px solid #fff;
+	text-transform: uppercase;
+	font-family: 'Lato', sans-serif;
+	opacity: 0.8;
+	transition: opacity 0.2s ease-in-out;
+}
+
+/*.menu span > a.active,*/
+.menu span > a:hover {
+	/*border-bottom: 2px solid #fff;*/
+	opacity: 1;
 }
 
 /*@media only screen and ( min-width: 767px ) {*/
 @media only screen and ( min-width: 768px ) {
+/*@media only screen and ( min-width: 1500px ) {*/
 	.menu span > a {
-		font-size: 2.5rem;
+		/*font-size: 2.5rem;*/
+		/*font-size: 2rem;*/
+		/*font-size: 1.8rem;*/
+		font-size: 1.5rem;
+		/*font-size: 1.3rem;*/
+	}
+}
+
+@media only screen and ( min-width: 1200px ) and ( max-width: 1500px ) {
+	.menu span > a {
+		/*font-size: 2.0rem;*/
 	}
 }
 
@@ -162,11 +198,6 @@ nav.nav-container section {
 	.menu span > a {
 		font-size: 3rem;
 	}
-}
-
-.menu span > a.active,
-.menu span > a:hover {
-	border-bottom: 2px solid #fff;
 }
 
 span#contact a {
@@ -195,7 +226,8 @@ span#contact:hover a {
 }
 
 /*@media only screen and ( min-width: 767px ) {*/
-@media only screen and ( min-width: 768px ) {
+/*@media only screen and ( min-width: 768px ) {*/
+@media only screen and ( min-width: 992px ) {
 	#mobile-menu {
 		visibility: hidden;
 		opacity: 0;
@@ -214,14 +246,15 @@ button.drop-down {
 	border-radius: 4px;
 	outline: none;
 	position: absolute;
-	top: 24px;
-	right: 24px;
+	top: 55px;
+	right: 25px;
 	bottom: 0;
 	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 /*--- Needed if the click event has occured and the page increases in size ---*/
-@media only screen and ( max-width: 768px ) {
+/*@media only screen and ( max-width: 768px ) {*/
+@media only screen and ( max-width: 992px ) {
 	button.drop-down {
 		visibility: visible;
 		opacity: 1;
@@ -246,7 +279,8 @@ button.drop-down {
 }
 
 /*--- Needed if the click event has occured and the page increases in size ---*/
-@media only screen and ( max-width: 768px ) {
+/*@media only screen and ( max-width: 768px ) {*/
+@media only screen and ( max-width: 992px ) {
 	.home .fade-in,
 	.home #mobile-menu.fade-in {
 		visibility: visible;
@@ -265,9 +299,12 @@ button.drop-down {
 }
 
 .sub-heading {
+	/*font-family: 'Cormorant Garamond', serif;*/
 	color: #fff;
 	font-style: italic;
 	margin: 0;
+	text-align: center;
+	padding: 0 40px;
 }
 
 .heading {
@@ -276,6 +313,44 @@ button.drop-down {
 	text-transform: uppercase;
 	text-align: center;
 	font-weight: 700;
+	line-height: 1;
+	max-width: 1000px;
+	padding: 0 40px;
+}
+
+/*@media only screen and ( min-width: 767px ) {*/
+/*@media only screen and ( min-width: 768px ) {*/
+@media only screen and ( min-width: 992px ) {
+	.sub-heading {
+		font-size: 2.5rem;
+	}
+
+	.heading {
+		font-size: 7.5rem;
+		/*max-width: 1000px;*/
+	}
+}
+
+@media only screen and ( min-width: 768px ) and ( max-width: 992px ) {
+	.sub-heading {
+		font-size: 2rem;
+	}
+
+	.heading {
+		font-size: 6rem;
+		/*max-width: 1000px;*/
+	}
+}
+
+@media only screen and ( max-width: 768px ) {
+	.sub-heading {
+		font-size: 1.8rem;
+	}
+
+	.heading {
+		/*font-size: 5.5rem;*/
+		font-size: 4rem;
+	}
 }
 
 /**
@@ -299,6 +374,7 @@ footer#footer {
 	opacity: 0.7;
 	text-transform: uppercase;
 	transition: opacity 0.3s ease-in-out;
+	text-transform: uppercase;
 }
 
 #footer-menu a:hover {
@@ -355,28 +431,6 @@ footer#footer {
 	margin: 0 10px;
 }
 
-/*@media only screen and ( min-width: 767px ) {*/
-@media only screen and ( min-width: 768px ) {
-	.sub-heading {
-		font-size: 2.5rem;
-	}
-
-	.heading {
-		font-size: 7.5rem;
-		max-width: 1000px;
-	}
-}
-
-@media only screen and ( max-width: 768px ) {
-	.sub-heading {
-		font-size: 1.8rem;
-	}
-
-	.heading {
-		font-size: 5.5rem;
-	}
-}
-
 /**
  *===== Sidebars =====*
  */
@@ -387,6 +441,12 @@ footer#footer {
 	align-items: center;
 	justify-content: center;
 	padding: 60px 40px;
+}
+
+@media only screen and ( max-width: 768px ) {
+	.sidebar {
+		padding: 40px;
+	}
 }
 
 .cta.a,
@@ -411,7 +471,15 @@ footer#footer {
 
 /*--- Sidebar Titles ---*/
 .sidebar h2 {
-	margin-bottom: 2rem;
+	/*margin-bottom: 2rem;*/
+	margin-bottom: 1.2rem;
+}
+
+@media only screen and ( max-width: 768px ) {
+	.sidebar h2 {
+		font-size: 3rem;
+		margin-bottom: 0.8rem;
+	}
 }
 
 .cta.d h2 {
@@ -421,20 +489,31 @@ footer#footer {
 
 /*--- Sidebar Paragraphs ---*/
 .sidebar p {
-	line-height: 2.2;
+	line-height: 2;
 	opacity: 0.7;
 	text-align: center;
 	width: 100%;
 	max-width: 1100px;
 	font-size: 1.85rem;
+	margin: 0;
+}
+
+.sidebar p + p {
+	margin-top: 2rem;
+}
+
+@media only screen and ( max-width: 768px ) {
+	.sidebar p {
+		font-size: 1.65rem;
+	}
+
+	.sidebar p + p {
+		margin-top: 1.5rem;
+	}
 }
 
 .cta.b p {
 	max-width: 800px;
-}
-
-.cta.b p + p {
-	margin-top: 30px;
 }
 
 .cta.b p:first-child {
@@ -455,6 +534,12 @@ footer#footer {
 	padding: 10px 20px;
 	text-transform: uppercase;
 	transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+@media only screen and ( max-width: 768px ) {
+	.sidebar a {
+		font-size: 1.5rem;
+	}
 }
 
 .sidebar a:hover {
@@ -495,6 +580,13 @@ footer#footer {
 	filter: brightness( 50% );
 }
 
+@media only screen and ( max-width: 768px ) {
+	#news-and-updates .featured-image .post-type {
+		-webkit-filter: brightness( 50% );
+		filter: brightness( 50% );
+	}
+}
+
 .custom-widget .overlay {
 	visibility: hidden;
 	opacity: 0;
@@ -513,7 +605,14 @@ footer#footer {
 	opacity: 1;
 }
 
-#news-and-updates .col-xs-12 .featured-image {
+@media only screen and ( max-width: 768px ) {
+	#news-and-updates .featured-image .overlay {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+#news-and-updates .col-sm-12 .featured-image {
 	padding-bottom: 50%;
 }
 
@@ -538,7 +637,8 @@ footer#footer {
 
 .textwidget div.full-width.flex-center,
 .custom-widget div.full-width.flex-center {
-	padding: 2rem 0;
+	/*padding: 2rem 0;*/
+	padding-top: 2rem;
 }
 
 .custom-widget .overlay a {
