@@ -8,18 +8,73 @@
 		$ = jQuery;
 
 		// TODO
-		$( '.number-columns' ).on( 'change', function() {
+		var numberColumns = $( '.number-columns' );
+
+		// TODO
+		numberColumns.on( 'change', function() {
+
+			// TODO
+			var column = $( '.vr-column' ),
+
+			// TODO
+			columnOne        = $( '.vr-column.one' ),
+			columnOneTitle   = $( '.vr-column.one input' ),
+			columnOneIcon    = $( '.vr-column.one select' ),
+			columnOneContent = $( '.vr-column.one textarea' ),
+
+			// TODO
+			columnTwo        = $( '.vr-column.two' ),
+			columnTwoTitle   = $( '.vr-column.two input' ),
+			columnTwoIcon    = $( '.vr-column.two select' ),
+			columnTwoContent = $( '.vr-column.two textarea' ),
+
+			// TODO
+			columnThree        = $( '.vr-column.three' ),
+			columnThreeTitle   = $( '.vr-column.three input' ),
+			columnThreeIcon    = $( '.vr-column.three select' ),
+			columnThreeContent = $( '.vr-column.three textarea' );
+
+			// TODO
 			if ( this.value === '0' ) {
-				$( '.vr-column' ).hide();
+				column.hide();
+
+				columnOneTitle.val( '' );
+				columnOneIcon.val( '' );
+				columnOneContent.val( '' );
+
+				columnTwoTitle.val( '' );
+				columnTwoIcon.val( '' );
+				columnTwoContent.val( '' );
+
+				columnThreeTitle.val( '' );
+				columnThreeIcon.val( '' );
+				columnThreeContent.val( '' );
+
 			} else if ( this.value === '1' ) {
-				$( '.vr-column.one' ).show();
+				columnOne.show();
+
+				columnTwo.hide();
+				columnTwoTitle.val( '' );
+				columnTwoIcon.val( '' );
+				columnTwoContent.val( '' );
+
+				columnThree.hide();
+				columnThreeTitle.val( '' );
+				columnThreeIcon.val( '' );
+				columnThreeContent.val( '' );
+
 			} else if ( this.value === '2' ) {
-				$( '.vr-column.one' ).show();
-				$( '.vr-column.two' ).show();
+				columnOne.show();
+				columnTwo.show();
+
+				columnThree.hide();
+				columnThreeTitle.val( '' );
+				columnThreeIcon.val( '' );
+				columnThreeContent.val( '' );
 			} else if ( this.value === '3' ) {
-				$( '.vr-column.one' ).show();
-				$( '.vr-column.two' ).show();
-				$( '.vr-column.three' ).show();
+				columnOne.show();
+				columnTwo.show();
+				columnThree.show();
 			}
 		} );
 	} );

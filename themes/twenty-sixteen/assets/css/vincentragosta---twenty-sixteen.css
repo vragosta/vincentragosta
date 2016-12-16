@@ -40,6 +40,8 @@ a:focus,
 a:active,
 a:active:focus {
 	text-decoration: none;
+	font-family: 'Lato', sans-serif;
+	font-weight: 100;
 }
 
 /**
@@ -670,6 +672,11 @@ footer#footer {
 /*--- Notification Widget ---*/
 #notification-widget {
 	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 60px 100px;
+	background-color: #353439;
 }
 
 #notification-widget p {

@@ -38,11 +38,11 @@ class Featured_Post_Widget extends WP_Widget {
 		$id          = ( ! empty( $instance['id'] ) ) ? $instance['id'] : '';
 		$button_text = ( ! empty( $instance['button_text'] ) ) ? $instance['button_text'] : ''; ?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>"><?php echo esc_html( __( 'ID:', 'vincentragosta' ) ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>"><?php echo __( 'ID:', 'vincentragosta' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'id' ) ); ?>" type="text" value="<?php echo esc_attr( $id ); ?>">
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'button_text' ) ); ?>"><?php echo esc_html( __( 'Button Text:', 'vincentragosta' ) ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'button_text' ) ); ?>"><?php echo __( 'Button Text:', 'vincentragosta' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'button_text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'button_text' ) ); ?>" type="text" value="<?php echo esc_attr( $button_text ); ?>">
 		</p>
 		<?php
@@ -58,7 +58,8 @@ class Featured_Post_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance                = array();
 		$instance['id']          = ( ! empty( $new_instance['id'] ) ) ? $new_instance['id'] : '';
-		$instance['button_text'] = ( ! empty( $new_instance['button_text'] ) ) ? $new_instance['button_text'] : '';
+		$instance['button_text'] = ( ! empty( $new_instance['button_text'] ) ) ? strip_tags( $new_instance['button_text'] ) : '';
+
 		return $instance;
 	}
 
@@ -73,10 +74,10 @@ class Featured_Post_Widget extends WP_Widget {
 		global $post;
 
 		// If the 'before_widget' field is set, display it.
-		echo ( isset( $args['before_widget'] ) ) ? $args['before_widget'] : '';
+		echo $args['before_widget'];
 
 		// If the 'button_text' field is set, obtain its value.
-		$button_text = ( ! empty( $instance['button_text'] ) ) ? $button_text = esc_html( $instance['button_text'] ) : 'Find Out How';
+		$button_text = ( ! empty( $instance['button_text'] ) ) ? $instance['button_text'] : 'Find Out How';
 
 		// Assign the default arguments to the query.
 		$args = array(
@@ -93,16 +94,13 @@ class Featured_Post_Widget extends WP_Widget {
 		<div id="featured-post-widget" class="custom-widget full-width">
 			<?php if ( $query->have_posts() ) : ?>
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-					<?php $image   = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'full' )[0]; ?>
-					<?php $title = esc_html( get_the_title() ); ?>
-					<?php $excerpt = esc_html( get_the_excerpt() ); ?>
+					<?php $image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post->ID ); ?>
 					<div class="col-xs-12">
 						<div class="featured-image aspect-ratio-10x4">
 							<div class="overlay flex-center">
-								<!-- Make dynamic using taxonomies -->
-								<span class="sub-heading"><?php echo $excerpt; ?></span>
-								<span class="heading"><?php echo $title; ?></span>
-								<a href=""><?php echo $button_text; ?></a>
+								<span class="sub-heading"><?php echo esc_html( get_the_excerpt() ); ?></span>
+								<span class="heading"><?php echo esc_html( get_the_title() ); ?></span>
+								<a href=""><?php echo esc_html( $button_text ); ?></a>
 							</div>
 							<div class="post normalize-image" style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 						</div>
@@ -112,6 +110,6 @@ class Featured_Post_Widget extends WP_Widget {
 			<?php endif;?>
 		</div>
 
-		<?php echo ( isset( $args['after_widget'] ) ) ? $args['after_widget'] : '';
+		<?php echo $args['after_widget'];
 	}
 }

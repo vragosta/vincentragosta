@@ -39,11 +39,11 @@ class News_And_Updates_Widget extends WP_Widget {
 		$posts_per_page = ( ! empty( $instance['posts_per_page'] ) ) ? $instance['posts_per_page'] : '';
 		$ids            = ( ! empty( $instance['ids'] ) ) ? $instance['ids'] : ''; ?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php echo esc_html( __( 'Title:', 'vincentragosta' ) ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php echo __( 'Title:', 'vincentragosta' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'post_type' ) ); ?>"><?php echo esc_html( __( 'Post Type:', 'vincentragosta' ) ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'post_type' ) ); ?>"><?php echo __( 'Post Type:', 'vincentragosta' ); ?></label>
 			<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'post_type' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'post_type' ) ); ?>">
 				<option value="0">--</option>
 				<option value="post" <?php echo ( $post_type === 'post' ) ? 'selected' : ''; ?>>Post</option>
@@ -51,7 +51,7 @@ class News_And_Updates_Widget extends WP_Widget {
 			</select>
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'posts_per_page' ) ); ?>"><?php echo esc_html( __( 'Posts To Display', 'vincentragosta' ) ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'posts_per_page' ) ); ?>"><?php echo __( 'Posts To Display', 'vincentragosta' ); ?></label>
 			<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'posts_per_page' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'posts_per_page' ) ); ?>">
 				<option value="0">--</option>
 				<option value="2" <?php echo ( $posts_per_page === '2' ) ? 'selected' : ''; ?>>Two</option>
@@ -60,7 +60,7 @@ class News_And_Updates_Widget extends WP_Widget {
 			</select>
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>"><?php echo esc_html( __( 'Enter ID\'s:', 'vincentragosta' ) ); ?></label><br />
+			<label for="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>"><?php echo __( 'Enter ID\'s:', 'vincentragosta' ); ?></label><br />
 			<label class="vr-widget-description" for="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>">Please separate with a comma.</label><br />
 			<label class="vr-widget-description" for="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>">NOTE: The number of IDs entered will overwrite the 'Posts To Display' value entered.</label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'ids' ) ); ?>" type="text" value="<?php echo esc_attr( $ids ); ?>">
@@ -98,19 +98,16 @@ class News_And_Updates_Widget extends WP_Widget {
 		// Define global constants.
 		define( 'POSTS_PER_PAGE_DEFAULT', 4 );
 		define( 'POST_TYPE_DEFAULT',      'post' );
-		// define( 'BOOTSTRAP_GRID_COL_MAX', 12 );
 
 		// Define global variables.
 		global $post;
 
 		// If the 'before_widget' field is set, display it.
-		echo ( isset( $args['before_widget'] ) ) ? $args['before_widget'] : '';
+		echo $args['before_widget'];
 
 		// If the 'title' field of the widget is not empty, display it.
 		if ( ! empty( $instance['title'] ) ) {
-			echo ( ( isset( $args['before_title'] ) ) ? $args['before_title'] : '' ) .
-				apply_filters( 'widget_title', $instance['title'] ) .
-					( ( isset( $args['after_title'] ) ) ? $args['after_title'] : '' );
+			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 		}
 
 		// If 'ids' exists, remove all spaces from the string.
@@ -166,6 +163,6 @@ class News_And_Updates_Widget extends WP_Widget {
 		</div>
 
 		<!-- If the 'after_widget' field is set, display it. -->
-		<?php echo ( isset( $args['after_widget'] ) ) ? $args['after_widget'] : '';
+		<?php echo $args['after_widget'];
 	}
 }
