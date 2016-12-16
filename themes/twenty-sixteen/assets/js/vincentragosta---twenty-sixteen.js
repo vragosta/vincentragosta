@@ -1,5 +1,5 @@
-/*! StoryCorps - Twenty Sixteen - v0.1.0
- * https://storycorps.org
+/*! VincentRagosta - Twenty Sixteen - v0.1.0
+ * https://vincentragosta.com
  * Copyright (c) 2016; * Licensed GPL-2.0+ */
 'use strict';
 

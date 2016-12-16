@@ -98,7 +98,7 @@ class News_And_Updates_Widget extends WP_Widget {
 		// Define global constants.
 		define( 'POSTS_PER_PAGE_DEFAULT', 4 );
 		define( 'POST_TYPE_DEFAULT',      'post' );
-		define( 'BOOTSTRAP_GRID_COL_MAX', 12 );
+		// define( 'BOOTSTRAP_GRID_COL_MAX', 12 );
 
 		// Define global variables.
 		global $post;

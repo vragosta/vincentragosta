@@ -25,6 +25,7 @@ function setup() {
 	add_action( 'wp_enqueue_scripts',    $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts',    $n( 'styles' ) );
 	add_action( 'admin_enqueue_scripts', $n( 'admin_styles' ) );
+	add_action( 'admin_enqueue_scripts', $n( 'admin_scripts' ) );
 	add_action( 'widgets_init',          $n( 'sidebars' ) );
 	add_action( 'widgets_init',          $n( 'widgets' ) );
 }
@@ -151,6 +152,23 @@ function admin_styles() {
 }
 
 /**
+ * Allows for custom javascript in wp-admin.
+ *
+ * @uses   wp_enqueue_script()
+ * @since  0.1.0
+ * @return void
+ */
+function admin_scripts() {
+	wp_enqueue_script(
+		'admin',
+		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/js/vincentragosta---admin.js",
+		array( 'jquery' ),
+		VINCENTRAGOSTA_VERSION,
+		true
+	);
+}
+
+/**
  * Register sidebars for back-end.
  *
  * @since  0.1.0
@@ -255,4 +273,5 @@ function widgets() {
 	register_widget( 'News_And_Updates_Widget' );
 	register_widget( 'Featured_Post_Widget' );
 	register_widget( 'Notification_Widget' );
+	register_widget( 'Text_Column_Widget' );
 }

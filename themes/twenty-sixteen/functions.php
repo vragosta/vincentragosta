@@ -19,6 +19,7 @@ define( 'VINCENTRAGOSTA_COM_TEMPLATE_URL', get_template_directory_uri() );
 define( 'VINCENTRAGOSTA_COM_PATH',         get_template_directory() . '/' );
 define( 'VINCENTRAGOSTA_COM_INC',          VINCENTRAGOSTA_COM_PATH . 'includes/' );
 define( 'VINCENTRAGOSTA_COM_IMAGE_SIZE',   'full' );
+define( 'BOOTSTRAP_GRID_COL_MAX',          12 );
 
 // Include compartmentalized functions.
 require_once VINCENTRAGOSTA_COM_INC . 'functions/core.php';
@@ -30,6 +31,7 @@ require_once VINCENTRAGOSTA_COM_INC . 'metaboxes/metabox-page.php';
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-news-and-updates.php';
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-featured-post.php';
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-notification.php';
+require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-text-column.php';
 
 // Helper functions.
 require_once VINCENTRAGOSTA_COM_INC . 'functions/helpers.php';
