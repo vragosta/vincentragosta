@@ -110,11 +110,9 @@ class News_And_Updates_Widget extends WP_Widget {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 		}
 
-		// If 'ids' exists, remove all spaces from the string.
-		$post__in = ( $instance['ids'] ) ? str_replace( ' ', '', $instance['ids'] ) : '';
-
-		// If 'ids' exists, explode the string by the delimeter ','.
-		$post__in = ( $instance['ids'] ) ? explode( ',', $instance['ids'] ) : '';
+		// If 'ids' exists, remove all spaces from the string, and explode the string by the delimeter ','.
+		// $post__in = ( $instance['ids'] ) ? explode( ',', $instance['ids'] ) : '';
+		$post__in = ( $instance['ids'] ) ? explode( ',', str_replace( ' ', '', $instance['ids'] ) ) : '';
 
 		// If $post__in exists, create the $post__in_count based off the size of the exploded 'ids' array.
 		( $post__in ) ? $post__in_count = count( $post__in ) : '';

@@ -84,7 +84,7 @@ class Notification_Widget extends WP_Widget {
 		// If the 'before_widget' field is set, display it.
 		echo $args['before_widget']; ?>
 
-		<div id="notification-widget" class="custom-widget full-width">
+		<div id="notification-widget" class="custom-widget full-width flex-center">
 			<p><?php echo esc_html( $instance['content'] ); ?></p>
 			<a href="<?php echo esc_url( $instance['button_link'] ); ?>"><?php echo esc_html( $instance['button_text'] ); ?></a>
 		</div>
