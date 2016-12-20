@@ -22,6 +22,6 @@
 <?php get_template_part( 'partials/aside-pre', 'footer' ); ?>
 
 <!-- TODO -->
-<?php get_template_part( 'partials/content', 'mobile-menu' ); ?>
+<?php //get_template_part( 'partials/content', 'mobile-menu' ); ?>
 
 <?php get_footer(); ?>
