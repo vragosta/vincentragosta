@@ -38,12 +38,12 @@ $excerpt    = esc_html( get_the_excerpt() ); ?>
     <section class="heading-container flex-center">
 
       <!-- Sub Heading -->
-      <span class="sub-heading">
+      <span class="sub-heading padding-left-right">
         <?php echo $sub_header; ?>
       </span>
 
       <!-- Heading -->
-      <h1 class="heading">
+      <h1 class="heading padding-left-right">
         <?php echo $excerpt; ?>
       </h1>
     </section>

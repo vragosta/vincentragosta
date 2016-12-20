@@ -145,8 +145,8 @@ class News_And_Updates_Widget extends WP_Widget {
 					<div class="col-xs-12 <?php echo esc_attr( $class ); ?>">
 						<div class="featured-image aspect-ratio-1x1">
 							<div class="overlay flex-center">
-								<span class="sub-title"><?php echo ( $instance['post_type'] === 'project' ) ? 'Wordpress Site' : get_the_date(); ?></span>
-								<span class="title"><?php echo esc_html( $post->post_title ); ?></span>
+								<span class="sub-title padding-left-right"><?php echo ( $instance['post_type'] === 'project' ) ? 'Wordpress Site' : get_the_date(); ?></span>
+								<span class="title padding-left-right"><?php echo esc_html( $post->post_title ); ?></span>
 								<a href="">View <?php echo esc_html( $instance['post_type'] ); ?></a>
 							</div>
 							<div class="post-type normalize-image" style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>

@@ -194,7 +194,6 @@ a:active:focus {
 	color: #fff;
 	font-style: italic;
 	margin: 0;
-	padding: 0 25px;
 	text-shadow: #080808 0 0 4px;
 }
 
@@ -205,7 +204,6 @@ a:active:focus {
 	font-weight: 700;
 	line-height: 1;
 	max-width: 1000px;
-	padding: 0 15px;
 	text-shadow: #080808 0 0 4px;
 }
 
@@ -492,13 +490,11 @@ a:active:focus {
 	font-size: 1.2rem;
 	font-style: italic;
 	letter-spacing: 1px;
-	padding: 0 15px;
 }
 
 #news-and-updates .overlay .title {
 	font-size: 2.5rem;
 	text-align: center;
-	padding: 0 15px;
 }
 
 #news-and-updates .overlay a {
