@@ -85,8 +85,10 @@ class Notification_Widget extends WP_Widget {
 		echo $args['before_widget']; ?>
 
 		<div id="notification-widget" class="custom-widget full-width flex-center">
-			<p><?php echo esc_html( $instance['content'] ); ?></p>
-			<a href="<?php echo esc_url( $instance['button_link'] ); ?>"><?php echo esc_html( $instance['button_text'] ); ?></a>
+			<p>
+				<span><?php echo esc_html( $instance['content'] ); ?></span>
+				<a href="<?php echo esc_url( $instance['button_link'] ); ?>"><?php echo esc_html( $instance['button_text'] ); ?></a>
+			</p>
 		</div>
 
 		<?php echo $args['after_widget'];
