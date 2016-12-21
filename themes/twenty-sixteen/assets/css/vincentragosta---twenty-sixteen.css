@@ -478,6 +478,13 @@ a:active:focus {
 }
 
 /**
+ *===== Portfolio =====*
+ */
+#portfolio .sidebar p {
+	max-width: 850px;
+}
+
+/**
  *===== Widgets =====*
  */
 /*--- News & Updates Widget ---*/
