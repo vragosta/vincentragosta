@@ -10,7 +10,7 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * TODO
+ * Creates one to three columns of custom text content.
  *
  * @package Vincent Raogsta - Twenty Sixteen
  * @since   0.1.0

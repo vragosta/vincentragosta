@@ -3,38 +3,48 @@
  * Copyright (c) 2016; * Licensed GPL-2.0+ */
 'use strict';
 
-( function( win ) {
+( function( $ ) {
 	jQuery( document ).ready( function() {
-		$ = jQuery;
 
-		// TODO
+		// Define global variables
 		var numberColumns = $( '.number-columns' );
 
-		// TODO
-		numberColumns.on( 'change', function() {
+		textColumnWidget( numberColumns );
 
-			// TODO
+	} );
+
+	/**
+	 * Toggle widget display based on 'Columns To Display' select box option.
+	 *
+	 * @since  0.1.0
+	 * @uses   on()
+	 * @return void
+	 */
+	function textColumnWidget( element ) {
+		element.on( 'change', function() {
+
+			// Define local variables.
 			var column = $( '.vr-column' ),
 
-			// TODO
+			// Column One
 			columnOne        = $( '.vr-column.one' ),
 			columnOneTitle   = $( '.vr-column.one input' ),
 			columnOneIcon    = $( '.vr-column.one select' ),
 			columnOneContent = $( '.vr-column.one textarea' ),
 
-			// TODO
+			// Column Two
 			columnTwo        = $( '.vr-column.two' ),
 			columnTwoTitle   = $( '.vr-column.two input' ),
 			columnTwoIcon    = $( '.vr-column.two select' ),
 			columnTwoContent = $( '.vr-column.two textarea' ),
 
-			// TODO
+			// Column Three
 			columnThree        = $( '.vr-column.three' ),
 			columnThreeTitle   = $( '.vr-column.three input' ),
 			columnThreeIcon    = $( '.vr-column.three select' ),
 			columnThreeContent = $( '.vr-column.three textarea' );
 
-			// TODO
+			// Adjust display of widget based on column value.
 			if ( this.value === '0' ) {
 				column.hide();
 
@@ -77,5 +87,5 @@
 				columnThree.show();
 			}
 		} );
-	} );
-} )( this );
+	};
+} )( jQuery );
