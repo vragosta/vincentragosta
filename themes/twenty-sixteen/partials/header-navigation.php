@@ -15,7 +15,7 @@ $excerpt    = esc_html( get_the_excerpt() ); ?>
     <nav class="nav-container full-width">
 
       <!-- Menu -->
-      <section class="menu-container visible">
+      <section class="menu-container">
         <div class="menu">
           <a href="">Home</a>
           <a href="">Code Shop</a>
@@ -28,7 +28,7 @@ $excerpt    = esc_html( get_the_excerpt() ); ?>
       </section>
 
       <!-- Drop down toggle -->
-      <button type="button" class="drop-down not-visible">
+      <button type="button" class="drop-down">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>

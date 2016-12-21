@@ -61,7 +61,7 @@ a:active:focus {
 }
 
 .padding-left-right {
-	padding: 0 15px;
+	padding: 0 1rem;
 }
 
 .visible {
@@ -117,7 +117,10 @@ a:active:focus {
 .menu-container {
 	display: flex;
 	justify-content: flex-end;
-	padding: 40px 20px;
+	padding: 4rem 2rem;
+	visibility: visible;
+	opacity: 1;
+	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 /*--- Menu ---*/
@@ -127,7 +130,7 @@ a:active:focus {
 }
 
 @media only screen and ( max-width: 992px ) {
-	.menu-container.visible {
+	.menu-container {
 		visibility: hidden;
 		opacity: 0;
 	}
@@ -136,10 +139,9 @@ a:active:focus {
 .menu a {
 	color: #fff;
 	font-weight: 100;
-	margin: 0 15px;
+	margin: 0 1rem;
 	font-size: 1.5rem;
-	letter-spacing: 2px;
-	border: 0px solid #fff;
+	letter-spacing: .2rem;
 	text-transform: uppercase;
 	font-family: 'Lato', sans-serif;
 	opacity: 0.8;
@@ -155,7 +157,7 @@ a:active:focus {
 }
 
 #contact {
-	padding: 10px;
+	padding: 1rem;
 	border: 2px solid #fff;
 	transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 }
@@ -171,11 +173,14 @@ a:active:focus {
 	position: absolute;
 	top: 50px;
 	right: 40px;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 /*--- Needed if the click event has occured and the page increases in size ---*/
 @media only screen and ( max-width: 992px ) {
-	.drop-down.not-visible {
+	.drop-down {
 		visibility: visible;
 		opacity: 1;
 	}
@@ -187,7 +192,7 @@ a:active:focus {
 	width: 22px;
 	height: 2px;
 	border-radius: 1px;
-	margin: 2px;
+	margin: .2rem;
 }
 
 .sub-heading {
@@ -242,17 +247,17 @@ a:active:focus {
  */
 #footer {
 	background-color: #26262a;
-	padding: 60px 0;
+	padding: 6rem 0;
 }
 
 @media only screen and ( max-width: 768px ) {
 	#footer {
-		padding: 20px 0;
+		padding: 2rem 0;
 	}
 }
 
 #footer .menu {
-	margin: 20px 0;
+	margin: 2rem 0;
 }
 
 @media only screen and ( max-width: 768px ) {
@@ -261,12 +266,12 @@ a:active:focus {
 	}
 
 	#footer .menu a {
-		margin: 5px 0;
+		margin: .5rem 0;
 	}
 }
 
 #footer section > div {
-	margin: 5px 0
+	margin: .5rem 0
 }
 
 #footer p {
@@ -300,30 +305,70 @@ a:active:focus {
 }
 
 #docs a:nth-child(2) {
-	margin: 0 10px;
+	margin: 0 1rem;
 }
 
 .social {
 	flex-direction: row;
-	padding: 20px;
+	padding: 2rem;
 }
 
 .social a {
 	color: #fff;
 	font-size: 2.5rem;
-	margin: 0 10px;
+	margin: 0 1rem;
+}
+
+/**
+ *===== Mobile Menu =====*
+ */
+#mobile-menu {
+	position: fixed;
+	padding: 0;
+	margin: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #686868;
+	z-index: 10;
+}
+
+@media only screen and ( min-width: 992px ) {
+	#mobile-menu {
+		visibility: hidden;
+		opacity: 0;
+	}
+}
+
+#mobile-menu .close-container {
+	display: flex;
+	justify-content: flex-end;
+	padding: 1.5rem 2rem;
+}
+
+#mobile-menu .close-container i {
+	color: #fff;
+}
+
+#mobile-menu .menu {
+	flex-direction: column;
+}
+
+#mobile-menu .menu a {
+	margin: 1rem 0;
+	font-size: 3rem;
 }
 
 /**
  *===== Sidebars =====*
  */
 .sidebar {
-	padding: 60px 40px;
+	padding: 6rem 4rem;
 }
 
 @media only screen and ( max-width: 768px ) {
 	.sidebar {
-		padding: 40px;
+		padding: 4rem;
 	}
 }
 
@@ -406,7 +451,7 @@ a:active:focus {
 	color: #686868;
 	font-size: 1.5rem;
 	font-weight: 300;
-	padding: 15px 30px;
+	padding: 1.5rem 3rem;
 	text-transform: uppercase;
 	transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 }
@@ -499,7 +544,7 @@ a:active:focus {
 
 #news-and-updates .overlay a {
 	font-size: 1.2rem;
-	padding: 5px 10px;
+	padding: .5rem 1rem;
 }
 
 #news-and-updates span {
@@ -547,7 +592,7 @@ a:active:focus {
 #notification-widget {
 	padding: 0;
 	flex-direction: row;
-	padding: 60px 100px;
+	padding: 6rem 10rem;
 	background-color: #353439;
 }
 
@@ -566,14 +611,14 @@ a:active:focus {
 	}
 
 	#notification-widget a {
-		margin: 20px 0 0 0 !important;
+		margin: 2rem 0 0 0 !important;
 	}
 }
 
 #notification-widget a {
 	border: 2px solid #fff;
 	color: #fff;
-	margin: 0 0 0 20px;
+	margin: 0 0 0 2rem;
 }
 
 #notification-widget a:hover {

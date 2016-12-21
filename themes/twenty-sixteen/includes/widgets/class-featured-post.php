@@ -98,8 +98,8 @@ class Featured_Post_Widget extends WP_Widget {
 					<div class="col-xs-12">
 						<div class="featured-image aspect-ratio-10x4">
 							<div class="overlay flex-center">
-								<span class="sub-heading"><?php echo esc_html( get_the_excerpt() ); ?></span>
-								<h1 class="heading"><?php echo esc_html( get_the_title() ); ?></h1>
+								<span class="sub-heading padding-left-right"><?php echo esc_html( get_the_excerpt() ); ?></span>
+								<h1 class="heading padding-left-right"><?php echo esc_html( get_the_title() ); ?></h1>
 								<a href=""><?php echo esc_html( $button_text ); ?></a>
 							</div>
 							<div class="post normalize-image" style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
