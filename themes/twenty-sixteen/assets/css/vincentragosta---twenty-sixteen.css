@@ -491,14 +491,14 @@ a:active:focus {
 }
 
 #news-and-updates .featured-image:hover .post-type {
-	-webkit-filter: brightness( 50% );
-	filter: brightness( 50% );
+	-webkit-filter: brightness( 40% );
+	filter: brightness( 40% );
 }
 
 @media only screen and ( max-width: 768px ) {
 	#news-and-updates .featured-image .post-type {
-		-webkit-filter: brightness( 50% );
-		filter: brightness( 50% );
+		-webkit-filter: brightness( 40% );
+		filter: brightness( 40% );
 	}
 }
 

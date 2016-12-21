@@ -102,7 +102,7 @@ class Featured_Post_Widget extends WP_Widget {
 								<h1 class="heading padding-left-right"><?php echo esc_html( get_the_title() ); ?></h1>
 								<a href=""><?php echo esc_html( $button_text ); ?></a>
 							</div>
-							<div class="post normalize-image" style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+							<div class="post normalize-image" style="background: linear-gradient( rgba( 0, 0, 0, 0.6 ), rgba( 0, 0, 0, 0.6 ) ), url( '<?php echo esc_attr( $image ); ?>' ) no-repeat center / cover;"></div>
 						</div>
 					</div>
 				<?php endwhile; ?>

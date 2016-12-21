@@ -1,3 +1,5 @@
+	<?php get_template_part( 'partials/content', 'mobile-menu' ); ?>
+
 	<footer id="footer" class="flex-center">
 
 		<section class="menu">

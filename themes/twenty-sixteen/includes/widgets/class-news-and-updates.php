@@ -36,7 +36,6 @@ class News_And_Updates_Widget extends WP_Widget {
 	public function form( $instance ) {
 		$title          = ( ! empty( $instance['title'] ) ) ? $instance['title'] : '';
 		$post_type      = ( ! empty( $instance['post_type'] ) ) ? $instance['post_type'] : '';
-		// $posts_per_page = ( ! empty( $instance['posts_per_page'] ) ) ? $instance['posts_per_page'] : '';
 		$ids            = ( ! empty( $instance['ids'] ) ) ? $instance['ids'] : ''; ?>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php echo __( 'Title:', 'vincentragosta' ); ?></label>
@@ -50,19 +49,9 @@ class News_And_Updates_Widget extends WP_Widget {
 				<option value="project" <?php echo ( $post_type === 'project' ) ? 'selected' : ''; ?>>Project</option>
 			</select>
 		</p>
-		<!-- <p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'posts_per_page' ) ); ?>"><?php echo __( 'Posts To Display', 'vincentragosta' ); ?></label>
-			<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'posts_per_page' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'posts_per_page' ) ); ?>">
-				<option value="0">--</option>
-				<option value="2" <?php echo ( $posts_per_page === '2' ) ? 'selected' : ''; ?>>Two</option>
-				<option value="3" <?php echo ( $posts_per_page === '3' ) ? 'selected' : ''; ?>>Three</option>
-				<option value="4" <?php echo ( $posts_per_page === '4' ) ? 'selected' : ''; ?>>Four</option>
-			</select>
-		</p> -->
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>"><?php echo __( 'Enter ID\'s:', 'vincentragosta' ); ?></label><br />
 			<label class="vr-widget-description" for="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>">Please separate with a comma.</label><br />
-			<!-- <label class="vr-widget-description" for="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>">NOTE: The number of IDs entered will overwrite the 'Posts To Display' value entered.</label> -->
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'ids' ) ); ?>" type="text" value="<?php echo esc_attr( $ids ); ?>">
 		</p>
 		<?php
@@ -79,7 +68,6 @@ class News_And_Updates_Widget extends WP_Widget {
 		$instance                   = array();
 		$instance['title']          = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 		$instance['post_type']      = ( ! empty( $new_instance['post_type'] ) ) ? $new_instance['post_type'] : '';
-		// $instance['posts_per_page'] = ( ! empty( $new_instance['posts_per_page'] ) ) ? $new_instance['posts_per_page'] : '';
 		$instance['ids']            = ( ! empty( $new_instance['ids'] ) ) ? $new_instance['ids'] : '';
 
 		return $instance;
@@ -107,24 +95,21 @@ class News_And_Updates_Widget extends WP_Widget {
 		}
 
 		// If 'ids' exists, remove all spaces from the string, and explode the string by the delimeter ','.
-		// $post__in = ( $instance['ids'] ) ? explode( ',', $instance['ids'] ) : '';
 		$post__in = ( $instance['ids'] ) ? explode( ',', str_replace( ' ', '', $instance['ids'] ) ) : '';
 
 		// If $post__in exists, create the $post__in_count based off the size of the exploded 'ids' array.
 		( $post__in ) ? $post__in_count = count( $post__in ) : '';
 
-		// If $post__in exists, set $bootstrap_grid_col to $post__in_count, otherwise set it to 'posts_per_page'.
-		// $bootstrap_grid_col = ( $post__in ) ? $post__in_count : $instance['posts_per_page'];
+		// If $post__in exists, set $bootstrap_grid_col to $post__in_count, otherwise set it to 3.
 		$bootstrap_grid_col = ( $post__in ) ? $post__in_count : POSTS_PER_PAGE;
 
-		// If 'posts_per_page' is not set, default 4.
-		// $posts_per_page = ( $post__in_count ) ? $post__in_count : ( ( $instance['posts_per_page'] ) ? $instance['posts_per_page'] : POSTS_PER_PAGE_DEFAULT );
+		// If 'posts_per_page' is not set, default 3.
 		$posts_per_page = ( $post__in_count ) ? $post__in_count : POSTS_PER_PAGE;
 
 		// If 'post_type' is not set, default 'post'.
 		$post_type = ( $instance['post_type'] ) ? $instance['post_type'] : POST_TYPE;
 
-		// Set bootstrap grid, divide 12 ( max bootstrap col size ) by 'posts_per_page'.
+		// Set bootstrap grid, divide 12 ( max bootstrap col size ) by the value of $bootstrap_grid_col.
 		$class = 'col-sm-' . ( BOOTSTRAP_GRID_COL_MAX / $bootstrap_grid_col );
 
 		// Create arguments array for query.
@@ -154,7 +139,8 @@ class News_And_Updates_Widget extends WP_Widget {
 				<?php wp_reset_postdata(); ?>
 			<?php endif;?>
 			<div class="full-width flex-center">
-				<a href="">View more <?php echo esc_html( $instance['post_type'] ); ?>s</a>
+				<!-- <a href="<?php echo get_post_type_archive_link( $instance['post_type'] ); ?>">View more <?php echo esc_html( $instance['post_type'] ); ?>s</a> -->
+				<a href="<?php echo home_url( 'portfolio' ) ?>">View more <?php echo esc_html( $instance['post_type'] ); ?>s</a>
 			</div>
 		</div>
 
