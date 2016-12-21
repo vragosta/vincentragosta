@@ -21,10 +21,13 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
-	add_action( 'after_setup_theme',  $n( 'vincentragosta_setup' ) );
-	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
-	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
-	add_action( 'widgets_init',       $n( 'sidebars' ) );
+	add_action( 'after_setup_theme',     $n( 'vincentragosta_setup' ) );
+	add_action( 'wp_enqueue_scripts',    $n( 'scripts' ) );
+	add_action( 'wp_enqueue_scripts',    $n( 'styles' ) );
+	add_action( 'admin_enqueue_scripts', $n( 'admin_styles' ) );
+	add_action( 'admin_enqueue_scripts', $n( 'admin_scripts' ) );
+	add_action( 'widgets_init',          $n( 'sidebars' ) );
+	add_action( 'widgets_init',          $n( 'widgets' ) );
 }
 
 /**
@@ -134,14 +137,46 @@ function styles() {
 }
 
 /**
- * Create sidebars for back-end.
+ * Allows for custom CSS in wp-admin.
+ *
+ * @uses   wp_enqueue_style()
+ * @since  0.1.0
+ * @return void
+ */
+function admin_styles() {
+	wp_enqueue_style(
+		'admin',
+		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---admin.css",
+		VINCENTRAGOSTA_VERSION
+	);
+}
+
+/**
+ * Allows for custom javascript in wp-admin.
+ *
+ * @uses   wp_enqueue_script()
+ * @since  0.1.0
+ * @return void
+ */
+function admin_scripts() {
+	wp_enqueue_script(
+		'admin',
+		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/js/vincentragosta---admin.js",
+		array( 'jquery' ),
+		VINCENTRAGOSTA_VERSION,
+		true
+	);
+}
+
+/**
+ * Register sidebars for back-end.
  *
  * @since  0.1.0
  * @uses   register_sidebar()
  * @return void
  */
 function sidebars() {
-	$cta_a = array(
+	$cta_front_page_a = array(
 		'name'          => __( 'Call To Action A ( Front Page )', 'theme_text_domain' ),
 		'id'            => 'cta-a',
 		'description'   => 'Call To Action sidebar on the frontpage.',
@@ -152,5 +187,91 @@ function sidebars() {
 		'after_title'   => '</h2>',
 	);
 
-	register_sidebar( $cta_a );
+	$cta_front_page_b = array(
+		'name'          => __( 'Call To Action B ( Front Page )', 'theme_text_domain' ),
+		'id'            => 'cta-b',
+		'description'   => 'Call To Action sidebar on the frontpage.',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	$cta_front_page_c = array(
+		'name'          => __( 'Call To Action C ( Front Page )', 'theme_text_domain' ),
+		'id'            => 'cta-c',
+		'description'   => 'Call To Action sidebar on the frontpage.',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	$cta_front_page_d = array(
+		'name'          => __( 'Call To Action D ( Front Page )', 'theme_text_domain' ),
+		'id'            => 'cta-d',
+		'description'   => 'Call To Action sidebar on the frontpage.',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	$cta_front_page_e = array(
+		'name'          => __( 'Call To Action E ( Front Page )', 'theme_text_domain' ),
+		'id'            => 'cta-e',
+		'description'   => 'Call To Action sidebar on the frontpage.',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	$cta_front_page_f = array(
+		'name'          => __( 'Call To Action F ( Front Page )', 'theme_text_domain' ),
+		'id'            => 'cta-f',
+		'description'   => 'Call To Action sidebar on the frontpage.',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	$pre_footer = array(
+		'name'          => __( 'Pre Footer', 'theme_text_domain' ),
+		'id'            => 'cta-g',
+		'description'   => 'Call To Action sidebar that site above the footer.',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	register_sidebar( $cta_front_page_a );
+	register_sidebar( $cta_front_page_b );
+	register_sidebar( $cta_front_page_c );
+	register_sidebar( $cta_front_page_d );
+	register_sidebar( $cta_front_page_e );
+	register_sidebar( $cta_front_page_f );
+	register_sidebar( $pre_footer );
+}
+
+/**
+ * Register custom widgets for back-end.
+ *
+ * @since  0.1.0
+ * @uses   register_widget()
+ * @return void
+ */
+function widgets() {
+	register_widget( 'News_And_Updates_Widget' );
+	register_widget( 'Featured_Post_Widget' );
+	register_widget( 'Notification_Widget' );
+	register_widget( 'Text_Column_Widget' );
 }

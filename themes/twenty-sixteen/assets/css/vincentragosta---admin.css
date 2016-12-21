@@ -1,0 +1,23 @@
+/**
+ * VincentRagosta - Twenty Sixteen
+ * https://storycorps.org
+ *
+ * Copyright (c) 2016
+ * Licensed under the GPL-2.0+ license.
+ */
+
+/*--- News & Updates Widget ---*/
+.vr-widget-description {
+	font-size: 10px;
+	font-style: italic;
+}
+
+/*--- Text Column Widget ---*/
+.vr-column {
+	display: none;
+	border-top: 2px solid #e5e5e5;
+}
+
+.vr-column.show {
+	display: block;
+}
