@@ -10,20 +10,20 @@ $image      = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'f
 $sub_header = esc_html( get_post_meta( $post->ID, 'sub_header', true ) );
 $excerpt    = esc_html( get_the_excerpt() ); ?>
 
-<header class="header">
+<header id="header" class="aspect-ratio-10x4">
   <main class="normalize-image" style="background-image: url( '<?php echo $image ?>' );">
-
     <nav class="nav-container full-width">
+
       <!-- Menu -->
-      <section class="col-xs-offset-4 col-xs-8 col-sm-offset-4 col-sm-8 col-md-offset-5 col-md-7 col-lg-offset-6 col-lg-6">
+      <section class="menu-container">
         <div class="menu">
-          <span><a href="" class="<?php echo ( is_front_page() ) ? 'active' : ''; ?>">Home</a></span>
-          <span><a href="">Code Shop</a></span>
-          <span><a href="">Portfolio</a></span>
-          <span><a href="">About</a></span>
-          <span><a href="">Resume</a></span>
-          <span><a href="">Blog</a></span>
-          <span id="contact"><a href="">Contact</a></span>
+          <a href="">Home</a>
+          <a href="">Code Shop</a>
+          <a href="">Portfolio</a>
+          <a href="">About</a>
+          <a href="">Resume</a>
+          <a href="">Blog</a>
+          <a id="contact" href="">Contact</a>
         </div>
       </section>
 
@@ -36,15 +36,16 @@ $excerpt    = esc_html( get_the_excerpt() ); ?>
     </nav>
 
     <section class="heading-container flex-center">
+
       <!-- Sub Heading -->
-      <p class="sub-heading">
+      <span class="sub-heading padding-left-right">
         <?php echo $sub_header; ?>
-      </p>
+      </span>
 
       <!-- Heading -->
-      <p class="heading">
+      <h1 class="heading padding-left-right">
         <?php echo $excerpt; ?>
-      </p>
+      </h1>
     </section>
 
   </main>

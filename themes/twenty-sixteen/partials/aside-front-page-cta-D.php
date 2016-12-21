@@ -7,6 +7,6 @@
  */
 ?>
 
-<section class="sidebar cta d">
+<section class="sidebar cta d flex-center">
 	<?php dynamic_sidebar( 'Call To Action D ( Front Page )' ); ?>
 </section>
