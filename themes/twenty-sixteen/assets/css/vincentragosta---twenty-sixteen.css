@@ -503,8 +503,6 @@ a:active:focus {
 }
 
 .custom-widget .overlay {
-	visibility: hidden;
-	opacity: 0;
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -512,7 +510,6 @@ a:active:focus {
 	right: 0;
 	z-index: 10;
 	background: transparent;
-	transition: visibility 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 #news-and-updates .featured-image:hover .overlay {
@@ -571,11 +568,6 @@ a:active:focus {
 /*--- Featured Post Widget ---*/
 #featured-post-widget .featured-image {
 	min-height: 600px;
-}
-
-#featured-post-widget .overlay {
-	visibility: visible;
-	opacity: 1;
 }
 
 #featured-post-widget a {

@@ -94,7 +94,7 @@ class News_And_Updates_Widget extends WP_Widget {
 	 * @return void
 	 */
 	public function widget( $args, $instance ) {
-		
+
 		// Define global variables.
 		global $post;
 
@@ -142,7 +142,7 @@ class News_And_Updates_Widget extends WP_Widget {
 					<?php $image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post->ID ); ?>
 					<div class="col-xs-12 <?php echo esc_attr( $class ); ?>">
 						<div class="featured-image aspect-ratio-1x1">
-							<div class="overlay flex-center">
+							<div class="overlay flex-center not-visible">
 								<span class="sub-title padding-left-right"><?php echo ( $instance['post_type'] === 'project' ) ? 'Wordpress Site' : get_the_date(); ?></span>
 								<span class="title padding-left-right"><?php echo esc_html( $post->post_title ); ?></span>
 								<a href="">View <?php echo esc_html( $instance['post_type'] ); ?></a>
