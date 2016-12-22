@@ -1,41 +1,42 @@
 <?php
 /**
- * Template Name: Portfolio
- *
  * @package VincentRagosta 2016
  * @since   0.1.0
  */
 
 get_header();
 
+// TODO
+$count = 0;
+
+// TODO
 $args = array(
 	'post_type' => 'project'
 );
 
+// TODO
 $projects = new WP_Query( $args ); ?>
 
-<main id="portfolio">
+<main id="portfolio" class="archive project">
 	<section class="sidebar cta a flex-center">
 		<?php echo $post->post_content; ?>
 	</section>
 
-	<section>
-		<?php if ( $projects->have_posts() ) : ?>
-			<?php while ( $projects->have_posts() ) : $projects->the_post(); ?>
-				<?php $image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post->ID ); ?>
-				<div class="col-xs-12 col-sm-4">
-					<div class="featured-image aspect-ratio-1x1">
-						<div class="overlay flex-center not-visible">
-							<span class="sub-title padding-left-right">Wordpress Site</span>
-							<span class="title padding-left-right"><?php echo esc_html( $post->post_title ); ?></span>
+	<?php if ( $projects->have_posts() ) : ?>
+		<section class="sidebar">
+			<h2>Wordpress Projects</h2>
+			<div class="full-width flex-center grid-container">
+				<?php while ( $projects->have_posts() ) : $projects->the_post(); ?>
+					<?php if ( ++$count%4 === 0 ) : ?>
 						</div>
-						<div class="post-type normalize-image" style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
-					</div>
-				</div>
-			<?php endwhile; ?>
-			<?php wp_reset_postdata(); ?>
-		<?php endif; ?>
-	</section>
+						<div class="full-width flex-center grid-container">
+					<?php endif; ?>
+					<?php get_template_part( 'partials/content', 'archive-project' ); ?>
+				<?php endwhile; ?>
+				<?php wp_reset_postdata(); ?>
+			</div>
+		</section>
+	<?php endif; ?>
 </main>
 
 <?php get_footer(); ?>

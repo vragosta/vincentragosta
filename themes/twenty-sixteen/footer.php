@@ -5,7 +5,7 @@
 		<section class="menu">
 			<a href="">Home</a>
 			<a href="">Code Shop</a>
-			<a href="">Portfolio</a>
+			<a href="<?php home_url( 'portfolio' ); ?>">Portfolio</a>
 			<a href="">About</a>
 			<a href="">Resume</a>
 			<a href="">Blog</a>

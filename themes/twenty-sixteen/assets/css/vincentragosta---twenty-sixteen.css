@@ -389,6 +389,7 @@ a:active:focus {
 }
 
 /*--- Sidebar Titles ---*/
+.sidebar h1,
 .sidebar h2 {
 	margin-bottom: 1.2rem;
 }
@@ -480,8 +481,21 @@ a:active:focus {
 /**
  *===== Portfolio =====*
  */
-#portfolio .sidebar p {
+.archive .sidebar p {
 	max-width: 850px;
+}
+
+.archive .grid-container {
+	flex-direction: row;
+	padding: 1rem .5rem 0;
+}
+
+.archive .grid-container:last-child {
+	padding-bottom: 1rem;
+}
+
+.archive .grid-container .grid-item {
+	margin: 0 .5rem;
 }
 
 /**
@@ -509,7 +523,8 @@ a:active:focus {
 	}
 }
 
-.custom-widget .overlay {
+/*.custom-widget .overlay {*/
+.overlay {
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -519,39 +534,45 @@ a:active:focus {
 	background: transparent;
 }
 
-#news-and-updates .featured-image:hover .overlay {
+/*#news-and-updates .featured-image:hover .overlay {*/
+.featured-image:hover .overlay {
 	visibility: visible;
 	opacity: 1;
 }
 
 @media only screen and ( max-width: 768px ) {
-	#news-and-updates .featured-image .overlay {
+	/*#news-and-updates .featured-image .overlay {*/
+	.featured-image .overlay {
 		visibility: visible;
 		opacity: 1;
 	}
 }
 
-#news-and-updates .col-sm-12 .featured-image {
+/*#news-and-updates .col-sm-12 .featured-image {*/
+.col-sm-12 .featured-image {
 	padding-bottom: 50%;
 }
 
-#news-and-updates .overlay .sub-title {
+/*#news-and-updates .overlay .sub-title {*/
+.overlay .sub-title {
 	font-size: 1.2rem;
 	font-style: italic;
 	letter-spacing: 1px;
 }
 
-#news-and-updates .overlay .title {
+/*#news-and-updates .overlay .title {*/
+.overlay .title {
 	font-size: 2.5rem;
 	text-align: center;
 }
 
-#news-and-updates .overlay a {
+/*#news-and-updates .overlay a {*/
+.overlay a {
 	font-size: 1.2rem;
 	padding: .5rem 1rem;
 }
 
-#news-and-updates span {
+.overlay span {
 	color: #fff;
 }
 
@@ -559,7 +580,7 @@ a:active:focus {
 	padding-top: 2rem;
 }
 
-.custom-widget .overlay a {
+.overlay a {
 	background: transparent;
 	border-color: #fff;
 	color: #fff;
@@ -567,7 +588,7 @@ a:active:focus {
 	transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
-.custom-widget .overlay a:hover {
+.overlay a:hover {
 	background: #fff;
 	color: #686868;
 }
