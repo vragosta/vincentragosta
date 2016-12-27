@@ -4,14 +4,20 @@
  * @since   0.1.0
  */
 
+use vincentragosta_com\Twenty_Sixteen\Helpers;
+
 get_header();
 
 // TODO
 $count = 0;
 
 // TODO
+$paged = get_query_var( 'paged' );
+
+// TODO
 $args = array(
-	'post_type' => 'project'
+	'post_type' => 'project',
+	'paged'     => $paged
 );
 
 // TODO
@@ -23,11 +29,11 @@ $projects = new WP_Query( $args ); ?>
 	</section>
 
 	<?php if ( $projects->have_posts() ) : ?>
-		<section class="sidebar">
+		<section class="sidebar" style="padding-bottom: 0;">
 			<h2>Wordpress Projects</h2>
 			<div class="full-width flex-center grid-container">
 				<?php while ( $projects->have_posts() ) : $projects->the_post(); ?>
-					<?php if ( ++$count%4 === 0 ) : ?>
+					<?php if ( ++$count % 4 === 0 ) : ?>
 						</div>
 						<div class="full-width flex-center grid-container">
 					<?php endif; ?>
@@ -37,6 +43,11 @@ $projects = new WP_Query( $args ); ?>
 			</div>
 		</section>
 	<?php endif; ?>
+
+	<div id="pagination" class="full-width flex-center">
+		<?php vincentragosta_com\Twenty_Sixteen\Helpers\pagination( $projects ); ?>
+	</div>
+
 </main>
 
 <?php get_footer(); ?>

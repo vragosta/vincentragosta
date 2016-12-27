@@ -7,7 +7,7 @@
 
 <?php $image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post->ID ); ?>
 
-<div class="grid-item col-xs-4">
+<div class="grid-item col-xs-12 col-sm-4">
 	<div class="featured-image aspect-ratio-1x1">
 		<div class="overlay flex-center not-visible">
 			<span class="sub-title padding-left-right">Wordpress Site</span>
