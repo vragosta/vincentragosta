@@ -7,19 +7,19 @@
  */
 
 $image      = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'full' )[0];
-$sub_header = esc_html( get_post_meta( $post->ID, 'sub_header', true ) );
-$excerpt    = esc_html( get_the_excerpt() ); ?>
+$title      = esc_html( get_the_title() );
+$sub_header = get_post_meta( $post->ID, 'sub_header', true ); ?>
 
 <header id="header" class="aspect-ratio-10x4">
-  <main class="normalize-image" style="background-image: url( '<?php echo $image ?>' );">
+  <main class="normalize-image" style="background: linear-gradient( rgba( 0, 0, 0, 0.6 ), rgba( 0, 0, 0, 0.6 ) ) , url( '<?php echo $image ?>' ) no-repeat center / cover;">
     <nav class="nav-container full-width">
 
       <!-- Menu -->
       <section class="menu-container">
         <div class="menu">
-          <a href="">Home</a>
+          <a href="<?php echo home_url(); ?>">Home</a>
           <a href="">Code Shop</a>
-          <a href="">Portfolio</a>
+          <a href="<?php echo home_url( 'portfolio' ); ?>">Portfolio</a>
           <a href="">About</a>
           <a href="">Resume</a>
           <a href="">Blog</a>
@@ -44,7 +44,7 @@ $excerpt    = esc_html( get_the_excerpt() ); ?>
 
       <!-- Heading -->
       <h1 class="heading padding-left-right">
-        <?php echo $excerpt; ?>
+        <?php echo $title; ?>
       </h1>
     </section>
 
