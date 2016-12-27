@@ -3,9 +3,9 @@
 	<footer id="footer" class="flex-center">
 
 		<section class="menu">
-			<a href="">Home</a>
+			<a href="<?php echo home_url(); ?>">Home</a>
 			<a href="">Code Shop</a>
-			<a href="<?php home_url( 'portfolio' ); ?>">Portfolio</a>
+			<a href="<?php echo home_url( 'portfolio' ); ?>">Portfolio</a>
 			<a href="">About</a>
 			<a href="">Resume</a>
 			<a href="">Blog</a>
@@ -14,7 +14,7 @@
 
 		<section class="flex-center">
 			<div id="contact-info" class="padding-left-right">
-				<h3><span>For more information, call today at </span><a href="">(917) 547-8578</a></h3>
+				<h3><span>For more information, call today at </span><a href="tel:1917547-8578">(917) 547-8578</a></h3>
 			</div>
 
 			<div id="copyright" class="padding-left-right">

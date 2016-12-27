@@ -4,28 +4,26 @@
  * @since   0.1.0
  */
 
-use vincentragosta_com\Twenty_Sixteen\Helpers;
-
 get_header();
 
-// TODO
+// Create a count variable.
 $count = 0;
 
-// TODO
+// Get the page variable if one is set.
 $paged = get_query_var( 'paged' );
 
-// TODO
+// Create the arguements for the query.
 $args = array(
 	'post_type' => 'project',
 	'paged'     => $paged
 );
 
-// TODO
+// Initialize the query.
 $projects = new WP_Query( $args ); ?>
 
 <main id="portfolio" class="archive project">
 	<section class="sidebar cta a flex-center">
-		<?php echo $post->post_content; ?>
+		<?php echo esc_html( $post->post_content ); ?>
 	</section>
 
 	<?php if ( $projects->have_posts() ) : ?>

@@ -597,6 +597,7 @@ a:active:focus {
 	padding: 0 1rem;
 	font-size: 2rem;
 	color: #686868;
+	font-family: 'Lato', sans-serif;
 	transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
@@ -627,6 +628,8 @@ a:active:focus {
 
 #featured-post-widget a {
 	margin-top: 2rem;
+	padding: 1.5rem 3rem;
+	font-size: 1.5rem;
 }
 
 @media only screen and ( max-width: 768px ) {

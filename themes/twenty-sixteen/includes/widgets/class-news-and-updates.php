@@ -130,7 +130,7 @@ class News_And_Updates_Widget extends WP_Widget {
 							<div class="overlay flex-center not-visible">
 								<span class="sub-title padding-left-right"><?php echo ( $instance['post_type'] === 'project' ) ? 'Wordpress Site' : get_the_date(); ?></span>
 								<span class="title padding-left-right"><?php echo esc_html( $post->post_title ); ?></span>
-								<a href="">View <?php echo esc_html( $instance['post_type'] ); ?></a>
+								<a href="<?php echo get_the_permalink( $post->ID ); ?>">View <?php echo esc_html( $instance['post_type'] ); ?></a>
 							</div>
 							<div class="post-type normalize-image" style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 						</div>
@@ -139,7 +139,6 @@ class News_And_Updates_Widget extends WP_Widget {
 				<?php wp_reset_postdata(); ?>
 			<?php endif;?>
 			<div class="full-width flex-center">
-				<!-- <a href="<?php echo get_post_type_archive_link( $instance['post_type'] ); ?>">View more <?php echo esc_html( $instance['post_type'] ); ?>s</a> -->
 				<a href="<?php echo home_url( 'portfolio' ) ?>">View more <?php echo esc_html( $instance['post_type'] ); ?>s</a>
 			</div>
 		</div>

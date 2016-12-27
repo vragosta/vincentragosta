@@ -100,7 +100,7 @@ class Featured_Post_Widget extends WP_Widget {
 							<div class="overlay flex-center">
 								<span class="sub-heading padding-left-right"><?php echo esc_html( get_the_excerpt() ); ?></span>
 								<h1 class="heading padding-left-right"><?php echo esc_html( get_the_title() ); ?></h1>
-								<a href=""><?php echo esc_html( $button_text ); ?></a>
+								<a href="<?php echo get_the_permalink( $post->ID ); ?>"><?php echo esc_html( $button_text ); ?></a>
 							</div>
 							<div class="post normalize-image" style="background: linear-gradient( rgba( 0, 0, 0, 0.6 ), rgba( 0, 0, 0, 0.6 ) ), url( '<?php echo esc_attr( $image ); ?>' ) no-repeat center / cover;"></div>
 						</div>
