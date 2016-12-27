@@ -34,9 +34,9 @@ class News_And_Updates_Widget extends WP_Widget {
 	 * @return void
 	 */
 	public function form( $instance ) {
-		$title          = ( ! empty( $instance['title'] ) ) ? $instance['title'] : '';
-		$post_type      = ( ! empty( $instance['post_type'] ) ) ? $instance['post_type'] : '';
-		$ids            = ( ! empty( $instance['ids'] ) ) ? $instance['ids'] : ''; ?>
+		$title     = ( ! empty( $instance['title'] ) ) ? $instance['title'] : '';
+		$post_type = ( ! empty( $instance['post_type'] ) ) ? $instance['post_type'] : '';
+		$ids       = ( ! empty( $instance['ids'] ) ) ? $instance['ids'] : ''; ?>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php echo __( 'Title:', 'vincentragosta' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
