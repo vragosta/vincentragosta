@@ -23,11 +23,11 @@ $projects = new WP_Query( $args ); ?>
 
 <main id="portfolio" class="archive project">
 	<section class="sidebar cta a flex-center">
-		<?php echo esc_html( $post->post_content ); ?>
+		<?php echo $post->post_content; ?>
 	</section>
 
 	<?php if ( $projects->have_posts() ) : ?>
-		<section class="sidebar" style="padding-bottom: 0;">
+		<section class="sidebar">
 			<h2>Wordpress Projects</h2>
 			<div class="full-width flex-center grid-container">
 				<?php while ( $projects->have_posts() ) : $projects->the_post(); ?>

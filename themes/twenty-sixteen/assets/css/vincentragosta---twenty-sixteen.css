@@ -481,6 +481,10 @@ a:active:focus {
 /**
  *===== Portfolio/Archive =====*
  */
+.archive .sidebar:nth-child(2) {
+	padding: 6rem 4rem 0;
+}
+
 .archive .sidebar p {
 	max-width: 850px;
 }
@@ -586,7 +590,10 @@ a:active:focus {
 	}
 }
 
-/*--- Pagination ---*/
+/**
+ *===== Pagination =====*
+ */
+/*--- Archive ---*/
 #pagination {
 	flex-direction: row;
 	margin: 1.5rem 0 3rem;
@@ -604,6 +611,24 @@ a:active:focus {
 .page-numbers:hover:not( .current ) {
 	background-color: #686868;
 	color: #fff;
+}
+
+/*--- Single ---*/
+#pagination-controls {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 6rem 4rem;
+}
+
+#pagination-controls div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#pagination-controls div a {
+	font-size: 4rem;
+	color: #686868;
 }
 
 /**
@@ -673,7 +698,7 @@ a:active:focus {
 
 #notification-widget a:hover {
 	background: #fff;
-	color: inherit;
+	color: #686868;
 }
 
 /*--- Text Column Widget ---*/

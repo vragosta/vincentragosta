@@ -6,11 +6,11 @@
  * @since 0.1.0
  */
 
-$image      = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'full' )[0];
+$image      = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), VINCENTRAGOSTA_COM_IMAGE_SIZE )[0];
 $title      = esc_html( get_the_title() );
 $sub_header = get_post_meta( $post->ID, 'sub_header', true ); ?>
 
-<header id="header" class="aspect-ratio-10x4">
+<header id="header" <?php echo ( is_front_page() ) ? 'class="aspect-ratio-10x4"' : ''; ?>>
   <main class="normalize-image" style="background: linear-gradient( rgba( 0, 0, 0, 0.6 ), rgba( 0, 0, 0, 0.6 ) ) , url( '<?php echo $image ?>' ) no-repeat center / cover;">
     <nav class="nav-container full-width">
 
@@ -19,7 +19,7 @@ $sub_header = get_post_meta( $post->ID, 'sub_header', true ); ?>
         <div class="menu">
           <a href="<?php echo home_url(); ?>">Home</a>
           <a href="">Code Shop</a>
-          <a href="<?php echo home_url( 'portfolio' ); ?>">Portfolio</a>
+          <a href="<?php echo home_url( '/portfolio/' ); ?>">Portfolio</a>
           <a href="">About</a>
           <a href="">Resume</a>
           <a href="">Blog</a>
