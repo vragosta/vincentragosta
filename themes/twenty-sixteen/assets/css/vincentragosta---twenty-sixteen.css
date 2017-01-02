@@ -615,20 +615,18 @@ a:active:focus {
 
 /*--- Single ---*/
 #pagination-controls {
+	display: flex;
 	max-width: 800px;
 	margin: 0 auto;
 	padding: 6rem 4rem;
+	width: 100%;
+	border-bottom: 1px solid rgba( 104, 104, 104, 0.2 );
 }
 
-#pagination-controls div {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-#pagination-controls div a {
+#pagination-controls a {
 	font-size: 4rem;
-	color: #686868;
+	/*color: #686868;*/
+	color: rgba( 104, 104, 104, 0.9 );
 }
 
 /**
