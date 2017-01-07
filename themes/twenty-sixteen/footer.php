@@ -1,6 +1,6 @@
 	<?php get_template_part( 'partials/content', 'mobile-menu' ); ?>
 
-	<footer id="footer" class="flex-center">
+	<footer id="footer" class="col-flex-center">
 
 		<section class="menu">
 			<a href="<?php echo home_url(); ?>">Home</a>
@@ -12,7 +12,7 @@
 			<a href="">Contact</a>
 		</section>
 
-		<section class="flex-center">
+		<section class="col-flex-center">
 			<div id="contact-info" class="padding-left-right">
 				<h3><span>For more information, call today at </span><a href="tel:1917547-8578">(917) 547-8578</a></h3>
 			</div>

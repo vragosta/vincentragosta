@@ -35,7 +35,7 @@ $sub_header = get_post_meta( $post->ID, 'sub_header', true ); ?>
       </button>
     </nav>
 
-    <section class="heading-container flex-center">
+    <section class="heading-container col-flex-center">
 
       <!-- Sub Heading -->
       <span class="sub-heading padding-left-right">

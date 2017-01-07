@@ -97,7 +97,7 @@ class Featured_Post_Widget extends WP_Widget {
 					<?php $image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post->ID ); ?>
 					<div class="col-xs-12">
 						<div class="featured-image aspect-ratio-10x4">
-							<div class="overlay flex-center">
+							<div class="overlay col-flex-center">
 								<span class="sub-heading padding-left-right"><?php echo esc_html( get_the_excerpt() ); ?></span>
 								<h1 class="heading padding-left-right"><?php echo esc_html( get_the_title() ); ?></h1>
 								<a href="<?php echo get_the_permalink( $post->ID ); ?>"><?php echo esc_html( $button_text ); ?></a>

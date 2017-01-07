@@ -28,6 +28,7 @@ require_once VINCENTRAGOSTA_COM_INC . 'functions/core.php';
 
 // Metaboxes for the various custom post types.
 require_once VINCENTRAGOSTA_COM_INC . 'metaboxes/metabox-page.php';
+require_once VINCENTRAGOSTA_COM_INC . 'metaboxes/metabox-project.php';
 
 // Include widgets.
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-news-and-updates.php';

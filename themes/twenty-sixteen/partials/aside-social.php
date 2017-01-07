@@ -8,7 +8,7 @@
  */
 ?>
 
-<div class="social flex-center">
+<div class="social row-flex-center">
 	<a href="http://facebook.com/vinny.ragosta"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 	<a href="https://twitter.com/VincentRagosta"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 	<a href="https://instagram.com/vincentragosta/"><i class="fa fa-instagram" aria-hidden="true"></i></a>

@@ -22,18 +22,18 @@ $args = array(
 $projects = new WP_Query( $args ); ?>
 
 <main id="portfolio" class="archive project">
-	<section class="sidebar cta a flex-center">
+	<section class="sidebar cta a col-flex-center">
 		<?php echo $post->post_content; ?>
 	</section>
 
 	<?php if ( $projects->have_posts() ) : ?>
 		<section class="sidebar">
 			<h2>Wordpress Projects</h2>
-			<div class="full-width flex-center grid-container">
+			<div class="full-width row-flex-center grid-container">
 				<?php while ( $projects->have_posts() ) : $projects->the_post(); ?>
 					<?php if ( ++$count % 4 === 0 ) : ?>
 						</div>
-						<div class="full-width flex-center grid-container">
+						<div class="full-width row-flex-center grid-container">
 					<?php endif; ?>
 					<?php get_template_part( 'partials/content', 'archive-project' ); ?>
 				<?php endwhile; ?>
@@ -42,7 +42,7 @@ $projects = new WP_Query( $args ); ?>
 		</section>
 	<?php endif; ?>
 
-	<div id="pagination" class="full-width flex-center">
+	<div id="pagination" class="full-width row-flex-center">
 		<?php vincentragosta_com\Twenty_Sixteen\Helpers\pagination( $projects ); ?>
 	</div>
 
