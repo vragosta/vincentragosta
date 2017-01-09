@@ -5,8 +5,9 @@
  * @package VincentRagosta.com 2016
  * @since   0.1.0
  */
-?>
 
-<section class="sidebar pre-footer">
-	<?php dynamic_sidebar( 'Pre Footer' ); ?>
-</section>
+if ( is_active_sidebar( 'pre-footer' ) ) : ?>
+	<section class="sidebar pre-footer">
+		<?php dynamic_sidebar( 'pre-footer' ); ?>
+	</section>
+<?php endif; ?>

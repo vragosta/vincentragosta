@@ -2,15 +2,7 @@
 
 	<footer id="footer" class="col-flex-center">
 
-		<section class="menu">
-			<a href="<?php echo home_url(); ?>">Home</a>
-			<a href="">Code Shop</a>
-			<a href="<?php echo home_url( '/portfolio/' ); ?>">Portfolio</a>
-			<a href="">About</a>
-			<a href="">Resume</a>
-			<a href="">Blog</a>
-			<a href="">Contact</a>
-		</section>
+		<?php get_template_part( 'partials/section', 'menu' ); ?>
 
 		<section class="col-flex-center">
 			<div id="contact-info" class="padding-left-right">

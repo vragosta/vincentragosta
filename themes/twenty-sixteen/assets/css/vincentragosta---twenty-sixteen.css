@@ -191,17 +191,17 @@ a:active:focus {
 	opacity: 1;
 }
 
-#contact {
+#header #contact {
 	display: flex;
 }
 
-#contact {
+#header #contact {
 	padding: 1rem;
 	border: 2px solid #fff;
 	transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
-#contact:hover {
+#header #contact:hover {
 	background: #fff;
 	color: #686868;
 }
@@ -412,7 +412,8 @@ a:active:focus {
 
 .cta.a,
 .cta.c,
-.cta.f {
+.cta.f,
+.sidebar.excerpt {
 	background: #edeeef;
 }
 
@@ -461,6 +462,7 @@ a:active:focus {
 @media only screen and ( max-width: 768px ) {
 	.sidebar p {
 		font-size: 1.65rem;
+		line-height: 1.5;
 	}
 
 	.sidebar p + p {
@@ -663,8 +665,14 @@ a:active:focus {
 	color: rgba( 104, 104, 104, 0.9 );
 }
 
+#single-project {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 0 4rem;
+}
+
 @media only screen and ( max-width: 768px ) {
-	.single-project img {
+	#single-project img {
 		width: 100%;
 		height: 100%;
 	}

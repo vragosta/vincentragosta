@@ -115,6 +115,13 @@ function styles() {
 	);
 
 	wp_register_style(
+		'ionicons',
+		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/lib/ionicons/css/ionicons.min.css",
+		array(),
+		VINCENTRAGOSTA_COM_VERSION
+	);
+
+	wp_register_style(
 		'bootstrap',
 		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/lib/bootstrap/dist/css/bootstrap.min.css",
 		array( 'fontawesome' ),
@@ -131,7 +138,7 @@ function styles() {
 	wp_enqueue_style(
 		'vincentragosta_com',
 		VINCENTRAGOSTA_COM_URL . "/assets/css/vincentragosta---twenty-sixteen.css",
-		array( 'bootstrap', 'fontawesome', 'sanitize' ),
+		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize' ),
 		VINCENTRAGOSTA_COM_VERSION
 	);
 }

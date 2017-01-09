@@ -16,15 +16,7 @@ $sub_header = get_post_meta( $post->ID, 'sub_header', true ); ?>
 
       <!-- Menu -->
       <section class="menu-container">
-        <div class="menu">
-          <a href="<?php echo home_url(); ?>">Home</a>
-          <a href="">Code Shop</a>
-          <a href="<?php echo home_url( '/portfolio/' ); ?>">Portfolio</a>
-          <a href="">About</a>
-          <a href="">Resume</a>
-          <a href="">Blog</a>
-          <a id="contact" href="">Contact</a>
-        </div>
+        <?php get_template_part( 'partials/section', 'menu' ); ?>
       </section>
 
       <!-- Drop down toggle -->
@@ -38,14 +30,19 @@ $sub_header = get_post_meta( $post->ID, 'sub_header', true ); ?>
     <section class="heading-container col-flex-center">
 
       <!-- Sub Heading -->
-      <span class="sub-heading padding-left-right">
-        <?php echo $sub_header; ?>
-      </span>
+      <?php if ( $sub_header ) : ?>
+        <span class="sub-heading padding-left-right">
+          <?php echo $sub_header; ?>
+        </span>
+      <?php endif; ?>
 
       <!-- Heading -->
-      <h1 class="heading padding-left-right">
-        <?php echo $title; ?>
-      </h1>
+      <?php if ( $title ) : ?>
+        <h1 class="heading padding-left-right">
+          <?php echo $title; ?>
+        </h1>
+      <?php endif; ?>
+
     </section>
 
   </main>

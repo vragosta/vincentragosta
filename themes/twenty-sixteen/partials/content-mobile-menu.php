@@ -1,3 +1,5 @@
+<?php // TODO ?>
+
 <section id="mobile-menu" class="not-visible">
 	<div class="close-container">
 		<button type="button" class="close-menu">
@@ -5,14 +7,6 @@
 		</button>
 	</div>
 	<div>
-		<div class="menu">
-			<a href="<?php echo home_url(); ?>">Home</a>
-			<a href="">Code Shop</a>
-			<a href="<?php echo home_url( '/portfolio/' ); ?>">Portfolio</a>
-			<a href="">About</a>
-			<a href="">Resume</a>
-			<a href="">Blog</a>
-			<a href="">Contact</a>
-		</div>
+		<?php get_template_part( 'partials/section', 'menu' ); ?>
 	</div>
 </section>

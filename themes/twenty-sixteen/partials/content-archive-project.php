@@ -1,19 +1,38 @@
 <?php
-/**
- * @package VincentRagosta 2016
- * @since   0.1.0
- */
 
-$title = ( get_post_meta( $post->ID, 'shorthand_title', true ) ) ? get_post_meta( $post->ID, 'shorthand_title', true ) : $post->post_title;
-$image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post->ID ); ?>
+// TODO
 
-<div class="grid-item col-xs-12 col-sm-4">
-	<div class="featured-image aspect-ratio-1x1">
-		<div class="overlay col-flex-center not-visible">
-			<span class="sub-title padding-left-right">Wordpress Site</span>
-			<span class="title padding-left-right"><?php echo esc_html( $title ); ?></span>
-			<a href="<?php echo get_the_permalink( $post->ID ); ?>">View <?php echo esc_html( $post->post_type ); ?></a>
+// Create a count variable.
+$count = 0;
+
+// Get the page variable if one is set.
+$paged = get_query_var( 'paged' );
+
+// Create the arguements for the query.
+$args = array(
+	'post_type' => 'project',
+	'paged'     => $paged
+);
+
+// Initialize the query.
+$projects = new WP_Query( $args );
+
+if ( $projects->have_posts() ) : ?>
+	<section class="sidebar">
+		<h2>Wordpress Projects</h2>
+		<div class="full-width row-flex-center grid-container">
+			<?php while ( $projects->have_posts() ) : $projects->the_post(); ?>
+				<?php if ( ++$count % 4 === 0 ) : ?>
+					</div>
+					<div class="full-width row-flex-center grid-container">
+				<?php endif; ?>
+				<?php get_template_part( 'partials/content', 'archive-project-item' ); ?>
+			<?php endwhile; ?>
+			<?php wp_reset_postdata(); ?>
 		</div>
-		<div class="post-type normalize-image" style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
-	</div>
+	</section>
+<?php endif; ?>
+
+<div id="pagination" class="full-width row-flex-center">
+	<?php vincentragosta_com\Twenty_Sixteen\Helpers\pagination( $projects ); ?>
 </div>
