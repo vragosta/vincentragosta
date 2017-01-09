@@ -242,9 +242,9 @@ function sidebars() {
 		'after_title'   => '</h2>',
 	);
 
-	$cta_single_a = array(
-		'name'          => __( 'Call To Action A ( Single )', 'theme_text_domain' ),
-		'id'            => 'cta-single-a',
+	$cta_single = array(
+		'name'          => __( 'Call To Action ( Single )', 'theme_text_domain' ),
+		'id'            => 'cta-single',
 		'description'   => 'Call To Action sidebar that displays below header on single template.',
 		'class'         => '',
 		'before_widget' => '',
@@ -270,7 +270,7 @@ function sidebars() {
 	register_sidebar( $cta_front_page_d );
 	register_sidebar( $cta_front_page_e );
 	register_sidebar( $cta_front_page_f );
-	register_sidebar( $cta_single_a );
+	register_sidebar( $cta_single );
 	register_sidebar( $pre_footer );
 }
 
