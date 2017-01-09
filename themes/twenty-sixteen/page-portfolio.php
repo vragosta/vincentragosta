@@ -7,15 +7,12 @@
 get_header(); ?>
 
 <main id="portfolio" class="archive project">
-	<!-- <section class="sidebar cta a col-flex-center">
-		<?php echo $post->post_content; ?>
-	</section> -->
 
 	<!-- TODO -->
 	<?php get_template_part( 'partials/aside', 'excerpt' ); ?>
 
 	<!-- TODO -->
-	<?php get_template_part( 'partials/content', 'archive-project' ); ?>
+	<?php get_template_part( 'partials/section', 'archive-project' ); ?>
 
 </main>
 

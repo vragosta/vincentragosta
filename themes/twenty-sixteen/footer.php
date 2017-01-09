@@ -1,4 +1,8 @@
-	<?php get_template_part( 'partials/content', 'mobile-menu' ); ?>
+<?php
+
+// TODO
+
+get_template_part( 'partials/section', 'mobile-menu' ); ?>
 
 	<footer id="footer" class="col-flex-center">
 

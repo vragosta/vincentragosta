@@ -26,7 +26,7 @@ if ( $projects->have_posts() ) : ?>
 					</div>
 					<div class="full-width row-flex-center grid-container">
 				<?php endif; ?>
-				<?php get_template_part( 'partials/content', 'archive-project-item' ); ?>
+				<?php get_template_part( 'partials/div', 'archive-grid-item' ); ?>
 			<?php endwhile; ?>
 			<?php wp_reset_postdata(); ?>
 		</div>
