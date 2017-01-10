@@ -6,8 +6,9 @@
  * @since   0.1.0
  * @uses    is_active_sidebar(), dynamic_sidebar()
  */
+?>
 
-if ( is_active_sidebar( 'cta-front-page-a' ) ) : ?>
+<?php if ( is_active_sidebar( 'cta-front-page-a' ) ) : ?>
 	<aside class="sidebar cta a col-flex-center">
 		<?php dynamic_sidebar( 'cta-front-page-a' ); ?>
 	</aside>

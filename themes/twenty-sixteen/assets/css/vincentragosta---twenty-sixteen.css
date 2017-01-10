@@ -234,12 +234,17 @@ a:active:focus {
 	margin: .2rem;
 }
 
-.sub-header {
+.sub-header,
+.taxonomy-header {
 	color: #fff;
 	font-style: italic;
 	letter-spacing: 1px;
 	margin: 0;
 	text-shadow: #080808 0 0 4px;
+}
+
+.taxonomy-header {
+	font-size: 1.6rem;
 }
 
 /*.sub-title {
@@ -248,7 +253,6 @@ a:active:focus {
 	letter-spacing: 1px;
 	text-shadow: #080808 0 0 4px;
 }*/
-
 
 .heading {
 	margin: 0;
@@ -679,6 +683,16 @@ a:active:focus {
 		width: 100%;
 		height: 100%;
 	}
+}
+
+.technology {
+	width: 100%;
+}
+
+.technology pre {
+	border: none;
+	margin: 0;
+	text-align: center;
 }
 
 /**

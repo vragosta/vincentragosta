@@ -4,7 +4,7 @@
  *
  * @package VincentRagosta 2016
  * @since   0.1.0
- * @uses    previous_post_link(), net_post_link()
+ * @uses    previous_post_link(), next_post_link()
  */
 ?>
 

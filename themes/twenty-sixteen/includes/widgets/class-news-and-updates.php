@@ -137,7 +137,7 @@ class News_And_Updates_Widget extends WP_Widget {
 
 								<!-- Sub Header -->
 								<?php if ( $post->post_type !== 'post' ) : ?>
-									<?php get_template_part( 'partials/aside', 'sub-header' ); ?>
+									<?php get_template_part( 'partials/aside', 'taxonomy' ); ?>
 								<?php else : ?>
 									<?php get_template_part( 'partials/aside', 'date' ); ?>
 								<?php endif; ?>

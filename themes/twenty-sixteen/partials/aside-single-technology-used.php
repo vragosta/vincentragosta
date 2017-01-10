@@ -7,11 +7,11 @@
  */
 
 // Get 'technology' from the current post.
-$technology = get_post_meta( $post->ID, 'technology', true );
+$technology = get_post_meta( $post->ID, 'technology', true ); ?>
 
-if ( $technology ) : ?>
-	<aside class="sidebar technology" style="width: 100%;">
+<?php if ( $technology ) : ?>
+	<aside class="sidebar technology">
 		<h2>Technology Used.</h2>
-		<pre style="border: none; margin: 0; text-align: center;"><?php echo esc_html( $technology ); ?></pre>
+		<pre><?php echo esc_html( $technology ); ?></pre>
 	</aside>
 <?php endif; ?>

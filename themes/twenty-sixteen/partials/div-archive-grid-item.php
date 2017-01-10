@@ -18,11 +18,11 @@ $image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post-
 		<div class="overlay col-flex-center not-visible">
 
 			<!-- Sub Heading -->
-			<?php get_template_part( 'partials/aside', 'sub-header' ); ?>
+			<?php get_template_part( 'partials/aside', 'taxonomy' ); ?>
 
 			<!-- Header -->
 			<?php get_template_part( 'partials/aside', 'title' ); ?>
-			
+
 			<a href="<?php echo get_the_permalink( $post->ID ); ?>">View <?php echo esc_html( $post->post_type ); ?></a>
 		</div>
 		<div class="post-type normalize-image" style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>

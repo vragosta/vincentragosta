@@ -4,7 +4,7 @@
  *
  * @package VincentRagosta 2016
  * @since   0.1.0
- * @uses    get_query_var(), get_template_part(), wp_reset_postdata(), pagination()
+ * @uses    get_query_var(), get_template_part(), wp_reset_postdata()
  */
 
 // Create a count variable.
@@ -20,13 +20,13 @@ $args = array(
 );
 
 // Initialize the query.
-$projects = new WP_Query( $args );
+$custom = new WP_Query( $args ); ?>
 
-if ( $projects->have_posts() ) : ?>
+<?php if ( $custom->have_posts() ) : ?>
 	<section class="sidebar">
 		<h2>Wordpress Projects</h2>
 		<div class="full-width row-flex-center grid-container">
-			<?php while ( $projects->have_posts() ) : $projects->the_post(); ?>
+			<?php while ( $custom->have_posts() ) : $custom->the_post(); ?>
 
 				<!-- Count mod 4 -->
 				<?php if ( ++$count % 4 === 0 ) : ?>
@@ -43,7 +43,5 @@ if ( $projects->have_posts() ) : ?>
 	</section>
 <?php endif; ?>
 
-<!-- TODO -->
-<div id="pagination" class="full-width row-flex-center">
-	<?php vincentragosta_com\Twenty_Sixteen\Helpers\pagination( $projects ); ?>
-</div>
+<!-- Archive Pagination -->
+<?php include( locate_template( 'partials/aside-archive-pagination', false, false ) ); ?>

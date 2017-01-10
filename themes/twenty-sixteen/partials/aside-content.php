@@ -5,8 +5,9 @@
  * @package VincentRagosta 2016
  * @since   0.1.0
  */
+?>
 
-if ( $post->post_content ) : ?>
+<?php if ( $post->post_content ) : ?>
 	<aside class="sidebar content">
 		<?php echo $post->post_content; ?>
 	</aside>
