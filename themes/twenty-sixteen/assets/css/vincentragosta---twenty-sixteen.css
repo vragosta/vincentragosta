@@ -234,9 +234,10 @@ a:active:focus {
 	margin: .2rem;
 }
 
-.sub-heading {
+.sub-header {
 	color: #fff;
 	font-style: italic;
+	letter-spacing: 1px;
 	margin: 0;
 	text-shadow: #080808 0 0 4px;
 }
@@ -252,7 +253,7 @@ a:active:focus {
 }
 
 @media only screen and ( min-width: 992px ) {
-	.sub-heading {
+	.sub-header {
 		font-size: 2.5rem;
 	}
 
@@ -262,7 +263,7 @@ a:active:focus {
 }
 
 @media only screen and ( min-width: 768px ) and ( max-width: 992px ) {
-	.sub-heading {
+	.sub-header {
 		font-size: 2rem;
 	}
 
@@ -272,7 +273,7 @@ a:active:focus {
 }
 
 @media only screen and ( max-width: 768px ) {
-	.sub-heading {
+	.sub-header {
 		font-size: 1.8rem;
 	}
 
@@ -572,13 +573,6 @@ a:active:focus {
 		visibility: visible;
 		opacity: 1;
 	}
-}
-
-.overlay .sub-title {
-	font-size: 1.2rem;
-	font-style: italic;
-	letter-spacing: 1px;
-	text-shadow: #080808 0 0 4px;
 }
 
 .overlay .title {

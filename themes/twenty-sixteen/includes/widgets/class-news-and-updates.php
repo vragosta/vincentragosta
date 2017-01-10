@@ -124,13 +124,23 @@ class News_And_Updates_Widget extends WP_Widget {
 		<div id="news-and-updates" class="custom-widget full-width">
 			<?php if ( $query->have_posts() ) : ?>
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+
+					<!-- Get the title from the current post. -->
 					<?php $title = ( get_post_meta( $post->ID, 'shorthand_title', true ) ) ? get_post_meta( $post->ID, 'shorthand_title', true ) : $post->post_title; ?>
+
+					<!-- Get the image from the current post. -->
 					<?php $image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post->ID ); ?>
+					
 					<div class="col-xs-12 <?php echo esc_attr( $class ); ?>">
 						<div class="featured-image aspect-ratio-1x1">
 							<div class="overlay col-flex-center not-visible">
-								<span class="sub-title padding-left-right"><?php echo ( $instance['post_type'] === 'project' ) ? 'Wordpress Site' : get_the_date(); ?></span>
-								<span class="title padding-left-right"><?php echo esc_html( $title ); ?></span>
+
+								<!-- Sub Header -->
+								<?php get_template_part( 'partials/aside', 'sub-header' ); ?>
+
+								<!-- Header -->
+								<?php get_template_part( 'partials/aside', 'title' ); ?>
+
 								<a href="<?php echo get_the_permalink( $post->ID ); ?>">View <?php echo esc_html( $instance['post_type'] ); ?></a>
 							</div>
 							<div class="post-type normalize-image" style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>

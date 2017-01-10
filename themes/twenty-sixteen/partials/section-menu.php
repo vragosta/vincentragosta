@@ -1,4 +1,12 @@
-<?php // TODO ?>
+<?php
+/**
+ * Template for the menu.
+ *
+ * @package VincentRagosta 2016
+ * @since   0.1.0
+ * @uses    home_url()
+ */
+?>
 
 <section class="menu">
 	<a href="<?php echo home_url(); ?>">Home</a>

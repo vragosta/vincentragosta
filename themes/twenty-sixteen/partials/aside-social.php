@@ -5,6 +5,7 @@
  *
  * @package VincentRagosta.com 2016
  * @since   0.1.0
+ * @uses    esc_url(), site_url()
  */
 ?>
 

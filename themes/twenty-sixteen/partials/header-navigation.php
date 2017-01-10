@@ -3,11 +3,17 @@
  * Main header navigation for both desktop and mobile designs.
  *
  * @package VincentRagosta.com 2016
- * @since 0.1.0
+ * @since   0.1.0
+ * @uses    vr_get_featured_image(),esc_html(), get_the_title(), get_post_meta(), is_front_page(), get_template_part()
  */
 
-$image      = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), VINCENTRAGOSTA_COM_IMAGE_SIZE )[0];
-$title      = esc_html( get_the_title() );
+// Get the featured image of the current post.
+$image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post->ID );
+
+// Get the title of the current post.
+$title = esc_html( get_the_title() );
+
+// Get the 'sub_header' of the current post.
 $sub_header = get_post_meta( $post->ID, 'sub_header', true ); ?>
 
 <header id="header" <?php echo ( is_front_page() ) ? 'class="aspect-ratio-10x4"' : ''; ?>>
@@ -30,18 +36,10 @@ $sub_header = get_post_meta( $post->ID, 'sub_header', true ); ?>
     <section class="heading-container col-flex-center">
 
       <!-- Sub Heading -->
-      <?php if ( $sub_header ) : ?>
-        <span class="sub-heading padding-left-right">
-          <?php echo $sub_header; ?>
-        </span>
-      <?php endif; ?>
+      <?php get_template_part( 'partials/aside', 'sub-header' ); ?>
 
       <!-- Heading -->
-      <?php if ( $title ) : ?>
-        <h1 class="heading padding-left-right">
-          <?php echo $title; ?>
-        </h1>
-      <?php endif; ?>
+      <?php get_template_part( 'partials/aside', 'title' ); ?>
 
     </section>
 

@@ -1,32 +1,32 @@
 <?php
 
 /**
- * Add 'Sub Header' meta box to 'page' post type.
+ * Create configuration metabox for 'post' custom post type.
  *
- * @since 0.1.0
- * @uses  add_meta_box()
+ * @since  0.1.0
+ * @uses   add_meta_box()
  * @return void
  */
-function vincentragosta_page_metaboxes() {
+function vincentragosta_post_metaboxes() {
 	add_meta_box(
 		'configuration',
 		__( 'Configuration', 'vincentragosta' ),
-		'vincentragosta_page_callback',
-		'page'
+		'vincentragosta_post_callback',
+		'post'
 	);
 }
-add_action( 'add_meta_boxes', 'vincentragosta_page_metaboxes' );
+add_action( 'add_meta_boxes', 'vincentragosta_post_metaboxes' );
 
 /**
  * The callback for add_meta_box(), contains the HTML necessary to create the metaboxes.
  *
  * @since  0.1.0
- * @uses   wp_nonce_field(), wp_editor()
+ * @uses   wp_nonce_field(), get_post_meta(), esc_html()
  * @return void
  */
-function vincentragosta_page_callback( $post ) {
+function vincentragosta_post_callback( $post ) {
 	// Add a nonce field so we can check for it later.
-	wp_nonce_field( 'vincentragosta_page_save_data', 'vincentragosta_nonce' );
+	wp_nonce_field( 'vincentragosta_post_save_data', 'vincentragosta_nonce' );
 
 	/**
 	 * Use get_post_meta() to retrieve an existing value
@@ -49,14 +49,11 @@ function vincentragosta_page_callback( $post ) {
 /**
  * Saves and sanitizes the POST data.
  *
- * @since 0.1.0
- *
- * @uses wp_verify_nonce()
- * @uses apply_filters()
- *
+ * @since  0.1.0
+ * @uses   isset(), wp_verify_nonce(), apply_filters(), defined(), current_user_can(), sanitize_text_field(), update_post_meta()
  * @return void
  */
-function vincentragosta_page_save_data( $post_id ) {
+function vincentragosta_post_save_data( $post_id ) {
 	/**
 	 * We need to verify this came from our screen and with proper authorization,
 	 * because the save_post action can be triggered at other times.
@@ -67,7 +64,7 @@ function vincentragosta_page_save_data( $post_id ) {
 	}
 
 	// Verify that the nonce is valid.
-	if ( ! wp_verify_nonce( $_POST['vincentragosta_nonce'], 'vincentragosta_page_save_data' ) ) {
+	if ( ! wp_verify_nonce( $_POST['vincentragosta_nonce'], 'vincentragosta_post_save_data' ) ) {
 		return;
 	}
 
@@ -77,8 +74,8 @@ function vincentragosta_page_save_data( $post_id ) {
 	}
 
 	// Check the user's permissions.
-	if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
-		if ( ! current_user_can( 'edit_page', $post_id ) ) {
+	if ( isset( $_POST['post_type'] ) && 'post' == $_POST['post_type'] ) {
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
 			return;
 		}
 	}
@@ -89,6 +86,6 @@ function vincentragosta_page_save_data( $post_id ) {
 	// Update the meta field in the database.
 	update_post_meta( $post_id, 'sub_header', $sub_header );
 }
-add_action( 'save_post', 'vincentragosta_page_save_data' );
+add_action( 'save_post', 'vincentragosta_post_save_data' );
 
 ?>

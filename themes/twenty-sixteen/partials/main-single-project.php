@@ -1,4 +1,12 @@
-<?php // TODO ?>
+<?php
+/**
+ * Single Template for project custom post type.
+ *
+ * @package VincentRagosta 2016
+ * @since   0.1.0
+ * @uses    get_template_part()
+ */
+?>
 
 <main id="single-project" class="col-flex-center">
 

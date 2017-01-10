@@ -6,6 +6,7 @@
  * @since   0.1.0
  */
 
+// Get 'technology' from the current post.
 $technology = get_post_meta( $post->ID, 'technology', true );
 
 if ( $technology ) : ?>
