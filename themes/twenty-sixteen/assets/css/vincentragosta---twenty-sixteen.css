@@ -242,6 +242,14 @@ a:active:focus {
 	text-shadow: #080808 0 0 4px;
 }
 
+/*.sub-title {
+	font-size: 1.2rem;
+	font-style: italic;
+	letter-spacing: 1px;
+	text-shadow: #080808 0 0 4px;
+}*/
+
+
 .heading {
 	margin: 0;
 	color: #fff;
@@ -579,6 +587,7 @@ a:active:focus {
 	font-size: 2.5rem;
 	text-align: center;
 	text-shadow: #080808 0 0 4px;
+	color: #fff;
 }
 
 .overlay span {
@@ -681,6 +690,10 @@ a:active:focus {
 	bottom: 10px;
 	left: 10px;
 	right: 10px;
+}
+
+#news-and-updates .sub-header {
+	font-size: 1.2rem;
 }
 
 #news-and-updates > div:last-child {

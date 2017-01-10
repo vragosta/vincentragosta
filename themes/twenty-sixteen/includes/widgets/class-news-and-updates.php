@@ -130,13 +130,17 @@ class News_And_Updates_Widget extends WP_Widget {
 
 					<!-- Get the image from the current post. -->
 					<?php $image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post->ID ); ?>
-					
+
 					<div class="col-xs-12 <?php echo esc_attr( $class ); ?>">
 						<div class="featured-image aspect-ratio-1x1">
 							<div class="overlay col-flex-center not-visible">
 
 								<!-- Sub Header -->
-								<?php get_template_part( 'partials/aside', 'sub-header' ); ?>
+								<?php if ( $post->post_type !== 'post' ) : ?>
+									<?php get_template_part( 'partials/aside', 'sub-header' ); ?>
+								<?php else : ?>
+									<?php get_template_part( 'partials/aside', 'date' ); ?>
+								<?php endif; ?>
 
 								<!-- Header -->
 								<?php get_template_part( 'partials/aside', 'title' ); ?>
