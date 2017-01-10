@@ -1,6 +1,6 @@
 <?php
 /**
- * TODO
+ * Template for pagination on archive template.
  *
  * @package VincentRagosta 2016
  * @since   0.1.0

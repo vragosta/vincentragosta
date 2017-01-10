@@ -44,4 +44,4 @@ $custom = new WP_Query( $args ); ?>
 <?php endif; ?>
 
 <!-- Archive Pagination -->
-<?php include( locate_template( 'partials/aside-archive-pagination', false, false ) ); ?>
+<?php include( locate_template( 'partials/aside-archive-pagination.php', false, false ) ); ?>

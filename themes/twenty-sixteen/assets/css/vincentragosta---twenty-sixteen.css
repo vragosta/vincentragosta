@@ -244,15 +244,8 @@ a:active:focus {
 }
 
 .taxonomy-header {
-	font-size: 1.6rem;
-}
-
-/*.sub-title {
 	font-size: 1.2rem;
-	font-style: italic;
-	letter-spacing: 1px;
-	text-shadow: #080808 0 0 4px;
-}*/
+}
 
 .heading {
 	margin: 0;
@@ -592,6 +585,7 @@ a:active:focus {
 	text-align: center;
 	text-shadow: #080808 0 0 4px;
 	color: #fff;
+	margin: 0;
 }
 
 .overlay span {
@@ -641,7 +635,7 @@ a:active:focus {
  */
 /*--- Archive ---*/
 #pagination {
-	margin: 1.5rem 0 3rem;
+	margin: 0 0 6rem;
 }
 
 .page-numbers {
