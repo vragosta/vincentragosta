@@ -290,7 +290,7 @@ function sidebars() {
  */
 function widgets() {
 	register_widget( 'News_And_Updates_Widget' );
-	register_widget( 'Featured_Post_Widget' );
+	register_widget( 'Featured_Page_Widget' );
 	register_widget( 'Notification_Widget' );
 	register_widget( 'Text_Column_Widget' );
 }

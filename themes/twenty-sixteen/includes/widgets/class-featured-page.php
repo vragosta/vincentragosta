@@ -16,15 +16,15 @@ defined( 'ABSPATH' ) || exit;
  * @package Vincent Raogsta - Twenty Sixteen
  * @since   0.1.0
  */
-class Featured_Post_Widget extends WP_Widget {
+class Featured_Page_Widget extends WP_Widget {
 	/**
 	 * Register widget with WordPress.
 	 */
 	function __construct() {
 		parent::__construct(
-			'featured_post',
-			__( 'Featured Post', 'vincentragosta' ),
-			array( 'description' => __( 'A custom widget for a featured post.', 'vincentragosta' ), )
+			'featured_page',
+			__( 'Featured Page', 'vincentragosta' ),
+			array( 'description' => __( 'A custom widget for a featured page.', 'vincentragosta' ), )
 		);
 	}
 
@@ -37,6 +37,7 @@ class Featured_Post_Widget extends WP_Widget {
 	public function form( $instance ) {
 		$id          = ( ! empty( $instance['id'] ) ) ? $instance['id'] : '';
 		$button_text = ( ! empty( $instance['button_text'] ) ) ? $instance['button_text'] : ''; ?>
+
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>"><?php echo __( 'ID:', 'vincentragosta' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'id' ) ); ?>" type="text" value="<?php echo esc_attr( $id ); ?>">
@@ -81,7 +82,7 @@ class Featured_Post_Widget extends WP_Widget {
 
 		// Assign the default arguments to the query.
 		$args = array(
-			'post_type'      => array( 'post' ),
+			'post_type'      => 'page',
 			'posts_per_page' => 1
 		);
 
@@ -91,7 +92,7 @@ class Featured_Post_Widget extends WP_Widget {
 		// Initialize query.
 		$query = new WP_Query( $args ); ?>
 
-		<div id="featured-post-widget" class="custom-widget full-width">
+		<div id="featured-page-widget" class="custom-widget full-width">
 			<?php if ( $query->have_posts() ) : ?>
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 					<?php $image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post->ID ); ?>

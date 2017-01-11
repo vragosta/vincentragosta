@@ -7,6 +7,6 @@
  */
 ?>
 
-<aside class="taxonomy-header padding-left-right">
+<aside class="sub-header taxonomy padding-left-right">
 	Wordpress Site
 </aside>

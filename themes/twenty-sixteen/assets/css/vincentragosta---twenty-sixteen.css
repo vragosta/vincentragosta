@@ -234,17 +234,17 @@ a:active:focus {
 	margin: .2rem;
 }
 
-.sub-header,
-.taxonomy-header {
+.sub-header {
 	color: #fff;
 	font-style: italic;
 	letter-spacing: 1px;
 	margin: 0;
+	font-weight: 100;
 	text-shadow: #080808 0 0 4px;
 }
 
-.taxonomy-header {
-	font-size: 1.2rem;
+#news-and-updates .sub-header.date {
+	font-size: 1.8rem;
 }
 
 .heading {
@@ -652,6 +652,11 @@ a:active:focus {
 	color: #fff;
 }
 
+/*--- Archive ---*/
+#portfolio .sub-header {
+	font-size: 1.5rem;
+}
+
 /*--- Single ---*/
 #pagination-controls {
 	display: flex;
@@ -701,7 +706,7 @@ a:active:focus {
 }
 
 #news-and-updates .sub-header {
-	font-size: 1.2rem;
+	font-size: 1.5rem;
 }
 
 #news-and-updates > div:last-child {
@@ -709,18 +714,18 @@ a:active:focus {
 }
 
 /*--- Featured Post Widget ---*/
-#featured-post-widget .featured-image {
+#featured-page-widget .featured-image {
 	min-height: 600px;
 }
 
-#featured-post-widget a {
+#featured-page-widget a {
 	margin-top: 2rem;
 	padding: 1.5rem 3rem;
 	font-size: 1.5rem;
 }
 
 @media only screen and ( max-width: 768px ) {
-	#featured-post-widget a {
+	#featured-page-widget a {
 		font-size: 1.5rem;
 	}
 }
