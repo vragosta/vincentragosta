@@ -26,11 +26,7 @@ $sub_header = get_post_meta( $post->ID, 'sub_header', true ); ?>
       </section>
 
       <!-- Drop down toggle -->
-      <button type="button" class="drop-down">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+      <i class="ion ion-navicon drop-down"></i>
     </nav>
 
     <section class="heading-container col-flex-center">
