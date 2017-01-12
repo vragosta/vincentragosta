@@ -35,7 +35,7 @@ $sub_header = get_post_meta( $post->ID, 'sub_header', true ); ?>
       <?php get_template_part( 'partials/aside', 'sub-header' ); ?>
 
       <!-- Heading -->
-      <?php get_template_part( 'partials/aside', 'title' ); ?>
+      <?php get_template_part( 'partials/aside', 'header' ); ?>
 
     </section>
 
