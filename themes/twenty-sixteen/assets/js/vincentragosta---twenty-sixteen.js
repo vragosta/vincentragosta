@@ -12,7 +12,7 @@
 		 * toggle mobile menu with standard site menu.
 		 *
 		 * @since  0.1.0
-		 * @uses   removeClass, addClass
+		 * @uses   removeClass(), addClass()
 		 * @return void
 		 */
 		setupMenuToggle : function() {

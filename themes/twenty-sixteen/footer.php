@@ -1,32 +1,34 @@
-	<footer id="footer" class="flex-center">
+<?php
+/**
+ * Template for displaying the footer.
+ *
+ * @package VincentRagosta 2016
+ * @since   0.1.0
+ * @uses    get_template_part()
+ */
 
-		<section class="menu">
-			<a href="">Home</a>
-			<a href="">Code Shop</a>
-			<a href="">Portfolio</a>
-			<a href="">About</a>
-			<a href="">Resume</a>
-			<a href="">Blog</a>
-			<a href="">Contact</a>
-		</section>
+	get_template_part( 'partials/section', 'mobile-menu' ); ?>
 
-		<section class="flex-center">
-			<div id="contact-info" class="padding-left-right">
-				<h3><span>For more information, call today at </span><a href="">(917) 547-8578</a></h3>
-			</div>
+	<footer id="footer" class="col-flex-center">
 
-			<div id="copyright" class="padding-left-right">
-				<p>&copy <?php echo date( 'Y' ); ?> Vincent Ragosta. All rights reserved. Brooklyn Web Design and Wordpress Expert</p>
-			</div>
+		<?php get_template_part( 'partials/section', 'menu' ); ?>
 
-			<div id="docs" class="padding-left-right">
-				<a href="">Terms of Service</a>
-				<a href="">Return Policy</a>
-				<a href="">Privacy Policy</a>
-			</div>
+		<section class="col-flex-center">
 
+			<!-- Contact Information -->
+			<?php get_template_part( 'partials/aside', 'footer-contact' ); ?>
+
+			<!-- Copyright -->
+			<?php get_template_part( 'partials/aside', 'footer-copyright' ); ?>
+
+			<!-- Important Documents -->
+			<?php get_template_part( 'partials/aside', 'footer-docs' ); ?>
+
+			<!-- Social Icons -->
 			<?php get_template_part( 'partials/aside', 'social' ); ?>
+
 		</section>
+
 	</footer>
 
 	</body>
