@@ -247,7 +247,7 @@ hr {
 	font-size: 1.8rem;
 }
 
-.heading {
+.header {
 	margin: 0;
 	color: #fff;
 	text-transform: uppercase;
@@ -262,7 +262,7 @@ hr {
 		font-size: 2.5rem;
 	}
 
-	.heading {
+	.header {
 		font-size: 7.5rem;
 	}
 }
@@ -272,7 +272,7 @@ hr {
 		font-size: 2rem;
 	}
 
-	.heading {
+	.header {
 		font-size: 6rem;
 	}
 }
@@ -282,7 +282,7 @@ hr {
 		font-size: 1.8rem;
 	}
 
-	.heading {
+	.header {
 		font-size: 4rem;
 	}
 }
@@ -639,7 +639,7 @@ hr {
  */
 /*--- Archive ---*/
 #pagination {
-	margin: 5rem 0 6rem;
+	margin: 0 0 6rem;
 }
 
 .page-numbers {

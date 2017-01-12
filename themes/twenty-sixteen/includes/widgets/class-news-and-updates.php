@@ -2,7 +2,7 @@
 /**
  * Builds 'News & Updates' Widget.
  *
- * @package Vincent Raogsta - Twenty Sixteen
+ * @package Vincent Ragosta - Twenty Sixteen
  * @since   0.1.0
  */
 
@@ -110,7 +110,7 @@ class News_And_Updates_Widget extends WP_Widget {
 		$post_type = ( $instance['post_type'] ) ? $instance['post_type'] : POST_TYPE;
 
 		// Set bootstrap grid, divide 12 ( max bootstrap col size ) by the value of $bootstrap_grid_col.
-		$class = 'col-sm-' . ( BOOTSTRAP_GRID_COL_MAX / $bootstrap_grid_col );
+		$bootstrap_class = 'col-sm-' . ( BOOTSTRAP_GRID_COL_MAX / $bootstrap_grid_col );
 
 		// Create arguments array for query.
 		$args                   = array();
@@ -131,24 +131,11 @@ class News_And_Updates_Widget extends WP_Widget {
 					<!-- Get the image from the current post. -->
 					<?php $image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post->ID ); ?>
 
-					<div class="col-xs-12 <?php echo esc_attr( $class ); ?>">
-						<div class="featured-image aspect-ratio-1x1">
-							<div class="overlay col-flex-center not-visible">
+					<div class="col-xs-12 <?php echo esc_attr( $bootstrap_class ); ?>">
 
-								<!-- Sub Header -->
-								<?php if ( $post->post_type !== 'post' ) : ?>
-									<?php get_template_part( 'partials/aside', 'taxonomy' ); ?>
-								<?php else : ?>
-									<?php get_template_part( 'partials/aside', 'date' ); ?>
-								<?php endif; ?>
+						<!-- Featured image overlay -->
+						<?php include( locate_template( 'partials/content-featured-image-overlay.php', false, false ) ); ?>
 
-								<!-- Header -->
-								<?php get_template_part( 'partials/aside', 'title' ); ?>
-
-								<a href="<?php echo get_the_permalink( $post->ID ); ?>">View <?php echo esc_html( $instance['post_type'] ); ?></a>
-							</div>
-							<div class="post-type normalize-image" style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
-						</div>
 					</div>
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>

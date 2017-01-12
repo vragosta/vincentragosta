@@ -11,7 +11,7 @@
 $title = ( get_post_meta( $post->ID, 'shorthand_title', true ) ) ? get_post_meta( $post->ID, 'shorthand_title', true ) : $post->post_title ?>
 
 <?php if ( $title ) : ?>
-	<h1 class="<?php echo ( $post->post_type === 'page' || is_single() ) ? 'heading' : 'title'; ?> padding-left-right">
+	<h1 class="<?php echo ( $post->post_type === 'page' || is_single() ) ? 'header' : 'title'; ?> padding-left-right">
 		<?php echo esc_html( $title ); ?>
 	</h1>
 <?php endif; ?>

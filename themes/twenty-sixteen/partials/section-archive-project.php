@@ -35,7 +35,7 @@ $custom = new WP_Query( $args ); ?>
 				<?php endif; ?>
 
 				<!-- Grid Item -->
-				<?php get_template_part( 'partials/div', 'archive-grid-item' ); ?>
+				<?php get_template_part( 'partials/content', 'archive-grid-item' ); ?>
 
 			<?php endwhile; ?>
 			<?php wp_reset_postdata(); ?>
