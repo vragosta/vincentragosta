@@ -10,6 +10,8 @@
 
 <main id="single-project" class="col-flex-center">
 
+	<hr />
+
 	<!-- Optional Widget Area -->
 	<?php get_template_part( 'partials/aside', 'single-cta' ); ?>
 
@@ -19,7 +21,11 @@
 	<!-- Optional Technology Used Area -->
 	<?php get_template_part( 'partials/aside', 'single-technology-used' ); ?>
 
+	<hr />
+
 	<!-- Optional Content Area -->
 	<?php get_template_part( 'partials/aside', 'content' ); ?>
+
+	<hr />
 
 </main>

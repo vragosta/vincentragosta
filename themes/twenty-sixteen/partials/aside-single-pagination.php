@@ -8,7 +8,7 @@
  */
 ?>
 
-<aside id="pagination-controls">
+<aside id="pagination-controls" class="aside">
 	<div class="col-xs-4 col-flex-start">
 		<?php previous_post_link( '%link', '<i class="icon ion-ios-arrow-left"></i>' ); ?>
 	</div>

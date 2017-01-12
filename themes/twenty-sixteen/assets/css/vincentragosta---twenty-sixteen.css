@@ -45,6 +45,14 @@ a:active:focus {
 	font-weight: 100;
 }
 
+hr {
+	border-width: 0;
+	color: rgba(26,26,26,.15);
+	background-color: rgba(26,26,26,.15);
+	height: 1px;
+	width: 100%;
+}
+
 /**
  *===== Helper CSS =====*
  */
@@ -402,6 +410,10 @@ a:active:focus {
 	padding: 6rem 4rem;
 }
 
+#single-project .aside + .aside {
+	padding: 2rem 4rem 6rem;
+}
+
 @media only screen and ( max-width: 768px ) {
 	.aside {
 		padding: 4rem;
@@ -627,7 +639,7 @@ a:active:focus {
  */
 /*--- Archive ---*/
 #pagination {
-	margin: 0 0 6rem;
+	margin: 5rem 0 6rem;
 }
 
 .page-numbers {
@@ -654,13 +666,19 @@ a:active:focus {
 	display: flex;
 	max-width: 1000px;
 	margin: 0 auto;
-	padding: 6rem 4rem;
 	width: 100%;
 }
 
 #pagination-controls a {
 	font-size: 4rem;
 	color: rgba( 104, 104, 104, 0.9 );
+	padding: 0;
+	border: none;
+	transition: none;
+}
+
+#pagination-controls a:hover {
+	background: none;
 }
 
 #single-project {
@@ -684,6 +702,8 @@ a:active:focus {
 	border: none;
 	margin: 0;
 	text-align: center;
+	white-space: pre-wrap;
+	word-break: normal;
 }
 
 /**
