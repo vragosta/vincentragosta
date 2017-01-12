@@ -10,7 +10,7 @@
 $technology = get_post_meta( $post->ID, 'technology', true ); ?>
 
 <?php if ( $technology ) : ?>
-	<aside class="sidebar technology">
+	<aside class="aside technology">
 		<h2>Technology Used.</h2>
 		<pre><?php echo esc_html( $technology ); ?></pre>
 	</aside>

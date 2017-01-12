@@ -23,7 +23,7 @@ $args = array(
 $custom = new WP_Query( $args ); ?>
 
 <?php if ( $custom->have_posts() ) : ?>
-	<section class="sidebar">
+	<section class="aside">
 		<h2>Wordpress Projects</h2>
 		<div class="full-width row-flex-center grid-container">
 			<?php while ( $custom->have_posts() ) : $custom->the_post(); ?>

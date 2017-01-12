@@ -9,7 +9,7 @@
 ?>
 
 <?php if ( is_active_sidebar( 'cta-front-page-f' ) ) : ?>
-	<aside class="sidebar cta f col-flex-center">
+	<aside class="aside cta f col-flex-center">
 		<?php dynamic_sidebar( 'cta-front-page-f' ); ?>
 	</aside>
 <?php endif; ?>

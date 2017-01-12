@@ -8,7 +8,7 @@
 ?>
 
 <?php if ( $post->post_content ) : ?>
-	<aside class="sidebar content">
+	<aside class="aside content">
 		<?php echo $post->post_content; ?>
 	</aside>
 <?php endif; ?>

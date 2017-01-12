@@ -9,7 +9,7 @@
 ?>
 
 <?php if ( is_active_sidebar( 'pre-footer' ) ) : ?>
-	<section class="sidebar pre-footer">
+	<aside class="aside pre-footer">
 		<?php dynamic_sidebar( 'pre-footer' ); ?>
-	</section>
+	</aside>
 <?php endif; ?>

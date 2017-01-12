@@ -398,12 +398,12 @@ a:active:focus {
 /**
  *===== Sidebars =====*
  */
-.sidebar {
+.aside {
 	padding: 6rem 4rem;
 }
 
 @media only screen and ( max-width: 768px ) {
-	.sidebar {
+	.aside {
 		padding: 4rem;
 	}
 }
@@ -411,7 +411,7 @@ a:active:focus {
 .cta.a,
 .cta.c,
 .cta.f,
-#portfolio .sidebar.excerpt {
+#portfolio .aside.excerpt {
 	background: #edeeef;
 }
 
@@ -426,13 +426,13 @@ a:active:focus {
 }
 
 /*--- Sidebar Titles ---*/
-.sidebar h1,
-.sidebar h2 {
+.aside h1,
+.aside h2 {
 	margin-bottom: 1.2rem;
 }
 
 @media only screen and ( max-width: 768px ) {
-	.sidebar h2 {
+	.aside h2 {
 		font-size: 3rem;
 		margin-bottom: 0.8rem;
 	}
@@ -444,7 +444,7 @@ a:active:focus {
 }
 
 /*--- Sidebar Paragraphs ---*/
-.sidebar p {
+.aside p {
 	line-height: 2;
 	opacity: 0.7;
 	width: 100%;
@@ -453,17 +453,17 @@ a:active:focus {
 	margin: 0;
 }
 
-.sidebar p + p {
+.aside p + p {
 	margin-top: 2rem;
 }
 
 @media only screen and ( max-width: 768px ) {
-	.sidebar p {
+	.aside p {
 		font-size: 1.65rem;
 		line-height: 1.5;
 	}
 
-	.sidebar p + p {
+	.aside p + p {
 		margin-top: 2.5rem;
 	}
 }
@@ -484,7 +484,7 @@ a:active:focus {
 }
 
 /*--- Sidebar Links ---*/
-.sidebar a {
+.aside a {
 	border: 2px solid #686868;
 	background: transparent;
 	color: #686868;
@@ -496,12 +496,12 @@ a:active:focus {
 }
 
 @media only screen and ( max-width: 768px ) {
-	.sidebar a {
+	.aside a {
 		font-size: 1.5rem;
 	}
 }
 
-.sidebar a:hover {
+.aside a:hover {
 	background: #686868;
 	color: #fff;
 }
@@ -519,11 +519,11 @@ a:active:focus {
 /**
  *===== Portfolio/Archive =====*
  */
-.archive .sidebar:nth-child(2) {
+.archive .aside:nth-child(2) {
 	padding: 6rem 4rem 0;
 }
 
-.archive .sidebar p {
+.archive .aside p {
 	max-width: 850px;
 }
 

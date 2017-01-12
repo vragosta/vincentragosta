@@ -9,7 +9,7 @@
 ?>
 
 <?php if ( is_active_sidebar( 'cta-single' ) ) : ?>
-	<section class="sidebar cta">
+	<aside class="aside cta">
 		<?php dynamic_sidebar( 'Call To Action ( Single )' ); ?>
-	</section>
+	</aside>
 <?php endif; ?>
