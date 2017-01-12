@@ -45,6 +45,14 @@ a:active:focus {
 	font-weight: 100;
 }
 
+hr {
+	border-width: 0;
+	color: rgba(26,26,26,.15);
+	background-color: rgba(26,26,26,.15);
+	height: 1px;
+	width: 100%;
+}
+
 /**
  *===== Helper CSS =====*
  */
@@ -52,10 +60,49 @@ a:active:focus {
 	width: 100%;
 }
 
-.flex-center {
+.col-flex-center {
 	height: 100%;
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.col-flex-start {
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.col-flex-end {
+	height: 100%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.row-flex-center {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.row-flex-start {
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.row-flex-end {
+	height: 100%;
+	display: flex;
+	align-items: flex-end;
 	justify-content: center;
 	flex-direction: column;
 }
@@ -152,26 +199,27 @@ a:active:focus {
 	opacity: 1;
 }
 
-#contact {
+#header #contact {
 	display: flex;
 }
 
-#contact {
+#header #contact {
 	padding: 1rem;
 	border: 2px solid #fff;
 	transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
-#contact:hover {
+#header #contact:hover {
 	background: #fff;
 	color: #686868;
 }
 
 .drop-down {
-	display: flex;
-	flex-direction: column;
+	font-size: 4rem;
+	color: #fff;
+	cursor: pointer;
 	position: absolute;
-	top: 50px;
+	top: 43px;
 	right: 40px;
 	visibility: hidden;
 	opacity: 0;
@@ -186,20 +234,17 @@ a:active:focus {
 	}
 }
 
-.icon-bar {
-	background-color: #fff;
-	display: block;
-	width: 22px;
-	height: 2px;
-	border-radius: 1px;
-	margin: .2rem;
-}
-
-.sub-heading {
+.sub-header {
 	color: #fff;
 	font-style: italic;
+	letter-spacing: 1px;
 	margin: 0;
+	font-weight: 100;
 	text-shadow: #080808 0 0 4px;
+}
+
+#news-and-updates .sub-header.date {
+	font-size: 1.8rem;
 }
 
 .heading {
@@ -213,7 +258,7 @@ a:active:focus {
 }
 
 @media only screen and ( min-width: 992px ) {
-	.sub-heading {
+	.sub-header {
 		font-size: 2.5rem;
 	}
 
@@ -223,7 +268,7 @@ a:active:focus {
 }
 
 @media only screen and ( min-width: 768px ) and ( max-width: 992px ) {
-	.sub-heading {
+	.sub-header {
 		font-size: 2rem;
 	}
 
@@ -233,7 +278,7 @@ a:active:focus {
 }
 
 @media only screen and ( max-width: 768px ) {
-	.sub-heading {
+	.sub-header {
 		font-size: 1.8rem;
 	}
 
@@ -309,7 +354,6 @@ a:active:focus {
 }
 
 .social {
-	flex-direction: row;
 	padding: 2rem;
 }
 
@@ -362,19 +406,24 @@ a:active:focus {
 /**
  *===== Sidebars =====*
  */
-.sidebar {
+.aside {
 	padding: 6rem 4rem;
 }
 
+#single-project .aside + .aside {
+	padding: 2rem 4rem 6rem;
+}
+
 @media only screen and ( max-width: 768px ) {
-	.sidebar {
+	.aside {
 		padding: 4rem;
 	}
 }
 
 .cta.a,
 .cta.c,
-.cta.f {
+.cta.f,
+#portfolio .aside.excerpt {
 	background: #edeeef;
 }
 
@@ -389,13 +438,13 @@ a:active:focus {
 }
 
 /*--- Sidebar Titles ---*/
-.sidebar h1,
-.sidebar h2 {
+.aside h1,
+.aside h2 {
 	margin-bottom: 1.2rem;
 }
 
 @media only screen and ( max-width: 768px ) {
-	.sidebar h2 {
+	.aside h2 {
 		font-size: 3rem;
 		margin-bottom: 0.8rem;
 	}
@@ -407,7 +456,7 @@ a:active:focus {
 }
 
 /*--- Sidebar Paragraphs ---*/
-.sidebar p {
+.aside p {
 	line-height: 2;
 	opacity: 0.7;
 	width: 100%;
@@ -416,16 +465,17 @@ a:active:focus {
 	margin: 0;
 }
 
-.sidebar p + p {
+.aside p + p {
 	margin-top: 2rem;
 }
 
 @media only screen and ( max-width: 768px ) {
-	.sidebar p {
+	.aside p {
 		font-size: 1.65rem;
+		line-height: 1.5;
 	}
 
-	.sidebar p + p {
+	.aside p + p {
 		margin-top: 2.5rem;
 	}
 }
@@ -446,7 +496,7 @@ a:active:focus {
 }
 
 /*--- Sidebar Links ---*/
-.sidebar a {
+.aside a {
 	border: 2px solid #686868;
 	background: transparent;
 	color: #686868;
@@ -458,12 +508,12 @@ a:active:focus {
 }
 
 @media only screen and ( max-width: 768px ) {
-	.sidebar a {
+	.aside a {
 		font-size: 1.5rem;
 	}
 }
 
-.sidebar a:hover {
+.aside a:hover {
 	background: #686868;
 	color: #fff;
 }
@@ -481,12 +531,15 @@ a:active:focus {
 /**
  *===== Portfolio/Archive =====*
  */
-.archive .sidebar p {
+.archive .aside:nth-child(2) {
+	padding: 6rem 4rem 0;
+}
+
+.archive .aside p {
 	max-width: 850px;
 }
 
 .archive .grid-container {
-	flex-direction: row;
 	padding: 1rem .5rem 0;
 }
 
@@ -531,17 +584,12 @@ a:active:focus {
 	}
 }
 
-.overlay .sub-title {
-	font-size: 1.2rem;
-	font-style: italic;
-	letter-spacing: 1px;
-	text-shadow: #080808 0 0 4px;
-}
-
 .overlay .title {
 	font-size: 2.5rem;
 	text-align: center;
 	text-shadow: #080808 0 0 4px;
+	color: #fff;
+	margin: 0;
 }
 
 .overlay span {
@@ -586,10 +634,12 @@ a:active:focus {
 	}
 }
 
-/*--- Pagination ---*/
+/**
+ *===== Pagination =====*
+ */
+/*--- Archive ---*/
 #pagination {
-	flex-direction: row;
-	margin: 1.5rem 0 3rem;
+	margin: 5rem 0 6rem;
 }
 
 .page-numbers {
@@ -606,6 +656,56 @@ a:active:focus {
 	color: #fff;
 }
 
+/*--- Archive ---*/
+#portfolio .sub-header {
+	font-size: 1.5rem;
+}
+
+/*--- Single ---*/
+#pagination-controls {
+	display: flex;
+	max-width: 1000px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+#pagination-controls a {
+	font-size: 4rem;
+	color: rgba( 104, 104, 104, 0.9 );
+	padding: 0;
+	border: none;
+	transition: none;
+}
+
+#pagination-controls a:hover {
+	background: none;
+}
+
+#single-project {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 0 4rem;
+}
+
+@media only screen and ( max-width: 768px ) {
+	#single-project img {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.technology {
+	width: 100%;
+}
+
+.technology pre {
+	border: none;
+	margin: 0;
+	text-align: center;
+	white-space: pre-wrap;
+	word-break: normal;
+}
+
 /**
  *===== Widgets =====*
  */
@@ -617,23 +717,27 @@ a:active:focus {
 	right: 10px;
 }
 
+#news-and-updates .sub-header {
+	font-size: 1.5rem;
+}
+
 #news-and-updates > div:last-child {
 	padding-top: 2rem;
 }
 
 /*--- Featured Post Widget ---*/
-#featured-post-widget .featured-image {
+#featured-page-widget .featured-image {
 	min-height: 600px;
 }
 
-#featured-post-widget a {
+#featured-page-widget a {
 	margin-top: 2rem;
 	padding: 1.5rem 3rem;
 	font-size: 1.5rem;
 }
 
 @media only screen and ( max-width: 768px ) {
-	#featured-post-widget a {
+	#featured-page-widget a {
 		font-size: 1.5rem;
 	}
 }
@@ -641,7 +745,6 @@ a:active:focus {
 /*--- Notification Widget ---*/
 #notification-widget {
 	padding: 0;
-	flex-direction: row;
 	padding: 6rem 10rem;
 	background-color: #353439;
 }
@@ -673,7 +776,7 @@ a:active:focus {
 
 #notification-widget a:hover {
 	background: #fff;
-	color: inherit;
+	color: #686868;
 }
 
 /*--- Text Column Widget ---*/

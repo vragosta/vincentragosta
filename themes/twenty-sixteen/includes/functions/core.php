@@ -115,6 +115,13 @@ function styles() {
 	);
 
 	wp_register_style(
+		'ionicons',
+		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/lib/ionicons/css/ionicons.min.css",
+		array(),
+		VINCENTRAGOSTA_COM_VERSION
+	);
+
+	wp_register_style(
 		'bootstrap',
 		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/lib/bootstrap/dist/css/bootstrap.min.css",
 		array( 'fontawesome' ),
@@ -131,7 +138,7 @@ function styles() {
 	wp_enqueue_style(
 		'vincentragosta_com',
 		VINCENTRAGOSTA_COM_URL . "/assets/css/vincentragosta---twenty-sixteen.css",
-		array( 'bootstrap', 'fontawesome', 'sanitize' ),
+		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize' ),
 		VINCENTRAGOSTA_COM_VERSION
 	);
 }
@@ -178,7 +185,7 @@ function admin_scripts() {
 function sidebars() {
 	$cta_front_page_a = array(
 		'name'          => __( 'Call To Action A ( Front Page )', 'theme_text_domain' ),
-		'id'            => 'cta-a',
+		'id'            => 'cta-front-page-a',
 		'description'   => 'Call To Action sidebar on the frontpage.',
 		'class'         => '',
 		'before_widget' => '',
@@ -189,7 +196,7 @@ function sidebars() {
 
 	$cta_front_page_b = array(
 		'name'          => __( 'Call To Action B ( Front Page )', 'theme_text_domain' ),
-		'id'            => 'cta-b',
+		'id'            => 'cta-front-page-b',
 		'description'   => 'Call To Action sidebar on the frontpage.',
 		'class'         => '',
 		'before_widget' => '',
@@ -200,7 +207,7 @@ function sidebars() {
 
 	$cta_front_page_c = array(
 		'name'          => __( 'Call To Action C ( Front Page )', 'theme_text_domain' ),
-		'id'            => 'cta-c',
+		'id'            => 'cta-front-page-c',
 		'description'   => 'Call To Action sidebar on the frontpage.',
 		'class'         => '',
 		'before_widget' => '',
@@ -211,7 +218,7 @@ function sidebars() {
 
 	$cta_front_page_d = array(
 		'name'          => __( 'Call To Action D ( Front Page )', 'theme_text_domain' ),
-		'id'            => 'cta-d',
+		'id'            => 'cta-front-page-d',
 		'description'   => 'Call To Action sidebar on the frontpage.',
 		'class'         => '',
 		'before_widget' => '',
@@ -222,7 +229,7 @@ function sidebars() {
 
 	$cta_front_page_e = array(
 		'name'          => __( 'Call To Action E ( Front Page )', 'theme_text_domain' ),
-		'id'            => 'cta-e',
+		'id'            => 'cta-front-page-e',
 		'description'   => 'Call To Action sidebar on the frontpage.',
 		'class'         => '',
 		'before_widget' => '',
@@ -233,8 +240,19 @@ function sidebars() {
 
 	$cta_front_page_f = array(
 		'name'          => __( 'Call To Action F ( Front Page )', 'theme_text_domain' ),
-		'id'            => 'cta-f',
+		'id'            => 'cta-front-page-f',
 		'description'   => 'Call To Action sidebar on the frontpage.',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	$cta_single = array(
+		'name'          => __( 'Call To Action ( Single )', 'theme_text_domain' ),
+		'id'            => 'cta-single',
+		'description'   => 'Call To Action sidebar that displays below header on single template.',
 		'class'         => '',
 		'before_widget' => '',
 		'after_widget'  => '',
@@ -244,7 +262,7 @@ function sidebars() {
 
 	$pre_footer = array(
 		'name'          => __( 'Pre Footer', 'theme_text_domain' ),
-		'id'            => 'cta-g',
+		'id'            => 'pre-footer',
 		'description'   => 'Call To Action sidebar that site above the footer.',
 		'class'         => '',
 		'before_widget' => '',
@@ -259,6 +277,7 @@ function sidebars() {
 	register_sidebar( $cta_front_page_d );
 	register_sidebar( $cta_front_page_e );
 	register_sidebar( $cta_front_page_f );
+	register_sidebar( $cta_single );
 	register_sidebar( $pre_footer );
 }
 
@@ -271,7 +290,7 @@ function sidebars() {
  */
 function widgets() {
 	register_widget( 'News_And_Updates_Widget' );
-	register_widget( 'Featured_Post_Widget' );
+	register_widget( 'Featured_Page_Widget' );
 	register_widget( 'Notification_Widget' );
 	register_widget( 'Text_Column_Widget' );
 }

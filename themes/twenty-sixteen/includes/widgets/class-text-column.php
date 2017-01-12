@@ -179,28 +179,28 @@ class Text_Column_Widget extends WP_Widget {
 		<div id="text-column" class="custom-widget full-width">
 			<div class="column-container">
 				<div class="column one">
-					<div class="full-width flex-center">
+					<div class="full-width col-flex-center">
 						<?php echo ( $instance['column_one_icon'] ) ? '<i class="fa fa-' . esc_attr( $instance['column_one_icon'] ) . ' fa-4x"></i>' : ''; ?>
 						<h4><?php echo esc_html( $instance['column_one_title'] ); ?></h4>
 						<p><?php echo esc_html( $instance['column_one_content'] ); ?></p>
 					</div>
 				</div>
 				<div class="column two">
-					<div class="full-width flex-center">
+					<div class="full-width col-flex-center">
 						<?php echo ( $instance['column_two_icon'] ) ? '<i class="fa fa-' . esc_attr( $instance['column_two_icon'] ) . ' fa-4x"></i>' : ''; ?>
 						<h4><?php echo esc_html( $instance['column_two_title'] ); ?></h4>
 						<p><?php echo esc_html( $instance['column_two_content'] ); ?></p>
 					</div>
 				</div>
 				<div class="column three">
-					<div class="full-width flex-center">
+					<div class="full-width col-flex-center">
 						<?php echo ( $instance['column_three_icon'] ) ? '<i class="fa fa-' . esc_attr( $instance['column_three_icon'] ) . ' fa-4x"></i>' : ''; ?>
 						<h4><?php echo esc_html( $instance['column_three_title'] ); ?></h4>
 						<p><?php echo esc_html( $instance['column_three_content'] ); ?></p>
 					</div>
 				</div>
 			</div>
-			<div class="full-width flex-center">
+			<div class="full-width col-flex-center">
 				<a href="<?php echo esc_url( $instance['button_link'] ); ?>"><?php echo esc_html( $instance['button_text'] ); ?></a>
 			</div>
 		</div>

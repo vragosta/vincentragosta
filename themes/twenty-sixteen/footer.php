@@ -1,34 +1,34 @@
-	<?php get_template_part( 'partials/content', 'mobile-menu' ); ?>
+<?php
+/**
+ * Template for displaying the footer.
+ *
+ * @package VincentRagosta 2016
+ * @since   0.1.0
+ * @uses    get_template_part()
+ */
 
-	<footer id="footer" class="flex-center">
+	get_template_part( 'partials/section', 'mobile-menu' ); ?>
 
-		<section class="menu">
-			<a href="<?php echo home_url(); ?>">Home</a>
-			<a href="">Code Shop</a>
-			<a href="<?php echo home_url( 'portfolio' ); ?>">Portfolio</a>
-			<a href="">About</a>
-			<a href="">Resume</a>
-			<a href="">Blog</a>
-			<a href="">Contact</a>
-		</section>
+	<footer id="footer" class="col-flex-center">
 
-		<section class="flex-center">
-			<div id="contact-info" class="padding-left-right">
-				<h3><span>For more information, call today at </span><a href="tel:1917547-8578">(917) 547-8578</a></h3>
-			</div>
+		<?php get_template_part( 'partials/section', 'menu' ); ?>
 
-			<div id="copyright" class="padding-left-right">
-				<p>&copy <?php echo date( 'Y' ); ?> Vincent Ragosta. All rights reserved. Brooklyn Web Design and Wordpress Expert</p>
-			</div>
+		<section class="col-flex-center">
 
-			<div id="docs" class="padding-left-right">
-				<a href="">Terms of Service</a>
-				<a href="">Return Policy</a>
-				<a href="">Privacy Policy</a>
-			</div>
+			<!-- Contact Information -->
+			<?php get_template_part( 'partials/aside', 'footer-contact' ); ?>
 
+			<!-- Copyright -->
+			<?php get_template_part( 'partials/aside', 'footer-copyright' ); ?>
+
+			<!-- Important Documents -->
+			<?php get_template_part( 'partials/aside', 'footer-docs' ); ?>
+
+			<!-- Social Icons -->
 			<?php get_template_part( 'partials/aside', 'social' ); ?>
+
 		</section>
+
 	</footer>
 
 	</body>

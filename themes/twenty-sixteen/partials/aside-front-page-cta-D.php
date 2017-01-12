@@ -1,12 +1,15 @@
 <?php
 /**
- * Call To Action D ( Front Page )
+ * 'Call To Action D ( Front Page )' sidebar.
  *
  * @package VincentRagosta.com 2016
  * @since   0.1.0
+ * @uses    is_active_sidebar(), dynamic_sidebar()
  */
 ?>
 
-<section class="sidebar cta d flex-center">
-	<?php dynamic_sidebar( 'Call To Action D ( Front Page )' ); ?>
-</section>
+<?php if ( is_active_sidebar( 'cta-front-page-d' ) ) : ?>
+	<aside class="aside cta d col-flex-center">
+		<?php dynamic_sidebar( 'cta-front-page-d' ); ?>
+	</aside>
+<?php endif; ?>

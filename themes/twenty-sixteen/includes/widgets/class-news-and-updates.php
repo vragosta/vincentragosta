@@ -65,10 +65,10 @@ class News_And_Updates_Widget extends WP_Widget {
 	 * @return array $instance     Updated safe values to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
-		$instance                   = array();
-		$instance['title']          = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-		$instance['post_type']      = ( ! empty( $new_instance['post_type'] ) ) ? $new_instance['post_type'] : '';
-		$instance['ids']            = ( ! empty( $new_instance['ids'] ) ) ? $new_instance['ids'] : '';
+		$instance              = array();
+		$instance['title']     = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		$instance['post_type'] = ( ! empty( $new_instance['post_type'] ) ) ? $new_instance['post_type'] : '';
+		$instance['ids']       = ( ! empty( $new_instance['ids'] ) ) ? $new_instance['ids'] : '';
 
 		return $instance;
 	}
@@ -124,12 +124,27 @@ class News_And_Updates_Widget extends WP_Widget {
 		<div id="news-and-updates" class="custom-widget full-width">
 			<?php if ( $query->have_posts() ) : ?>
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+
+					<!-- Get the title from the current post. -->
+					<?php $title = ( get_post_meta( $post->ID, 'shorthand_title', true ) ) ? get_post_meta( $post->ID, 'shorthand_title', true ) : $post->post_title; ?>
+
+					<!-- Get the image from the current post. -->
 					<?php $image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post->ID ); ?>
+
 					<div class="col-xs-12 <?php echo esc_attr( $class ); ?>">
 						<div class="featured-image aspect-ratio-1x1">
-							<div class="overlay flex-center not-visible">
-								<span class="sub-title padding-left-right"><?php echo ( $instance['post_type'] === 'project' ) ? 'Wordpress Site' : get_the_date(); ?></span>
-								<span class="title padding-left-right"><?php echo esc_html( $post->post_title ); ?></span>
+							<div class="overlay col-flex-center not-visible">
+
+								<!-- Sub Header -->
+								<?php if ( $post->post_type !== 'post' ) : ?>
+									<?php get_template_part( 'partials/aside', 'taxonomy' ); ?>
+								<?php else : ?>
+									<?php get_template_part( 'partials/aside', 'date' ); ?>
+								<?php endif; ?>
+
+								<!-- Header -->
+								<?php get_template_part( 'partials/aside', 'title' ); ?>
+
 								<a href="<?php echo get_the_permalink( $post->ID ); ?>">View <?php echo esc_html( $instance['post_type'] ); ?></a>
 							</div>
 							<div class="post-type normalize-image" style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
@@ -138,8 +153,8 @@ class News_And_Updates_Widget extends WP_Widget {
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>
 			<?php endif;?>
-			<div class="full-width flex-center">
-				<a href="<?php echo home_url( 'portfolio' ) ?>">View more <?php echo esc_html( $instance['post_type'] ); ?>s</a>
+			<div class="full-width col-flex-center">
+				<a href="<?php echo home_url( '/portfolio/' ) ?>">View more <?php echo esc_html( $instance['post_type'] ); ?>s</a>
 			</div>
 		</div>
 
