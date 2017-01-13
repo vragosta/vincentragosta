@@ -8,16 +8,10 @@
  */
 
 // Get the featured image of the current post.
-$image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post->ID );
+$image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post->ID ); ?>
 
-// Get the title of the current post.
-$title = esc_html( get_the_title() );
-
-// Get the 'sub_header' of the current post.
-$sub_header = get_post_meta( $post->ID, 'sub_header', true ); ?>
-
-<header id="header" <?php echo ( is_front_page() ) ? 'class="aspect-ratio-10x4"' : ''; ?>>
-  <main class="normalize-image" style="background: linear-gradient( rgba( 0, 0, 0, 0.6 ), rgba( 0, 0, 0, 0.6 ) ) , url( '<?php echo $image ?>' ) no-repeat center / cover;">
+<header id="header">
+  <main>
     <nav class="nav-container full-width">
 
       <!-- Menu -->
@@ -29,15 +23,8 @@ $sub_header = get_post_meta( $post->ID, 'sub_header', true ); ?>
       <i class="ion ion-navicon drop-down"></i>
     </nav>
 
-    <section class="heading-container col-flex-center">
-
-      <!-- Sub Heading -->
-      <?php get_template_part( 'partials/aside', 'sub-header' ); ?>
-
-      <!-- Heading -->
-      <?php get_template_part( 'partials/aside', 'header' ); ?>
-
-    </section>
+    <!-- Featured image overlay -->
+    <?php include( locate_template( 'partials/content-featured-image-overlay.php', false, false ) ); ?>
 
   </main>
 </header>
