@@ -8,22 +8,25 @@
  */
 
 if ( $post->post_type === 'page' ) :
-	$class      = 'aspect-ratio-10x4';
-	$sub_header = 'sub-header';
+	$aspect_ratio_class = 'aspect-ratio-10x4';
+	$visibility_class   = 'visible';
+	$sub_header         = 'sub-header';
 elseif ( $post->post_type === 'post' ) :
-	$class      = 'aspect-ratio-1x1';
-	$sub_header = 'date';
+	$aspect_ratio_class = 'aspect-ratio-1x1';
+	$visibility_class   = 'not-visible';
+	$sub_header         = 'date';
 else :
-	$class      = 'aspect-ratio-1x1';
-	$sub_header = 'taxonomy';
+	$aspect_ratio_class = 'aspect-ratio-1x1';
+	$visibility_class   = 'not-visible';
+	$sub_header         = 'taxonomy';
 endif;
 
 ?>
 
-<figure class="featured-image <?php echo $class; ?>">
+<figure class="featured-image <?php echo $aspect_ratio_class; ?>">
 
 	<!-- Overlay container -->
-	<div class="overlay col-flex-center not-visible">
+	<div class="overlay col-flex-center <?php echo $visibility_class; ?>">
 
 		<!-- Sub-header -->
 		<?php get_template_part( 'partials/aside', $sub_header ); ?>
@@ -32,7 +35,11 @@ endif;
 		<?php get_template_part( 'partials/aside', 'header' ); ?>
 
 		<!-- Permalink button -->
-		<a href="<?php echo get_the_permalink( $post->ID ); ?>">View <?php echo esc_html( $post->post_type ); ?></a>
+		<?php if ( $post->post_type === 'page' ) : ?>
+			<?php if ( $button_text ) { echo '<a href="' . get_the_permalink( $post->ID ) . '">' . esc_html( $button_text ) . '</a>'; } ?>
+		<?php else : ?>
+			<a href="<?php echo get_the_permalink( $post->ID ); ?>">View <?php echo esc_html( $post->post_type ); ?></a>
+		<?php endif; ?>
 
 	</div>
 

@@ -97,21 +97,10 @@ class Featured_Page_Widget extends WP_Widget {
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 					<?php $image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post->ID ); ?>
 					<div class="col-xs-12">
-						<figure class="featured-image aspect-ratio-10x4">
-							<div class="overlay col-flex-center">
 
-								<!-- Sub-header -->
-								<?php get_template_part( 'partials/aside', 'sub-header' ); ?>
+						<!-- Featured image overlay -->
+						<?php include( locate_template( 'partials/content-featured-image-overlay.php', false, false ) ); ?>
 
-								<!-- Header -->
-								<?php get_template_part( 'partials/aside', 'header' ); ?>
-
-								<!-- Permalink button -->
-								<?php if ( $button_text ) { echo '<a href="' . get_the_permalink( $post->ID ) . '">' . esc_html( $button_text ) . '</a>'; } ?>
-
-							</div>
-							<div class="post normalize-image" style="background: linear-gradient( rgba( 0, 0, 0, 0.6 ), rgba( 0, 0, 0, 0.6 ) ), url( '<?php echo esc_attr( $image ); ?>' ) no-repeat center / cover;"></div>
-						</figure>
 					</div>
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>

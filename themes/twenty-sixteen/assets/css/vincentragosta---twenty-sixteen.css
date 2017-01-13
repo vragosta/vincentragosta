@@ -726,8 +726,9 @@ hr {
 }
 
 /*--- Featured Post Widget ---*/
-#featured-page-widget .featured-image {
-	min-height: 600px;
+#featured-page-widget .post-type {
+	-webkit-filter: brightness( 40% );
+	filter: brightness( 40% );
 }
 
 #featured-page-widget a {
