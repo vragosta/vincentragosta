@@ -4,26 +4,27 @@
  *
  * @package VincentRagosta 2016
  * @since   0.1.0
- * @uses    get_template_part(), esc_html(), get_the_parmalink()
+ * @uses    implode(), get_template_part(), esc_html(), get_the_parmalink(), esc_attr()
  */
 
 if ( $post->post_type === 'page' ) :
-	$aspect_ratio_class = 'aspect-ratio-10x4';
-	$visibility_class   = 'visible';
-	$sub_header         = 'sub-header';
+	$featured_image_classes[] = 'aspect-ratio-10x4';
+	$featured_image_classes[] = 'image-min-height';
+	$visibility_class         = 'visible';
+	$sub_header               = 'sub-header';
 elseif ( $post->post_type === 'post' ) :
-	$aspect_ratio_class = 'aspect-ratio-1x1';
-	$visibility_class   = 'not-visible';
-	$sub_header         = 'date';
+	$featured_image_classes[] = 'aspect-ratio-1x1';
+	$visibility_class         = 'not-visible';
+	$sub_header               = 'date';
 else :
-	$aspect_ratio_class = 'aspect-ratio-1x1';
-	$visibility_class   = 'not-visible';
-	$sub_header         = 'taxonomy';
+	$featured_image_classes[] = 'aspect-ratio-1x1';
+	$visibility_class         = 'not-visible';
+	$sub_header               = 'taxonomy';
 endif;
 
 ?>
 
-<figure class="featured-image <?php echo $aspect_ratio_class; ?>">
+<figure class="featured-image <?php echo implode( ' ', $featured_image_classes ); ?>">
 
 	<!-- Overlay container -->
 	<div class="overlay col-flex-center <?php echo $visibility_class; ?>">

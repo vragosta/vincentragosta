@@ -145,20 +145,25 @@ hr {
 	right: 0;
 }
 
+.image-min-height {
+	min-height: 600px;
+}
+
 /**
  *===== Header =====*
  */
 #header {
 	position: relative;
-	min-height: 600px;
 }
 
-#header main {
-	filter: grayscale( 100% );
+#header .featured-image .post-type {
+	-webkit-filter: brightness( 40% );
+	filter: brightness( 40% );
 }
 
 .nav-container {
 	position: absolute;
+	z-index: 1;
 }
 
 .menu-container {
@@ -404,7 +409,7 @@ hr {
 }
 
 /**
- *===== Sidebars =====*
+ *===== Aside =====*
  */
 .aside {
 	padding: 6rem 4rem;
@@ -437,7 +442,7 @@ hr {
 	padding: 0;
 }
 
-/*--- Sidebar Titles ---*/
+/*--- Aside Titles ---*/
 .aside h1,
 .aside h2 {
 	margin-bottom: 1.2rem;
@@ -455,7 +460,7 @@ hr {
 	text-align: center;
 }
 
-/*--- Sidebar Paragraphs ---*/
+/*--- Aside Paragraphs ---*/
 .aside p {
 	line-height: 2;
 	opacity: 0.7;
@@ -495,7 +500,7 @@ hr {
 	line-height: 1.9;
 }
 
-/*--- Sidebar Links ---*/
+/*--- Aside Links ---*/
 .aside a {
 	border: 2px solid #686868;
 	background: transparent;
@@ -570,6 +575,10 @@ hr {
 	right: 0;
 	z-index: 10;
 	background: transparent;
+}
+
+.featured-image {
+	filter: grayscale( 100% );
 }
 
 .featured-image:hover .overlay {
