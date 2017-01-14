@@ -1,0 +1,110 @@
+/**
+ * VincentRagosta - Twenty Sixteen
+ * http://vincentragosta.com
+ *
+ * Copyright (c) 2016
+ * Licensed under the GPL-2.0+ license.
+ */
+
+/* TODO Consider Prefixing the CSS */
+
+/**
+ *===== Helper CSS =====*
+ */
+/* TODO */
+.full-width {
+	width: 100%;
+}
+
+.col-flex-center {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.col-flex-start {
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.col-flex-end {
+	height: 100%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.row-flex-center {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.row-flex-start {
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.row-flex-end {
+	height: 100%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.padding-left-right {
+	padding: 0 1rem;
+}
+
+/* TODO */
+.visible {
+	visibility: visible;
+	opacity: 1;
+	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.not-visible {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* TODO */
+.aspect-ratio-1x1 {
+	padding-bottom: 100%;
+}
+
+.aspect-ratio-16x9 {
+	padding-bottom: 56.25%;
+}
+
+.aspect-ratio-10x4 {
+	padding-bottom: 40%;
+}
+
+/* TODO */
+.normalize-image {
+	background-position: center;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+/* TODO */
+.image-min-height {
+	min-height: 600px;
+}
