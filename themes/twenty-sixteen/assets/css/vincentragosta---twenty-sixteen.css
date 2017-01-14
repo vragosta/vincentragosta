@@ -240,20 +240,20 @@ hr {
 	}
 }
 
-.sub-header {
+/*.sub-header {
 	color: #fff;
 	font-style: italic;
 	letter-spacing: 1px;
 	margin: 0;
 	font-weight: 100;
 	text-shadow: #080808 0 0 4px;
-}
+}*/
 
-#news-and-updates .sub-header.date {
+/*#news-and-updates .sub-header.date {
 	font-size: 1.8rem;
-}
+}*/
 
-.header {
+/*.header {
 	margin: 0;
 	color: #fff;
 	text-transform: uppercase;
@@ -261,9 +261,9 @@ hr {
 	line-height: 1;
 	max-width: 1000px;
 	text-shadow: #080808 0 0 4px;
-}
+}*/
 
-@media only screen and ( min-width: 992px ) {
+/*@media only screen and ( min-width: 992px ) {
 	.sub-header {
 		font-size: 2.5rem;
 	}
@@ -291,7 +291,7 @@ hr {
 	.header {
 		font-size: 4rem;
 	}
-}
+}*/
 
 /**
  *===== Footer =====*
@@ -568,7 +568,7 @@ hr {
 }
 
 /*--- Overlay ---*/
-.overlay {
+/*.overlay {
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -642,7 +642,7 @@ hr {
 		-webkit-filter: brightness( 40% );
 		filter: brightness( 40% );
 	}
-}
+}*/
 
 /**
  *===== Pagination =====*
@@ -667,9 +667,10 @@ hr {
 }
 
 /*--- Archive ---*/
-#portfolio .sub-header {
+/* TODO */
+/*#portfolio .sub-header {
 	font-size: 1.5rem;
-}
+}*/
 
 /*--- Single ---*/
 #pagination-controls {
@@ -720,26 +721,29 @@ hr {
  *===== Widgets =====*
  */
 /*--- News & Updates Widget ---*/
-#news-and-updates .post-type {
+/* TODO */
+/*#news-and-updates .post-type {
 	top: 10px;
 	bottom: 10px;
 	left: 10px;
 	right: 10px;
-}
+}*/
 
-#news-and-updates .sub-header {
+/* TODO */
+/*#news-and-updates .sub-header {
 	font-size: 1.5rem;
-}
+}*/
 
 #news-and-updates > div:last-child {
 	padding-top: 2rem;
 }
 
 /*--- Featured Post Widget ---*/
-#featured-page-widget .post-type {
+/* TODO */
+/*#featured-page-widget .post-type {
 	-webkit-filter: brightness( 40% );
 	filter: brightness( 40% );
-}
+}*/
 
 #featured-page-widget a {
 	margin-top: 2rem;

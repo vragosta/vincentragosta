@@ -11,38 +11,17 @@
  * @since   0.1.0
  */
 
-// ADD DEFINES HERE IF NEC
+// TODO
+define( 'VINCENTRAGOSTA_IMAGE_CAPTION_VERSION', '0.1.0' );
+define( 'VINCENTRAGOSTA_IMAGE_CAPTION_URL', plugin_dir_url( __FILE__ ) );
+define( 'VINCENTRAGOSTA_IMAGE_CAPTION_PATH', dirname( __FILE__ ) . '/' );
+define( 'VINCENTRAGOSTA_IMAGE_CAPTION_IMAGE_SIZE', 'large' );
 
-// Include all functions associated with the player shortcode.
-// require_once STORYCORPS_PLAYER_PATH . 'functions/core.php';
+// Include all functions associated with the image caption shortcode.
+require_once VINCENTRAGOSTA_IMAGE_CAPTION_PATH . 'includes/functions/core.php';
 
-/**
- * TODO
- *
- * @since  0.1.0
- * @uses   get_post_meta()
- * @return void
- */
-function vincentragosta_set_image_defaults() {
-	global $post;
-
-	if ( $post->post_type === 'page' ) :
-		$featured_image_classes[] = 'aspect-ratio-10x4';
-		$featured_image_classes[] = 'image-min-height';
-		$visibility_class         = 'visible';
-		$partial                  = 'sub-header';
-		$sub_header               = get_post_meta( $post->ID, 'sub_header', true );
-	elseif ( $post->post_type === 'post' ) :
-		$featured_image_classes[] = 'aspect-ratio-1x1';
-		$visibility_class         = 'not-visible';
-		$partial                  = 'date';
-	else :
-		$featured_image_classes[] = 'aspect-ratio-1x1';
-		$visibility_class         = 'not-visible';
-		$partial                  = 'taxonomy';
-		$taxonomy                 = 'Wordpress Site'; // Make this dynamic.
-	endif;
-}
+// Include all helper functions associated with the image caption shortcode.
+require_once VINCENTRAGOSTA_IMAGE_CAPTION_PATH . 'includes/functions/helpers.php';
 
 /**
  * TODO
@@ -55,49 +34,46 @@ function vincentragosta_set_image_defaults() {
 function vincentragosta_image_captions_shortcode( $atts ) {
 
 	$atts = shortcode_atts( array(
-		'id'                => '',
-		'class'             => ''
+		'id'               => '',
+		'class'            => '',
+		'data-button-text' => ''
 	), $atts );
 
 	global $post;
 
 	// If the attribute 'id' is set on the shortcode, set the post object to the post entered.
-	if ( $atts['id'] ) { $post = get_post( $atts['id'] ) }
+	if ( $atts['id'] ) { $post = get_post( $atts['id'] ); }
 
 	// Create a classes array from attribute classes ( explode string ).
 	$classes = ( $atts['class'] ) ? explode( ' ', $atts['class'] ) : array();
 
 	// TODO
-	vincentragosta_set_image_defaults();
+	$defaults = vincentragosta_set_image_default_properties( $atts ); ?>
 
-	?>
-
-	<figure class="featured-image <?php echo implode( ' ', $featured_image_classes ); ?>">
+	<!-- TODO -->
+	<figure class="featured-image <?php echo implode( ' ', $defaults->featured_image_classes ); ?>">
 
 		<!-- Overlay container -->
-		<div class="overlay col-flex-center <?php echo $visibility_class; ?>">
+		<div class="overlay col-flex-center <?php echo $defaults->visibility_class; ?>">
 
 			<!-- Sub-header -->
-			<?php get_template_part( 'partials/aside', $partial ); ?>
+			<!-- TODO Create function for this -->
+			<?php include( VINCENTRAGOSTA_IMAGE_CAPTION_PATH . 'partials/aside-text.php' ); ?>
 
 			<!-- Header -->
-			<?php get_template_part( 'partials/aside', 'header' ); ?>
+			<?php include( VINCENTRAGOSTA_IMAGE_CAPTION_PATH . 'partials/aside-header.php' ); ?>
 
 			<!-- Permalink button -->
-			<?php if ( $post->post_type === 'page' ) : ?>
-				<?php if ( $button_text ) { echo '<a href="' . get_the_permalink( $post->ID ) . '">' . esc_html( $button_text ) . '</a>'; } ?>
-			<?php else : ?>
-				<a href="<?php echo get_the_permalink( $post->ID ); ?>">View <?php echo esc_html( $post->post_type ); ?></a>
-			<?php endif; ?>
+			<a href="<?php echo get_the_permalink( $post->ID ); ?>"><?php echo esc_html( $defaults->button_text ); ?></a>
 
 		</div>
 
 		<!-- Post image -->
-		<div class="post-type normalize-image" style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+		<div class="post-type normalize-image" style="background-image: url( '<?php echo esc_attr( $defaults->image_source ); ?>' );"></div>
 
-	</figure>
+	</figure><?php
 
 	return $shortcode;
 
 }
-add_shortcode( 'audio', 'storycorps_player_shortcode' );
+add_shortcode( 'image-caption', 'vincentragosta_image_captions_shortcode' );

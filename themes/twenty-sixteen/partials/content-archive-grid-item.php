@@ -13,6 +13,7 @@ $image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post-
 <div class="grid-item col-xs-12 col-sm-4">
 
 	<!-- Featured image overlay -->
-	<?php include( locate_template( 'partials/content-featured-image-overlay.php', false, false ) ); ?>
+	<?php // include( locate_template( 'partials/content-featured-image-overlay.php', false, false ) ); ?>
+	<?php do_shortcode( '[image-caption id="' . $post->ID . '"]' ); ?>
 
 </div>

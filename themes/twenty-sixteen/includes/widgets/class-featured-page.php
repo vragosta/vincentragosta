@@ -99,7 +99,8 @@ class Featured_Page_Widget extends WP_Widget {
 					<div class="col-xs-12">
 
 						<!-- Featured image overlay -->
-						<?php include( locate_template( 'partials/content-featured-image-overlay.php', false, false ) ); ?>
+						<?php // include( locate_template( 'partials/content-featured-image-overlay.php', false, false ) ); ?>
+						<?php do_shortcode( '[image-caption id="' . $post->ID . '"]' ); ?>
 
 					</div>
 				<?php endwhile; ?>

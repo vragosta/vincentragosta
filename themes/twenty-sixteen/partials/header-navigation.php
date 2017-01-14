@@ -8,7 +8,7 @@
  */
 
 // Get the featured image of the current post.
-$image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post->ID ); ?>
+// $image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post->ID ); ?>
 
 <header id="header">
   <main>
@@ -24,7 +24,8 @@ $image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post-
     </nav>
 
     <!-- Featured image overlay -->
-    <?php include( locate_template( 'partials/content-featured-image-overlay.php', false, false ) ); ?>
+    <?php // include( locate_template( 'partials/content-featured-image-overlay.php', false, false ) ); ?>
+    <?php do_shortcode( '[image-caption id="' . $post->ID . '"]' ); ?>
 
   </main>
 </header>
