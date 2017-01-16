@@ -19,7 +19,7 @@ function vincentragosta_get_featured_image( $id ) {
  * @uses   get_post_meta()
  * @return Array $defaults Array of default values.
  */
-function vincentragosta_set_image_default_properties() {
+function vincentragosta_set_image_default_properties( $atts ) {
 	global $post;
 
 	if ( $post->post_type === 'page' ) :
@@ -28,7 +28,7 @@ function vincentragosta_set_image_default_properties() {
 		$visibility_class         = 'visible';
 		$text                     = get_post_meta( $post->ID, 'sub_header', true );
 		$text_class               = 'sub-header';
-		$button_text              = $atts['button_text'];
+		$button_text              = $atts['data-button-text'];
 	elseif ( $post->post_type === 'post' ) :
 		$featured_image_classes[] = 'aspect-ratio-1x1';
 		$visibility_class         = 'not-visible';
@@ -43,7 +43,7 @@ function vincentragosta_set_image_default_properties() {
 		$button_text              = 'View ' . $post->post_type;
 	endif;
 
-	$default_properties = ( object ) array(
+	$defaults = ( object ) array(
 		'title'                  => $post->post_title,
 		'image_source'           => vincentragosta_get_featured_image( $post->ID ),
 		'featured_image_classes' => $featured_image_classes,
@@ -53,6 +53,6 @@ function vincentragosta_set_image_default_properties() {
 		'button_text'            => $button_text
 	);
 
-	return $default_properties;
+	return $defaults ;
 }
 ?>
