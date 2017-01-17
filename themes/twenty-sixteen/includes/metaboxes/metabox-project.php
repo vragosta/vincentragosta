@@ -66,11 +66,8 @@ function vincentragosta_project_callback( $post ) {
 /**
  * Saves and sanitizes the POST data.
  *
- * @since 0.1.0
- *
- * @uses wp_verify_nonce()
- * @uses apply_filters()
- *
+ * @since  0.1.0
+ * @uses   wp_verify_nonce(), apply_filters()
  * @return void
  */
 function vincentragosta_project_save_data( $post_id ) {

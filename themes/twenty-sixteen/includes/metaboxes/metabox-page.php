@@ -32,7 +32,8 @@ function vincentragosta_page_callback( $post ) {
 	 * Use get_post_meta() to retrieve an existing value
 	 * from the database and use the value for the form.
 	 */
-	$sub_header = get_post_meta( $post->ID, 'sub_header', true ); ?>
+	$sub_header  = get_post_meta( $post->ID, 'sub_header', true );
+	$button_text = get_post_meta( $post->ID, 'button_text', true ); ?>
 
 	<table style="width: 100%;">
 		<tr>
@@ -43,17 +44,23 @@ function vincentragosta_page_callback( $post ) {
 				<textarea id="sub_header" name="sub_header" style="width: 100%;"><?php echo esc_textarea( $sub_header ); ?></textarea>
 			</td>
 		</tr>
+		<tr>
+			<td>
+				<label for="button_text"><?php echo esc_html( __( 'Button Text:', 'vincentragosta' ) ); ?></label>
+			</td>
+			<td>
+				<textarea id="button_text" name="button_text" style="width: 100%;"><?php echo esc_textarea( $button_text ); ?></textarea>
+				<label class="vr-description" for="button_text"><?php echo esc_html( __( 'Will only display if the image caption plugin is activated.', 'vincentragosta' ) ); ?></label>
+			</td>
+		</tr>
 	</table><?php
 }
 
 /**
  * Saves and sanitizes the POST data.
  *
- * @since 0.1.0
- *
- * @uses wp_verify_nonce()
- * @uses apply_filters()
- *
+ * @since  0.1.0
+ * @uses   wp_verify_nonce(), apply_filters(), current_user_can(), sanitize_text_field(), update_post_meta()
  * @return void
  */
 function vincentragosta_page_save_data( $post_id ) {
@@ -84,10 +91,12 @@ function vincentragosta_page_save_data( $post_id ) {
 	}
 
 	// Sanitize user input.
-	$sub_header = sanitize_text_field( $_POST['sub_header'] );
+	$sub_header  = sanitize_text_field( $_POST['sub_header'] );
+	$button_text = sanitize_text_field( $_POST['button_text'] );
 
 	// Update the meta field in the database.
 	update_post_meta( $post_id, 'sub_header', $sub_header );
+	update_post_meta( $post_id, 'button_text', $button_text );
 }
 add_action( 'save_post', 'vincentragosta_page_save_data' );
 

@@ -98,7 +98,7 @@ class Featured_Page_Widget extends WP_Widget {
 					<div class="col-xs-12">
 
 						<!-- Featured image overlay -->
-						<?php do_shortcode( '[image-caption id="' . $post->ID . '" class="static" data-button-text="Find Out How"]' ); ?>
+						<?php do_shortcode( '[image-caption id="' . $post->ID . '" class="static"]' ); ?>
 
 					</div>
 				<?php endwhile; ?>

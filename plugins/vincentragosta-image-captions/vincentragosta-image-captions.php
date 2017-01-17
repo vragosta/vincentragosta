@@ -11,7 +11,7 @@
  * @since   0.1.0
  */
 
-// TODO
+// Global defines.
 define( 'VINCENTRAGOSTA_IMAGE_CAPTION_VERSION', '0.1.0' );
 define( 'VINCENTRAGOSTA_IMAGE_CAPTION_URL', plugin_dir_url( __FILE__ ) );
 define( 'VINCENTRAGOSTA_IMAGE_CAPTION_PATH', dirname( __FILE__ ) . '/' );
@@ -24,7 +24,7 @@ require_once VINCENTRAGOSTA_IMAGE_CAPTION_PATH . 'includes/functions/core.php';
 require_once VINCENTRAGOSTA_IMAGE_CAPTION_PATH . 'includes/functions/helpers.php';
 
 /**
- * TODO
+ * Generate image caption shortcode for use within the theme.
  *
  * @since  0.1.0
  * @uses
@@ -34,38 +34,28 @@ require_once VINCENTRAGOSTA_IMAGE_CAPTION_PATH . 'includes/functions/helpers.php
 function vincentragosta_image_captions_shortcode( $atts ) {
 
 	$atts = shortcode_atts( array(
-		'id'               => '',
-		'class'            => '',
-		'data-button-text' => ''
+		'id'    => '',
+		'class' => ''
 	), $atts );
 
 	global $post;
 
-	// If the attribute 'id' is set on the shortcode, set the post object to the post entered.
-	if ( $atts['id'] ) { $post = get_post( $atts['id'] ); }
+	// Obtain the centralized default properties object.
+	$defaults = vincentragosta_set_default_properties( $atts ); ?>
 
-	// Create a classes array from attribute classes ( explode string ).
-	$classes = ( $atts['class'] ) ? explode( ' ', $atts['class'] ) : array();
-
-	// TODO
-	$defaults = vincentragosta_set_image_default_properties( $atts ); ?>
-
-	<!-- TODO -->
+	<!-- Image Caption HTML start -->
 	<figure class="featured-image <?php echo implode( ' ', $defaults->featured_image_classes ); ?>">
 
 		<!-- Overlay container -->
 		<div class="overlay col-flex-center <?php echo $defaults->visibility_class; ?>">
 
 			<!-- Sub-header -->
-			<!-- TODO Create function for this -->
 			<?php include( VINCENTRAGOSTA_IMAGE_CAPTION_PATH . 'partials/aside-sub-header.php' ); ?>
 
 			<!-- Header -->
-			<!-- TODO Create function for this -->
 			<?php include( VINCENTRAGOSTA_IMAGE_CAPTION_PATH . 'partials/aside-header.php' ); ?>
 
 			<!-- Permalink button -->
-			<!-- TODO Create function for this -->
 			<?php include( VINCENTRAGOSTA_IMAGE_CAPTION_PATH . 'partials/aside-button.php' ); ?>
 
 		</div>
