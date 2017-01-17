@@ -22,7 +22,7 @@
     </nav>
 
     <!-- Featured image overlay -->
-    <?php do_shortcode( '[image-caption id="' . $post->ID . '"]' ); ?>
+    <?php do_shortcode( '[image-caption id="' . $post->ID . '" class="static"]' ); ?>
 
   </main>
 </header>

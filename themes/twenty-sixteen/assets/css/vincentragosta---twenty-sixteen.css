@@ -53,6 +53,7 @@ hr {
 	width: 100%;
 }
 
+/* TODO move to helper.css file */
 /**
  *===== Helper CSS =====*
  */
@@ -118,17 +119,17 @@ hr {
 	position: relative;
 }
 
-/* TODO See what you can do with this. */
-#header .featured-image .post-type {
-	-webkit-filter: brightness( 40% );
-	filter: brightness( 40% );
-}
-
+/**
+ *===== Navigation =====*
+ */
 .nav-container {
 	position: absolute;
 	z-index: 1;
 }
 
+/**
+ *===== Menu =====*
+ */
 .menu-container {
 	display: flex;
 	justify-content: flex-end;
@@ -138,7 +139,7 @@ hr {
 	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-/*--- Menu ---*/
+/* TODO consider adding one of the helper classes for this. */
 .menu {
 	display: flex;
 	align-items: center;
@@ -151,6 +152,7 @@ hr {
 	}
 }
 
+/* TODO see if you can give default link values and put them at top to clean up the css. */
 .menu a {
 	color: #fff;
 	font-weight: 100;
@@ -167,21 +169,25 @@ hr {
 	opacity: 1;
 }
 
+/* TODO change nomenclature for the #contact button. */
 #header #contact {
 	display: flex;
 }
 
+/* TODO change nomenclature for the #contact button. */
 #header #contact {
 	padding: 1rem;
 	border: 2px solid #fff;
 	transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
+/* TODO change nomenclature for the #contact button. */
 #header #contact:hover {
 	background: #fff;
 	color: #686868;
 }
 
+/* TODO name section */
 .drop-down {
 	font-size: 4rem;
 	color: #fff;
@@ -241,6 +247,7 @@ hr {
 	font-weight: 100;
 }
 
+/*--- Contact Info ( Footer )---*/
 #contact-info h3 {
 	color: #fff;
 	font-size: 2rem;
@@ -254,6 +261,7 @@ hr {
 	color: #fff;
 }
 
+/*--- Documents ( Footer ) ---*/
 #docs a {
 	color: #fff;
 	opacity: 0.5;
@@ -268,6 +276,7 @@ hr {
 	margin: 0 1rem;
 }
 
+/*--- Social ( Footer ) ---*/
 .social {
 	padding: 2rem;
 }
@@ -338,6 +347,7 @@ hr {
 .cta.a,
 .cta.c,
 .cta.f,
+/* TODO Fix below if pos. */
 #portfolio .aside.excerpt {
 	background: #edeeef;
 }
@@ -371,6 +381,7 @@ hr {
 }
 
 /*--- Aside Paragraphs ---*/
+/* TODO see if you can give default paragraph values and put them at top to clean up the css. */
 .aside p {
 	line-height: 2;
 	opacity: 0.7;
@@ -411,6 +422,7 @@ hr {
 }
 
 /*--- Aside Links ---*/
+/* TODO see if you can give default link values and put them at top to clean up the css. */
 .aside a {
 	border: 2px solid #686868;
 	background: transparent;
@@ -494,8 +506,6 @@ hr {
 	color: #fff;
 }
 
-/*--- Archive ---*/
-
 /*--- Single ---*/
 #pagination-controls {
 	display: flex;
@@ -545,28 +555,11 @@ hr {
  *===== Widgets =====*
  */
 /*--- News & Updates Widget ---*/
-
-/* TODO See what you can do with this */
-/* Make this an attribute on the plugin */
-#news-and-updates .post-type {
-	top: 10px;
-	bottom: 10px;
-	left: 10px;
-	right: 10px;
-}
-
 #news-and-updates > div:last-child {
 	padding-top: 2rem;
 }
 
 /*--- Featured Post Widget ---*/
-/* TODO See what you can do with this */
-/* Make this an attribute on the plugin */
-#featured-page-widget .featured-image .post-type {
-	-webkit-filter: brightness( 40% );
-	filter: brightness( 40% );
-}
-
 #featured-page-widget a {
 	margin-top: 2rem;
 	padding: 1.5rem 3rem;

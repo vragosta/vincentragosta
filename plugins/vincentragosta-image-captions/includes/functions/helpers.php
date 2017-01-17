@@ -23,8 +23,11 @@ function vincentragosta_set_image_default_properties( $atts ) {
 	global $post;
 
 	// TODO
-	if ( is_single() ) { $featured_image_classes[] = 'single'; }
+	if ( $atts['class'] ) :
+		$featured_image_classes = explode( ' ', $atts['class'] );
+	endif;
 
+	// TODO
 	if ( $post->post_type === 'page' ) :
 		$featured_image_classes[] = 'aspect-ratio-10x4';
 		$featured_image_classes[] = 'image-min-height';
@@ -34,18 +37,20 @@ function vincentragosta_set_image_default_properties( $atts ) {
 		$header_class             = 'big';
 		$button_text              = $atts['data-button-text'];
 	elseif ( $post->post_type === 'post' ) :
-		$featured_image_classes[] = ( is_single() ) ? 'aspect-ratio-10x4' : 'aspect-ratio-1x1';
+		$featured_image_classes[] = ( in_array( 'static', $featured_image_classes, true ) ) ? 'aspect-ratio-10x4' : 'aspect-ratio-1x1';
+		$featured_image_classes[] = ( in_array( 'static', $featured_image_classes, true ) ) ? 'image-min-height' : '';
 		$visibility_class         = 'not-visible';
 		$sub_header               = date_format( date_create( $post->post_date ), 'jS F Y' );
-		$sub_header_class         = ( is_single() ) ? 'big' : 'small';
-		$header_class             = ( is_single() ) ? 'big' : 'small';
+		$sub_header_class         = ( in_array( 'static', $featured_image_classes, true ) ) ? 'big' : 'small';
+		$header_class             = ( in_array( 'static', $featured_image_classes, true ) ) ? 'big' : 'small';
 		$button_text              = 'View ' . $post->post_type;
 	else :
-		$featured_image_classes[] = ( is_single() ) ? 'aspect-ratio-10x4' : 'aspect-ratio-1x1';
+		$featured_image_classes[] = ( in_array( 'static', $featured_image_classes, true ) ) ? 'aspect-ratio-10x4' : 'aspect-ratio-1x1';
+		$featured_image_classes[] = ( in_array( 'static', $featured_image_classes, true ) ) ? 'image-min-height' : '';
 		$visibility_class         = 'not-visible';
 		$sub_header               = 'Wordpress Site'; // Make this dynamic.
-		$sub_header_class         = ( is_single() ) ? 'big' : 'small';
-		$header_class             = ( is_single() ) ? 'big' : 'small';
+		$sub_header_class         = ( in_array( 'static', $featured_image_classes, true ) ) ? 'big' : 'small';
+		$header_class             = ( in_array( 'static', $featured_image_classes, true ) ) ? 'big' : 'small';
 		$button_text              = 'View ' . $post->post_type;
 	endif;
 

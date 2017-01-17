@@ -127,7 +127,7 @@ class News_And_Updates_Widget extends WP_Widget {
 					<div class="col-xs-12 <?php echo esc_attr( $bootstrap_class ); ?>">
 
 						<!-- Featured image overlay -->
-						<?php do_shortcode( '[image-caption id="' . $post->ID . '"]' ); ?>
+						<?php do_shortcode( '[image-caption id="' . $post->ID . '" class="archive"]' ); ?>
 
 					</div>
 				<?php endwhile; ?>

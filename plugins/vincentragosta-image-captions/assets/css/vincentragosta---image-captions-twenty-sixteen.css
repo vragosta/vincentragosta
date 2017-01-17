@@ -109,14 +109,14 @@
 	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-/* TODO */
+/* TODO TITLE */
 
-/* TODO */
+/*--- Featured Image ---*/
 .featured-image {
 	filter: grayscale( 100% );
 }
 
-/* TODO */
+/*--- Sub-header ---*/
 .sub-header {
 	color: #fff;
 	font-style: italic;
@@ -127,15 +127,33 @@
 	text-align: center;
 }
 
+@media only screen and ( min-width: 992px ) {
+	.sub-header {
+		font-size: 2.5rem;
+	}
+}
+
+@media only screen and ( min-width: 768px ) and ( max-width: 992px ) {
+	.sub-header {
+		font-size: 2rem;
+	}
+}
+
+@media only screen and ( max-width: 768px ) {
+	.sub-header {
+		font-size: 1.8rem;
+	}
+}
+
 .sub-header.small {
 	font-size: 1.8rem;
 }
 
 .sub-header.big {
-
+	/*--- No CSS needed here ---*/
 }
 
-/* TODO */
+/*--- Header ---*/
 .header {
 	margin: 0;
 	color: #fff;
@@ -158,30 +176,18 @@
 
 /* TODO */
 @media only screen and ( min-width: 992px ) {
-	.sub-header {
-		font-size: 2.5rem;
-	}
-
 	.header {
 		font-size: 7.5rem;
 	}
 }
 
 @media only screen and ( min-width: 768px ) and ( max-width: 992px ) {
-	.sub-header {
-		font-size: 2rem;
-	}
-
 	.header {
 		font-size: 6rem;
 	}
 }
 
 @media only screen and ( max-width: 768px ) {
-	.sub-header {
-		font-size: 1.8rem;
-	}
-
 	.header {
 		font-size: 4rem;
 	}
@@ -198,12 +204,15 @@
 	background: transparent;
 }
 
+/* TODO */
+.featured-image.static .overlay,
 .featured-image.single .overlay,
 .featured-image:hover .overlay {
 	visibility: visible;
 	opacity: 1;
 }
 
+/* TODO */
 @media only screen and ( max-width: 768px ) {
 	.featured-image .overlay {
 		visibility: visible;
@@ -232,6 +241,7 @@
 	text-shadow: none;
 }
 
+/* TODO Change name. */
 .post-type {
 	top: 0;
 	bottom: 0;
@@ -241,11 +251,22 @@
 	transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
 }
 
+/* TODO */
+.featured-image.archive .post-type {
+	top: 10px;
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
+}
+
+/* TODO */
+.featured-image.static .post-type,
 .featured-image:hover .post-type {
 	-webkit-filter: brightness( 40% );
 	filter: brightness( 40% );
 }
 
+/* TODO */
 @media only screen and ( max-width: 768px ) {
 	.featured-image .post-type {
 		-webkit-filter: brightness( 40% );
