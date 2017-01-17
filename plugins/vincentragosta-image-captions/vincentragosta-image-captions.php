@@ -48,9 +48,7 @@ function vincentragosta_image_captions_shortcode( $atts ) {
 	$classes = ( $atts['class'] ) ? explode( ' ', $atts['class'] ) : array();
 
 	// TODO
-	$defaults = vincentragosta_set_image_default_properties( $atts );
-
-	// var_dump( $defaults->button_text ); ?>
+	$defaults = vincentragosta_set_image_default_properties( $atts ); ?>
 
 	<!-- TODO -->
 	<figure class="featured-image <?php echo implode( ' ', $defaults->featured_image_classes ); ?>">
@@ -60,7 +58,7 @@ function vincentragosta_image_captions_shortcode( $atts ) {
 
 			<!-- Sub-header -->
 			<!-- TODO Create function for this -->
-			<?php include( VINCENTRAGOSTA_IMAGE_CAPTION_PATH . 'partials/aside-text.php' ); ?>
+			<?php include( VINCENTRAGOSTA_IMAGE_CAPTION_PATH . 'partials/aside-sub-header.php' ); ?>
 
 			<!-- Header -->
 			<!-- TODO Create function for this -->
@@ -73,7 +71,7 @@ function vincentragosta_image_captions_shortcode( $atts ) {
 		</div>
 
 		<!-- Post image -->
-		<div class="post-type normalize-image" style="background-image: url( '<?php echo esc_attr( $defaults->image_source ); ?>' );"></div>
+		<?php include( VINCENTRAGOSTA_IMAGE_CAPTION_PATH . 'partials/aside-image.php' ); ?>
 
 	</figure><?php
 

@@ -22,34 +22,41 @@ function vincentragosta_get_featured_image( $id ) {
 function vincentragosta_set_image_default_properties( $atts ) {
 	global $post;
 
+	// TODO
+	if ( is_single() ) { $featured_image_classes[] = 'single'; }
+
 	if ( $post->post_type === 'page' ) :
 		$featured_image_classes[] = 'aspect-ratio-10x4';
 		$featured_image_classes[] = 'image-min-height';
 		$visibility_class         = 'visible';
-		$text                     = get_post_meta( $post->ID, 'sub_header', true );
-		$text_class               = 'sub-header';
+		$sub_header               = get_post_meta( $post->ID, 'sub_header', true );
+		$sub_header_class         = 'big';
+		$header_class             = 'big';
 		$button_text              = $atts['data-button-text'];
 	elseif ( $post->post_type === 'post' ) :
-		$featured_image_classes[] = 'aspect-ratio-1x1';
+		$featured_image_classes[] = ( is_single() ) ? 'aspect-ratio-10x4' : 'aspect-ratio-1x1';
 		$visibility_class         = 'not-visible';
-		$text                     = date_format( date_create( $post->post_date ), 'jS F Y' );
-		$text_class               = 'date';
+		$sub_header               = date_format( date_create( $post->post_date ), 'jS F Y' );
+		$sub_header_class         = ( is_single() ) ? 'big' : 'small';
+		$header_class             = ( is_single() ) ? 'big' : 'small';
 		$button_text              = 'View ' . $post->post_type;
 	else :
-		$featured_image_classes[] = 'aspect-ratio-1x1';
+		$featured_image_classes[] = ( is_single() ) ? 'aspect-ratio-10x4' : 'aspect-ratio-1x1';
 		$visibility_class         = 'not-visible';
-		$text                     = 'Wordpress Site'; // Make this dynamic.
-		$text_class               = 'taxonomy';
+		$sub_header               = 'Wordpress Site'; // Make this dynamic.
+		$sub_header_class         = ( is_single() ) ? 'big' : 'small';
+		$header_class             = ( is_single() ) ? 'big' : 'small';
 		$button_text              = 'View ' . $post->post_type;
 	endif;
 
 	$defaults = ( object ) array(
-		'title'                  => $post->post_title,
+		'header'                 => $post->post_title,
 		'image_source'           => vincentragosta_get_featured_image( $post->ID ),
 		'featured_image_classes' => $featured_image_classes,
 		'visibility_class'       => $visibility_class,
-		'text'                   => $text,
-		'text_class'             => $text_class,
+		'sub_header'             => $sub_header,
+		'sub_header_class'       => $sub_header_class,
+		'header_class'           => $header_class,
 		'button_text'            => $button_text
 	);
 

@@ -8,6 +8,6 @@
  */
 ?>
 
-<?php if ( $defaults->button_text ) : ?>
+<?php if ( $defaults->button_text && ! is_single() ) : ?>
 	<a href="<?php echo get_the_permalink( $post->ID ); ?>"><?php echo esc_html( $defaults->button_text ); ?></a>
 <?php endif; ?>
