@@ -7,15 +7,15 @@
  * @uses add_meta_box()
  * @return void
  */
-function vincentragosta_project_metaboxes() {
+function vincentragosta_image_caption_project_metaboxes() {
 	add_meta_box(
-		'configuration',
-		__( 'Configuration', 'vincentragosta' ),
-		'vincentragosta_project_callback',
+		'image-caption-settings',
+		__( 'Image Caption Settings', 'vincentragosta' ),
+		'vincentragosta_image_caption_project_callback',
 		'project'
 	);
 }
-add_action( 'add_meta_boxes', 'vincentragosta_project_metaboxes' );
+add_action( 'add_meta_boxes', 'vincentragosta_image_caption_project_metaboxes' );
 
 /**
  * The callback for add_meta_box(), contains the HTML necessary to create the metaboxes.
@@ -24,31 +24,22 @@ add_action( 'add_meta_boxes', 'vincentragosta_project_metaboxes' );
  * @uses   wp_nonce_field(), wp_editor()
  * @return void
  */
-function vincentragosta_project_callback( $post ) {
+function vincentragosta_image_caption_project_callback( $post ) {
 	// Add a nonce field so we can check for it later.
-	wp_nonce_field( 'vincentragosta_project_save_data', 'vincentragosta_nonce' );
+	wp_nonce_field( 'vincentragosta_image_caption_project_save_data', 'vincentragosta_nonce' );
 	/**
 	 * Use get_post_meta() to retrieve an existing value
 	 * from the database and use the value for the form.
 	 */
-	$shorthand_title = get_post_meta( $post->ID, 'shorthand_title', true );
-	$technology      = get_post_meta( $post->ID, 'technology', true ); ?>
+	$sub_header      = get_post_meta( $post->ID, 'sub_header', true ); ?>
 
 	<table style="width: 100%;">
 		<tr>
 			<td>
-				<label for="shorthand_title"><?php echo __( 'Shorthand Title:', 'vincentragosta' ); ?></label>
+				<label for="sub_header"><?php echo __( 'Sub Header:', 'vincentragosta' ); ?></label>
 			</td>
 			<td>
-				<textarea id="shorthand_title" name="shorthand_title" style="width: 100%;"><?php echo esc_textarea( $shorthand_title ); ?></textarea>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<label for="technology"><?php echo __( 'Technology Used:', 'vincentragosta' ); ?></label>
-			</td>
-			<td>
-				<textarea id="technology" name="technology" style="width: 100%;"><?php echo esc_textarea( $technology ); ?></textarea>
+				<textarea id="sub_header" name="sub_header" style="width: 100%;"><?php echo esc_textarea( $sub_header ); ?></textarea>
 			</td>
 		</tr>
 	</table><?php
@@ -61,7 +52,7 @@ function vincentragosta_project_callback( $post ) {
  * @uses   wp_verify_nonce(), apply_filters()
  * @return void
  */
-function vincentragosta_project_save_data( $post_id ) {
+function vincentragosta_image_caption_project_save_data( $post_id ) {
 	/**
 	 * We need to verify this came from our screen and with proper authorization,
 	 * because the save_post action can be triggered at other times.
@@ -72,7 +63,7 @@ function vincentragosta_project_save_data( $post_id ) {
 	}
 
 	// Verify that the nonce is valid.
-	if ( ! wp_verify_nonce( $_POST['vincentragosta_nonce'], 'vincentragosta_project_save_data' ) ) {
+	if ( ! wp_verify_nonce( $_POST['vincentragosta_nonce'], 'vincentragosta_image_caption_project_save_data' ) ) {
 		return;
 	}
 
@@ -89,13 +80,13 @@ function vincentragosta_project_save_data( $post_id ) {
 	}
 
 	// Sanitize user input.
-	$shorthand_title = sanitize_text_field( $_POST['shorthand_title'] );
-	$technology      = sanitize_text_field( $_POST['technology'] );
+	$sub_header      = sanitize_text_field( $_POST['sub_header'] );
 
 	// Update the meta field in the database.
 	update_post_meta( $post_id, 'shorthand_title', $shorthand_title );
+	update_post_meta( $post_id, 'sub_header', $sub_header );
 	update_post_meta( $post_id, 'technology', $technology );
 }
-add_action( 'save_post', 'vincentragosta_project_save_data' );
+add_action( 'save_post', 'vincentragosta_image_caption_project_save_data' );
 
 ?>

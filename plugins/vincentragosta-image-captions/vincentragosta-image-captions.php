@@ -23,6 +23,11 @@ require_once VINCENTRAGOSTA_IMAGE_CAPTION_PATH . 'includes/functions/core.php';
 // Include all helper functions associated with the image caption shortcode.
 require_once VINCENTRAGOSTA_IMAGE_CAPTION_PATH . 'includes/functions/helpers.php';
 
+// Include image caption specific metaboxes.
+require_once VINCENTRAGOSTA_IMAGE_CAPTION_PATH . 'includes/metaboxes/metabox-page.php';
+require_once VINCENTRAGOSTA_IMAGE_CAPTION_PATH . 'includes/metaboxes/metabox-post.php';
+require_once VINCENTRAGOSTA_IMAGE_CAPTION_PATH . 'includes/metaboxes/metabox-project.php';
+
 /**
  * Generate image caption shortcode for use within the theme.
  *
