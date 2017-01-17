@@ -110,7 +110,8 @@
 }
 
 /* TODO */
-.date {
+.sub-header.date,
+.sub-header.taxonomy {
 	font-size: 1.8rem;
 }
 

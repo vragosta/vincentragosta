@@ -111,44 +111,6 @@ hr {
 	padding: 0 1rem;
 }
 
-/*.visible {
-	visibility: visible;
-	opacity: 1;
-	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
-}
-
-.not-visible {
-	visibility: hidden;
-	opacity: 0;
-	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
-}*/
-
-/*.aspect-ratio-1x1 {
-	padding-bottom: 100%;
-}
-
-.aspect-ratio-16x9 {
-	padding-bottom: 56.25%;
-}
-
-.aspect-ratio-10x4 {
-	padding-bottom: 40%;
-}*/
-
-/*.normalize-image {
-	background-position: center;
-	background-size: cover;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
-
-.image-min-height {
-	min-height: 600px;
-}*/
-
 /**
  *===== Header =====*
  */
@@ -239,59 +201,6 @@ hr {
 		opacity: 1;
 	}
 }
-
-/*.sub-header {
-	color: #fff;
-	font-style: italic;
-	letter-spacing: 1px;
-	margin: 0;
-	font-weight: 100;
-	text-shadow: #080808 0 0 4px;
-}*/
-
-/*#news-and-updates .sub-header.date {
-	font-size: 1.8rem;
-}*/
-
-/*.header {
-	margin: 0;
-	color: #fff;
-	text-transform: uppercase;
-	font-weight: 700;
-	line-height: 1;
-	max-width: 1000px;
-	text-shadow: #080808 0 0 4px;
-}*/
-
-/*@media only screen and ( min-width: 992px ) {
-	.sub-header {
-		font-size: 2.5rem;
-	}
-
-	.header {
-		font-size: 7.5rem;
-	}
-}
-
-@media only screen and ( min-width: 768px ) and ( max-width: 992px ) {
-	.sub-header {
-		font-size: 2rem;
-	}
-
-	.header {
-		font-size: 6rem;
-	}
-}
-
-@media only screen and ( max-width: 768px ) {
-	.sub-header {
-		font-size: 1.8rem;
-	}
-
-	.header {
-		font-size: 4rem;
-	}
-}*/
 
 /**
  *===== Footer =====*
@@ -537,10 +446,6 @@ hr {
 /**
  *===== Portfolio/Archive =====*
  */
-.archive .aside:nth-child(2) {
-	padding: 6rem 4rem 0;
-}
-
 .archive .aside p {
 	max-width: 850px;
 }
@@ -567,83 +472,6 @@ hr {
 	}
 }
 
-/*--- Overlay ---*/
-/*.overlay {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	z-index: 10;
-	background: transparent;
-}
-
-.featured-image {
-	filter: grayscale( 100% );
-}
-
-.featured-image:hover .overlay {
-	visibility: visible;
-	opacity: 1;
-}
-
-@media only screen and ( max-width: 768px ) {
-	.featured-image .overlay {
-		visibility: visible;
-		opacity: 1;
-	}
-}
-
-.overlay .title {
-	font-size: 2.5rem;
-	text-align: center;
-	text-shadow: #080808 0 0 4px;
-	color: #fff;
-	margin: 0;
-}
-
-.overlay span {
-	color: #fff;
-}
-
-.overlay a {
-	font-size: 1.2rem;
-	padding: .5rem 1rem;
-	text-shadow: #080808 0 0 4px;
-	background: transparent;
-	border-color: #fff;
-	color: #fff;
-	margin-top: 1rem;
-	transition: background 0.5s ease-in-out, color 0.5s ease-in-out, text-shadow 0.5s ease-in-out;
-}
-
-.overlay a:hover {
-	background: #fff;
-	color: #686868;
-	text-shadow: none;
-}
-
-.post-type {
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	opacity: 1;
-	transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
-}
-
-.featured-image:hover .post-type {
-	-webkit-filter: brightness( 40% );
-	filter: brightness( 40% );
-}
-
-@media only screen and ( max-width: 768px ) {
-	.featured-image .post-type {
-		-webkit-filter: brightness( 40% );
-		filter: brightness( 40% );
-	}
-}*/
-
 /**
  *===== Pagination =====*
  */
@@ -667,10 +495,6 @@ hr {
 }
 
 /*--- Archive ---*/
-/* TODO */
-/*#portfolio .sub-header {
-	font-size: 1.5rem;
-}*/
 
 /*--- Single ---*/
 #pagination-controls {
@@ -723,6 +547,7 @@ hr {
 /*--- News & Updates Widget ---*/
 
 /* TODO See what you can do with this */
+/* Make this an attribute on the plugin */
 #news-and-updates .post-type {
 	top: 10px;
 	bottom: 10px;
@@ -730,17 +555,13 @@ hr {
 	right: 10px;
 }
 
-/* TODO */
-/*#news-and-updates .sub-header {
-	font-size: 1.5rem;
-}*/
-
 #news-and-updates > div:last-child {
 	padding-top: 2rem;
 }
 
 /*--- Featured Post Widget ---*/
-/* TODO */
+/* TODO See what you can do with this */
+/* Make this an attribute on the plugin */
 #featured-page-widget .featured-image .post-type {
 	-webkit-filter: brightness( 40% );
 	filter: brightness( 40% );
