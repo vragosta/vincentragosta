@@ -95,11 +95,10 @@ class Featured_Page_Widget extends WP_Widget {
 		<div id="featured-page-widget" class="custom-widget full-width">
 			<?php if ( $query->have_posts() ) : ?>
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-					<?php $image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post->ID ); ?>
 					<div class="col-xs-12">
 
 						<!-- Featured image overlay -->
-						<?php include( locate_template( 'partials/content-featured-image-overlay.php', false, false ) ); ?>
+						<?php do_shortcode( '[image-caption id="' . $post->ID . '" class="static"]' ); ?>
 
 					</div>
 				<?php endwhile; ?>

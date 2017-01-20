@@ -7,15 +7,15 @@
  * @uses   add_meta_box()
  * @return void
  */
-function vincentragosta_post_metaboxes() {
+function vincentragosta_image_caption_post_metaboxes() {
 	add_meta_box(
-		'configuration',
-		__( 'Configuration', 'vincentragosta' ),
-		'vincentragosta_post_callback',
+		'image-caption-settings',
+		__( 'Image Caption Settings', 'vincentragosta' ),
+		'vincentragosta_image_caption_post_callback',
 		'post'
 	);
 }
-add_action( 'add_meta_boxes', 'vincentragosta_post_metaboxes' );
+add_action( 'add_meta_boxes', 'vincentragosta_image_caption_post_metaboxes' );
 
 /**
  * The callback for add_meta_box(), contains the HTML necessary to create the metaboxes.
@@ -24,9 +24,9 @@ add_action( 'add_meta_boxes', 'vincentragosta_post_metaboxes' );
  * @uses   wp_nonce_field(), get_post_meta(), esc_html()
  * @return void
  */
-function vincentragosta_post_callback( $post ) {
+function vincentragosta_image_caption_post_callback( $post ) {
 	// Add a nonce field so we can check for it later.
-	wp_nonce_field( 'vincentragosta_post_save_data', 'vincentragosta_nonce' );
+	wp_nonce_field( 'vincentragosta_image_caption_post_save_data', 'vincentragosta_nonce' );
 
 	/**
 	 * Use get_post_meta() to retrieve an existing value
@@ -53,7 +53,7 @@ function vincentragosta_post_callback( $post ) {
  * @uses   isset(), wp_verify_nonce(), apply_filters(), defined(), current_user_can(), sanitize_text_field(), update_post_meta()
  * @return void
  */
-function vincentragosta_post_save_data( $post_id ) {
+function vincentragosta_image_caption_post_save_data( $post_id ) {
 	/**
 	 * We need to verify this came from our screen and with proper authorization,
 	 * because the save_post action can be triggered at other times.
@@ -64,7 +64,7 @@ function vincentragosta_post_save_data( $post_id ) {
 	}
 
 	// Verify that the nonce is valid.
-	if ( ! wp_verify_nonce( $_POST['vincentragosta_nonce'], 'vincentragosta_post_save_data' ) ) {
+	if ( ! wp_verify_nonce( $_POST['vincentragosta_nonce'], 'vincentragosta_image_caption_post_save_data' ) ) {
 		return;
 	}
 
@@ -86,6 +86,6 @@ function vincentragosta_post_save_data( $post_id ) {
 	// Update the meta field in the database.
 	update_post_meta( $post_id, 'sub_header', $sub_header );
 }
-add_action( 'save_post', 'vincentragosta_post_save_data' );
+add_action( 'save_post', 'vincentragosta_image_caption_post_save_data' );
 
 ?>

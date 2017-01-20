@@ -1,0 +1,275 @@
+/**
+ * VincentRagosta - Twenty Sixteen
+ * http://vincentragosta.com
+ *
+ * Copyright (c) 2016
+ * Licensed under the GPL-2.0+ license.
+ */
+
+/* TODO Consider Prefixing the CSS */
+
+/**
+ *===== Helper CSS =====*
+ */
+/* TODO */
+.full-width {
+	width: 100%;
+}
+
+.col-flex-center {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.col-flex-start {
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.col-flex-end {
+	height: 100%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.row-flex-center {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.row-flex-start {
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.row-flex-end {
+	height: 100%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.padding-left-right {
+	padding: 0 1rem;
+}
+
+/* TODO */
+.aspect-ratio-1x1 {
+	padding-bottom: 100%;
+}
+
+.aspect-ratio-16x9 {
+	padding-bottom: 56.25%;
+}
+
+.aspect-ratio-10x4 {
+	padding-bottom: 40%;
+}
+
+/* TODO */
+.normalize-image {
+	background-position: center;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+/* TODO */
+.image-min-height {
+	min-height: 600px;
+}
+
+/* TODO */
+.visible {
+	visibility: visible;
+	opacity: 1;
+	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.not-visible {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* TODO TITLE */
+
+/*--- Featured Image ---*/
+.featured-image {
+	filter: grayscale( 100% );
+}
+
+/*--- Sub-header ---*/
+.sub-header {
+	color: #fff;
+	font-style: italic;
+	letter-spacing: 1px;
+	margin: 0;
+	font-weight: 100;
+	text-shadow: #080808 0 0 4px;
+	text-align: center;
+}
+
+@media only screen and ( min-width: 992px ) {
+	.sub-header {
+		font-size: 2.5rem;
+	}
+}
+
+@media only screen and ( min-width: 768px ) and ( max-width: 992px ) {
+	.sub-header {
+		font-size: 2rem;
+	}
+}
+
+@media only screen and ( max-width: 768px ) {
+	.sub-header {
+		font-size: 1.8rem;
+	}
+}
+
+.sub-header.small {
+	font-size: 1.8rem;
+}
+
+.sub-header.big {
+	/*--- No CSS needed here ---*/
+}
+
+/*--- Header ---*/
+.header {
+	margin: 0;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 700;
+	line-height: 1;
+	text-align: center;
+	text-shadow: #080808 0 0 4px;
+}
+
+.header.big {
+	max-width: 1000px;
+}
+
+.header.small {
+	font-size: 2.5rem;
+	max-width: 500px;
+	padding: 0 2rem;
+}
+
+/* TODO */
+@media only screen and ( min-width: 992px ) {
+	.header {
+		font-size: 7.5rem;
+	}
+}
+
+@media only screen and ( min-width: 768px ) and ( max-width: 992px ) {
+	.header {
+		font-size: 6rem;
+	}
+}
+
+@media only screen and ( max-width: 768px ) {
+	.header {
+		font-size: 4rem;
+	}
+}
+
+/*--- Overlay ---*/
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	background: transparent;
+}
+
+/* TODO */
+.featured-image.static .overlay,
+.featured-image.single .overlay,
+.featured-image:hover .overlay {
+	visibility: visible;
+	opacity: 1;
+}
+
+/* TODO */
+@media only screen and ( max-width: 768px ) {
+	.featured-image .overlay {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+.overlay span {
+	color: #fff;
+}
+
+.overlay a {
+	font-size: 1.2rem;
+	padding: .5rem 1rem;
+	text-shadow: #080808 0 0 4px;
+	background: transparent;
+	border-color: #fff;
+	color: #fff;
+	margin-top: 1rem;
+	transition: background 0.5s ease-in-out, color 0.5s ease-in-out, text-shadow 0.5s ease-in-out;
+}
+
+.overlay a:hover {
+	background: #fff;
+	color: #686868;
+	text-shadow: none;
+}
+
+/* TODO Change name. */
+.post-type {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 1;
+	transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+/* TODO */
+.featured-image.archive .post-type {
+	top: 10px;
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
+}
+
+/* TODO */
+.featured-image.static .post-type,
+.featured-image:hover .post-type {
+	-webkit-filter: brightness( 40% );
+	filter: brightness( 40% );
+}
+
+/* TODO */
+@media only screen and ( max-width: 768px ) {
+	.featured-image .post-type {
+		-webkit-filter: brightness( 40% );
+		filter: brightness( 40% );
+	}
+}

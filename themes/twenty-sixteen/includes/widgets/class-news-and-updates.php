@@ -51,7 +51,7 @@ class News_And_Updates_Widget extends WP_Widget {
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>"><?php echo __( 'Enter ID\'s:', 'vincentragosta' ); ?></label><br />
-			<label class="vr-widget-description" for="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>">Please separate with a comma.</label><br />
+			<label class="vr-description" for="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>">Please separate with a comma.</label><br />
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'ids' ) ); ?>" type="text" value="<?php echo esc_attr( $ids ); ?>">
 		</p>
 		<?php
@@ -124,17 +124,10 @@ class News_And_Updates_Widget extends WP_Widget {
 		<div id="news-and-updates" class="custom-widget full-width">
 			<?php if ( $query->have_posts() ) : ?>
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-
-					<!-- Get the title from the current post. -->
-					<?php $title = ( get_post_meta( $post->ID, 'shorthand_title', true ) ) ? get_post_meta( $post->ID, 'shorthand_title', true ) : $post->post_title; ?>
-
-					<!-- Get the image from the current post. -->
-					<?php $image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post->ID ); ?>
-
 					<div class="col-xs-12 <?php echo esc_attr( $bootstrap_class ); ?>">
 
 						<!-- Featured image overlay -->
-						<?php include( locate_template( 'partials/content-featured-image-overlay.php', false, false ) ); ?>
+						<?php do_shortcode( '[image-caption id="' . $post->ID . '" class="archive"]' ); ?>
 
 					</div>
 				<?php endwhile; ?>

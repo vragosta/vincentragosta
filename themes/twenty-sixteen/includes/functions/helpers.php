@@ -9,16 +9,16 @@
 
 namespace vincentragosta_com\Twenty_Sixteen\Helpers;
 
-/**
- * Returns featured image of a post or custom post type.
- *
- * @since  0.1.0
- * @param  int    $id ID of the WP_Post Object.
- * @return string     URL of attached image.
- */
-function vr_get_featured_image( $id ) {
-	return wp_get_attachment_image_src( get_post_thumbnail_id( $id ), VINCENTRAGOSTA_COM_IMAGE_SIZE )[0];
-}
+// /**
+//  * Returns featured image of a post or custom post type.
+//  *
+//  * @since  0.1.0
+//  * @param  int    $id ID of the WP_Post Object.
+//  * @return string     URL of attached image.
+//  */
+// function vr_get_featured_image( $id ) {
+// 	return wp_get_attachment_image_src( get_post_thumbnail_id( $id ), VINCENTRAGOSTA_COM_IMAGE_SIZE )[0];
+// }
 
 /**
  * If the query permits pagination, display pagination controls.

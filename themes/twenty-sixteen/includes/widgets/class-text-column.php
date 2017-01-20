@@ -61,7 +61,7 @@ class Text_Column_Widget extends WP_Widget {
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'number_columns' ) ); ?>"><?php echo __( 'Columns to display:', 'vincentragosta' ); ?></label><br />
-			<label class="vr-widget-description" for="<?php echo esc_attr( $this->get_field_id( 'number_columns' ) ); ?>"><?php echo __( 'Selecting `--` will clear all entries.', 'vincentragosta' ); ?></label>
+			<label class="vr-description" for="<?php echo esc_attr( $this->get_field_id( 'number_columns' ) ); ?>"><?php echo __( 'Selecting `--` will clear all entries.', 'vincentragosta' ); ?></label>
 			<select class="widefat number-columns" id="<?php echo esc_attr( $this->get_field_id( 'number_columns' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number_columns' ) ); ?>">
 				<option value="0">--</option>
 				<option value="1" <?php echo ( $number_columns === '1' ) ? 'selected' : ''; ?>>One</option>
