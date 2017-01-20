@@ -1,0 +1,47 @@
+/**
+ *===== Portfolio/Archive Template =====*
+ */
+.archive .aside p {
+	max-width: 850px;
+}
+
+.archive .grid-container {
+	padding: 1rem .5rem 0;
+}
+
+.archive .grid-container:last-child {
+	padding-bottom: 1rem;
+}
+
+.archive .grid-container .grid-item {
+	margin: 0 .5rem;
+}
+
+@media only screen and ( max-width: 768px ) {
+	.archive .grid-container .grid-item {
+		margin: .5rem 0;
+	}
+
+	.archive .grid-container {
+		flex-direction: column;
+	}
+}
+
+/*--- Archive Pagination ---*/
+#pagination {
+	margin: 0 0 6rem;
+}
+
+.page-numbers {
+	border: none;
+	padding: 0 1rem;
+	font-size: 2rem;
+	color: #686868;
+	font-family: 'Lato', sans-serif;
+	transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.page-numbers:hover:not( .current ) {
+	background-color: #686868;
+	color: #fff;
+}
