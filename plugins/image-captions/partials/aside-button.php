@@ -2,7 +2,7 @@
 /**
  * Template to display the button.
  *
- * @package VincentRagosta 2016
+ * @package ImageCaptions 2016
  * @since   0.1.0
  * @uses    get_the_parmalink(), esc_html()
  */

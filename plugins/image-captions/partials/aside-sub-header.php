@@ -2,7 +2,7 @@
 /**
  * Template to display the sub-header above the header.
  *
- * @package VincentRagosta 2016
+ * @package ImageCaptions 2016
  * @since   0.1.0
  */
 ?>

@@ -1,33 +1,32 @@
 <?php
 
 /**
- * Create configuration metabox for 'post' custom post type.
+ * Add 'Sub Header' meta box to 'project' post type.
  *
- * @since  0.1.0
- * @uses   add_meta_box()
+ * @since 0.1.0
+ * @uses add_meta_box()
  * @return void
  */
-function vincentragosta_image_caption_post_metaboxes() {
+function image_captions_project_metaboxes() {
 	add_meta_box(
-		'image-caption-settings',
+		'image-captions-settings',
 		__( 'Image Caption Settings', 'vincentragosta' ),
-		'vincentragosta_image_caption_post_callback',
-		'post'
+		'image_captions_project_callback',
+		'project'
 	);
 }
-add_action( 'add_meta_boxes', 'vincentragosta_image_caption_post_metaboxes' );
+add_action( 'add_meta_boxes', 'image_captions_project_metaboxes' );
 
 /**
  * The callback for add_meta_box(), contains the HTML necessary to create the metaboxes.
  *
  * @since  0.1.0
- * @uses   wp_nonce_field(), get_post_meta(), esc_html()
+ * @uses   wp_nonce_field(), wp_editor()
  * @return void
  */
-function vincentragosta_image_caption_post_callback( $post ) {
+function image_captions_project_callback( $post ) {
 	// Add a nonce field so we can check for it later.
-	wp_nonce_field( 'vincentragosta_image_caption_post_save_data', 'vincentragosta_nonce' );
-
+	wp_nonce_field( 'image_captions_project_save_data', 'image_captions_nonce' );
 	/**
 	 * Use get_post_meta() to retrieve an existing value
 	 * from the database and use the value for the form.
@@ -37,7 +36,7 @@ function vincentragosta_image_caption_post_callback( $post ) {
 	<table style="width: 100%;">
 		<tr>
 			<td>
-				<label for="sub_header"><?php echo esc_html( __( 'Sub Header:', 'vincentragosta' ) ); ?></label>
+				<label for="sub_header"><?php echo __( 'Sub Header:', 'vincentragosta' ); ?></label>
 			</td>
 			<td>
 				<textarea id="sub_header" name="sub_header" style="width: 100%;"><?php echo esc_textarea( $sub_header ); ?></textarea>
@@ -50,21 +49,21 @@ function vincentragosta_image_caption_post_callback( $post ) {
  * Saves and sanitizes the POST data.
  *
  * @since  0.1.0
- * @uses   isset(), wp_verify_nonce(), apply_filters(), defined(), current_user_can(), sanitize_text_field(), update_post_meta()
+ * @uses   wp_verify_nonce(), apply_filters()
  * @return void
  */
-function vincentragosta_image_caption_post_save_data( $post_id ) {
+function image_captions_project_save_data( $post_id ) {
 	/**
 	 * We need to verify this came from our screen and with proper authorization,
 	 * because the save_post action can be triggered at other times.
 	 */
 	// Check if our nonce is set.
-	if ( ! isset( $_POST['vincentragosta_nonce'] ) ) {
+	if ( ! isset( $_POST['image_captions_nonce'] ) ) {
 		return;
 	}
 
 	// Verify that the nonce is valid.
-	if ( ! wp_verify_nonce( $_POST['vincentragosta_nonce'], 'vincentragosta_image_caption_post_save_data' ) ) {
+	if ( ! wp_verify_nonce( $_POST['image_captions_nonce'], 'image_captions_project_save_data' ) ) {
 		return;
 	}
 
@@ -74,8 +73,8 @@ function vincentragosta_image_caption_post_save_data( $post_id ) {
 	}
 
 	// Check the user's permissions.
-	if ( isset( $_POST['post_type'] ) && 'post' == $_POST['post_type'] ) {
-		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+	if ( isset( $_POST['post_type'] ) && 'project' == $_POST['post_type'] ) {
+		if ( ! current_user_can( 'edit_page', $post_id ) ) {
 			return;
 		}
 	}
@@ -84,8 +83,10 @@ function vincentragosta_image_caption_post_save_data( $post_id ) {
 	$sub_header = sanitize_text_field( $_POST['sub_header'] );
 
 	// Update the meta field in the database.
+	update_post_meta( $post_id, 'shorthand_title', $shorthand_title );
 	update_post_meta( $post_id, 'sub_header', $sub_header );
+	update_post_meta( $post_id, 'technology', $technology );
 }
-add_action( 'save_post', 'vincentragosta_image_caption_post_save_data' );
+add_action( 'save_post', 'image_captions_project_save_data' );
 
 ?>
