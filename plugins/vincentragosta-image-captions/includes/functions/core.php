@@ -6,16 +6,10 @@
  * @uses   wp_enqueue_script()
  * @return void
  */
-function vincentragosta_image_caption_scripts() {
-	// wp_enqueue_script(
-	// 	'sc-player',
-	// 	STORYCORPS_PLAYER_URL . "assets/js/sc-player.js",
-	// 	array( 'jquery' ),
-	// 	STORYCORPS_PLAYER_VERSION,
-	// 	true
-	// );
-}
-add_action( 'wp_enqueue_scripts', 'vincentragosta_image_caption_scripts', 99 );
+// function vincentragosta_image_caption_scripts() {
+//
+// }
+// add_action( 'wp_enqueue_scripts', 'vincentragosta_image_caption_scripts', 99 );
 
 /**
  * Enqueue styles for front-end.
@@ -25,10 +19,52 @@ add_action( 'wp_enqueue_scripts', 'vincentragosta_image_caption_scripts', 99 );
  * @return void
  */
 function vincentragosta_image_caption_styles() {
-	wp_enqueue_style(
-		'vincentragosta-image-caption',
-		VINCENTRAGOSTA_IMAGE_CAPTION_URL . "assets/css/vincentragosta---image-captions-twenty-sixteen.css",
+	wp_register_style(
+		'vincentragosta-image-captions-core-components',
+		VINCENTRAGOSTA_IMAGE_CAPTION_URL . "assets/css/vincentragosta---image-captions-core-components.css",
 		array(),
+		VINCENTRAGOSTA_IMAGE_CAPTION_VERSION
+	);
+
+	wp_register_style(
+		'vincentragosta-image-captions-helpers',
+		VINCENTRAGOSTA_IMAGE_CAPTION_URL . "assets/css/vincentragosta---image-captions-helpers.css",
+		array(),
+		VINCENTRAGOSTA_IMAGE_CAPTION_VERSION
+	);
+
+	wp_register_style(
+		'vincentragosta-image-captions-sub-header',
+		VINCENTRAGOSTA_IMAGE_CAPTION_URL . "assets/css/vincentragosta---image-captions-sub-header.css",
+		array(),
+		VINCENTRAGOSTA_IMAGE_CAPTION_VERSION
+	);
+
+	wp_register_style(
+		'vincentragosta-image-captions-header',
+		VINCENTRAGOSTA_IMAGE_CAPTION_URL . "assets/css/vincentragosta---image-captions-header.css",
+		array(),
+		VINCENTRAGOSTA_IMAGE_CAPTION_VERSION
+	);
+
+	wp_register_style(
+		'vincentragosta-image-captions-overlay',
+		VINCENTRAGOSTA_IMAGE_CAPTION_URL . "assets/css/vincentragosta---image-captions-overlay.css",
+		array(),
+		VINCENTRAGOSTA_IMAGE_CAPTION_VERSION
+	);
+
+	wp_register_style(
+		'vincentragosta-image-captions-post-type',
+		VINCENTRAGOSTA_IMAGE_CAPTION_URL . "assets/css/vincentragosta---image-captions-post-type.css",
+		array(),
+		VINCENTRAGOSTA_IMAGE_CAPTION_VERSION
+	);
+
+	wp_enqueue_style(
+		'vincentragosta-image-captions',
+		VINCENTRAGOSTA_IMAGE_CAPTION_URL . "assets/css/vincentragosta---image-captions-twenty-sixteen.css",
+		array( 'vincentragosta-image-captions-core-components', 'vincentragosta-image-captions-helpers', 'vincentragosta-image-captions-sub-header', 'vincentragosta-image-captions-header', 'vincentragosta-image-captions-overlay', 'vincentragosta-image-captions-post-type' ),
 		VINCENTRAGOSTA_IMAGE_CAPTION_VERSION,
 		'all'
 	);

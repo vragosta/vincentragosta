@@ -170,6 +170,13 @@ function styles() {
 		VINCENTRAGOSTA_COM_VERSION
 	);
 
+	wp_register_style(
+		'widget',
+		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---widgets.css",
+		array(),
+		VINCENTRAGOSTA_COM_VERSION
+	);
+
 	// Enqueue the single styles if on the single template.
 	if ( is_single() ) :
 		wp_enqueue_style(
@@ -193,7 +200,7 @@ function styles() {
 	wp_enqueue_style(
 		'vincentragosta_com',
 		VINCENTRAGOSTA_COM_URL . "/assets/css/vincentragosta---twenty-sixteen.css",
-		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'helpers', 'core-components', 'menus', 'header', 'footer' ),
+		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'helpers', 'core-components', 'menus', 'header', 'footer', 'widget' ),
 		VINCENTRAGOSTA_COM_VERSION
 	);
 }
