@@ -1,0 +1,58 @@
+/**
+ *===== Helper CSS =====*
+ */
+/* TODO */
+.full-width {
+	width: 100%;
+}
+
+.col-flex-center {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.col-flex-start {
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.col-flex-end {
+	height: 100%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.row-flex-center {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.row-flex-start {
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.row-flex-end {
+	height: 100%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.padding-left-right {
+	padding: 0 1rem;
+}
