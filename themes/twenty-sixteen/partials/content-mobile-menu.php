@@ -18,7 +18,7 @@
 	<div>
 
 		<!-- Menu -->
-		<?php get_template_part( 'partials/section', 'menu' ); ?>
-		
+		<?php get_template_part( 'partials/content', 'menu' ); ?>
+
 	</div>
 </section>

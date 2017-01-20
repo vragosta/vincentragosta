@@ -14,7 +14,7 @@
 
       <!-- Menu -->
       <section class="menu-container">
-        <?php get_template_part( 'partials/section', 'menu' ); ?>
+        <?php get_template_part( 'partials/content', 'menu' ); ?>
       </section>
 
       <!-- Drop down toggle -->

@@ -12,7 +12,7 @@ get_header(); ?>
 	<?php get_template_part( 'partials/aside', 'excerpt' ); ?>
 
 	<!-- TODO -->
-	<?php get_template_part( 'partials/section', 'archive-project' ); ?>
+	<?php get_template_part( 'partials/content', 'archive-project' ); ?>
 
 </main>
 

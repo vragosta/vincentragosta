@@ -7,11 +7,11 @@
  * @uses    get_template_part()
  */
 
-	get_template_part( 'partials/section', 'mobile-menu' ); ?>
+	get_template_part( 'partials/content', 'mobile-menu' ); ?>
 
 	<footer id="footer" class="col-flex-center">
 
-		<?php get_template_part( 'partials/section', 'menu' ); ?>
+		<?php get_template_part( 'partials/content', 'menu' ); ?>
 
 		<section class="col-flex-center">
 
