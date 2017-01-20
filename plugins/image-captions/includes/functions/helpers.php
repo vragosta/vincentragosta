@@ -4,12 +4,12 @@
  *
  * @since  0.1.0
  * @param  Array $atts     Array of attributes assigned to the shortcode.
- * @uses   get_post(), in_array(), vincentragosta_get_featured_image(), vincentragosta_set_featured_image_classes(),
- *         vincentragosta_set_visibility_class, vincentragosta_set_sub_header_text(), vincentragosta_set_font_size(),
- *         vincentragosta_set_button_text()
+ * @uses   get_post(), in_array(), get_featured_image(), set_featured_image_classes(),
+ *         set_visibility_class, set_sub_header_text(), set_font_size(),
+ *         set_button_text()
  * @return Array $defaults Array of default values.
  */
-function vincentragosta_set_default_properties( $atts ) {
+function set_default_properties( $atts ) {
 	global $post;
 
 	// If the attribute 'id' is set on the shortcode, set the post object to the post entered.
@@ -20,13 +20,13 @@ function vincentragosta_set_default_properties( $atts ) {
 
 	$defaults = ( object ) array(
 		'header_text'            => $post->post_title,
-		'image_source'           => vincentragosta_get_featured_image( $post->ID ),
-		'featured_image_classes' => vincentragosta_set_featured_image_classes( $is_static, $atts['class'] ),
-		'visibility_class'       => vincentragosta_set_visibility_class( $is_static ),
-		'sub_header_text'        => vincentragosta_set_sub_header_text( $post ),
-		'sub_header_class'       => vincentragosta_set_font_size( $is_static ),
-		'header_class'           => vincentragosta_set_font_size( $is_static ),
-		'button_text'            => vincentragosta_set_button_text( $is_static, $post, $atts['data-button-text'] )
+		'image_source'           => get_featured_image( $post->ID ),
+		'featured_image_classes' => set_featured_image_classes( $is_static, $atts['class'] ),
+		'visibility_class'       => set_visibility_class( $is_static ),
+		'sub_header_text'        => set_sub_header_text( $post ),
+		'sub_header_class'       => set_font_size( $is_static ),
+		'header_class'           => set_font_size( $is_static ),
+		'button_text'            => set_button_text( $is_static, $post, $atts['data-button-text'] )
 	);
 
 	return $defaults;
@@ -39,8 +39,8 @@ function vincentragosta_set_default_properties( $atts ) {
  * @param  int    $id ID of the WP_Post Object.
  * @return string     URL of attached image.
  */
-function vincentragosta_get_featured_image( $id ) {
-	return wp_get_attachment_image_src( get_post_thumbnail_id( $id ), VINCENTRAGOSTA_COM_IMAGE_SIZE )[0];
+function get_featured_image( $id ) {
+	return wp_get_attachment_image_src( get_post_thumbnail_id( $id ), IMAGE_CAPTIONS_IMAGE_SIZE )[0];
 }
 
 /**
@@ -52,7 +52,7 @@ function vincentragosta_get_featured_image( $id ) {
  * @param  array   $atts                   array of attributes assigned to the shortcode.
  * @return array   $featured_image_classes array of default class values for the featured image element.
  */
-function vincentragosta_set_featured_image_classes( $is_static, $classes ) {
+function set_featured_image_classes( $is_static, $classes ) {
 	// Define local variables.
 	$featured_image_classes = array();
 
@@ -77,7 +77,7 @@ function vincentragosta_set_featured_image_classes( $is_static, $classes ) {
  * @param  boolean $is_static boolean for if the class 'static' is in the featured image classes.
  * @return string             visibility class for overlay.
  */
-function vincentragosta_set_visibility_class( $is_static ) {
+function set_visibility_class( $is_static ) {
 	return ( $is_static ) ? 'visible' : 'not-visible';
 }
 
@@ -88,7 +88,7 @@ function vincentragosta_set_visibility_class( $is_static ) {
  * @param  boolean $is_static boolean for if the class 'static' is in the featured image classes.
  * @return string             font-size class for sub-header/header.
  */
-function vincentragosta_set_font_size( $is_static ) {
+function set_font_size( $is_static ) {
 	return ( $is_static ) ? 'big' : 'small';
 }
 
@@ -100,7 +100,7 @@ function vincentragosta_set_font_size( $is_static ) {
  * @param  boolean $is_static boolean for if the class 'static' is in the featured image classes.
  * @return string             text for button.
  */
-function vincentragosta_set_button_text( $is_static, $post ) {
+function set_button_text( $is_static, $post ) {
 	return ( $is_static ) ? get_post_meta( $post->ID, 'button_text', true ) : 'View ' . $post->post_type;
 }
 
@@ -111,7 +111,7 @@ function vincentragosta_set_button_text( $is_static, $post ) {
  * @param  wp_post $post current post object
  * @return string        text for sub header.
  */
-function vincentragosta_set_sub_header_text( $post ) {
+function set_sub_header_text( $post ) {
 	if ( $post->post_type === 'page' ) :
 		$sub_header = get_post_meta( $post->ID, 'sub_header', true );
 	elseif ( $post->post_type === 'post' ) :
