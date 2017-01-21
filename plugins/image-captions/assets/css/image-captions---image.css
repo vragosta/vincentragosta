@@ -1,10 +1,9 @@
-/* TODO Change name. */
 /*--- Featured Image ---*/
 .featured-image {
 	filter: grayscale( 100% );
 }
 
-.post-type {
+.image {
 	top: 0;
 	bottom: 0;
 	left: 0;
@@ -14,7 +13,7 @@
 }
 
 /* TODO */
-.featured-image.archive .post-type {
+.featured-image.archive .image {
 	top: 10px;
 	bottom: 10px;
 	left: 10px;
@@ -22,15 +21,15 @@
 }
 
 /* TODO */
-.featured-image.static .post-type,
-.featured-image:hover .post-type {
+.featured-image.static .image,
+.featured-image:hover .image {
 	-webkit-filter: brightness( 40% );
 	filter: brightness( 40% );
 }
 
 /* TODO */
 @media only screen and ( max-width: 768px ) {
-	.featured-image .post-type {
+	.featured-image .image {
 		-webkit-filter: brightness( 40% );
 		filter: brightness( 40% );
 	}
