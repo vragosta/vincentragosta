@@ -7,7 +7,13 @@
  * @return void
  */
 function image_captions_scripts() {
-
+	wp_enqueue_script(
+		'image-captions',
+		IMAGE_CAPTIONS_URL . "assets/js/image-captions---twenty-sixteen.js",
+		array(),
+		IMAGE_CAPTIONS_VERSION,
+		'all'
+	);
 }
 add_action( 'wp_enqueue_scripts', 'image_captions_scripts', 99 );
 

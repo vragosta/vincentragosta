@@ -1,6 +1,7 @@
 /*--- Featured Image ---*/
 .featured-image {
 	filter: grayscale( 100% );
+	opacity: 1;
 }
 
 .image {
