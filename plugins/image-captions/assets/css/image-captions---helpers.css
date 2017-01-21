@@ -55,3 +55,46 @@
 .padding-left-right {
 	padding: 0 1rem;
 }
+
+/* TODO */
+.aspect-ratio-1x1 {
+	padding-bottom: 100%;
+}
+
+.aspect-ratio-16x9 {
+	padding-bottom: 56.25%;
+}
+
+.aspect-ratio-10x4 {
+	padding-bottom: 40%;
+}
+
+/* TODO */
+.normalize-image {
+	background-position: center;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+/* TODO */
+.image-min-height {
+	min-height: 600px;
+}
+
+/* TODO */
+.visible {
+	visibility: visible;
+	opacity: 1;
+	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.not-visible {
+	z-index: -10;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
+}
