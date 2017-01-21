@@ -9,5 +9,5 @@
 ?>
 
 <?php if ( $defaults->image_source ) : ?>
-	<div class="post-type normalize-image" style="background-image: url( '<?php echo esc_attr( $defaults->image_source ); ?>' );"></div>
+	<div class="image normalize-image" style="background-image: url( '<?php echo esc_attr( $defaults->image_source ); ?>' );"></div>
 <?php endif; ?>
