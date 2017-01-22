@@ -104,7 +104,7 @@ function set_sub_header_text( $post ) {
 	elseif ( $post->post_type === 'post' ) :
 		$sub_header = date_format( date_create( $post->post_date ), 'jS F Y' );
 	else:
-		$sub_header = 'Wordpress Site'; // Make this dynamic.
+		$sub_header = 'Wordpress Site'; // TODO Make this dynamic or have some other treatment.
 	endif;
 
 	return $sub_header;

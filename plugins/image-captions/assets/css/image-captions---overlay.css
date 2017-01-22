@@ -12,7 +12,7 @@
 	background: transparent;
 }
 
-/* TODO */
+/*--- Make sure that static and single instances of the overlay are displaying at all times. ---*/
 .featured-image.static .overlay,
 .featured-image.single .overlay {
 	visibility: visible;
@@ -31,25 +31,4 @@
 		visibility: visible;
 		opacity: 1;
 	}
-}
-
-.overlay span {
-	color: #fff;
-}
-
-.overlay a {
-	font-size: 1.2rem;
-	padding: .5rem 1rem;
-	text-shadow: #080808 0 0 4px;
-	background: transparent;
-	border-color: #fff;
-	color: #fff;
-	margin-top: 1rem;
-	transition: background 0.5s ease-in-out, color 0.5s ease-in-out, text-shadow 0.5s ease-in-out;
-}
-
-.overlay a:hover {
-	background: #fff;
-	color: #686868;
-	text-shadow: none;
 }
