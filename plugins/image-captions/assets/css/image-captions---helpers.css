@@ -1,5 +1,6 @@
 /**
- *===== Helper CSS =====*
+ * Image Captions - Twenty Sixteen
+ * Helper CSS
  */
 .full-width {
 	width: 100%;
@@ -52,24 +53,27 @@
 	flex-direction: column;
 }
 
+/*--- Padding on left and right edges ( ~10px ) ---*/
 .padding-left-right {
 	padding: 0 1rem;
 }
 
-/* TODO */
+/*--- Aspect Ratio 100% ---*/
 .aspect-ratio-1x1 {
 	padding-bottom: 100%;
 }
 
+/*--- Aspect Ratio 56.25% ---*/
 .aspect-ratio-16x9 {
 	padding-bottom: 56.25%;
 }
 
+/*--- Aspect Ratio 40% ---*/
 .aspect-ratio-10x4 {
 	padding-bottom: 40%;
 }
 
-/* TODO */
+/*--- Normalizes image by centering and covering the parent container ---*/
 .normalize-image {
 	background-position: center;
 	background-size: cover;
@@ -80,18 +84,19 @@
 	right: 0;
 }
 
-/* TODO */
+/*--- Used in conjunction with aspect ratio 10x4 ---*/
 .image-min-height {
 	min-height: 600px;
 }
 
-/* TODO */
+/*--- Add to element to make visible ---*/
 .visible {
 	visibility: visible;
 	opacity: 1;
 	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
 }
 
+/*--- Add to element to make invisible ---*/
 .not-visible {
 	z-index: -10;
 	visibility: hidden;

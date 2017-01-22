@@ -1,4 +1,8 @@
-/*--- Sub-header ---*/
+/**
+ * Image Captions - Twenty Sixteen
+ * Sub Header CSS
+ */
+/*--- Default sub-header styles target non static elements ---*/
 .sub-header {
 	color: #fff;
 	font-style: italic;
@@ -7,51 +11,43 @@
 	font-weight: 100;
 	text-shadow: #080808 0 0 4px;
 	text-align: center;
+	font-size: 1.8rem;
+
+	/*--- CSS transitions to toggle sub-header visibility ---*/
 	opacity: 1;
 	visibility: visible;
 	transition: opacity .4s ease-in-out, visibility .4s ease-in-out, margin .4s ease-in-out;
 }
 
+/*--- Initial styles when the page is unloaded ---*/
 .sub-header.unloaded {
 	opacity: 0;
 	visibility: hidden;
 	margin: 20px 0 0 0;
 }
 
-@media only screen and ( min-width: 768px ) {
-	.aspect-ratio-1x1 .sub-header {
-		opacity: 0;
-		visibility: hidden;
-	}
-}
-
-.aspect-ratio-1x1:hover .sub-header {
-	opacity: 1;
-	visibility: visible;
-}
-
 @media only screen and ( min-width: 992px ) {
-	.sub-header {
+	.featured-image.static .sub-header {
 		font-size: 2.5rem;
 	}
 }
 
 @media only screen and ( min-width: 768px ) and ( max-width: 992px ) {
-	.sub-header {
+	.featured-image.static .sub-header {
 		font-size: 2rem;
 	}
 }
 
 @media only screen and ( max-width: 768px ) {
-	.sub-header {
+	.featured-image.static .sub-header {
 		font-size: 1.8rem;
 	}
 }
 
-.sub-header.small {
-	font-size: 1.8rem;
-}
-
-.sub-header.big {
-	/*--- No CSS needed here ---*/
+@media only screen and ( min-width: 768px ) {
+	.featured-image.static .sub-header,
+	.featured-image:hover .sub-header {
+		opacity: 1;
+		visibility: visible;
+	}
 }

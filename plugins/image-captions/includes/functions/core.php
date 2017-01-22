@@ -26,6 +26,13 @@ add_action( 'wp_enqueue_scripts', 'image_captions_scripts', 99 );
  */
 function image_captions_styles() {
 	wp_register_style(
+		'ic-core-components',
+		IMAGE_CAPTIONS_URL . "assets/css/image-captions---core-components.css",
+		array(),
+		IMAGE_CAPTIONS_VERSION
+	);
+
+	wp_register_style(
 		'ic-helpers',
 		IMAGE_CAPTIONS_URL . "assets/css/image-captions---helpers.css",
 		array(),
@@ -63,7 +70,7 @@ function image_captions_styles() {
 	wp_enqueue_style(
 		'image-captions',
 		IMAGE_CAPTIONS_URL . "assets/css/image-captions---twenty-sixteen.css",
-		array( 'ic-helpers', 'ic-sub-header', 'ic-header', 'ic-overlay', 'ic-image' ),
+		array( 'ic-core-components', 'ic-helpers', 'ic-sub-header', 'ic-header', 'ic-overlay', 'ic-image' ),
 		IMAGE_CAPTIONS_VERSION,
 		'all'
 	);

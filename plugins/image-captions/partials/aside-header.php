@@ -9,7 +9,7 @@
 ?>
 
 <?php if ( $defaults->header_text ) : ?>
-	<h1 class="header unloaded <?php echo esc_attr( $defaults->header_class ); ?> padding-left-right">
+	<h1 class="header unloaded padding-left-right">
 		<?php echo esc_html( $defaults->header_text ); ?>
 	</h1>
 <?php endif; ?>

@@ -24,8 +24,6 @@ function set_default_properties( $atts ) {
 		'featured_image_classes' => set_featured_image_classes( $is_static, $atts['class'] ),
 		'visibility_class'       => set_visibility_class( $is_static ),
 		'sub_header_text'        => set_sub_header_text( $post ),
-		'sub_header_class'       => set_font_size( $is_static ),
-		'header_class'           => set_font_size( $is_static ),
 		'button_text'            => set_button_text( $is_static, $post, $atts['data-button-text'] )
 	);
 
@@ -82,17 +80,6 @@ function set_visibility_class( $is_static ) {
 }
 
 /**
- * Sets up whether the font size on sub-header and header elements will be 'big' or 'small'.
- *
- * @since  0.1.0
- * @param  boolean $is_static boolean for if the class 'static' is in the featured image classes.
- * @return string             font-size class for sub-header/header.
- */
-function set_font_size( $is_static ) {
-	return ( $is_static ) ? 'big' : 'small';
-}
-
-/**
  * Sets up the button text on static and non-static image caption shortcodes.
  *
  * @since  0.1.0
@@ -117,7 +104,7 @@ function set_sub_header_text( $post ) {
 	elseif ( $post->post_type === 'post' ) :
 		$sub_header = date_format( date_create( $post->post_date ), 'jS F Y' );
 	else:
-		$sub_header = 'Wordpress Site'; // Make this dynamic.
+		$sub_header = 'Wordpress Site'; // TODO Make this dynamic or have some other treatment.
 	endif;
 
 	return $sub_header;
