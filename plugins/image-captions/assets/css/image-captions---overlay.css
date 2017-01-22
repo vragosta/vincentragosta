@@ -1,4 +1,7 @@
-/*--- Overlay ---*/
+/**
+ * Image Captions - Twenty Sixteen
+ * Overlay CSS
+ */
 .overlay {
 	position: absolute;
 	top: 0;
@@ -11,13 +14,18 @@
 
 /* TODO */
 .featured-image.static .overlay,
-.featured-image.single .overlay,
-.featured-image:hover .overlay {
+.featured-image.single .overlay {
 	visibility: visible;
 	opacity: 1;
 }
 
-/* TODO */
+@media only screen and ( min-width: 768px ) {
+	.featured-image:hover .overlay {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
 @media only screen and ( max-width: 768px ) {
 	.featured-image .overlay {
 		visibility: visible;

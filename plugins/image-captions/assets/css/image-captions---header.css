@@ -1,6 +1,8 @@
-/*--- TODO ---*/
-/*--- Header ---*/
-/*--- TODO ---*/
+/**
+ * Image Captions - Twenty Sixteen
+ * Header CSS
+ */
+/*--- Default haeder styles target non static elements ---*/
 .header {
 	margin: 0;
 	color: #fff;
@@ -9,63 +11,45 @@
 	line-height: 1;
 	text-align: center;
 	text-shadow: #080808 0 0 4px;
+	font-size: 2.5rem;
+	max-width: 500px;
+	padding: 0 2rem;
+
+	/*--- CSS transitions to toggle header visibility ---*/
 	opacity: 1;
 	visibility: visible;
 	transition: opacity .4s ease-in-out, visibility .4s ease-in-out, margin .4s ease-in-out;
 }
 
-/*--- TODO ---*/
+/*--- Initial styles when the page is unloaded ( Needed for js functionality ) ---*/
 .header.unloaded {
 	opacity: 0;
 	visibility: hidden;
 }
 
-/*--- TODO ---*/
-@media only screen and ( min-width: 768px ) {
-	.aspect-ratio-1x1 .header {
-		opacity: 0;
-		visibility: hidden;
-		margin: 0 0 20px 0;
-		transition: opacity .5s ease-in-out, visibility .5s ease-in-out, margin .5s ease-in-out;
-	}
-}
-
-/*--- TODO ---*/
-.aspect-ratio-1x1:hover .header {
-	opacity: 1;
-	visibility: visible;
-	margin: 0;
-}
-
-/*--- TODO ---*/
-.header.big {
+/*--- Aspect ratio 10x4 ---*/
+.featured-image.static .header {
+	font-size: 4rem;
 	max-width: 1000px;
 }
 
-/*--- TODO ---*/
-.header.small {
-	font-size: 2.5rem;
-	max-width: 500px;
-	padding: 0 2rem;
-}
-
-/* TODO */
 @media only screen and ( min-width: 992px ) {
-	.header {
+	.featured-image.static .header {
 		font-size: 7.5rem;
 	}
 }
 
-/*--- TODO ---*/
 @media only screen and ( min-width: 768px ) and ( max-width: 992px ) {
-	.header {
+	.featured-image.static .header {
 		font-size: 6rem;
 	}
 }
 
-/*--- TODO ---*/
-@media only screen and ( max-width: 768px ) {
-	.header {
-		font-size: 4rem;
+@media only screen and ( min-width: 768px ) {
+	.featured-image.static .header,
+	.featured-image:hover .header {
+		opacity: 1;
+		visibility: visible;
+		margin: 0;
 	}
 }
