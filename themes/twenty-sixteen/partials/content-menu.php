@@ -8,7 +8,7 @@
  */
 ?>
 
-<section class="menu">
+<section class="menu row-flex-center unloaded">
 	<a href="<?php echo home_url(); ?>">Home</a>
 	<a href="">Code Shop</a>
 	<a href="<?php echo home_url( '/portfolio/' ); ?>">Portfolio</a>

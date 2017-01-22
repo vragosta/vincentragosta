@@ -1,6 +1,7 @@
 /**
  *===== Menu =====*
  */
+/*--- TODO ---*/
 .menu-container {
 	display: flex;
 	justify-content: flex-end;
@@ -10,12 +11,7 @@
 	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-/* TODO consider adding one of the helper classes for this. */
-.menu {
-	display: flex;
-	align-items: center;
-}
-
+/*--- TODO ---*/
 @media only screen and ( max-width: 992px ) {
 	.menu-container {
 		visibility: hidden;
@@ -23,6 +19,18 @@
 	}
 }
 
+.menu {
+	opacity: 1;
+	visibility: visible;
+	transition: opacity .4s ease-in-out, visibility .4s ease-in-out;
+}
+
+.menu.unloaded {
+	opacity: 0;
+	visibility: hidden;
+}
+
+/*--- TODO ---*/
 .menu a {
 	margin: 0 1rem;
 	font-size: 1.5rem;
@@ -32,30 +40,36 @@
 	transition: opacity 0.2s ease-in-out;
 }
 
+/*--- TODO ---*/
 .menu a:hover {
 	opacity: 1;
 }
 
+/*--- TODO ---*/
 #contact {
 	display: flex;
 }
 
-#contact {
+/*-- TODO ---*/
+#header #contact {
 	padding: 1rem;
 	border: 2px solid #fff;
 	transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
-#contact:hover {
+/*--- TODO ---*/
+#header #contact:hover {
 	background: #fff;
 	color: #686868;
 }
 
 /*--- Footer Menu ---*/
+/*--- TODO ---*/
 #footer .menu {
 	margin: 2rem 0;
 }
 
+/*--- TODO ---*/
 @media only screen and ( max-width: 768px ) {
 	#footer .menu {
 		flex-direction: column;
@@ -67,18 +81,20 @@
 }
 
 /* TODO fix the below two CSS statements */
-#footer #contact {
+/*--- TODO ---*/
+/*#footer #contact {
 	border: none;
 }
 
 #footer #contact:hover {
 	background: inherit;
 	color: #fff;
-}
+}*/
 
 /**
  *===== Mobile Menu =====*
  */
+/*--- TODO ---*/
 #mobile-menu {
 	position: fixed;
 	padding: 0;
@@ -90,6 +106,14 @@
 	z-index: 10;
 }
 
+#mobile-menu.not-visible {
+	z-index: -10;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/*--- TODO ---*/
 @media only screen and ( min-width: 992px ) {
 	#mobile-menu {
 		visibility: hidden;
@@ -97,20 +121,24 @@
 	}
 }
 
+/*--- TODO ---*/
 #mobile-menu .close-container {
 	display: flex;
 	justify-content: flex-end;
 	padding: 1.5rem 2rem;
 }
 
+/*--- TODO ---*/
 #mobile-menu .close-container i {
 	color: #fff;
 }
 
+/*--- TODO ---*/
 #mobile-menu .menu {
 	flex-direction: column;
 }
 
+/*--- TODO ---*/
 #mobile-menu .menu a {
 	margin: 1rem 0;
 	font-size: 3rem;

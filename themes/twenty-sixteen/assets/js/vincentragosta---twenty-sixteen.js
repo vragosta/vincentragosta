@@ -16,6 +16,7 @@
 		 * @return void
 		 */
 		setupMenuToggle : function() {
+
 			// Listener for drop down button.
 			$( '.drop-down' ).click( function() {
 				$( this ).removeClass( 'visible' ).addClass( 'not-visible' );
@@ -27,9 +28,23 @@
 				$( '.drop-down' ).removeClass( 'not-visible' ).addClass( 'visible' );
 				$( '#mobile-menu' ).removeClass( 'visible' ).addClass( 'not-visible' );
 			});
+
 		},
 
+		menuFadeIn : function() {
+			$( '.menu' ).removeClass( 'unloaded' );
+		},
+
+		/**
+		 * When the dropdown button is clicked ( hamburger button ),
+		 * toggle mobile menu with standard site menu.
+		 *
+		 * @since  0.1.0
+		 * @uses   setupMenuToggle();
+		 * @return void
+		 */
 		init: function() {
+			this.menuFadeIn();
 			this.setupMenuToggle();
 		}
 	};
