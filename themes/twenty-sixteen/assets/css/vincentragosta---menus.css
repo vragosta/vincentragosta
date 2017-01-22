@@ -20,8 +20,6 @@
 }
 
 .menu {
-	/*display: flex;
-	align-items: center;*/
 	opacity: 1;
 	visibility: visible;
 	transition: opacity .4s ease-in-out, visibility .4s ease-in-out;
@@ -48,20 +46,19 @@
 }
 
 /*--- TODO ---*/
-/*#contact {
-	display: flex;
-}*/
-
-/*--- TODO ---*/
 #contact {
 	display: flex;
+}
+
+/*-- TODO ---*/
+#header #contact {
 	padding: 1rem;
 	border: 2px solid #fff;
 	transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 /*--- TODO ---*/
-#contact:hover {
+#header #contact:hover {
 	background: #fff;
 	color: #686868;
 }
@@ -85,15 +82,14 @@
 
 /* TODO fix the below two CSS statements */
 /*--- TODO ---*/
-#footer #contact {
+/*#footer #contact {
 	border: none;
 }
 
-/*--- TODO ---*/
 #footer #contact:hover {
 	background: inherit;
 	color: #fff;
-}
+}*/
 
 /**
  *===== Mobile Menu =====*

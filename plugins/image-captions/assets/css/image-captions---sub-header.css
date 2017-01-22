@@ -18,9 +18,11 @@
 	margin: 20px 0 0 0;
 }
 
-.aspect-ratio-1x1 .sub-header {
-	opacity: 0;
-	visibility: hidden;
+@media only screen and ( min-width: 768px ) {
+	.aspect-ratio-1x1 .sub-header {
+		opacity: 0;
+		visibility: hidden;
+	}
 }
 
 .aspect-ratio-1x1:hover .sub-header {

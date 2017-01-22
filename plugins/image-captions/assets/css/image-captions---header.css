@@ -21,11 +21,13 @@
 }
 
 /*--- TODO ---*/
-.aspect-ratio-1x1 .header {
-	opacity: 0;
-	visibility: hidden;
-	margin: 0 0 20px 0;
-	transition: opacity .5s ease-in-out, visibility .5s ease-in-out, margin .5s ease-in-out;
+@media only screen and ( min-width: 768px ) {
+	.aspect-ratio-1x1 .header {
+		opacity: 0;
+		visibility: hidden;
+		margin: 0 0 20px 0;
+		transition: opacity .5s ease-in-out, visibility .5s ease-in-out, margin .5s ease-in-out;
+	}
 }
 
 /*--- TODO ---*/
