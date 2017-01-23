@@ -88,19 +88,3 @@
 .image-min-height {
 	min-height: 600px;
 }
-
-/*--- TODO REMOVE BELOW STATEMENTS ---*/
-/*--- Add to element to make visible ---*/
-.visible {
-	visibility: visible;
-	opacity: 1;
-	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
-}
-
-/*--- Add to element to make invisible ---*/
-.not-visible {
-	z-index: -10;
-	visibility: hidden;
-	opacity: 0;
-	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
-}

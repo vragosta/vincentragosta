@@ -115,10 +115,6 @@
 	padding: 4.5rem 3.2rem 1.5rem 2rem;
 }
 
-#mobile-menu .close-container i {
-	color: #fff;
-}
-
 /*-- Specifically targets the contact button in the mobile menu menu ---*/
 #mobile-menu .menu {
 	flex-direction: column;
