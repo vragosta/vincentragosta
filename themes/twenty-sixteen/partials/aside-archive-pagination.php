@@ -8,6 +8,6 @@
  */
 ?>
 
-<aside id="pagination" class="full-width row-flex-center">
+<aside id="pagination-archive" class="full-width row-flex-center">
 	<?php vincentragosta_com\Twenty_Sixteen\Helpers\pagination( $custom ); ?>
 </aside>

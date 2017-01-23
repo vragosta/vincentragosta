@@ -10,7 +10,7 @@
 }
 
 .archive .grid-container:last-child {
-	padding-bottom: 1rem;
+	padding-bottom: 0rem;
 }
 
 .archive .grid-container .grid-item {
@@ -28,7 +28,7 @@
 }
 
 /*--- Archive Pagination ---*/
-#pagination {
+#pagination-archive {
 	margin: 0 0 6rem;
 }
 

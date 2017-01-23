@@ -23,7 +23,7 @@ function pagination( $query ) {
 	if ( $total > 1 )  {
 
 		// Get the current page.
-		if ( !$current_page = get_query_var( 'paged' ) ) $current_page = 1;
+		if ( ! $current_page = get_query_var( 'paged' ) ) $current_page = 1;
 
 		echo paginate_links( array(
 			'base'     => get_pagenum_link( 1 ) . '%_%',
