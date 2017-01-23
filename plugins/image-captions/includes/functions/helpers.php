@@ -25,7 +25,6 @@ function set_default_properties( $atts ) {
 		'header_text'            => $post->post_title,
 		'image_source'           => get_featured_image( $post->ID ),
 		'featured_image_classes' => set_featured_image_classes( $is_static, $atts['class'] ),
-		'visibility_class'       => set_visibility_class( $is_static ),
 		'sub_header_text'        => set_sub_header_text( $post ),
 		'button_text'            => set_button_text( $is_static, $post, $atts['data-button-text'] )
 	);
@@ -69,17 +68,6 @@ function set_featured_image_classes( $is_static, $classes ) {
 	endif;
 
 	return $featured_image_classes;
-}
-
-/**
- * Sets whether or not the overlay will display its hover display on page load or not.
- *
- * @since  0.1.0
- * @param  boolean $is_static boolean for if the class 'static' is in the featured image classes.
- * @return string             visibility class for overlay.
- */
-function set_visibility_class( $is_static ) {
-	return ( $is_static ) ? 'visible' : 'not-visible';
 }
 
 /**

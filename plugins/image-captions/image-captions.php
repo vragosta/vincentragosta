@@ -56,7 +56,7 @@ function image_captions_shortcode( $atts ) {
 	<figure class="featured-image <?php echo implode( ' ', $defaults->featured_image_classes ); ?>">
 
 		<!-- Overlay container -->
-		<div class="overlay col-flex-center <?php echo $defaults->visibility_class; ?>">
+		<div class="overlay col-flex-center">
 
 			<!-- Sub-header -->
 			<?php include( IMAGE_CAPTIONS_PATH . 'partials/aside-sub-header.php' ); ?>
