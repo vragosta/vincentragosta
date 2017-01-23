@@ -28,13 +28,13 @@
 		 * VincentRagosta class initializer.
 		 *
 		 * @since  0.1.0
-		 * @uses   menuFadeIn(), setupMenuToggle()
+		 * @uses   loadElements()
 		 * @return void
 		 */
 		init : function() {
 			this.loadElements();
 		}
-	}
+	};
 
 	jQuery( document ).ready( function() {
 

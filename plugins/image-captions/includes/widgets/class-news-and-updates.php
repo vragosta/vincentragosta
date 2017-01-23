@@ -2,7 +2,7 @@
 /**
  * Builds 'News & Updates' Widget.
  *
- * @package Vincent Ragosta - Twenty Sixteen
+ * @package Image Captions - Twenty Sixteen
  * @since   0.1.0
  */
 

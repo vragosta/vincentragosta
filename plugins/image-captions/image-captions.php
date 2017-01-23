@@ -28,6 +28,10 @@ require_once IMAGE_CAPTIONS_PATH . 'includes/metaboxes/metabox-page.php';
 require_once IMAGE_CAPTIONS_PATH . 'includes/metaboxes/metabox-post.php';
 require_once IMAGE_CAPTIONS_PATH . 'includes/metaboxes/metabox-project.php';
 
+// Include image caption related widgets.
+require_once IMAGE_CAPTIONS_PATH . 'includes/widgets/class-featured-page.php';
+require_once IMAGE_CAPTIONS_PATH . 'includes/widgets/class-news-and-updates.php';
+
 /**
  * Generate image caption shortcode for use within the theme.
  *
