@@ -9,7 +9,7 @@
  */
 ?>
 
-<section id="mobile-menu" class="not-visible">
+<section id="mobile-menu">
 	<div class="close-container">
 		<button type="button" class="close-menu">
 			<i class="fa fa-times fa-2x"></i>
