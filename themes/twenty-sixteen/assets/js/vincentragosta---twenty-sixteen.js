@@ -21,24 +21,14 @@
 
 			// Listener for drop down button.
 			$( '.drop-down' ).click( function() {
-				$( this )
-					.removeClass( 'visible' )
-					.addClass( 'not-visible' );
-
 				$( '#mobile-menu' )
-					.removeClass( 'not-visible' )
 					.addClass( 'visible' );
 			});
 
 			// Listener for close menu button.
 			$( '.close-menu' ).click( function () {
-				$( '.drop-down' )
-					.removeClass( 'not-visible' )
-					.addClass( 'visible' );
-
 				$( '#mobile-menu' )
-					.removeClass( 'visible' )
-					.addClass( 'not-visible' );
+					.removeClass( 'visible' );
 			});
 
 		},
