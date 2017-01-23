@@ -16,7 +16,7 @@
 		<section class="col-flex-center">
 
 			<!-- Contact Information -->
-			<?php get_template_part( 'partials/aside', 'footer-contact' ); ?>
+			<?php get_template_part( 'partials/aside', 'footer-contact-info' ); ?>
 
 			<!-- Copyright -->
 			<?php get_template_part( 'partials/aside', 'footer-copyright' ); ?>
