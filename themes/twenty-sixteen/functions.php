@@ -27,14 +27,10 @@ define( 'POST_TYPE',                       'post' );
 require_once VINCENTRAGOSTA_COM_INC . 'functions/core.php';
 
 // Metaboxes for the various custom post types.
-require_once VINCENTRAGOSTA_COM_INC . 'metaboxes/metabox-page.php';
-require_once VINCENTRAGOSTA_COM_INC . 'metaboxes/metabox-post.php';
 require_once VINCENTRAGOSTA_COM_INC . 'metaboxes/metabox-project.php';
 require_once VINCENTRAGOSTA_COM_INC . 'metaboxes/metabox-user.php';
 
 // Include widgets.
-require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-news-and-updates.php';
-require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-featured-page.php';
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-notification.php';
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-text-column.php';
 

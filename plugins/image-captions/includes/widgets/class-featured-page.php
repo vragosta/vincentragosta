@@ -2,7 +2,7 @@
 /**
  * Builds custom Featured Post Widget.
  *
- * @package Vincent Raogsta - Twenty Sixteen
+ * @package Image Captions - Twenty Sixteen
  * @since   0.1.0
  */
 
@@ -74,11 +74,11 @@ class Featured_Page_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		global $post;
 
-		// If the 'before_widget' field is set, display it.
+		// Get the 'before_widget' value from the sidebar.
 		echo $args['before_widget'];
 
-		// If the 'button_text' field is set, obtain its value.
-		$button_text = ( ! empty( $instance['button_text'] ) ) ? $instance['button_text'] : 'Find Out How';
+		// Get the 'button_text' value from the widget.
+		$button_text = $instance['button_text'];
 
 		// Assign the default arguments to the query.
 		$args = array(
@@ -95,21 +95,11 @@ class Featured_Page_Widget extends WP_Widget {
 		<div id="featured-page-widget" class="custom-widget full-width">
 			<?php if ( $query->have_posts() ) : ?>
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-					<?php $image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post->ID ); ?>
 					<div class="col-xs-12">
-						<div class="featured-image aspect-ratio-10x4">
-							<div class="overlay col-flex-center">
 
-								<!-- Sub Heading -->
-								<?php get_template_part( 'partials/aside', 'sub-header' ); ?>
+						<!-- Featured image overlay -->
+						<?php do_shortcode( '[image-caption id="' . $post->ID . '" class="static"]' ); ?>
 
-								<!-- Heading -->
-								<?php get_template_part( 'partials/aside', 'title' ); ?>
-
-								<a href="<?php echo get_the_permalink( $post->ID ); ?>"><?php echo esc_html( $button_text ); ?></a>
-							</div>
-							<div class="post normalize-image" style="background: linear-gradient( rgba( 0, 0, 0, 0.6 ), rgba( 0, 0, 0, 0.6 ) ), url( '<?php echo esc_attr( $image ); ?>' ) no-repeat center / cover;"></div>
-						</div>
 					</div>
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>

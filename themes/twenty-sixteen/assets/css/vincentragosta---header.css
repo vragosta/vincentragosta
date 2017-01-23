@@ -1,0 +1,34 @@
+/**
+ *===== Header =====*
+ */
+#header {
+	position: relative;
+}
+
+/**
+ *===== Navigation =====*
+ */
+.nav-container {
+	position: absolute;
+	z-index: 1;
+}
+
+.drop-down {
+	font-size: 4rem;
+	color: #fff;
+	cursor: pointer;
+	position: absolute;
+	top: 43px;
+	right: 40px;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/*--- Needed if the click event has occured and the page increases in size ---*/
+@media only screen and ( max-width: 992px ) {
+	.drop-down {
+		visibility: visible;
+		opacity: 1;
+	}
+}

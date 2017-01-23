@@ -2,7 +2,7 @@
 /**
  * Builds 'News & Updates' Widget.
  *
- * @package Vincent Raogsta - Twenty Sixteen
+ * @package Image Captions - Twenty Sixteen
  * @since   0.1.0
  */
 
@@ -51,7 +51,7 @@ class News_And_Updates_Widget extends WP_Widget {
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>"><?php echo __( 'Enter ID\'s:', 'vincentragosta' ); ?></label><br />
-			<label class="vr-widget-description" for="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>">Please separate with a comma.</label><br />
+			<label class="vr-description" for="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>">Please separate with a comma.</label><br />
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'ids' ) ); ?>" type="text" value="<?php echo esc_attr( $ids ); ?>">
 		</p>
 		<?php
@@ -110,7 +110,7 @@ class News_And_Updates_Widget extends WP_Widget {
 		$post_type = ( $instance['post_type'] ) ? $instance['post_type'] : POST_TYPE;
 
 		// Set bootstrap grid, divide 12 ( max bootstrap col size ) by the value of $bootstrap_grid_col.
-		$class = 'col-sm-' . ( BOOTSTRAP_GRID_COL_MAX / $bootstrap_grid_col );
+		$bootstrap_class = 'col-sm-' . ( BOOTSTRAP_GRID_COL_MAX / $bootstrap_grid_col );
 
 		// Create arguments array for query.
 		$args                   = array();
@@ -124,31 +124,11 @@ class News_And_Updates_Widget extends WP_Widget {
 		<div id="news-and-updates" class="custom-widget full-width">
 			<?php if ( $query->have_posts() ) : ?>
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+					<div class="col-xs-12 <?php echo esc_attr( $bootstrap_class ); ?>">
 
-					<!-- Get the title from the current post. -->
-					<?php $title = ( get_post_meta( $post->ID, 'shorthand_title', true ) ) ? get_post_meta( $post->ID, 'shorthand_title', true ) : $post->post_title; ?>
+						<!-- Featured image overlay -->
+						<?php do_shortcode( '[image-caption id="' . $post->ID . '" class="archive"]' ); ?>
 
-					<!-- Get the image from the current post. -->
-					<?php $image = vincentragosta_com\Twenty_Sixteen\Helpers\vr_get_featured_image( $post->ID ); ?>
-
-					<div class="col-xs-12 <?php echo esc_attr( $class ); ?>">
-						<div class="featured-image aspect-ratio-1x1">
-							<div class="overlay col-flex-center not-visible">
-
-								<!-- Sub Header -->
-								<?php if ( $post->post_type !== 'post' ) : ?>
-									<?php get_template_part( 'partials/aside', 'taxonomy' ); ?>
-								<?php else : ?>
-									<?php get_template_part( 'partials/aside', 'date' ); ?>
-								<?php endif; ?>
-
-								<!-- Header -->
-								<?php get_template_part( 'partials/aside', 'title' ); ?>
-
-								<a href="<?php echo get_the_permalink( $post->ID ); ?>">View <?php echo esc_html( $instance['post_type'] ); ?></a>
-							</div>
-							<div class="post-type normalize-image" style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
-						</div>
 					</div>
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>

@@ -1,21 +1,21 @@
 <?php
 
 /**
- * Add 'Sub Header' meta box to 'page' post type.
+ * TODO
  *
  * @since 0.1.0
  * @uses  add_meta_box()
  * @return void
  */
-function vincentragosta_page_metaboxes() {
+function image_caption_page_metaboxes() {
 	add_meta_box(
-		'configuration',
-		__( 'Configuration', 'vincentragosta' ),
-		'vincentragosta_page_callback',
+		'image-captions-settings',
+		__( 'Image Caption Settings', 'vincentragosta' ),
+		'image_captions_page_callback',
 		'page'
 	);
 }
-add_action( 'add_meta_boxes', 'vincentragosta_page_metaboxes' );
+add_action( 'add_meta_boxes', 'image_caption_page_metaboxes' );
 
 /**
  * The callback for add_meta_box(), contains the HTML necessary to create the metaboxes.
@@ -24,15 +24,16 @@ add_action( 'add_meta_boxes', 'vincentragosta_page_metaboxes' );
  * @uses   wp_nonce_field(), wp_editor()
  * @return void
  */
-function vincentragosta_page_callback( $post ) {
+function image_captions_page_callback( $post ) {
 	// Add a nonce field so we can check for it later.
-	wp_nonce_field( 'vincentragosta_page_save_data', 'vincentragosta_nonce' );
+	wp_nonce_field( 'image_captions_page_save_data', 'image_captions_nonce' );
 
 	/**
 	 * Use get_post_meta() to retrieve an existing value
 	 * from the database and use the value for the form.
 	 */
-	$sub_header = get_post_meta( $post->ID, 'sub_header', true ); ?>
+	$sub_header  = get_post_meta( $post->ID, 'sub_header', true );
+	$button_text = get_post_meta( $post->ID, 'button_text', true ); ?>
 
 	<table style="width: 100%;">
 		<tr>
@@ -43,31 +44,37 @@ function vincentragosta_page_callback( $post ) {
 				<textarea id="sub_header" name="sub_header" style="width: 100%;"><?php echo esc_textarea( $sub_header ); ?></textarea>
 			</td>
 		</tr>
+		<tr>
+			<td>
+				<label for="button_text"><?php echo esc_html( __( 'Button Text:', 'vincentragosta' ) ); ?></label>
+			</td>
+			<td>
+				<textarea id="button_text" name="button_text" style="width: 100%;"><?php echo esc_textarea( $button_text ); ?></textarea>
+				<label class="vr-description" for="button_text"><?php echo esc_html( __( 'Will only display if the image caption plugin is activated.', 'vincentragosta' ) ); ?></label>
+			</td>
+		</tr>
 	</table><?php
 }
 
 /**
  * Saves and sanitizes the POST data.
  *
- * @since 0.1.0
- *
- * @uses wp_verify_nonce()
- * @uses apply_filters()
- *
+ * @since  0.1.0
+ * @uses   wp_verify_nonce(), apply_filters(), current_user_can(), sanitize_text_field(), update_post_meta()
  * @return void
  */
-function vincentragosta_page_save_data( $post_id ) {
+function image_captions_page_save_data( $post_id ) {
 	/**
 	 * We need to verify this came from our screen and with proper authorization,
 	 * because the save_post action can be triggered at other times.
 	 */
 	// Check if our nonce is set.
-	if ( ! isset( $_POST['vincentragosta_nonce'] ) ) {
+	if ( ! isset( $_POST['image_captions_nonce'] ) ) {
 		return;
 	}
 
 	// Verify that the nonce is valid.
-	if ( ! wp_verify_nonce( $_POST['vincentragosta_nonce'], 'vincentragosta_page_save_data' ) ) {
+	if ( ! wp_verify_nonce( $_POST['image_captions_nonce'], 'image_captions_page_save_data' ) ) {
 		return;
 	}
 
@@ -84,11 +91,13 @@ function vincentragosta_page_save_data( $post_id ) {
 	}
 
 	// Sanitize user input.
-	$sub_header = sanitize_text_field( $_POST['sub_header'] );
+	$sub_header  = sanitize_text_field( $_POST['sub_header'] );
+	$button_text = sanitize_text_field( $_POST['button_text'] );
 
 	// Update the meta field in the database.
 	update_post_meta( $post_id, 'sub_header', $sub_header );
+	update_post_meta( $post_id, 'button_text', $button_text );
 }
-add_action( 'save_post', 'vincentragosta_page_save_data' );
+add_action( 'save_post', 'image_captions_page_save_data' );
 
 ?>

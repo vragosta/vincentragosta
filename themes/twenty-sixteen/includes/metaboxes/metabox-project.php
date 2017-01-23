@@ -32,7 +32,6 @@ function vincentragosta_project_callback( $post ) {
 	 * from the database and use the value for the form.
 	 */
 	$shorthand_title = get_post_meta( $post->ID, 'shorthand_title', true );
-	$sub_header      = get_post_meta( $post->ID, 'sub_header', true );
 	$technology      = get_post_meta( $post->ID, 'technology', true ); ?>
 
 	<table style="width: 100%;">
@@ -42,14 +41,6 @@ function vincentragosta_project_callback( $post ) {
 			</td>
 			<td>
 				<textarea id="shorthand_title" name="shorthand_title" style="width: 100%;"><?php echo esc_textarea( $shorthand_title ); ?></textarea>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<label for="sub_header"><?php echo __( 'Sub Header:', 'vincentragosta' ); ?></label>
-			</td>
-			<td>
-				<textarea id="sub_header" name="sub_header" style="width: 100%;"><?php echo esc_textarea( $sub_header ); ?></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -66,11 +57,8 @@ function vincentragosta_project_callback( $post ) {
 /**
  * Saves and sanitizes the POST data.
  *
- * @since 0.1.0
- *
- * @uses wp_verify_nonce()
- * @uses apply_filters()
- *
+ * @since  0.1.0
+ * @uses   wp_verify_nonce(), apply_filters()
  * @return void
  */
 function vincentragosta_project_save_data( $post_id ) {
@@ -102,12 +90,10 @@ function vincentragosta_project_save_data( $post_id ) {
 
 	// Sanitize user input.
 	$shorthand_title = sanitize_text_field( $_POST['shorthand_title'] );
-	$sub_header      = sanitize_text_field( $_POST['sub_header'] );
 	$technology      = sanitize_text_field( $_POST['technology'] );
 
 	// Update the meta field in the database.
 	update_post_meta( $post_id, 'shorthand_title', $shorthand_title );
-	update_post_meta( $post_id, 'sub_header', $sub_header );
 	update_post_meta( $post_id, 'technology', $technology );
 }
 add_action( 'save_post', 'vincentragosta_project_save_data' );

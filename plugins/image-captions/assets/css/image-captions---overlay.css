@@ -1,0 +1,34 @@
+/**
+ * Image Captions - Twenty Sixteen
+ * Overlay CSS
+ */
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	background: transparent;
+}
+
+/*--- Make sure that static and single instances of the overlay are displaying at all times. ---*/
+.featured-image.static .overlay,
+.featured-image.single .overlay {
+	visibility: visible;
+	opacity: 1;
+}
+
+@media only screen and ( min-width: 768px ) {
+	.featured-image:hover .overlay {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+@media only screen and ( max-width: 768px ) {
+	.featured-image .overlay {
+		visibility: visible;
+		opacity: 1;
+	}
+}
