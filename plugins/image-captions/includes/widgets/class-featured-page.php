@@ -2,7 +2,7 @@
 /**
  * Builds custom Featured Post Widget.
  *
- * @package Vincent Raogsta - Twenty Sixteen
+ * @package Image Captions - Twenty Sixteen
  * @since   0.1.0
  */
 
