@@ -9,6 +9,9 @@
  *         set_button_text()
  * @return Array $defaults Array of default values.
  */
+
+namespace image_captions\Twenty_Sixteen\Helpers;
+
 function set_default_properties( $atts ) {
 	global $post;
 

@@ -50,7 +50,7 @@ function image_captions_shortcode( $atts ) {
 	global $post;
 
 	// Obtain the centralized default properties object.
-	$defaults = set_default_properties( $atts ); ?>
+	$defaults = image_captions\Twenty_sixteen\Helpers\set_default_properties( $atts ); ?>
 
 	<!-- Image Caption HTML start -->
 	<figure class="featured-image <?php echo implode( ' ', $defaults->featured_image_classes ); ?>">
