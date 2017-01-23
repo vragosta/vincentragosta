@@ -89,6 +89,7 @@
 	min-height: 600px;
 }
 
+/*--- TODO REMOVE BELOW STATEMENTS ---*/
 /*--- Add to element to make visible ---*/
 .visible {
 	visibility: visible;

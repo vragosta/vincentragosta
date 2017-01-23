@@ -24,25 +24,25 @@
 		element.on( 'change', function() {
 
 			// Define local variables.
-			var column = $( '.vr-column' ),
+			var column = $( '.column' ),
 
 			// Column One
-			columnOne        = $( '.vr-column.one' ),
-			columnOneTitle   = $( '.vr-column.one input' ),
-			columnOneIcon    = $( '.vr-column.one select' ),
-			columnOneContent = $( '.vr-column.one textarea' ),
+			columnOne        = $( '.column.one' ),
+			columnOneTitle   = $( '.column.one input' ),
+			columnOneIcon    = $( '.column.one select' ),
+			columnOneContent = $( '.column.one textarea' ),
 
 			// Column Two
-			columnTwo        = $( '.vr-column.two' ),
-			columnTwoTitle   = $( '.vr-column.two input' ),
-			columnTwoIcon    = $( '.vr-column.two select' ),
-			columnTwoContent = $( '.vr-column.two textarea' ),
+			columnTwo        = $( '.column.two' ),
+			columnTwoTitle   = $( '.column.two input' ),
+			columnTwoIcon    = $( '.column.two select' ),
+			columnTwoContent = $( '.column.two textarea' ),
 
 			// Column Three
-			columnThree        = $( '.vr-column.three' ),
-			columnThreeTitle   = $( '.vr-column.three input' ),
-			columnThreeIcon    = $( '.vr-column.three select' ),
-			columnThreeContent = $( '.vr-column.three textarea' );
+			columnThree        = $( '.column.three' ),
+			columnThreeTitle   = $( '.column.three input' ),
+			columnThreeIcon    = $( '.column.three select' ),
+			columnThreeContent = $( '.column.three textarea' );
 
 			// Adjust display of widget based on column value.
 			if ( this.value === '0' ) {

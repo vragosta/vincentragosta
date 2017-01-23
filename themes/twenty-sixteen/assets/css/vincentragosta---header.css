@@ -1,14 +1,35 @@
 /**
- *===== Header =====*
+ * Vincent Ragosta - Twenty Sixteen
+ * Header CSS
  */
 #header {
 	position: relative;
 }
 
-/**
- *===== Navigation =====*
- */
+/*--- Navigation ---*/
 .nav-container {
 	position: absolute;
 	z-index: 1;
+}
+
+/*--- Hamburger button styles ---*/
+.drop-down {
+	font-size: 4rem;
+	color: #fff;
+	cursor: pointer;
+	position: absolute;
+	top: 43px;
+	right: 40px;
+
+	/*--- CSS transitions to toggle drop-down visibility ---*/
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+@media only screen and ( max-width: 992px ) {
+	.drop-down {
+		visibility: visible;
+		opacity: 1;
+	}
 }
