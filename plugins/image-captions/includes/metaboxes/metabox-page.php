@@ -50,7 +50,7 @@ function image_captions_page_callback( $post ) {
 			</td>
 			<td>
 				<textarea id="button_text" name="button_text" style="width: 100%;"><?php echo esc_textarea( $button_text ); ?></textarea>
-				<label class="vr-description" for="button_text"><?php echo esc_html( __( 'Will only display if the image caption plugin is activated.', 'vincentragosta' ) ); ?></label>
+				<label class="description" for="button_text"><?php echo esc_html( __( 'Will only display if the image caption plugin is activated.', 'vincentragosta' ) ); ?></label>
 			</td>
 		</tr>
 	</table><?php

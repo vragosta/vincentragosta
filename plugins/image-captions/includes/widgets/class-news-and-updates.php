@@ -51,7 +51,7 @@ class News_And_Updates_Widget extends WP_Widget {
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>"><?php echo __( 'Enter ID\'s:', 'vincentragosta' ); ?></label><br />
-			<label class="vr-description" for="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>">Please separate with a comma.</label><br />
+			<label class="description" for="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>">Please separate with a comma.</label><br />
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'ids' ) ); ?>" type="text" value="<?php echo esc_attr( $ids ); ?>">
 		</p>
 		<?php

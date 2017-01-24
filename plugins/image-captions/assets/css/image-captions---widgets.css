@@ -1,0 +1,21 @@
+/**
+ * Image Captions - Twenty Sixteen
+ * Widget CSS
+ */
+/*--- News & Updates Widget ---*/
+#news-and-updates > div:last-child {
+	padding-top: 2rem;
+}
+
+/*--- Featured Post Widget ---*/
+#featured-page-widget a {
+	margin-top: 2rem;
+	padding: 1.5rem 3rem;
+	font-size: 1.5rem;
+}
+
+@media only screen and ( max-width: 768px ) {
+	#featured-page-widget a {
+		font-size: 1.5rem;
+	}
+}

@@ -1,5 +1,6 @@
 /**
- *===== Core Components =====*
+ * Vincent Ragosta - Twenty Sixteen
+ * Core Components CSS
  */
 
 /*--- Fonts ---*/
@@ -45,8 +46,8 @@ a:active:focus {
 
 hr {
 	border-width: 0;
-	color: rgba(26,26,26,.15);
-	background-color: rgba(26,26,26,.15);
+	color: rgba( 26, 26, 26, .15 );
+	background-color: rgba( 26, 26, 26, .15 );
 	height: 1px;
 	width: 100%;
 }

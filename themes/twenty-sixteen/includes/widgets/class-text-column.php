@@ -61,7 +61,7 @@ class Text_Column_Widget extends WP_Widget {
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'number_columns' ) ); ?>"><?php echo __( 'Columns to display:', 'vincentragosta' ); ?></label><br />
-			<label class="vr-description" for="<?php echo esc_attr( $this->get_field_id( 'number_columns' ) ); ?>"><?php echo __( 'Selecting `--` will clear all entries.', 'vincentragosta' ); ?></label>
+			<label class="description" for="<?php echo esc_attr( $this->get_field_id( 'number_columns' ) ); ?>"><?php echo __( 'Selecting `--` will clear all entries.', 'vincentragosta' ); ?></label>
 			<select class="widefat number-columns" id="<?php echo esc_attr( $this->get_field_id( 'number_columns' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number_columns' ) ); ?>">
 				<option value="0">--</option>
 				<option value="1" <?php echo ( $number_columns === '1' ) ? 'selected' : ''; ?>>One</option>
@@ -69,7 +69,7 @@ class Text_Column_Widget extends WP_Widget {
 				<option value="3" <?php echo ( $number_columns === '3' ) ? 'selected' : ''; ?>>Three</option>
 			</select>
 		</p>
-		<div class="vr-column one <?php echo ( $number_columns > 0 ) ? 'show' : ''; ?>">
+		<div class="column one <?php echo ( $number_columns > 0 ) ? 'show' : ''; ?>">
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'column_one_title' ) ); ?>"><?php echo __( 'Column One Title:', 'vincentragosta' ); ?></label>
 				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'column_one_title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'column_one_title' ) ); ?>" type="text" value="<?php echo esc_attr( $column_one_title ); ?>">
@@ -88,7 +88,7 @@ class Text_Column_Widget extends WP_Widget {
 				<textarea class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'column_one_content' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'column_one_content' ) ); ?>" type="text"><?php echo esc_textarea( $column_one_content ); ?></textarea>
 			</p>
 		</div>
-		<div class="vr-column two <?php echo ( $number_columns > 1 ) ? 'show' : ''; ?>">
+		<div class="column two <?php echo ( $number_columns > 1 ) ? 'show' : ''; ?>">
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'column_two_title' ) ); ?>"><?php echo __( 'Column Two Title:', 'vincentragosta' ); ?></label>
 				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'column_two_title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'column_two_title' ) ); ?>" type="text" value="<?php echo esc_attr( $column_two_title ); ?>">
@@ -107,7 +107,7 @@ class Text_Column_Widget extends WP_Widget {
 				<textarea class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'column_two_content' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'column_two_content' ) ); ?>" type="text"><?php echo esc_textarea( $column_two_content ); ?></textarea>
 			</p>
 		</div>
-		<div class="vr-column three <?php echo ( $number_columns > 2 ) ? 'show' : ''; ?>">
+		<div class="column three <?php echo ( $number_columns > 2 ) ? 'show' : ''; ?>">
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'column_three_title' ) ); ?>"><?php echo __( 'Column Three Title:', 'vincentragosta' ); ?></label>
 				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'column_three_title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'column_three_title' ) ); ?>" type="text" value="<?php echo esc_attr( $column_three_title ); ?>">

@@ -1,5 +1,6 @@
 /**
- *===== Single Template =====*
+ * Vincent Ragosta - Twenty Sixteen
+ * Single CSS
  */
 #single-project {
 	max-width: 1000px;
@@ -18,6 +19,7 @@
 	padding: 2rem 4rem 6rem;
 }
 
+/*--- Technology section ---*/
 .technology {
 	width: 100%;
 }

@@ -1,5 +1,6 @@
 /**
- *===== Aside =====*
+ * Vincent Ragosta - Twenty Sixteen
+ * Widget CSS
  */
 .aside {
 	padding: 6rem 4rem;
@@ -14,7 +15,9 @@
 .cta.a,
 .cta.c,
 .cta.f,
-.aside.excerpt {
+
+/*--- Specifically target the excerpt on the archive page. ---*/
+.archive .aside.excerpt {
 	background: #edeeef;
 }
 

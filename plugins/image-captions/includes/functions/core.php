@@ -67,10 +67,17 @@ function image_captions_styles() {
 		IMAGE_CAPTIONS_VERSION
 	);
 
+	wp_register_style(
+		'ic-widgets',
+		IMAGE_CAPTIONS_URL . "assets/css/image-captions---widgets.css",
+		array(),
+		IMAGE_CAPTIONS_VERSION
+	);
+
 	wp_enqueue_style(
 		'image-captions',
 		IMAGE_CAPTIONS_URL . "assets/css/image-captions---twenty-sixteen.css",
-		array( 'ic-core-components', 'ic-helpers', 'ic-sub-header', 'ic-header', 'ic-overlay', 'ic-image' ),
+		array( 'ic-core-components', 'ic-helpers', 'ic-sub-header', 'ic-header', 'ic-overlay', 'ic-image', 'ic-widgets' ),
 		IMAGE_CAPTIONS_VERSION,
 		'all'
 	);

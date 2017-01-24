@@ -5,12 +5,13 @@
 	display: flex;
 	justify-content: flex-end;
 	padding: 4rem 2rem;
+
+	/*--- CSS transitions to toggle header menu container visibility ---*/
 	visibility: visible;
 	opacity: 1;
 	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-/*--- TODO ---*/
 @media only screen and ( max-width: 992px ) {
 	.menu-container {
 		visibility: hidden;
@@ -19,17 +20,18 @@
 }
 
 .menu {
+	/*--- CSS transitions to toggle menu visibility ---*/
 	opacity: 1;
 	visibility: visible;
 	transition: opacity .4s ease-in-out, visibility .4s ease-in-out;
 }
 
+/*--- Initial styles when the page is unloaded ---*/
 .menu.unloaded {
 	opacity: 0;
 	visibility: hidden;
 }
 
-/*--- TODO ---*/
 .menu a {
 	margin: 0 1rem;
 	font-size: 1.5rem;
@@ -39,36 +41,34 @@
 	transition: opacity 0.2s ease-in-out;
 }
 
-/*--- TODO ---*/
 .menu a:hover {
 	opacity: 1;
 }
 
-/*--- TODO ---*/
+/*--- Contact button ---*/
 #contact {
 	display: flex;
 }
 
-/*-- TODO ---*/
+/*-- Specifically targets the contact button in the header menu ---*/
 #header #contact {
 	padding: 1rem;
 	border: 2px solid #fff;
 	transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
-/*--- TODO ---*/
+/*-- Specifically targets the contact button in the header menu ---*/
 #header #contact:hover {
 	background: #fff;
 	color: #686868;
 }
 
-/*--- Footer Menu ---*/
-/*--- TODO ---*/
+/*-- Specifically targets the contact button in the footer menu ---*/
 #footer .menu {
 	margin: 2rem 0;
 }
 
-/*--- TODO ---*/
+/*-- Specifically targets the contact button in the footer menu ---*/
 @media only screen and ( max-width: 768px ) {
 	#footer .menu {
 		flex-direction: column;
@@ -79,31 +79,7 @@
 	}
 }
 
-/*--- TODO ---*/
-.drop-down {
-	font-size: 4rem;
-	color: #fff;
-	cursor: pointer;
-	position: absolute;
-	top: 43px;
-	right: 40px;
-	visibility: hidden;
-	opacity: 0;
-	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
-}
-
-/*--- Needed if the click event has occured and the page increases in size ---*/
-@media only screen and ( max-width: 992px ) {
-	.drop-down {
-		visibility: visible;
-		opacity: 1;
-	}
-}
-
-/**
- *===== Mobile Menu =====*
- */
-/*--- TODO ---*/
+/*--- Mobile Menu ---*/
 #mobile-menu {
 	position: fixed;
 	padding: 0;
@@ -112,6 +88,8 @@
 	width: 100%;
 	height: 100%;
 	background: #686868;
+
+	/*--- CSS transitions to toggle mobile menu visibility ---*/
 	z-index: -10;
 	visibility: hidden;
 	opacity: 0;
@@ -124,7 +102,6 @@
 	z-index: 10;
 }
 
-/*--- TODO ---*/
 @media only screen and ( min-width: 992px ) {
 	#mobile-menu {
 		visibility: hidden;
@@ -132,24 +109,21 @@
 	}
 }
 
-/*--- TODO ---*/
 #mobile-menu .close-container {
 	display: flex;
 	justify-content: flex-end;
 	padding: 4.5rem 3.2rem 1.5rem 2rem;
 }
 
-/*--- TODO ---*/
 #mobile-menu .close-container i {
 	color: #fff;
 }
 
-/*--- TODO ---*/
+/*-- Specifically targets the contact button in the mobile menu menu ---*/
 #mobile-menu .menu {
 	flex-direction: column;
 }
 
-/*--- TODO ---*/
 #mobile-menu .menu a {
 	margin: 1rem 0;
 	font-size: 3rem;
