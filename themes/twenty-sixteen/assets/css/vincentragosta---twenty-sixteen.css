@@ -28,16 +28,23 @@
 	#notification-widget p {
 		flex-direction: column;
 	}
-
-	#notification-widget a {
-		margin: 2rem 0 0 0 !important;
-	}
 }
 
 #notification-widget a {
 	border: 2px solid #fff;
-	margin: 0 0 0 2rem;
 	color: #fff;
+}
+
+@media only screen and ( min-width: 992px ) {
+	#notification-widget a {
+		margin: 0 0 0 2rem;
+	}
+}
+
+@media only screen and ( max-width: 991px ) {
+	#notification-widget a {
+		margin: 2rem 0 0 0;
+	}
 }
 
 #notification-widget a:hover {

@@ -12,7 +12,7 @@ function image_captions_scripts() {
 		IMAGE_CAPTIONS_URL . "assets/js/image-captions---twenty-sixteen.js",
 		array(),
 		IMAGE_CAPTIONS_VERSION,
-		'all'
+		true
 	);
 }
 add_action( 'wp_enqueue_scripts', 'image_captions_scripts', 99 );
@@ -78,8 +78,7 @@ function image_captions_styles() {
 		'image-captions',
 		IMAGE_CAPTIONS_URL . "assets/css/image-captions---twenty-sixteen.css",
 		array( 'ic-core-components', 'ic-helpers', 'ic-sub-header', 'ic-header', 'ic-overlay', 'ic-image', 'ic-widgets' ),
-		IMAGE_CAPTIONS_VERSION,
-		'all'
+		IMAGE_CAPTIONS_VERSION
 	);
 }
 add_action( 'wp_enqueue_scripts', 'image_captions_styles', 99 );

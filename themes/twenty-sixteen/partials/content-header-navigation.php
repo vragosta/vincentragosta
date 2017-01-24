@@ -9,20 +9,17 @@
 ?>
 
 <header id="header">
-  <main>
-    <nav class="nav-container full-width">
+  <nav class="nav-container full-width">
 
-      <!-- Menu -->
-      <section class="menu-container">
-        <?php get_template_part( 'partials/content', 'menu' ); ?>
-      </section>
+    <!-- Menu -->
+    <section class="menu-container">
+      <?php get_template_part( 'partials/content', 'menu' ); ?>
+    </section>
 
-      <!-- Drop down toggle -->
-      <i class="ion ion-navicon drop-down"></i>
-    </nav>
+    <!-- Drop down toggle -->
+    <i class="ion ion-navicon drop-down"></i>
+  </nav>
 
-    <!-- Featured image overlay -->
-    <?php do_shortcode( '[image-caption id="' . $post->ID . '" class="static"]' ); ?>
-
-  </main>
+  <!-- Featured image overlay -->
+  <?php do_shortcode( '[image-caption id="' . $post->ID . '" class="static"]' ); ?>
 </header>

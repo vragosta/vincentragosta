@@ -157,7 +157,6 @@ class Text_Column_Widget extends WP_Widget {
 
 	/**
 	 * Front-end display of widget.
-	 * NOTE: Styles associated with this function go in vincentragosta---twenty-sixteen.css.
 	 *
 	 * @param  array $args     Widget arguments.
 	 * @param  array $instance Saved values from database.
@@ -172,9 +171,8 @@ class Text_Column_Widget extends WP_Widget {
 		echo $args['before_widget'];
 
 		// If the 'title' field of the widget is not empty, display it.
-		if ( ! empty( $instance['title'] ) ) {
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
-		} ?>
+		if ( ! empty( $instance['title'] ) )
+			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title']; ?>
 
 		<div id="text-column" class="custom-widget full-width">
 			<div class="column-container">

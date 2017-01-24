@@ -1,7 +1,6 @@
 <?php
 /**
- * Vincent Ragosta - Twenty Sixteen core functions.
- * This file contains theme configuration functions.
+ * This file contains the necessary theme configuration functions.
  *
  * @package VincentRagosta - Twenty Sixteen
  * @since   0.1.0
