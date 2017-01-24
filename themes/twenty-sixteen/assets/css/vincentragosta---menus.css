@@ -7,7 +7,7 @@
 	padding: 4rem 2rem;
 }
 
-@media only screen and ( max-width: 992px ) {
+@media only screen and ( max-width: 991px ) {
 	.menu-container {
 		display: none;
 	}
@@ -63,7 +63,7 @@
 }
 
 /*-- Specifically targets the contact button in the footer menu ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	#footer .menu {
 		flex-direction: column;
 	}

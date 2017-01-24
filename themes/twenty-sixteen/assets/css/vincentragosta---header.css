@@ -27,7 +27,7 @@
 	transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-@media only screen and ( max-width: 992px ) {
+@media only screen and ( max-width: 991px ) {
 	.drop-down {
 		visibility: visible;
 		opacity: 1;
