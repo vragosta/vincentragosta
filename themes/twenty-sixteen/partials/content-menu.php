@@ -2,7 +2,7 @@
 /**
  * Template for the menu.
  *
- * @package VincentRagosta 2016
+ * @package Vincent Ragosta - Twenty Sixteen
  * @since   0.1.0
  * @uses    home_url()
  */

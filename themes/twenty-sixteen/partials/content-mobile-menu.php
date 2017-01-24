@@ -1,9 +1,8 @@
 <?php
 /**
  * Template for the mobile menu.
- * NOTE: Calls section-menu.
  *
- * @package VincentRagosta 2016
+ * @package Vincent Ragosta - Twenty Sixteen
  * @since   0.1.0
  * @uses    get_template_part()
  */

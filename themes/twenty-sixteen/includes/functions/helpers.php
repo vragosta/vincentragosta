@@ -14,6 +14,7 @@ namespace vincentragosta_com\Twenty_Sixteen\Helpers;
  *
  * @since  0.1.0
  * @param  WP_Query $query Custom query.
+ * @uses   get_query_var(), paginate_links(), get_pagenum_link()
  * @return void
  */
 function pagination( $query ) {

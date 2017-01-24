@@ -12,7 +12,6 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Creates one to three columns of custom text content.
  *
- * @package Vincent Raogsta - Twenty Sixteen
  * @since   0.1.0
  */
 class Text_Column_Widget extends WP_Widget {
@@ -31,6 +30,7 @@ class Text_Column_Widget extends WP_Widget {
 	 * Back-end widget form.
 	 *
 	 * @param  array $instance Previously saved values from database.
+	 * @uses   empty(), get_field_id(), esc_attr(), __()
 	 * @return void
 	 */
 	public function form( $instance ) {
@@ -134,6 +134,7 @@ class Text_Column_Widget extends WP_Widget {
 	 *
 	 * @param  array $new_instance Values just sent to be saved.
 	 * @param  array $old_instance Previously saved values from database.
+	 * @uses   empty(), strip_tags()
 	 * @return array $instance     Updated safe values to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
@@ -160,6 +161,7 @@ class Text_Column_Widget extends WP_Widget {
 	 *
 	 * @param  array $args     Widget arguments.
 	 * @param  array $instance Saved values from database.
+	 * @uses   apply_filters(), esc_html(), esc_attr(), esc_url()
 	 * @return void
 	 */
 	public function widget( $args, $instance ) {

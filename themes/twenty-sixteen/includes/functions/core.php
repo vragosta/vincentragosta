@@ -33,7 +33,7 @@ function setup() {
  * Declare theme support.
  *
  * @since  0.1.0
- * @uses   add_theme_support(), set_post_thumbnail_size(), add_image_size(), and add_post_type_support() to set theme options.
+ * @uses   add_theme_support(), set_post_thumbnail_size(), add_image_size(), and add_post_type_support(), show_admin_bar()
  * @return void
  */
 function vincentragosta_setup() {
@@ -50,6 +50,8 @@ function vincentragosta_setup() {
 
 	// Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support( 'post-thumbnails' );
+
+	// TODO is this necessary?
 	set_post_thumbnail_size( 672, 372, true );
 
 	/**
@@ -75,7 +77,7 @@ function vincentragosta_setup() {
  * Enqueue scripts for front-end.
  *
  * @since  0.1.0
- * @uses   wp_enqueue_script() to load front end scripts.
+ * @uses   wp_register_script(), p_enqueue_script(), wp_localize_script()
  * @return void
  */
 function scripts() {
@@ -102,7 +104,7 @@ function scripts() {
  * Enqueue styles for front-end.
  *
  * @since  0.1.0
- * @uses   wp_enqueue_style() to load front end styles.
+ * @uses   wp_register_style(), wp_enqueue_style()
  * @return void
  */
 function styles() {
@@ -207,14 +209,15 @@ function styles() {
 /**
  * Allows for custom CSS in wp-admin.
  *
- * @uses   wp_enqueue_style()
  * @since  0.1.0
+ * @uses   wp_enqueue_style()
  * @return void
  */
 function admin_styles() {
 	wp_enqueue_style(
 		'admin',
 		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---admin.css",
+		array(),
 		VINCENTRAGOSTA_VERSION
 	);
 }
@@ -222,8 +225,8 @@ function admin_styles() {
 /**
  * Allows for custom javascript in wp-admin.
  *
- * @uses   wp_enqueue_script()
  * @since  0.1.0
+ * @uses   wp_enqueue_script()
  * @return void
  */
 function admin_scripts() {
@@ -240,7 +243,7 @@ function admin_scripts() {
  * Register sidebars for back-end.
  *
  * @since  0.1.0
- * @uses   register_sidebar()
+ * @uses   __(), register_sidebar()
  * @return void
  */
 function sidebars() {

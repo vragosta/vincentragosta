@@ -2,7 +2,7 @@
 /**
  * Template to display the post content.
  *
- * @package VincentRagosta 2016
+ * @package Vincent Ragosta - Twenty Sixteen
  * @since   0.1.0
  */
 ?>

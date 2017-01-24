@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Create social media meta fields for each user record.
+ * Create user meta fields for each user record.
  *
  * @since  0.1.0
  * @param  array $fields Existing fields array.

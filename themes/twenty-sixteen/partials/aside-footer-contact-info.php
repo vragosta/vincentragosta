@@ -2,8 +2,9 @@
 /**
  * Template for displaying the contact information in the footer.
  *
- * @package VincentRagosta 2016
+ * @package Vincent Ragosta - Twenty Sixteen
  * @since   0.1.0
+ * @uses    esc_attr(), esc_html()
  */
 
 // Get the 'phone' number.

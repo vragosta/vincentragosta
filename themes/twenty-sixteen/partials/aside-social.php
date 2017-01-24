@@ -3,7 +3,7 @@
  * Template part social icons.
  * These icon links lead to VincentRagosta social media pages.
  *
- * @package VincentRagosta.com 2016
+ * @package Vincent Ragosta - Twenty Sixteen
  * @since   0.1.0
  * @uses    esc_url(), site_url()
  */

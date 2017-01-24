@@ -7,6 +7,7 @@
 
 ( function( $ ) {
 
+	// TODO
 	var vincentragosta = {
 
 		/**
@@ -63,7 +64,7 @@
 		}
 	};
 
-
+	// TODO
 	jQuery( document ).ready( function() {
 
 		// Initialize the vincentragosta class.

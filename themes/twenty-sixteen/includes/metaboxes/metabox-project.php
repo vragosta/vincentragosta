@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Create 'Configuration' metabox for the project custom post type.
+ * Create 'Configuration' metabox for the 'project' custom post type.
  *
  * @since  0.1.0
  * @uses   add_meta_box()
@@ -21,7 +21,7 @@ add_action( 'add_meta_boxes', 'vincentragosta_project_metaboxes' );
  * The callback for add_meta_box(), contains the HTML necessary to create the metaboxes.
  *
  * @since  0.1.0
- * @uses   wp_nonce_field(), wp_editor()
+ * @uses   wp_nonce_field(), get_post_meta(), __(), esc_textarea()
  * @return void
  */
 function vincentragosta_project_callback( $post ) {
@@ -59,7 +59,7 @@ function vincentragosta_project_callback( $post ) {
  * Saves and sanitizes the POST data.
  *
  * @since  0.1.0
- * @uses   wp_verify_nonce(), apply_filters()
+ * @uses   isset(), wp_verify_nonce(), defined(), current_user_can(), sanitize_text_field(), update_post_meta()
  * @return void
  */
 function vincentragosta_project_save_data( $post_id ) {

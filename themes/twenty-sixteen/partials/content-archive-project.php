@@ -2,7 +2,7 @@
 /**
  * Archive template for project custom post type.
  *
- * @package VincentRagosta 2016
+ * @package Vincent Ragosta - Twenty Sixteen
  * @since   0.1.0
  * @uses    get_query_var(), get_template_part(), wp_reset_postdata()
  */
