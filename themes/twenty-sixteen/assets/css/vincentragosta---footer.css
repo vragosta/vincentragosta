@@ -13,7 +13,7 @@
 	}
 }
 
-/* TODO fix below CSS statement */
+/*--- Vertical spacing in footer menu ---*/
 #footer section > div {
 	margin: .5rem 0
 }
