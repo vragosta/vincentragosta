@@ -1,10 +1,10 @@
 <?php
 
 /**
- * TODO
+ * Create configuration metabox for 'page' custom post type.
  *
- * @since 0.1.0
- * @uses  add_meta_box()
+ * @since  0.1.0
+ * @uses   add_meta_box()
  * @return void
  */
 function image_caption_page_metaboxes() {
@@ -21,7 +21,7 @@ add_action( 'add_meta_boxes', 'image_caption_page_metaboxes' );
  * The callback for add_meta_box(), contains the HTML necessary to create the metaboxes.
  *
  * @since  0.1.0
- * @uses   wp_nonce_field(), wp_editor()
+ * @uses   wp_nonce_field(), get_post_meta(), __(), esc_textarea()
  * @return void
  */
 function image_captions_page_callback( $post ) {
@@ -38,7 +38,7 @@ function image_captions_page_callback( $post ) {
 	<table style="width: 100%;">
 		<tr>
 			<td>
-				<label for="sub_header"><?php echo esc_html( __( 'Sub Header:', 'vincentragosta' ) ); ?></label>
+				<label for="sub_header"><?php echo __( 'Sub Header:', 'vincentragosta' ); ?></label>
 			</td>
 			<td>
 				<textarea id="sub_header" name="sub_header" style="width: 100%;"><?php echo esc_textarea( $sub_header ); ?></textarea>
@@ -46,11 +46,11 @@ function image_captions_page_callback( $post ) {
 		</tr>
 		<tr>
 			<td>
-				<label for="button_text"><?php echo esc_html( __( 'Button Text:', 'vincentragosta' ) ); ?></label>
+				<label for="button_text"><?php echo __( 'Button Text:', 'vincentragosta' ); ?></label>
 			</td>
 			<td>
 				<textarea id="button_text" name="button_text" style="width: 100%;"><?php echo esc_textarea( $button_text ); ?></textarea>
-				<label class="description" for="button_text"><?php echo esc_html( __( 'Will only display if the image caption plugin is activated.', 'vincentragosta' ) ); ?></label>
+				<label class="description" for="button_text"><?php echo __( 'Will only display if the image caption plugin is activated.', 'vincentragosta' ); ?></label>
 			</td>
 		</tr>
 	</table><?php
@@ -60,7 +60,8 @@ function image_captions_page_callback( $post ) {
  * Saves and sanitizes the POST data.
  *
  * @since  0.1.0
- * @uses   wp_verify_nonce(), apply_filters(), current_user_can(), sanitize_text_field(), update_post_meta()
+ * @uses   isset(), wp_verify_nonce(), defined(), current_user_can(),
+ *         sanitize_text_field(), update_post_meta()
  * @return void
  */
 function image_captions_page_save_data( $post_id ) {
@@ -69,26 +70,20 @@ function image_captions_page_save_data( $post_id ) {
 	 * because the save_post action can be triggered at other times.
 	 */
 	// Check if our nonce is set.
-	if ( ! isset( $_POST['image_captions_nonce'] ) ) {
+	if ( ! isset( $_POST['image_captions_nonce'] ) )
 		return;
-	}
 
 	// Verify that the nonce is valid.
-	if ( ! wp_verify_nonce( $_POST['image_captions_nonce'], 'image_captions_page_save_data' ) ) {
+	if ( ! wp_verify_nonce( $_POST['image_captions_nonce'], 'image_captions_page_save_data' ) )
 		return;
-	}
 
 	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
 		return;
-	}
 
 	// Check the user's permissions.
-	if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
-		if ( ! current_user_can( 'edit_page', $post_id ) ) {
-			return;
-		}
-	}
+	if ( ! current_user_can( 'edit_page', $post_id ) )
+		return;
 
 	// Sanitize user input.
 	$sub_header  = sanitize_text_field( $_POST['sub_header'] );

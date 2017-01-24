@@ -2,7 +2,7 @@
 /**
  * Template to display the button.
  *
- * @package ImageCaptions 2016
+ * @package Image Captions - Twenty Sixteen
  * @since   0.1.0
  * @uses    get_the_parmalink(), esc_html()
  */
