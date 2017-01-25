@@ -24,14 +24,6 @@
 	width: 100%;
 }
 
-.technology pre {
-	border: none;
-	margin: 0;
-	text-align: center;
-	white-space: pre-wrap;
-	word-break: normal;
-}
-
 /*--- Single Pagination ---*/
 #pagination-single {
 	display: flex;

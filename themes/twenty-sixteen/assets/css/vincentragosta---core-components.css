@@ -51,3 +51,11 @@ hr {
 	height: 1px;
 	width: 100%;
 }
+
+pre {
+	border: none;
+	margin: 0;
+	text-align: center;
+	white-space: pre-wrap;
+	word-break: normal;
+}

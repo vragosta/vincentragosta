@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
  * Returns the the project based upon ID passed in,
  * if no ID is entered, most recent post will be returned.
  *
- * @since   0.1.0
+ * @since 0.1.0
  */
 class Featured_Page_Widget extends WP_Widget {
 	/**
@@ -52,10 +52,10 @@ class Featured_Page_Widget extends WP_Widget {
 	/**
 	 * Sanitize widget form values as they are saved.
 	 *
-	 * @param  array $new_instance Values just sent to be saved.
-	 * @param  array $old_instance Previously saved values from database.
+	 * @param  array $new_instance values just sent to be saved.
+	 * @param  array $old_instance previously saved values from database.
 	 * @uses   empty(), do_shortcode(), wp_reset_postdata()
-	 * @return array $instance     Updated safe values to be saved.
+	 * @return array $instance updated safe values to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance                = array();
@@ -68,8 +68,8 @@ class Featured_Page_Widget extends WP_Widget {
 	/**
 	 * Front-end display of widget.
 	 *
-	 * @param  array $args     Widget arguments.
-	 * @param  array $instance Saved values from database.
+	 * @param  array $args     widget arguments.
+	 * @param  array $instance saved values from database.
 	 * @return void
 	 */
 	public function widget( $args, $instance ) {

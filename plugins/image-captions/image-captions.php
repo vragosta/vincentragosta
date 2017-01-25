@@ -20,6 +20,9 @@ define( 'IMAGE_CAPTIONS_IMAGE_SIZE', 'large' );
 // Include all functions associated with the image caption shortcode.
 require_once IMAGE_CAPTIONS_PATH . 'includes/functions/core.php';
 
+// Run the setup functions.
+image_captions\Twenty_Sixteen\Core\setup();
+
 // Include all helper functions associated with the image caption shortcode.
 require_once IMAGE_CAPTIONS_PATH . 'includes/functions/helpers.php';
 

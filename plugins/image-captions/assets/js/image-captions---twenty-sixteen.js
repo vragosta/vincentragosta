@@ -7,7 +7,12 @@
 
 ( function( $ ) {
 
-  // TODO
+  /**
+   * Javascript listeners for the image captions plugins
+   *
+   * @class imagecaptions
+   * @since 0.1.0
+   */
 	var imagecaptions = {
 
 		/**
@@ -37,7 +42,13 @@
 		}
 	};
 
-  // TODO
+  /**
+   * When page is loaded, initialize the image captions javascipt.
+   *
+   * @since  0.1.0
+   * @uses   init()
+   * @return void
+   */
 	jQuery( document ).ready( function() {
 
 		// Initialize the vincentragosta class.
