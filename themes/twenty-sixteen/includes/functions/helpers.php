@@ -14,16 +14,18 @@ namespace vincentragosta_com\Twenty_Sixteen\Helpers;
  *
  * @since  0.1.0
  * @param  WP_Query $query Custom query.
+ * @uses   get_query_var(), paginate_links(), get_pagenum_link()
  * @return void
  */
 function pagination( $query ) {
 	$total = $query->max_num_pages;
 
 	// Only bother with the rest if we have more than 1 page.
-	if ( $total > 1 )  {
+	if ( $total > 1 ) :
 
 		// Get the current page.
-		if ( ! $current_page = get_query_var( 'paged' ) ) $current_page = 1;
+		if ( ! $current_page = get_query_var( 'paged' ) )
+			$current_page = 1;
 
 		echo paginate_links( array(
 			'base'     => get_pagenum_link( 1 ) . '%_%',
@@ -33,7 +35,7 @@ function pagination( $query ) {
 			'mid_size' => 4,
 			'type'     => 'plain'
 		) );
-	}
+	endif;
 }
 
 ?>

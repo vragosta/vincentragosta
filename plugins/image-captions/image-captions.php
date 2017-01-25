@@ -7,11 +7,11 @@
  * Author URI: http://vincentragosta.com
  * Text Domain: vincentragosta
  *
- * @package Image Captions 2016
+ * @package Image Captions - Twenty Sixteen
  * @since   0.1.0
  */
 
-// Global defines.
+// Global plugin defines.
 define( 'IMAGE_CAPTIONS_VERSION', '0.1.0' );
 define( 'IMAGE_CAPTIONS_URL', plugin_dir_url( __FILE__ ) );
 define( 'IMAGE_CAPTIONS_PATH', dirname( __FILE__ ) . '/' );
@@ -19,6 +19,9 @@ define( 'IMAGE_CAPTIONS_IMAGE_SIZE', 'large' );
 
 // Include all functions associated with the image caption shortcode.
 require_once IMAGE_CAPTIONS_PATH . 'includes/functions/core.php';
+
+// Run the setup functions.
+image_captions\Twenty_Sixteen\Core\setup();
 
 // Include all helper functions associated with the image caption shortcode.
 require_once IMAGE_CAPTIONS_PATH . 'includes/functions/helpers.php';
@@ -36,7 +39,7 @@ require_once IMAGE_CAPTIONS_PATH . 'includes/widgets/class-news-and-updates.php'
  * Generate image caption shortcode for use within the theme.
  *
  * @since  0.1.0
- * @uses
+ * @uses   set_default_properties(), implode(), include()
  * @param  array  $atts      Contains redefined attributes set on shortcode.
  * @return string $shortcode Contains the necessary HTML required to build player on front-end.
  */

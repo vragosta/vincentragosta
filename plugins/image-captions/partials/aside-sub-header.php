@@ -2,8 +2,9 @@
 /**
  * Template to display the sub-header above the header.
  *
- * @package ImageCaptions 2016
+ * @package Image Captions - Twenty Sixteen
  * @since   0.1.0
+ * @uses    esc_html()
  */
 ?>
 

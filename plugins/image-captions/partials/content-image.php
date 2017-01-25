@@ -2,7 +2,7 @@
 /**
  * Template to display the image ( normalized ).
  *
- * @package ImageCaptions 2016
+ * @package Image Captions - Twenty Sixteen
  * @since   0.1.0
  * @uses    esc_attr()
  */

@@ -2,9 +2,9 @@
 /**
  * Template to display the title.
  *
- * @package ImageCaptions 2016
+ * @package Image Captions - Twenty Sixteen
  * @since   0.1.0
- * @uses    esc_html(), esc_attr()
+ * @uses    esc_html()
  */
 ?>
 

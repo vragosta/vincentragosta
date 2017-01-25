@@ -2,7 +2,7 @@
 /**
  * Template for pagination on archive template.
  *
- * @package VincentRagosta 2016
+ * @package Vincent Ragosta - Twenty Sixteen
  * @since   0.1.0
  * @uses    pagination()
  */

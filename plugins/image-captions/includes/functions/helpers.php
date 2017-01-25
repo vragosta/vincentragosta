@@ -3,11 +3,11 @@
  * Generate a centralized defaults object for easy obtainability from main plugin template.
  *
  * @since  0.1.0
- * @param  Array $atts     Array of attributes assigned to the shortcode.
+ * @param  array $atts array of attributes assigned to the shortcode.
  * @uses   get_post(), in_array(), get_featured_image(), set_featured_image_classes(),
  *         set_visibility_class, set_sub_header_text(), set_font_size(),
  *         set_button_text()
- * @return Array $defaults Array of default values.
+ * @return array $defaults array of default values.
  */
 
 namespace image_captions\Twenty_Sixteen\Helpers;

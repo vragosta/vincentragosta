@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Add 'Sub Header' meta box to 'project' post type.
+ * Create 'Configuration' metabox for the 'project' custom post type.
  *
- * @since 0.1.0
- * @uses add_meta_box()
+ * @since  0.1.0
+ * @uses   add_meta_box()
  * @return void
  */
 function vincentragosta_project_metaboxes() {
@@ -21,12 +21,13 @@ add_action( 'add_meta_boxes', 'vincentragosta_project_metaboxes' );
  * The callback for add_meta_box(), contains the HTML necessary to create the metaboxes.
  *
  * @since  0.1.0
- * @uses   wp_nonce_field(), wp_editor()
+ * @uses   wp_nonce_field(), get_post_meta(), __(), esc_textarea()
  * @return void
  */
 function vincentragosta_project_callback( $post ) {
 	// Add a nonce field so we can check for it later.
 	wp_nonce_field( 'vincentragosta_project_save_data', 'vincentragosta_nonce' );
+
 	/**
 	 * Use get_post_meta() to retrieve an existing value
 	 * from the database and use the value for the form.
@@ -58,7 +59,7 @@ function vincentragosta_project_callback( $post ) {
  * Saves and sanitizes the POST data.
  *
  * @since  0.1.0
- * @uses   wp_verify_nonce(), apply_filters()
+ * @uses   isset(), wp_verify_nonce(), defined(), current_user_can(), sanitize_text_field(), update_post_meta()
  * @return void
  */
 function vincentragosta_project_save_data( $post_id ) {
@@ -67,26 +68,20 @@ function vincentragosta_project_save_data( $post_id ) {
 	 * because the save_post action can be triggered at other times.
 	 */
 	// Check if our nonce is set.
-	if ( ! isset( $_POST['vincentragosta_nonce'] ) ) {
+	if ( ! isset( $_POST['vincentragosta_nonce'] ) )
 		return;
-	}
 
 	// Verify that the nonce is valid.
-	if ( ! wp_verify_nonce( $_POST['vincentragosta_nonce'], 'vincentragosta_project_save_data' ) ) {
+	if ( ! wp_verify_nonce( $_POST['vincentragosta_nonce'], 'vincentragosta_project_save_data' ) )
 		return;
-	}
 
 	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
 		return;
-	}
 
 	// Check the user's permissions.
-	if ( isset( $_POST['post_type'] ) && 'project' == $_POST['post_type'] ) {
-		if ( ! current_user_can( 'edit_page', $post_id ) ) {
-			return;
-		}
-	}
+	if ( ! current_user_can( 'edit_page', $post_id ) )
+		return;
 
 	// Sanitize user input.
 	$shorthand_title = sanitize_text_field( $_POST['shorthand_title'] );

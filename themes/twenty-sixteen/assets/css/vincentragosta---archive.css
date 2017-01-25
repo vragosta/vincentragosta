@@ -18,7 +18,7 @@
 	margin: 0 .5rem;
 }
 
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.archive .grid-container .grid-item {
 		margin: .5rem 0;
 	}

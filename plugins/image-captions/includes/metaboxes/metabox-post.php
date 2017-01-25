@@ -21,7 +21,7 @@ add_action( 'add_meta_boxes', 'image_captions_post_metaboxes' );
  * The callback for add_meta_box(), contains the HTML necessary to create the metaboxes.
  *
  * @since  0.1.0
- * @uses   wp_nonce_field(), get_post_meta(), esc_html()
+ * @uses   wp_nonce_field(), get_post_meta(), __(), esc_textarea()
  * @return void
  */
 function image_captions_post_callback( $post ) {
@@ -37,7 +37,7 @@ function image_captions_post_callback( $post ) {
 	<table style="width: 100%;">
 		<tr>
 			<td>
-				<label for="sub_header"><?php echo esc_html( __( 'Sub Header:', 'vincentragosta' ) ); ?></label>
+				<label for="sub_header"><?php echo __( 'Sub Header:', 'vincentragosta' ); ?></label>
 			</td>
 			<td>
 				<textarea id="sub_header" name="sub_header" style="width: 100%;"><?php echo esc_textarea( $sub_header ); ?></textarea>
@@ -50,7 +50,8 @@ function image_captions_post_callback( $post ) {
  * Saves and sanitizes the POST data.
  *
  * @since  0.1.0
- * @uses   isset(), wp_verify_nonce(), apply_filters(), defined(), current_user_can(), sanitize_text_field(), update_post_meta()
+ * @uses   isset(), wp_verify_nonce(), defined(),
+ *         current_user_can(), sanitize_text_field(), update_post_meta()
  * @return void
  */
 function image_captions_post_save_data( $post_id ) {
@@ -59,26 +60,20 @@ function image_captions_post_save_data( $post_id ) {
 	 * because the save_post action can be triggered at other times.
 	 */
 	// Check if our nonce is set.
-	if ( ! isset( $_POST['image_captions_nonce'] ) ) {
+	if ( ! isset( $_POST['image_captions_nonce'] ) )
 		return;
-	}
 
 	// Verify that the nonce is valid.
-	if ( ! wp_verify_nonce( $_POST['image_captions_nonce'], 'image_captions_post_save_data' ) ) {
+	if ( ! wp_verify_nonce( $_POST['image_captions_nonce'], 'image_captions_post_save_data' ) )
 		return;
-	}
 
 	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
 		return;
-	}
 
 	// Check the user's permissions.
-	if ( isset( $_POST['post_type'] ) && 'post' == $_POST['post_type'] ) {
-		if ( ! current_user_can( 'edit_post', $post_id ) ) {
-			return;
-		}
-	}
+	if ( ! current_user_can( 'edit_post', $post_id ) )
+		return;
 
 	// Sanitize user input.
 	$sub_header = sanitize_text_field( $_POST['sub_header'] );

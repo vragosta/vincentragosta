@@ -8,7 +8,7 @@
 	padding: 0 4rem;
 }
 
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	#single-project img {
 		width: 100%;
 		height: 100%;
@@ -22,14 +22,6 @@
 /*--- Technology section ---*/
 .technology {
 	width: 100%;
-}
-
-.technology pre {
-	border: none;
-	margin: 0;
-	text-align: center;
-	white-space: pre-wrap;
-	word-break: normal;
 }
 
 /*--- Single Pagination ---*/

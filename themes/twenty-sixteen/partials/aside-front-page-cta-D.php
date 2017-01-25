@@ -2,7 +2,7 @@
 /**
  * 'Call To Action D ( Front Page )' sidebar.
  *
- * @package VincentRagosta.com 2016
+ * @package Vincent Ragosta - Twenty Sixteen
  * @since   0.1.0
  * @uses    is_active_sidebar(), dynamic_sidebar()
  */
