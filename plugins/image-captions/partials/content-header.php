@@ -8,8 +8,8 @@
  */
 ?>
 
-<?php if ( $defaults->header_text ) : ?>
+<?php if ( $image_caption->header ) : ?>
 	<h1 class="header unloaded padding-left-right">
-		<?php echo esc_html( $defaults->header_text ); ?>
+		<?php echo esc_html( $image_caption->header ); ?>
 	</h1>
 <?php endif; ?>

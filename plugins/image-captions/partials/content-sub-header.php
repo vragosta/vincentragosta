@@ -8,8 +8,8 @@
  */
 ?>
 
-<?php if ( $defaults->sub_header_text ) : ?>
-	<aside class="sub-header unloaded padding-left-right">
-		<?php echo esc_html( $defaults->sub_header_text ); ?>
-	</aside>
+<?php if ( $image_caption->sub_header ) : ?>
+	<h4 class="sub-header unloaded padding-left-right">
+		<?php echo esc_html( $image_caption->sub_header ); ?>
+	</h4>
 <?php endif; ?>

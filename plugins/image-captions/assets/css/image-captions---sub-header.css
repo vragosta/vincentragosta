@@ -11,7 +11,6 @@
 	font-weight: 100;
 	text-shadow: #080808 0 0 4px;
 	text-align: center;
-	font-size: 1.8rem;
 
 	/*--- CSS transitions to toggle sub-header visibility ---*/
 	opacity: 1;
@@ -26,10 +25,8 @@
 	margin: 20px 0 0 0;
 }
 
-@media only screen and ( min-width: 992px ) {
-	.featured-image.static .sub-header {
-		font-size: 2.5rem;
-	}
+.featured-image:not( .static ) .sub-header {
+	font-size: 1.8rem;
 }
 
 @media only screen and ( min-width: 768px ) and ( max-width: 991px ) {
@@ -45,7 +42,6 @@
 }
 
 @media only screen and ( min-width: 768px ) {
-	.featured-image.static .sub-header,
 	.featured-image:hover .sub-header {
 		opacity: 1;
 		visibility: visible;

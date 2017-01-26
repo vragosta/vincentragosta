@@ -10,7 +10,7 @@
 function vincentragosta_project_metaboxes() {
 	add_meta_box(
 		'configuration',
-		__( 'Configuration', 'vincentragosta' ),
+		__( 'Project Configuration', 'vincentragosta' ),
 		'vincentragosta_project_callback',
 		'project'
 	);
@@ -32,18 +32,9 @@ function vincentragosta_project_callback( $post ) {
 	 * Use get_post_meta() to retrieve an existing value
 	 * from the database and use the value for the form.
 	 */
-	$shorthand_title = get_post_meta( $post->ID, 'shorthand_title', true );
-	$technology      = get_post_meta( $post->ID, 'technology', true ); ?>
+	$technology = get_post_meta( $post->ID, 'technology', true ); ?>
 
 	<table style="width: 100%;">
-		<tr>
-			<td>
-				<label for="shorthand_title"><?php echo __( 'Shorthand Title:', 'vincentragosta' ); ?></label>
-			</td>
-			<td>
-				<textarea id="shorthand_title" name="shorthand_title" style="width: 100%;"><?php echo esc_textarea( $shorthand_title ); ?></textarea>
-			</td>
-		</tr>
 		<tr>
 			<td>
 				<label for="technology"><?php echo __( 'Technology Used:', 'vincentragosta' ); ?></label>
@@ -84,11 +75,9 @@ function vincentragosta_project_save_data( $post_id ) {
 		return;
 
 	// Sanitize user input.
-	$shorthand_title = sanitize_text_field( $_POST['shorthand_title'] );
-	$technology      = sanitize_text_field( $_POST['technology'] );
+	$technology = sanitize_text_field( $_POST['technology'] );
 
 	// Update the meta field in the database.
-	update_post_meta( $post_id, 'shorthand_title', $shorthand_title );
 	update_post_meta( $post_id, 'technology', $technology );
 }
 add_action( 'save_post', 'vincentragosta_project_save_data' );
