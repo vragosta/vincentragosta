@@ -8,6 +8,6 @@
  */
 ?>
 
-<?php if ( $defaults->image_source ) : ?>
-	<div class="image normalize-image" style="background-image: url( '<?php echo esc_attr( $defaults->image_source ); ?>' );"></div>
+<?php if ( $image_caption->image_source ) : ?>
+	<div class="image normalize-image" style="background-image: url( '<?php echo esc_attr( $image_caption->image_source ); ?>' );"></div>
 <?php endif; ?>

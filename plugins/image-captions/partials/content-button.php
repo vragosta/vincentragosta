@@ -8,6 +8,6 @@
  */
 ?>
 
-<?php if ( $defaults->button_text ) : ?>
-	<a href="<?php echo get_the_permalink( $post->ID ); ?>"><?php echo esc_html( $defaults->button_text ); ?></a>
+<?php if ( $image_caption->button ) : ?>
+	<a href="<?php echo get_the_permalink( $image_caption->ID ); ?>"><?php echo esc_html( $image_caption->button ); ?></a>
 <?php endif; ?>

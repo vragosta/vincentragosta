@@ -2,7 +2,7 @@
  * Image Captions - Twenty Sixteen
  * Header CSS
  */
-/*--- Default haeder styles target non static elements ---*/
+/*--- Default header styles target non static elements ---*/
 .header {
 	margin: 0;
 	color: #fff;
@@ -11,8 +11,6 @@
 	line-height: 1;
 	text-align: center;
 	text-shadow: #080808 0 0 4px;
-	font-size: 2.5rem;
-	max-width: 500px;
 	padding: 0 2rem;
 
 	/*--- CSS transitions to toggle header visibility ---*/
@@ -21,7 +19,7 @@
 	transition: opacity .4s ease-in-out, visibility .4s ease-in-out, margin .4s ease-in-out;
 }
 
-/*--- Initial styles when the page is unloaded ( Needed for js functionality ) ---*/
+/*--- Initial styles when the page is unloaded ( needed for js functionality ) ---*/
 .header.unloaded {
 	opacity: 0;
 	visibility: hidden;
@@ -29,14 +27,13 @@
 
 /*--- Aspect ratio 10x4 ---*/
 .featured-image.static .header {
-	font-size: 4rem;
 	max-width: 1000px;
 }
 
-@media only screen and ( min-width: 992px ) {
-	.featured-image.static .header {
-		font-size: 7.5rem;
-	}
+/*--- Aspect ratio 1x1 ---*/
+.featured-image:not( .static ) .header {
+	font-size: 2.5rem;
+	max-width: 500px;
 }
 
 @media only screen and ( min-width: 768px ) and ( max-width: 991px ) {
@@ -45,6 +42,13 @@
 	}
 }
 
+@media only screen and ( max-width: 767px ) {
+	.featured-image.static .header {
+		font-size: 4rem;
+	}
+}
+
+/*--- Eliminates the hover on aspect ratio 1x1, prevents js behavior on featured-page ---*/
 @media only screen and ( min-width: 768px ) {
 	.featured-image.static .header,
 	.featured-image:hover .header {

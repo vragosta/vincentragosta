@@ -4,7 +4,8 @@
  * Create configuration metabox for 'page' custom post type.
  *
  * @since  0.1.0
- * @uses   add_meta_box()
+ * @param  void
+ * @uses   add_meta_box(), __()
  * @return void
  */
 function image_caption_page_metaboxes() {
@@ -21,6 +22,7 @@ add_action( 'add_meta_boxes', 'image_caption_page_metaboxes' );
  * The callback for add_meta_box(), contains the HTML necessary to create the metaboxes.
  *
  * @since  0.1.0
+ * @param  wp_post $post current post object.
  * @uses   wp_nonce_field(), get_post_meta(), __(), esc_textarea()
  * @return void
  */
@@ -60,6 +62,7 @@ function image_captions_page_callback( $post ) {
  * Saves and sanitizes the POST data.
  *
  * @since  0.1.0
+ * @param  int $post_id id of the current post object.
  * @uses   isset(), wp_verify_nonce(), defined(), current_user_can(),
  *         sanitize_text_field(), update_post_meta()
  * @return void

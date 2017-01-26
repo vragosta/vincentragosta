@@ -32,9 +32,18 @@ function image_captions_project_callback( $post ) {
 	 * Use get_post_meta() to retrieve an existing value
 	 * from the database and use the value for the form.
 	 */
-	$sub_header = get_post_meta( $post->ID, 'sub_header', true ); ?>
+	$shorthand_header = get_post_meta( $post->ID, 'shorthand_header', true );
+	$sub_header       = get_post_meta( $post->ID, 'sub_header', true ); ?>
 
 	<table style="width: 100%;">
+		<tr>
+			<td>
+				<label for="shorthand_header"><?php echo __( 'Shorthand Header:', 'vincentragosta' ); ?></label>
+			</td>
+			<td>
+				<textarea id="shorthand_header" name="shorthand_header" style="width: 100%;"><?php echo esc_textarea( $shorthand_header ); ?></textarea>
+			</td>
+		</tr>
 		<tr>
 			<td>
 				<label for="sub_header"><?php echo __( 'Sub Header:', 'vincentragosta' ); ?></label>
@@ -76,12 +85,12 @@ function image_captions_project_save_data( $post_id ) {
 		return;
 
 	// Sanitize user input.
-	$sub_header = sanitize_text_field( $_POST['sub_header'] );
+	$shorthand_header = sanitize_text_field( $_POST['shorthand_header'] );
+	$sub_header       = sanitize_text_field( $_POST['sub_header'] );
 
 	// Update the meta field in the database.
-	update_post_meta( $post_id, 'shorthand_title', $shorthand_title );
+	update_post_meta( $post_id, 'shorthand_header', $shorthand_header );
 	update_post_meta( $post_id, 'sub_header', $sub_header );
-	update_post_meta( $post_id, 'technology', $technology );
 }
 add_action( 'save_post', 'image_captions_project_save_data' );
 
