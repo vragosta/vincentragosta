@@ -113,6 +113,9 @@ class News_And_Updates_Widget extends WP_Widget {
 		// Set bootstrap grid, divide 12 ( max bootstrap col size ) by the value of $bootstrap_grid_col.
 		$bootstrap_class = 'col-sm-' . ( BOOTSTRAP_GRID_COL_MAX / $bootstrap_grid_col );
 
+		// Set the href for the button.
+		$button_href = ( $instance['post_type'] !== 'post' ) ? home_url( '/portfolio/' ) : home_url( '/blog/' ) ;
+
 		// Create arguments array for query.
 		$args                   = array();
 		$args['post_type']      = $post_type;
@@ -135,7 +138,7 @@ class News_And_Updates_Widget extends WP_Widget {
 				<?php wp_reset_postdata(); ?>
 			<?php endif;?>
 			<div class="full-width col-flex-center">
-				<a href="<?php echo home_url( '/portfolio/' ) ?>">View more <?php echo esc_html( $instance['post_type'] ); ?>s</a>
+				<a href="<?php echo $button_href; ?>">View more <?php echo esc_html( $instance['post_type'] ); ?>s</a>
 			</div>
 		</div>
 
