@@ -36,7 +36,7 @@ function vincentragosta_project_callback( $post ) {
 
 	<table style="width: 100%;">
 		<tr>
-			<td>
+			<td class="label">
 				<label for="technology"><?php echo __( 'Technology Used:', 'vincentragosta' ); ?></label>
 			</td>
 			<td>

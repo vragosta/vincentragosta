@@ -37,7 +37,7 @@ function image_captions_post_callback( $post ) {
 
 	<table style="width: 100%;">
 		<tr>
-			<td>
+			<td class="label">
 				<label for="shorthand_header"><?php echo __( 'Shorthand Header:', 'vincentragosta' ); ?></label>
 			</td>
 			<td>
@@ -45,7 +45,7 @@ function image_captions_post_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td>
+			<td class="label">
 				<label for="sub_header"><?php echo __( 'Sub Header:', 'vincentragosta' ); ?></label>
 			</td>
 			<td>
