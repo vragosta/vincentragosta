@@ -14,7 +14,6 @@
 
 // Useful global constants.
 define( 'VINCENTRAGOSTA_COM_VERSION', '0.1.0' );
-define( 'VINCENTRAGOSTA_COM_URL', get_stylesheet_directory_uri() );
 define( 'VINCENTRAGOSTA_COM_TEMPLATE_URL', get_template_directory_uri() );
 define( 'VINCENTRAGOSTA_COM_PATH', get_template_directory() . '/' );
 define( 'VINCENTRAGOSTA_COM_INC', VINCENTRAGOSTA_COM_PATH . 'includes/' );

@@ -12,8 +12,17 @@
   <nav class="nav-container full-width">
 
     <!-- Menu -->
-    <section class="menu-container">
-      <?php get_template_part( 'partials/content', 'menu' ); ?>
+    <section class="controls-container">
+
+      <!-- Logo -->
+      <figure itemscope itemtype="http://schema.org/Organization" id="logo" class="unloaded">
+        <meta itemprop="logo" content="<?php echo esc_url( VINCENTRAGOSTA_COM_TEMPLATE_URL . '/assets/images/white-logo.png' ); ?>" />
+        <a itemprop="url" href="<?php echo home_url(); ?>"></a>
+      </figure>
+
+      <div class="menu-container">
+        <?php get_template_part( 'partials/content', 'menu' ); ?>
+      </div>
     </section>
 
     <!-- Drop down toggle -->

@@ -200,7 +200,7 @@ function styles() {
 
 	wp_enqueue_style(
 		'vincentragosta_com',
-		VINCENTRAGOSTA_COM_URL . "/assets/css/vincentragosta---twenty-sixteen.css",
+		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---twenty-sixteen.css",
 		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'helpers', 'core-components', 'menus', 'header', 'footer', 'widget' ),
 		VINCENTRAGOSTA_COM_VERSION
 	);

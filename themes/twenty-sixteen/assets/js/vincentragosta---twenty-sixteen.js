@@ -47,8 +47,9 @@
 		 * @uses   removeClass(), addClass()
 		 * @return void
 		 */
-		menuFadeIn : function() {
+		loadElements : function() {
 			$( '.menu' ).removeClass( 'unloaded' );
+			$( '#logo' ).removeClass( 'unloaded' );
 		},
 
 		/**
@@ -59,7 +60,7 @@
 		 * @return void
 		 */
 		init: function() {
-			this.menuFadeIn();
+			this.loadElements();
 			this.setupMenuToggle();
 		}
 	};

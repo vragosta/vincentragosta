@@ -54,7 +54,7 @@ function image_captions_shortcode( $atts ) {
 	$image_caption = image_captions\Twenty_sixteen\Helpers\set_default_properties( $atts ); ?>
 
 	<!-- Image Caption HTML start -->
-	<figure class="featured-image <?php echo implode( ' ', $image_caption->classes ); ?>">
+	<main class="featured-image <?php echo implode( ' ', $image_caption->classes ); ?>">
 
 		<!-- Overlay container -->
 		<div class="overlay col-flex-center">
@@ -73,7 +73,7 @@ function image_captions_shortcode( $atts ) {
 		<!-- Post image -->
 		<?php include( IMAGE_CAPTIONS_PATH . 'partials/content-image.php' ); ?>
 
-	</figure><?php
+	</main><?php
 
 	return $shortcode;
 

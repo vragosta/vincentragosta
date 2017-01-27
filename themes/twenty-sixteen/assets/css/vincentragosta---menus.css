@@ -3,14 +3,19 @@
  * Menu CSS
  */
 .menu-container {
-	display: flex;
-	justify-content: flex-end;
-	padding: 4rem 2rem;
+	/*--- CSS transitions to toggle menu-container visibility ---*/
+	opacity: 1;
+	visibility: visible;
+	transition: opacity .4s ease-in-out, visibility .4s ease-in-out;
 }
 
 @media only screen and ( max-width: 991px ) {
 	.menu-container {
-		display: none;
+		opacity: 0;
+		visibility: hidden;
+
+		/*--- Needed to prevent the links in the menu from being clickable ---*/
+		z-index: -10;
 	}
 }
 
@@ -89,7 +94,7 @@
 #mobile-menu .close-container {
 	display: flex;
 	justify-content: flex-end;
-	padding: 4.6rem 3.5rem 1.5rem 2rem;
+	padding: 4.4rem 3.5rem 1.5rem 2rem;
 }
 
 #mobile-menu .close-container i {
