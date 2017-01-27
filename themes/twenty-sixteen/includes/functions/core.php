@@ -189,7 +189,7 @@ function styles() {
 	endif;
 
 	// Enqueue the archive styles if on the archive template ( portfolio page ).
-	if ( is_page( 'portfolio' ) ) :
+	if ( is_page( 'portfolio' ) || is_home() ) :
 		wp_enqueue_style(
 			'archive',
 			VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---archive.css",

@@ -2,7 +2,7 @@
 /**
  * The template for displaying the header.
  *
- * @package VincentRagosta.com 2016
+ * @package Vincent Ragosta - Twenty Sixteen
  * @since 0.1.0
  */
 ?>

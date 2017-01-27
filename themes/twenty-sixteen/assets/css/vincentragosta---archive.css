@@ -28,6 +28,11 @@
 	}
 }
 
+/*--- Blog ---*/
+.blog h1 {
+	text-align: left;
+}
+
 /*--- Archive Pagination ---*/
 #pagination-archive {
 	margin: 0 0 6rem;

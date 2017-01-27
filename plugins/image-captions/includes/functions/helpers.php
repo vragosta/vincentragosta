@@ -19,6 +19,10 @@ function set_default_properties( $atts ) {
 	if ( $atts['id'] )
 		$post = get_post( $atts['id'] );
 
+	// If we are on the blog template, get the blog template ID.
+	if ( is_home() )
+		$post = get_post( get_option( 'page_for_posts' ) );
+
 	// Set up variable to check if static exists as a class.
 	$is_static = in_array( 'static', explode( ' ', $atts['class'] ), true );
 
