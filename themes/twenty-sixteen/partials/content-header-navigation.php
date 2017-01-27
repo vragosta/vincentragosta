@@ -12,8 +12,11 @@
   <nav class="nav-container full-width">
 
     <!-- Menu -->
-    <section class="menu-container">
-      <?php get_template_part( 'partials/content', 'menu' ); ?>
+    <section class="controls-container">
+      <a id="logo" href="<?php echo home_url(); ?>"></a>
+      <div class="menu-container">
+        <?php get_template_part( 'partials/content', 'menu' ); ?>
+      </div>
     </section>
 
     <!-- Drop down toggle -->
