@@ -8,4 +8,4 @@
  */
 ?>
 
-<aside id="sidebar" class="" style="width: 20%;"></aside>
+<aside id="sidebar" class="" style="width: 30%;"></aside>

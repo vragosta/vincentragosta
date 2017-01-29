@@ -3,7 +3,7 @@
  * Header CSS
  */
 /*--- Default header styles target non static elements ---*/
-.header {
+.featured-image .header {
 	margin: 0;
 	color: #fff;
 	text-transform: uppercase;
@@ -20,7 +20,7 @@
 }
 
 /*--- Initial styles when the page is unloaded ( needed for js functionality ) ---*/
-.header.unloaded {
+.featured-image .header.unloaded {
 	opacity: 0;
 	visibility: hidden;
 }

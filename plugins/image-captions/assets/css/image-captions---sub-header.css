@@ -3,7 +3,7 @@
  * Sub Header CSS
  */
 /*--- Default sub-header styles target non static elements ---*/
-.sub-header {
+.featured-image .sub-header {
 	color: #fff;
 	font-style: italic;
 	letter-spacing: 1px;
@@ -19,7 +19,7 @@
 }
 
 /*--- Initial styles when the page is unloaded ---*/
-.sub-header.unloaded {
+.featured-image .sub-header.unloaded {
 	opacity: 0;
 	visibility: hidden;
 	margin: 20px 0 0 0;

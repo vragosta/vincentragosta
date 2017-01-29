@@ -11,8 +11,8 @@
 
 	<main id="blog" class="row-flex-center">
 
-		<!-- <div class="col-xs-12 col-sm-8">text</div> -->
 		<?php get_template_part( 'partials/content', 'blog' ); ?>
+
 		<?php get_template_part( 'partials/aside', 'sidebar' ); ?>
 
 	</main>
