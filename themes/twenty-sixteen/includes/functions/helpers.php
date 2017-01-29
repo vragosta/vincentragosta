@@ -38,4 +38,16 @@ function pagination( $query ) {
 	endif;
 }
 
+/**
+ * Returns featured image of a post or custom post type.
+ *
+ * @since  0.1.0
+ * @param  int $id id of the wp_post object.
+ * @uses   wp_get_attachment_image_src(), get_post_thumbnail_id()
+ * @return string void url of attached image.
+ */
+function get_featured_image( $id ) {
+	return wp_get_attachment_image_src( get_post_thumbnail_id( $id ), IMAGE_CAPTIONS_IMAGE_SIZE )[0];
+}
+
 ?>
