@@ -11,8 +11,10 @@
 
 	<main id="blog" class="row-flex-center">
 
+		<!-- TODO -->
 		<?php get_template_part( 'partials/content', 'blog' ); ?>
 
+		<!-- TODO -->
 		<?php get_template_part( 'partials/aside', 'sidebar' ); ?>
 
 	</main>

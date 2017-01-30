@@ -20,11 +20,12 @@ $args = array(
 $custom = new WP_Query( $args ); ?>
 
 <?php if ( $custom->have_posts() ) : ?>
-	<section class="content">
+	<section>
 		<?php while ( $custom->have_posts() ) : $custom->the_post(); ?>
 			<?php $author  = get_user_by( 'id', $post->post_author ); ?>
 			<?php $image   = vincentragosta_com\Twenty_Sixteen\Helpers\get_featured_image( $post->ID ); ?>
-			<?php $content = ( 150 <= str_word_count( $post->post_content ) ) ? wp_trim_words( $post->post_content, 150, '&hellip;' ) : $post->post_content; ?>
+			<?php $date    = vincentragosta_com\Twenty_Sixteen\Helpers\format_date( $post->post_date, 'F jS Y' ); ?>
+			<?php $content = vincentragosta_com\Twenty_Sixteen\Helpers\trim_string_by( 60, $post->post_content ); ?>
 			<article class="post">
 				<div class="header">
 					<h2><?php echo esc_html( $post->post_title ); ?></h2>
@@ -36,22 +37,20 @@ $custom = new WP_Query( $args ); ?>
 							<i class="ion ion-ios-circle-filled"></i>
 						</span>
 						<span class="post-date">
-							<?php echo esc_html( date_format( date_create( $post->post_date ), 'F jS Y' ) ); ?>
+							<?php echo esc_html( $date ); ?>
 						</span>
 					</div>
 				</div>
-				<figure class="featured-image">
-					<meta></meta>
-					<a href="<?php echo get_the_permalink( $post->ID ); ?>" style="background-image: url( <?php echo esc_attr( $image ); ?> ); background-size: cover; background-position: center; position: absolute; top: 0; bottom: 0; left: 0; right: 0;"></a>
+				<figure itemscope itemtype="http://schema.org/CreativeWork">
+					<meta itemprop="logo" content="<?php echo esc_attr( $image ); ?>"></meta>
+					<a itemprop="url" href="<?php echo get_the_permalink( $post->ID ); ?>" class="image" style="background-image: url( <?php echo esc_attr( $image ); ?> );"></a>
 				</figure>
-				<div>
-					<summary style="font-size: 1.8rem; margin: 1.5rem 0;">
-						<?php echo esc_html( $post->post_excerpt ); ?>
-					</summary>
-					<p style="font-size: 1.8rem; opacity: 0.7;">
-						<?php echo esc_html( $content ); ?>
-					</p>
-				</div>
+				<summary class="excerpt">
+					<?php echo esc_html( $post->post_excerpt ); ?>
+				</summary>
+				<p class="content">
+					<?php echo esc_html( $content ); ?>
+				</p>
 			</article>
 		<?php endwhile; ?>
 		<?php wp_reset_postdata(); ?>

@@ -9,7 +9,7 @@
 }
 
 /*--- Image inside the overlay ---*/
-.image {
+.featured-image .image {
 	top: 0;
 	bottom: 0;
 	left: 0;
