@@ -42,7 +42,6 @@
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
-	flex-direction: column;
 }
 
 .row-flex-end {
@@ -50,7 +49,13 @@
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
-	flex-direction: column;
+}
+
+.row-flex-between {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .padding-left-right {

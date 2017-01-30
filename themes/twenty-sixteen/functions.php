@@ -26,6 +26,12 @@ define( 'POST_TYPE', 'post' );
 // Include compartmentalized functions.
 require_once VINCENTRAGOSTA_COM_INC . 'functions/core.php';
 
+// Include essential functions.
+require_once VINCENTRAGOSTA_COM_INC . 'functions/essentials.php';
+
+// Helper functions.
+require_once VINCENTRAGOSTA_COM_INC . 'functions/helpers.php';
+
 // Metaboxes for the various custom post types.
 require_once VINCENTRAGOSTA_COM_INC . 'metaboxes/metabox-project.php';
 require_once VINCENTRAGOSTA_COM_INC . 'metaboxes/metabox-user.php';
@@ -34,11 +40,8 @@ require_once VINCENTRAGOSTA_COM_INC . 'metaboxes/metabox-user.php';
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-notification.php';
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-text-column.php';
 
-// Helper functions.
-require_once VINCENTRAGOSTA_COM_INC . 'functions/helpers.php';
-
 // Run the setup functions.
 vincentragosta_com\Twenty_Sixteen\Core\setup();
 
 // Run the essential functions.
-// vincentragosta_com\Twenty_Sixteen\Essentials\setup();
+vincentragosta_com\Twenty_Sixteen\Essentials\setup();

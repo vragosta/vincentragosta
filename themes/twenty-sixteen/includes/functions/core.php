@@ -172,7 +172,14 @@ function styles() {
 	);
 
 	wp_register_style(
-		'widget',
+		'sidebars',
+		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---sidebars.css",
+		array(),
+		VINCENTRAGOSTA_COM_VERSION
+	);
+
+	wp_register_style(
+		'widgets',
 		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---widgets.css",
 		array(),
 		VINCENTRAGOSTA_COM_VERSION
@@ -189,7 +196,7 @@ function styles() {
 	endif;
 
 	// Enqueue the archive styles if on the archive template ( portfolio page ).
-	if ( is_page( 'portfolio' ) ) :
+	if ( is_page( 'portfolio' ) || is_home() ) :
 		wp_enqueue_style(
 			'archive',
 			VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---archive.css",
@@ -198,19 +205,10 @@ function styles() {
 		);
 	endif;
 
-	if ( is_home() ) :
-		wp_enqueue_style(
-			'blog',
-			VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---blog.css",
-			array(),
-			VINCENTRAGOSTA_COM_VERSION
-		);
-	endif;
-
 	wp_enqueue_style(
 		'vincentragosta_com',
 		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---twenty-sixteen.css",
-		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'helpers', 'core-components', 'menus', 'header', 'footer', 'widget' ),
+		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'helpers', 'core-components', 'menus', 'header', 'footer', 'sidebars', 'widgets' ),
 		VINCENTRAGOSTA_COM_VERSION
 	);
 }

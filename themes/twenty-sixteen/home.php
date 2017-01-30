@@ -9,7 +9,7 @@
 
 	get_header(); ?>
 
-	<main id="blog" class="row-flex-center">
+	<main id="blog" class="row-flex-between">
 
 		<!-- TODO -->
 		<?php get_template_part( 'partials/content', 'blog' ); ?>
