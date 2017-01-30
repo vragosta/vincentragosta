@@ -22,6 +22,8 @@
 .featured-image .sub-header.unloaded {
 	opacity: 0;
 	visibility: hidden;
+
+	/*--- Margin-top for unloaded effect ---*/
 	margin: 20px 0 0 0;
 }
 

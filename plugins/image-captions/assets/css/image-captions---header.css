@@ -4,7 +4,6 @@
  */
 /*--- Default header styles target non static elements ---*/
 .featured-image .header {
-	margin: 0;
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -12,6 +11,9 @@
 	text-align: center;
 	text-shadow: #080808 0 0 4px;
 	padding: 0 2rem;
+
+	/*--- Margin-bottom set for hover effect ---*/
+	margin: 0 0 20px 0;
 
 	/*--- CSS transitions to toggle header visibility ---*/
 	opacity: 1;
@@ -50,8 +52,7 @@
 
 /*--- Eliminates the hover on aspect ratio 1x1, prevents js behavior on featured-page ---*/
 @media only screen and ( min-width: 768px ) {
-	.featured-image.static .header,
-	.featured-image:hover .header {
+	.featured-image:not( .static ):hover .header {
 		opacity: 1;
 		visibility: visible;
 		margin: 0;
