@@ -7,15 +7,23 @@
 	padding-top: 2rem;
 }
 
+/*--- TODO ---*/
+#news-and-updates .featured-image .image {
+	top: 10px;
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
+}
+
 /*--- Featured Post Widget ---*/
-#featured-page-widget a {
+#featured-page a {
 	margin-top: 2rem;
 	padding: 1.5rem 3rem;
 	font-size: 1.5rem;
 }
 
 @media only screen and ( max-width: 767px ) {
-	#featured-page-widget a {
+	#featured-page a {
 		font-size: 1.5rem;
 	}
 }

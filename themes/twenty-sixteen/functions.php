@@ -19,9 +19,6 @@ define( 'VINCENTRAGOSTA_COM_PATH', get_template_directory() . '/' );
 define( 'VINCENTRAGOSTA_COM_INC', VINCENTRAGOSTA_COM_PATH . 'includes/' );
 define( 'VINCENTRAGOSTA_SITE_ADMIN', 1 );
 define( 'VINCENTRAGOSTA_COM_IMAGE_SIZE', 'full' );
-define( 'BOOTSTRAP_GRID_COL_MAX', 12 );
-define( 'POSTS_PER_PAGE', 3 );
-define( 'POST_TYPE', 'post' );
 
 // Include compartmentalized functions.
 require_once VINCENTRAGOSTA_COM_INC . 'functions/core.php';
