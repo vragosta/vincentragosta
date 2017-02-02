@@ -67,9 +67,9 @@ class News_And_Updates_Widget extends WP_Widget {
 	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance              = array();
-		$instance['title']     = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-		$instance['post_type'] = ( ! empty( $new_instance['post_type'] ) ) ? $new_instance['post_type'] : '';
-		$instance['ids']       = ( ! empty( $new_instance['ids'] ) ) ? $new_instance['ids'] : '';
+		$instance['title']     = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
+		$instance['post_type'] = ( ! empty( $new_instance['post_type'] ) ) ? sanitize_text_field( $new_instance['post_type'] ) : '';
+		$instance['ids']       = ( ! empty( $new_instance['ids'] ) ) ? sanitize_text_field( $new_instance['ids'] ) : '';
 
 		return $instance;
 	}
@@ -87,6 +87,11 @@ class News_And_Updates_Widget extends WP_Widget {
 		// Define global variables.
 		global $post;
 
+		// Set widget specific defines.
+		define( 'BOOTSTRAP_GRID_COL_MAX', 12 );
+		define( 'POSTS_PER_PAGE', 3 );
+		define( 'POST_TYPE', 'post' );
+
 		// If the 'before_widget' field is set, display it.
 		echo $args['before_widget'];
 
@@ -96,13 +101,15 @@ class News_And_Updates_Widget extends WP_Widget {
 		}
 
 		// If 'ids' exists, remove all spaces from the string, and explode the string by the delimeter ','.
-		$post__in = ( $instance['ids'] ) ? explode( ',', str_replace( ' ', '', $instance['ids'] ) ) : '';
+		if ( $instance['ids'] )
+			$post__in = explode( ',', str_replace( ' ', '', $instance['ids'] ) );
 
 		// If $post__in exists, create the $post__in_count based off the size of the exploded 'ids' array.
-		( $post__in ) ? $post__in_count = count( $post__in ) : '';
+		if ( $post__in )
+			$post__in_count = count( $post__in );
 
 		// If $post__in exists, set $bootstrap_grid_col to $post__in_count, otherwise set it to 3.
-		$bootstrap_grid_col = ( $post__in ) ? $post__in_count : POSTS_PER_PAGE;
+		$bootstrap_grid_col = ( $post__in_count ) ? $post__in_count : POSTS_PER_PAGE;
 
 		// If 'posts_per_page' is not set, default 3.
 		$posts_per_page = ( $post__in_count ) ? $post__in_count : POSTS_PER_PAGE;
@@ -117,10 +124,11 @@ class News_And_Updates_Widget extends WP_Widget {
 		$button_href = ( $instance['post_type'] !== 'post' ) ? home_url( '/portfolio/' ) : home_url( '/blog/' ) ;
 
 		// Create arguments array for query.
-		$args                   = array();
-		$args['post_type']      = $post_type;
-		$args['posts_per_page'] = $posts_per_page;
-		$args['post__in']       = $post__in;
+		$args = array(
+			'post_type'      => $post_type,
+			'posts_per_page' => $posts_per_page,
+			'post__in'       => $post__in
+		);
 
 		// Initialize query.
 		$query = new WP_Query( $args ); ?>
@@ -131,7 +139,7 @@ class News_And_Updates_Widget extends WP_Widget {
 					<div class="col-xs-12 <?php echo esc_attr( $bootstrap_class ); ?>">
 
 						<!-- Featured image overlay -->
-						<?php do_shortcode( '[image-caption id="' . $post->ID . '" class="archive"]' ); ?>
+						<?php do_shortcode( '[image-caption id="' . $post->ID . '"]' ); ?>
 
 					</div>
 				<?php endwhile; ?>

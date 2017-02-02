@@ -32,7 +32,10 @@ $custom = new WP_Query( $args ); ?>
 			<!-- TODO -->
 			<article class="post">
 				<div class="header">
-					<h2><?php echo esc_html( $post->post_title ); ?></h2>
+					<h2>
+						<?php echo esc_html( $post->post_title ); ?>
+					</h2>
+
 					<div class="sub-header">
 
 						<!-- TODO -->
