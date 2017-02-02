@@ -2,7 +2,7 @@
  * Image Captions - Twenty Sixteen
  * Overlay CSS
  */
-.overlay {
+.featured-image .overlay { 
 	position: absolute;
 	top: 0;
 	bottom: 0;

@@ -36,16 +36,16 @@ class Featured_Page_Widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 		$id          = ( ! empty( $instance['id'] ) ) ? $instance['id'] : '';
-		$button_text = ( ! empty( $instance['button_text'] ) ) ? $instance['button_text'] : ''; ?>
+		// $button_text = ( ! empty( $instance['button_text'] ) ) ? $instance['button_text'] : ''; ?>
 
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>"><?php echo __( 'ID:', 'vincentragosta' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'id' ) ); ?>" type="text" value="<?php echo esc_attr( $id ); ?>">
 		</p>
-		<p>
+		<!-- <p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'button_text' ) ); ?>"><?php echo __( 'Button Text:', 'vincentragosta' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'button_text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'button_text' ) ); ?>" type="text" value="<?php echo esc_attr( $button_text ); ?>">
-		</p>
+		</p> -->
 		<?php
 	}
 
@@ -60,7 +60,7 @@ class Featured_Page_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance                = array();
 		$instance['id']          = ( ! empty( $new_instance['id'] ) ) ? $new_instance['id'] : '';
-		$instance['button_text'] = ( ! empty( $new_instance['button_text'] ) ) ? strip_tags( $new_instance['button_text'] ) : '';
+		// $instance['button_text'] = ( ! empty( $new_instance['button_text'] ) ) ? strip_tags( $new_instance['button_text'] ) : '';
 
 		return $instance;
 	}
@@ -79,7 +79,7 @@ class Featured_Page_Widget extends WP_Widget {
 		echo $args['before_widget'];
 
 		// Get the 'button_text' value from the widget.
-		$button_text = $instance['button_text'];
+		// $button_text = $instance['button_text'];
 
 		// Assign the default arguments to the query.
 		$args = array(
@@ -93,7 +93,7 @@ class Featured_Page_Widget extends WP_Widget {
 		// Initialize query.
 		$query = new WP_Query( $args ); ?>
 
-		<div id="featured-page-widget" class="custom-widget full-width">
+		<div id="featured-page" class="custom-widget full-width">
 			<?php if ( $query->have_posts() ) : ?>
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 					<div class="col-xs-12">

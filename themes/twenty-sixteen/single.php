@@ -1,9 +1,23 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Template for displaying the single page.
+ *
+ * @package Vincent Ragosta - Twenty Sixteen
+ * @since   0.1.0
+ * @uses    get_template_part()
+ */
 
-<?php get_template_part( 'partials/aside', 'single-pagination' ); ?>
+	get_header();
 
-<?php get_template_part( 'partials/content', 'single-' . get_post_type() ); ?>
+	// TODO
+	get_template_part( 'partials/aside', 'single-pagination' );
 
-<?php get_template_part( 'partials/aside', 'single-pagination' ); ?>
+	// TODO
+	get_template_part( 'partials/content', 'single-' . get_post_type() );
 
-<?php get_footer(); ?>
+	// TODO
+	get_template_part( 'partials/aside', 'single-pagination' );
+
+	get_footer();
+
+?>

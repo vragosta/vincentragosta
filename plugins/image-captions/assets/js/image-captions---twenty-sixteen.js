@@ -23,10 +23,10 @@
 		 * @return void
 		 */
 		loadElements : function() {
-			$( '.sub-header' )
+			$( '.featured-image .sub-header' )
 				.removeClass( 'unloaded' );
 
-			$( '.header' )
+			$( '.featured-image .header' )
 				.removeClass( 'unloaded' );
 		},
 

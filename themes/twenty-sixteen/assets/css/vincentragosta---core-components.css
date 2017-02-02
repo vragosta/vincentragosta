@@ -59,3 +59,14 @@ pre {
 	white-space: pre-wrap;
 	word-break: normal;
 }
+
+/*--- TODO ---*/
+#separator {
+	display: flex;
+	align-items: center;
+	margin: 0 .5rem;
+}
+
+#separator i {
+	font-size: 3px;
+}

@@ -1,17 +1,35 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Template for displaying the front page.
+ *
+ * @package Vincent Ragosta - Twenty Sixteen
+ * @since   0.1.0
+ * @uses    get_template_part()
+ */
 
-<?php get_template_part( 'partials/aside-front-page-cta', 'A' ); ?>
+	get_header();
 
-<?php get_template_part( 'partials/aside-front-page-cta', 'B' ); ?>
+	// TODO
+	get_template_part( 'partials/aside-front-page-cta', 'A' );
 
-<?php get_template_part( 'partials/aside-front-page-cta', 'C' ); ?>
+	// TODO
+	get_template_part( 'partials/aside-front-page-cta', 'B' );
 
-<?php get_template_part( 'partials/aside-front-page-cta', 'D' ); ?>
+	// TODO
+	get_template_part( 'partials/aside-front-page-cta', 'C' );
 
-<?php get_template_part( 'partials/aside-front-page-cta', 'E' ); ?>
+	// TODO
+	get_template_part( 'partials/aside-front-page-cta', 'D' );
 
-<?php get_template_part( 'partials/aside-front-page-cta', 'F' ); ?>
+	// TODO
+	get_template_part( 'partials/aside-front-page-cta', 'E' );
 
-<?php get_template_part( 'partials/aside-pre', 'footer' ); ?>
+	// TODO
+	get_template_part( 'partials/aside-front-page-cta', 'F' );
 
-<?php get_footer(); ?>
+	// TODO
+	get_template_part( 'partials/aside-pre', 'footer' );
+
+	get_footer();
+
+?>
