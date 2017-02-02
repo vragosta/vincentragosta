@@ -3,7 +3,7 @@
  * Sub Header CSS
  */
 /*--- Default sub-header styles target non static elements ---*/
-.sub-header {
+.featured-image .sub-header {
 	color: #fff;
 	font-style: italic;
 	letter-spacing: 1px;
@@ -11,7 +11,6 @@
 	font-weight: 100;
 	text-shadow: #080808 0 0 4px;
 	text-align: center;
-	font-size: 1.8rem;
 
 	/*--- CSS transitions to toggle sub-header visibility ---*/
 	opacity: 1;
@@ -19,20 +18,20 @@
 	transition: opacity .4s ease-in-out, visibility .4s ease-in-out, margin .4s ease-in-out;
 }
 
-/*--- Initial styles when the page is unloaded ---*/
-.sub-header.unloaded {
+/*--- Initial styles when the page is unloaded for static elements only ---*/
+.featured-image.static .sub-header.unloaded {
 	opacity: 0;
 	visibility: hidden;
+
+	/*--- Margin-top for unloaded effect ---*/
 	margin: 20px 0 0 0;
 }
 
-@media only screen and ( min-width: 992px ) {
-	.featured-image.static .sub-header {
-		font-size: 2.5rem;
-	}
+.featured-image:not( .static ) .sub-header {
+	font-size: 1.8rem;
 }
 
-@media only screen and ( min-width: 768px ) and ( max-width: 992px ) {
+@media only screen and ( min-width: 768px ) and ( max-width: 991px ) {
 	.featured-image.static .sub-header {
 		font-size: 2rem;
 	}
@@ -45,7 +44,6 @@
 }
 
 @media only screen and ( min-width: 768px ) {
-	.featured-image.static .sub-header,
 	.featured-image:hover .sub-header {
 		opacity: 1;
 		visibility: visible;

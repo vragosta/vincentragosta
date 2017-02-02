@@ -9,21 +9,13 @@
 }
 
 /*--- Image inside the overlay ---*/
-.image {
+.featured-image .image {
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	opacity: 1;
 	transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
-}
-
-/*--- Archive specific styles to the image */
-.featured-image.archive .image {
-	top: 10px;
-	bottom: 10px;
-	left: 10px;
-	right: 10px;
 }
 
 /*--- Adjust brightness on image if static ( used as header ) or on hover ---*/
@@ -39,7 +31,7 @@
 	}
 }
 
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.featured-image .image {
 		-webkit-filter: brightness( 40% );
 		filter: brightness( 40% );

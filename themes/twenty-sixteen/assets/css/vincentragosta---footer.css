@@ -1,18 +1,19 @@
 /**
- *===== Footer =====*
+ * Vincent Ragosta - Twenty Sixteen
+ * Footer CSS
  */
 #footer {
 	background-color: #26262a;
 	padding: 6rem 0;
 }
 
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	#footer {
 		padding: 2rem 0;
 	}
 }
 
-/* TODO fix below CSS statement */
+/*--- Vertical spacing in footer menu ---*/
 #footer section > div {
 	margin: .5rem 0
 }

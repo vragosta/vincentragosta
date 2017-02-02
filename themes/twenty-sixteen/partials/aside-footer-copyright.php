@@ -2,7 +2,7 @@
 /**
  * Template for displaying the copyright in the footer.
  *
- * @package VincentRagosta 2016
+ * @package Vincent Ragosta - Twenty Sixteen
  * @since   0.1.0
  * @uses    date()
  */

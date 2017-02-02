@@ -13,8 +13,7 @@ defined( 'ABSPATH' ) || exit;
  * Returns the the project based upon ID passed in,
  * if no ID is entered, most recent post will be returned.
  *
- * @package Vincent Raogsta - Twenty Sixteen
- * @since   0.1.0
+ * @since 0.1.0
  */
 class Featured_Page_Widget extends WP_Widget {
 	/**
@@ -31,35 +30,37 @@ class Featured_Page_Widget extends WP_Widget {
 	/**
 	 * Back-end widget form.
 	 *
-	 * @param  array $instance Previously saved values from database.
+	 * @param  array $instance previously saved values from database.
+	 * @uses   empty(), __(), get_field_id(), esc_attr()
 	 * @return void
 	 */
 	public function form( $instance ) {
 		$id          = ( ! empty( $instance['id'] ) ) ? $instance['id'] : '';
-		$button_text = ( ! empty( $instance['button_text'] ) ) ? $instance['button_text'] : ''; ?>
+		// $button_text = ( ! empty( $instance['button_text'] ) ) ? $instance['button_text'] : ''; ?>
 
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>"><?php echo __( 'ID:', 'vincentragosta' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'id' ) ); ?>" type="text" value="<?php echo esc_attr( $id ); ?>">
 		</p>
-		<p>
+		<!-- <p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'button_text' ) ); ?>"><?php echo __( 'Button Text:', 'vincentragosta' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'button_text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'button_text' ) ); ?>" type="text" value="<?php echo esc_attr( $button_text ); ?>">
-		</p>
+		</p> -->
 		<?php
 	}
 
 	/**
 	 * Sanitize widget form values as they are saved.
 	 *
-	 * @param  array $new_instance Values just sent to be saved.
-	 * @param  array $old_instance Previously saved values from database.
-	 * @return array $instance     Updated safe values to be saved.
+	 * @param  array $new_instance values just sent to be saved.
+	 * @param  array $old_instance previously saved values from database.
+	 * @uses   empty(), do_shortcode(), wp_reset_postdata()
+	 * @return array $instance updated safe values to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance                = array();
 		$instance['id']          = ( ! empty( $new_instance['id'] ) ) ? $new_instance['id'] : '';
-		$instance['button_text'] = ( ! empty( $new_instance['button_text'] ) ) ? strip_tags( $new_instance['button_text'] ) : '';
+		// $instance['button_text'] = ( ! empty( $new_instance['button_text'] ) ) ? strip_tags( $new_instance['button_text'] ) : '';
 
 		return $instance;
 	}
@@ -67,8 +68,8 @@ class Featured_Page_Widget extends WP_Widget {
 	/**
 	 * Front-end display of widget.
 	 *
-	 * @param  array $args     Widget arguments.
-	 * @param  array $instance Saved values from database.
+	 * @param  array $args     widget arguments.
+	 * @param  array $instance saved values from database.
 	 * @return void
 	 */
 	public function widget( $args, $instance ) {
@@ -78,7 +79,7 @@ class Featured_Page_Widget extends WP_Widget {
 		echo $args['before_widget'];
 
 		// Get the 'button_text' value from the widget.
-		$button_text = $instance['button_text'];
+		// $button_text = $instance['button_text'];
 
 		// Assign the default arguments to the query.
 		$args = array(
@@ -92,7 +93,7 @@ class Featured_Page_Widget extends WP_Widget {
 		// Initialize query.
 		$query = new WP_Query( $args ); ?>
 
-		<div id="featured-page-widget" class="custom-widget full-width">
+		<div id="featured-page" class="custom-widget full-width">
 			<?php if ( $query->have_posts() ) : ?>
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 					<div class="col-xs-12">

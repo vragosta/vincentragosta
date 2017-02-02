@@ -12,8 +12,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Return a banner shaped content block with optional button.
  *
- * @package Vincent Raogsta - Twenty Sixteen
- * @since   0.1.0
+ * @since 0.1.0
  */
 class Notification_Widget extends WP_Widget {
 	/**
@@ -31,6 +30,7 @@ class Notification_Widget extends WP_Widget {
 	 * Back-end widget form.
 	 *
 	 * @param  array $instance Previously saved values from database.
+	 * @uses   empty(), get_field_id(), __(), esc_attr()
 	 * @return void
 	 */
 	public function form( $instance ) {
@@ -57,6 +57,7 @@ class Notification_Widget extends WP_Widget {
 	 *
 	 * @param  array $new_instance Values just sent to be saved.
 	 * @param  array $old_instance Previously saved values from database.
+	 * @uses   empty(), strip_tags()
 	 * @return array $instance     Updated safe values to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
@@ -68,14 +69,12 @@ class Notification_Widget extends WP_Widget {
 		return $instance;
 	}
 
-
-	// style="border: 2px solid #686868; background: transparent; color: #686868; font-size: 2.2rem; padding: 10px 20px; text-transform: uppercase; text-decoration: none; transition: background 0.5s ease-in-out, color 0.5s ease-in-out;"
-
 	/**
 	 * Front-end display of widget.
 	 *
 	 * @param  array $args     Widget arguments.
 	 * @param  array $instance Saved values from database.
+	 * @uses   esc_html(), esc_url()
 	 * @return void
 	 */
 	public function widget( $args, $instance ) {

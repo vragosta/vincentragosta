@@ -2,23 +2,12 @@
  * Image Captions - Twenty Sixteen
  * Core Components CSS
  */
-.featured-image span {
-	color: #fff;
+/*--- Header ---*/
+.featured-image h1 {
+	font-size: 7.5rem;
 }
 
-.featured-image a {
-	font-size: 1.2rem;
-	padding: .5rem 1rem;
-	text-shadow: #080808 0 0 4px;
-	background: transparent;
-	border-color: #fff;
-	color: #fff;
-	margin-top: 1rem;
-	transition: background 0.5s ease-in-out, color 0.5s ease-in-out, text-shadow 0.5s ease-in-out;
-}
-
-.featured-image a:hover {
-	background: #fff;
-	color: #686868;
-	text-shadow: none;
+/*--- Sub-header ---*/
+.featured-image h4 {
+	font-size: 2.5rem;
 }

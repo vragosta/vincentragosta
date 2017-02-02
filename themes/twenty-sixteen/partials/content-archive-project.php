@@ -2,9 +2,9 @@
 /**
  * Archive template for project custom post type.
  *
- * @package VincentRagosta 2016
+ * @package Vincent Ragosta - Twenty Sixteen
  * @since   0.1.0
- * @uses    get_query_var(), get_template_part(), wp_reset_postdata()
+ * @uses    get_query_var(), do_shortcode(), wp_reset_postdata()
  */
 
 // Create a count variable.
@@ -35,7 +35,12 @@ $custom = new WP_Query( $args ); ?>
 				<?php endif; ?>
 
 				<!-- Grid Item -->
-				<?php get_template_part( 'partials/content', 'archive-grid-item' ); ?>
+				<div class="grid-item col-xs-12 col-sm-4">
+
+					<!-- Featured image overlay -->
+					<?php do_shortcode( '[image-caption id="' . $post->ID . '"]' ); ?>
+
+				</div>
 
 			<?php endwhile; ?>
 			<?php wp_reset_postdata(); ?>

@@ -6,17 +6,22 @@
  * Licensed under the GPL-2.0+ license.
  */
 
-.vr-description {
+/*--- Label description css  ---*/
+.description {
 	font-size: 10px;
 	font-style: italic;
 }
 
-/*--- Text Column Widget ---*/
-.vr-column {
+.label {
+	width: 150px;
+}
+
+/*--- TODO Move to Text Column plugin---*/
+.column {
 	display: none;
 	border-top: 2px solid #e5e5e5;
 }
 
-.vr-column.show {
+.column.show {
 	display: block;
 }

@@ -2,8 +2,9 @@
 /**
  * Technology Used ( Single )
  *
- * @package VincentRagosta.com 2016
+ * @package Vincent Ragosta - Twenty Sixteen
  * @since   0.1.0
+ * @uses    get_post_meta()
  */
 
 // Get 'technology' from the current post.

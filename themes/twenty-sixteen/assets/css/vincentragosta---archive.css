@@ -1,5 +1,6 @@
 /**
- *===== Portfolio/Archive Template =====*
+ * Vincent Ragosta - Twenty Sixteen
+ * Archive CSS
  */
 .archive .aside p {
 	max-width: 850px;
@@ -10,14 +11,14 @@
 }
 
 .archive .grid-container:last-child {
-	padding-bottom: 1rem;
+	padding-bottom: 0rem;
 }
 
 .archive .grid-container .grid-item {
 	margin: 0 .5rem;
 }
 
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.archive .grid-container .grid-item {
 		margin: .5rem 0;
 	}
@@ -27,9 +28,87 @@
 	}
 }
 
+/*--- Blog ---*/
+@media only screen and ( min-width: 1500px ) {
+	#blog {
+		padding: 4rem 16rem;
+	}
+}
+
+@media only screen and ( min-width: 992px ) and ( max-width: 1499px ) {
+	#blog {
+		padding: 4rem 6rem;
+	}
+}
+
+@media only screen and ( max-width: 991px ) {
+	#blog {
+		flex-direction: column;
+		padding: 2rem;
+	}
+}
+
+#blog h2,
+#blog p {
+	text-align: left;
+}
+
+@media only screen and ( min-width: 991px ) {
+	#blog section {
+		width: 70%;
+	}
+}
+
+@media only screen and ( max-width: 991px ) {
+	#blog section {
+		width: 100%;
+	}
+}
+
+#blog .post {
+	line-height: 1.5;
+	padding: 2rem;
+}
+
+#blog .sub-header {
+	display: flex;
+	font-size: 1.8rem;
+	opacity: 0.7;
+}
+
+#blog figure {
+	position: relative;
+	padding-bottom: 40%;
+	margin-top: .5rem;
+}
+
+#blog .image {
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+#blog .excerpt {
+	margin-top: .5rem;
+	font-size: 2.2rem;
+}
+
+#blog .content {
+	opacity: 0.7;
+	font-size: 1.8rem;
+}
+
 /*--- Archive Pagination ---*/
-#pagination {
+#pagination-archive {
 	margin: 0 0 6rem;
+}
+
+#blog #pagination-archive {
+	margin: 4rem 0;
 }
 
 .page-numbers {

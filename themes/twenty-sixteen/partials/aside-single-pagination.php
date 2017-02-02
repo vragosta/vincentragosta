@@ -2,13 +2,13 @@
 /**
  * Template to display pagination controls.
  *
- * @package VincentRagosta 2016
+ * @package Vincent Ragosta - Twenty Sixteen
  * @since   0.1.0
  * @uses    previous_post_link(), next_post_link()
  */
 ?>
 
-<aside id="pagination-controls" class="aside">
+<aside id="pagination-single" class="aside">
 	<div class="col-xs-4 col-flex-start">
 		<?php previous_post_link( '%link', '<i class="icon ion-ios-arrow-left"></i>' ); ?>
 	</div>

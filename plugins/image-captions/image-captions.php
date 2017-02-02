@@ -7,11 +7,11 @@
  * Author URI: http://vincentragosta.com
  * Text Domain: vincentragosta
  *
- * @package Image Captions 2016
+ * @package Image Captions - Twenty Sixteen
  * @since   0.1.0
  */
 
-// Global defines.
+// Global plugin defines.
 define( 'IMAGE_CAPTIONS_VERSION', '0.1.0' );
 define( 'IMAGE_CAPTIONS_URL', plugin_dir_url( __FILE__ ) );
 define( 'IMAGE_CAPTIONS_PATH', dirname( __FILE__ ) . '/' );
@@ -19,6 +19,9 @@ define( 'IMAGE_CAPTIONS_IMAGE_SIZE', 'large' );
 
 // Include all functions associated with the image caption shortcode.
 require_once IMAGE_CAPTIONS_PATH . 'includes/functions/core.php';
+
+// Run the setup functions.
+image_captions\Twenty_Sixteen\Core\setup();
 
 // Include all helper functions associated with the image caption shortcode.
 require_once IMAGE_CAPTIONS_PATH . 'includes/functions/helpers.php';
@@ -36,9 +39,9 @@ require_once IMAGE_CAPTIONS_PATH . 'includes/widgets/class-news-and-updates.php'
  * Generate image caption shortcode for use within the theme.
  *
  * @since  0.1.0
- * @uses
- * @param  array  $atts      Contains redefined attributes set on shortcode.
- * @return string $shortcode Contains the necessary HTML required to build player on front-end.
+ * @param  array $atts contains redefined attributes set on shortcode.
+ * @uses   set_default_properties(), implode(), include()
+ * @return string $shortcode contains the necessary HTML required to build player on front-end.
  */
 function image_captions_shortcode( $atts ) {
 
@@ -47,32 +50,30 @@ function image_captions_shortcode( $atts ) {
 		'class' => ''
 	), $atts );
 
-	global $post;
-
 	// Obtain the centralized default properties object.
-	$defaults = image_captions\Twenty_sixteen\Helpers\set_default_properties( $atts ); ?>
+	$image_caption = image_captions\Twenty_sixteen\Helpers\set_default_properties( $atts ); ?>
 
 	<!-- Image Caption HTML start -->
-	<figure class="featured-image <?php echo implode( ' ', $defaults->featured_image_classes ); ?>">
+	<main class="featured-image <?php echo implode( ' ', $image_caption->classes ); ?>">
 
 		<!-- Overlay container -->
-		<div class="overlay col-flex-center <?php echo $defaults->visibility_class; ?>">
+		<div class="overlay col-flex-center">
 
 			<!-- Sub-header -->
-			<?php include( IMAGE_CAPTIONS_PATH . 'partials/aside-sub-header.php' ); ?>
+			<?php include( IMAGE_CAPTIONS_PATH . 'partials/content-sub-header.php' ); ?>
 
 			<!-- Header -->
-			<?php include( IMAGE_CAPTIONS_PATH . 'partials/aside-header.php' ); ?>
+			<?php include( IMAGE_CAPTIONS_PATH . 'partials/content-header.php' ); ?>
 
 			<!-- Permalink button -->
-			<?php include( IMAGE_CAPTIONS_PATH . 'partials/aside-button.php' ); ?>
+			<?php include( IMAGE_CAPTIONS_PATH . 'partials/content-button.php' ); ?>
 
 		</div>
 
 		<!-- Post image -->
 		<?php include( IMAGE_CAPTIONS_PATH . 'partials/content-image.php' ); ?>
 
-	</figure><?php
+	</main><?php
 
 	return $shortcode;
 

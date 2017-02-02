@@ -2,7 +2,7 @@
 /**
  * Template for displaying the footer.
  *
- * @package VincentRagosta 2016
+ * @package Vincent Ragosta - Twenty Sixteen
  * @since   0.1.0
  * @uses    get_template_part()
  */
@@ -11,12 +11,13 @@
 
 	<footer id="footer" class="col-flex-center">
 
+		<!-- TODO -->
 		<?php get_template_part( 'partials/content', 'menu' ); ?>
 
 		<section class="col-flex-center">
 
 			<!-- Contact Information -->
-			<?php get_template_part( 'partials/aside', 'footer-contact' ); ?>
+			<?php get_template_part( 'partials/aside', 'footer-contact-info' ); ?>
 
 			<!-- Copyright -->
 			<?php get_template_part( 'partials/aside', 'footer-copyright' ); ?>

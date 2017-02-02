@@ -7,6 +7,7 @@
 
 ( function( $ ) {
 
+	// TODO
 	var vincentragosta = {
 
 		/**
@@ -21,24 +22,20 @@
 
 			// Listener for drop down button.
 			$( '.drop-down' ).click( function() {
-				$( this )
-					.removeClass( 'visible' )
-					.addClass( 'not-visible' );
+				$( '.nav-container' )
+					.hide();
 
 				$( '#mobile-menu' )
-					.removeClass( 'not-visible' )
-					.addClass( 'visible' );
+					.fadeIn();
 			});
 
 			// Listener for close menu button.
 			$( '.close-menu' ).click( function () {
-				$( '.drop-down' )
-					.removeClass( 'not-visible' )
-					.addClass( 'visible' );
+				$( '.nav-container' )
+					.show()
 
 				$( '#mobile-menu' )
-					.removeClass( 'visible' )
-					.addClass( 'not-visible' );
+					.fadeOut();
 			});
 
 		},
@@ -50,8 +47,9 @@
 		 * @uses   removeClass(), addClass()
 		 * @return void
 		 */
-		menuFadeIn : function() {
+		loadElements : function() {
 			$( '.menu' ).removeClass( 'unloaded' );
+			$( '#logo' ).removeClass( 'unloaded' );
 		},
 
 		/**
@@ -62,12 +60,12 @@
 		 * @return void
 		 */
 		init: function() {
-			this.menuFadeIn();
+			this.loadElements();
 			this.setupMenuToggle();
 		}
 	};
 
-
+	// TODO
 	jQuery( document ).ready( function() {
 
 		// Initialize the vincentragosta class.
