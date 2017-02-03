@@ -26,13 +26,16 @@ $custom = new WP_Query( $args ); ?>
 			<!-- TODO -->
 			<?php $author  = get_user_by( 'id', $post->post_author ); ?>
 			<?php $image   = vincentragosta_com\Twenty_Sixteen\Helpers\get_featured_image( $post->ID ); ?>
-			<?php $date    = vincentragosta_com\Twenty_Sixteen\Helpers\format_date( $post->post_date, 'F jS Y' ); ?>
+			<?php $date    = vincentragosta_com\Twenty_Sixteen\Helpers\format_date( $post->post_date, 'F jS, Y' ); ?>
 			<?php $content = vincentragosta_com\Twenty_Sixteen\Helpers\trim_string_by( 60, $post->post_content ); ?>
 
 			<!-- TODO -->
 			<article class="post">
-				<div class="header">
-					<h2>
+				<div class="category">
+					<?php the_category( ' ' ); ?>
+				</div>
+				<div class="header-container">
+					<h2 class="header">
 						<?php echo esc_html( $post->post_title ); ?>
 					</h2>
 
@@ -83,6 +86,10 @@ $custom = new WP_Query( $args ); ?>
 						<?php echo esc_html( $content ); ?>
 					</p>
 				<?php endif; ?>
+
+				<div class="link-container">
+					<a href="<?php echo get_the_permalink( $post->ID ); ?>" class="link">Read Post <i class="ion ion-ios-arrow-thin-right"></i></a>
+				</div>
 
 			</article>
 		<?php endwhile; ?>

@@ -70,10 +70,30 @@
 	padding: 2rem;
 }
 
+#blog .category a {
+	/*font-family: 'Cormorant Garamond', serif;*/
+	color: #333;
+	text-transform: uppercase;
+	font-size: 1.5rem;
+	opacity: 0.7;
+	font-weight: 300;
+}
+
+#blog .header-container .header {
+	font-family: 'Lato', sans-serif;
+	font-weight: 500;
+}
+
 #blog .sub-header {
 	display: flex;
 	font-size: 1.8rem;
 	opacity: 0.7;
+}
+
+#blog .post-author,
+#blog .post-date {
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
 }
 
 #blog figure {
@@ -95,11 +115,22 @@
 #blog .excerpt {
 	margin-top: .5rem;
 	font-size: 2.2rem;
+	font-family: 'Lato', sans-serif;
 }
 
 #blog .content {
 	opacity: 0.7;
 	font-size: 1.8rem;
+}
+
+#blog .link-container {
+	margin-top: 1rem;
+}
+
+#blog .link {
+	color: #333;
+	font-size: 1.8rem;
+	font-weight: 300;
 }
 
 /*--- Archive Pagination ---*/
