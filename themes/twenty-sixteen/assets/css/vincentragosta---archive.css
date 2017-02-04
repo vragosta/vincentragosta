@@ -2,6 +2,7 @@
  * Vincent Ragosta - Twenty Sixteen
  * Archive CSS
  */
+/*--- Archive Project ---*/
 .archive .aside p {
 	max-width: 850px;
 }
@@ -71,7 +72,6 @@
 }
 
 #blog .category a {
-	/*font-family: 'Cormorant Garamond', serif;*/
 	color: #333;
 	text-transform: uppercase;
 	font-size: 1.5rem;
@@ -124,7 +124,7 @@
 }
 
 #blog .link-container {
-	margin-top: 1rem;
+	margin-top: .5rem;
 }
 
 #blog .link {

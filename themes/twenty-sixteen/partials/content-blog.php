@@ -23,39 +23,42 @@ $custom = new WP_Query( $args ); ?>
 	<section>
 		<?php while ( $custom->have_posts() ) : $custom->the_post(); ?>
 
-			<!-- TODO -->
+			<!-- Define local variables -->
 			<?php $author  = get_user_by( 'id', $post->post_author ); ?>
 			<?php $image   = vincentragosta_com\Twenty_Sixteen\Helpers\get_featured_image( $post->ID ); ?>
 			<?php $date    = vincentragosta_com\Twenty_Sixteen\Helpers\format_date( $post->post_date, 'F jS, Y' ); ?>
 			<?php $content = vincentragosta_com\Twenty_Sixteen\Helpers\trim_string_by( 60, $post->post_content ); ?>
 
-			<!-- TODO -->
+			<!-- Post category -->
 			<article class="post">
 				<div class="category">
 					<?php the_category( ' ' ); ?>
 				</div>
+
 				<div class="header-container">
+
+					<!-- Post title -->
 					<h2 class="header">
 						<?php echo esc_html( $post->post_title ); ?>
 					</h2>
 
 					<div class="sub-header">
 
-						<!-- TODO -->
+						<!-- Author name -->
 						<?php if ( $author ) : ?>
 							<span class="post-author">
 								<?php echo esc_html( $author->display_name ); ?>
 							</span>
 						<?php endif; ?>
 
-						<!-- TODO -->
+						<!-- Separator for author and date-->
 						<?php if ( $author && $date ) : ?>
 							<span id="separator">
 								<i class="ion ion-ios-circle-filled"></i>
 							</span>
 						<?php endif; ?>
 
-						<!-- TODO -->
+						<!-- Post date -->
 						<?php if ( $date ) : ?>
 							<span class="post-date">
 								<?php echo esc_html( $date ); ?>
@@ -65,28 +68,29 @@ $custom = new WP_Query( $args ); ?>
 					</div>
 				</div>
 
-				<!-- TODO -->
+				<!-- Image object -->
 				<?php if ( $image ) : ?>
-					<figure itemscope itemtype="http://schema.org/CreativeWork">
+					<figure itemscope itemtype="http://schema.org/ImageObject">
 						<meta itemprop="logo" content="<?php echo esc_attr( $image ); ?>"></meta>
 						<a itemprop="url" href="<?php echo get_the_permalink( $post->ID ); ?>" class="image" style="background-image: url( <?php echo esc_attr( $image ); ?> );"></a>
 					</figure>
 				<?php endif; ?>
 
-				<!-- TODO -->
+				<!-- Post excerpt -->
 				<?php if ( $post->post_excerpt ) : ?>
 					<summary class="excerpt">
 						<?php echo esc_html( $post->post_excerpt ); ?>
 					</summary>
 				<?php endif; ?>
 
-				<!-- TODO -->
+				<!-- Post content -->
 				<?php if ( $content ) : ?>
 					<p class="content">
 						<?php echo esc_html( $content ); ?>
 					</p>
 				<?php endif; ?>
 
+				<!-- Read the post container -->
 				<div class="link-container">
 					<a href="<?php echo get_the_permalink( $post->ID ); ?>" class="link">Read Post <i class="ion ion-ios-arrow-thin-right"></i></a>
 				</div>
