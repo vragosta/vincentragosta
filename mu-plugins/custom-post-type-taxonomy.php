@@ -24,6 +24,7 @@ function register_post_type_project() {
 			'menu_position' => 41,
 			'menu_icon' => 'dashicons-feedback',
 			'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'revisions', 'thumbnail', 'author' ),
+			'taxonomies' => array( 'category' ),
 			'labels' => array (
 					'name' => 'Projects',
 					'singular_name' => 'Project',

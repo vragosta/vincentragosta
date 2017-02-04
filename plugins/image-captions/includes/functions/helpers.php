@@ -116,10 +116,12 @@ function set_sub_header_text( $post ) {
 	if ( $post->post_type === 'page' ) :
 		$sub_header = get_post_meta( $post->ID, 'sub_header', true );
 	elseif ( $post->post_type === 'post' ) :
-		$sub_header = date_format( date_create( $post->post_date ), 'jS F Y' );
+		$sub_header = date_format( date_create( $post->post_date ), 'F jS, Y' );
 	else:
-		// TODO Make this dynamic or have some other treatment.
-		$sub_header = 'Wordpress Site';
+
+		// For 'projects' get the category name.
+		$category = reset( get_the_category( $post->ID ) );
+		$sub_header = $category->name;
 	endif;
 
 	return $sub_header;

@@ -11,6 +11,7 @@
 	font-weight: 100;
 	text-shadow: #080808 0 0 4px;
 	text-align: center;
+	font-family: 'Lato', sans-serif;
 
 	/*--- CSS transitions to toggle sub-header visibility ---*/
 	opacity: 1;
@@ -27,8 +28,10 @@
 	margin: 20px 0 0 0;
 }
 
+/*--- Styles for the non-static sub-header ---*/
 .featured-image:not( .static ) .sub-header {
-	font-size: 1.8rem;
+	font-size: 1.5rem;
+	margin-bottom: .5rem;
 }
 
 @media only screen and ( min-width: 768px ) and ( max-width: 991px ) {
