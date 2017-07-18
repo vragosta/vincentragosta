@@ -2,6 +2,8 @@
 
 namespace image_captions\Twenty_Sixteen\Helpers;
 
+use \MultiPostThumbnails;
+
 /**
  * Generate a centralized defaults object for easy obtainability from main plugin template.
  *
@@ -30,7 +32,7 @@ function set_default_properties( $atts ) {
 		'ID'           => $post->ID,
 		'slug'         => $post->post_name,
 		'header'       => set_header_text( $post ),
-		'image_source' => set_featured_image( $post->ID ),
+		'image_source' => is_single() ? set_cover_image( $post->ID ) : set_featured_image( $post->ID ),
 		'classes'      => set_featured_image_classes( $is_static, $atts['class'] ),
 		'sub_header'   => set_sub_header_text( $post ),
 		'button'       => set_button_text( $is_static, $post, $atts['data-button-text'] )
@@ -49,6 +51,19 @@ function set_default_properties( $atts ) {
  */
 function set_featured_image( $id ) {
 	return wp_get_attachment_image_src( get_post_thumbnail_id( $id ), IMAGE_CAPTIONS_IMAGE_SIZE )[0];
+}
+
+/**
+ * If the square featured image exists, return the attached image url with the appropriate size dimensions.
+ *
+ * @since  0.1.0
+ * @uses   class_exists(), MultiPostThumbnails::has_post_thumbnail(), MultiPostThumbnails::get_post_thumbnail_url()
+ * @return string void image url
+ */
+function set_cover_image( $id ) {
+	return ( class_exists( 'MultiPostThumbnails' ) && MultiPostThumbnails::has_post_thumbnail( 'project', 'cover-image', $id ) ) ?
+		MultiPostThumbnails::get_post_thumbnail_url( 'project', 'cover-image', $id, 'large' ) :
+			set_featured_image( $id );
 }
 
 /**
