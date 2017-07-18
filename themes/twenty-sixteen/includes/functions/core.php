@@ -9,6 +9,12 @@
 namespace vincentragosta_com\Twenty_Sixteen\Core;
 
 /**
+ * Allows use of multiple post thumbnails plugin in this file
+ * NOTE: needed when dealing with namespaces.
+ */
+use \MultiPostThumbnails;
+
+/**
  * Set up theme defaults and register supported WordPress features.
  *
  * @since  0.1.0
@@ -71,6 +77,18 @@ function vincentragosta_setup() {
 
 	// If set to 'false', the admin bar will not display on front end.
 	show_admin_bar( false );
+
+	// Add additional images to any post type.
+	if ( class_exists( 'MultiPostThumbnails' ) ) {
+
+		new MultiPostThumbnails( array(
+			'label'     => __( 'Cover Image', 'vincentragosta_com' ),
+			'id'        => 'cover-image',
+			'post_type' => 'project'
+		) );
+
+	}
+
 }
 
 /**
