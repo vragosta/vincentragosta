@@ -223,6 +223,15 @@ function styles() {
 		);
 	endif;
 
+	if ( is_page( 'contact' ) ) {
+		wp_enqueue_style(
+			'contact',
+			VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---contact.css",
+			array(),
+			VINCENTRAGOSTA_COM_VERSION
+		);
+	}
+
 	wp_enqueue_style(
 		'vincentragosta_com',
 		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---twenty-sixteen.css",
