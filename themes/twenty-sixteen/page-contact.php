@@ -40,9 +40,39 @@
 				</div>
 			<?php } ?>
 		</div>
-		<div class="col-xs-12 col-sm-6">
-			Hello
+
+		<div class="col-xs-12 col-sm-6" style="padding: 6rem 4rem;">
+			<div class="field-container row">
+				<p style="padding: 0 15px; margin: 0;">Full Name *</p>
+				<p style="padding: 0 15px; margin: 0;">I always like to know who I am speaking with.</p>
+				<div class="form-group col-md-6">
+					<input type="text" class="form-control" id="firstname">
+					<label for="firstname">First Name</label>
+				</div>
+				<div class="form-group col-md-6">
+					<input type="text" class="form-control" id="lastname">
+					<label for="lastname">Last Name *</label>
+				</div>
+			</div>
+
+			<div class="field-container row">
+				<div class="form-group col-md-12">
+					<label for="email">Email Address *</label>
+					<input type="email" class="form-control" id="email">
+				</div>
+			</div>
+
+			<div class="field-container row">
+				<div class="form-group col-md-12">
+					<label for="message">Message *</label>
+					<textarea class="form-control" id="message"></textarea>
+				</div>
+			</div>
+
+			<button class="btn btn-info contact-btn">Submit</button>
 		</div>
 	</main>
+
+	<?php do_shortcode( '[vincentragosta-recent-post]' ); ?>
 
 <?php get_footer(); ?>

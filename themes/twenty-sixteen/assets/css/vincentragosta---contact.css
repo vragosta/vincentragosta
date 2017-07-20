@@ -23,12 +23,22 @@
 	margin-bottom: 50px;
 }
 
-#contact h3 + p,
-#contact h3 + p + p {
-	line-height: 1;
+#contact p a {
+	font-family: none;
 }
 
 #contact a {
 	color: #333;
-	font-weight: 300;
+}
+
+#contact .social {
+	padding: 2em 0;
+}
+
+#contact .social a:first-child {
+	margin-left: 0;
+}
+
+#contact .social a:hover {
+	opacity: 0.7;
 }
