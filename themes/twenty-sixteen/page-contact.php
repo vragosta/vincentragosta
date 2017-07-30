@@ -17,8 +17,8 @@
 
 	global $post; ?>
 
-	<main id="contact" class="container">
-		<div class="col-xs-12 col-sm-6" style="padding: 6rem 4rem;">
+	<main id="contact-page" class="container">
+		<div class="col-xs-12 col-sm-6">
 			<?php echo $post->post_content; ?>
 			<?php if ( ! empty( $facebook ) || ! empty( $twitter ) || ! empty( $instagram ) || ! empty( $personal ) || ! empty( $github ) ) { ?>
 				<div class="social">
@@ -41,38 +41,39 @@
 			<?php } ?>
 		</div>
 
-		<div class="col-xs-12 col-sm-6" style="padding: 6rem 4rem;">
+		<div class="col-xs-12 col-sm-6 form">
 			<div class="field-container row">
-				<p style="padding: 0 15px; margin: 0;">Full Name *</p>
-				<p style="padding: 0 15px; margin: 0;">I always like to know who I am speaking with.</p>
+				<p class="full-label">Full Name *</p>
+				<p class="descriptive-label">I always like to know who I am speaking with.</p>
 				<div class="form-group col-md-6">
-					<input type="text" class="form-control" id="firstname">
+					<input type="text" class="form-control" name="firstname">
 					<label for="firstname">First Name</label>
 				</div>
 				<div class="form-group col-md-6">
-					<input type="text" class="form-control" id="lastname">
-					<label for="lastname">Last Name *</label>
+					<input type="text" class="form-control" name="lastname">
+					<label for="lastname">Last Name</label>
 				</div>
 			</div>
 
 			<div class="field-container row">
+				<p class="full-label">Email Address *</p>
 				<div class="form-group col-md-12">
-					<label for="email">Email Address *</label>
-					<input type="email" class="form-control" id="email">
+					<input type="email" class="form-control" name="email">
 				</div>
 			</div>
 
 			<div class="field-container row">
+				<p class="full-label">Message *</label>
+				<p class="descriptive-label">Send an awesome message to my inbox.</p>
 				<div class="form-group col-md-12">
-					<label for="message">Message *</label>
-					<textarea class="form-control" id="message"></textarea>
+					<textarea class="form-control" name="message"></textarea>
 				</div>
 			</div>
 
-			<button class="btn btn-info contact-btn">Submit</button>
+			<button class="btn btn-info contact-btn">Send Message</button>
 		</div>
 	</main>
 
-	<?php do_shortcode( '[vincentragosta-recent-post]' ); ?>
+	<img class="map" src="<?php echo VINCENTRAGOSTA_COM_TEMPLATE_URL . '/assets/images/map.png'; ?>" />
 
 <?php get_footer(); ?>

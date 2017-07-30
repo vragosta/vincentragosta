@@ -115,7 +115,17 @@ function scripts() {
 		true
 	);
 
-	wp_localize_script( 'vincentragosta_com', 'themeUrl', VINCENTRAGOSTA_COM_TEMPLATE_URL );
+	wp_localize_script(
+		'vincentragosta_com',
+		'VincentRagosta', [
+			'themeUrl' => VINCENTRAGOSTA_COM_TEMPLATE_URL,
+			'options'  => [
+				'apiUrl'  => home_url( '/wp-json/v1' ),
+				'homeUrl' => home_url(),
+				'nonce'   => wp_create_nonce( 'wp_rest' ),
+			]
+		]
+	);
 }
 
 /**
