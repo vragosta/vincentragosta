@@ -1,3 +1,8 @@
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Contact CSS
+ */
+
 #contact-page > div {
 	padding: 6rem 4rem;
 }
@@ -136,5 +141,4 @@
 
 .map {
 	filter: grayscale( 100% );
-	/*width: 100%;*/
 }

@@ -27,7 +27,8 @@
 	background: #fff;
 }
 
-.cta.e {
+.cta.e,
+.cta.about.c {
 	padding: 0;
 }
 
@@ -51,7 +52,7 @@
 
 /*--- Aside Paragraphs ---*/
 .aside p {
-	line-height: 2;
+	line-height: 1.5;
 	opacity: 0.7;
 	width: 100%;
 	max-width: 1100px;
@@ -59,7 +60,9 @@
 }
 
 .aside p + p {
-	margin-top: 2rem;
+	margin-top: 1.2rem;
+	display: flex;
+	justify-content: center;
 }
 
 @media only screen and ( max-width: 767px ) {
@@ -69,19 +72,24 @@
 	}
 
 	.aside p + p {
-		margin-top: 2.5rem;
+		margin-top: 0.8rem;
 	}
 }
 
-.cta.b p {
+.cta.b p,
+.cta.about.a p {
 	max-width: 800px;
+}
+
+.cta.about.d p {
+	max-width: 600px;
 }
 
 .cta.b p:first-child {
 	margin: 0 auto;
 }
 
-.cta.d p {
+.cta.d:not( .about ) p {
 	max-width: 300px;
 	line-height: 1.9;
 }
@@ -96,6 +104,7 @@
 	padding: 1.5rem 3rem;
 	text-transform: uppercase;
 	transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+	text-align: center;
 }
 
 @media only screen and ( max-width: 767px ) {

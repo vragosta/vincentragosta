@@ -43,6 +43,10 @@
 	.featured-image.static .header {
 		font-size: 6rem;
 	}
+
+	.featured-image:not( .static ) .header {
+		font-size: 1.5rem;
+	}
 }
 
 @media only screen and ( max-width: 767px ) {
@@ -50,9 +54,15 @@
 		font-size: 4rem;
 	}
 
-	/*--- Removes the  ---*/
+	/*--- Removes the margin ---*/
 	.featured-image:not( .static ) .header {
 		margin: 0;
+	}
+}
+
+@media only screen and ( max-width: 480px ) {
+	.featured-image:not( .static ) .header {
+		font-size: 1.5rem;
 	}
 }
 

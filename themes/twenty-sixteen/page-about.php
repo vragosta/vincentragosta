@@ -6,6 +6,16 @@
  * @since   0.1.0
  */
 
-	get_header(); ?>
+	get_header();
 
-<?php get_footer(); ?>
+	get_template_part( 'partials/aside-about-page-cta', 'A' );
+
+	get_template_part( 'partials/aside-about-page-cta', 'B' );
+
+	get_template_part( 'partials/aside-about-page-cta', 'C' );
+
+	get_template_part( 'partials/aside-about-page-cta', 'D' );
+
+	get_footer();
+
+?>

@@ -242,6 +242,15 @@ function styles() {
 		);
 	}
 
+	// if ( is_page( 'about' ) ) {
+	// 	wp_enqueue_style(
+	// 		'about',
+	// 		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---about.css",
+	// 		array(),
+	// 		VINCENTRAGOSTA_COM_VERSION
+	// 	);
+	// }
+
 	wp_enqueue_style(
 		'vincentragosta_com',
 		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---twenty-sixteen.css",
@@ -357,8 +366,52 @@ function sidebars() {
 		'after_title'   => '</h2>',
 	);
 
+	$cta_about_a = array(
+		'name'          => __( 'Call To Action A ( About Page )', 'theme_text_domain' ),
+		'id'            => 'cta-about-page-a',
+		'description'   => 'Call To Action sidebar on the about page.',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	$cta_about_b = array(
+		'name'          => __( 'Call To Action B ( About Page )', 'theme_text_domain' ),
+		'id'            => 'cta-about-page-b',
+		'description'   => 'Call To Action sidebar on the about page.',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	$cta_about_c = array(
+		'name'          => __( 'Call To Action C ( About Page )', 'theme_text_domain' ),
+		'id'            => 'cta-about-page-c',
+		'description'   => 'Call To Action sidebar on the about page.',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	$cta_about_d = array(
+		'name'          => __( 'Call To Action D ( About Page )', 'theme_text_domain' ),
+		'id'            => 'cta-about-page-d',
+		'description'   => 'Call To Action sidebar on the about page.',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
 	$cta_single = array(
-		'name'          => __( 'Call To Action ( Single )', 'theme_text_domain' ),
+		'name'          => __( 'Call To Action ( Single Template )', 'theme_text_domain' ),
 		'id'            => 'cta-single',
 		'description'   => 'Call To Action sidebar that displays below header on single template.',
 		'class'         => '',
@@ -385,6 +438,10 @@ function sidebars() {
 	register_sidebar( $cta_front_page_d );
 	register_sidebar( $cta_front_page_e );
 	register_sidebar( $cta_front_page_f );
+	register_sidebar( $cta_about_a );
+	register_sidebar( $cta_about_b );
+	register_sidebar( $cta_about_c );
+	register_sidebar( $cta_about_d );
 	register_sidebar( $cta_single );
 	register_sidebar( $pre_footer );
 }

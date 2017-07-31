@@ -38,11 +38,21 @@
 	.featured-image.static .sub-header {
 		font-size: 2rem;
 	}
+
+	.featured-image:not( .static ) .sub-header {
+		font-size: 1rem;
+	}
 }
 
 @media only screen and ( max-width: 768px ) {
 	.featured-image.static .sub-header {
 		font-size: 1.8rem;
+	}
+}
+
+@media only screen and ( max-width: 480px ) {
+	.featured-image:not( .static ) .sub-header {
+		font-size: 1rem;
 	}
 }
 

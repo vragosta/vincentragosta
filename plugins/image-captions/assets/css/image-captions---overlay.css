@@ -2,7 +2,7 @@
  * Image Captions - Twenty Sixteen
  * Overlay CSS
  */
-.featured-image .overlay { 
+.featured-image .overlay {
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -35,6 +35,13 @@
 	transition: background 0.5s ease-in-out, color 0.5s ease-in-out, text-shadow 0.5s ease-in-out;
 }
 
+@media only screen and ( min-width: 768px ) and ( max-width: 991px ) {
+	.featured-image .overlay a {
+		font-size: 1rem;
+		padding: .5rem;
+	}
+}
+
 .featured-image .overlay a:hover {
 	background: #fff;
 	color: #686868;
@@ -45,6 +52,13 @@
 	.featured-image:hover .overlay {
 		visibility: visible;
 		opacity: 1;
+	}
+}
+
+@media only screen and ( max-width: 480px ) {
+	.featured-image .overlay a {
+		font-size: 1rem;
+		padding: .5rem;
 	}
 }
 
