@@ -37,6 +37,9 @@ require_once VINCENTRAGOSTA_COM_INC . 'metaboxes/metabox-user.php';
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-notification.php';
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-text-column.php';
 
+// Include api files.
+require_once VINCENTRAGOSTA_COM_INC . 'api/class-wp-rest-contact.php';
+
 // Run the setup functions.
 vincentragosta_com\Twenty_Sixteen\Core\setup();
 

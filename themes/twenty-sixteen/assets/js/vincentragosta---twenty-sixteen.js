@@ -71,5 +71,33 @@
 		// Initialize the vincentragosta class.
 		vincentragosta.init();
 
+		/**
+	 * Sends contact information to contact endpoint for processing.
+	 */
+	$( '.contact-btn' ).click(function() {
+		var firstname = $( 'input[name=firstname]' ).val(),
+			lastname = $( 'input[name=lastname]' ).val(),
+			email = $( 'input[name=email]' ).val(),
+			message = $( 'textarea[name=message]' ).val(),
+			data = {
+				'firstname' : firstname,
+				'lastname' : lastname,
+				'email' : email,
+				'message' : message
+			};
+
+		$.ajax( {
+			url: VincentRagosta.options.apiUrl  + '/contact/',
+			type: 'post',
+			headers: {
+				'X-WP-Nonce': VincentRagosta.options.nonce
+			},
+			data: JSON.stringify( data ),
+			dataType: 'json',
+		} ).then(function( response ) {
+			console.log( response );
+		} );
+	});
+
 	} );
 } )( jQuery );
