@@ -15,6 +15,7 @@
 			<?php get_template_part( 'partials/aside', 'excerpt' ); ?>
 			<?php get_template_part( 'partials/aside', 'project-link' ); ?>
 			<?php get_template_part( 'partials/aside', 'content' ); ?>
+			<?php get_template_part( 'partials/aside', 'single-pagination' ); ?>
 		</main>
 		<?php wp_reset_postdata(); ?>
 	<?php } ?>
