@@ -8,15 +8,8 @@
  */
 
 	get_header();
-
-	// TODO
-	get_template_part( 'partials/aside', 'single-pagination' );
-
-	// TODO
+	
 	get_template_part( 'partials/content', 'single-' . get_post_type() );
-
-	// TODO
-	get_template_part( 'partials/aside', 'single-pagination' );
 
 	get_footer();
 

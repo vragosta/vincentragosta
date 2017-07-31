@@ -12,6 +12,11 @@
 	}
 }
 
+/*--- Accomodating for single template design ---*/
+.single .aside.link {
+	padding: 0 4rem;
+}
+
 .cta.a,
 .cta.c,
 .cta.f,
