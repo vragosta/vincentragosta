@@ -9,6 +9,12 @@
 namespace vincentragosta_com\Twenty_Sixteen\Core;
 
 /**
+ * Allows use of multiple post thumbnails plugin in this file
+ * NOTE: needed when dealing with namespaces.
+ */
+use \MultiPostThumbnails;
+
+/**
  * Set up theme defaults and register supported WordPress features.
  *
  * @since  0.1.0
@@ -71,6 +77,18 @@ function vincentragosta_setup() {
 
 	// If set to 'false', the admin bar will not display on front end.
 	show_admin_bar( false );
+
+	// Add additional images to any post type.
+	if ( class_exists( 'MultiPostThumbnails' ) ) {
+
+		new MultiPostThumbnails( array(
+			'label'     => __( 'Cover Image', 'vincentragosta_com' ),
+			'id'        => 'cover-image',
+			'post_type' => 'project'
+		) );
+
+	}
+
 }
 
 /**
@@ -97,7 +115,17 @@ function scripts() {
 		true
 	);
 
-	wp_localize_script( 'vincentragosta_com', 'themeUrl', VINCENTRAGOSTA_COM_TEMPLATE_URL );
+	wp_localize_script(
+		'vincentragosta_com',
+		'VincentRagosta', [
+			'themeUrl' => VINCENTRAGOSTA_COM_TEMPLATE_URL,
+			'options'  => [
+				'apiUrl'  => home_url( '/wp-json/v1' ),
+				'homeUrl' => home_url(),
+				'nonce'   => wp_create_nonce( 'wp_rest' ),
+			]
+		]
+	);
 }
 
 /**
@@ -205,10 +233,28 @@ function styles() {
 		);
 	endif;
 
+	if ( is_page( 'contact' ) ) {
+		wp_enqueue_style(
+			'contact',
+			VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---contact.css",
+			array(),
+			VINCENTRAGOSTA_COM_VERSION
+		);
+	}
+
+	// if ( is_page( 'about' ) ) {
+	// 	wp_enqueue_style(
+	// 		'about',
+	// 		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---about.css",
+	// 		array(),
+	// 		VINCENTRAGOSTA_COM_VERSION
+	// 	);
+	// }
+
 	wp_enqueue_style(
 		'vincentragosta_com',
 		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---twenty-sixteen.css",
-		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'helpers', 'core-components', 'menus', 'header', 'footer', 'sidebars', 'widgets' ),
+		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'helpers', 'core-components', 'menus', 'header', 'footer', 'sidebars' ),
 		VINCENTRAGOSTA_COM_VERSION
 	);
 }
@@ -320,8 +366,52 @@ function sidebars() {
 		'after_title'   => '</h2>',
 	);
 
+	$cta_about_a = array(
+		'name'          => __( 'Call To Action A ( About Page )', 'theme_text_domain' ),
+		'id'            => 'cta-about-page-a',
+		'description'   => 'Call To Action sidebar on the about page.',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	$cta_about_b = array(
+		'name'          => __( 'Call To Action B ( About Page )', 'theme_text_domain' ),
+		'id'            => 'cta-about-page-b',
+		'description'   => 'Call To Action sidebar on the about page.',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	$cta_about_c = array(
+		'name'          => __( 'Call To Action C ( About Page )', 'theme_text_domain' ),
+		'id'            => 'cta-about-page-c',
+		'description'   => 'Call To Action sidebar on the about page.',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	$cta_about_d = array(
+		'name'          => __( 'Call To Action D ( About Page )', 'theme_text_domain' ),
+		'id'            => 'cta-about-page-d',
+		'description'   => 'Call To Action sidebar on the about page.',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
 	$cta_single = array(
-		'name'          => __( 'Call To Action ( Single )', 'theme_text_domain' ),
+		'name'          => __( 'Call To Action ( Single Template )', 'theme_text_domain' ),
 		'id'            => 'cta-single',
 		'description'   => 'Call To Action sidebar that displays below header on single template.',
 		'class'         => '',
@@ -348,6 +438,10 @@ function sidebars() {
 	register_sidebar( $cta_front_page_d );
 	register_sidebar( $cta_front_page_e );
 	register_sidebar( $cta_front_page_f );
+	register_sidebar( $cta_about_a );
+	register_sidebar( $cta_about_b );
+	register_sidebar( $cta_about_c );
+	register_sidebar( $cta_about_d );
 	register_sidebar( $cta_single );
 	register_sidebar( $pre_footer );
 }

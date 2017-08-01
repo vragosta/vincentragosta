@@ -8,24 +8,15 @@
  */
 ?>
 
-<main id="single-project" class="col-flex-center">
-
-	<hr />
-
-	<!-- Optional Widget Area -->
-	<?php get_template_part( 'partials/aside', 'single-cta' ); ?>
-
-	<!-- Optional Excerpt Area -->
-	<?php get_template_part( 'partials/aside', 'excerpt' ); ?>
-
-	<!-- Optional Technology Used Area -->
-	<?php get_template_part( 'partials/aside', 'single-technology-used' ); ?>
-
-	<hr />
-
-	<!-- Optional Content Area -->
-	<?php get_template_part( 'partials/aside', 'content' ); ?>
-
-	<hr />
-
-</main>
+<?php if ( have_posts() ) { ?>
+	<?php while( have_posts() ) { ?>
+		<?php the_post(); ?>
+		<main id="single-project" class="col-flex-center">
+			<?php get_template_part( 'partials/aside', 'excerpt' ); ?>
+			<?php get_template_part( 'partials/aside', 'project-link' ); ?>
+			<?php get_template_part( 'partials/aside', 'content' ); ?>
+			<?php get_template_part( 'partials/aside', 'single-pagination' ); ?>
+		</main>
+		<?php wp_reset_postdata(); ?>
+	<?php } ?>
+<?php } ?>
