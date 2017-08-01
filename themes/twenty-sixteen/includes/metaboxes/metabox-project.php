@@ -32,7 +32,9 @@ function vincentragosta_project_callback( $post ) {
 	 * Use get_post_meta() to retrieve an existing value
 	 * from the database and use the value for the form.
 	 */
-	$technology = get_post_meta( $post->ID, 'technology', true ); ?>
+	$technology = get_post_meta( $post->ID, 'technology', true );
+	$project_link = get_post_meta( $post->ID, 'project_link', true );
+	$project_text = get_post_meta( $post->ID, 'project_text', true ); ?>
 
 	<table style="width: 100%;">
 		<tr>
@@ -41,6 +43,22 @@ function vincentragosta_project_callback( $post ) {
 			</td>
 			<td>
 				<textarea id="technology" name="technology" style="width: 100%;"><?php echo esc_textarea( $technology ); ?></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td class="label">
+				<label for="project_link"><?php echo __( 'Project Link:', 'vincentragosta' ); ?></label>
+			</td>
+			<td>
+				<textarea id="project_link" name="project_link" style="width: 100%;"><?php echo esc_textarea( $project_link ); ?></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td class="label">
+				<label for="project_text"><?php echo __( 'Project Text:', 'vincentragosta' ); ?></label>
+			</td>
+			<td>
+				<textarea id="project_text" name="project_text" style="width: 100%;"><?php echo esc_textarea( $project_text ); ?></textarea>
 			</td>
 		</tr>
 	</table><?php
@@ -76,9 +94,13 @@ function vincentragosta_project_save_data( $post_id ) {
 
 	// Sanitize user input.
 	$technology = sanitize_text_field( $_POST['technology'] );
+	$project_link = sanitize_text_field( $_POST['project_link'] );
+	$project_text = sanitize_text_field( $_POST['project_text'] );
 
 	// Update the meta field in the database.
 	update_post_meta( $post_id, 'technology', $technology );
+	update_post_meta( $post_id, 'project_link', $project_link );
+	update_post_meta( $post_id, 'project_text', $project_text );
 }
 add_action( 'save_post', 'vincentragosta_project_save_data' );
 
