@@ -4,7 +4,8 @@
  */
 /*--- News & Updates Widget ---*/
 #news-and-updates > div:last-child {
-	padding-top: 2rem;
+	/*padding-top: 2rem;*/
+	padding-top: 4rem;
 }
 
 /*--- TODO ---*/
