@@ -31,6 +31,23 @@
 	height: 100%;
 }
 
+#pagination-single a {
+	border: none;
+	padding: 0;
+	font-size: 3rem;
+}
+
+@media only screen and ( max-width: 768px ) {
+	#pagination-single a {
+		font-size: 2rem;
+	}
+}
+
+#pagination-single a:hover {
+	background: none;
+	color: #686868;
+}
+
 /*@media only screen and ( max-width: 767px ) {
 	#single-project img {
 		width: 100%;

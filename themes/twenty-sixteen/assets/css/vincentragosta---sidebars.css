@@ -15,11 +15,18 @@
 /*--- Accomodating for single template design ---*/
 .single .aside.link {
 	padding: 0 4rem 6rem;
+	display: flex;
 }
 
 /*--- Accomodating for single template design ---*/
 .single .aside.content {
 	padding: 0 4rem;
+}
+
+@media only screen and ( max-width: 768px ) {
+	.single .aside.content {
+		padding: 0;
+	}
 }
 
 .cta.a,
