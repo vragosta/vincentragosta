@@ -4,7 +4,8 @@
  */
 #single-project {
 	max-width: 1000px;
-	margin: 0 auto;
+	/*margin: 0 auto;*/
+	margin: 0 auto 6rem;
 	padding: 0 4rem;
 }
 
@@ -31,6 +32,10 @@
 	height: 100%;
 }
 
+#pagination-single {
+	padding: 6rem 4rem 0;
+}
+
 #pagination-single a {
 	border: none;
 	padding: 0;
@@ -47,39 +52,3 @@
 	background: none;
 	color: #686868;
 }
-
-/*@media only screen and ( max-width: 767px ) {
-	#single-project img {
-		width: 100%;
-		height: 100%;
-	}
-}*/
-
-/*#single-project .aside + .aside {
-	padding: 2rem 4rem 6rem;
-}*/
-
-/*--- Technology section ---*/
-/*.technology {
-	width: 100%;
-}*/
-
-/*--- Single Pagination ---*/
-/*#pagination-single {
-	display: flex;
-	max-width: 1000px;
-	margin: 0 auto;
-	width: 100%;
-}
-
-#pagination-single a {
-	font-size: 4rem;
-	color: rgba( 104, 104, 104, 0.9 );
-	padding: 0;
-	border: none;
-	transition: none;
-}
-
-#pagination-single a:hover {
-	background: none;
-}*/

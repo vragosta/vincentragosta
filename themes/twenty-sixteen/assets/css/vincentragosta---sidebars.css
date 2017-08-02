@@ -78,7 +78,6 @@
 }
 
 .aside p + p {
-	/*margin-top: 1.2rem;*/
 	margin-top: 4rem;
 	display: flex;
 	justify-content: center;
