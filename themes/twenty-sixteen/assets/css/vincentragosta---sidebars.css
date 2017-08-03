@@ -52,7 +52,8 @@
 /*--- Aside Titles ---*/
 .aside h1,
 .aside h2 {
-	margin-bottom: 1.2rem;
+	/*margin-bottom: 1.2rem;*/
+	margin-bottom: 4rem;
 	font-family: 'Lato', sans-serif;
 }
 
@@ -77,7 +78,7 @@
 }
 
 .aside p + p {
-	margin-top: 1.2rem;
+	margin-top: 4rem;
 	display: flex;
 	justify-content: center;
 }

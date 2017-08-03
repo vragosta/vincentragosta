@@ -11,8 +11,6 @@
 /*--- Notification Widget ---*/
 #notification-widget {
 	padding: 0;
-	padding: 6rem 10rem;
-	background-color: #353439;
 }
 
 #notification-widget p {
