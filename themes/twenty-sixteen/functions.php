@@ -41,7 +41,7 @@ require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-text-column.php';
 require_once VINCENTRAGOSTA_COM_INC . 'api/class-wp-rest-contact.php';
 
 // Run the setup functions.
-vincentragosta_com\Twenty_Sixteen\Core\setup();
+VincentRagosta\TwentySixteen\Core\setup();
 
 // Run the essential functions.
-vincentragosta_com\Twenty_Sixteen\Essentials\setup();
+VincentRagosta\TwentySixteen\Essentials\setup();

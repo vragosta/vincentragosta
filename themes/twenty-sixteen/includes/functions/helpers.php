@@ -7,7 +7,7 @@
  * @since   0.1.0
  */
 
-namespace vincentragosta_com\Twenty_Sixteen\Helpers;
+namespace VincentRagosta\TwentySixteen\Helpers;
 
 /**
  * If the query permits pagination, display pagination controls.

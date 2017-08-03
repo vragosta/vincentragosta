@@ -34,10 +34,19 @@ function image_captions_page_callback( $post ) {
 	 * Use get_post_meta() to retrieve an existing value
 	 * from the database and use the value for the form.
 	 */
-	$sub_header  = get_post_meta( $post->ID, 'sub_header', true );
+	$alt_title = get_post_meta( $post->ID, 'alt_title', true );
+	$sub_header = get_post_meta( $post->ID, 'sub_header', true );
 	$button_text = get_post_meta( $post->ID, 'button_text', true ); ?>
 
 	<table style="width: 100%;">
+		<tr>
+			<td class="label">
+				<label for="alt_title"><?php echo __( 'Alternate Title:', 'vincentragosta' ); ?></label>
+			</td>
+			<td>
+				<textarea id="alt_title" name="alt_title" style="width: 100%;"><?php echo esc_textarea( $alt_title ); ?></textarea>
+			</td>
+		</tr>
 		<tr>
 			<td class="label">
 				<label for="sub_header"><?php echo __( 'Sub Header:', 'vincentragosta' ); ?></label>
@@ -88,13 +97,10 @@ function image_captions_page_save_data( $post_id ) {
 	if ( ! current_user_can( 'edit_page', $post_id ) )
 		return;
 
-	// Sanitize user input.
-	$sub_header  = sanitize_text_field( $_POST['sub_header'] );
-	$button_text = sanitize_text_field( $_POST['button_text'] );
-
 	// Update the meta field in the database.
-	update_post_meta( $post_id, 'sub_header', $sub_header );
-	update_post_meta( $post_id, 'button_text', $button_text );
+	update_post_meta( $post_id, 'alt_title', sanitize_text_field( $_POST['alt_title'] ) );
+	update_post_meta( $post_id, 'sub_header', sanitize_text_field( $_POST['sub_header'] ) );
+	update_post_meta( $post_id, 'button_text', sanitize_text_field( $_POST['button_text'] ) );
 }
 add_action( 'save_post', 'image_captions_page_save_data' );
 

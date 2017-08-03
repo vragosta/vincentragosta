@@ -25,9 +25,9 @@ $custom = new WP_Query( $args ); ?>
 
 			<!-- Define local variables -->
 			<?php $author  = get_user_by( 'id', $post->post_author ); ?>
-			<?php $image   = vincentragosta_com\Twenty_Sixteen\Helpers\get_featured_image( $post->ID ); ?>
-			<?php $date    = vincentragosta_com\Twenty_Sixteen\Helpers\format_date( $post->post_date, 'F jS, Y' ); ?>
-			<?php $content = vincentragosta_com\Twenty_Sixteen\Helpers\trim_string_by( 60, $post->post_content ); ?>
+			<?php $image   = VincentRagosta\TwentySixteen\Helpers\get_featured_image( $post->ID ); ?>
+			<?php $date    = VincentRagosta\TwentySixteen\Helpers\format_date( $post->post_date, 'F jS, Y' ); ?>
+			<?php $content = VincentRagosta\TwentySixteen\Helpers\trim_string_by( 60, $post->post_content ); ?>
 
 			<!-- Post category -->
 			<article class="post">

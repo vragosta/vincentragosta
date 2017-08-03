@@ -7,7 +7,7 @@
  * @since   0.1.0
  */
 
-namespace vincentragosta_com\Twenty_Sixteen\Essentials;
+namespace VincentRagosta\TwentySixteen\Essentials;
 
 /**
  * Register supported WordPress features.

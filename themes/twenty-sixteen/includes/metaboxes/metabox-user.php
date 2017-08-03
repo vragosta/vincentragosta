@@ -1,55 +1,95 @@
 <?php
 
-/**
- * Create user meta fields for each user record.
- *
- * @since  0.1.0
- * @param  array $fields Existing fields array.
- * @return array $fields Existing fields array with new social fields.
- */
-function vincentragosta_user_fields( $fields ) {
-	$fields['facebook']  = 'Facebook';
-	$fields['twitter']   = 'Twitter';
-	$fields['instagram'] = 'Instagram';
-	$fields['personal']  = 'Personal';
-	$fields['github']    = 'Github';
-	$fields['phone']     = 'Phone Number';
+namespace VincentRagosta\Admin\MetaBoxes;
 
-	return $fields;
+class UserMetaBox {
+
+	function register() {
+
+		// Add fields and properly save meta if current user
+		add_action( 'show_user_profile', array( $this, 'add_fields' ) );
+		add_action( 'personal_options_update', array( $this, 'save_fields' ) );
+
+		// Add fields and properly save meta if not current user
+		add_action( 'edit_user_profile', array( $this, 'add_fields' ) );
+		add_action( 'edit_user_profile_update', array( $this, 'save_fields' ) );
+
+	}
+
+	function add_fields( $user ) {
+
+		// Obtain social meta.
+		$facebook = get_user_meta( $user->ID, 'facebook', true );
+		$twitter = get_user_meta( $user->ID, 'twitter', true );
+		$instagram = get_user_meta( $user->ID, 'instagram', true );
+		$github = get_user_meta( $user->ID, 'github', true );
+		$phone = get_user_meta( $user->ID, 'phone', true ); ?>
+
+		<h2><?php _e( 'Social' ); ?></h2>
+		<table class="form-table">
+			<tr>
+				<th>
+					<label for="facebook"><?php _e( 'Facebook URL' ); ?></label>
+				</th>
+				<td>
+					<input name="facebook" value="<?php echo esc_attr( $facebook ); ?>" style="width: 25em" />
+				</td>
+			</tr>
+
+			<tr>
+				<th>
+					<label for="twitter"><?php _e( 'Twitter URL' ); ?></label>
+				</th>
+				<td>
+					<input name="twitter" value="<?php echo esc_attr( $twitter ); ?>" style="width: 25em" />
+				</td>
+			</tr>
+
+			<tr>
+				<th>
+					<label for="instagram"><?php _e( 'Instagram URL' ); ?></label>
+				</th>
+				<td>
+					<input name="instagram" value="<?php echo esc_attr( $instagram ); ?>" style="width: 25em" />
+				</td>
+			</tr>
+
+			<tr>
+				<th>
+					<label for="github"><?php _e( 'Github URL' ); ?></label>
+				</th>
+				<td>
+					<input name="github" value="<?php echo esc_attr( $github ); ?>" style="width: 25em" />
+				</td>
+			</tr>
+		</table>
+
+		<h2><?php _e( 'Miscellaneous' ); ?></h2>
+		<table class="form-table">
+			<tr>
+				<th>
+					<label for="phone"><?php _e( 'Phone Number' ); ?></label>
+				</th>
+				<td>
+					<input name="phone" value="<?php echo esc_attr( $phone ); ?>" style="width: 25em" />
+				</td>
+			</tr>
+		</table><?php
+	}
+
+	function save_fields( $user_id ) {
+
+		// Check the user's permissions.
+		if ( ! current_user_can( 'edit_user', $user_id ) )
+			return false;
+
+		update_usermeta( $user_id, 'facebook', sanitize_text_field( $_POST['facebook'] ) );
+		update_usermeta( $user_id, 'twitter', sanitize_text_field( $_POST['twitter'] ) );
+		update_usermeta( $user_id, 'instagram', sanitize_text_field( $_POST['instagram'] ) );
+		update_usermeta( $user_id, 'github', sanitize_text_field( $_POST['github'] ) );
+		update_usermeta( $user_id, 'phone', sanitize_text_field( $_POST['phone'] ) );
+	}
 }
-add_filter( 'user_contactmethods', 'vincentragosta_user_fields' );
 
-
-/**
- * Save additional profile fields.
- *
- * @since  0.1.0
- * @param  int $user_id Current user ID.
- * @uses   current_user_can(), sanitize_text_field(), update_post_meta()
- * @return void
- */
-function vincentragosta_save_user_fields( $user_id ) {
-
-	// Check the user's permissions.
-	if ( ! current_user_can( 'edit_user', $user_id ) )
-		return false;
-
-	// Sanitize user input.
-	$facebook  = sanitize_text_field( $_POST['facebook'] );
-	$twitter   = sanitize_text_field( $_POST['twitter'] );
-	$instagram = sanitize_text_field( $_POST['instagram'] );
-	$personal  = sanitize_text_field( $_POST['personal'] );
-	$github    = sanitize_text_field( $_POST['github'] );
-	$phone     = sanitize_text_field( $_POST['phone'] );
-
-	update_usermeta( $user_id, 'facebook', $_POST['facebook'] );
-	update_usermeta( $user_id, 'twitter', $_POST['twitter'] );
-	update_usermeta( $user_id, 'instagram', $_POST['instagram'] );
-	update_usermeta( $user_id, 'personal', $_POST['personal'] );
-	update_usermeta( $user_id, 'github', $_POST['github'] );
-	update_usermeta( $user_id, 'phone', $_POST['phone'] );
-}
-add_action( 'personal_options_update', 'vincentragosta_save_user_fields' );
-add_action( 'edit_user_profile_update', 'vincentragosta_save_user_fields' );
-
-?>
+$user_metabox = new UserMetabox();
+$user_metabox->register();

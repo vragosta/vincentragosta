@@ -6,7 +6,8 @@
  * @since   0.1.0
  */
 
-namespace vincentragosta_com\Twenty_Sixteen\Core;
+// namespace vincentragosta_com\Twenty_Sixteen\Core;
+namespace VincentRagosta\TwentySixteen\Core;
 
 /**
  * Allows use of multiple post thumbnails plugin in this file
