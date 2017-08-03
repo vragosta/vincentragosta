@@ -18,12 +18,14 @@ function set_default_properties( $atts ) {
 	global $post;
 
 	// If the attribute 'id' is set on the shortcode, set the post object to the post entered.
-	if ( $atts['id'] )
+	if ( $atts['id'] ) {
 		$post = get_post( $atts['id'] );
+	}
 
 	// If we are on the blog template, get the blog template ID.
-	if ( is_home() )
+	if ( is_home() ) {
 		$post = get_post( get_option( 'page_for_posts' ) );
+	}
 
 	// Set up variable to check if static exists as a class.
 	$is_static = in_array( 'static', explode( ' ', $atts['class'] ), true );
@@ -116,7 +118,13 @@ function set_button_text( $is_static, $post ) {
  * @return string void text for header.
  */
 function set_header_text( $post ) {
-	return ( get_post_meta( $post->ID, 'shorthand_header', true ) ) ? get_post_meta( $post->ID, 'shorthand_header', true ) : $post->post_title;
+	if ( $post->post_type === 'page' ) {
+		$header_text = ( get_post_meta( $post->ID, 'alt_title', true ) ) ? get_post_meta( $post->ID, 'alt_title', true ) : $post->post_title;
+	} else if ( $post->post_type === 'project' ) {
+		$header_text = ( get_post_meta( $post->ID, 'shorthand_header', true ) ) ? get_post_meta( $post->ID, 'shorthand_header', true ) : $post->post_title;
+	}
+
+	return $header_text;
 }
 
 /**

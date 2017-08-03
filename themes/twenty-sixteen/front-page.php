@@ -21,8 +21,6 @@
 
 	// get_template_part( 'partials/aside-front-page-cta', 'F' );
 
-	// get_template_part( 'partials/aside-pre', 'footer' );
-
 	get_footer();
 
 ?>
