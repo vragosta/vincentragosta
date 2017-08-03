@@ -11,6 +11,8 @@
 
 	<footer id="footer" class="col-flex-center">
 
+		<?php get_template_part( 'partials/aside-pre', 'footer' ); ?>
+
 		<!-- TODO -->
 		<?php get_template_part( 'partials/content', 'menu' ); ?>
 
