@@ -1,6 +1,6 @@
 <?php
 
-namespace image_captions\Twenty_Sixteen\Core;
+namespace ImageCaptions\TwentySixteen\Core;
 
 /**
  * Set up image captions defaults and register supported WordPress features.

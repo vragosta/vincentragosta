@@ -21,7 +21,7 @@ define( 'IMAGE_CAPTIONS_IMAGE_SIZE', 'large' );
 require_once IMAGE_CAPTIONS_PATH . 'includes/functions/core.php';
 
 // Run the setup functions.
-image_captions\Twenty_Sixteen\Core\setup();
+ImageCaptions\TwentySixteen\Core\setup();
 
 // Include all helper functions associated with the image caption shortcode.
 require_once IMAGE_CAPTIONS_PATH . 'includes/functions/helpers.php';
@@ -51,7 +51,7 @@ function image_captions_shortcode( $atts ) {
 	), $atts );
 
 	// Obtain the centralized default properties object.
-	$image_caption = image_captions\Twenty_sixteen\Helpers\set_default_properties( $atts ); ?>
+	$image_caption = ImageCaptions\TwentySixteen\Helpers\set_default_properties( $atts ); ?>
 
 	<!-- Image Caption HTML start -->
 	<main class="featured-image <?php echo implode( ' ', $image_caption->classes ); ?>">
