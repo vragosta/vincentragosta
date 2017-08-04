@@ -3,8 +3,8 @@
  * Template for displaying the copyright in the footer.
  *
  * @package Vincent Ragosta - Twenty Sixteen
- * @since   0.1.0
- * @uses    date()
+ * @since 0.1.0
+ * @uses date()
  */
 ?>
 

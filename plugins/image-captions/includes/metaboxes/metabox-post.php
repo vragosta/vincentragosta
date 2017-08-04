@@ -7,8 +7,8 @@ class PostMetabox {
 	/**
 	 * Registers metabox with WordPress.
 	 *
-	 * @since  0.1.0
-	 * @uses   add_action()
+	 * @since 0.1.0
+	 * @uses add_action()
 	 * @return void
 	 */
 	function register() {
@@ -19,8 +19,8 @@ class PostMetabox {
 	/**
 	 * Create configuration metabox for 'post' custom post type.
 	 *
-	 * @since  0.1.0
-	 * @uses   add_meta_box()
+	 * @since 0.1.0
+	 * @uses add_meta_box()
 	 * @return void
 	 */
 	function image_captions_post_metaboxes() {
@@ -35,8 +35,8 @@ class PostMetabox {
 	/**
 	 * The callback for add_meta_box(), contains the HTML necessary to create the metaboxes.
 	 *
-	 * @since  0.1.0
-	 * @uses   wp_nonce_field(), get_post_meta(), __(), esc_textarea()
+	 * @since 0.1.0
+	 * @uses wp_nonce_field(), get_post_meta(), __(), esc_textarea()
 	 * @return void
 	 */
 	function image_captions_post_callback( $post ) {
@@ -48,7 +48,7 @@ class PostMetabox {
 		 * from the database and use the value for the form.
 		 */
 		$shorthand_header = get_post_meta( $post->ID, 'shorthand_header', true );
-		$sub_header       = get_post_meta( $post->ID, 'sub_header', true ); ?>
+		$sub_header = get_post_meta( $post->ID, 'sub_header', true ); ?>
 
 		<table style="width: 100%;">
 			<tr>
@@ -73,9 +73,9 @@ class PostMetabox {
 	/**
 	 * Saves and sanitizes the POST data.
 	 *
-	 * @since  0.1.0
-	 * @uses   isset(), wp_verify_nonce(), defined(),
-	 *         current_user_can(), sanitize_text_field(), update_post_meta()
+	 * @since 0.1.0
+	 * @uses isset(), wp_verify_nonce(), defined(),
+	 *       current_user_can(), sanitize_text_field(), update_post_meta()
 	 * @return void
 	 */
 	function image_captions_post_save_data( $post_id ) {
@@ -99,12 +99,13 @@ class PostMetabox {
 		}
 
 		# Check the user's permissions.
-		if ( ! current_user_can( 'edit_post', $post_id ) )
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
 			return;
+		}
 
 		# Sanitize user input.
 		$shorthand_header = sanitize_text_field( $_POST['shorthand_header'] );
-		$sub_header       = sanitize_text_field( $_POST['sub_header'] );
+		$sub_header = sanitize_text_field( $_POST['sub_header'] );
 
 		# Update the meta field in the database.
 		update_post_meta( $post_id, 'shorthand_header', $shorthand_header );

@@ -7,8 +7,8 @@ class PageMetabox {
 	/**
 	 * Registers metabox with WordPress.
 	 *
-	 * @since  0.1.0
-	 * @uses   add_action()
+	 * @since 0.1.0
+	 * @uses add_action()
 	 * @return void
 	 */
 	function register() {
@@ -19,9 +19,9 @@ class PageMetabox {
 	/**
 	 * Create configuration metabox for 'page' custom post type.
 	 *
-	 * @since  0.1.0
-	 * @param  void
-	 * @uses   add_meta_box(), __()
+	 * @since 0.1.0
+	 * @param void
+	 * @uses add_meta_box(), __()
 	 * @return void
 	 */
 	function image_captions_page_metaboxes() {
@@ -36,9 +36,9 @@ class PageMetabox {
 	/**
 	 * The callback for add_meta_box(), contains the HTML necessary to create the metaboxes.
 	 *
-	 * @since  0.1.0
-	 * @param  wp_post $post current post object.
-	 * @uses   wp_nonce_field(), get_post_meta(), __(), esc_textarea()
+	 * @since 0.1.0
+	 * @param wp_post $post current post object.
+	 * @uses wp_nonce_field(), get_post_meta(), __(), esc_textarea()
 	 * @return void
 	 */
 	function image_captions_page_callback( $post ) {
@@ -85,10 +85,10 @@ class PageMetabox {
 	/**
 	 * Saves and sanitizes the POST data.
 	 *
-	 * @since  0.1.0
-	 * @param  int $post_id id of the current post object.
-	 * @uses   isset(), wp_verify_nonce(), defined(), current_user_can(),
-	 *         sanitize_text_field(), update_post_meta()
+	 * @since 0.1.0
+	 * @param int $post_id id of the current post object.
+	 * @uses isset(), wp_verify_nonce(), defined(), current_user_can(),
+	 *       sanitize_text_field(), update_post_meta()
 	 * @return void
 	 */
 	function image_captions_page_save_data( $post_id ) {
@@ -98,20 +98,24 @@ class PageMetabox {
 		 * because the save_post action can be triggered at other times.
 		 */
 		# Check if our nonce is set.
-		if ( ! isset( $_POST['image_captions_nonce'] ) )
+		if ( ! isset( $_POST['image_captions_nonce'] ) ) {
 			return;
+		}
 
 		# Verify that the nonce is valid.
-		if ( ! wp_verify_nonce( $_POST['image_captions_nonce'], 'image_captions_page_save_data' ) )
+		if ( ! wp_verify_nonce( $_POST['image_captions_nonce'], 'image_captions_page_save_data' ) ) {
 			return;
+		}
 
 		# If this is an autosave, our form has not been submitted, so we don't want to do anything.
-		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 			return;
+		}
 
 		# Check the user's permissions.
-		if ( ! current_user_can( 'edit_page', $post_id ) )
+		if ( ! current_user_can( 'edit_page', $post_id ) ) {
 			return;
+		}
 
 		# Update the meta field in the database.
 		update_post_meta( $post_id, 'alt_title', sanitize_text_field( $_POST['alt_title'] ) );

@@ -45,9 +45,9 @@ class WP_REST_Contact extends WP_REST_Controller {
 	public function send_email( $request ) {
 		$sender = json_decode( $request->get_body() );
 
-		if ( ! $sender ) :
+		if ( ! $sender ) {
 			return new WP_REST_Response( 'There was an error with the request.', 500 );
-		endif;
+		}
 
 		$to = 'vincentpasqualeragosta@gmail.com';
 		$subject = 'Vincentragosta.com Contact Request';

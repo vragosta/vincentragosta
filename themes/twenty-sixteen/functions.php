@@ -9,7 +9,7 @@
  * theme's file, so the child theme functions would be used.
  *
  * @package Vincent Ragosta - Twenty Sixteen
- * @since   0.1.0
+ * @since 0.1.0
  */
 
 # Useful global constants.

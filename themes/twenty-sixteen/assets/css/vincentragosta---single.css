@@ -2,9 +2,9 @@
  * Vincent Ragosta - Twenty Sixteen
  * Single CSS
  */
+
 #single-project {
 	max-width: 1000px;
-	/*margin: 0 auto;*/
 	margin: 0 auto 6rem;
 	padding: 0 4rem;
 }

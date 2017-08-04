@@ -3,7 +3,7 @@
  * Builds 'News & Updates' Widget.
  *
  * @package Image Captions - Twenty Sixteen
- * @since   0.1.0
+ * @since 0.1.0
  */
 
 # Blocking direct access to this file.
@@ -34,8 +34,8 @@ class News_And_Updates_Widget extends WP_Widget {
 	/**
 	 * Back-end widget form.
 	 *
-	 * @param  array $instance previously saved values from database.
-	 * @uses   empty(), __(), get_field_id(), esc_attr()
+	 * @param array $instance previously saved values from database.
+	 * @uses empty(), __(), get_field_id(), esc_attr()
 	 * @return void
 	 */
 	public function form( $instance ) {
@@ -59,17 +59,16 @@ class News_And_Updates_Widget extends WP_Widget {
 			<label for="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>"><?php echo __( 'Enter ID\'s:', 'vincentragosta' ); ?></label><br />
 			<label class="description" for="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>">Please separate with a comma.</label><br />
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'ids' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'ids' ) ); ?>" type="text" value="<?php echo esc_attr( $ids ); ?>">
-		</p>
-		<?php
+		</p><?php
 	}
 
 	/**
 	 * Sanitize widget form values as they are saved.
 	 *
-	 * @param  array $new_instance values just sent to be saved.
-	 * @param  array $old_instance previously saved values from database.
-	 * @uses   empty(), explode(), str_replace(), count(), do_shortcode(), wp_reset_postdata()
-	 * @return array $instance     updated safe values to be saved.
+	 * @param array $new_instance values just sent to be saved.
+	 * @param array $old_instance previously saved values from database.
+	 * @uses empty(), explode(), str_replace(), count(), do_shortcode(), wp_reset_postdata()
+	 * @return array $instance updated safe values to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
@@ -84,8 +83,8 @@ class News_And_Updates_Widget extends WP_Widget {
 	 * Front-end display of widget.
 	 * NOTE: Styles associated with this function go in vincentragosta---twenty-sixteen.css.
 	 *
-	 * @param  array $args     widget arguments.
-	 * @param  array $instance saved values from database.
+	 * @param array $args widget arguments.
+	 * @param array $instance saved values from database.
 	 * @return void
 	 */
 	public function widget( $args, $instance ) {
@@ -137,17 +136,19 @@ class News_And_Updates_Widget extends WP_Widget {
 		$query = new WP_Query( $args ); ?>
 
 		<div id="news-and-updates" class="custom-widget full-width">
-			<?php if ( $query->have_posts() ) : ?>
-				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+			<?php if ( $query->have_posts() ) { ?>
+				<?php while ( $query->have_posts() ) { ?>
+					<?php $query->the_post(); ?>
 					<div class="col-xs-12 <?php echo esc_attr( $bootstrap_class ); ?>">
 
 						<!-- Featured image overlay -->
 						<?php do_shortcode( '[image-caption id="' . $post->ID . '"]' ); ?>
 
 					</div>
-				<?php endwhile; ?>
+				<?php } ?>
 				<?php wp_reset_postdata(); ?>
-			<?php endif;?>
+			<?php } ?>
+
 			<div class="full-width col-flex-center">
 				<a href="<?php echo $button_href; ?>">View more <?php echo esc_html( $instance['post_type'] ); ?>s</a>
 			</div>

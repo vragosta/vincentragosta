@@ -7,8 +7,8 @@ class ProjectMetabox {
 	/**
 	 * Registers metabox with WordPress.
 	 *
-	 * @since  0.1.0
-	 * @uses   add_action()
+	 * @since 0.1.0
+	 * @uses add_action()
 	 * @return void
 	 */
 	function register() {
@@ -35,8 +35,8 @@ class ProjectMetabox {
 	/**
 	 * The callback for add_meta_box(), contains the HTML necessary to create the metaboxes.
 	 *
-	 * @since  0.1.0
-	 * @uses   wp_nonce_field(), get_post_meta(), __(), esc_textarea()
+	 * @since 0.1.0
+	 * @uses wp_nonce_field(), get_post_meta(), __(), esc_textarea()
 	 * @return void
 	 */
 	function image_captions_project_callback( $post ) {
@@ -48,7 +48,7 @@ class ProjectMetabox {
 		 * from the database and use the value for the form.
 		 */
 		$shorthand_header = get_post_meta( $post->ID, 'shorthand_header', true );
-		$sub_header       = get_post_meta( $post->ID, 'sub_header', true ); ?>
+		$sub_header = get_post_meta( $post->ID, 'sub_header', true ); ?>
 
 		<table style="width: 100%;">
 			<tr>
@@ -73,9 +73,9 @@ class ProjectMetabox {
 	/**
 	 * Saves and sanitizes the POST data.
 	 *
-	 * @since  0.1.0
-	 * @uses   isset(), wp_verify_nonce(), defined(), current_user_can(),
-	 *         sanitize_text_field(), update_post_meta()
+	 * @since 0.1.0
+	 * @uses isset(), wp_verify_nonce(), defined(), current_user_can(),
+	 *       sanitize_text_field(), update_post_meta()
 	 * @return void
 	 */
 	function image_captions_project_save_data( $post_id ) {
@@ -84,24 +84,28 @@ class ProjectMetabox {
 		 * because the save_post action can be triggered at other times.
 		 */
 		# Check if our nonce is set.
-		if ( ! isset( $_POST['image_captions_nonce'] ) )
+		if ( ! isset( $_POST['image_captions_nonce'] ) ) {
 			return;
+		}
 
 		# Verify that the nonce is valid.
-		if ( ! wp_verify_nonce( $_POST['image_captions_nonce'], 'image_captions_project_save_data' ) )
+		if ( ! wp_verify_nonce( $_POST['image_captions_nonce'], 'image_captions_project_save_data' ) ) {
 			return;
+		}
 
 		# If this is an autosave, our form has not been submitted, so we don't want to do anything.
-		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 			return;
+		}
 
 		# Check the user's permissions.
-		if ( ! current_user_can( 'edit_page', $post_id ) )
+		if ( ! current_user_can( 'edit_page', $post_id ) ) {
 			return;
+		}
 
 		# Sanitize user input.
 		$shorthand_header = sanitize_text_field( $_POST['shorthand_header'] );
-		$sub_header       = sanitize_text_field( $_POST['sub_header'] );
+		$sub_header = sanitize_text_field( $_POST['sub_header'] );
 
 		# Update the meta field in the database.
 		update_post_meta( $post_id, 'shorthand_header', $shorthand_header );
