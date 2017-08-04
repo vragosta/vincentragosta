@@ -7,10 +7,10 @@
  * @uses get_template_part()
  */
 
-	get_header();
+namespace VincentRagosta;
 
-	get_template_part( 'partials/content', 'single-' . get_post_type() );
+get_header();
 
-	get_footer();
+get_template_part( 'partials/content', 'single-' . get_post_type() );
 
-?>
+get_footer();

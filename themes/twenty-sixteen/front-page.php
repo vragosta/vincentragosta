@@ -7,20 +7,20 @@
  * @uses get_template_part()
  */
 
-	get_header();
+namespace VincentRagosta;
 
-	get_template_part( 'partials/aside-front-page-cta', 'A' );
+get_header();
 
-	get_template_part( 'partials/aside-front-page-cta', 'B' );
+get_template_part( 'partials/aside-front-page-cta', 'A' );
 
-	get_template_part( 'partials/aside-front-page-cta', 'C' );
+get_template_part( 'partials/aside-front-page-cta', 'B' );
 
-	# get_template_part( 'partials/aside-front-page-cta', 'D' );
+get_template_part( 'partials/aside-front-page-cta', 'C' );
 
-	get_template_part( 'partials/aside-front-page-cta', 'E' );
+# get_template_part( 'partials/aside-front-page-cta', 'D' );
 
-	# get_template_part( 'partials/aside-front-page-cta', 'F' );
+get_template_part( 'partials/aside-front-page-cta', 'E' );
 
-	get_footer();
+# get_template_part( 'partials/aside-front-page-cta', 'F' );
 
-?>
+get_footer();
