@@ -3,31 +3,32 @@
  * Archive template for project custom post type.
  *
  * @package Vincent Ragosta - Twenty Sixteen
- * @since   0.1.0
- * @uses    get_query_var(), get_template_part(), wp_reset_postdata()
+ * @since 0.1.0
+ * @uses get_query_var(), get_template_part(), wp_reset_postdata()
  */
 
-// Get the page variable if one is set.
+# Get the page variable if one is set.
 $paged = get_query_var( 'paged' );
 
-// Create the arguements for the query.
+# Create the arguements for the query.
 $args = array(
 	'post_type' => 'post',
 	'paged'     => $paged
 );
 
-// Initialize the query.
+# Initialize the query.
 $custom = new WP_Query( $args ); ?>
 
-<?php if ( $custom->have_posts() ) : ?>
+<?php if ( $custom->have_posts() ) { ?>
 	<section>
-		<?php while ( $custom->have_posts() ) : $custom->the_post(); ?>
+		<?php while ( $custom->have_posts() ) { ?>
+			<?php $custom->the_post(); ?>
 
 			<!-- Define local variables -->
-			<?php $author  = get_user_by( 'id', $post->post_author ); ?>
-			<?php $image   = VincentRagosta\TwentySixteen\Helpers\get_featured_image( $post->ID ); ?>
-			<?php $date    = VincentRagosta\TwentySixteen\Helpers\format_date( $post->post_date, 'F jS, Y' ); ?>
-			<?php $content = VincentRagosta\TwentySixteen\Helpers\trim_string_by( 60, $post->post_content ); ?>
+			<?php $author = get_user_by( 'id', $post->post_author ); ?>
+			<?php $image = VincentRagosta\Functions\Helpers\get_featured_image( $post->ID ); ?>
+			<?php $date = VincentRagosta\Functions\Helpers\format_date( $post->post_date, 'F jS, Y' ); ?>
+			<?php $content = VincentRagosta\Functions\Helpers\trim_string_by( 60, $post->post_content ); ?>
 
 			<!-- Post category -->
 			<article class="post">
@@ -45,50 +46,50 @@ $custom = new WP_Query( $args ); ?>
 					<div class="sub-header">
 
 						<!-- Author name -->
-						<?php if ( $author ) : ?>
+						<?php if ( $author ) { ?>
 							<span class="post-author">
 								<?php echo esc_html( $author->display_name ); ?>
 							</span>
-						<?php endif; ?>
+						<?php } ?>
 
 						<!-- Separator for author and date-->
-						<?php if ( $author && $date ) : ?>
+						<?php if ( $author && $date ) { ?>
 							<span id="separator">
 								<i class="ion ion-ios-circle-filled"></i>
 							</span>
-						<?php endif; ?>
+						<?php } ?>
 
 						<!-- Post date -->
-						<?php if ( $date ) : ?>
+						<?php if ( $date ) { ?>
 							<span class="post-date">
 								<?php echo esc_html( $date ); ?>
 							</span>
-						<?php endif; ?>
+						<?php } ?>
 
 					</div>
 				</div>
 
 				<!-- Image object -->
-				<?php if ( $image ) : ?>
+				<?php if ( $image ) { ?>
 					<figure itemscope itemtype="http://schema.org/ImageObject">
 						<meta itemprop="logo" content="<?php echo esc_attr( $image ); ?>"></meta>
 						<a itemprop="url" href="<?php echo get_the_permalink( $post->ID ); ?>" class="image" style="background-image: url( <?php echo esc_attr( $image ); ?> );"></a>
 					</figure>
-				<?php endif; ?>
+				<?php } ?>
 
 				<!-- Post excerpt -->
-				<?php if ( $post->post_excerpt ) : ?>
+				<?php if ( $post->post_excerpt ) { ?>
 					<summary class="excerpt">
 						<?php echo esc_html( $post->post_excerpt ); ?>
 					</summary>
-				<?php endif; ?>
+				<?php } ?>
 
 				<!-- Post content -->
-				<?php if ( $content ) : ?>
+				<?php if ( $content ) { ?>
 					<p class="content">
 						<?php echo esc_html( $content ); ?>
 					</p>
-				<?php endif; ?>
+				<?php } ?>
 
 				<!-- Read the post container -->
 				<div class="link-container">
@@ -96,7 +97,8 @@ $custom = new WP_Query( $args ); ?>
 				</div>
 
 			</article>
-		<?php endwhile; ?>
+
+		<?php } ?>
 		<?php wp_reset_postdata(); ?>
 
 		<!-- Archive Pagination -->
@@ -104,4 +106,4 @@ $custom = new WP_Query( $args ); ?>
 
 	</section>
 
-<?php endif; ?>
+<?php } ?>

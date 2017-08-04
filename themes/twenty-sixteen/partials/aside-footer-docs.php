@@ -3,7 +3,7 @@
  * Template for displaying the important documents in the footer.
  *
  * @package Vincent Ragosta - Twenty Sixteen
- * @since   0.1.0
+ * @since 0.1.0
  */
 ?>
 

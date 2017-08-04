@@ -3,7 +3,6 @@
  * Copyright (c) 2016; * Licensed GPL-2.0+ */
 'use strict';
 
-
 // TODO Move to text column plugin && make this an object
 ( function( $ ) {
 	jQuery( document ).ready( function() {
@@ -18,8 +17,8 @@
 	/**
 	 * Toggle widget display based on 'Columns To Display' select box option.
 	 *
-	 * @since  0.1.0
-	 * @uses   on()
+	 * @since 0.1.0
+	 * @uses on()
 	 * @return void
 	 */
 	function textColumnWidget( element ) {
@@ -29,21 +28,21 @@
 			var column = $( '.column' ),
 
 			// Column One
-			columnOne        = $( '.column.one' ),
-			columnOneTitle   = $( '.column.one input' ),
-			columnOneIcon    = $( '.column.one select' ),
+			columnOne = $( '.column.one' ),
+			columnOneTitle = $( '.column.one input' ),
+			columnOneIcon = $( '.column.one select' ),
 			columnOneContent = $( '.column.one textarea' ),
 
 			// Column Two
-			columnTwo        = $( '.column.two' ),
-			columnTwoTitle   = $( '.column.two input' ),
-			columnTwoIcon    = $( '.column.two select' ),
+			columnTwo = $( '.column.two' ),
+			columnTwoTitle = $( '.column.two input' ),
+			columnTwoIcon = $( '.column.two select' ),
 			columnTwoContent = $( '.column.two textarea' ),
 
 			// Column Three
-			columnThree        = $( '.column.three' ),
-			columnThreeTitle   = $( '.column.three input' ),
-			columnThreeIcon    = $( '.column.three select' ),
+			columnThree = $( '.column.three' ),
+			columnThreeTitle = $( '.column.three input' ),
+			columnThreeIcon = $( '.column.three select' ),
 			columnThreeContent = $( '.column.three textarea' );
 
 			// Adjust display of widget based on column value.
@@ -88,6 +87,7 @@
 				columnTwo.show();
 				columnThree.show();
 			}
+
 		} );
 	};
 } )( jQuery );

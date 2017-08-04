@@ -3,8 +3,8 @@
  * Main header navigation for both desktop and mobile designs.
  *
  * @package Vincent Ragosta - Twenty Sixteen
- * @since   0.1.0
- * @uses    get_template_part(), do_shortcode()
+ * @since 0.1.0
+ * @uses get_template_part(), do_shortcode()
  */
 ?>
 

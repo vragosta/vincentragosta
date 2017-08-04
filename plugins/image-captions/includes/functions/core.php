@@ -1,13 +1,12 @@
 <?php
 
-namespace image_captions\Twenty_Sixteen\Core;
+namespace ImageCaptions\Functions\Core;
 
 /**
  * Set up image captions defaults and register supported WordPress features.
  *
- * @since  0.1.0
- * @param  void
- * @uses   add_action(), $n()
+ * @since 0.1.0
+ * @uses add_action(), $n()
  * @return void
  */
 function setup() {
@@ -17,15 +16,14 @@ function setup() {
 
 	add_action( 'wp_enqueue_scripts', $n( 'image_captions_scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'image_captions_styles' ) );
-	add_action( 'widgets_init',       $n( 'widgets' ) );
+	add_action( 'widgets_init', $n( 'widgets' ) );
 }
 
 /**
  * Enqueue scripts for front-end.
  *
- * @since  0.1.0
- * @param  void
- * @uses   wp_enqueue_script()
+ * @since 0.1.0
+ * @uses wp_enqueue_script()
  * @return void
  */
 function image_captions_scripts() {
@@ -42,9 +40,8 @@ add_action( 'wp_enqueue_scripts', 'image_captions_scripts', 99 );
 /**
  * Enqueue styles for front-end.
  *
- * @since  0.1.0
- * @param  void
- * @uses   wp_enqueue_style()
+ * @since 0.1.0
+ * @uses wp_enqueue_style()
  * @return void
  */
 function image_captions_styles() {
@@ -104,19 +101,15 @@ function image_captions_styles() {
 		IMAGE_CAPTIONS_VERSION
 	);
 }
-add_action( 'wp_enqueue_scripts', 'image_captions_styles', 99 );
 
 /**
  * Register custom widgets for back-end.
  *
- * @since  0.1.0
- * @param  void
- * @uses   register_widget()
+ * @since 0.1.0
+ * @uses register_widget()
  * @return void
  */
 function widgets() {
 	register_widget( 'News_And_Updates_Widget' );
 	register_widget( 'Featured_Page_Widget' );
 }
-
-?>

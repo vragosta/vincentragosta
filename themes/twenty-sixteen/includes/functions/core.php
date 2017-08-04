@@ -3,11 +3,10 @@
  * This file contains the necessary theme configuration functions.
  *
  * @package VincentRagosta - Twenty Sixteen
- * @since   0.1.0
+ * @since 0.1.0
  */
 
-// namespace vincentragosta_com\Twenty_Sixteen\Core;
-namespace VincentRagosta\TwentySixteen\Core;
+namespace VincentRagosta\Functions\Core;
 
 /**
  * Allows use of multiple post thumbnails plugin in this file
@@ -18,8 +17,8 @@ use \MultiPostThumbnails;
 /**
  * Set up theme defaults and register supported WordPress features.
  *
- * @since  0.1.0
- * @uses   add_action()
+ * @since 0.1.0
+ * @uses add_action()
  * @return void
  */
 function setup() {
@@ -27,24 +26,25 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
-	add_action( 'after_setup_theme',     $n( 'vincentragosta_setup' ) );
-	add_action( 'wp_enqueue_scripts',    $n( 'scripts' ) );
-	add_action( 'wp_enqueue_scripts',    $n( 'styles' ) );
+	add_action( 'after_setup_theme', $n( 'vincentragosta_setup' ) );
+	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
+	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'admin_enqueue_scripts', $n( 'admin_styles' ) );
 	add_action( 'admin_enqueue_scripts', $n( 'admin_scripts' ) );
-	add_action( 'widgets_init',          $n( 'sidebars' ) );
-	add_action( 'widgets_init',          $n( 'widgets' ) );
+	add_action( 'widgets_init', $n( 'sidebars' ) );
+	add_action( 'widgets_init', $n( 'widgets' ) );
 }
 
 /**
  * Declare theme support.
  *
- * @since  0.1.0
- * @uses   add_theme_support(), set_post_thumbnail_size(), add_image_size(), and add_post_type_support(), show_admin_bar()
+ * @since 0.1.0
+ * @uses add_theme_support(), set_post_thumbnail_size(), add_image_size(), and add_post_type_support(), show_admin_bar()
  * @return void
  */
 function vincentragosta_setup() {
-	// Add RSS feed links to <head> for posts and comments.
+
+	# Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
 
 	/**
@@ -55,11 +55,8 @@ function vincentragosta_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-	// Enable support for Post Thumbnails, and declare two sizes.
+	# Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support( 'post-thumbnails' );
-
-	// TODO is this necessary?
-	set_post_thumbnail_size( 672, 372, true );
 
 	/**
 	 * Switch default core markup for search form, comment form, and comments
@@ -73,21 +70,19 @@ function vincentragosta_setup() {
 		'caption',
 	) );
 
-	// Add excerpt support to...
+	# Add excerpt support to...
 	add_post_type_support( 'page', 'excerpt' );
 
-	// If set to 'false', the admin bar will not display on front end.
+	# If set to 'false', the admin bar will not display on front end.
 	show_admin_bar( false );
 
-	// Add additional images to any post type.
+	# Add additional images to any post type.
 	if ( class_exists( 'MultiPostThumbnails' ) ) {
-
 		new MultiPostThumbnails( array(
 			'label'     => __( 'Cover Image', 'vincentragosta_com' ),
 			'id'        => 'cover-image',
 			'post_type' => 'project'
 		) );
-
 	}
 
 }
@@ -95,8 +90,8 @@ function vincentragosta_setup() {
 /**
  * Enqueue scripts for front-end.
  *
- * @since  0.1.0
- * @uses   wp_register_script(), p_enqueue_script(), wp_localize_script()
+ * @since 0.1.0
+ * @uses wp_register_script(), p_enqueue_script(), wp_localize_script()
  * @return void
  */
 function scripts() {
@@ -118,22 +113,22 @@ function scripts() {
 
 	wp_localize_script(
 		'vincentragosta_com',
-		'VincentRagosta', [
+		'VincentRagosta', array(
 			'themeUrl' => VINCENTRAGOSTA_COM_TEMPLATE_URL,
-			'options'  => [
+			'options'  => array(
 				'apiUrl'  => home_url( '/wp-json/v1' ),
 				'homeUrl' => home_url(),
 				'nonce'   => wp_create_nonce( 'wp_rest' ),
-			]
-		]
+			)
+		)
 	);
 }
 
 /**
  * Enqueue styles for front-end.
  *
- * @since  0.1.0
- * @uses   wp_register_style(), wp_enqueue_style()
+ * @since 0.1.0
+ * @uses wp_register_style(), wp_enqueue_style()
  * @return void
  */
 function styles() {
@@ -214,25 +209,25 @@ function styles() {
 		VINCENTRAGOSTA_COM_VERSION
 	);
 
-	// Enqueue the single styles if on the single template.
-	if ( is_single() ) :
+	# Enqueue the single styles if on the single template.
+	if ( is_single() ) {
 		wp_enqueue_style(
 			'single',
 			VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---single.css",
 			array(),
 			VINCENTRAGOSTA_COM_VERSION
 		);
-	endif;
+	}
 
-	// Enqueue the archive styles if on the archive template ( portfolio page ).
-	if ( is_page( 'portfolio' ) || is_home() ) :
+	# Enqueue the archive styles if on the archive template ( portfolio page ).
+	if ( is_page( 'portfolio' ) || is_home() ) {
 		wp_enqueue_style(
 			'archive',
 			VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---archive.css",
 			array(),
 			VINCENTRAGOSTA_COM_VERSION
 		);
-	endif;
+	}
 
 	if ( is_page( 'contact' ) ) {
 		wp_enqueue_style(
@@ -243,14 +238,14 @@ function styles() {
 		);
 	}
 
-	// if ( is_page( 'about' ) ) {
-	// 	wp_enqueue_style(
-	// 		'about',
-	// 		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---about.css",
-	// 		array(),
-	// 		VINCENTRAGOSTA_COM_VERSION
-	// 	);
-	// }
+	# if ( is_page( 'about' ) ) {
+	# 	wp_enqueue_style(
+	# 		'about',
+	# 		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---about.css",
+	# 		array(),
+	# 		VINCENTRAGOSTA_COM_VERSION
+	# 	);
+	# }
 
 	wp_enqueue_style(
 		'vincentragosta_com',
@@ -263,8 +258,8 @@ function styles() {
 /**
  * Allows for custom CSS in wp-admin.
  *
- * @since  0.1.0
- * @uses   wp_enqueue_style()
+ * @since 0.1.0
+ * @uses wp_enqueue_style()
  * @return void
  */
 function admin_styles() {
@@ -279,8 +274,8 @@ function admin_styles() {
 /**
  * Allows for custom javascript in wp-admin.
  *
- * @since  0.1.0
- * @uses   wp_enqueue_script()
+ * @since 0.1.0
+ * @uses wp_enqueue_script()
  * @return void
  */
 function admin_scripts() {
@@ -296,8 +291,8 @@ function admin_scripts() {
 /**
  * Register sidebars for back-end.
  *
- * @since  0.1.0
- * @uses   __(), register_sidebar()
+ * @since 0.1.0
+ * @uses __(), register_sidebar()
  * @return void
  */
 function sidebars() {
@@ -450,8 +445,8 @@ function sidebars() {
 /**
  * Register custom widgets for back-end.
  *
- * @since  0.1.0
- * @uses   register_widget()
+ * @since 0.1.0
+ * @uses register_widget()
  * @return void
  */
 function widgets() {

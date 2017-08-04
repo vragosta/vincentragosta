@@ -3,8 +3,8 @@
  * Template for the mobile menu.
  *
  * @package Vincent Ragosta - Twenty Sixteen
- * @since   0.1.0
- * @uses    get_template_part()
+ * @since 0.1.0
+ * @uses get_template_part()
  */
 ?>
 

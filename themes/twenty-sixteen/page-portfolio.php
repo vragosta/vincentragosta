@@ -3,19 +3,19 @@
  * Template for displaying the portfolio page.
  *
  * @package Vincent Ragosta - Twenty Sixteen
- * @since   0.1.0
+ * @since 0.1.0
  */
 
-	get_header(); ?>
+namespace VincentRagosta;
 
-	<main id="portfolio" class="archive project">
+get_header(); ?>
 
-		<!-- TODO -->
-		<?php get_template_part( 'partials/aside', 'excerpt' ); ?>
+<main id="portfolio" class="archive project">
 
-		<!-- TODO -->
-		<?php get_template_part( 'partials/content', 'archive-project' ); ?>
+	<?php get_template_part( 'partials/aside', 'excerpt' ); ?>
 
-	</main>
+	<?php get_template_part( 'partials/content', 'archive-project' ); ?>
+
+</main>
 
 <?php get_footer(); ?>

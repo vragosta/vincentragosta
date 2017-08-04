@@ -7,7 +7,7 @@
  * @since   0.1.0
  */
 
-namespace VincentRagosta\TwentySixteen\Essentials;
+namespace VincentRagosta\Functions\Essentials;
 
 /**
  * Register supported WordPress features.
@@ -21,7 +21,7 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
-	// Action Hooks
+	# Action Hooks
 	add_action( 'pre_get_posts', $n( 'update_blog_posts_per_page' ) );
 }
 

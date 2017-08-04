@@ -14,8 +14,8 @@
 		 * When the dropdown button is clicked ( hamburger button ),
 		 * toggle mobile menu with standard site menu.
 		 *
-		 * @since  0.1.0
-		 * @uses   removeClass(), addClass()
+		 * @since 0.1.0
+		 * @uses removeClass(), addClass()
 		 * @return void
 		 */
 		setupMenuToggle : function() {
@@ -43,8 +43,8 @@
 		/**
 		 * When the page is loaded, remove the class 'unloaded' from the menu.
 		 *
-		 * @since  0.1.0
-		 * @uses   removeClass(), addClass()
+		 * @since 0.1.0
+		 * @uses removeClass(), addClass()
 		 * @return void
 		 */
 		loadElements : function() {
@@ -55,8 +55,8 @@
 		/**
 		 * VincentRagosta class initializer.
 		 *
-		 * @since  0.1.0
-		 * @uses   menuFadeIn(), setupMenuToggle()
+		 * @since 0.1.0
+		 * @uses menuFadeIn(), setupMenuToggle()
 		 * @return void
 		 */
 		init: function() {
