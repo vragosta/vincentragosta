@@ -9,6 +9,11 @@
 // Blocking direct access to this file.
 defined( 'ABSPATH' ) || exit;
 
+// Set widget specific defines.
+define( 'BOOTSTRAP_GRID_COL_MAX', 12 );
+define( 'POSTS_PER_PAGE', 3 );
+define( 'POST_TYPE', 'post' );
+
 /**
  * Returns the latest three posts of the custom post type entered.
  *
@@ -34,9 +39,10 @@ class News_And_Updates_Widget extends WP_Widget {
 	 * @return void
 	 */
 	public function form( $instance ) {
-		$title     = ( ! empty( $instance['title'] ) ) ? $instance['title'] : '';
-		$post_type = ( ! empty( $instance['post_type'] ) ) ? $instance['post_type'] : '';
-		$ids       = ( ! empty( $instance['ids'] ) ) ? $instance['ids'] : ''; ?>
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : '';
+		$post_type = ! empty( $instance['post_type'] ) ? $instance['post_type'] : '';
+		$ids = ! empty( $instance['ids'] ) ? $instance['ids'] : ''; ?>
+
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php echo __( 'Title:', 'vincentragosta' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
@@ -66,10 +72,10 @@ class News_And_Updates_Widget extends WP_Widget {
 	 * @return array $instance     updated safe values to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
-		$instance              = array();
-		$instance['title']     = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
+		$instance = array();
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
 		$instance['post_type'] = ( ! empty( $new_instance['post_type'] ) ) ? sanitize_text_field( $new_instance['post_type'] ) : '';
-		$instance['ids']       = ( ! empty( $new_instance['ids'] ) ) ? sanitize_text_field( $new_instance['ids'] ) : '';
+		$instance['ids'] = ( ! empty( $new_instance['ids'] ) ) ? sanitize_text_field( $new_instance['ids'] ) : '';
 
 		return $instance;
 	}
@@ -87,11 +93,6 @@ class News_And_Updates_Widget extends WP_Widget {
 		// Define global variables.
 		global $post;
 
-		// Set widget specific defines.
-		define( 'BOOTSTRAP_GRID_COL_MAX', 12 );
-		define( 'POSTS_PER_PAGE', 3 );
-		define( 'POST_TYPE', 'post' );
-
 		// If the 'before_widget' field is set, display it.
 		echo $args['before_widget'];
 
@@ -101,12 +102,14 @@ class News_And_Updates_Widget extends WP_Widget {
 		}
 
 		// If 'ids' exists, remove all spaces from the string, and explode the string by the delimeter ','.
-		if ( $instance['ids'] )
+		if ( $instance['ids'] ) {
 			$post__in = explode( ',', str_replace( ' ', '', $instance['ids'] ) );
+		}
 
 		// If $post__in exists, create the $post__in_count based off the size of the exploded 'ids' array.
-		if ( $post__in )
+		if ( $post__in ) {
 			$post__in_count = count( $post__in );
+		}
 
 		// If $post__in exists, set $bootstrap_grid_col to $post__in_count, otherwise set it to 3.
 		$bootstrap_grid_col = ( $post__in_count ) ? $post__in_count : POSTS_PER_PAGE;
@@ -125,9 +128,9 @@ class News_And_Updates_Widget extends WP_Widget {
 
 		// Create arguments array for query.
 		$args = array(
-			'post_type'      => $post_type,
+			'post_type' => $post_type,
 			'posts_per_page' => $posts_per_page,
-			'post__in'       => $post__in
+			'post__in' => $post__in
 		);
 
 		// Initialize query.

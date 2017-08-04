@@ -6,7 +6,6 @@
  * @since   0.1.0
  */
 
-// namespace vincentragosta_com\Twenty_Sixteen\Core;
 namespace VincentRagosta\TwentySixteen\Core;
 
 /**

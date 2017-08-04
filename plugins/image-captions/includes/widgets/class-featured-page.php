@@ -35,18 +35,12 @@ class Featured_Page_Widget extends WP_Widget {
 	 * @return void
 	 */
 	public function form( $instance ) {
-		$id          = ( ! empty( $instance['id'] ) ) ? $instance['id'] : '';
-		// $button_text = ( ! empty( $instance['button_text'] ) ) ? $instance['button_text'] : ''; ?>
+		$id = ( ! empty( $instance['id'] ) ) ? $instance['id'] : ''; ?>
 
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>"><?php echo __( 'ID:', 'vincentragosta' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'id' ) ); ?>" type="text" value="<?php echo esc_attr( $id ); ?>">
-		</p>
-		<!-- <p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'button_text' ) ); ?>"><?php echo __( 'Button Text:', 'vincentragosta' ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'button_text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'button_text' ) ); ?>" type="text" value="<?php echo esc_attr( $button_text ); ?>">
-		</p> -->
-		<?php
+		</p><?php
 	}
 
 	/**
@@ -58,9 +52,8 @@ class Featured_Page_Widget extends WP_Widget {
 	 * @return array $instance updated safe values to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
-		$instance                = array();
-		$instance['id']          = ( ! empty( $new_instance['id'] ) ) ? $new_instance['id'] : '';
-		// $instance['button_text'] = ( ! empty( $new_instance['button_text'] ) ) ? strip_tags( $new_instance['button_text'] ) : '';
+		$instance = array();
+		$instance['id'] = ( ! empty( $new_instance['id'] ) ) ? $new_instance['id'] : '';
 
 		return $instance;
 	}
@@ -78,12 +71,9 @@ class Featured_Page_Widget extends WP_Widget {
 		// Get the 'before_widget' value from the sidebar.
 		echo $args['before_widget'];
 
-		// Get the 'button_text' value from the widget.
-		// $button_text = $instance['button_text'];
-
 		// Assign the default arguments to the query.
 		$args = array(
-			'post_type'      => 'page',
+			'post_type' => 'page',
 			'posts_per_page' => 1
 		);
 

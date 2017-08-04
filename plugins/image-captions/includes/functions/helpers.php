@@ -1,6 +1,6 @@
 <?php
 
-namespace ImageCaptions\TwentySixteen\Helpers;
+namespace ImageCaptions\Functions\Helpers;
 use \MultiPostThumbnails;
 
 /**
