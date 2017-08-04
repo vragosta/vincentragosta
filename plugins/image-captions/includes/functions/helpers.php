@@ -1,7 +1,6 @@
 <?php
 
-namespace image_captions\Twenty_Sixteen\Helpers;
-
+namespace ImageCaptions\TwentySixteen\Helpers;
 use \MultiPostThumbnails;
 
 /**
@@ -17,15 +16,17 @@ use \MultiPostThumbnails;
 function set_default_properties( $atts ) {
 	global $post;
 
-	// If the attribute 'id' is set on the shortcode, set the post object to the post entered.
-	if ( $atts['id'] )
+	# If the attribute 'id' is set on the shortcode, set the post object to the post entered.
+	if ( $atts['id'] ) {
 		$post = get_post( $atts['id'] );
+	}
 
-	// If we are on the blog template, get the blog template ID.
-	if ( is_home() )
+	# If we are on the blog template, get the blog template ID.
+	if ( is_home() ) {
 		$post = get_post( get_option( 'page_for_posts' ) );
+	}
 
-	// Set up variable to check if static exists as a class.
+	# Set up variable to check if static exists as a class.
 	$is_static = in_array( 'static', explode( ' ', $atts['class'] ), true );
 
 	$defaults = ( object ) array(
@@ -76,15 +77,15 @@ function set_cover_image( $id ) {
  * @return array $featured_image_classes array of default class values for the featured image element.
  */
 function set_featured_image_classes( $is_static, $classes ) {
-	// Define local variables.
+	# Define local variables.
 	$featured_image_classes = array();
 
-	// If classes are passed in from the shortcode itself, explode into array.
+	# If classes are passed in from the shortcode itself, explode into array.
 	if ( $classes ) :
 		$featured_image_classes = explode( ' ', $classes );
 	endif;
 
-	// If the shortcode contains the class 'static', add different classes to the classes array.
+	# If the shortcode contains the class 'static', add different classes to the classes array.
 	if ( $is_static ) :
 		array_push( $featured_image_classes, 'aspect-ratio-10x4', 'image-min-height' );
 	else :
@@ -116,7 +117,13 @@ function set_button_text( $is_static, $post ) {
  * @return string void text for header.
  */
 function set_header_text( $post ) {
-	return ( get_post_meta( $post->ID, 'shorthand_header', true ) ) ? get_post_meta( $post->ID, 'shorthand_header', true ) : $post->post_title;
+	if ( $post->post_type === 'page' ) {
+		$header_text = ( get_post_meta( $post->ID, 'alt_title', true ) ) ? get_post_meta( $post->ID, 'alt_title', true ) : $post->post_title;
+	} else if ( $post->post_type === 'project' ) {
+		$header_text = ( get_post_meta( $post->ID, 'shorthand_header', true ) ) ? get_post_meta( $post->ID, 'shorthand_header', true ) : $post->post_title;
+	}
+
+	return $header_text;
 }
 
 /**
@@ -134,12 +141,10 @@ function set_sub_header_text( $post ) {
 		$sub_header = date_format( date_create( $post->post_date ), 'F jS, Y' );
 	else:
 
-		// For 'projects' get the category name.
+		# For 'projects' get the category name.
 		$category = reset( get_the_category( $post->ID ) );
 		$sub_header = $category->name;
 	endif;
 
 	return $sub_header;
 }
-
-?>

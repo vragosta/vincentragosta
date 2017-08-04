@@ -13,7 +13,6 @@
 
 		<?php get_template_part( 'partials/aside-pre', 'footer' ); ?>
 
-		<!-- TODO -->
 		<?php get_template_part( 'partials/content', 'menu' ); ?>
 
 		<section class="col-flex-center">
