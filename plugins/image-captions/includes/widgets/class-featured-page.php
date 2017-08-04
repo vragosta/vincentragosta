@@ -6,7 +6,7 @@
  * @since   0.1.0
  */
 
-// Blocking direct access to this file.
+# Blocking direct access to this file.
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -68,19 +68,19 @@ class Featured_Page_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		global $post;
 
-		// Get the 'before_widget' value from the sidebar.
+		# Get the 'before_widget' value from the sidebar.
 		echo $args['before_widget'];
 
-		// Assign the default arguments to the query.
+		# Assign the default arguments to the query.
 		$args = array(
 			'post_type' => 'page',
 			'posts_per_page' => 1
 		);
 
-		// If the ID is set add it to the query, otherwise it will return the latest project/post.
+		# If the ID is set add it to the query, otherwise it will return the latest project/post.
 		( ! empty( $instance['id'] ) ) ? $args['post__in'] = array( $instance['id'] ) : '';
 
-		// Initialize query.
+		# Initialize query.
 		$query = new WP_Query( $args ); ?>
 
 		<div id="featured-page" class="custom-widget full-width">

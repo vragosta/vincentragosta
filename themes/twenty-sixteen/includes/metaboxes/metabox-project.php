@@ -1,6 +1,6 @@
 <?php
 
-namespace VincentRagosta\Admin\MetaBoxes;
+namespace VincentRagosta\MetaBoxes;
 
 class ProjectMetabox {
 
@@ -41,7 +41,7 @@ class ProjectMetabox {
 	 */
 	function vincentragosta_project_callback( $post ) {
 
-		// Add a nonce field so we can check for it later.
+		# Add a nonce field so we can check for it later.
 		wp_nonce_field( 'vincentragosta_project_save_data', 'vincentragosta_nonce' );
 
 		/**
@@ -101,33 +101,33 @@ class ProjectMetabox {
 		 * We need to verify this came from our screen and with proper authorization,
 		 * because the save_post action can be triggered at other times.
 		 */
-		// Check if our nonce is set.
+		# Check if our nonce is set.
 		if ( ! isset( $_POST['vincentragosta_nonce'] ) ) {
 			return;
 		}
 
-		// Verify that the nonce is valid.
+		# Verify that the nonce is valid.
 		if ( ! wp_verify_nonce( $_POST['vincentragosta_nonce'], 'vincentragosta_project_save_data' ) ) {
 			return;
 		}
 
-		// If this is an autosave, our form has not been submitted, so we don't want to do anything.
+		# If this is an autosave, our form has not been submitted, so we don't want to do anything.
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 			return;
 		}
 
-		// Check the user's permissions.
+		# Check the user's permissions.
 		if ( ! current_user_can( 'edit_page', $post_id ) ) {
 			return;
 		}
 
-		// Sanitize user input.
+		# Sanitize user input.
 		$technology = sanitize_text_field( $_POST['technology'] );
 		$testimony = sanitize_text_field( $_POST['testimony'] );
 		$project_link = sanitize_text_field( $_POST['project_link'] );
 		$project_text = sanitize_text_field( $_POST['project_text'] );
 
-		// Update the meta field in the database.
+		# Update the meta field in the database.
 		update_post_meta( $post_id, 'technology', $technology );
 		update_post_meta( $post_id, 'testimony', $testimony );
 		update_post_meta( $post_id, 'project_link', $project_link );

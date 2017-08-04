@@ -7,7 +7,7 @@
  * @uses    esc_attr(), esc_html()
  */
 
-// Get the 'phone' number.
+# Get the 'phone' number.
 $phone = get_user_meta( VINCENTRAGOSTA_SITE_ADMIN, 'phone', true ); ?>
 
 <?php if ( $phone ) : ?>

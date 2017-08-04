@@ -9,7 +9,10 @@
  *     CREATABLE
  */
 
-// Blocking direct access to this file.
+namespace VincentRagosta\Api;
+use \WP_REST_Controller;
+
+# Blocking direct access to this file.
 defined( 'ABSPATH' ) || exit;
 
 class WP_REST_Contact extends WP_REST_Controller {
@@ -23,12 +26,12 @@ class WP_REST_Contact extends WP_REST_Controller {
 	 */
 	public function register_routes() {
 		add_action( 'rest_api_init', function() {
-			register_rest_route( 'v1', 'contact', [
-				[
+			register_rest_route( 'v1', 'contact', array(
+				array(
 					'methods'  => WP_REST_Server::CREATABLE,
 					'callback' => [ $this, 'send_email' ]
-				]
-			] );
+				)
+			) );
 		} );
 	}
 
@@ -46,7 +49,7 @@ class WP_REST_Contact extends WP_REST_Controller {
 			return new WP_REST_Response( 'There was an error with the request.', 500 );
 		endif;
 
-		$to      = 'vincentpasqualeragosta@gmail.com';
+		$to = 'vincentpasqualeragosta@gmail.com';
 		$subject = 'Vincentragosta.com Contact Request';
 		$message = $sender->message;
 

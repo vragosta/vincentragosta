@@ -6,10 +6,10 @@
  * @since   0.1.0
  */
 
-// Blocking direct access to this file.
+# Blocking direct access to this file.
 defined( 'ABSPATH' ) || exit;
 
-// Set widget specific defines.
+# Set widget specific defines.
 define( 'BOOTSTRAP_GRID_COL_MAX', 12 );
 define( 'POSTS_PER_PAGE', 3 );
 define( 'POST_TYPE', 'post' );
@@ -90,50 +90,50 @@ class News_And_Updates_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 
-		// Define global variables.
+		# Define global variables.
 		global $post;
 
-		// If the 'before_widget' field is set, display it.
+		# If the 'before_widget' field is set, display it.
 		echo $args['before_widget'];
 
-		// If the 'title' field of the widget is not empty, display it.
+		# If the 'title' field of the widget is not empty, display it.
 		if ( ! empty( $instance['title'] ) ) {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 		}
 
-		// If 'ids' exists, remove all spaces from the string, and explode the string by the delimeter ','.
+		# If 'ids' exists, remove all spaces from the string, and explode the string by the delimeter ','.
 		if ( $instance['ids'] ) {
 			$post__in = explode( ',', str_replace( ' ', '', $instance['ids'] ) );
 		}
 
-		// If $post__in exists, create the $post__in_count based off the size of the exploded 'ids' array.
+		# If $post__in exists, create the $post__in_count based off the size of the exploded 'ids' array.
 		if ( $post__in ) {
 			$post__in_count = count( $post__in );
 		}
 
-		// If $post__in exists, set $bootstrap_grid_col to $post__in_count, otherwise set it to 3.
+		# If $post__in exists, set $bootstrap_grid_col to $post__in_count, otherwise set it to 3.
 		$bootstrap_grid_col = ( $post__in_count ) ? $post__in_count : POSTS_PER_PAGE;
 
-		// If 'posts_per_page' is not set, default 3.
+		# If 'posts_per_page' is not set, default 3.
 		$posts_per_page = ( $post__in_count ) ? $post__in_count : POSTS_PER_PAGE;
 
-		// If 'post_type' is not set, default 'post'.
+		# If 'post_type' is not set, default 'post'.
 		$post_type = ( $instance['post_type'] ) ? $instance['post_type'] : POST_TYPE;
 
-		// Set bootstrap grid, divide 12 ( max bootstrap col size ) by the value of $bootstrap_grid_col.
+		# Set bootstrap grid, divide 12 ( max bootstrap col size ) by the value of $bootstrap_grid_col.
 		$bootstrap_class = 'col-sm-' . ( BOOTSTRAP_GRID_COL_MAX / $bootstrap_grid_col );
 
-		// Set the href for the button.
+		# Set the href for the button.
 		$button_href = ( $instance['post_type'] !== 'post' ) ? home_url( '/portfolio/' ) : home_url( '/blog/' ) ;
 
-		// Create arguments array for query.
+		# Create arguments array for query.
 		$args = array(
 			'post_type' => $post_type,
 			'posts_per_page' => $posts_per_page,
 			'post__in' => $post__in
 		);
 
-		// Initialize query.
+		# Initialize query.
 		$query = new WP_Query( $args ); ?>
 
 		<div id="news-and-updates" class="custom-widget full-width">

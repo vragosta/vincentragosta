@@ -17,7 +17,7 @@ function setup() {
 
 	add_action( 'wp_enqueue_scripts', $n( 'image_captions_scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'image_captions_styles' ) );
-	add_action( 'widgets_init',       $n( 'widgets' ) );
+	add_action( 'widgets_init', $n( 'widgets' ) );
 }
 
 /**

@@ -6,7 +6,7 @@
  * @since   0.1.0
  */
 
-namespace VincentRagosta\TwentySixteen\Core;
+namespace VincentRagosta\Functions\Core;
 
 /**
  * Allows use of multiple post thumbnails plugin in this file
@@ -26,13 +26,13 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
-	add_action( 'after_setup_theme',     $n( 'vincentragosta_setup' ) );
-	add_action( 'wp_enqueue_scripts',    $n( 'scripts' ) );
-	add_action( 'wp_enqueue_scripts',    $n( 'styles' ) );
+	add_action( 'after_setup_theme', $n( 'vincentragosta_setup' ) );
+	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
+	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'admin_enqueue_scripts', $n( 'admin_styles' ) );
 	add_action( 'admin_enqueue_scripts', $n( 'admin_scripts' ) );
-	add_action( 'widgets_init',          $n( 'sidebars' ) );
-	add_action( 'widgets_init',          $n( 'widgets' ) );
+	add_action( 'widgets_init', $n( 'sidebars' ) );
+	add_action( 'widgets_init', $n( 'widgets' ) );
 }
 
 /**
@@ -43,7 +43,7 @@ function setup() {
  * @return void
  */
 function vincentragosta_setup() {
-	// Add RSS feed links to <head> for posts and comments.
+	# Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
 
 	/**
@@ -54,11 +54,8 @@ function vincentragosta_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-	// Enable support for Post Thumbnails, and declare two sizes.
+	# Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support( 'post-thumbnails' );
-
-	// TODO is this necessary?
-	set_post_thumbnail_size( 672, 372, true );
 
 	/**
 	 * Switch default core markup for search form, comment form, and comments
@@ -72,13 +69,13 @@ function vincentragosta_setup() {
 		'caption',
 	) );
 
-	// Add excerpt support to...
+	# Add excerpt support to...
 	add_post_type_support( 'page', 'excerpt' );
 
-	// If set to 'false', the admin bar will not display on front end.
+	# If set to 'false', the admin bar will not display on front end.
 	show_admin_bar( false );
 
-	// Add additional images to any post type.
+	# Add additional images to any post type.
 	if ( class_exists( 'MultiPostThumbnails' ) ) {
 
 		new MultiPostThumbnails( array(
@@ -117,14 +114,14 @@ function scripts() {
 
 	wp_localize_script(
 		'vincentragosta_com',
-		'VincentRagosta', [
+		'VincentRagosta', array(
 			'themeUrl' => VINCENTRAGOSTA_COM_TEMPLATE_URL,
-			'options'  => [
+			'options'  => array(
 				'apiUrl'  => home_url( '/wp-json/v1' ),
 				'homeUrl' => home_url(),
 				'nonce'   => wp_create_nonce( 'wp_rest' ),
-			]
-		]
+			)
+		)
 	);
 }
 
@@ -213,7 +210,7 @@ function styles() {
 		VINCENTRAGOSTA_COM_VERSION
 	);
 
-	// Enqueue the single styles if on the single template.
+	# Enqueue the single styles if on the single template.
 	if ( is_single() ) :
 		wp_enqueue_style(
 			'single',
@@ -223,7 +220,7 @@ function styles() {
 		);
 	endif;
 
-	// Enqueue the archive styles if on the archive template ( portfolio page ).
+	# Enqueue the archive styles if on the archive template ( portfolio page ).
 	if ( is_page( 'portfolio' ) || is_home() ) :
 		wp_enqueue_style(
 			'archive',
@@ -242,14 +239,14 @@ function styles() {
 		);
 	}
 
-	// if ( is_page( 'about' ) ) {
-	// 	wp_enqueue_style(
-	// 		'about',
-	// 		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---about.css",
-	// 		array(),
-	// 		VINCENTRAGOSTA_COM_VERSION
-	// 	);
-	// }
+	# if ( is_page( 'about' ) ) {
+	# 	wp_enqueue_style(
+	# 		'about',
+	# 		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---about.css",
+	# 		array(),
+	# 		VINCENTRAGOSTA_COM_VERSION
+	# 	);
+	# }
 
 	wp_enqueue_style(
 		'vincentragosta_com',

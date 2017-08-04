@@ -7,19 +7,19 @@
  * @uses    get_query_var(), do_shortcode(), wp_reset_postdata()
  */
 
-// Create a count variable.
+# Create a count variable.
 $count = 0;
 
-// Get the page variable if one is set.
+# Get the page variable if one is set.
 $paged = get_query_var( 'paged' );
 
-// Create the arguements for the query.
+# Create the arguements for the query.
 $args = array(
 	'post_type' => 'project',
 	'paged'     => $paged
 );
 
-// Initialize the query.
+# Initialize the query.
 $custom = new WP_Query( $args ); ?>
 
 <?php if ( $custom->have_posts() ) : ?>

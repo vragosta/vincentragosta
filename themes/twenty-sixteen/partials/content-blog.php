@@ -7,16 +7,16 @@
  * @uses    get_query_var(), get_template_part(), wp_reset_postdata()
  */
 
-// Get the page variable if one is set.
+# Get the page variable if one is set.
 $paged = get_query_var( 'paged' );
 
-// Create the arguements for the query.
+# Create the arguements for the query.
 $args = array(
 	'post_type' => 'post',
 	'paged'     => $paged
 );
 
-// Initialize the query.
+# Initialize the query.
 $custom = new WP_Query( $args ); ?>
 
 <?php if ( $custom->have_posts() ) : ?>
@@ -25,9 +25,9 @@ $custom = new WP_Query( $args ); ?>
 
 			<!-- Define local variables -->
 			<?php $author  = get_user_by( 'id', $post->post_author ); ?>
-			<?php $image   = VincentRagosta\TwentySixteen\Helpers\get_featured_image( $post->ID ); ?>
-			<?php $date    = VincentRagosta\TwentySixteen\Helpers\format_date( $post->post_date, 'F jS, Y' ); ?>
-			<?php $content = VincentRagosta\TwentySixteen\Helpers\trim_string_by( 60, $post->post_content ); ?>
+			<?php $image   = VincentRagosta\Functions\Helpers\get_featured_image( $post->ID ); ?>
+			<?php $date    = VincentRagosta\Functions\Helpers\format_date( $post->post_date, 'F jS, Y' ); ?>
+			<?php $content = VincentRagosta\Functions\Helpers\trim_string_by( 60, $post->post_content ); ?>
 
 			<!-- Post category -->
 			<article class="post">

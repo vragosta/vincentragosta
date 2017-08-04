@@ -7,7 +7,7 @@
  * @since   0.1.0
  */
 
-namespace VincentRagosta\TwentySixteen\Helpers;
+namespace VincentRagosta\Functions\Helpers;
 
 /**
  * If the query permits pagination, display pagination controls.
@@ -20,10 +20,10 @@ namespace VincentRagosta\TwentySixteen\Helpers;
 function pagination( $query ) {
 	$total = $query->max_num_pages;
 
-	// Only bother with the rest if we have more than 1 page.
+	# Only bother with the rest if we have more than 1 page.
 	if ( $total > 1 ) :
 
-		// Get the current page.
+		# Get the current page.
 		if ( ! $current_page = get_query_var( 'paged' ) )
 			$current_page = 1;
 

@@ -1,16 +1,16 @@
 <?php
 
-namespace VincentRagosta\Admin\MetaBoxes;
+namespace VincentRagosta\MetaBoxes;
 
 class UserMetaBox {
 
 	function register() {
 
-		// Add fields and properly save meta if current user
+		# Add fields and properly save meta if current user
 		add_action( 'show_user_profile', array( $this, 'add_fields' ) );
 		add_action( 'personal_options_update', array( $this, 'save_fields' ) );
 
-		// Add fields and properly save meta if not current user
+		# Add fields and properly save meta if not current user
 		add_action( 'edit_user_profile', array( $this, 'add_fields' ) );
 		add_action( 'edit_user_profile_update', array( $this, 'save_fields' ) );
 
@@ -18,7 +18,7 @@ class UserMetaBox {
 
 	function add_fields( $user ) {
 
-		// Obtain social meta.
+		# Obtain social meta.
 		$facebook = get_user_meta( $user->ID, 'facebook', true );
 		$twitter = get_user_meta( $user->ID, 'twitter', true );
 		$instagram = get_user_meta( $user->ID, 'instagram', true );
@@ -79,7 +79,7 @@ class UserMetaBox {
 
 	function save_fields( $user_id ) {
 
-		// Check the user's permissions.
+		# Check the user's permissions.
 		if ( ! current_user_can( 'edit_user', $user_id ) )
 			return false;
 
