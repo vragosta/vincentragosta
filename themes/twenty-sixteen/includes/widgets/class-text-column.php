@@ -6,7 +6,7 @@
  * @since   0.1.0
  */
 
-// Blocking direct access to this file.
+# Blocking direct access to this file.
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -34,19 +34,20 @@ class Text_Column_Widget extends WP_Widget {
 	 * @return void
 	 */
 	public function form( $instance ) {
-		$title                = ( ! empty( $instance['title'] ) ) ? $instance['title'] : '';
-		$button_text          = ( ! empty( $instance['button_text'] ) ) ? $instance['button_text'] : '';
-		$button_link          = ( ! empty( $instance['button_link'] ) ) ? $instance['button_link'] : '';
-		$number_columns       = ( ! empty( $instance['number_columns'] ) ) ? $instance['number_columns'] : '';
-		$column_one_title     = ( ! empty( $instance['column_one_title'] ) ) ? $instance['column_one_title'] : '';
-		$column_one_icon      = ( ! empty( $instance['column_one_icon'] ) ) ? $instance['column_one_icon'] : '';
-		$column_one_content   = ( ! empty( $instance['column_one_content'] ) ) ? $instance['column_one_content'] : '';
-		$column_two_title     = ( ! empty( $instance['column_two_title'] ) ) ? $instance['column_two_title'] : '';
-		$column_two_icon      = ( ! empty( $instance['column_two_icon'] ) ) ? $instance['column_two_icon'] : '';
-		$column_two_content   = ( ! empty( $instance['column_two_content'] ) ) ? $instance['column_two_content'] : '';
-		$column_three_title   = ( ! empty( $instance['column_three_title'] ) ) ? $instance['column_three_title'] : '';
-		$column_three_icon    = ( ! empty( $instance['column_three_icon'] ) ) ? $instance['column_three_icon'] : '';
+		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : '';
+		$button_text = ( ! empty( $instance['button_text'] ) ) ? $instance['button_text'] : '';
+		$button_link = ( ! empty( $instance['button_link'] ) ) ? $instance['button_link'] : '';
+		$number_columns = ( ! empty( $instance['number_columns'] ) ) ? $instance['number_columns'] : '';
+		$column_one_title = ( ! empty( $instance['column_one_title'] ) ) ? $instance['column_one_title'] : '';
+		$column_one_icon = ( ! empty( $instance['column_one_icon'] ) ) ? $instance['column_one_icon'] : '';
+		$column_one_content = ( ! empty( $instance['column_one_content'] ) ) ? $instance['column_one_content'] : '';
+		$column_two_title = ( ! empty( $instance['column_two_title'] ) ) ? $instance['column_two_title'] : '';
+		$column_two_icon = ( ! empty( $instance['column_two_icon'] ) ) ? $instance['column_two_icon'] : '';
+		$column_two_content = ( ! empty( $instance['column_two_content'] ) ) ? $instance['column_two_content'] : '';
+		$column_three_title = ( ! empty( $instance['column_three_title'] ) ) ? $instance['column_three_title'] : '';
+		$column_three_icon = ( ! empty( $instance['column_three_icon'] ) ) ? $instance['column_three_icon'] : '';
 		$column_three_content = ( ! empty( $instance['column_three_content'] ) ) ? $instance['column_three_content'] : ''; ?>
+
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php echo __( 'Title:', 'vincentragosta' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
@@ -125,8 +126,7 @@ class Text_Column_Widget extends WP_Widget {
 				<label for="<?php echo esc_attr( $this->get_field_id( 'column_three_content' ) ); ?>"><?php echo __( 'Column Three Content:', 'vincentragosta' ); ?></label>
 				<textarea class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'column_three_content' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'column_three_content' ) ); ?>" type="text"><?php echo esc_textarea( $column_three_content ); ?></textarea>
 			</p>
-		</div>
-		<?php
+		</div><?php
 	}
 
 	/**
@@ -138,19 +138,19 @@ class Text_Column_Widget extends WP_Widget {
 	 * @return array $instance     Updated safe values to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
-		$instance                         = array();
-		$instance['title']                = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-		$instance['button_text']          = ( ! empty( $new_instance['button_text'] ) ) ? strip_tags( $new_instance['button_text'] ) : '';
-		$instance['button_link']          = ( ! empty( $new_instance['button_link'] ) ) ? strip_tags( $new_instance['button_link'] ) : '';
-		$instance['number_columns']       = ( ! empty( $new_instance['number_columns'] ) ) ? $new_instance['number_columns'] : '';
-		$instance['column_one_title']     = ( ! empty( $new_instance['column_one_title'] ) ) ? strip_tags( $new_instance['column_one_title'] ) : '';
-		$instance['column_one_icon']      = ( ! empty( $new_instance['column_one_icon'] ) ) ? $new_instance['column_one_icon'] : '';
-		$instance['column_one_content']   = ( ! empty( $new_instance['column_one_content'] ) ) ? strip_tags( $new_instance['column_one_content'] ) : '';
-		$instance['column_two_title']     = ( ! empty( $new_instance['column_two_title'] ) ) ? strip_tags( $new_instance['column_two_title'] ) : '';
-		$instance['column_two_icon']      = ( ! empty( $new_instance['column_two_icon'] ) ) ? $new_instance['column_two_icon'] : '';
-		$instance['column_two_content']   = ( ! empty( $new_instance['column_two_content'] ) ) ? strip_tags( $new_instance['column_two_content'] ) : '';
-		$instance['column_three_title']   = ( ! empty( $new_instance['column_three_title'] ) ) ? strip_tags( $new_instance['column_three_title'] ) : '';
-		$instance['column_three_icon']    = ( ! empty( $new_instance['column_three_icon'] ) ) ? $new_instance['column_three_icon'] : '';
+		$instance = array();
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		$instance['button_text'] = ( ! empty( $new_instance['button_text'] ) ) ? strip_tags( $new_instance['button_text'] ) : '';
+		$instance['button_link'] = ( ! empty( $new_instance['button_link'] ) ) ? strip_tags( $new_instance['button_link'] ) : '';
+		$instance['number_columns'] = ( ! empty( $new_instance['number_columns'] ) ) ? $new_instance['number_columns'] : '';
+		$instance['column_one_title'] = ( ! empty( $new_instance['column_one_title'] ) ) ? strip_tags( $new_instance['column_one_title'] ) : '';
+		$instance['column_one_icon'] = ( ! empty( $new_instance['column_one_icon'] ) ) ? $new_instance['column_one_icon'] : '';
+		$instance['column_one_content'] = ( ! empty( $new_instance['column_one_content'] ) ) ? strip_tags( $new_instance['column_one_content'] ) : '';
+		$instance['column_two_title'] = ( ! empty( $new_instance['column_two_title'] ) ) ? strip_tags( $new_instance['column_two_title'] ) : '';
+		$instance['column_two_icon'] = ( ! empty( $new_instance['column_two_icon'] ) ) ? $new_instance['column_two_icon'] : '';
+		$instance['column_two_content'] = ( ! empty( $new_instance['column_two_content'] ) ) ? strip_tags( $new_instance['column_two_content'] ) : '';
+		$instance['column_three_title'] = ( ! empty( $new_instance['column_three_title'] ) ) ? strip_tags( $new_instance['column_three_title'] ) : '';
+		$instance['column_three_icon'] = ( ! empty( $new_instance['column_three_icon'] ) ) ? $new_instance['column_three_icon'] : '';
 		$instance['column_three_content'] = ( ! empty( $new_instance['column_three_content'] ) ) ? strip_tags( $new_instance['column_three_content'] ) : '';
 
 		return $instance;
@@ -166,15 +166,16 @@ class Text_Column_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 
-		// Define global variables.
+		# Define global variables.
 		global $post;
 
-		// If the 'before_widget' field is set, display it.
+		# If the 'before_widget' field is set, display it.
 		echo $args['before_widget'];
 
-		// If the 'title' field of the widget is not empty, display it.
-		if ( ! empty( $instance['title'] ) )
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title']; ?>
+		# If the 'title' field of the widget is not empty, display it.
+		if ( ! empty( $instance['title'] ) ) {
+			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+		} ?>
 
 		<div id="text-column" class="custom-widget full-width">
 			<div class="column-container">

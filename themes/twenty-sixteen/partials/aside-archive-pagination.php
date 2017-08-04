@@ -9,5 +9,5 @@
 ?>
 
 <aside id="pagination-archive" class="full-width row-flex-center">
-	<?php VincentRagosta\TwentySixteen\Helpers\pagination( $custom ); ?>
+	<?php VincentRagosta\Functions\Helpers\pagination( $custom ); ?>
 </aside>

@@ -7,7 +7,7 @@
  * @uses    get_post_meta()
  */
 
-// Get 'technology' from the current post.
+# Get 'technology' from the current post.
 $technology = get_post_meta( $post->ID, 'technology', true ); ?>
 
 <?php if ( $technology ) : ?>

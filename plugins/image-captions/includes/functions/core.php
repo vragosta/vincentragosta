@@ -1,6 +1,6 @@
 <?php
 
-namespace ImageCaptions\TwentySixteen\Core;
+namespace ImageCaptions\Functions\Core;
 
 /**
  * Set up image captions defaults and register supported WordPress features.
@@ -17,7 +17,7 @@ function setup() {
 
 	add_action( 'wp_enqueue_scripts', $n( 'image_captions_scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'image_captions_styles' ) );
-	add_action( 'widgets_init',       $n( 'widgets' ) );
+	add_action( 'widgets_init', $n( 'widgets' ) );
 }
 
 /**
@@ -104,7 +104,6 @@ function image_captions_styles() {
 		IMAGE_CAPTIONS_VERSION
 	);
 }
-add_action( 'wp_enqueue_scripts', 'image_captions_styles', 99 );
 
 /**
  * Register custom widgets for back-end.

@@ -1,6 +1,6 @@
 <?php
 
-namespace ImageCaptions\Admin\MetaBoxes;
+namespace ImageCaptions\MetaBoxes;
 
 class PageMetabox {
 

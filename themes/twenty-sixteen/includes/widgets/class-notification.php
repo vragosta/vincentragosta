@@ -6,7 +6,7 @@
  * @since   0.1.0
  */
 
-// Blocking direct access to this file.
+# Blocking direct access to this file.
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -34,9 +34,10 @@ class Notification_Widget extends WP_Widget {
 	 * @return void
 	 */
 	public function form( $instance ) {
-		$content          = ( ! empty( $instance['content'] ) ) ? $instance['content'] : '';
-		$button_text      = ( ! empty( $instance['button_text'] ) ) ? $instance['button_text'] : '';
-		$button_link      = ( ! empty( $instance['button_link'] ) ) ? $instance['button_link'] : ''; ?>
+		$content = ! empty( $instance['content'] ) ? $instance['content'] : '';
+		$button_text = ! empty( $instance['button_text'] ) ? $instance['button_text'] : '';
+		$button_link = ! empty( $instance['button_link'] ) ? $instance['button_link'] : ''; ?>
+
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'content' ) ); ?>"><?php echo __( 'Content:', 'vincentragosta' ); ?></label>
 			<textarea class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'content' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'content' ) ); ?>" type="text"><?php echo esc_textarea( $content ); ?></textarea>
@@ -48,8 +49,7 @@ class Notification_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'button_link' ) ); ?>"><?php echo __( 'Button Link:', 'vincentragosta' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'button_link' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'button_link' ) ); ?>" type="text" value="<?php echo esc_attr( $button_link ); ?>">
-		</p>
-		<?php
+		</p><?php
 	}
 
 	/**
@@ -61,10 +61,10 @@ class Notification_Widget extends WP_Widget {
 	 * @return array $instance     Updated safe values to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
-		$instance                     = array();
-		$instance['content']          = ( ! empty( $new_instance['content'] ) ) ? strip_tags( $new_instance['content'] ) : '';
-		$instance['button_text']      = ( ! empty( $new_instance['button_text'] ) ) ? $new_instance['button_text'] : '';
-		$instance['button_link']      = ( ! empty( $new_instance['button_link'] ) ) ? $new_instance['button_link'] : '';
+		$instance = array();
+		$instance['content'] = ( ! empty( $new_instance['content'] ) ) ? strip_tags( $new_instance['content'] ) : '';
+		$instance['button_text'] = ( ! empty( $new_instance['button_text'] ) ) ? $new_instance['button_text'] : '';
+		$instance['button_link'] = ( ! empty( $new_instance['button_link'] ) ) ? $new_instance['button_link'] : '';
 
 		return $instance;
 	}
@@ -80,7 +80,7 @@ class Notification_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		global $post;
 
-		// If the 'before_widget' field is set, display it.
+		# If the 'before_widget' field is set, display it.
 		echo $args['before_widget']; ?>
 
 		<div id="notification-widget" class="custom-widget full-width row-flex-center">
