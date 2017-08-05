@@ -10,7 +10,7 @@ namespace VincentRagosta;
 
 get_header(); ?>
 
-<main id="portfolio" class="archive project">
+<main id="projects" class="archive project">
 
 	<?php get_template_part( 'partials/aside', 'excerpt' ); ?>
 

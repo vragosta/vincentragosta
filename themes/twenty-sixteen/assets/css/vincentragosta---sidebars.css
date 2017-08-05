@@ -53,7 +53,6 @@
 /*--- Aside Titles ---*/
 .aside h1,
 .aside h2 {
-	/*margin-bottom: 1.2rem;*/
 	margin-bottom: 4rem;
 	font-family: 'Lato', sans-serif;
 }
@@ -61,7 +60,7 @@
 @media only screen and ( max-width: 767px ) {
 	.aside h2 {
 		font-size: 3rem;
-		margin-bottom: 0.8rem;
+		margin-bottom: 3rem;
 	}
 }
 
@@ -78,6 +77,10 @@
 	font-size: 1.85rem;
 }
 
+#projects .aside p {
+	max-width: 750px;
+}
+
 .aside p + p {
 	margin-top: 4rem;
 	display: flex;
@@ -91,7 +94,7 @@
 	}
 
 	.aside p + p {
-		margin-top: 0.8rem;
+		margin-top: 3rem;
 	}
 }
 
@@ -144,7 +147,7 @@
 }
 
 .pre-footer {
-	padding: 0;
+	padding: 0 1.2rem;
 }
 
 /*--- TODO ---*/
