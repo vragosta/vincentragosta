@@ -18,13 +18,13 @@
 		<section class="col-flex-center">
 
 			<!-- Contact Information -->
-			<?php get_template_part( 'partials/aside', 'footer-contact-info' ); ?>
+			<?php // get_template_part( 'partials/aside', 'footer-contact-info' ); ?>
 
 			<!-- Copyright -->
 			<?php get_template_part( 'partials/aside', 'footer-copyright' ); ?>
 
 			<!-- Important Documents -->
-			<?php get_template_part( 'partials/aside', 'footer-docs' ); ?>
+			<?php // get_template_part( 'partials/aside', 'footer-docs' ); ?>
 
 			<!-- Social Icons -->
 			<?php get_template_part( 'partials/aside', 'social' ); ?>
