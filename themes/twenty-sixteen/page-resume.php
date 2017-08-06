@@ -72,7 +72,7 @@ get_header(); ?>
 
 				<div class="work-item row">
 					<h4>Web Developer, Digital & Technical Innovation</h4>
-					<p><a href="<?php echo home_url(); ?>">StoryCorps.org</a><span>, Brooklyn, NY, June 2015 – Present</span></p>
+					<p><a href="https://www.storycorps.org" target="_blank">StoryCorps.org</a><span>, Brooklyn, NY, June 2015 – Present</span></p>
 					<p>StoryCorps mission is to preserve and share humanity’s stories in order to build connections between people and create a more just and compassionate world. At StoryCorps, I work on a small team of developers in an agile environment to build and maintain more than 5 websites and an app. Extensive work with WordPress, PHP, HTML, CSS, and various Javascript libraries.</p>
 				</div>
 			</section>

@@ -14,6 +14,8 @@
 		<main id="single-project" class="col-flex-center">
 			<?php get_template_part( 'partials/aside', 'excerpt' ); ?>
 			<?php get_template_part( 'partials/aside', 'project-link' ); ?>
+			<?php get_template_part( 'partials/aside', 'testimony' ); ?>
+			<?php get_template_part( 'partials/aside', 'technology-used' ); ?>
 			<?php get_template_part( 'partials/aside', 'content' ); ?>
 			<?php get_template_part( 'partials/aside', 'single-pagination' ); ?>
 		</main>

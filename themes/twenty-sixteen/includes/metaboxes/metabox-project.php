@@ -123,7 +123,7 @@ class ProjectMetabox {
 
 		# Sanitize user input.
 		$technology = sanitize_text_field( $_POST['technology'] );
-		$testimony = sanitize_text_field( $_POST['testimony'] );
+		$testimony = $_POST['testimony'];
 		$project_link = sanitize_text_field( $_POST['project_link'] );
 		$project_text = sanitize_text_field( $_POST['project_text'] );
 
