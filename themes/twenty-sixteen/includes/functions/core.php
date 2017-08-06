@@ -238,14 +238,14 @@ function styles() {
 		);
 	}
 
-	# if ( is_page( 'about' ) ) {
-	# 	wp_enqueue_style(
-	# 		'about',
-	# 		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---about.css",
-	# 		array(),
-	# 		VINCENTRAGOSTA_COM_VERSION
-	# 	);
-	# }
+	if ( is_page( 'resume' ) ) {
+		wp_enqueue_style(
+			'resume',
+			VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---resume.css",
+			array(),
+			VINCENTRAGOSTA_COM_VERSION
+		);
+	}
 
 	wp_enqueue_style(
 		'vincentragosta_com',
