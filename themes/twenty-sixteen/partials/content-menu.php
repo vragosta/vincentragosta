@@ -12,6 +12,6 @@
 	<a href="<?php echo home_url(); ?>">Home</a>
 	<a href="<?php echo home_url( '/projects/' ); ?>">Projects</a>
 	<a href="<?php echo home_url( '/about/' ); ?>">About</a>
-	<a href="<?php echo VINCENTRAGOSTA_COM_TEMPLATE_URL . '/assets/Resume.pdf'; ?>" download>Resume</a>
+	<a href="<?php echo home_url( '/resume/' ) ?>">Resume</a>
 	<a id="contact" href="<?php echo home_url( '/contact/' ); ?>">Contact</a>
 </section>

@@ -69,3 +69,10 @@
 		opacity: 1;
 	}
 }
+
+.featured-image.static .overlay a {
+	font-size: 2rem;
+	border: 2px solid #fff;
+	padding: 1rem 3rem;
+	text-transform: uppercase;
+}

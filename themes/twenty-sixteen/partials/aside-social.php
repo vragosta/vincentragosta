@@ -16,25 +16,25 @@ $github = get_user_meta( VINCENTRAGOSTA_SITE_ADMIN, 'github', true ); ?>
 
 <aside class="social row-flex-center">
 	<?php if ( $facebook ) { ?>
-		<a href="<?php echo esc_url( $facebook ); ?>">
+		<a href="<?php echo esc_url( $facebook ); ?>" target="_blank">
 			<i class="fa fa-facebook" aria-hidden="true"></i>
 		</a>
 	<?php } ?>
 
 	<?php if ( $twitter ) { ?>
-		<a href="<?php echo esc_url( $twitter ); ?>">
+		<a href="<?php echo esc_url( $twitter ); ?>" target="_blank">
 			<i class="fa fa-twitter" aria-hidden="true"></i>
 		</a>
 	<?php } ?>
 
 	<?php if ( $instagram ) { ?>
-		<a href="<?php echo esc_url( $instagram ); ?>">
+		<a href="<?php echo esc_url( $instagram ); ?>" target="_blank">
 			<i class="fa fa-instagram" aria-hidden="true"></i>
 		</a>
 	<?php } ?>
 
 	<?php if ( $github ) { ?>
-		<a href="<?php echo esc_url( $github ); ?>">
+		<a href="<?php echo esc_url( $github ); ?>" target="_blank">
 			<i class="fa fa-github" aria-hidden="true"></i>
 		</a>
 	<?php } ?>

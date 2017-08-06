@@ -1,6 +1,6 @@
 <?php
 /**
- * Template for displaying the portfolio page.
+ * Template for displaying the featured projects page.
  *
  * @package Vincent Ragosta - Twenty Sixteen
  * @since 0.1.0
