@@ -51,7 +51,9 @@ class PageMetabox {
 		 */
 		$alt_title = get_post_meta( $post->ID, 'alt_title', true );
 		$sub_header = get_post_meta( $post->ID, 'sub_header', true );
-		$button_text = get_post_meta( $post->ID, 'button_text', true ); ?>
+		$button_text = get_post_meta( $post->ID, 'button_text', true );
+		$button_link = get_post_meta( $post->ID, 'button_link', true );
+		$button_downloadable = get_post_meta( $post->ID, 'button_downloadable', true ); ?>
 
 		<table style="width: 100%;">
 			<tr>
@@ -79,6 +81,23 @@ class PageMetabox {
 					<label class="description" for="button_text"><?php echo __( 'Will only display if the image caption plugin is activated.', 'vincentragosta' ); ?></label>
 				</td>
 			</tr>
+			<tr>
+				<td class="label">
+					<label for="button_link"><?php echo __( 'Button Link:', 'vincentragosta' ); ?></label>
+				</td>
+				<td>
+					<textarea id="button_link" name="button_link" style="width: 100%;"><?php echo esc_textarea( $button_link ); ?></textarea>
+					<label class="description" for="button_link"><?php echo __( 'Will only display if the image caption plugin is activated.', 'vincentragosta' ); ?></label>
+				</td>
+			</tr>
+			<tr>
+			<td>
+				<label for="button_downloadable"><?php echo esc_html( __( 'Downloadable', 'listen' ) ); ?></label>
+			</td>
+			<td>
+				<input name="button_downloadable" type="checkbox" <?php echo ( $button_downloadable == true ) ? 'checked': ''; ?> />
+			</td>
+		</tr>
 		</table><?php
 	}
 
@@ -121,6 +140,8 @@ class PageMetabox {
 		update_post_meta( $post_id, 'alt_title', sanitize_text_field( $_POST['alt_title'] ) );
 		update_post_meta( $post_id, 'sub_header', sanitize_text_field( $_POST['sub_header'] ) );
 		update_post_meta( $post_id, 'button_text', sanitize_text_field( $_POST['button_text'] ) );
+		update_post_meta( $post_id, 'button_link', sanitize_text_field( $_POST['button_link'] ) );
+		update_post_meta( $post_id, 'button_downloadable', sanitize_text_field( $_POST['button_downloadable'] ) );
 	}
 }
 

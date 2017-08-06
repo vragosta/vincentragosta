@@ -36,7 +36,9 @@ function set_default_properties( $atts ) {
 		'image_source' => is_single() ? set_cover_image( $post->ID ) : set_featured_image( $post->ID ),
 		'classes' => set_featured_image_classes( $is_static, $atts['class'] ),
 		'sub_header' => set_sub_header_text( $post ),
-		'button' => set_button_text( $is_static, $post, $atts['data-button-text'] ),
+		'button_text' => set_button_text( $is_static, $post ),
+		'button_link' => set_button_link( $post ),
+		'button_downloadable' => set_button_downloadable( $post ),
 	);
 
 	return $defaults;
@@ -72,7 +74,7 @@ function set_cover_image( $id ) {
  *
  * @since 0.1.0
  * @param boolean $is_static boolean for if the class 'static' is in the featured image classes.
- * @param array   $atts      array of attributes assigned to the shortcode.
+ * @param array $atts array of attributes assigned to the shortcode.
  * @uses explode(), array_push()
  * @return array $featured_image_classes array of default class values for the featured image element.
  */
@@ -100,12 +102,36 @@ function set_featured_image_classes( $is_static, $classes ) {
  *
  * @since 0.1.0
  * @param boolean $is_static boolean for if the class 'static' is in the featured image classes.
- * @param wp_post $post      current post object.
+ * @param wp_post $post current post object.
  * @uses get_post_meta()
  * @return string void text for button.
  */
 function set_button_text( $is_static, $post ) {
 	return $is_static ? get_post_meta( $post->ID, 'button_text', true ) : 'View ' . $post->post_type;
+}
+
+/**
+ * Sets up the button link on static and non-static image caption shortcodes.
+ *
+ * @since 0.1.0
+ * @param wp_post $post current post object.
+ * @uses get_post_meta()
+ * @return string void text for button.
+ */
+function set_button_link( $post ) {
+	return get_post_meta( $post->ID, 'button_link', true );
+}
+
+/**
+ * Sets up the button downloadable on static and non-static image caption shortcodes.
+ *
+ * @since 0.1.0
+ * @param wp_post $post current post object.
+ * @uses get_post_meta()
+ * @return string void text for button.
+ */
+function set_button_downloadable( $post ) {
+	return get_post_meta( $post->ID, 'button_downloadable', true ) == 'on' ? true : false;
 }
 
 /**
