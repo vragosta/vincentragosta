@@ -136,18 +136,20 @@ class News_And_Updates_Widget extends WP_Widget {
 		$query = new WP_Query( $args ); ?>
 
 		<div id="news-and-updates" class="custom-widget full-width">
-			<?php if ( $query->have_posts() ) { ?>
-				<?php while ( $query->have_posts() ) { ?>
-					<?php $query->the_post(); ?>
-					<div class="col-xs-12 <?php echo esc_attr( $bootstrap_class ); ?>">
+			<div class="row <?php echo $post__in_count < 3 ? 'row-flex-center' : ''; ?>">
+				<?php if ( $query->have_posts() ) { ?>
+					<?php while ( $query->have_posts() ) { ?>
+						<?php $query->the_post(); ?>
+						<div class="col-xs-12 <?php echo esc_attr( $bootstrap_class ); ?>">
 
-						<!-- Featured image overlay -->
-						<?php do_shortcode( '[image-caption id="' . $post->ID . '"]' ); ?>
+							<!-- Featured image overlay -->
+							<?php do_shortcode( '[image-caption id="' . $post->ID . '"]' ); ?>
 
-					</div>
+						</div>
+					<?php } ?>
+					<?php wp_reset_postdata(); ?>
 				<?php } ?>
-				<?php wp_reset_postdata(); ?>
-			<?php } ?>
+			</div>
 
 			<div class="full-width col-flex-center">
 				<a href="<?php echo $button_href; ?>">View more <?php echo esc_html( $instance['post_type'] ); ?>s</a>
