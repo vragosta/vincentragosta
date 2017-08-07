@@ -49,53 +49,53 @@ class PageMetabox {
 		 * Use get_post_meta() to retrieve an existing value
 		 * from the database and use the value for the form.
 		 */
-		$alt_title = get_post_meta( $post->ID, 'alt_title', true );
-		$sub_header = get_post_meta( $post->ID, 'sub_header', true );
-		$button_text = get_post_meta( $post->ID, 'button_text', true );
-		$button_link = get_post_meta( $post->ID, 'button_link', true );
-		$button_downloadable = get_post_meta( $post->ID, 'button_downloadable', true ); ?>
+		$_alt_title = get_post_meta( $post->ID, '_alt_title', true );
+		$_sub_header = get_post_meta( $post->ID, '_sub_header', true );
+		$_button_text = get_post_meta( $post->ID, '_button_text', true );
+		$_button_link = get_post_meta( $post->ID, '_button_link', true );
+		$_button_downloadable = get_post_meta( $post->ID, '_button_downloadable', true ); ?>
 
 		<table style="width: 100%;">
 			<tr>
 				<td class="label">
-					<label for="alt_title"><?php echo __( 'Alternate Title:', 'vincentragosta' ); ?></label>
+					<label for="_alt_title"><?php echo __( 'Alternate Title:', 'vincentragosta' ); ?></label>
 				</td>
 				<td>
-					<textarea id="alt_title" name="alt_title" style="width: 100%;"><?php echo esc_textarea( $alt_title ); ?></textarea>
+					<textarea id="_alt_title" name="_alt_title" style="width: 100%;"><?php echo esc_textarea( $_alt_title ); ?></textarea>
 				</td>
 			</tr>
 			<tr>
 				<td class="label">
-					<label for="sub_header"><?php echo __( 'Sub Header:', 'vincentragosta' ); ?></label>
+					<label for="_sub_header"><?php echo __( 'Sub Header:', 'vincentragosta' ); ?></label>
 				</td>
 				<td>
-					<textarea id="sub_header" name="sub_header" style="width: 100%;"><?php echo esc_textarea( $sub_header ); ?></textarea>
+					<textarea id="_sub_header" name="_sub_header" style="width: 100%;"><?php echo esc_textarea( $_sub_header ); ?></textarea>
 				</td>
 			</tr>
 			<tr>
 				<td class="label">
-					<label for="button_text"><?php echo __( 'Button Text:', 'vincentragosta' ); ?></label>
+					<label for="_button_text"><?php echo __( 'Button Text:', 'vincentragosta' ); ?></label>
 				</td>
 				<td>
-					<textarea id="button_text" name="button_text" style="width: 100%;"><?php echo esc_textarea( $button_text ); ?></textarea>
-					<label class="description" for="button_text"><?php echo __( 'Will only display if the image caption plugin is activated.', 'vincentragosta' ); ?></label>
+					<textarea id="_button_text" name="_button_text" style="width: 100%;"><?php echo esc_textarea( $_button_text ); ?></textarea>
+					<label class="description" for="_button_text"><?php echo __( 'Will only display if the image caption plugin is activated.', 'vincentragosta' ); ?></label>
 				</td>
 			</tr>
 			<tr>
 				<td class="label">
-					<label for="button_link"><?php echo __( 'Button Link:', 'vincentragosta' ); ?></label>
+					<label for="_button_link"><?php echo __( 'Button Link:', 'vincentragosta' ); ?></label>
 				</td>
 				<td>
-					<textarea id="button_link" name="button_link" style="width: 100%;"><?php echo esc_textarea( $button_link ); ?></textarea>
-					<label class="description" for="button_link"><?php echo __( 'Will only display if the image caption plugin is activated.', 'vincentragosta' ); ?></label>
+					<textarea id="_button_link" name="_button_link" style="width: 100%;"><?php echo esc_textarea( $_button_link ); ?></textarea>
+					<label class="description" for="_button_link"><?php echo __( 'Will only display if the image caption plugin is activated.', 'vincentragosta' ); ?></label>
 				</td>
 			</tr>
 			<tr>
 			<td>
-				<label for="button_downloadable"><?php echo esc_html( __( 'Downloadable', 'listen' ) ); ?></label>
+				<label for="_button_downloadable"><?php echo esc_html( __( 'Downloadable', 'listen' ) ); ?></label>
 			</td>
 			<td>
-				<input name="button_downloadable" type="checkbox" <?php echo ( $button_downloadable == true ) ? 'checked': ''; ?> />
+				<input name="_button_downloadable" type="checkbox" <?php echo ( $_button_downloadable == true ) ? 'checked': ''; ?> />
 			</td>
 		</tr>
 		</table><?php
@@ -137,11 +137,11 @@ class PageMetabox {
 		}
 
 		# Update the meta field in the database.
-		update_post_meta( $post_id, 'alt_title', sanitize_text_field( $_POST['alt_title'] ) );
-		update_post_meta( $post_id, 'sub_header', sanitize_text_field( $_POST['sub_header'] ) );
-		update_post_meta( $post_id, 'button_text', sanitize_text_field( $_POST['button_text'] ) );
-		update_post_meta( $post_id, 'button_link', sanitize_text_field( $_POST['button_link'] ) );
-		update_post_meta( $post_id, 'button_downloadable', sanitize_text_field( $_POST['button_downloadable'] ) );
+		update_post_meta( $post_id, '_alt_title', sanitize_text_field( $_POST['_alt_title'] ) );
+		update_post_meta( $post_id, '_sub_header', sanitize_text_field( $_POST['_sub_header'] ) );
+		update_post_meta( $post_id, '_button_text', sanitize_text_field( $_POST['_button_text'] ) );
+		update_post_meta( $post_id, '_button_link', sanitize_text_field( $_POST['_button_link'] ) );
+		update_post_meta( $post_id, '_button_downloadable', sanitize_text_field( $_POST['_button_downloadable'] ) );
 	}
 }
 

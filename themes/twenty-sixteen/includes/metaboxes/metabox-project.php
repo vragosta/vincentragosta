@@ -48,42 +48,42 @@ class ProjectMetabox {
 		 * Use get_post_meta() to retrieve an existing value
 		 * from the database and use the value for the form.
 		 */
-		$technology = get_post_meta( $post->ID, 'technology', true );
-		$testimony = get_post_meta( $post->ID, 'testimony', true );
-		$project_link = get_post_meta( $post->ID, 'project_link', true );
-		$project_text = get_post_meta( $post->ID, 'project_text', true ); ?>
+		$_technology = get_post_meta( $post->ID, '_technology', true );
+		$_testimony = get_post_meta( $post->ID, '_testimony', true );
+		$_project_link = get_post_meta( $post->ID, '_project_link', true );
+		$_project_text = get_post_meta( $post->ID, '_project_text', true ); ?>
 
 		<table style="width: 100%;">
 			<tr>
 				<td class="label">
-					<label for="technology"><?php echo __( 'Technology Used:', 'vincentragosta' ); ?></label>
+					<label for="_technology"><?php echo __( 'Technology Used:', 'vincentragosta' ); ?></label>
 				</td>
 				<td>
-					<textarea id="technology" name="technology" style="width: 100%;"><?php echo esc_textarea( $technology ); ?></textarea>
+					<textarea id="_technology" name="_technology" style="width: 100%;"><?php echo esc_textarea( $_technology ); ?></textarea>
 				</td>
 			</tr>
 			<tr>
 				<td class="label">
-					<label for="testimony"><?php echo __( 'Testimony:', 'vincentragosta' ); ?></label>
+					<label for="_testimony"><?php echo __( 'Testimony:', 'vincentragosta' ); ?></label>
 				</td>
 				<td>
-					<textarea id="testimony" name="testimony" style="width: 100%;"><?php echo esc_textarea( $testimony ); ?></textarea>
+					<textarea id="_testimony" name="_testimony" style="width: 100%;"><?php echo esc_textarea( $_testimony ); ?></textarea>
 				</td>
 			</tr>
 			<tr>
 				<td class="label">
-					<label for="project_link"><?php echo __( 'Project Link:', 'vincentragosta' ); ?></label>
+					<label for="_project_link"><?php echo __( 'Project Link:', 'vincentragosta' ); ?></label>
 				</td>
 				<td>
-					<textarea id="project_link" name="project_link" style="width: 100%;"><?php echo esc_textarea( $project_link ); ?></textarea>
+					<textarea id="_project_link" name="_project_link" style="width: 100%;"><?php echo esc_textarea( $_project_link ); ?></textarea>
 				</td>
 			</tr>
 			<tr>
 				<td class="label">
-					<label for="project_text"><?php echo __( 'Project Text:', 'vincentragosta' ); ?></label>
+					<label for="_project_text"><?php echo __( 'Project Text:', 'vincentragosta' ); ?></label>
 				</td>
 				<td>
-					<textarea id="project_text" name="project_text" style="width: 100%;"><?php echo esc_textarea( $project_text ); ?></textarea>
+					<textarea id="_project_text" name="_project_text" style="width: 100%;"><?php echo esc_textarea( $_project_text ); ?></textarea>
 				</td>
 			</tr>
 		</table><?php
@@ -121,17 +121,11 @@ class ProjectMetabox {
 			return;
 		}
 
-		# Sanitize user input.
-		$technology = sanitize_text_field( $_POST['technology'] );
-		$testimony = $_POST['testimony'];
-		$project_link = sanitize_text_field( $_POST['project_link'] );
-		$project_text = sanitize_text_field( $_POST['project_text'] );
-
 		# Update the meta field in the database.
-		update_post_meta( $post_id, 'technology', $technology );
-		update_post_meta( $post_id, 'testimony', $testimony );
-		update_post_meta( $post_id, 'project_link', $project_link );
-		update_post_meta( $post_id, 'project_text', $project_text );
+		update_post_meta( $post_id, '_technology', sanitize_text_field( $_POST['_technology'] ) );
+		update_post_meta( $post_id, '_testimony', $_POST['_testimony'] );
+		update_post_meta( $post_id, '_project_link', sanitize_text_field( $_POST['_project_link'] ) );
+		update_post_meta( $post_id, '_project_text', sanitize_text_field( $_POST['_project_text'] ) );
 	}
 }
 

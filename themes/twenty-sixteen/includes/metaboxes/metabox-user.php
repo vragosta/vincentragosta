@@ -19,47 +19,47 @@ class UserMetaBox {
 	function add_fields( $user ) {
 
 		# Obtain social meta.
-		$facebook = get_user_meta( $user->ID, 'facebook', true );
-		$twitter = get_user_meta( $user->ID, 'twitter', true );
-		$instagram = get_user_meta( $user->ID, 'instagram', true );
-		$github = get_user_meta( $user->ID, 'github', true );
-		$phone = get_user_meta( $user->ID, 'phone', true ); ?>
+		$_facebook = get_user_meta( $user->ID, '_facebook', true );
+		$_twitter = get_user_meta( $user->ID, '_twitter', true );
+		$_instagram = get_user_meta( $user->ID, '_instagram', true );
+		$_github = get_user_meta( $user->ID, '_github', true );
+		$_phone = get_user_meta( $user->ID, '_phone', true ); ?>
 
 		<h2><?php _e( 'Social' ); ?></h2>
 		<table class="form-table">
 			<tr>
 				<th>
-					<label for="facebook"><?php _e( 'Facebook URL' ); ?></label>
+					<label for="_facebook"><?php _e( 'Facebook URL' ); ?></label>
 				</th>
 				<td>
-					<input name="facebook" value="<?php echo esc_attr( $facebook ); ?>" style="width: 25em" />
+					<input name="_facebook" value="<?php echo esc_attr( $_facebook ); ?>" style="width: 25em" />
 				</td>
 			</tr>
 
 			<tr>
 				<th>
-					<label for="twitter"><?php _e( 'Twitter URL' ); ?></label>
+					<label for="_twitter"><?php _e( 'Twitter URL' ); ?></label>
 				</th>
 				<td>
-					<input name="twitter" value="<?php echo esc_attr( $twitter ); ?>" style="width: 25em" />
+					<input name="_twitter" value="<?php echo esc_attr( $_twitter ); ?>" style="width: 25em" />
 				</td>
 			</tr>
 
 			<tr>
 				<th>
-					<label for="instagram"><?php _e( 'Instagram URL' ); ?></label>
+					<label for="_instagram"><?php _e( 'Instagram URL' ); ?></label>
 				</th>
 				<td>
-					<input name="instagram" value="<?php echo esc_attr( $instagram ); ?>" style="width: 25em" />
+					<input name="_instagram" value="<?php echo esc_attr( $_instagram ); ?>" style="width: 25em" />
 				</td>
 			</tr>
 
 			<tr>
 				<th>
-					<label for="github"><?php _e( 'Github URL' ); ?></label>
+					<label for="_github"><?php _e( 'Github URL' ); ?></label>
 				</th>
 				<td>
-					<input name="github" value="<?php echo esc_attr( $github ); ?>" style="width: 25em" />
+					<input name="_github" value="<?php echo esc_attr( $_github ); ?>" style="width: 25em" />
 				</td>
 			</tr>
 		</table>
@@ -68,10 +68,10 @@ class UserMetaBox {
 		<table class="form-table">
 			<tr>
 				<th>
-					<label for="phone"><?php _e( 'Phone Number' ); ?></label>
+					<label for="_phone"><?php _e( 'Phone Number' ); ?></label>
 				</th>
 				<td>
-					<input name="phone" value="<?php echo esc_attr( $phone ); ?>" style="width: 25em" />
+					<input name="_phone" value="<?php echo esc_attr( $_phone ); ?>" style="width: 25em" />
 				</td>
 			</tr>
 		</table><?php
@@ -80,14 +80,15 @@ class UserMetaBox {
 	function save_fields( $user_id ) {
 
 		# Check the user's permissions.
-		if ( ! current_user_can( 'edit_user', $user_id ) )
+		if ( ! current_user_can( 'edit_user', $user_id ) ) {
 			return false;
+		}
 
-		update_usermeta( $user_id, 'facebook', sanitize_text_field( $_POST['facebook'] ) );
-		update_usermeta( $user_id, 'twitter', sanitize_text_field( $_POST['twitter'] ) );
-		update_usermeta( $user_id, 'instagram', sanitize_text_field( $_POST['instagram'] ) );
-		update_usermeta( $user_id, 'github', sanitize_text_field( $_POST['github'] ) );
-		update_usermeta( $user_id, 'phone', sanitize_text_field( $_POST['phone'] ) );
+		update_usermeta( $user_id, '_facebook', sanitize_text_field( $_POST['_facebook'] ) );
+		update_usermeta( $user_id, '_twitter', sanitize_text_field( $_POST['_twitter'] ) );
+		update_usermeta( $user_id, '_instagram', sanitize_text_field( $_POST['_instagram'] ) );
+		update_usermeta( $user_id, '_github', sanitize_text_field( $_POST['_github'] ) );
+		update_usermeta( $user_id, '_phone', sanitize_text_field( $_POST['_phone'] ) );
 	}
 }
 

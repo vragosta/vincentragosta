@@ -8,7 +8,7 @@
  */
 
 # Get 'testimony' from the current post.
-$testimony = get_post_meta( $post->ID, 'testimony', true ); ?>
+$testimony = get_post_meta( $post->ID, '_testimony', true ); ?>
 
 <?php if ( $testimony ) { ?>
 	<aside class="aside testimony">

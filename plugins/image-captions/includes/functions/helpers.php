@@ -107,7 +107,7 @@ function set_featured_image_classes( $is_static, $classes ) {
  * @return string void text for button.
  */
 function set_button_text( $is_static, $post ) {
-	return $is_static ? get_post_meta( $post->ID, 'button_text', true ) : 'View ' . $post->post_type;
+	return $is_static ? get_post_meta( $post->ID, '_button_text', true ) : 'View ' . $post->post_type;
 }
 
 /**
@@ -119,7 +119,7 @@ function set_button_text( $is_static, $post ) {
  * @return string void text for button.
  */
 function set_button_link( $post ) {
-	return get_post_meta( $post->ID, 'button_link', true );
+	return get_post_meta( $post->ID, '_button_link', true );
 }
 
 /**
@@ -131,7 +131,7 @@ function set_button_link( $post ) {
  * @return string void text for button.
  */
 function set_button_downloadable( $post ) {
-	return get_post_meta( $post->ID, 'button_downloadable', true ) == 'on' ? true : false;
+	return get_post_meta( $post->ID, '_button_downloadable', true ) == 'on' ? true : false;
 }
 
 /**
@@ -144,9 +144,9 @@ function set_button_downloadable( $post ) {
  */
 function set_header_text( $post ) {
 	if ( $post->post_type === 'page' ) {
-		$header_text = get_post_meta( $post->ID, 'alt_title', true ) ? get_post_meta( $post->ID, 'alt_title', true ) : $post->post_title;
+		$header_text = get_post_meta( $post->ID, '_alt_title', true ) ? get_post_meta( $post->ID, '_alt_title', true ) : $post->post_title;
 	} else if ( $post->post_type === 'project' ) {
-		$header_text = get_post_meta( $post->ID, 'shorthand_header', true ) ? get_post_meta( $post->ID, 'shorthand_header', true ) : $post->post_title;
+		$header_text = get_post_meta( $post->ID, '_shorthand_header', true ) ? get_post_meta( $post->ID, '_shorthand_header', true ) : $post->post_title;
 	}
 
 	return $header_text;
@@ -162,7 +162,7 @@ function set_header_text( $post ) {
  */
 function set_sub_header_text( $post ) {
 	if ( $post->post_type === 'page' ) {
-		$sub_header = get_post_meta( $post->ID, 'sub_header', true );
+		$sub_header = get_post_meta( $post->ID, '_sub_header', true );
 	} else if ( $post->post_type === 'post' ) {
 		$sub_header = date_format( date_create( $post->post_date ), 'F jS, Y' );
 	} else {

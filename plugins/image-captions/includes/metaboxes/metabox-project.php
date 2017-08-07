@@ -47,24 +47,24 @@ class ProjectMetabox {
 		 * Use get_post_meta() to retrieve an existing value
 		 * from the database and use the value for the form.
 		 */
-		$shorthand_header = get_post_meta( $post->ID, 'shorthand_header', true );
-		$sub_header = get_post_meta( $post->ID, 'sub_header', true ); ?>
+		$_shorthand_header = get_post_meta( $post->ID, '_shorthand_header', true );
+		$_sub_header = get_post_meta( $post->ID, '_sub_header', true ); ?>
 
 		<table style="width: 100%;">
 			<tr>
 				<td class="label">
-					<label for="shorthand_header"><?php echo __( 'Shorthand Header:', 'vincentragosta' ); ?></label>
+					<label for="_shorthand_header"><?php echo __( 'Shorthand Header:', 'vincentragosta' ); ?></label>
 				</td>
 				<td>
-					<textarea id="shorthand_header" name="shorthand_header" style="width: 100%;"><?php echo esc_textarea( $shorthand_header ); ?></textarea>
+					<textarea id="_shorthand_header" name="_shorthand_header" style="width: 100%;"><?php echo esc_textarea( $_shorthand_header ); ?></textarea>
 				</td>
 			</tr>
 			<tr>
 				<td class="label">
-					<label for="sub_header"><?php echo __( 'Sub Header:', 'vincentragosta' ); ?></label>
+					<label for="_sub_header"><?php echo __( 'Sub Header:', 'vincentragosta' ); ?></label>
 				</td>
 				<td>
-					<textarea id="sub_header" name="sub_header" style="width: 100%;"><?php echo esc_textarea( $sub_header ); ?></textarea>
+					<textarea id="_sub_header" name="_sub_header" style="width: 100%;"><?php echo esc_textarea( $_sub_header ); ?></textarea>
 				</td>
 			</tr>
 		</table><?php
@@ -103,13 +103,9 @@ class ProjectMetabox {
 			return;
 		}
 
-		# Sanitize user input.
-		$shorthand_header = sanitize_text_field( $_POST['shorthand_header'] );
-		$sub_header = sanitize_text_field( $_POST['sub_header'] );
-
 		# Update the meta field in the database.
-		update_post_meta( $post_id, 'shorthand_header', $shorthand_header );
-		update_post_meta( $post_id, 'sub_header', $sub_header );
+		update_post_meta( $post_id, '_shorthand_header', sanitize_text_field( $_POST['_shorthand_header'] ) );
+		update_post_meta( $post_id, '_sub_header', sanitize_text_field( $_POST['_sub_header'] ) );
 	}
 }
 

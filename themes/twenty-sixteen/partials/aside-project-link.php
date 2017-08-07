@@ -6,8 +6,8 @@
  * @since 0.1.0
  */
 
-$link = get_post_meta( $post->ID, 'project_link', true );
-$link_text = get_post_meta( $post->ID, 'project_text', true ); ?>
+$link = get_post_meta( $post->ID, '_project_link', true );
+$link_text = get_post_meta( $post->ID, '_project_text', true ); ?>
 
 <?php if ( $link && $link_text ) { ?>
 	<aside class="aside link">

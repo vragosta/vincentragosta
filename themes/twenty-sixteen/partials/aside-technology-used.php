@@ -8,7 +8,7 @@
  */
 
 # Get 'technology' from the current post.
-$technology = get_post_meta( $post->ID, 'technology', true ); ?>
+$technology = get_post_meta( $post->ID, '_technology', true ); ?>
 
 <?php if ( $technology ) { ?>
 	<aside class="aside technology">
