@@ -18,6 +18,7 @@
 			<?php get_template_part( 'partials/aside', 'technology-used' ); ?>
 			<?php get_template_part( 'partials/aside', 'content' ); ?>
 			<?php get_template_part( 'partials/aside', 'single-pagination' ); ?>
+			<?php edit_post_link( 'Edit This Project' ); ?>
 		</main>
 		<?php wp_reset_postdata(); ?>
 	<?php } ?>

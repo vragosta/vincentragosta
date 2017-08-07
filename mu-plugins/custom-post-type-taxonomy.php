@@ -18,7 +18,7 @@ function register_post_type_project() {
 			'capability_type' => 'post',
 			'map_meta_cap' => true,
 			'hierarchical' => false,
-			'rewrite' => array( 'slug' => 'portfolio', 'with_front' => false),
+			'rewrite' => array( 'slug' => 'projects', 'with_front' => false),
 			'query_var' => true,
 			'has_archive' => true,
 			'menu_position' => 41,

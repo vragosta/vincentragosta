@@ -3,7 +3,6 @@
  * Copyright (c) 2016; * Licensed GPL-2.0+ */
 'use strict';
 
-// TODO Move to text column plugin && make this an object
 ( function( $ ) {
 	jQuery( document ).ready( function() {
 

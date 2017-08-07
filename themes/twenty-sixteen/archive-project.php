@@ -13,7 +13,6 @@ get_header(); ?>
 <main id="projects" class="archive project">
 
 	<?php get_template_part( 'partials/aside', 'excerpt' ); ?>
-
 	<?php get_template_part( 'partials/content', 'archive-project' ); ?>
 
 </main>
