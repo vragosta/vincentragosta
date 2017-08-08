@@ -8,8 +8,6 @@
  */
 ?>
 
-<?php if ( is_active_sidebar( 'cta-front-page-f' ) ) { ?>
-	<aside class="aside cta f col-flex-center">
-		<?php dynamic_sidebar( 'cta-front-page-f' ); ?>
-	</aside>
-<?php } ?>
+<aside class="aside cta f col-flex-center">
+	<div id="instafeed"></div>
+</aside>

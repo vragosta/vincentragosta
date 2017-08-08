@@ -104,6 +104,14 @@ function scripts() {
 	);
 
 	wp_enqueue_script(
+		'instagram',
+		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/lib/instafeed.min.js",
+		array(),
+		VINCENTRAGOSTA_COM_VERSION,
+		true
+	);
+
+	wp_enqueue_script(
 		'vincentragosta_com',
 		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/js/vincentragosta---twenty-sixteen.js",
 		array( 'jquery', 'bootstrap' ),
