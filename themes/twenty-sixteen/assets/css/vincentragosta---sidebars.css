@@ -20,7 +20,7 @@
 
 /*--- Accomodating for single template design ---*/
 .single .aside.content {
-	padding: 6rem 4rem 0;
+	padding: 6rem 0;
 }
 
 @media only screen and ( max-width: 768px ) {
@@ -36,6 +36,10 @@
 /*--- Specifically target the excerpt on the archive page. ---*/
 .archive .aside.excerpt {
 	background: #edeeef;
+}
+
+#single-project .aside.excerpt {
+	max-width: 800px;
 }
 
 .cta.b,
