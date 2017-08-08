@@ -8,7 +8,7 @@
 @import url( 'https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i' );
 
 /*--- Needed to prevent the whitespace to the right of web page ---*/
-html {
+html, body {
 	width: 100%;
 	margin: 0px;
 	padding: 0px;
