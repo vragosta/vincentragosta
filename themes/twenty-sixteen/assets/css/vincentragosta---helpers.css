@@ -8,7 +8,6 @@
 }
 
 .col-flex-center {
-	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -16,7 +15,6 @@
 }
 
 .col-flex-start {
-	height: 100%;
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
@@ -24,7 +22,6 @@
 }
 
 .col-flex-end {
-	height: 100%;
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
@@ -32,28 +29,24 @@
 }
 
 .row-flex-center {
-	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
 .row-flex-start {
-	height: 100%;
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
 }
 
 .row-flex-end {
-	height: 100%;
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
 }
 
 .row-flex-between {
-	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;

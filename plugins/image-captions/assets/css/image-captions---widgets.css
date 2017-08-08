@@ -5,7 +5,13 @@
 
 /*--- News & Updates Widget ---*/
 #news-and-updates > div:last-child {
-	padding-top: 4rem;
+	padding-top: 4.5rem;
+}
+
+@media only screen and ( max-width: 768px ) {
+	#news-and-updates > div:last-child {
+		padding-top: 3rem;
+	}
 }
 
 #news-and-updates .featured-image .image {

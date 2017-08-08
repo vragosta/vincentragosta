@@ -15,7 +15,7 @@
 
 		<?php get_template_part( 'partials/content', 'menu' ); ?>
 
-		<section class="col-flex-center">
+		<section>
 
 			<!-- Contact Information -->
 			<?php // get_template_part( 'partials/aside', 'footer-contact-info' ); ?>
