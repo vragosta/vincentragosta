@@ -93,7 +93,7 @@
 			data: JSON.stringify( data ),
 			dataType: 'json',
 		} ).then(function( response ) {
-			window.location.href = VincentRagosta.options.homeUrl;
+			window.location.href = VincentRagosta.options.homeUrl + '/contact/';
 		} );
 	});
 
