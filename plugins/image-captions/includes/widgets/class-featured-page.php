@@ -87,7 +87,7 @@ class Featured_Page_Widget extends WP_Widget {
 			<?php if ( $query->have_posts() ) { ?>
 				<?php while ( $query->have_posts() ) { ?>
 					<?php $query->the_post(); ?>
-					<div class="col-xs-12">
+					<div class="col-xs-12 padding-none">
 
 						<!-- Featured image overlay -->
 						<?php do_shortcode( '[image-caption id="' . $post->ID . '" class="static"]' ); ?>

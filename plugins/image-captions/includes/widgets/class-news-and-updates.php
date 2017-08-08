@@ -123,7 +123,7 @@ class News_And_Updates_Widget extends WP_Widget {
 		$bootstrap_class = 'col-sm-' . ( BOOTSTRAP_GRID_COL_MAX / $bootstrap_grid_col );
 
 		# Set the href for the button.
-		$button_href = ( $instance['post_type'] !== 'post' ) ? home_url( '/portfolio/' ) : home_url( '/blog/' ) ;
+		$button_href = ( $instance['post_type'] !== 'post' ) ? home_url( '/projects/' ) : home_url( '/blog/' ) ;
 
 		# Create arguments array for query.
 		$args = array(
@@ -135,7 +135,7 @@ class News_And_Updates_Widget extends WP_Widget {
 		# Initialize query.
 		$query = new WP_Query( $args ); ?>
 
-		<div id="news-and-updates" class="custom-widget full-width">
+		<div id="news-and-updates" class="custom-widget full-width col-flex">
 			<div class="row <?php echo $post__in_count < 3 ? 'row-flex-center' : ''; ?>">
 				<?php if ( $query->have_posts() ) { ?>
 					<?php while ( $query->have_posts() ) { ?>

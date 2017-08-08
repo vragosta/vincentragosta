@@ -7,6 +7,11 @@
 	width: 100%;
 }
 
+.col-flex {
+	display: flex;
+	flex-direction: column;
+}
+
 .col-flex-center {
 	height: 100%;
 	display: flex;
@@ -57,6 +62,10 @@
 /*--- Padding on left and right edges ( ~10px ) ---*/
 .padding-left-right {
 	padding: 0 1rem;
+}
+
+.padding-none {
+	padding: 0 !important;
 }
 
 /*--- Aspect Ratio 100% ---*/
