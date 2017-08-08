@@ -135,12 +135,12 @@ class News_And_Updates_Widget extends WP_Widget {
 		# Initialize query.
 		$query = new WP_Query( $args ); ?>
 
-		<div id="news-and-updates" class="custom-widget full-width col-flex">
-			<div class="row <?php echo $post__in_count < 3 ? 'row-flex-center' : ''; ?>">
+		<div id="news-and-updates" class="custom-widget full-width">
+			<div class="row">
 				<?php if ( $query->have_posts() ) { ?>
 					<?php while ( $query->have_posts() ) { ?>
 						<?php $query->the_post(); ?>
-						<div class="col-xs-12 <?php echo esc_attr( $bootstrap_class ); ?>">
+						<div class="col-xs-12 <?php echo esc_attr( $bootstrap_class ); ?> <?php echo $query->post_count === 1 ? 'marginally-center' : ''; ?>">
 
 							<!-- Featured image overlay -->
 							<?php do_shortcode( '[image-caption id="' . $post->ID . '"]' ); ?>
