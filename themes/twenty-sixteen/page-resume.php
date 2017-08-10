@@ -102,6 +102,28 @@ get_header(); ?>
 			</section>
 		</div>
 
+		<hr />
+
+		<div class="row">
+			<section class="col-xs-12 col-sm-4">
+				<h2>Awards</h2>
+			</section>
+			<section class="col-xs-12 col-sm-8">
+				<div class="award-item row">
+					<h4>Webby Nominee, Mobile Sites & Apps/General Sites & Apps/Cultural Institutions</h4>
+					<p>Webby Awards, April 2016, <a href="https://10up.com/blog/2016/webby-nominated/" target="_blank">https://10up.com/blog/2016/webby-nominated/</a></p>
+				</div>
+				<div class="award-item row">
+					<h4>Webby Honoree, Websites/Cultural Institutions</h4>
+					<p>Webby Awards, April 2016, <a href="http://webbyawards.com/winners/2016/websites/generalwebsite/cultural-institutions/storycorpsorg/" target="_blank">http://webbyawards.com/winners/2016/websites/generalwebsite/cultural-institutions/storycorpsorg/</a></p>
+				</div>
+				<div class="award-item row">
+					<h4>StoryCorps Public Archive Grant</h4>
+					<p>NEH, March 2016, <a href="https://www.neh.gov/news/press-release/2016-03-23" target="_blank">https://www.neh.gov/news/press-release/2016-03-23</a></p>
+				</div>
+			</section>
+		</div>
+
 	</div>
 
 </main>
