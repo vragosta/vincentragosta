@@ -36,8 +36,7 @@ class Instagram_Widget extends WP_Widget {
 	public function form( $instance ) {
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : '';
 		$button_text = ! empty( $instance['button_text'] ) ? $instance['button_text'] : '';
-		$button_link = ! empty( $instance['button_link'] ) ? $instance['button_link'] : '';
-		$button_target = ! empty( $instance['button_target'] ) ? $instance['button_target'] : ''; ?>
+		$button_link = ! empty( $instance['button_link'] ) ? $instance['button_link'] : ''; ?>
 
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php echo __( 'Title:', 'vincentragosta' ); ?></label>
@@ -50,10 +49,6 @@ class Instagram_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'button_link' ) ); ?>"><?php echo __( 'Button Link:', 'vincentragosta' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'button_link' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'button_link' ) ); ?>" type="text" value="<?php echo esc_attr( $button_link ); ?>">
-		</p>
-		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'button_target' ) ); ?>"><?php echo __( 'Is the link directing traffic away from the website?:', 'vincentragosta' ); ?></label>
-			<input id="<?php echo esc_attr( $this->get_field_id( 'button_target' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'button_target' ) ); ?>" type="checkbox" <?php echo $button_target == 'on' ? 'checked' : ''; ?>>
 		</p><?php
 	}
 
@@ -70,7 +65,6 @@ class Instagram_Widget extends WP_Widget {
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 		$instance['button_text'] = ( ! empty( $new_instance['button_text'] ) ) ? $new_instance['button_text'] : '';
 		$instance['button_link'] = ( ! empty( $new_instance['button_link'] ) ) ? $new_instance['button_link'] : '';
-		$instance['button_target'] = ( ! empty( $new_instance['button_target'] ) ) ? $new_instance['button_target'] : '';
 
 		return $instance;
 	}
@@ -94,11 +88,11 @@ class Instagram_Widget extends WP_Widget {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 		} ?>
 
-			<div id="instagram-feed"></div>
+		<div id="instagram-feed"></div>
 
-			<?php if ( $instance['button_text'] ) { ?>
-				<a class="instagram-about" href="<?php echo esc_url( $instance['button_link'] ); ?>" <?php echo $instance['button_target'] == 'on' ? 'target="_blank"' : ''; ?>><?php echo esc_html( $instance['button_text'] ); ?></a>
-			<?php } ?>
+		<?php if ( $instance['button_text'] ) { ?>
+			<a class="instagram-about" href="<?php echo esc_url( $instance['button_link'] ); ?>"><?php echo esc_html( $instance['button_text'] ); ?></a>
+		<?php } ?>
 
 		<?php echo $args['after_widget'];
 	}
