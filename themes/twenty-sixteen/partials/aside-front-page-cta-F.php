@@ -9,5 +9,5 @@
 ?>
 
 <aside class="aside cta f col-flex-center">
-	<div id="instafeed"></div>
+	<?php get_template_part( 'partials/content', 'instagram-feed' ); ?>
 </aside>

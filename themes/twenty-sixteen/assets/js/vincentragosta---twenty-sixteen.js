@@ -59,11 +59,22 @@
 		 * @return void
 		 */
 		initInstagram : function() {
-			var feed = new Instafeed({
-					get: 'user',
-					userId: 4257019760,
-					accessToken: '4257019760.27f94d8.0e7ffed16ee649ee9139601bef53f97e',
-					resolution: 'standard_resolution'
+			var template =
+				'<div class="instagram-image col-xs-12 col-sm-6 col-md-4 col-lg-2">' +
+					'<figure itemscope itemtype="http://schema.org/CreativeWork">' +
+						'<meta itemprop="project-image" content="{{image}}" />' +
+						'<div class="image normalize-image" style="background-image: url( \'{{image}}\' );"></div>' +
+					'</figure>' +
+				'</div>',
+
+				feed = new Instafeed({
+					get : 'user',
+					userId : 4257019760,
+					accessToken : VincentRagosta.options.accessToken,
+					resolution : 'standard_resolution',
+					target : 'instagram-feed',
+					template : template,
+					// limit :
 				});
 
 			feed.run();

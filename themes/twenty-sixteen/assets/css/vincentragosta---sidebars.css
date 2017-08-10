@@ -163,3 +163,32 @@
 		width: 100%;
 	}
 }
+
+/*-- Instagram ---*/
+#instagram-feed {
+	width: 100%;
+}
+
+#instagram-feed a {
+	border: none;
+}
+
+#instagram-feed .instagram-image {
+	padding: 5px;
+}
+
+#instagram-feed figure {
+	position: relative;
+	padding-bottom: 100%;
+	width: 100%;
+}
+
+.instagram-about {
+	margin-top: 4rem;
+}
+
+@media only screen and ( max-width: 768px ) {
+	.instagram-about {
+		margin-top: 3rem;
+	}
+}

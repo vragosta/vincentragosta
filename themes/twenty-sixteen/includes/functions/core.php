@@ -127,6 +127,7 @@ function scripts() {
 				'apiUrl'  => home_url( '/wp-json/v1' ),
 				'homeUrl' => home_url(),
 				'nonce'   => wp_create_nonce( 'wp_rest' ),
+				'accessToken' => INSTAGRAM_ACCESS_TOKEN
 			)
 		)
 	);
