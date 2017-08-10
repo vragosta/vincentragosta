@@ -18,4 +18,6 @@ get_template_part( 'partials/aside-about-page-cta', 'C' );
 
 get_template_part( 'partials/aside-about-page-cta', 'D' );
 
+get_template_part( 'partials/aside-about-page-cta', 'F' );
+
 get_footer();

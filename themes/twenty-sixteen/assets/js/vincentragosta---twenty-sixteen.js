@@ -73,11 +73,12 @@
 					accessToken : VincentRagosta.options.accessToken,
 					resolution : 'standard_resolution',
 					target : 'instagram-feed',
-					template : template,
-					// limit :
+					template : template
 				});
 
-			feed.run();
+				if ( $( '#instagram-feed' ).length ) {
+					feed.run();
+				}
 		},
 
 		/**

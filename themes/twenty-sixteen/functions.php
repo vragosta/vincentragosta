@@ -34,6 +34,7 @@ require_once VINCENTRAGOSTA_COM_INC . 'metaboxes/metabox-project.php';
 require_once VINCENTRAGOSTA_COM_INC . 'metaboxes/metabox-user.php';
 
 # Include widgets.
+require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-instagram.php';
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-notification.php';
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-text-column.php';
 
