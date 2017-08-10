@@ -178,6 +178,12 @@
 	padding: 5px;
 }
 
+@media only screen and ( max-width: 768px ) {
+	#instagram-feed .instagram-image {
+		padding: 5px 0;
+	}
+}
+
 #instagram-feed figure {
 	position: relative;
 	padding-bottom: 100%;
