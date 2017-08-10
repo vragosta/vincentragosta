@@ -4,6 +4,10 @@
  */
 
 /*--- News & Updates Widget ---*/
+#news-and-updates {
+	max-width: 1200px;
+}
+
 #news-and-updates > div:last-child {
 	padding-top: 4.5rem;
 }
