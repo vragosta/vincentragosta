@@ -8,6 +8,8 @@
  */
 ?>
 
-<aside class="aside cta f col-flex-center">
-	<?php get_template_part( 'partials/content', 'instagram-feed' ); ?>
-</aside>
+<?php if ( is_active_sidebar( 'cta-front-page-f' ) ) { ?>
+	<aside class="aside cta f col-flex-center">
+		<?php dynamic_sidebar( 'cta-front-page-f' ); ?>
+	</aside>
+<?php } ?>
