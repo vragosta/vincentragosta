@@ -86,7 +86,7 @@ get_header(); ?>
 			</section>
 			<section class="col-xs-12 col-sm-8">
 				<div class="education-item row">
-					<h4>Batchelor of Science: Computer Science</h4>
+					<h4>Bachelor of Science: Computer Science</h4>
 					<p>Brooklyn College, Brooklyn, NY, September 2010 - May 2015</p>
 				</div>
 
@@ -96,7 +96,7 @@ get_header(); ?>
 				</div>
 
 				<div class="education-item row">
-					<h4>Batchelor of Science: Physicians Assistant</h4>
+					<h4>Bachelor of Science: Physicians Assistant</h4>
 					<p>St. Johns University, Brooklyn, NY, September 2008 - May 2009</p>
 				</div>
 			</section>
