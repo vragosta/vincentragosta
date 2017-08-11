@@ -10,12 +10,11 @@
  */
 
 namespace VincentRagosta\Api;
-use \WP_REST_Controller;
 
 # Blocking direct access to this file.
 defined( 'ABSPATH' ) || exit;
 
-class WP_REST_Contact extends WP_REST_Controller {
+class WP_REST_Contact extends \WP_REST_Controller {
 
 	/**
 	 * Register the routes for the objects of the controller.
@@ -28,7 +27,7 @@ class WP_REST_Contact extends WP_REST_Controller {
 		add_action( 'rest_api_init', function() {
 			register_rest_route( 'v1', 'contact', array(
 				array(
-					'methods'  => WP_REST_Server::CREATABLE,
+					'methods'  => \WP_REST_Server::CREATABLE,
 					'callback' => [ $this, 'send_email' ]
 				)
 			) );
@@ -46,7 +45,7 @@ class WP_REST_Contact extends WP_REST_Controller {
 		$sender = json_decode( $request->get_body() );
 
 		if ( ! $sender ) {
-			return new WP_REST_Response( 'There was an error with the request.', 500 );
+			return new \WP_REST_Response( 'There was an error with the request.', 500 );
 		}
 
 		$to = 'vincentpasqualeragosta@gmail.com';
@@ -61,7 +60,7 @@ From,
 %4$s
 ';
 
-		$content = sprintf(
+		$body = sprintf(
 			$content,
 			$message,
 			$sender->firstname,
@@ -69,9 +68,9 @@ From,
 			$sender->email
 		);
 
-		wp_mail( $to, $subject, $content );
+		wp_mail( $to, $subject, $body );
 
-		return new WP_REST_Response( 200 );
+		return new \WP_REST_Response( 200 );
 	}
 };
 

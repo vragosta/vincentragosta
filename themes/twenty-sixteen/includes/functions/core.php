@@ -104,6 +104,14 @@ function scripts() {
 	);
 
 	wp_enqueue_script(
+		'instagram',
+		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/lib/instafeed.min.js",
+		array(),
+		VINCENTRAGOSTA_COM_VERSION,
+		true
+	);
+
+	wp_enqueue_script(
 		'vincentragosta_com',
 		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/js/vincentragosta---twenty-sixteen.js",
 		array( 'jquery', 'bootstrap' ),
@@ -119,6 +127,7 @@ function scripts() {
 				'apiUrl'  => home_url( '/wp-json/v1' ),
 				'homeUrl' => home_url(),
 				'nonce'   => wp_create_nonce( 'wp_rest' ),
+				'accessToken' => INSTAGRAM_ACCESS_TOKEN
 			)
 		)
 	);
@@ -406,6 +415,17 @@ function sidebars() {
 		'after_title'   => '</h2>',
 	);
 
+	$cta_about_f = array(
+		'name'          => __( 'Call To Action F ( About Page )', 'theme_text_domain' ),
+		'id'            => 'cta-about-page-f',
+		'description'   => 'Call To Action sidebar on the about page.',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
 	$cta_single = array(
 		'name'          => __( 'Call To Action ( Single Template )', 'theme_text_domain' ),
 		'id'            => 'cta-single',
@@ -438,6 +458,7 @@ function sidebars() {
 	register_sidebar( $cta_about_b );
 	register_sidebar( $cta_about_c );
 	register_sidebar( $cta_about_d );
+	register_sidebar( $cta_about_f );
 	register_sidebar( $cta_single );
 	register_sidebar( $pre_footer );
 }
@@ -450,6 +471,13 @@ function sidebars() {
  * @return void
  */
 function widgets() {
+	register_widget(
+		'Instagram_Widget',
+		array(
+			'before_title' => '<h2>',
+			'after_title' => '</h2>'
+		)
+	);
 	register_widget( 'Notification_Widget' );
 	register_widget( 'Text_Column_Widget' );
 }

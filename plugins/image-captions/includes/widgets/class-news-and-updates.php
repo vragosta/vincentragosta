@@ -123,7 +123,7 @@ class News_And_Updates_Widget extends WP_Widget {
 		$bootstrap_class = 'col-sm-' . ( BOOTSTRAP_GRID_COL_MAX / $bootstrap_grid_col );
 
 		# Set the href for the button.
-		$button_href = ( $instance['post_type'] !== 'post' ) ? home_url( '/portfolio/' ) : home_url( '/blog/' ) ;
+		$button_href = ( $instance['post_type'] !== 'post' ) ? home_url( '/projects/' ) : home_url( '/blog/' ) ;
 
 		# Create arguments array for query.
 		$args = array(
@@ -136,18 +136,20 @@ class News_And_Updates_Widget extends WP_Widget {
 		$query = new WP_Query( $args ); ?>
 
 		<div id="news-and-updates" class="custom-widget full-width">
-			<?php if ( $query->have_posts() ) { ?>
-				<?php while ( $query->have_posts() ) { ?>
-					<?php $query->the_post(); ?>
-					<div class="col-xs-12 <?php echo esc_attr( $bootstrap_class ); ?>">
+			<div class="row">
+				<?php if ( $query->have_posts() ) { ?>
+					<?php while ( $query->have_posts() ) { ?>
+						<?php $query->the_post(); ?>
+						<div class="col-xs-12 <?php echo esc_attr( $bootstrap_class ); ?> <?php echo $query->post_count === 1 ? 'marginally-center' : ''; ?>">
 
-						<!-- Featured image overlay -->
-						<?php do_shortcode( '[image-caption id="' . $post->ID . '"]' ); ?>
+							<!-- Featured image overlay -->
+							<?php do_shortcode( '[image-caption id="' . $post->ID . '"]' ); ?>
 
-					</div>
+						</div>
+					<?php } ?>
+					<?php wp_reset_postdata(); ?>
 				<?php } ?>
-				<?php wp_reset_postdata(); ?>
-			<?php } ?>
+			</div>
 
 			<div class="full-width col-flex-center">
 				<a href="<?php echo $button_href; ?>">View more <?php echo esc_html( $instance['post_type'] ); ?>s</a>

@@ -65,3 +65,8 @@
 		opacity: 1;
 	}
 }
+
+/*--- Prevent button from appearing in the header on the front page ---*/
+#header .featured-image .overlay a {
+	display: none;
+}

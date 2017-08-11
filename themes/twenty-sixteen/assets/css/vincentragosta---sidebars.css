@@ -20,7 +20,7 @@
 
 /*--- Accomodating for single template design ---*/
 .single .aside.content {
-	padding: 6rem 4rem 0;
+	padding: 6rem 0;
 }
 
 @media only screen and ( max-width: 768px ) {
@@ -36,6 +36,10 @@
 /*--- Specifically target the excerpt on the archive page. ---*/
 .archive .aside.excerpt {
 	background: #edeeef;
+}
+
+#single-project .aside.excerpt {
+	max-width: 800px;
 }
 
 .cta.b,
@@ -157,5 +161,41 @@
 @media only screen and ( max-width: 991px ) {
 	#sidebar {
 		width: 100%;
+	}
+}
+
+/*-- Instagram ---*/
+#instagram-feed {
+	width: 100%;
+	max-width: 1200px;
+}
+
+#instagram-feed a {
+	border: none;
+}
+
+#instagram-feed .instagram-image {
+	padding: 5px;
+}
+
+@media only screen and ( max-width: 768px ) {
+	#instagram-feed .instagram-image {
+		padding: 5px 0;
+	}
+}
+
+#instagram-feed figure {
+	position: relative;
+	padding-bottom: 100%;
+	width: 100%;
+}
+
+.instagram-about {
+	margin-top: 4rem;
+}
+
+@media only screen and ( max-width: 768px ) {
+	.instagram-about {
+		margin-top: 3rem;
 	}
 }

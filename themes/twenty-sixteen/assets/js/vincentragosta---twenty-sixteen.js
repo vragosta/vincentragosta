@@ -52,6 +52,36 @@
 		},
 
 		/**
+		 *
+		 *
+		 * @since 0.1.0
+		 * @uses removeClass(), addClass()
+		 * @return void
+		 */
+		initInstagram : function() {
+			var template =
+				'<div class="instagram-image col-xs-12 col-sm-6 col-md-4 col-lg-2">' +
+					'<figure itemscope itemtype="http://schema.org/CreativeWork">' +
+						'<meta itemprop="project-image" content="{{image}}" />' +
+						'<div class="image normalize-image" style="background-image: url( \'{{image}}\' );"></div>' +
+					'</figure>' +
+				'</div>',
+
+				feed = new Instafeed({
+					get : 'user',
+					userId : 4257019760,
+					accessToken : VincentRagosta.options.accessToken,
+					resolution : 'standard_resolution',
+					target : 'instagram-feed',
+					template : template
+				});
+
+				if ( $( '#instagram-feed' ).length ) {
+					feed.run();
+				}
+		},
+
+		/**
 		 * VincentRagosta class initializer.
 		 *
 		 * @since 0.1.0
@@ -61,6 +91,7 @@
 		init: function() {
 			this.loadElements();
 			this.setupMenuToggle();
+			this.initInstagram();
 		}
 	};
 
@@ -70,32 +101,32 @@
 		vincentragosta.init();
 
 		/**
-	 * Sends contact information to contact endpoint for processing.
-	 */
-	$( '.contact-btn' ).click(function() {
-		var firstname = $( 'input[name=firstname]' ).val(),
-			lastname = $( 'input[name=lastname]' ).val(),
-			email = $( 'input[name=email]' ).val(),
-			message = $( 'textarea[name=message]' ).val(),
-			data = {
-				'firstname' : firstname,
-				'lastname' : lastname,
-				'email' : email,
-				'message' : message
-			};
+		 * Sends contact information to contact endpoint for processing.
+		 */
+		$( '.contact-btn' ).click(function() {
+			var firstname = $( 'input[name=firstname]' ).val(),
+				lastname = $( 'input[name=lastname]' ).val(),
+				email = $( 'input[name=email]' ).val(),
+				message = $( 'textarea[name=message]' ).val(),
+				data = {
+					'firstname' : firstname,
+					'lastname' : lastname,
+					'email' : email,
+					'message' : message
+				};
 
-		$.ajax( {
-			url: VincentRagosta.options.apiUrl  + '/contact/',
-			type: 'post',
-			headers: {
-				'X-WP-Nonce': VincentRagosta.options.nonce
-			},
-			data: JSON.stringify( data ),
-			dataType: 'json',
-		} ).then(function( response ) {
-			console.log( response );
-		} );
-	});
+			$.ajax( {
+				url: VincentRagosta.options.apiUrl  + '/contact/',
+				type: 'post',
+				headers: {
+					'X-WP-Nonce': VincentRagosta.options.nonce
+				},
+				data: JSON.stringify( data ),
+				dataType: 'json',
+			} ).then(function( response ) {
+				window.location.href = VincentRagosta.options.homeUrl + '/contact/';
+			} );
+		});
 
 	} );
 } )( jQuery );

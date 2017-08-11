@@ -4,7 +4,7 @@
  */
 
 #single-project {
-	max-width: 1000px;
+	max-width: 1200px;
 	margin: 0 auto 6rem;
 	padding: 0 4rem;
 }
@@ -33,7 +33,7 @@
 }
 
 #pagination-single {
-	padding: 6rem 4rem 0;
+	padding: 0 4rem;
 }
 
 #pagination-single a {

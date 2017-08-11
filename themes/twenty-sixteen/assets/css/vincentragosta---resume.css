@@ -68,16 +68,15 @@
 }
 
 #resume .work-item:not( :last-child ),
-#resume .education-item:not( :last-child ) {
+#resume .education-item:not( :last-child ),
+#resume .award-item:not( :last-child ) {
 	margin-bottom: 100px;
 }
 
 @media only screen and ( max-width: 768px ) {
-	#resume .work-item {
-		margin: 0;
-	}
-
-	#resume .education-item {
+	#resume .work-item,
+	#resume .education-item,
+	#resume .award-item {
 		margin: 0;
 	}
 }

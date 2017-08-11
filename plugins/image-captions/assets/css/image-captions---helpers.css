@@ -7,8 +7,17 @@
 	width: 100%;
 }
 
+.marginally-center {
+	margin: 0 auto;
+	float: none !important;
+}
+
+.col-flex {
+	display: flex;
+	flex-direction: column;
+}
+
 .col-flex-center {
-	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -16,7 +25,6 @@
 }
 
 .col-flex-start {
-	height: 100%;
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
@@ -24,7 +32,6 @@
 }
 
 .col-flex-end {
-	height: 100%;
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
@@ -32,14 +39,12 @@
 }
 
 .row-flex-center {
-	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
 .row-flex-start {
-	height: 100%;
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
@@ -47,7 +52,6 @@
 }
 
 .row-flex-end {
-	height: 100%;
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
@@ -57,6 +61,10 @@
 /*--- Padding on left and right edges ( ~10px ) ---*/
 .padding-left-right {
 	padding: 0 1rem;
+}
+
+.padding-none {
+	padding: 0 !important;
 }
 
 /*--- Aspect Ratio 100% ---*/
