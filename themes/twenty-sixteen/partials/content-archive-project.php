@@ -23,16 +23,16 @@ $args = array(
 $custom = new WP_Query( $args ); ?>
 
 <?php if ( $custom->have_posts() ) { ?>
-	<section class="aside">
+	<section class="aside archive">
 		<h2>Wordpress Featured Projects</h2>
-		<div class="full-width row-flex-center grid-container">
+		<div class="row grid-container">
 			<?php while ( $custom->have_posts() ) { ?>
 				<?php $custom->the_post(); ?>
 
 				<!-- Count mod 4 -->
 				<?php if ( ++$count % 4 === 0 ) { ?>
 					</div>
-					<div class="full-width row-flex-center grid-container">
+					<div class="full-width grid-container">
 				<?php } ?>
 
 				<!-- Grid Item -->
@@ -50,4 +50,8 @@ $custom = new WP_Query( $args ); ?>
 <?php } ?>
 
 <!-- Archive Pagination -->
-<?php include( locate_template( 'partials/aside-archive-pagination.php', false, false ) ); ?>
+<?php
+if ( $custom->max_num_pages > 1 ) {
+	include( locate_template( 'partials/aside-archive-pagination.php', false, false ) );
+}
+	?>

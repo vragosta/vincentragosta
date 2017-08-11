@@ -13,6 +13,11 @@
 	}
 }
 
+#projects .aside.archive {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
 /*--- Accomodating for single template design ---*/
 .single .aside.link {
 	display: flex;
