@@ -72,6 +72,7 @@ function vincentragosta_setup() {
 
 	# Add excerpt support to...
 	add_post_type_support( 'page', 'excerpt' );
+	add_image_size( 'hero', 1920, 1200 );
 
 	# If set to 'false', the admin bar will not display on front end.
 	show_admin_bar( false );

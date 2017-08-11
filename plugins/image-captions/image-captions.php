@@ -15,7 +15,8 @@
 define( 'IMAGE_CAPTIONS_VERSION', '0.1.0' );
 define( 'IMAGE_CAPTIONS_URL', plugin_dir_url( __FILE__ ) );
 define( 'IMAGE_CAPTIONS_PATH', dirname( __FILE__ ) . '/' );
-define( 'IMAGE_CAPTIONS_IMAGE_SIZE', 'large' );
+define( 'IMAGE_CAPTIONS_HERO_SIZE', 'hero' );
+define( 'IMAGE_CAPTIONS_IMAGE_SIZE', 'medium_large' );
 
 # Include all functions associated with the image caption shortcode.
 require_once IMAGE_CAPTIONS_PATH . 'includes/functions/core.php';

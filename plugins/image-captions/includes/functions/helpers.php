@@ -33,7 +33,7 @@ function set_default_properties( $atts ) {
 		'ID' => $post->ID,
 		'slug' => $post->post_name,
 		'header' => set_header_text( $post ),
-		'image_source' => is_single() ? set_cover_image( $post->ID ) : set_featured_image( $post->ID ),
+		'image_source' => is_single() ? set_cover_image( $post->ID ) : set_featured_image( $post->ID, $is_static ),
 		'classes' => set_featured_image_classes( $is_static, $atts['class'] ),
 		'sub_header' => set_sub_header_text( $post ),
 		'button_text' => set_button_text( $is_static, $post ),
@@ -49,11 +49,14 @@ function set_default_properties( $atts ) {
  *
  * @since 0.1.0
  * @param int $id id of the wp_post object.
+ * @param bool $is_static determines if image is being used for header
  * @uses wp_get_attachment_image_src(), get_post_thumbnail_id()
  * @return string void url of attached image.
  */
-function set_featured_image( $id ) {
-	return wp_get_attachment_image_src( get_post_thumbnail_id( $id ), IMAGE_CAPTIONS_IMAGE_SIZE )[0];
+function set_featured_image( $id, $is_static ) {
+	$size = $is_static ? IMAGE_CAPTIONS_HERO_SIZE : IMAGE_CAPTIONS_IMAGE_SIZE;
+	return wp_get_attachment_image_src( get_post_thumbnail_id( $id ), $size )[0];
+	// return wp_get_attachment_image_src( get_post_thumbnail_id( $id ), IMAGE_CAPTIONS_IMAGE_SIZE )[0];
 }
 
 /**
