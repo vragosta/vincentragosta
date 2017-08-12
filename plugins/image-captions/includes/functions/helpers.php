@@ -56,7 +56,6 @@ function set_default_properties( $atts ) {
 function set_featured_image( $id, $is_static ) {
 	$size = $is_static ? IMAGE_CAPTIONS_HERO_SIZE : IMAGE_CAPTIONS_IMAGE_SIZE;
 	return wp_get_attachment_image_src( get_post_thumbnail_id( $id ), $size )[0];
-	// return wp_get_attachment_image_src( get_post_thumbnail_id( $id ), IMAGE_CAPTIONS_IMAGE_SIZE )[0];
 }
 
 /**
