@@ -83,6 +83,56 @@
 		},
 
 		/**
+		 * On scroll of the doors template, add class visible if scroll from top is above 800px and less than 1400 from bottom of document.
+		 *
+		 * @since 0.1.0
+		 * @uses  scroll(), scrollTop(), height(), addClass(), removeClass()
+		 */
+		scrollListener : function() {
+			$( window ).scroll( function() {
+				if ( $( window ).scrollTop() >= 800 && $( window ).scrollTop() < ( $( document ).height() - 1400 ) ) {
+					$( '.arrow.top' ).addClass( 'visible' );
+				} else {
+					$( '.arrow.top' ).removeClass( 'visible' );
+				}
+			});
+		},
+
+		/**
+		 * Sends contact information to contact endpoint for processing.
+		 *
+		 * @since 0.1.0
+		 * @uses click(), val(), ajax(), stringify()
+		 * @return void
+		 */
+		sendContactInformation : function() {
+			$( '.contact-btn' ).click(function() {
+				var firstname = $( 'input[name=firstname]' ).val(),
+					lastname = $( 'input[name=lastname]' ).val(),
+					email = $( 'input[name=email]' ).val(),
+					message = $( 'textarea[name=message]' ).val(),
+					data = {
+						'firstname' : firstname,
+						'lastname' : lastname,
+						'email' : email,
+						'message' : message
+					};
+
+				$.ajax( {
+					url: VincentRagosta.options.apiUrl  + '/contact/',
+					type: 'post',
+					headers: {
+						'X-WP-Nonce': VincentRagosta.options.nonce
+					},
+					data: JSON.stringify( data ),
+					dataType: 'json',
+				} ).then(function( response ) {
+					window.location.href = VincentRagosta.options.homeUrl + '/contact/';
+				} );
+			});
+		},
+
+		/**
 		 * VincentRagosta class initializer.
 		 *
 		 * @since 0.1.0
@@ -93,6 +143,8 @@
 			this.loadElements();
 			this.setupMenuToggle();
 			this.initInstagram();
+			this.scrollListener();
+			this.sendContactInformation();
 		}
 	};
 
@@ -100,34 +152,6 @@
 
 		// Initialize the vincentragosta class.
 		vincentragosta.init();
-
-		/**
-		 * Sends contact information to contact endpoint for processing.
-		 */
-		$( '.contact-btn' ).click(function() {
-			var firstname = $( 'input[name=firstname]' ).val(),
-				lastname = $( 'input[name=lastname]' ).val(),
-				email = $( 'input[name=email]' ).val(),
-				message = $( 'textarea[name=message]' ).val(),
-				data = {
-					'firstname' : firstname,
-					'lastname' : lastname,
-					'email' : email,
-					'message' : message
-				};
-
-			$.ajax( {
-				url: VincentRagosta.options.apiUrl  + '/contact/',
-				type: 'post',
-				headers: {
-					'X-WP-Nonce': VincentRagosta.options.nonce
-				},
-				data: JSON.stringify( data ),
-				dataType: 'json',
-			} ).then(function( response ) {
-				window.location.href = VincentRagosta.options.homeUrl + '/contact/';
-			} );
-		});
 
 	} );
 } )( jQuery );
