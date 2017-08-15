@@ -69,19 +69,19 @@
 					'</a>' +
 				'</div>',
 
-				feed = new Instafeed({
-					get : 'user',
-					userId : 4257019760,
-					accessToken : VincentRagosta.options.accessToken,
-					resolution : 'standard_resolution',
-					target : 'instagram-feed',
-					template : template,
-					limit : 12
-				});
+			feed = new Instafeed({
+				get : 'user',
+				userId : 4257019760,
+				accessToken : VincentRagosta.options.accessToken,
+				resolution : 'standard_resolution',
+				target : 'instagram-feed',
+				template : template,
+				limit : 12
+			});
 
-				if ( $( '#instagram-feed' ).length ) {
-					feed.run();
-				}
+			if ( $( '#instagram-feed' ).length ) {
+				feed.run();
+			}
 		},
 
 		/**

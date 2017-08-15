@@ -170,6 +170,10 @@
 }
 
 /*-- Instagram ---*/
+html.swipebox-no-touch {
+	overflow-y: hidden;
+}
+
 #instagram-feed {
 	width: 100%;
 	max-width: 1200px;
