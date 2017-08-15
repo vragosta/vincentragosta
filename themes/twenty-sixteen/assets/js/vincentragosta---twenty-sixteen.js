@@ -61,10 +61,12 @@
 		initInstagram : function() {
 			var template =
 				'<div class="instagram-image col-xs-12 col-sm-6 col-md-4 col-lg-2">' +
-					'<figure itemscope itemtype="http://schema.org/CreativeWork">' +
-						'<meta itemprop="project-image" content="{{image}}" />' +
-						'<div class="image normalize-image" style="background-image: url( \'{{image}}\' );"></div>' +
-					'</figure>' +
+					'<a href="{{image}}" data-rel="lightbox" title="{{caption}}">' +
+						'<figure itemscope itemtype="http://schema.org/CreativeWork">' +
+							'<meta itemprop="project-image" content="{{image}}" />' +
+							'<div class="image normalize-image" style="background-image: url( \'{{image}}\' );"></div>' +
+						'</figure>' +
+					'</a>' +
 				'</div>',
 
 				feed = new Instafeed({

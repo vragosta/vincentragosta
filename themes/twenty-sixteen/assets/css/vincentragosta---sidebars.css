@@ -177,6 +177,7 @@
 
 #instagram-feed a {
 	border: none;
+	padding: 0;
 }
 
 #instagram-feed .instagram-image {
