@@ -69,11 +69,9 @@
 .arrow.top {
 	position: fixed;
 	bottom: 2rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	text-align: center;
+	left: 0;
 	width: 100%;
-
 	opacity: 0;
 	visibility: hidden;
 	transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
@@ -85,6 +83,7 @@
 }
 
 .arrow.top a {
+	margin: 0 auto;
 	padding: 0;
 	background-color: #fff;
 	border: 1px solid #221e1f;
