@@ -96,6 +96,14 @@ function vincentragosta_setup() {
  * @return void
  */
 function scripts() {
+	/**
+	 * Flag whether to enable loading uncompressed/debugging assets. Default false.
+	 *
+	 * @param bool vincentragosta_script_debug
+	 */
+	$debug = apply_filters( 'vincentragosta_script_debug', false );
+	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
 	wp_register_script(
 		'bootstrap',
 		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/lib/bootstrap/dist/js/bootstrap.min.js",
@@ -114,7 +122,7 @@ function scripts() {
 
 	wp_enqueue_script(
 		'vincentragosta_com',
-		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/js/vincentragosta---twenty-sixteen.js",
+		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/js/vincentragosta---twenty-sixteen{$min}.js",
 		array( 'jquery', 'bootstrap' ),
 		VINCENTRAGOSTA_COM_VERSION,
 		true
@@ -142,6 +150,14 @@ function scripts() {
  * @return void
  */
 function styles() {
+	/**
+	 * Flag whether to enable loading uncompressed/debugging assets. Default false.
+	 *
+	 * @param bool vincentragosta_style_debug
+	 */
+	$debug = apply_filters( 'vincentragosta_style_debug', false );
+	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
 	wp_register_style(
 		'fontawesome',
 		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/lib/fontawesome/css/font-awesome.min.css",
@@ -170,16 +186,9 @@ function styles() {
 		VINCENTRAGOSTA_COM_VERSION
 	);
 
-	wp_register_style(
-		'fonts',
-		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---fonts.css",
-		array(),
-		VINCENTRAGOSTA_COM_VERSION
-	);
-
 	wp_enqueue_style(
 		'vincentragosta',
-		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---twenty-sixteen.css",
+		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---twenty-sixteen{$min}.css",
 		array( 'fontawesome', 'ionicons', 'bootstrap', 'sanitize' ),
 		VINCENTRAGOSTA_COM_VERSION
 	);
