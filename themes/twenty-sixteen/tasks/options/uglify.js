@@ -1,7 +1,8 @@
 module.exports = {
 	all: {
 		files: {
-			'assets/js/vincentragosta---twenty-sixteen.min.js': [ 'assets/js/vincentragosta---twenty-sixteen.js' ],
+			'assets/js/admin.min.js': ['assets/js/admin.js'],
+			'assets/js/vincentragosta---twenty-sixteen.min.js': ['assets/js/vincentragosta---twenty-sixteen.js'],
 		},
 		options: {
 			banner: '/*! <%= pkg.title %> - v<%= pkg.version %>\n' +
@@ -10,7 +11,7 @@ module.exports = {
 				' * Licensed GPL-2.0+' +
 				' */\n',
 			mangle: {
-				except: [ 'jQuery' ]
+				except: ['jQuery']
 			}
 		}
 	}

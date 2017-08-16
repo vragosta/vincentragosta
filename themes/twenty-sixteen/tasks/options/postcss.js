@@ -8,7 +8,6 @@ module.exports = {
 			]
 		},
 		files: {
-			'assets/css/vincentragosta---archive.min.css': [ 'assets/css/vincentragosta---admin.min.css' ],
 			'assets/css/vincentragosta---admin.min.css': [ 'assets/css/vincentragosta---admin.min.css' ],
 			'assets/css/vincentragosta---twenty-sixteen.min.css': [ 'assets/css/vincentragosta---twenty-sixteen.min.css' ],
 		}
