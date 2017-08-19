@@ -6,12 +6,11 @@
  * Licensed under the GPL-2.0+ license.
  */
 
- /*--- General ---*/
- @import "general/_fonts.css";
- @import "general/_footer.css";
- @import "general/_header.css";
- @import "general/_helpers.css";
- @import "general/_site.css";
+/*--- General ---*/
+@import "general/_footer.css";
+@import "general/_header.css";
+@import "general/_helpers.css";
+@import "general/_site.css";
 
 /*--- Components ---*/
 @import "components/_menu.css";

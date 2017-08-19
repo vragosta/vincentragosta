@@ -159,6 +159,13 @@ function styles() {
 	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 	wp_register_style(
+		'fonts',
+		'https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i|Lato:100,100i,300,300i,400,400i,700,700i,900,900i',
+		array(),
+		VINCENTRAGOSTA_COM_VERSION
+	);
+
+	wp_register_style(
 		'fontawesome',
 		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/lib/fontawesome/css/font-awesome.min.css",
 		array(),
@@ -189,7 +196,7 @@ function styles() {
 	wp_enqueue_style(
 		'vincentragosta',
 		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---twenty-sixteen{$min}.css",
-		array( 'fontawesome', 'ionicons', 'bootstrap', 'sanitize' ),
+		array( 'fontawesome', 'ionicons', 'bootstrap', 'sanitize', 'fonts' ),
 		VINCENTRAGOSTA_COM_VERSION
 	);
 }
