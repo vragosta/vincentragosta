@@ -14,5 +14,14 @@ module.exports = {
 
 		dest: 'assets/css/',
 		ext: '.min.css'
-	}
+	},
+	// minify: {
+	// 	expand: true,
+	//
+	// 	cwd: '../../plugins/image-captions/assets/css/',
+	// 	src: ['vincentragosta---twenty-sixteen.css', 'admin.css'],
+	//
+	// 	dest: 'assets/css/',
+	// 	ext: '.min.css'
+	// }
 };
