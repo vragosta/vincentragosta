@@ -15,13 +15,13 @@ module.exports = {
 		dest: 'assets/css/',
 		ext: '.min.css'
 	},
-	// minify: {
-	// 	expand: true,
-	//
-	// 	cwd: '../../plugins/image-captions/assets/css/',
-	// 	src: ['vincentragosta---twenty-sixteen.css', 'admin.css'],
-	//
-	// 	dest: 'assets/css/',
-	// 	ext: '.min.css'
-	// }
+	imageCaptions: {
+		expand: true,
+
+		cwd: '../../plugins/image-captions/assets/css/',
+		src: ['image-captions---twenty-sixteen.css'],
+
+		dest: '../../plugins/image-captions/assets/css/',
+		ext: '.min.css'
+	}
 };

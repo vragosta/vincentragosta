@@ -101,7 +101,7 @@ function scripts() {
 	 *
 	 * @param bool vincentragosta_script_debug
 	 */
-	$debug = apply_filters( 'vincentragosta_script_debug', true );
+	$debug = apply_filters( 'vincentragosta_script_debug', false );
 	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 	wp_register_script(
@@ -155,7 +155,7 @@ function styles() {
 	 *
 	 * @param bool vincentragosta_style_debug
 	 */
-	$debug = apply_filters( 'vincentragosta_style_debug', true );
+	$debug = apply_filters( 'vincentragosta_style_debug', false );
 	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 	wp_register_style(
