@@ -9,32 +9,32 @@
  */
 
 # Get 'facebook', 'twitter', 'instagram' from the Site admin/owner.
-$facebook = get_user_meta( VINCENTRAGOSTA_SITE_ADMIN, 'facebook', true );
-$twitter = get_user_meta( VINCENTRAGOSTA_SITE_ADMIN, 'twitter', true );
-$instagram = get_user_meta( VINCENTRAGOSTA_SITE_ADMIN, 'instagram', true );
-$github = get_user_meta( VINCENTRAGOSTA_SITE_ADMIN, 'github', true ); ?>
+$_facebook = get_user_meta( VINCENTRAGOSTA_SITE_ADMIN, '_facebook', true );
+$_twitter = get_user_meta( VINCENTRAGOSTA_SITE_ADMIN, '_twitter', true );
+$_instagram = get_user_meta( VINCENTRAGOSTA_SITE_ADMIN, '_instagram', true );
+$_github = get_user_meta( VINCENTRAGOSTA_SITE_ADMIN, '_github', true ); ?>
 
 <aside class="social row-flex-center">
-	<?php if ( $facebook ) { ?>
-		<a href="<?php echo esc_url( $facebook ); ?>" target="_blank">
+	<?php if ( $_facebook ) { ?>
+		<a href="<?php echo esc_url( $_facebook ); ?>" target="_blank">
 			<i class="fa fa-facebook" aria-hidden="true"></i>
 		</a>
 	<?php } ?>
 
-	<?php if ( $twitter ) { ?>
-		<a href="<?php echo esc_url( $twitter ); ?>" target="_blank">
+	<?php if ( $_twitter ) { ?>
+		<a href="<?php echo esc_url( $_twitter ); ?>" target="_blank">
 			<i class="fa fa-twitter" aria-hidden="true"></i>
 		</a>
 	<?php } ?>
 
-	<?php if ( $instagram ) { ?>
-		<a href="<?php echo esc_url( $instagram ); ?>" target="_blank">
+	<?php if ( $_instagram ) { ?>
+		<a href="<?php echo esc_url( $_instagram ); ?>" target="_blank">
 			<i class="fa fa-instagram" aria-hidden="true"></i>
 		</a>
 	<?php } ?>
 
-	<?php if ( $github ) { ?>
-		<a href="<?php echo esc_url( $github ); ?>" target="_blank">
+	<?php if ( $_github ) { ?>
+		<a href="<?php echo esc_url( $_github ); ?>" target="_blank">
 			<i class="fa fa-github" aria-hidden="true"></i>
 		</a>
 	<?php } ?>
