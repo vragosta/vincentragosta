@@ -27,9 +27,17 @@ function setup() {
  * @return void
  */
 function image_captions_scripts() {
+	/**
+	 * Flag whether to enable loading uncompressed/debugging assets. Default false.
+	 *
+	 * @param bool vincentragosta_script_debug
+	 */
+	$debug = apply_filters( 'vincentragosta_script_debug', false );
+	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
 	wp_enqueue_script(
 		'image-captions',
-		IMAGE_CAPTIONS_URL . "assets/js/image-captions---twenty-sixteen.js",
+		IMAGE_CAPTIONS_URL . "assets/js/image-captions---twenty-sixteen{$min}.js",
 		array(),
 		IMAGE_CAPTIONS_VERSION,
 		true
@@ -45,59 +53,18 @@ add_action( 'wp_enqueue_scripts', 'image_captions_scripts', 99 );
  * @return void
  */
 function image_captions_styles() {
-	wp_register_style(
-		'ic-core-components',
-		IMAGE_CAPTIONS_URL . "assets/css/image-captions---core-components.css",
-		array(),
-		IMAGE_CAPTIONS_VERSION
-	);
-
-	wp_register_style(
-		'ic-helpers',
-		IMAGE_CAPTIONS_URL . "assets/css/image-captions---helpers.css",
-		array(),
-		IMAGE_CAPTIONS_VERSION
-	);
-
-	wp_register_style(
-		'ic-sub-header',
-		IMAGE_CAPTIONS_URL . "assets/css/image-captions---sub-header.css",
-		array(),
-		IMAGE_CAPTIONS_VERSION
-	);
-
-	wp_register_style(
-		'ic-header',
-		IMAGE_CAPTIONS_URL . "assets/css/image-captions---header.css",
-		array(),
-		IMAGE_CAPTIONS_VERSION
-	);
-
-	wp_register_style(
-		'ic-overlay',
-		IMAGE_CAPTIONS_URL . "assets/css/image-captions---overlay.css",
-		array(),
-		IMAGE_CAPTIONS_VERSION
-	);
-
-	wp_register_style(
-		'ic-image',
-		IMAGE_CAPTIONS_URL . "assets/css/image-captions---image.css",
-		array(),
-		IMAGE_CAPTIONS_VERSION
-	);
-
-	wp_register_style(
-		'ic-widgets',
-		IMAGE_CAPTIONS_URL . "assets/css/image-captions---widgets.css",
-		array(),
-		IMAGE_CAPTIONS_VERSION
-	);
+	/**
+	 * Flag whether to enable loading uncompressed/debugging assets. Default false.
+	 *
+	 * @param bool vincentragosta_style_debug
+	 */
+	$debug = apply_filters( 'vincentragosta_style_debug', false );
+	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 	wp_enqueue_style(
 		'image-captions',
-		IMAGE_CAPTIONS_URL . "assets/css/image-captions---twenty-sixteen.css",
-		array( 'ic-core-components', 'ic-helpers', 'ic-sub-header', 'ic-header', 'ic-overlay', 'ic-image', 'ic-widgets' ),
+		IMAGE_CAPTIONS_URL . "assets/css/image-captions---twenty-sixteen{$min}.css",
+		array(),
 		IMAGE_CAPTIONS_VERSION
 	);
 }

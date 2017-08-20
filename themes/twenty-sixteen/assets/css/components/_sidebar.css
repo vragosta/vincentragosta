@@ -170,6 +170,10 @@
 }
 
 /*-- Instagram ---*/
+html.swipebox-html {
+	overflow-y: hidden;
+}
+
 #instagram-feed {
 	width: 100%;
 	max-width: 1200px;
@@ -177,6 +181,7 @@
 
 #instagram-feed a {
 	border: none;
+	padding: 0;
 }
 
 #instagram-feed .instagram-image {

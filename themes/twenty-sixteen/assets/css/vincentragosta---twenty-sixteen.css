@@ -1,73 +1,24 @@
 /**
  * VincentRagosta - Twenty Sixteen
- * http://vincentragosta.com
+ * http://www.vincentragosta.com
  *
  * Copyright (c) 2016
  * Licensed under the GPL-2.0+ license.
  */
 
-/*--- Notification Widget ---*/
-#notification-widget {
-	padding: 0;
-}
+/*--- General ---*/
+@import "general/_footer.css";
+@import "general/_header.css";
+@import "general/_helpers.css";
+@import "general/_site.css";
 
-#notification-widget p {
-	color: #fff;
-	font-size: 2.8rem;
-	opacity: 1;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
+/*--- Components ---*/
+@import "components/_menu.css";
+@import "components/_sidebar.css";
+@import "components/_widget.css";
 
-@media only screen and ( max-width: 991px ) {
-	#notification-widget p {
-		flex-direction: column;
-	}
-}
-
-#notification-widget a {
-	border: 2px solid #fff;
-	color: #fff;
-}
-
-@media only screen and ( min-width: 992px ) {
-	#notification-widget a {
-		margin: 0 0 0 2rem;
-	}
-}
-
-@media only screen and ( max-width: 991px ) {
-	#notification-widget a {
-		margin: 2rem 0 0 0;
-	}
-}
-
-#notification-widget a:hover {
-	background: #fff;
-	color: #686868;
-}
-
-/*--- Text Column Widget ---*/
-#text-column .column-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 2rem 0;
-}
-
-@media only screen and ( max-width: 767px ) {
-	#text-column .column-container {
-		flex-direction: column;
-	}
-}
-
-#text-column .column-container .column:nth-child(2) {
-	margin: 0 2rem;
-}
-
-@media only screen and ( max-width: 767px ) {
-	#text-column .column-container .column:nth-child(2) {
-		margin: 2rem 0;
-	}
-}
+/*--- Templates ---*/
+@import "templates/_archive.css";
+@import "templates/_contact.css";
+@import "templates/_resume.css";
+@import "templates/_single.css";
