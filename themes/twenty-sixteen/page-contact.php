@@ -15,9 +15,7 @@ $facebook = get_user_meta( $user->ID, 'facebook', true );
 $twitter = get_user_meta( $user->ID, 'twitter', true );
 $instagram = get_user_meta( $user->ID, 'instagram', true );
 $personal = get_user_meta( $user->ID, 'personal', true );
-$github = get_user_meta( $user->ID, 'github', true );
-
-global $post; ?>
+$github = get_user_meta( $user->ID, 'github', true ); ?>
 
 <main id="contact-page" class="container">
 	<div class="col-xs-12 col-sm-6">
