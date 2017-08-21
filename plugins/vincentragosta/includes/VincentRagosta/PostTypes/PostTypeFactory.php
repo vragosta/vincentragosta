@@ -27,12 +27,12 @@ class PostTypeFactory {
 			return $this->post_types[ $post_type ];
 		} else {
 			switch ( $post_type ) {
-				// case POST_POST_TYPE:
-				// 	$instance = new PostPostType();
-				// 	break;
-				// case PAGE_POST_TYPE:
-				// 	$instance = new PagePostType();
-				// 	break;
+				case POST_POST_TYPE:
+					$instance = new PostPostType();
+					break;
+				case PAGE_POST_TYPE:
+					$instance = new PagePostType();
+					break;
 				case PROJECT_POST_TYPE:
 					$instance = new ProjectPostType();
 					break;
@@ -77,7 +77,7 @@ class PostTypeFactory {
 		$post_types = array(
 			POST_POST_TYPE,
 			PAGE_POST_TYPE,
-			PROJET_POST_TYPE,
+			PROJECT_POST_TYPE,
 		);
 
 		$post_types = apply_filters( 'vincentragosta_post_types', $post_types );
