@@ -16,7 +16,7 @@ require_once( __DIR__ . '/config.php' );
  * instance of the plugin throughout the current lifecycle.
  */
 function vincentragosta_autorun() {
-	$plugin = \StoryCorps\Plugin::get_instance();
+	$plugin = \VincentRagosta\Plugin::get_instance();
 	$plugin->enable();
 }
 
