@@ -1,6 +1,6 @@
 <?php
 
-namespace VincentRagosta\MetaBoxes;
+namespace VincentRagosta\Admin\MetaBoxes;
 
 class UserMetaBox {
 
@@ -91,6 +91,3 @@ class UserMetaBox {
 		update_usermeta( $user_id, '_phone', sanitize_text_field( $_POST['_phone'] ) );
 	}
 }
-
-$user_metabox = new UserMetabox();
-$user_metabox->register();

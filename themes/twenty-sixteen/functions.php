@@ -29,10 +29,6 @@ require_once VINCENTRAGOSTA_COM_INC . 'functions/essentials.php';
 # Helper functions.
 require_once VINCENTRAGOSTA_COM_INC . 'functions/helpers.php';
 
-# Metaboxes for the various custom post types.
-require_once VINCENTRAGOSTA_COM_INC . 'metaboxes/metabox-project.php';
-require_once VINCENTRAGOSTA_COM_INC . 'metaboxes/metabox-user.php';
-
 # Include widgets.
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-instagram.php';
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-notification.php';

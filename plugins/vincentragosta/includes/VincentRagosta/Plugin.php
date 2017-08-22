@@ -3,9 +3,9 @@
 namespace VincentRagosta;
 
 use VincentRagosta\PostTypes\PostTypeFactory;
-// use StoryCorps\Admin\MetaBoxes\ProjectMetaBox;
-// use StoryCorps\Admin\MetaBoxes\PostMetaFieldsMetaBox;
-// use StoryCorps\Admin\MetaBoxes\UserMetaBox;
+use VincentRagosta\Admin\MetaBoxes\ProjectMetaBox;
+use VincentRagosta\Admin\MetaBoxes\PostMetaFieldsMetaBox;
+use VincentRagosta\Admin\MetaBoxes\UserMetaBox;
 
 /**
  * Plugin is the main entry point into the Vincent Ragosta plugin
@@ -36,7 +36,7 @@ class Plugin {
 
 	public function enable() {
 		add_action( 'init', array( $this, 'init' ) );
-		// add_action( 'admin_init', array( $this, 'init_admin' ) );
+		add_action( 'admin_init', array( $this, 'init_admin' ) );
 	}
 
 	/**
@@ -59,13 +59,13 @@ class Plugin {
 	 * Sets up the various metaboxes and admin customizations.
 	 */
 	function init_admin() {
-		// $project_meta_box = new ProjectMetaBox();
-		// $project_meta_box->register();
-		//
-		// $postmeta_meta_box = new PostMetaFieldsMetaBox();
-		// $postmeta_meta_box->register();
-		//
-		// $user_meta_box = new UserMetaBox();
-		// $user_meta_box->register();
+		$project_meta_box = new ProjectMetaBox();
+		$project_meta_box->register();
+
+		$postmeta_meta_box = new PostMetaFieldsMetaBox();
+		$postmeta_meta_box->register();
+
+		$user_meta_box = new UserMetaBox();
+		$user_meta_box->register();
 	}
 }

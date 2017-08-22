@@ -1,8 +1,8 @@
 <?php
 
-namespace VincentRagosta\MetaBoxes;
+namespace VincentRagosta\Admin\MetaBoxes;
 
-class ProjectMetabox {
+class ProjectMetaBox {
 
 	/**
 	 * Registers metabox with WordPress.
@@ -128,8 +128,5 @@ class ProjectMetabox {
 		update_post_meta( $post_id, '_project_text', sanitize_text_field( $_POST['_project_text'] ) );
 	}
 }
-
-$project_metabox = new ProjectMetabox();
-$project_metabox->register();
 
 ?>
