@@ -33,7 +33,6 @@ class Plugin {
 	}
 
 	public $post_type_factory;
-	// public $project_finder;
 
 	public function enable() {
 		add_action( 'init', array( $this, 'init' ) );
