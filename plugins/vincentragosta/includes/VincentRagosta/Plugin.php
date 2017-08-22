@@ -6,6 +6,7 @@ use VincentRagosta\PostTypes\PostTypeFactory;
 use VincentRagosta\Admin\MetaBoxes\ProjectMetaBox;
 use VincentRagosta\Admin\MetaBoxes\PostMetaFieldsMetaBox;
 use VincentRagosta\Admin\MetaBoxes\UserMetaBox;
+use VincentRagosta\Api\Contact;
 
 /**
  * Plugin is the main entry point into the Vincent Ragosta plugin
@@ -51,8 +52,8 @@ class Plugin {
 		$this->post_type_factory->build_all();
 
 		# Add json endpoint register endpoints here.
-		// $contact_api = new WP_REST_Contact();
-		// $contact_api->register_routes();
+		$contact_api = new Contact();
+		$contact_api->register();
 	}
 
 	/**

@@ -14,7 +14,7 @@ namespace VincentRagosta\Api;
 # Blocking direct access to this file.
 defined( 'ABSPATH' ) || exit;
 
-class WP_REST_Contact extends \WP_REST_Controller {
+class Contact extends \WP_REST_Controller {
 
 	/**
 	 * Register the routes for the objects of the controller.
@@ -23,7 +23,7 @@ class WP_REST_Contact extends \WP_REST_Controller {
 	 * @uses   add_action, reigster_rest_route
 	 * @return void
 	 */
-	public function register_routes() {
+	public function register() {
 		add_action( 'rest_api_init', function() {
 			register_rest_route( 'v1', 'contact', array(
 				array(
@@ -74,5 +74,5 @@ From,
 	}
 };
 
-$contact_api = new WP_REST_Contact();
-$contact_api->register_routes();
+// $contact_api = new WP_REST_Contact();
+// $contact_api->register_routes();
