@@ -6,10 +6,10 @@
  *
  * ENDPOINTS:
  *   /contact
- *     CREATABLE
+ *     - CREATABLE
  */
 
-namespace VincentRagosta\Api;
+namespace VincentRagosta\Endpoints;
 
 # Blocking direct access to this file.
 defined( 'ABSPATH' ) || exit;
@@ -28,7 +28,7 @@ class Contact extends \WP_REST_Controller {
 			register_rest_route( 'v1', 'contact', array(
 				array(
 					'methods'  => \WP_REST_Server::CREATABLE,
-					'callback' => [ $this, 'send_email' ]
+					'callback' => array( $this, 'send_email' )
 				)
 			) );
 		} );

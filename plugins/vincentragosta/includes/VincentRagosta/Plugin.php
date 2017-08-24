@@ -2,11 +2,12 @@
 
 namespace VincentRagosta;
 
-use VincentRagosta\PostTypes\PostTypeFactory;
 use VincentRagosta\Admin\MetaBoxes\ProjectMetaBox;
 use VincentRagosta\Admin\MetaBoxes\PostMetaFieldsMetaBox;
 use VincentRagosta\Admin\MetaBoxes\UserMetaBox;
-use VincentRagosta\Api\Contact;
+use VincentRagosta\Endpoints\Contact;
+use VincentRagosta\Finders\ProjectFinder;
+use VincentRagosta\PostTypes\PostTypeFactory;
 
 /**
  * Plugin is the main entry point into the Vincent Ragosta plugin
@@ -67,5 +68,9 @@ class Plugin {
 
 		$user_meta_box = new UserMetaBox();
 		$user_meta_box->register();
+	}
+
+	function get_project_finder( $post_id ) {
+		return new ProjectFinder( $post_id );
 	}
 }

@@ -21,6 +21,9 @@
   "autoload": {
     "psr-4": {
       "VincentRagosta\\": "includes/VincentRagosta"
-    }
+  	},
+  	"files": [
+		"includes/VincentRagosta/Api.php"
+	]
   }
 }

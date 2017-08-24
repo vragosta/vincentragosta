@@ -35,6 +35,7 @@ class ProjectPostType extends BasePostType {
 			'labels'              => $this->get_labels(),
 			'supports'            => $this->get_editor_support(),
 			'hierarchical'        => false,
+			'rewrite'             => array( 'slug' => 'projects', 'with_front' => false),
 			'public'              => true,
 			'show_ui'             => true,
 			'show_in_menu'        => true,
