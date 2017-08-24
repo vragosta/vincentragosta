@@ -60,8 +60,6 @@ function vincentragosta_autorun() {
 		$plugin = \VincentRagosta\Plugin::get_instance();
 		$plugin->enable();
 		// if ( defined( 'WP_CLI' ) && WP_CLI ) {
-		// 	$loader = new \VincentRagosta\Archive\Migration\Commands\Loader();
-		// 	$loader->load();
 		// 	$loader = new \VincentRagosta\Commands\Loader();
 		// 	$loader->load();
 		// }
