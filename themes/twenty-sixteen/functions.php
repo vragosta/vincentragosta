@@ -1,6 +1,6 @@
 <?php
 /**
- * StoryCorps - Twenty Sixteen functions and definitions
+ * VincentRagosta - Twenty Sixteen functions and definitions
  *
  * When using a child theme (see http://codex.wordpress.org/Theme_Development and
  * http://codex.wordpress.org/Child_Themes), you can override certain functions

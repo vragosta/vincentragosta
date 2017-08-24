@@ -35,7 +35,7 @@ function vincentragosta_can_autoload() {
 			return true;
 		} else {
 			error_log(
-				"Fatal Error: Composer not setup in " . STORYCORPS_PLUGIN_DIR
+				"Fatal Error: Composer not setup in " . VINCENTRAGOSTA_PLUGIN_DIR
 			);
 			return false;
 		}
@@ -60,9 +60,9 @@ function vincentragosta_autorun() {
 		$plugin = \VincentRagosta\Plugin::get_instance();
 		$plugin->enable();
 		// if ( defined( 'WP_CLI' ) && WP_CLI ) {
-		// 	$loader = new \StoryCorps\Archive\Migration\Commands\Loader();
+		// 	$loader = new \VincentRagosta\Archive\Migration\Commands\Loader();
 		// 	$loader->load();
-		// 	$loader = new \StoryCorps\Commands\Loader();
+		// 	$loader = new \VincentRagosta\Commands\Loader();
 		// 	$loader->load();
 		// }
 	} else {

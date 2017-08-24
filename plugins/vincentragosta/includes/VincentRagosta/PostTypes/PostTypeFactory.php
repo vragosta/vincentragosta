@@ -69,7 +69,7 @@ class PostTypeFactory {
 
 	/**
 	 * The post types supported by default. Themes can override this by
-	 * using the storycorps_post_types filter.
+	 * using the vincentragosta_post_types filter.
 	 *
 	 * @return array List of supported post type names
 	 */
