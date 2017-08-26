@@ -4,7 +4,7 @@
  *
  * @package Vincent Ragosta - Twenty Sixteen
  * @since 0.1.0
- * @uses get_template_part()
+ * @uses get_partial()
  */
 ?>
 
@@ -15,9 +15,6 @@
 		</button>
 	</div>
 	<div>
-
-		<!-- Menu -->
-		<?php get_template_part( 'partials/content', 'menu' ); ?>
-
+		<?php get_partial( 'partials/content-menu' ); ?>
 	</div>
 </section>

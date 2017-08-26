@@ -4,30 +4,30 @@
  *
  * @package Vincent Ragosta - Twenty Sixteen
  * @since 0.1.0
- * @uses get_template_part()
+ * @uses get_partial()
  */
 
-	get_template_part( 'partials/content', 'mobile-menu' ); ?>
+namespace VincentRagosta;
+
+	get_partial( 'partials/content-mobile-menu' ); ?>
 
 	<footer id="footer" class="col-flex-center">
 
-		<?php get_template_part( 'partials/aside-pre', 'footer' ); ?>
+		<?php if ( is_active_sidebar( 'pre-footer' ) ) { ?>
+			<aside class="aside pre-footer">
+				<?php dynamic_sidebar( 'pre-footer' ); ?>
+			</aside>
+		<?php } ?>
 
-		<?php get_template_part( 'partials/content', 'menu' ); ?>
+		<?php get_partial( 'partials/content-menu' ); ?>
 
 		<section>
 
-			<!-- Contact Information -->
-			<?php // get_template_part( 'partials/aside', 'footer-contact-info' ); ?>
+			<div id="copyright" class="padding-left-right">
+				<p>&copy <?php echo date( 'Y' ); ?> Vincent Ragosta. All rights reserved. Brooklyn Web Design and Wordpress Expert</p>
+			</div>
 
-			<!-- Copyright -->
-			<?php get_template_part( 'partials/aside', 'footer-copyright' ); ?>
-
-			<!-- Important Documents -->
-			<?php // get_template_part( 'partials/aside', 'footer-docs' ); ?>
-
-			<!-- Social Icons -->
-			<?php get_template_part( 'partials/aside', 'social' ); ?>
+			<?php get_partial( 'partials/aside-social' ); ?>
 
 		</section>
 
