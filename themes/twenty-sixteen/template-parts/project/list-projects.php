@@ -5,7 +5,8 @@ namespace VincentRagosta;
 # Create a count variable.
 $count = 0;
 
-$projects = get_projects();
+$opts = get_partial_opts();
+$projects = $opts['projects'];
 
 get_header(); ?>
 
@@ -28,9 +29,7 @@ get_header(); ?>
 					<?php } ?>
 
 					<div class="grid-item col-xs-12 col-sm-4">
-
 						<?php do_shortcode( '[image-caption id="' . $post->ID . '"]' ); ?>
-
 					</div>
 
 				<?php } ?>

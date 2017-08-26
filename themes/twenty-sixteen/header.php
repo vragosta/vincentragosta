@@ -19,4 +19,4 @@ namespace VincentRagosta;
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
-	<?php get_partial( 'partials/content-header-navigation' ); ?>
+	<?php get_partial( 'template-parts/header/nav' ); ?>

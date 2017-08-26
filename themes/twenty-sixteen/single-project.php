@@ -10,7 +10,7 @@
 namespace VincentRagosta;
 
 get_partial(
-	'template-parts/project-details',
+	'template-parts/project/project-details',
 	array(
 		'technology' => get_project_technology( $post->ID ),
 		'testimony' => get_project_testimony( $post->ID ),

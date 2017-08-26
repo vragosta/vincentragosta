@@ -6,6 +6,9 @@
  * @since 0.1.0
  * @uses get_partial(), do_shortcode()
  */
+
+namespace VincentRagosta;
+
 ?>
 
 <header id="header">

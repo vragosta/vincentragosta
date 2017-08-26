@@ -6,6 +6,9 @@
  * @since 0.1.0
  * @uses get_partial()
  */
+
+namespace VincentRagosta;
+
 ?>
 
 <section id="mobile-menu">

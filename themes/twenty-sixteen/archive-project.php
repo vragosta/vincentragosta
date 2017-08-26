@@ -8,4 +8,9 @@
 
 namespace VincentRagosta;
 
-get_partial( 'template-parts/list-projects' );
+get_partial(
+	'template-parts/project/list-projects',
+	array(
+		'projects' => get_projects(),
+	)
+);
