@@ -10,3 +10,6 @@ define( 'VINCENTRAGOSTA_PLUGIN_URL' , plugin_dir_url( __FILE__ ) );
 define( 'POST_POST_TYPE'    , 'post' );
 define( 'PAGE_POST_TYPE'    , 'page' );
 define( 'PROJECT_POST_TYPE' , 'project' );
+
+# Taxonomies
+define( 'CATEGORY_TAXONOMY' , 'category' );
