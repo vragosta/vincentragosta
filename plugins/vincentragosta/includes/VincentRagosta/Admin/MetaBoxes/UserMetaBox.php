@@ -4,6 +4,13 @@ namespace VincentRagosta\Admin\MetaBoxes;
 
 class UserMetaBox {
 
+	/**
+	 * Registers metabox with WordPress.
+	 *
+	 * @since  0.1.0
+	 * @uses   add_action()
+	 * @return void
+	 */
 	function register() {
 
 		# Add fields and properly save meta if current user
@@ -16,6 +23,13 @@ class UserMetaBox {
 
 	}
 
+	/**
+	 * Adds custom user fields
+	 *
+	 * @since  0.1.0
+	 * @uses   get_user_meta()
+	 * @return void
+	 */
 	function add_fields( $user ) {
 
 		# Obtain social meta.
@@ -77,6 +91,13 @@ class UserMetaBox {
 		</table><?php
 	}
 
+	/**
+	 * Saves custom user fields.
+	 *
+	 * @since  0.1.0
+	 * @uses   get_user_meta()
+	 * @return void
+	 */
 	function save_fields( $user_id ) {
 
 		# Check the user's permissions.
