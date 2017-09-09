@@ -6,8 +6,6 @@
  * @since 0.1.0
  */
 
-namespace VincentRagosta;
-
 ?>
 
 <!DOCTYPE html>
@@ -19,4 +17,4 @@ namespace VincentRagosta;
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
-	<?php get_partial( 'template-parts/header/nav' ); ?>
+	<?php \VincentRagosta\get_partial( 'template-parts/header/nav' ); ?>

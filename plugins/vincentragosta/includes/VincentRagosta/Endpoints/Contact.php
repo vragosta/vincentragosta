@@ -73,6 +73,3 @@ From,
 		return new \WP_REST_Response( 200 );
 	}
 };
-
-// $contact_api = new WP_REST_Contact();
-// $contact_api->register_routes();
