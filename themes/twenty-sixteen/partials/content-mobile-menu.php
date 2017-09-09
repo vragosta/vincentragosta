@@ -20,4 +20,6 @@ namespace VincentRagosta;
 	<div>
 		<?php get_partial( 'partials/content-menu' ); ?>
 	</div>
+	<hr />
+	<?php get_partial( 'partials/aside-social' ); ?>
 </section>

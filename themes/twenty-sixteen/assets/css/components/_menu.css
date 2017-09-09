@@ -112,3 +112,11 @@
 	margin: 1rem 0;
 	font-size: 3rem;
 }
+
+#mobile-menu hr {
+	background-color: #fff;
+}
+
+#mobile-menu .social {
+	padding: 0;
+}
