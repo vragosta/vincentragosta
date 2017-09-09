@@ -47,6 +47,15 @@ if ( have_posts() ) {
 
 			<?php get_partial( 'partials/aside-content' ); ?>
 
+			<?php if ( get_next_post_link( '%link' ) ) { ?>
+				<aside id="pagination-single" class="aside">
+					<p>
+						<span>Previous Project:</span>
+						<?php next_post_link( '%link' ); ?>
+					</p>
+				</aside>
+			<?php } ?>
+
 			<?php if ( get_previous_post_link( '%link' ) ) { ?>
 				<aside id="pagination-single" class="aside">
 					<p>
