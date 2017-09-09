@@ -16,6 +16,7 @@
 @import "components/_menu.css";
 @import "components/_sidebar.css";
 @import "components/_widget.css";
+@import "components/_swipebox.css";
 
 /*--- Templates ---*/
 @import "templates/_archive.css";
