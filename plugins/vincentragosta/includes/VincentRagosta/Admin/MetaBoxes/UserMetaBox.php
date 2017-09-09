@@ -32,6 +32,8 @@ class UserMetaBox {
 	 */
 	function add_fields( $user ) {
 
+		wp_nonce_field( 'user_meta_box_data', 'user_meta_box_nonce' );
+
 		# Obtain social meta.
 		$_facebook = get_user_meta( $user->ID, '_facebook', true );
 		$_twitter = get_user_meta( $user->ID, '_twitter', true );
@@ -99,6 +101,18 @@ class UserMetaBox {
 	 * @return void
 	 */
 	function save_fields( $user_id ) {
+
+		/**
+		 * We need to verify this came from our screen and with proper authorization,
+		 * because the save_post action can be triggered at other times.
+		 */
+		if ( ! isset( $_POST['user_meta_box_nonce'] ) ) {
+			return;
+		}
+		# Verify that the nonce is valid.
+		if ( ! wp_verify_nonce( $_POST['user_meta_box_nonce'], 'user_meta_box_data' ) ) {
+			return;
+		}
 
 		# Check the user's permissions.
 		if ( ! current_user_can( 'edit_user', $user_id ) ) {
