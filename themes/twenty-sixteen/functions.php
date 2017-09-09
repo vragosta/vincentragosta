@@ -26,9 +26,6 @@ require_once VINCENTRAGOSTA_COM_INC . 'functions/core.php';
 # Include essential functions.
 require_once VINCENTRAGOSTA_COM_INC . 'functions/essentials.php';
 
-# Helper functions.
-require_once VINCENTRAGOSTA_COM_INC . 'functions/helpers.php';
-
 # Include widgets.
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-instagram.php';
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-notification.php';
