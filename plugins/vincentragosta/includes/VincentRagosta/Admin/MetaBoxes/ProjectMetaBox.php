@@ -127,6 +127,23 @@ class ProjectMetaBox {
 		update_post_meta( $post_id, '_project_link', sanitize_text_field( $_POST['_project_link'] ) );
 		update_post_meta( $post_id, '_project_text', sanitize_text_field( $_POST['_project_text'] ) );
 	}
+
+	/**
+	 * Ports over key value to _key value and then removes key.
+	 *
+	 * @since  0.1.0
+	 * @uses   metadata_exists(), get_post_meta(), update_post_meta(), delete_post_meta_by_key()
+	 * @return void
+	 */
+	function transfer_key( $id, $key ) {
+		if ( metadata_exists( 'post', $id, $key ) ) {
+			$featured = get_post_meta( $id, $key, true );
+			if ( $featured == 'on' ) {
+				$featured = true;
+			}
+			update_post_meta( $id, "_$key", $featured );
+		}
+	}
 }
 
 ?>
