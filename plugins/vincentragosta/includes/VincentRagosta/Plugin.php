@@ -9,6 +9,7 @@ use VincentRagosta\Endpoints\Contact;
 use VincentRagosta\Finders\ProjectFinder;
 use VincentRagosta\PostTypes\PostTypeFactory;
 use VincentRagosta\Taxonomies\TaxonomyFactory;
+use VincentRagosta\Admin\ProjectColumnsSupport;
 
 /**
  * Plugin is the main entry point into the Vincent Ragosta plugin
@@ -72,6 +73,9 @@ class Plugin {
 
 		$user_meta_box = new UserMetaBox();
 		$user_meta_box->register();
+
+		$project_columns_support = new ProjectColumnsSupport();
+		$project_columns_support->register();
 	}
 
 	function get_project_finder( $post_id ) {
