@@ -8,6 +8,7 @@ use VincentRagosta\Admin\MetaBoxes\UserMetaBox;
 use VincentRagosta\Endpoints\Contact;
 use VincentRagosta\Finders\ProjectFinder;
 use VincentRagosta\PostTypes\PostTypeFactory;
+use VincentRagosta\Taxonomies\TaxonomyFactory;
 
 /**
  * Plugin is the main entry point into the Vincent Ragosta plugin
@@ -48,6 +49,9 @@ class Plugin {
 	 * Taxonomies must be registered before the Post Types etc.
 	 */
 	function init() {
+		$this->taxonomy_factory = new TaxonomyFactory();
+		$this->taxonomy_factory->build_all();
+
 		$this->post_type_factory = new PostTypeFactory();
 		$this->post_type_factory->build_all();
 
