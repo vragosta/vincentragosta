@@ -23,9 +23,6 @@ define( 'VINCENTRAGOSTA_COM_IMAGE_SIZE', 'full' );
 # Include compartmentalized functions.
 require_once VINCENTRAGOSTA_COM_INC . 'functions/core.php';
 
-# Include essential functions.
-require_once VINCENTRAGOSTA_COM_INC . 'functions/essentials.php';
-
 # Include widgets.
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-instagram.php';
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-notification.php';
@@ -33,6 +30,3 @@ require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-text-column.php';
 
 # Run the setup functions.
 VincentRagosta\Functions\Core\setup();
-
-# Run the essential functions.
-VincentRagosta\Functions\Essentials\setup();
