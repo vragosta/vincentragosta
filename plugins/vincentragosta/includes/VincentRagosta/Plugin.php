@@ -11,6 +11,7 @@ use VincentRagosta\PostTypes\PostTypeFactory;
 use VincentRagosta\Taxonomies\TaxonomyFactory;
 use VincentRagosta\Tables\TableFactory;
 use VincentRagosta\Admin\ProjectColumnsSupport;
+use VincentRagosta\Admin\AnalyticsSupport;
 
 /**
  * Plugin is the main entry point into the Vincent Ragosta plugin
@@ -59,6 +60,9 @@ class Plugin {
 
 		$this->post_type_factory = new PostTypeFactory();
 		$this->post_type_factory->build_all();
+
+		$analytics_support = new AnalyticsSupport();
+		$analytics_support->register();
 
 		# Add json endpoint register endpoints here.
 		$contact_api = new Contact();
