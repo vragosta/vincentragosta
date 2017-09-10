@@ -21,7 +21,7 @@ namespace VincentRagosta;
 			</figure>
 
 			<div class="menu-container">
-				<?php get_partial( 'partials/content-menu' ); ?>
+				<?php get_partial( 'template-parts/content-menu' ); ?>
 			</div>
 		</section>
 

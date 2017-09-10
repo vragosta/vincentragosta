@@ -12,7 +12,11 @@ get_header(); ?>
 
 <main id="projects" class="archive project">
 
-	<?php get_partial( 'partials/aside-excerpt' ); ?>
+	<?php if ( $post->post_excerpt ) { ?>
+		<aside class="aside excerpt col-flex-center">
+			<?php echo $post->post_excerpt; ?>
+		</aside>
+	<?php } ?>
 
 	<?php if ( $projects->have_posts() ) { ?>
 		<section class="aside archive">

@@ -22,7 +22,11 @@ if ( have_posts() ) {
 
 		<main id="single-project" class="col-flex-center">
 
-			<?php get_partial( 'partials/aside-excerpt' ); ?>
+			<?php if ( $post->post_excerpt ) { ?>
+				<aside class="aside excerpt col-flex-center">
+					<?php echo $post->post_excerpt; ?>
+				</aside>
+			<?php } ?>
 
 			<?php if ( $link && $text ) { ?>
 				<aside class="aside link">
@@ -45,7 +49,11 @@ if ( have_posts() ) {
 				</aside>
 			<?php } ?>
 
-			<?php get_partial( 'partials/aside-content' ); ?>
+			<?php if ( $post->post_content ) { ?>
+				<aside class="aside content">
+					<?php echo $post->post_content; ?>
+				</aside>
+			<?php } ?>
 
 			<?php if ( get_next_post_link( '%link' ) ) { ?>
 				<aside id="pagination-single" class="aside">

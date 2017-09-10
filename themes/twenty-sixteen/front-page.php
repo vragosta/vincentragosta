@@ -11,16 +11,42 @@ namespace VincentRagosta;
 
 get_header();
 
-get_partial( 'partials/aside-front-page-cta-A' );
+?>
 
-get_partial( 'partials/aside-front-page-cta-B' );
+<?php if ( is_active_sidebar( 'cta-front-page-a' ) ) { ?>
+	<aside class="aside cta a col-flex-center">
+		<?php dynamic_sidebar( 'cta-front-page-a' ); ?>
+	</aside>
+<?php } ?>
 
-get_partial( 'partials/aside-front-page-cta-C' );
+<?php if ( is_active_sidebar( 'cta-front-page-b' ) ) { ?>
+	<aside class="aside cta b col-flex-center">
+		<?php dynamic_sidebar( 'cta-front-page-b' ); ?>
+	</aside>
+<?php } ?>
 
-# get_partial( 'partials/aside-front-page-cta-D' );
+<?php if ( is_active_sidebar( 'cta-front-page-c' ) ) { ?>
+	<aside class="aside cta c col-flex-center">
+		<?php dynamic_sidebar( 'cta-front-page-c' ); ?>
+	</aside>
+<?php } ?>
 
-get_partial( 'partials/aside-front-page-cta-E' );
+<?php if ( is_active_sidebar( 'cta-front-page-d' ) ) { ?>
+	<aside class="aside cta d col-flex-center">
+		<?php dynamic_sidebar( 'cta-front-page-d' ); ?>
+	</aside>
+<?php } ?>
 
-get_partial( 'partials/aside-front-page-cta-F' );
+<?php if ( is_active_sidebar( 'cta-front-page-e' ) ) { ?>
+	<aside class="aside cta e col-flex-center">
+		<?php dynamic_sidebar( 'cta-front-page-e' ); ?>
+	</aside>
+<?php } ?>
 
-get_footer();
+<?php if ( is_active_sidebar( 'cta-front-page-f' ) ) { ?>
+	<aside class="aside cta f col-flex-center">
+		<?php dynamic_sidebar( 'cta-front-page-f' ); ?>
+	</aside>
+<?php } ?>
+
+<?php get_footer(); ?>

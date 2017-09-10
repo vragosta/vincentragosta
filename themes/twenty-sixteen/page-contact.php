@@ -19,7 +19,7 @@ $_github = get_user_meta( VINCENTRAGOSTA_SITE_ADMIN, '_github', true ); ?>
 <main id="contact-page" class="container">
 	<div class="col-xs-12 col-sm-6">
 		<?php echo $post->post_content; ?>
-		<?php get_partial( 'partials/aside-social' ); ?>
+		<?php get_partial( 'template-parts/aside-social' ); ?>
 	</div>
 
 	<div class="col-xs-12 col-sm-6 form">

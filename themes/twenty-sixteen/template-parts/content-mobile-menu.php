@@ -18,8 +18,8 @@ namespace VincentRagosta;
 		</button>
 	</div>
 	<div>
-		<?php get_partial( 'partials/content-menu' ); ?>
+		<?php get_partial( 'template-parts/content-menu' ); ?>
 	</div>
 	<hr />
-	<?php get_partial( 'partials/aside-social' ); ?>
+	<?php get_partial( 'template-parts/aside-social' ); ?>
 </section>

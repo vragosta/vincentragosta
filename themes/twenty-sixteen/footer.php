@@ -9,7 +9,7 @@
 
 namespace VincentRagosta;
 
-	get_partial( 'partials/content-mobile-menu' ); ?>
+	get_partial( 'template-parts/content-mobile-menu' ); ?>
 
 	<footer id="footer" class="col-flex-center">
 
@@ -19,7 +19,7 @@ namespace VincentRagosta;
 			</aside>
 		<?php } ?>
 
-		<?php get_partial( 'partials/content-menu' ); ?>
+		<?php get_partial( 'template-parts/content-menu' ); ?>
 
 		<section>
 
@@ -27,7 +27,7 @@ namespace VincentRagosta;
 				<p>&copy <?php echo date( 'Y' ); ?> Vincent Ragosta. All rights reserved. Brooklyn Web Design and Wordpress Expert</p>
 			</div>
 
-			<?php get_partial( 'partials/aside-social' ); ?>
+			<?php get_partial( 'template-parts/aside-social' ); ?>
 
 		</section>
 
