@@ -9,6 +9,7 @@ use VincentRagosta\Endpoints\Contact;
 use VincentRagosta\Finders\ProjectFinder;
 use VincentRagosta\PostTypes\PostTypeFactory;
 use VincentRagosta\Taxonomies\TaxonomyFactory;
+use VincentRagosta\Tables\TableFactory;
 use VincentRagosta\Admin\ProjectColumnsSupport;
 
 /**
@@ -50,6 +51,9 @@ class Plugin {
 	 * Taxonomies must be registered before the Post Types etc.
 	 */
 	function init() {
+		$this->table_factory = new TableFactory();
+		$this->table_factory->upgrade_all();
+
 		$this->taxonomy_factory = new TaxonomyFactory();
 		$this->taxonomy_factory->build_all();
 
