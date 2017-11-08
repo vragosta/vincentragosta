@@ -1,0 +1,25 @@
+/**
+ * VincentRagosta - Twenty Sixteen
+ * http://www.vincentragosta.com
+ *
+ * Copyright (c) 2016
+ * Licensed under the GPL-2.0+ license.
+ */
+
+/*--- General ---*/
+@import "general/_footer.css";
+@import "general/_header.css";
+@import "general/_helpers.css";
+@import "general/_site.css";
+
+/*--- Components ---*/
+@import "components/_menu.scss";
+@import "components/_sidebar.scss";
+@import "components/_widget.scss";
+@import "components/_swipebox.scss";
+
+/*--- Templates ---*/
+@import "templates/_archive.css";
+@import "templates/_contact.css";
+@import "templates/_resume.css";
+@import "templates/_single.css";
