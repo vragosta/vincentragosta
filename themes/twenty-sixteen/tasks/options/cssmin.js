@@ -10,7 +10,7 @@ module.exports = {
 		expand: true,
 
 		cwd: 'assets/css/',
-		src: ['vincentragosta---twenty-sixteen.css', 'admin.css'],
+		src: ['vincentragosta---twenty-sixteen.css', 'vincentragosta---admin.css'],
 
 		dest: 'assets/css/',
 		ext: '.min.css'

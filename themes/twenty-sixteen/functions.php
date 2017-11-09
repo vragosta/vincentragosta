@@ -147,7 +147,7 @@ function styles() {
 	 *
 	 * @param bool vincentragosta_style_debug
 	 */
-	$debug = apply_filters( 'vincentragosta_style_debug', true );
+	$debug = apply_filters( 'vincentragosta_style_debug', false );
 	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 	wp_register_style(
@@ -202,9 +202,17 @@ add_action( 'wp_enqueue_scripts', 'styles' );
  * @return void
  */
 function admin_styles() {
+	/**
+	 * Flag whether to enable loading uncompressed/debugging assets. Default false.
+	 *
+	 * @param bool vincentragosta_style_debug
+	 */
+	$debug = apply_filters( 'vincentragosta_style_debug', false );
+	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
 	wp_enqueue_style(
 		'admin',
-		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/admin.css",
+		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---admin{$min}.css",
 		array(),
 		VINCENTRAGOSTA_VERSION
 	);

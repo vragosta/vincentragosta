@@ -5,20 +5,236 @@
  * Copyright (c) 2016
  * Licensed under the GPL-2.0+ license.
  */
-/*--- General ---*/
-@import url(general/_footer.css);
-@import url(general/_header.css);
-@import url(general/_helpers.css);
-@import url(general/_site.css);
-/*--- Components ---*/
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * General Index CSS
+ */
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Site Core Components CSS
+ */
+/*--- Needed to prevent the whitespace to the right of web page ---*/
+html, body {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden; }
+
+body {
+  font-family: 'Cormorant Garamond', serif; }
+
+button {
+  outline: none; }
+
+h1,
+h2,
+h3,
+h4,
+p,
+span {
+  margin: 0;
+  text-align: center; }
+
+h2 {
+  font-size: 3.5rem; }
+
+h3 {
+  font-size: 2rem; }
+
+a,
+a:hover,
+a:focus,
+a:active,
+a:active:focus {
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  color: #fff; }
+
+hr {
+  border-width: 0;
+  color: rgba(26, 26, 26, 0.15);
+  background-color: rgba(26, 26, 26, 0.15);
+  height: 1px;
+  width: 100%; }
+
+pre {
+  border: none;
+  margin: 0;
+  text-align: center;
+  white-space: pre-wrap;
+  word-break: normal; }
+
+#separator {
+  display: flex;
+  align-items: center;
+  margin: 0 .5rem; }
+
+#separator i {
+  font-size: 3px; }
+
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Header CSS
+ */
+#header {
+  position: relative; }
+
+/*--- Navigation ---*/
+.nav-container {
+  position: absolute;
+  z-index: 1; }
+
+.controls-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem; }
+
+#logo {
+  background-image: url("../images/white-logo.png");
+  background-size: contain;
+  background-position: center;
+  height: 75px;
+  min-width: 75px;
+  /*--- CSS transitions to toggle header visibility ---*/
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .4s ease-in-out, visibility .4s ease-in-out; }
+
+/*--- Initial styles when the page is unloaded ( needed for js functionality ) ---*/
+#logo.unloaded {
+  opacity: 0;
+  visibility: hidden; }
+
+#logo a {
+  display: flex;
+  height: 100%; }
+
+/*--- Hamburger button styles ---*/
+.drop-down {
+  font-size: 4rem;
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  /*--- CSS transitions to toggle drop-down visibility ---*/
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out; }
+
+@media only screen and (max-width: 991px) {
+  .drop-down {
+    visibility: visible;
+    opacity: 1; } }
+/*--- Prevent button from appearing in the header on the front page ---*/
+.home #header .featured-image .overlay a {
+  display: none; }
+
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Footer CSS
+ */
+#footer {
+  background-color: #26262a;
+  padding: 6rem 0; }
+
+@media only screen and (max-width: 767px) {
+  #footer {
+    padding: 2rem 0; } }
+/*--- Vertical spacing in footer menu ---*/
+#footer section > div {
+  margin: 0.5rem 0; }
+
+#footer p {
+  color: #fff;
+  opacity: 0.5;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300; }
+
+/*--- Contact Info ( Footer )---*/
+#contact-info h3 {
+  color: #fff; }
+
+#contact-info span {
+  opacity: 0.5; }
+
+/*--- Documents ( Footer ) ---*/
+#docs a {
+  opacity: 0.5;
+  transition: opacity 0.4s ease-in-out; }
+
+#docs a:hover {
+  opacity: 1; }
+
+#docs a:nth-child(2) {
+  margin: 0 1rem; }
+
+/*--- Social ( Footer ) ---*/
+.social {
+  padding: 2rem; }
+
+.social a {
+  font-size: 2.5rem;
+  margin: 0 1rem; }
+
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Helper CSS
+ */
+.full-width {
+  width: 100%; }
+
+.col-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+
+.col-flex-start {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column; }
+
+.col-flex-end {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column; }
+
+.row-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.row-flex-start {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center; }
+
+.row-flex-end {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center; }
+
+.row-flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.padding-left-right {
+  padding: 0 1rem; }
+
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Components Index CSS
+ */
 /**
  * Vincent Ragosta - Twenty Sixteen
  * Menu CSS
  */
-@import url(templates/_archive.css);
-@import url(templates/_contact.css);
-@import url(templates/_resume.css);
-@import url(templates/_single.css);
 .menu-container {
   /*--- CSS transitions to toggle menu-container visibility ---*/
   opacity: 1;
@@ -269,6 +485,16 @@ html.swipebox-html {
     margin-top: 3rem; } }
 /**
  * Vincent Ragosta - Twenty Sixteen
+ * Menu CSS
+ */
+#swipebox-title {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+/**
+ * Vincent Ragosta - Twenty Sixteen
  * Widget CSS
  */
 /*--- Notification Widget ---*/
@@ -318,14 +544,382 @@ html.swipebox-html {
     margin: 2rem 0; } }
 /**
  * Vincent Ragosta - Twenty Sixteen
- * Menu CSS
+ * Templates Index CSS
  */
-#swipebox-title {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Archive CSS
+ */
+/*--- Archive Project ---*/
+.archive .aside p {
+  max-width: 850px; }
 
-/*--- Templates ---*/
+.archive .grid-container {
+  padding: 1rem .5rem 0; }
+
+.archive .grid-container:last-child {
+  padding-bottom: 0rem; }
+
+@media only screen and (max-width: 767px) {
+  .archive .grid-container {
+    flex-direction: column; } }
+#projects .featured-image .image {
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px; }
+
+/*--- Blog ---*/
+@media only screen and (min-width: 1500px) {
+  #blog {
+    padding: 4rem 16rem; } }
+@media only screen and (min-width: 992px) and (max-width: 1499px) {
+  #blog {
+    padding: 4rem 6rem; } }
+@media only screen and (max-width: 991px) {
+  #blog {
+    flex-direction: column;
+    padding: 2rem; } }
+#blog h2,
+#blog p {
+  text-align: left; }
+
+@media only screen and (min-width: 991px) {
+  #blog section {
+    width: 70%; } }
+@media only screen and (max-width: 991px) {
+  #blog section {
+    width: 100%; } }
+#blog .post {
+  line-height: 1.5;
+  padding: 2rem; }
+
+#blog .category a {
+  color: #333;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  opacity: 0.7; }
+
+#blog .header-container .header {
+  font-family: 'Lato', sans-serif;
+  font-weight: 500; }
+
+#blog .sub-header {
+  display: flex;
+  font-size: 1.8rem;
+  opacity: 0.7; }
+
+#blog .post-author,
+#blog .post-date {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300; }
+
+#blog figure {
+  position: relative;
+  padding-bottom: 40%;
+  margin-top: .5rem; }
+
+#blog .image {
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+#blog .excerpt {
+  margin-top: .5rem;
+  font-size: 2.2rem;
+  font-family: 'Lato', sans-serif; }
+
+#blog .content {
+  opacity: 0.7;
+  font-size: 1.8rem; }
+
+#blog .link-container {
+  margin-top: .5rem; }
+
+#blog .link {
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 300; }
+
+/*--- Archive Pagination ---*/
+#pagination-archive {
+  margin: 0 0 6rem; }
+
+#blog #pagination-archive {
+  margin: 4rem 0; }
+
+.page-numbers {
+  border: none;
+  padding: 0 1rem;
+  font-size: 2rem;
+  color: #686868;
+  font-family: 'Lato', sans-serif;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out; }
+
+.page-numbers:hover:not(.current) {
+  background-color: #686868;
+  color: #fff; }
+
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Single CSS
+ */
+#single-project {
+  max-width: 1200px;
+  margin: 0 auto 6rem;
+  padding: 0 4rem; }
+
+@media only screen and (max-width: 768px) {
+  #single-project {
+    padding: 0; } }
+#single-project p {
+  font-size: 2em; }
+
+#single-project pre {
+  padding: 4rem; }
+
+#single-project pre h3 {
+  text-align: left; }
+
+#single-project img {
+  width: 100%;
+  height: 100%; }
+
+#pagination-single {
+  padding: 0 4rem; }
+
+#pagination-single a {
+  border: none;
+  padding: 0;
+  font-size: 3rem; }
+
+@media only screen and (max-width: 768px) {
+  #pagination-single a {
+    font-size: 2rem; } }
+#pagination-single a:hover {
+  background: none;
+  color: #686868; }
+
+.post-edit-link {
+  color: #333;
+  font-size: 2rem;
+  font-weight: 500; }
+
+.post-edit-link:hover {
+  color: #333;
+  opacity: 0.7;
+  font-weight: 500; }
+
+.arrow.top {
+  position: fixed;
+  bottom: 2rem;
+  text-align: center;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; }
+
+.arrow.top.visible {
+  opacity: 1;
+  visibility: visible; }
+
+.arrow.top a {
+  margin: 0 auto;
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid #221e1f;
+  height: 5rem;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  width: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #333; }
+
+.arrow.top i {
+  font-size: 4rem;
+  padding-bottom: .2rem; }
+
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Contact CSS
+ */
+#contact-page > div {
+  padding: 6rem 4rem; }
+
+@media only screen and (max-width: 768px) {
+  #contact-page > div {
+    padding: 2rem; }
+
+  #contact-page > div:first-child {
+    padding-top: 6rem; }
+
+  #contact-page > div:last-child {
+    padding-bottom: 6rem; } }
+#contact-page h2,
+#contact-page h3 {
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 10px;
+  text-align: left; }
+
+@media only screen and (max-width: 768px) {
+  #contact-page h2,
+  #contact-page h3 {
+    text-align: center; } }
+#contact-page h3 {
+  text-transform: uppercase; }
+
+#contact-page p {
+  line-height: 1.5;
+  opacity: 0.7;
+  width: 100%;
+  font-size: 1.85rem;
+  margin: 0 auto;
+  text-align: left; }
+
+@media only screen and (max-width: 768px) {
+  #contact-page p {
+    text-align: center; } }
+#contact-page h2 + p {
+  margin-bottom: 50px; }
+
+#contact-page p a {
+  font-family: 'Cormorant Garamond', serif; }
+
+#contact-page a {
+  color: #333; }
+
+#contact-page .social {
+  padding: 2em 0;
+  display: block; }
+
+@media only screen and (max-width: 768px) {
+  #contact-page .social {
+    text-align: center; } }
+#contact-page .social a:first-child {
+  margin-left: 0; }
+
+#contact-page .social a:hover {
+  opacity: 0.7; }
+
+#contact-page .form p {
+  padding: 0 15px;
+  line-height: 1; }
+
+#contact-page .form .full-label {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1;
+  margin-bottom: 5px;
+  text-align: left; }
+
+#contact-page .form .descriptive-label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-style: italic;
+  text-align: left; }
+
+#contact-page .form input,
+#contact-page .form textarea {
+  background-color: #FAFAFA;
+  border-radius: 0; }
+
+#contact-page .form label {
+  opacity: 0.7;
+  margin: 5px 0;
+  line-height: 1; }
+
+#contact-page .contact-btn {
+  border: 2px solid #686868;
+  border-radius: 0;
+  background: transparent;
+  color: #686868;
+  font-size: 1.5rem;
+  padding: .5rem 3rem;
+  text-transform: uppercase;
+  transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+  font-family: 'Lato', sans-serif; }
+
+#contact-page .contact-btn:hover {
+  background: #686868;
+  color: #fff; }
+
+#contact-page .contact-btn:focus,
+#contact-page .contact-btn:focus:active {
+  outline: none; }
+
+.map {
+  filter: grayscale(100%); }
+
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Contact CSS
+ */
+#resume section {
+  padding: 6rem 4rem; }
+
+@media only screen and (max-width: 768px) {
+  #resume section:first-child {
+    padding: 6rem 4rem 0; } }
+#resume h2,
+#resume h3,
+#resume h4,
+#resume p {
+  text-align: left;
+  font-family: 'Lato', sans-serif; }
+
+#resume h2 {
+  font-weight: 300; }
+
+#resume h3 {
+  text-transform: uppercase;
+  margin-bottom: 25px; }
+
+#resume h4 {
+  margin-bottom: 10px;
+  text-transform: uppercase; }
+
+#resume li {
+  margin: 5px 0;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 300; }
+
+@media only screen and (max-width: 768px) {
+  #resume .day-to-day {
+    margin-bottom: 25px; } }
+#resume a {
+  color: #333;
+  font-weight: 700; }
+
+#resume a:hover {
+  text-decoration: underline; }
+
+#resume p {
+  line-height: 2;
+  font-weight: 300;
+  font-size: 1.5rem; }
+
+#resume p span {
+  font-weight: 500; }
+
+#resume .work-item:not(:last-child),
+#resume .education-item:not(:last-child),
+#resume .award-item:not(:last-child) {
+  margin-bottom: 100px; }
+
+@media only screen and (max-width: 768px) {
+  #resume .work-item,
+  #resume .education-item,
+  #resume .award-item {
+    margin: 0; } }
 
 /*# sourceMappingURL=vincentragosta---twenty-sixteen.css.map */

@@ -8,7 +8,7 @@ module.exports = {
 			]
 		},
 		files: {
-			'assets/css/vincentragosta---admin.min.css': [ 'assets/css/admin.min.css' ],
+			'assets/css/vincentragosta---admin.min.css': [ 'assets/css/vincentragosta---admin.min.css' ],
 			'assets/css/vincentragosta---twenty-sixteen.min.css': [ 'assets/css/vincentragosta---twenty-sixteen.min.css' ],
 			'../../plugins/image-captions/assets/css/image-captions---twenty-sixteen.min.css': [ '../../plugins/image-captions/assets/css/image-captions---twenty-sixteen.min.css' ],
 		}
