@@ -23,7 +23,6 @@ define( 'VINCENTRAGOSTA_COM_IMAGE_SIZE', 'full' );
 # Include widgets.
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-instagram.php';
 require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-notification.php';
-require_once VINCENTRAGOSTA_COM_INC . 'widgets/class-text-column.php';
 
 /**
  * Declare theme support.
@@ -147,7 +146,7 @@ function styles() {
 	 *
 	 * @param bool vincentragosta_style_debug
 	 */
-	$debug = apply_filters( 'vincentragosta_style_debug', false );
+	$debug = apply_filters( 'vincentragosta_style_debug', true );
 	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 	wp_register_style(
@@ -420,6 +419,5 @@ function widgets() {
 		)
 	);
 	register_widget( 'Notification_Widget' );
-	register_widget( 'Text_Column_Widget' );
 }
 add_action( 'widgets_init', 'widgets' );

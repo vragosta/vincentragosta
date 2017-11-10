@@ -4,39 +4,85 @@
  */
 
 .aside {
-	padding: 6rem 4rem;
+	& {
+		padding: 6rem 4rem;
+	}
+
+	& h1,
+	& h2 {
+		margin-bottom: 4rem;
+		font-family: 'Lato', sans-serif;
+	}
+
+	& p {
+		line-height: 1.5;
+		opacity: 0.7;
+		width: 100%;
+		max-width: 1100px;
+		font-size: 1.85rem;
+	}
+
+	& p + p {
+		margin-top: 4rem;
+		display: flex;
+		justify-content: center;
+	}
+
+	& a {
+		& {
+			border: 2px solid #686868;
+			background: transparent;
+			color: #686868;
+			font-size: 1.5rem;
+			padding: 1.5rem 3rem;
+			text-transform: uppercase;
+			transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+			text-align: center;
+		}
+
+		&:hover {
+			background: #686868;
+			color: #fff;
+		}
+	}
 }
 
 @media only screen and ( max-width: 767px ) {
 	.aside {
-		padding: 4rem;
+		& {
+			padding: 4rem;
+		}
+
+		& h2 {
+			font-size: 3rem;
+			margin-bottom: 3rem;
+		}
+
+		& p {
+			font-size: 1.65rem;
+			line-height: 1.5;
+		}
+
+		& p + p {
+			margin-top: 3rem;
+		}
+
+		& a {
+			font-size: 1.5rem;
+		}
 	}
 }
 
-#projects .aside.archive {
-	max-width: 1200px;
-	margin: 0 auto;
-}
+#projects .aside {
+	&.archive {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
 
-/*--- Accomodating for single template design ---*/
-.single .aside.link {
-	display: flex;
-}
-
-/*--- Accomodating for single template design ---*/
-.single .aside.content {
-	padding: 6rem 0;
-}
-
-@media only screen and ( max-width: 768px ) {
-	.single .aside.content {
-		padding: 0;
+	& p {
+		max-width: 750px;
 	}
 }
-
-.cta.a,
-.cta.c,
-.cta.f,
 
 /*--- Specifically target the excerpt on the archive page. ---*/
 .archive .aside.excerpt {
@@ -47,110 +93,68 @@
 	max-width: 800px;
 }
 
-.cta.b,
-.cta.d,
-.cta.e {
-	background: #fff;
-}
+/*--- Accomodating for single template design ---*/
+.single .aside {
+	&.link {
+		display: flex;
+	}
 
-.cta.e,
-.cta.about.c {
-	padding: 0;
-}
-
-/*--- Aside Titles ---*/
-.aside h1,
-.aside h2 {
-	margin-bottom: 4rem;
-	font-family: 'Lato', sans-serif;
-}
-
-@media only screen and ( max-width: 767px ) {
-	.aside h2 {
-		font-size: 3rem;
-		margin-bottom: 3rem;
+	&.content {
+		padding: 6rem 0;
 	}
 }
 
-.cta.d h2 {
-	max-width: 800px;
-}
-
-/*--- Aside Paragraphs ---*/
-.aside p {
-	line-height: 1.5;
-	opacity: 0.7;
-	width: 100%;
-	max-width: 1100px;
-	font-size: 1.85rem;
-}
-
-#projects .aside p {
-	max-width: 750px;
-}
-
-.aside p + p {
-	margin-top: 4rem;
-	display: flex;
-	justify-content: center;
-}
-
-@media only screen and ( max-width: 767px ) {
-	.aside p {
-		font-size: 1.65rem;
-		line-height: 1.5;
-	}
-
-	.aside p + p {
-		margin-top: 3rem;
+@media only screen and ( max-width: 768px ) {
+	.single .aside.content {
+		padding: 0;
 	}
 }
 
-.cta.b p,
-.cta.about.a p {
-	max-width: 800px;
-}
-
-.cta.about.d p {
-	max-width: 600px;
-}
-
-.cta.b p:first-child {
-	margin: 0 auto;
-}
-
-.cta.d:not( .about ) p {
-	max-width: 300px;
-	line-height: 1.9;
-}
-
-/*--- Aside Links ---*/
-.aside a {
-	border: 2px solid #686868;
-	background: transparent;
-	color: #686868;
-	font-size: 1.5rem;
-	padding: 1.5rem 3rem;
-	text-transform: uppercase;
-	transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
-	text-align: center;
-}
-
-@media only screen and ( max-width: 767px ) {
-	.aside a {
-		font-size: 1.5rem;
+.cta {
+	&.a,
+	&.c,
+	&.f {
+		background: #edeeef;
 	}
-}
 
-.aside a:hover {
-	background: #686868;
-	color: #fff;
-}
+	&.b,
+	&.d,
+	&.e {
+		background: #fff;
+	}
 
-.cta.d h4 {
-	text-transform: uppercase;
-	font-weight: 700;
-	margin: 3rem 0 1.5rem 0;
+	&.e,
+	&.about.c {
+		padding: 0;
+	}
+
+	&.d h2 {
+		max-width: 800px;
+	}
+
+	&.b p,
+	&.about.a p {
+		max-width: 800px;
+	}
+
+	&.about.d p {
+		max-width: 600px;
+	}
+
+	&.b p:first-child {
+		margin: 0 auto;
+	}
+
+	&.d:not( .about ) p {
+		max-width: 300px;
+		line-height: 1.9;
+	}
+
+	&.d h4 {
+		text-transform: uppercase;
+		font-weight: 700;
+		margin: 3rem 0 1.5rem 0;
+	}
 }
 
 .pre-footer {
@@ -166,46 +170,5 @@
 @media only screen and ( max-width: 991px ) {
 	#sidebar {
 		width: 100%;
-	}
-}
-
-/*-- Instagram ---*/
-html.swipebox-html {
-	overflow-y: hidden;
-}
-
-#instagram-feed {
-	width: 100%;
-	max-width: 1200px;
-}
-
-#instagram-feed a {
-	border: none;
-	padding: 0;
-}
-
-#instagram-feed .instagram-image {
-	padding: 5px;
-}
-
-@media only screen and ( max-width: 768px ) {
-	#instagram-feed .instagram-image {
-		padding: 5px 0;
-	}
-}
-
-#instagram-feed figure {
-	position: relative;
-	padding-bottom: 100%;
-	width: 100%;
-}
-
-.instagram-about {
-	margin-top: 4rem;
-}
-
-@media only screen and ( max-width: 768px ) {
-	.instagram-about {
-		margin-top: 3rem;
 	}
 }
