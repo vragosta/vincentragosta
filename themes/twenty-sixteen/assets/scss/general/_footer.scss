@@ -4,8 +4,21 @@
  */
 
 #footer {
-	background-color: #26262a;
-	padding: 6rem 0;
+	& {
+		background-color: #26262a;
+		padding: 6rem 0;
+	}
+
+	& section > div {
+		margin: .5rem 0
+	}
+
+	& p {
+		color: #fff;
+		opacity: 0.5;
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+	}
 }
 
 @media only screen and ( max-width: 767px ) {
@@ -14,47 +27,41 @@
 	}
 }
 
-/*--- Vertical spacing in footer menu ---*/
-#footer section > div {
-	margin: .5rem 0
-}
-
-#footer p {
-	color: #fff;
-	opacity: 0.5;
-	font-family: 'Lato', sans-serif;
-	font-weight: 300;
-}
-
 /*--- Contact Info ( Footer )---*/
-#contact-info h3 {
-	color: #fff;
-}
+#contact-info {
+	& h3 {
+		color: #fff;
+	}
 
-#contact-info span {
-	opacity: 0.5;
+	& span {
+		opacity: 0.5;
+	}
 }
 
 /*--- Documents ( Footer ) ---*/
-#docs a {
-	opacity: 0.5;
-	transition: opacity 0.4s ease-in-out;
-}
+#docs {
+	& a {
+		opacity: 0.5;
+		transition: opacity 0.4s ease-in-out;
+	}
 
-#docs a:hover {
-	opacity: 1;
-}
+	& a:hover {
+		opacity: 1;
+	}
 
-#docs a:nth-child(2) {
-	margin: 0 1rem;
+	& a:nth-child(2) {
+		margin: 0 1rem;
+	}
 }
 
 /*--- Social ( Footer ) ---*/
 .social {
-	padding: 2rem;
-}
+	& {
+		padding: 2rem;
+	}
 
-.social a {
-	font-size: 2.5rem;
-	margin: 0 1rem;
+	& a {
+		font-size: 2.5rem;
+		margin: 0 1rem;
+	}
 }

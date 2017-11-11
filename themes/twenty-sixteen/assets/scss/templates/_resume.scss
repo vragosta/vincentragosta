@@ -1,82 +1,82 @@
 /**
  * Vincent Ragosta - Twenty Sixteen
- * Contact CSS
+ * Resume CSS
  */
 
-#resume section {
-	padding: 6rem 4rem;
-}
-
-@media only screen and ( max-width: 768px ) {
-	#resume section:first-child {
-		padding: 6rem 4rem 0;
+#resume {
+	& section {
+		padding: 6rem 4rem;
 	}
-}
 
-#resume h2,
-#resume h3,
-#resume h4,
-#resume p {
-	text-align: left;
-	font-family: 'Lato', sans-serif;
-}
+	& h2,
+	& h3,
+	& h4,
+	& p {
+		text-align: left;
+		font-family: 'Lato', sans-serif;
+	}
 
-#resume h2 {
-	font-weight: 300;
-}
+	& h2 {
+		font-weight: 300;
+	}
 
-#resume h3 {
-	text-transform: uppercase;
-	margin-bottom: 25px;
-}
-
-#resume h4 {
-	margin-bottom: 10px;
-	text-transform: uppercase;
-}
-
-#resume li {
-	margin: 5px 0;
-	font-family: 'Lato', sans-serif;
-	font-size: 1.8rem;
-	font-weight: 300;
-}
-
-@media only screen and ( max-width: 768px ) {
-	#resume .day-to-day {
+	& h3 {
+		text-transform: uppercase;
 		margin-bottom: 25px;
 	}
-}
 
-#resume a {
-	color: #333;
-	font-weight: 700;
-}
+	& h4 {
+		margin-bottom: 10px;
+		text-transform: uppercase;
+	}
 
-#resume a:hover {
-	text-decoration: underline;
-}
+	& li {
+		margin: 5px 0;
+		font-family: 'Lato', sans-serif;
+		font-size: 1.8rem;
+		font-weight: 300;
+	}
 
-#resume p {
-	line-height: 2;
-	font-weight: 300;
-	font-size: 1.5rem;
-}
+	& a {
+		color: #333;
+		font-weight: 700;
+	}
 
-#resume p span {
-	font-weight: 500;
-}
+	& a:hover {
+		text-decoration: underline;
+	}
 
-#resume .work-item:not( :last-child ),
-#resume .education-item:not( :last-child ),
-#resume .award-item:not( :last-child ) {
-	margin-bottom: 100px;
+	& p {
+		line-height: 2;
+		font-weight: 300;
+		font-size: 1.5rem;
+	}
+
+	& p span {
+		font-weight: 500;
+	}
+
+	& .work-item:not( :last-child ),
+	& .education-item:not( :last-child ),
+	& .award-item:not( :last-child ) {
+		margin-bottom: 100px;
+	}
 }
 
 @media only screen and ( max-width: 768px ) {
-	#resume .work-item,
-	#resume .education-item,
-	#resume .award-item {
-		margin: 0;
+	#resume {
+		& section:first-child {
+			padding: 6rem 4rem 0;
+		}
+
+		& .day-to-day {
+			margin-bottom: 25px;
+		}
+
+		& .work-item,
+		& .education-item,
+		& .award-item {
+			margin: 0;
+		}
 	}
 }

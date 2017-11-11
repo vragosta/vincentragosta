@@ -37,15 +37,17 @@ h3 {
 	font-size: 2rem;
 }
 
-a,
-a:hover,
-a:focus,
-a:active,
-a:active:focus {
-	text-decoration: none;
-	font-family: 'Lato', sans-serif;
-	font-weight: 300;
-	color: #fff;
+a {
+	&,
+	&:hover,
+	&:focus,
+	&:active,
+	&:active:focus {
+		text-decoration: none;
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+		color: #fff;
+	}
 }
 
 hr {
@@ -65,11 +67,13 @@ pre {
 }
 
 #separator {
-	display: flex;
-	align-items: center;
-	margin: 0 .5rem;
-}
+	& {
+		display: flex;
+		align-items: center;
+		margin: 0 .5rem;
+	}
 
-#separator i {
-	font-size: 3px;
+	& i {
+		font-size: 3px;
+	}
 }
