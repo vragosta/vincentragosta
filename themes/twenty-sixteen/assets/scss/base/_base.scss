@@ -1,6 +1,6 @@
 /**
  * Vincent Ragosta - Twenty Sixteen
- * Site Core Components CSS
+ * Base CSS
  */
 
 /*--- Needed to prevent the whitespace to the right of web page ---*/
@@ -66,8 +66,7 @@ pre {
 
 #separator {
 	& {
-		display: flex;
-		align-items: center;
+		@include flex( center );
 		margin: 0 .5rem;
 	}
 

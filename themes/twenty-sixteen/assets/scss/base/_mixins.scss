@@ -1,0 +1,25 @@
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Mixin Functions CSS
+ */
+
+/**
+ * Set flex settings.
+ * Used specifically in _extends.scss
+ */
+@mixin flex( $align-items : null, $justify-content : null, $flex-direction : null ) {
+	display: flex;
+	align-items: $align-items;
+	justify-content: $justify-content;
+	flex-direction: $flex-direction;
+}
+
+/**
+ * Set fade in/out settings.
+ * Must have opacity and visibility as css properties for mixin to be used.
+ */
+@mixin fade( $opacity, $visibility : null, $opacity_transition : null, $visibility_transition : null ) {
+	opacity: $opacity;
+	visibility: $visibility;
+	transition: $opacity_transition, $visibility_transition;
+}

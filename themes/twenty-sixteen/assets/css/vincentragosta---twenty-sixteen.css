@@ -19,7 +19,19 @@
 /*--- Font Properties ---*/
 /**
  * Vincent Ragosta - Twenty Sixteen
- * Site Core Components CSS
+ * Mixin Functions CSS
+ */
+/**
+ * Set flex settings.
+ * Used specifically in _extends.scss
+ */
+/**
+ * Set fade in/out settings.
+ * Must have opacity and visibility as css properties for mixin to be used.
+ */
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Base CSS
  */
 /*--- Needed to prevent the whitespace to the right of web page ---*/
 html, body {
@@ -28,7 +40,7 @@ html, body {
   overflow-x: hidden; }
 
 body {
-  font-family: "Cormorant Garamond", "serif"; }
+  font-family: "Cormorant Garamond", serif; }
 
 button {
   outline: none; }
@@ -50,7 +62,7 @@ h3 {
 
 a, a:hover, a:focus, a:active, a:active:focus {
   text-decoration: none;
-  font-family: "Lato", "sans-serif";
+  font-family: "Lato", sans-serif;
   font-weight: 300;
   color: #FFF; }
 
@@ -74,116 +86,26 @@ pre {
 
 /**
  * Vincent Ragosta - Twenty Sixteen
- * Header CSS
- */
-#header {
-  position: relative; }
-
-/*--- Navigation ---*/
-.nav-container {
-  position: absolute;
-  z-index: 1; }
-
-.controls-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem; }
-
-#logo {
-  /*--- Initial styles when the page is unloaded ( needed for js functionality ) ---*/ }
-  #logo {
-    background-image: url("../images/white-logo.png");
-    background-size: contain;
-    background-position: center;
-    height: 75px;
-    min-width: 75px;
-    /*--- CSS transitions to toggle header visibility ---*/
-    opacity: 1;
-    visibility: visible;
-    transition: opacity .4s ease-in-out, visibility .4s ease-in-out; }
-  #logo.unloaded {
-    opacity: 0;
-    visibility: hidden; }
-
-/*--- Hamburger button styles ---*/
-.drop-down {
-  font-size: 4rem;
-  color: #FFF;
-  cursor: pointer;
-  position: absolute;
-  top: 40px;
-  right: 40px;
-  /*--- CSS transitions to toggle drop-down visibility ---*/
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out; }
-
-@media only screen and (max-width: 991px) {
-  .drop-down {
-    visibility: visible;
-    opacity: 1; } }
-/*--- Prevent button from appearing in the header on the front page ---*/
-.home #header .featured-image .overlay a {
-  display: none; }
-
-/**
- * Vincent Ragosta - Twenty Sixteen
- * Footer CSS
- */
-#footer {
-  background-color: #26262A;
-  padding: 6rem 0; }
-#footer section > div {
-  margin: 0.5rem 0; }
-#footer p {
-  color: #FFF;
-  opacity: 0.5;
-  font-family: "Lato", "sans-serif";
-  font-weight: 300; }
-
-@media only screen and (max-width: 767px) {
-  #footer {
-    padding: 2rem 0; } }
-/*--- Contact Info ( Footer )---*/
-#contact-info h3 {
-  color: #FFF; }
-#contact-info span {
-  opacity: 0.5; }
-
-/*--- Documents ( Footer ) ---*/
-#docs a {
-  opacity: 0.5;
-  transition: opacity 0.4s ease-in-out; }
-#docs a:hover {
-  opacity: 1; }
-#docs a:nth-child(2) {
-  margin: 0 1rem; }
-
-/*--- Social ( Footer ) ---*/
-.social {
-  padding: 2rem; }
-.social a {
-  font-size: 2.5rem;
-  margin: 0 1rem; }
-
-/**
- * Vincent Ragosta - Twenty Sixteen
  * Extend Helper CSS
  */
-html, body, hr, .nav-container, #mobile-menu, .aside p, #instagram-feed, #instagram-feed figure, #notification-widget, .archive .grid-container, #single-project img, .arrow-top, #contact-page p {
+html, body, hr, #mobile-menu, .aside p, #instagram-feed, #instagram-feed figure, #notification-widget, .nav-container, .archive .grid-container, #single-project img, .arrow-top, #contact-page p {
   width: 100%; }
 
-#footer, .aside.excerpt, .cta, #single-project {
+.aside.excerpt, .cta, #footer, #single-project {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column; }
 
-.social, .menu, #notification-widget {
+.menu, #swipebox-title, #notification-widget, #notification-widget p, .social, .arrow-top a {
   display: flex;
   align-items: center;
   justify-content: center; }
+
+.controls-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
 
 #copyright {
   padding: 0 1rem; }
@@ -210,7 +132,7 @@ html, body, hr, .nav-container, #mobile-menu, .aside p, #instagram-feed, #instag
   /*--- CSS transitions to toggle menu-container visibility ---*/
   opacity: 1;
   visibility: visible;
-  transition: opacity .4s ease-in-out, visibility .4s ease-in-out; }
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out; }
 
 @media only screen and (max-width: 991px) {
   .menu-container {
@@ -224,7 +146,7 @@ html, body, hr, .nav-container, #mobile-menu, .aside p, #instagram-feed, #instag
     /*--- CSS transitions to toggle menu visibility ( used just for .unloaded ) ---*/
     opacity: 1;
     visibility: visible;
-    transition: opacity .4s ease-in-out, visibility .4s ease-in-out; }
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out; }
   .menu.unloaded {
     opacity: 0;
     visibility: hidden; }
@@ -298,10 +220,10 @@ html, body, hr, .nav-container, #mobile-menu, .aside p, #instagram-feed, #instag
   padding: 6rem 4rem; }
 .aside h1, .aside h2 {
   margin-bottom: 4rem;
-  font-family: "Lato", "sans-serif"; }
+  font-family: "Lato", sans-serif; }
 .aside p {
-  line-height: 1.5;
   opacity: 0.7;
+  line-height: 1.5;
   max-width: 1100px;
   font-size: 1.85rem; }
 .aside p + p {
@@ -395,10 +317,7 @@ html.swipebox-html {
   overflow-y: hidden; }
 
 #swipebox-title {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
+  height: 100%; }
 
 #instagram-feed {
   max-width: 1200px; }
@@ -430,12 +349,9 @@ html.swipebox-html {
 #notification-widget {
   padding: 0; }
 #notification-widget p {
-  color: #FFF;
-  font-size: 2.8rem;
   opacity: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+  color: #FFF;
+  font-size: 2.8rem; }
 #notification-widget a {
   border: 2px solid #FFF;
   color: #FFF; }
@@ -455,6 +371,98 @@ html.swipebox-html {
  * Vincent Ragosta - Twenty Sixteen
  * Templates Index CSS
  */
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Header CSS
+ */
+#header {
+  position: relative; }
+
+/*--- Navigation ---*/
+.nav-container {
+  position: absolute;
+  z-index: 1; }
+
+.controls-container {
+  padding: 2rem; }
+
+#logo {
+  /*--- Initial styles when the page is unloaded ( needed for js functionality ) ---*/ }
+  #logo {
+    background-image: url("../images/white-logo.png");
+    background-size: contain;
+    background-position: center;
+    height: 75px;
+    min-width: 75px;
+    /*--- CSS transitions to toggle header visibility ---*/
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out; }
+  #logo.unloaded {
+    opacity: 0;
+    visibility: hidden; }
+
+/*--- Hamburger button styles ---*/
+.drop-down {
+  font-size: 4rem;
+  color: #FFF;
+  cursor: pointer;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  /*--- CSS transitions to toggle drop-down visibility ---*/
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out; }
+
+@media only screen and (max-width: 991px) {
+  .drop-down {
+    opacity: 1;
+    visibility: visible; } }
+/*--- Prevent button from appearing in the header on the front page ---*/
+.home #header .featured-image .overlay a {
+  display: none; }
+
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Footer CSS
+ */
+#footer {
+  background-color: #26262A;
+  padding: 6rem 0; }
+#footer section > div {
+  margin: 0.5rem 0; }
+#footer p {
+  opacity: 0.5;
+  color: #FFF;
+  font-family: "Lato", sans-serif;
+  font-weight: 300; }
+
+@media only screen and (max-width: 767px) {
+  #footer {
+    padding: 2rem 0; } }
+/*--- Contact Info ( Footer )---*/
+#contact-info h3 {
+  color: #FFF; }
+#contact-info span {
+  opacity: 0.5; }
+
+/*--- Documents ( Footer ) ---*/
+#docs a {
+  opacity: 0.5;
+  transition: opacity 0.4s ease-in-out; }
+#docs a:hover {
+  opacity: 1; }
+#docs a:nth-child(2) {
+  margin: 0 1rem; }
+
+/*--- Social ( Footer ) ---*/
+.social {
+  padding: 2rem; }
+.social a {
+  font-size: 2.5rem;
+  margin: 0 1rem; }
+
 /**
  * Vincent Ragosta - Twenty Sixteen
  * Archive CSS
@@ -493,19 +501,19 @@ html.swipebox-html {
   line-height: 1.5;
   padding: 2rem; }
 #blog .category a {
+  opacity: 0.7;
   color: #333;
   text-transform: uppercase;
-  font-size: 1.5rem;
-  opacity: 0.7; }
+  font-size: 1.5rem; }
 #blog .header-container .header {
-  font-family: "Lato", "sans-serif";
+  font-family: "Lato", sans-serif;
   font-weight: 500; }
 #blog .sub-header {
   display: flex;
-  font-size: 1.8rem;
-  opacity: 0.7; }
+  opacity: 0.7;
+  font-size: 1.8rem; }
 #blog .post-author, #blog .post-date {
-  font-family: "Lato", "sans-serif";
+  font-family: "Lato", sans-serif;
   font-weight: 300; }
 #blog figure {
   position: relative;
@@ -522,7 +530,7 @@ html.swipebox-html {
 #blog .excerpt {
   margin-top: .5rem;
   font-size: 2.2rem;
-  font-family: "Lato", "sans-serif"; }
+  font-family: "Lato", sans-serif; }
 #blog .content {
   opacity: 0.7;
   font-size: 1.8rem; }
@@ -550,7 +558,7 @@ html.swipebox-html {
   padding: 0 1rem;
   font-size: 2rem;
   color: #686868;
-  font-family: "Lato", "sans-serif";
+  font-family: "Lato", sans-serif;
   transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out; }
 .page-numbers:hover:not(.current) {
   background-color: #686868;
@@ -594,18 +602,18 @@ html.swipebox-html {
   font-size: 2rem;
   font-weight: 500; }
 .post-edit-link:hover {
-  color: #333;
   opacity: 0.7;
+  color: #333;
   font-weight: 500; }
 
 .arrow-top {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
   position: fixed;
   bottom: 2rem;
   text-align: center;
-  left: 0;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; }
+  left: 0; }
 .arrow-top.visible {
   opacity: 1;
   visibility: visible; }
@@ -619,9 +627,6 @@ html.swipebox-html {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   width: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   color: #333; }
 .arrow-top i {
@@ -635,21 +640,21 @@ html.swipebox-html {
 #contact-page > div {
   padding: 6rem 4rem; }
 #contact-page h2, #contact-page h3 {
-  font-family: "Lato", "sans-serif";
+  font-family: "Lato", sans-serif;
   margin-bottom: 10px;
   text-align: left; }
 #contact-page h3 {
   text-transform: uppercase; }
 #contact-page p {
-  line-height: 1.5;
   opacity: 0.7;
+  line-height: 1.5;
   font-size: 1.85rem;
   margin: 0 auto;
   text-align: left; }
 #contact-page h2 + p {
   margin-bottom: 50px; }
 #contact-page p a {
-  font-family: "Cormorant Garamond", "serif"; }
+  font-family: "Cormorant Garamond", serif; }
 #contact-page a {
   color: #333; }
 #contact-page .social {
@@ -689,7 +694,7 @@ html.swipebox-html {
   padding: .5rem 3rem;
   text-transform: uppercase;
   transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
-  font-family: "Lato", "sans-serif"; }
+  font-family: "Lato", sans-serif; }
 #contact-page .contact-btn:hover {
   background: #686868;
   color: #FFF; }
@@ -720,7 +725,7 @@ html.swipebox-html {
   padding: 6rem 4rem; }
 #resume h2, #resume h3, #resume h4, #resume p {
   text-align: left;
-  font-family: "Lato", "sans-serif"; }
+  font-family: "Lato", sans-serif; }
 #resume h2 {
   font-weight: 300; }
 #resume h3 {
@@ -731,7 +736,7 @@ html.swipebox-html {
   text-transform: uppercase; }
 #resume li {
   margin: 5px 0;
-  font-family: "Lato", "sans-serif";
+  font-family: "Lato", sans-serif;
   font-size: 1.8rem;
   font-weight: 300; }
 #resume a {

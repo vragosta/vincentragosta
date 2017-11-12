@@ -64,8 +64,8 @@
 	}
 
 	&:hover {
+		@include fade( 0.7 );
 		color: $mine-shaft;
-		opacity: 0.7;
 		font-weight: $font-weight-regular;
 	}
 }
@@ -73,21 +73,19 @@
 .arrow-top {
 	& {
 		@extend %full-width;
+		@include fade( 0, hidden, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out );
 		position: fixed;
 		bottom: 2rem;
 		text-align: center;
 		left: 0;
-		opacity: 0;
-		visibility: hidden;
-		transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 	}
 
 	&.visible {
-		opacity: 1;
-		visibility: visible;
+		@include fade( 1, visible );
 	}
 
 	& a {
+		@extend %row-flex-center;
 		margin: 0 auto;
 		padding: 0;
 		background-color: $white;
@@ -97,9 +95,6 @@
 		-moz-border-radius: 50%;
 		-webkit-border-radius: 50%;
 		width: 5rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 		cursor: pointer;
 		color: $mine-shaft;
 	}

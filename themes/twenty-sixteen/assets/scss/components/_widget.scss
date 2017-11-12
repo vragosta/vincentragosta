@@ -12,12 +12,10 @@
 	}
 
 	& p {
+		@extend %row-flex-center;
+		@include fade( 1 );
 		color: $white;
 		font-size: 2.8rem;
-		opacity: 1;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 	}
 
 	& a {

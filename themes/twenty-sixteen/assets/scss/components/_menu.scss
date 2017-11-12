@@ -5,15 +5,12 @@
 
 .menu-container {
 	/*--- CSS transitions to toggle menu-container visibility ---*/
-	opacity: 1;
-	visibility: visible;
-	transition: opacity .4s ease-in-out, visibility .4s ease-in-out;
+	@include fade( 1, visible, opacity .4s ease-in-out, visibility .4s ease-in-out );
 }
 
 @media only screen and ( max-width: 991px ) {
 	.menu-container {
-		opacity: 0;
-		visibility: hidden;
+		@include fade( 0, hidden );
 
 		/*--- Needed to prevent the links in the menu from being clickable ---*/
 		z-index: -10;
@@ -23,16 +20,14 @@
 .menu {
 	& {
 		@extend %row-flex-center;
+
 		/*--- CSS transitions to toggle menu visibility ( used just for .unloaded ) ---*/
-		opacity: 1;
-		visibility: visible;
-		transition: opacity .4s ease-in-out, visibility .4s ease-in-out;
+		@include fade( 1, visible, opacity .4s ease-in-out, visibility .4s ease-in-out );
 	}
 
 	/*--- Initial styles when the page is unloaded ---*/
 	&.unloaded {
-		opacity: 0;
-		visibility: hidden;
+		@include fade( 0, hidden );
 	}
 
 	& a {
@@ -41,19 +36,18 @@
 			font-size: 1.5rem;
 			letter-spacing: .2rem;
 			text-transform: uppercase;
-			opacity: 0.8;
-			transition: opacity 0.2s ease-in-out;
+			@include fade( 0.8, $opacity_transition : opacity 0.2s ease-in-out );
 		}
 
 		&:hover {
-			opacity: 1;
+			@include fade( 1 );
 		}
 	}
 }
 
 /*--- Contact button ---*/
 #contact {
-	display: flex;
+	@include flex();
 }
 
 #header {
@@ -109,8 +103,7 @@
 
 	& .close-container {
 		& {
-			display: flex;
-			justify-content: flex-end;
+			@include flex( $justify-content: flex-end );
 			padding: 4.4rem 3.5rem 1.5rem 2rem;
 		}
 
