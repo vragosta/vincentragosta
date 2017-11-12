@@ -74,7 +74,7 @@
 
 	& .header-container .header {
 		font-family: $stack-lato;
-		font-weight: 500;
+		font-weight: $font-weight-regular;
 	}
 
 	& .sub-header {
@@ -86,7 +86,7 @@
 	& .post-author,
 	& .post-date {
 		font-family: $stack-lato;
-		font-weight: 300;
+		font-weight: $font-weight-light;
 	}
 
 	& figure {
@@ -123,7 +123,7 @@
 	& .link {
 		color: $mine-shaft;
 		font-size: 1.8rem;
-		font-weight: 300;
+		font-weight: $font-weight-light;
 	}
 
 	& #pagination-archive {

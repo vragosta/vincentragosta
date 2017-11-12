@@ -17,7 +17,7 @@
 	}
 
 	& h2 {
-		font-weight: 300;
+		font-weight: $font-weight-light;
 	}
 
 	& h3 {
@@ -34,12 +34,12 @@
 		margin: 5px 0;
 		font-family: $stack-lato;
 		font-size: 1.8rem;
-		font-weight: 300;
+		font-weight: $font-weight-light;
 	}
 
 	& a {
 		color: $mine-shaft;
-		font-weight: 700;
+		font-weight: $font-weight-bold;
 	}
 
 	& a:hover {
@@ -48,12 +48,12 @@
 
 	& p {
 		line-height: 2;
-		font-weight: 300;
+		font-weight: $font-weight-light;
 		font-size: 1.5rem;
 	}
 
 	& p span {
-		font-weight: 500;
+		font-weight: $font-weight-regular;
 	}
 
 	& .work-item:not( :last-child ),

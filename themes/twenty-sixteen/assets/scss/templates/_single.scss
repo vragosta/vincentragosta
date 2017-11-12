@@ -60,13 +60,13 @@
 	& {
 		color: $mine-shaft;
 		font-size: 2rem;
-		font-weight: 500;
+		font-weight: $font-weight-regular;
 	}
 
 	&:hover {
 		color: $mine-shaft;
 		opacity: 0.7;
-		font-weight: 500;
+		font-weight: $font-weight-regular;
 	}
 }
 
