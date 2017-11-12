@@ -13,7 +13,7 @@
 		font-weight: 300;
 		text-shadow: $cod-gray 0 0 4px;
 		text-align: center;
-		font-family: 'Lato', sans-serif;
+		font-family: $stack-lato;
 
 		/*--- CSS transitions to toggle sub-header visibility ---*/
 		opacity: 1;

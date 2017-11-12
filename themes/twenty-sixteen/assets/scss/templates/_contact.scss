@@ -10,7 +10,7 @@
 
 	& h2,
 	& h3 {
-		font-family: 'Lato', sans-serif;
+		font-family: $stack-lato;
 		margin-bottom: 10px;
 		text-align: left;
 	}
@@ -33,7 +33,7 @@
 	}
 
 	& p a {
-		font-family: 'Cormorant Garamond', serif;
+		font-family: $stack-cormorant-garamond;
 	}
 
 	& a {
@@ -99,7 +99,7 @@
 			padding: .5rem 3rem;
 			text-transform: uppercase;
 			transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
-			font-family: 'Lato', sans-serif;
+			font-family: $stack-lato;
 		}
 
 		&:hover {

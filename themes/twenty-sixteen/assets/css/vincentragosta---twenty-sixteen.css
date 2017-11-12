@@ -15,6 +15,7 @@
  */
 /*--- Descriptive color variables ---*/
 /*--- Functional color variables ---*/
+/*--- Font stacks ---*/
 /**
  * Vincent Ragosta - Twenty Sixteen
  * Site Core Components CSS
@@ -26,7 +27,7 @@ html, body {
   overflow-x: hidden; }
 
 body {
-  font-family: 'Cormorant Garamond', serif; }
+  font-family: "Cormorant Garamond", "serif"; }
 
 button {
   outline: none; }
@@ -48,7 +49,7 @@ h3 {
 
 a, a:hover, a:focus, a:active, a:active:focus {
   text-decoration: none;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", "sans-serif";
   font-weight: 300;
   color: #FFF; }
 
@@ -137,7 +138,7 @@ pre {
 #footer p {
   color: #FFF;
   opacity: 0.5;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", "sans-serif";
   font-weight: 300; }
 
 @media only screen and (max-width: 767px) {
@@ -296,7 +297,7 @@ html, body, hr, .nav-container, #mobile-menu, .aside p, #instagram-feed, #instag
   padding: 6rem 4rem; }
 .aside h1, .aside h2 {
   margin-bottom: 4rem;
-  font-family: 'Lato', sans-serif; }
+  font-family: "Lato", "sans-serif"; }
 .aside p {
   line-height: 1.5;
   opacity: 0.7;
@@ -496,14 +497,14 @@ html.swipebox-html {
   font-size: 1.5rem;
   opacity: 0.7; }
 #blog .header-container .header {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", "sans-serif";
   font-weight: 500; }
 #blog .sub-header {
   display: flex;
   font-size: 1.8rem;
   opacity: 0.7; }
 #blog .post-author, #blog .post-date {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", "sans-serif";
   font-weight: 300; }
 #blog figure {
   position: relative;
@@ -520,7 +521,7 @@ html.swipebox-html {
 #blog .excerpt {
   margin-top: .5rem;
   font-size: 2.2rem;
-  font-family: 'Lato', sans-serif; }
+  font-family: "Lato", "sans-serif"; }
 #blog .content {
   opacity: 0.7;
   font-size: 1.8rem; }
@@ -548,7 +549,7 @@ html.swipebox-html {
   padding: 0 1rem;
   font-size: 2rem;
   color: #686868;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", "sans-serif";
   transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out; }
 .page-numbers:hover:not(.current) {
   background-color: #686868;
@@ -633,7 +634,7 @@ html.swipebox-html {
 #contact-page > div {
   padding: 6rem 4rem; }
 #contact-page h2, #contact-page h3 {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", "sans-serif";
   margin-bottom: 10px;
   text-align: left; }
 #contact-page h3 {
@@ -647,7 +648,7 @@ html.swipebox-html {
 #contact-page h2 + p {
   margin-bottom: 50px; }
 #contact-page p a {
-  font-family: 'Cormorant Garamond', serif; }
+  font-family: "Cormorant Garamond", "serif"; }
 #contact-page a {
   color: #333; }
 #contact-page .social {
@@ -687,7 +688,7 @@ html.swipebox-html {
   padding: .5rem 3rem;
   text-transform: uppercase;
   transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
-  font-family: 'Lato', sans-serif; }
+  font-family: "Lato", "sans-serif"; }
 #contact-page .contact-btn:hover {
   background: #686868;
   color: #FFF; }
@@ -718,7 +719,7 @@ html.swipebox-html {
   padding: 6rem 4rem; }
 #resume h2, #resume h3, #resume h4, #resume p {
   text-align: left;
-  font-family: 'Lato', sans-serif; }
+  font-family: "Lato", "sans-serif"; }
 #resume h2 {
   font-weight: 300; }
 #resume h3 {
@@ -729,7 +730,7 @@ html.swipebox-html {
   text-transform: uppercase; }
 #resume li {
   margin: 5px 0;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", "sans-serif";
   font-size: 1.8rem;
   font-weight: 300; }
 #resume a {

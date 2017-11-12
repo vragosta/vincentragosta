@@ -13,7 +13,7 @@
 	& h4,
 	& p {
 		text-align: left;
-		font-family: 'Lato', sans-serif;
+		font-family: $stack-lato;
 	}
 
 	& h2 {
@@ -32,7 +32,7 @@
 
 	& li {
 		margin: 5px 0;
-		font-family: 'Lato', sans-serif;
+		font-family: $stack-lato;
 		font-size: 1.8rem;
 		font-weight: 300;
 	}

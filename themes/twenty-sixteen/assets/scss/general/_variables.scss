@@ -15,3 +15,9 @@ $thunder    : #221E1F;
 
 /*--- Functional color variables ---*/
 $black-opacity : rgba( $black, .95 );
+
+/*--- Font stacks ---*/
+$stack-serif              : 'serif';
+$stack-sans-serif         : 'sans-serif';
+$stack-cormorant-garamond : 'Cormorant Garamond', $stack-serif;
+$stack-lato               : 'Lato', $stack-sans-serif;

@@ -50,6 +50,7 @@
  * Variable CSS
  */
 /*--- Descriptive color variables ---*/
+/*--- Font stacks ---*/
 /**
  * Image Captions - Twenty Sixteen
  * Header CSS
@@ -65,7 +66,7 @@
     text-align: center;
     text-shadow: #080808 0 0 4px;
     padding: 0 2rem;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", "sans-serif";
     /*--- Margin-bottom set for hover effect ---*/
     margin: 0 0 20px 0;
     /*--- CSS transitions to toggle header visibility ---*/
@@ -219,7 +220,7 @@
     font-weight: 300;
     text-shadow: #080808 0 0 4px;
     text-align: center;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", "sans-serif";
     /*--- CSS transitions to toggle sub-header visibility ---*/
     opacity: 1;
     visibility: visible;

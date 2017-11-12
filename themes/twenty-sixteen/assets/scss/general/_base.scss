@@ -12,7 +12,7 @@ html, body {
 }
 
 body {
-	font-family: 'Cormorant Garamond', serif;
+	font-family: $stack-cormorant-garamond;
 }
 
 button {
@@ -44,7 +44,7 @@ a {
 	&:active,
 	&:active:focus {
 		text-decoration: none;
-		font-family: 'Lato', sans-serif;
+		font-family: $stack-lato;
 		font-weight: 300;
 		color: $white;
 	}

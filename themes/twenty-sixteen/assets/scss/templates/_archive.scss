@@ -73,7 +73,7 @@
 	}
 
 	& .header-container .header {
-		font-family: 'Lato', sans-serif;
+		font-family: $stack-lato;
 		font-weight: 500;
 	}
 
@@ -85,7 +85,7 @@
 
 	& .post-author,
 	& .post-date {
-		font-family: 'Lato', sans-serif;
+		font-family: $stack-lato;
 		font-weight: 300;
 	}
 
@@ -108,7 +108,7 @@
 	& .excerpt {
 		margin-top: .5rem;
 		font-size: 2.2rem;
-		font-family: 'Lato', sans-serif;
+		font-family: $stack-lato;
 	}
 
 	& .content {
@@ -154,7 +154,7 @@
 		padding: 0 1rem;
 		font-size: 2rem;
 		color: $dove-gray;
-		font-family: 'Lato', sans-serif;
+		font-family: $stack-lato;
 		transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 	}
 
