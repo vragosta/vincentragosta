@@ -9,6 +9,7 @@
 
 /*--- Navigation ---*/
 .nav-container {
+	@extend %full-width;
 	position: absolute;
 	z-index: 1;
 }

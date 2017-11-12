@@ -20,10 +20,10 @@ if ( have_posts() ) {
 	while( have_posts() ) {
 		the_post(); ?>
 
-		<main id="single-project" class="col-flex-center">
+		<main id="single-project">
 
 			<?php if ( $post->post_excerpt ) { ?>
-				<aside class="aside excerpt col-flex-center">
+				<aside class="aside excerpt">
 					<?php echo $post->post_excerpt; ?>
 				</aside>
 			<?php } ?>

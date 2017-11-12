@@ -22,6 +22,7 @@
 
 .menu {
 	& {
+		@extend %row-flex-center;
 		/*--- CSS transitions to toggle menu visibility ( used just for .unloaded ) ---*/
 		opacity: 1;
 		visibility: visible;

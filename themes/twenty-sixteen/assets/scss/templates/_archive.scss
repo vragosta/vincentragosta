@@ -10,11 +10,14 @@
 	}
 
 	& .grid-container {
-		padding: 1rem .5rem 0;
-	}
+		& {
+			@extend %full-width;
+			padding: 1rem .5rem 0;
+		}
 
-	& .grid-container:last-child {
-		padding-bottom: 0rem;
+		&:last-child {
+			padding-bottom: 0rem;
+		}
 	}
 }
 

@@ -45,6 +45,10 @@
 			color: #fff;
 		}
 	}
+
+	&.excerpt {
+		@extend %col-flex-center;
+	}
 }
 
 @media only screen and ( max-width: 767px ) {
@@ -111,6 +115,10 @@
 }
 
 .cta {
+	& {
+		@extend %col-flex-center;
+	}
+
 	&.a,
 	&.c,
 	&.f {

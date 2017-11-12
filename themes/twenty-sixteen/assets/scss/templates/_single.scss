@@ -5,6 +5,7 @@
 
 #single-project {
 	& {
+		@extend %col-flex-center;
 		max-width: 1200px;
 		margin: 0 auto 6rem;
 		padding: 0 4rem;

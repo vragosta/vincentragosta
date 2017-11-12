@@ -26,6 +26,16 @@ html.swipebox-html {
 	}
 
 	& .instagram-image {
+		& {
+			padding: 5px;
+		}
+
+		& .image {
+			@extend %normalize-image;
+		}
+	}
+
+	& .instagram-image {
 		padding: 5px;
 	}
 

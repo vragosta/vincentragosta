@@ -13,7 +13,7 @@ get_header(); ?>
 <main id="projects" class="archive project">
 
 	<?php if ( $post->post_excerpt ) { ?>
-		<aside class="aside excerpt col-flex-center">
+		<aside class="aside excerpt">
 			<?php echo $post->post_excerpt; ?>
 		</aside>
 	<?php } ?>
@@ -29,7 +29,7 @@ get_header(); ?>
 						# Start a new row every 4 projects.
 						if ( ++$count % 4 === 0 ) { ?>
 						</div>
-						<div class="full-width grid-container">
+						<div class="grid-container">
 					<?php } ?>
 
 					<div class="grid-item col-xs-12 col-sm-4">

@@ -11,7 +11,7 @@ namespace VincentRagosta;
 
 	get_partial( 'template-parts/content-mobile-menu' ); ?>
 
-	<footer id="footer" class="col-flex-center">
+	<footer id="footer">
 
 		<?php if ( is_active_sidebar( 'pre-footer' ) ) { ?>
 			<aside class="aside pre-footer">
@@ -23,7 +23,7 @@ namespace VincentRagosta;
 
 		<section>
 
-			<div id="copyright" class="padding-left-right">
+			<div id="copyright">
 				<p>&copy <?php echo date( 'Y' ); ?> Vincent Ragosta. All rights reserved. Brooklyn Web Design and Wordpress Expert</p>
 			</div>
 

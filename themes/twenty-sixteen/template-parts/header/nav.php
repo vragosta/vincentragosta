@@ -12,7 +12,7 @@ namespace VincentRagosta;
 ?>
 
 <header id="header">
-	<nav class="nav-container full-width">
+	<nav class="nav-container">
 		<section class="controls-container">
 
 			<figure itemscope itemtype="http://schema.org/Organization" id="logo" class="unloaded">
