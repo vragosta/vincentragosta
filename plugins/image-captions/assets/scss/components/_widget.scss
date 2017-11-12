@@ -1,0 +1,62 @@
+/**
+ * Image Captions - Twenty Sixteen
+ * Widget CSS
+ */
+
+/*--- News & Updates Widget ---*/
+#news-and-updates {
+	& {
+		@extend %full-width;
+		max-width: 1200px;
+	}
+
+	&.marginally-center {
+		margin: 0 auto;
+		float: none !important;
+	}
+
+	& > div:last-child {
+		padding-top: 4.5rem;
+	}
+
+	& .featured-image .image {
+		top: 10px;
+		bottom: 10px;
+		left: 10px;
+		right: 10px;
+	}
+
+	& > div:last-child {
+		@extend %full-width;
+		@extend %col-flex-center;
+	}
+}
+
+@media only screen and ( max-width: 768px ) {
+	#news-and-updates > div:last-child {
+		padding-top: 3rem;
+	}
+}
+
+/*--- Featured Post Widget ---*/
+#featured-page {
+	& {
+		@extend %full-width;
+	}
+
+	& a {
+		margin-top: 2rem;
+		padding: 1.5rem 3rem;
+		font-size: 1.5rem;
+	}
+
+	& > div {
+		@extend %padding-none;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	#featured-page a {
+		font-size: 1.5rem;
+	}
+}

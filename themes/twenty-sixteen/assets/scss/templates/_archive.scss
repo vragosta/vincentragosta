@@ -66,7 +66,7 @@
 	}
 
 	& .category a {
-		color: #333;
+		color: $mine-shaft;
 		text-transform: uppercase;
 		font-size: 1.5rem;
 		opacity: 0.7;
@@ -121,7 +121,7 @@
 	}
 
 	& .link {
-		color: #333;
+		color: $mine-shaft;
 		font-size: 1.8rem;
 		font-weight: 300;
 	}
@@ -153,13 +153,13 @@
 		border: none;
 		padding: 0 1rem;
 		font-size: 2rem;
-		color: #686868;
+		color: $dove-gray;
 		font-family: 'Lato', sans-serif;
 		transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 	}
 
 	&:hover:not( .current ) {
-		background-color: #686868;
-		color: #fff;
+		background-color: $dove-gray;
+		color: $white;
 	}
 }

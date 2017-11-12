@@ -24,7 +24,7 @@
 	}
 
 	& img {
-		width: 100%;
+		@extend %full-width;
 		height: 100%;
 	}
 }
@@ -52,19 +52,19 @@
 
 	& a:hover {
 		background: none;
-		color: #686868;
+		color: $dove-gray;
 	}
 }
 
 .post-edit-link {
 	& {
-		color: #333;
+		color: $mine-shaft;
 		font-size: 2rem;
 		font-weight: 500;
 	}
 
 	&:hover {
-		color: #333;
+		color: $mine-shaft;
 		opacity: 0.7;
 		font-weight: 500;
 	}
@@ -72,11 +72,11 @@
 
 .arrow-top {
 	& {
+		@extend %full-width;
 		position: fixed;
 		bottom: 2rem;
 		text-align: center;
 		left: 0;
-		width: 100%;
 		opacity: 0;
 		visibility: hidden;
 		transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
@@ -90,8 +90,8 @@
 	& a {
 		margin: 0 auto;
 		padding: 0;
-		background-color: #fff;
-		border: 1px solid #221e1f;
+		background-color: $white;
+		border: 1px solid $thunder;
 		height: 5rem;
 		border-radius: 50%;
 		-moz-border-radius: 50%;
@@ -101,7 +101,7 @@
 		justify-content: center;
 		align-items: center;
 		cursor: pointer;
-		color: #333;
+		color: $mine-shaft;
 	}
 
 	& i {

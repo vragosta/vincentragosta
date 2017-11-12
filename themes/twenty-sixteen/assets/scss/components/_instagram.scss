@@ -16,7 +16,7 @@ html.swipebox-html {
 
 #instagram-feed {
 	& {
-		width: 100%;
+		@extend %full-width;
 		max-width: 1200px;
 	}
 
@@ -40,9 +40,9 @@ html.swipebox-html {
 	}
 
 	& figure {
+		@extend %full-width;
 		position: relative;
 		padding-bottom: 100%;
-		width: 100%;
 	}
 }
 

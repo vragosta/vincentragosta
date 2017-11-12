@@ -146,7 +146,7 @@ function styles() {
 	 *
 	 * @param bool vincentragosta_style_debug
 	 */
-	$debug = apply_filters( 'vincentragosta_style_debug', false );
+	$debug = apply_filters( 'vincentragosta_style_debug', true );
 	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 	wp_register_style(

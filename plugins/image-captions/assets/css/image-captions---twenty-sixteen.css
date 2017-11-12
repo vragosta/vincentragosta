@@ -47,6 +47,11 @@
 
 /**
  * Image Captions - Twenty Sixteen
+ * Variable CSS
+ */
+/*--- Descriptive color variables ---*/
+/**
+ * Image Captions - Twenty Sixteen
  * Header CSS
  */
 .featured-image {
@@ -165,12 +170,12 @@
     padding: .5rem 1rem;
     text-shadow: #080808 0 0 4px;
     background: transparent;
-    border-color: #fff;
-    color: #fff;
+    border-color: #FFF;
+    color: #FFF;
     margin-top: 1rem;
     transition: background 0.5s ease-in-out, color 0.5s ease-in-out, text-shadow 0.5s ease-in-out; }
   .featured-image .overlay a:hover {
-    background: #fff;
+    background: #FFF;
     color: #686868;
     text-shadow: none; }
   .featured-image.static .overlay, .featured-image.single .overlay {
@@ -178,7 +183,7 @@
     opacity: 1; }
   .featured-image.static .overlay a {
     font-size: 2rem;
-    border: 2px solid #fff;
+    border: 2px solid #FFF;
     padding: 1rem 3rem;
     text-transform: uppercase; }
 
@@ -207,7 +212,7 @@
   /*--- Initial styles when the page is unloaded for static elements only ---*/
   /*--- Styles for the non-static sub-header ---*/ }
   .featured-image .sub-header {
-    color: #fff;
+    color: #FFF;
     font-style: italic;
     letter-spacing: 1px;
     margin: 0;
