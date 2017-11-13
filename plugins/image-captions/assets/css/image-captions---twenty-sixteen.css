@@ -6,18 +6,28 @@
  * Licensed under the GPL-2.0+ license.
  */
 /**
- * Vincent Ragosta - Twenty Sixteen
- * General Index CSS
+ * Image Captions - Twenty Sixteen
+ * Base Index CSS
  */
 /**
  * Image Captions - Twenty Sixteen
- * Base CSS
+ * Variable CSS
  */
-.featured-image h1 {
-  font-size: 7.5rem; }
-.featured-image h4 {
-  font-size: 2.5rem; }
-
+/*--- Descriptive color variables ---*/
+/*--- Font stacks ---*/
+/*--- Font Properties ---*/
+/**
+ * Image Captions - Twenty Sixteen
+ * Mixin Functions CSS
+ */
+/**
+ * Set flex settings.
+ * Used specifically in _extends.scss
+ */
+/**
+ * Set fade in/out settings.
+ * Must have opacity and visibility as css properties for mixin to be used.
+ */
 /**
  * Image Captions - Twenty Sixteen
  * Extend Helper CSS
@@ -47,11 +57,13 @@
 
 /**
  * Image Captions - Twenty Sixteen
- * Variable CSS
+ * Base CSS
  */
-/*--- Descriptive color variables ---*/
-/*--- Font stacks ---*/
-/*--- Font Properties ---*/
+.featured-image h1 {
+  font-size: 7.5rem; }
+.featured-image h4 {
+  font-size: 2.5rem; }
+
 /**
  * Image Captions - Twenty Sixteen
  * Header CSS

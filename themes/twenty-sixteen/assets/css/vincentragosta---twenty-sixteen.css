@@ -31,6 +31,42 @@
  */
 /**
  * Vincent Ragosta - Twenty Sixteen
+ * Extend Helper CSS
+ */
+html, body, hr, #mobile-menu, .aside p, #instagram-feed, #instagram-feed figure, #notification-widget, .nav-container, .archive .grid-container, #single-project img, .arrow-top, #contact-page p {
+  width: 100%; }
+
+.aside.excerpt, .cta, #footer, #single-project {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+
+.menu, #swipebox-title, #notification-widget, #notification-widget p, .social, .arrow-top a {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.controls-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+#copyright {
+  padding: 0 1rem; }
+
+/*--- Normalizes image by centering and covering the parent container ---*/
+#instagram-feed .instagram-image .image {
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+/**
+ * Vincent Ragosta - Twenty Sixteen
  * Base CSS
  */
 /*--- Needed to prevent the whitespace to the right of web page ---*/
@@ -83,42 +119,6 @@ pre {
   margin: 0 .5rem; }
 #separator i {
   font-size: 3px; }
-
-/**
- * Vincent Ragosta - Twenty Sixteen
- * Extend Helper CSS
- */
-html, body, hr, #mobile-menu, .aside p, #instagram-feed, #instagram-feed figure, #notification-widget, .nav-container, .archive .grid-container, #single-project img, .arrow-top, #contact-page p {
-  width: 100%; }
-
-.aside.excerpt, .cta, #footer, #single-project {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column; }
-
-.menu, #swipebox-title, #notification-widget, #notification-widget p, .social, .arrow-top a {
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-
-.controls-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; }
-
-#copyright {
-  padding: 0 1rem; }
-
-/*--- Normalizes image by centering and covering the parent container ---*/
-#instagram-feed .instagram-image .image {
-  background-position: center;
-  background-size: cover;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0; }
 
 /**
  * Vincent Ragosta - Twenty Sixteen
