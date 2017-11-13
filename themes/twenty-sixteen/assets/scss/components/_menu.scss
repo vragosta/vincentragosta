@@ -6,10 +6,8 @@
 .menu-container {
 	/*--- CSS transitions to toggle menu-container visibility ---*/
 	@include fade( 1, visible, opacity .4s ease-in-out, visibility .4s ease-in-out );
-}
 
-@media only screen and ( max-width: 991px ) {
-	.menu-container {
+	@media only screen and #{$break-tablet-max} {
 		@include fade( 0, hidden );
 
 		/*--- Needed to prevent the links in the menu from being clickable ---*/
@@ -69,22 +67,23 @@
 
 /*-- Specifically targets the contact button in the footer menu ---*/
 #footer .menu {
-	margin: 2rem 0;
-}
+	& {
+		margin: 2rem 0;
 
-/*-- Specifically targets the contact button in the footer menu ---*/
-@media only screen and ( max-width: 767px ) {
-	#footer {
-		& .menu {
-			& {
-				flex-direction: column;
-			}
-
-			& a {
-				margin: .5rem 0;
-			}
+		@media only screen and #{$break-mobile-max} {
+			flex-direction: column;
 		}
 	}
+
+	& a {
+		@media only screen and #{$break-mobile-max} {
+			margin: .5rem 0;
+		}
+	}
+}
+
+#footer .menu {
+	margin: 2rem 0;
 }
 
 /*--- Mobile Menu ---*/

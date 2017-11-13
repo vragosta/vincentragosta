@@ -5,7 +5,25 @@
 
 #contact-page {
 	& > div {
-		padding: 6rem 4rem;
+		& {
+			padding: 6rem 4rem;
+
+			@media only screen and #{$break-mobile-max} {
+				padding: 2rem;
+			}
+		}
+
+		&:first-child {
+			@media only screen and #{$break-mobile-max} {
+				padding-top: 6rem;
+			}
+		}
+
+		&:last-child {
+			@media only screen and #{$break-mobile-max} {
+				padding-bottom: 6rem;
+			}
+		}
 	}
 
 	& h2,
@@ -13,6 +31,10 @@
 		font-family: $stack-lato;
 		margin-bottom: 10px;
 		text-align: left;
+
+		@media only screen and #{$break-mobile-max} {
+			text-align: center;
+		}
 	}
 
 	& h3 {
@@ -26,6 +48,10 @@
 		font-size: 1.85rem;
 		margin: 0 auto;
 		text-align: left;
+
+		@media only screen and #{$break-mobile-max} {
+			text-align: center;
+		}
 	}
 
 	& h2 + p {
@@ -44,6 +70,10 @@
 		& {
 			padding: 2em 0;
 			display: block;
+
+			@media only screen and #{$break-mobile-max} {
+				text-align: center;
+			}
 		}
 
 		& a:first-child {
@@ -110,37 +140,6 @@
 		&:focus,
 		&:focus:active {
 			outline: none;
-		}
-	}
-}
-
-@media only screen and ( max-width: 768px ) {
-	#contact-page {
-		& > div {
-			& {
-				padding: 2rem;
-			}
-
-			&:first-child {
-				padding-top: 6rem;
-			}
-
-			&:last-child {
-				padding-bottom: 6rem;
-			}
-		}
-
-		& h2,
-		& h3 {
-			text-align: center;
-		}
-
-		& p {
-			text-align: center;
-		}
-
-		& .social {
-			text-align: center;
 		}
 	}
 }

@@ -8,6 +8,10 @@
 		@extend %col-flex-center;
 		background-color: $shark;
 		padding: 6rem 0;
+
+		@media only screen and #{$break-mobile-max} {
+			padding: 2rem 0;
+		}
 	}
 
 	& section > div {
@@ -19,12 +23,6 @@
 		color: $white;
 		font-family: $stack-lato;
 		font-weight: $font-weight-light;
-	}
-}
-
-@media only screen and ( max-width: 767px ) {
-	#footer {
-		padding: 2rem 0;
 	}
 }
 

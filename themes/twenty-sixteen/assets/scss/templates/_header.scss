@@ -48,10 +48,8 @@
 
 	/*--- CSS transitions to toggle drop-down visibility ---*/
 	@include fade( 0, hidden, visibility 2s ease-in-out, opacity 0.5s ease-in-out );
-}
 
-@media only screen and ( max-width: 991px ) {
-	.drop-down {
+	@media only screen and #{$break-tablet-max} {
 		@include fade( 1, visible );
 	}
 }

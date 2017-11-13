@@ -13,17 +13,15 @@
 		& {
 			@extend %full-width;
 			padding: 1rem .5rem 0;
+
+			@media only screen and #{$break-mobile-max} {
+				flex-direction: column;
+			}
 		}
 
 		&:last-child {
 			padding-bottom: 0rem;
 		}
-	}
-}
-
-@media only screen and ( max-width: 767px ) {
-	.archive .grid-container {
-		flex-direction: column;
 	}
 }
 
@@ -35,29 +33,35 @@
 }
 
 /*--- Blog ---*/
-@media only screen and ( min-width: 1500px ) {
-	#blog {
-		padding: 4rem 16rem;
-	}
-}
-
-@media only screen and ( min-width: 992px ) and ( max-width: 1499px ) {
-	#blog {
-		padding: 4rem 6rem;
-	}
-}
-
-@media only screen and ( max-width: 991px ) {
-	#blog {
-		flex-direction: column;
-		padding: 2rem;
-	}
-}
-
 #blog {
+	& {
+		@media only screen and #{$break-tablet-max} {
+			flex-direction: column;
+			padding: 2rem;
+		}
+
+		@media only screen and #{$break-desktop-min} and #{$break-lg-max} {
+			padding: 4 6rem;
+		}
+
+		@media only screen and #{$break-xl-min} {
+			padding: 4rem 16rem;
+		}
+	}
+
 	& h2,
 	& p {
 		text-align: left;
+	}
+
+	& section {
+		@media only screen and #{$break-tablet-max} {
+			width: 100%;
+		}
+
+		@media only screen and #{$break-desktop-min} {
+			width: 70%;
+		}
 	}
 
 	& .post {
@@ -128,18 +132,6 @@
 
 	& #pagination-archive {
 		margin: 4rem 0;
-	}
-}
-
-@media only screen and ( min-width: 991px ) {
-	#blog section {
-		width: 70%;
-	}
-}
-
-@media only screen and ( max-width: 992px ) {
-	#blog section {
-		width: 100%;
 	}
 }
 

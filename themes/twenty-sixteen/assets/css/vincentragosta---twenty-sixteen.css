@@ -17,6 +17,7 @@
 /*--- Functional color variables ---*/
 /*--- Font stacks ---*/
 /*--- Font Properties ---*/
+/*--- Media Queries ---*/
 /**
  * Vincent Ragosta - Twenty Sixteen
  * Mixin Functions CSS
@@ -133,13 +134,13 @@ pre {
   opacity: 1;
   visibility: visible;
   transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out; }
+  @media only screen and (max-width: 991px) {
+    .menu-container {
+      opacity: 0;
+      visibility: hidden;
+      /*--- Needed to prevent the links in the menu from being clickable ---*/
+      z-index: -10; } }
 
-@media only screen and (max-width: 991px) {
-  .menu-container {
-    opacity: 0;
-    visibility: hidden;
-    /*--- Needed to prevent the links in the menu from being clickable ---*/
-    z-index: -10; } }
 .menu {
   /*--- Initial styles when the page is unloaded ---*/ }
   .menu {
@@ -177,13 +178,16 @@ pre {
 /*-- Specifically targets the contact button in the footer menu ---*/
 #footer .menu {
   margin: 2rem 0; }
-
-/*-- Specifically targets the contact button in the footer menu ---*/
+  @media only screen and (max-width: 767px) {
+    #footer .menu {
+      flex-direction: column; } }
 @media only screen and (max-width: 767px) {
-  #footer .menu {
-    flex-direction: column; }
   #footer .menu a {
     margin: .5rem 0; } }
+
+#footer .menu {
+  margin: 2rem 0; }
+
 /*--- Mobile Menu ---*/
 #mobile-menu {
   /*-- Specifically targets the contact button in the mobile menu menu ---*/ }
@@ -218,6 +222,13 @@ pre {
  */
 .aside {
   padding: 6rem 4rem; }
+  @media only screen and (max-width: 767px) {
+    .aside {
+      padding: 4rem; } }
+@media only screen and (max-width: 767px) {
+  .aside h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem; } }
 .aside h1, .aside h2 {
   margin-bottom: 4rem;
   font-family: "Lato", sans-serif; }
@@ -226,10 +237,17 @@ pre {
   line-height: 1.5;
   max-width: 1100px;
   font-size: 1.85rem; }
+  @media only screen and (max-width: 767px) {
+    .aside p {
+      font-size: 1.65rem;
+      line-height: 1.5; } }
 .aside p + p {
   margin-top: 4rem;
   display: flex;
   justify-content: center; }
+  @media only screen and (max-width: 767px) {
+    .aside p + p {
+      margin-top: 3rem; } }
 .aside a {
   border: 2px solid #686868;
   background: transparent;
@@ -239,23 +257,13 @@ pre {
   text-transform: uppercase;
   transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
   text-align: center; }
+  @media only screen and (max-width: 767px) {
+    .aside a {
+      font-size: 1.5rem; } }
 .aside a:hover {
   background: #686868;
   color: #FFF; }
 
-@media only screen and (max-width: 767px) {
-  .aside {
-    padding: 4rem; }
-  .aside h2 {
-    font-size: 3rem;
-    margin-bottom: 3rem; }
-  .aside p {
-    font-size: 1.65rem;
-    line-height: 1.5; }
-  .aside p + p {
-    margin-top: 3rem; }
-  .aside a {
-    font-size: 1.5rem; } }
 #projects .aside.archive {
   max-width: 1200px;
   margin: 0 auto; }
@@ -274,10 +282,10 @@ pre {
   display: flex; }
 .single .aside.content {
   padding: 6rem 0; }
+  @media only screen and (max-width: 767px) {
+    .single .aside.content {
+      padding: 0; } }
 
-@media only screen and (max-width: 768px) {
-  .single .aside.content {
-    padding: 0; } }
 .cta.a, .cta.c, .cta.f {
   background: #EDEEEF; }
 .cta.b, .cta.d, .cta.e {
@@ -303,12 +311,13 @@ pre {
 .pre-footer {
   padding: 0 1.2rem; }
 
-@media only screen and (min-width: 992px) {
-  #sidebar {
-    width: 30%; } }
 @media only screen and (max-width: 991px) {
   #sidebar {
     width: 100%; } }
+@media only screen and (min-width: 992px) {
+  #sidebar {
+    width: 30%; } }
+
 /**
  * Vincent Ragosta - Twenty Sixteen
  * Instagram CSS
@@ -326,21 +335,19 @@ html.swipebox-html {
   padding: 0; }
 #instagram-feed .instagram-image {
   padding: 5px; }
-#instagram-feed .instagram-image {
-  padding: 5px; }
+@media only screen and (max-width: 767px) {
+  #instagram-feed .instagram-image {
+    padding: 5px 0; } }
 #instagram-feed figure {
   position: relative;
   padding-bottom: 100%; }
 
-@media only screen and (max-width: 768px) {
-  #instagram-feed .instagram-image {
-    padding: 5px 0; } }
 .instagram-about {
   margin-top: 4rem; }
+  @media only screen and (max-width: 767px) {
+    .instagram-about {
+      margin-top: 3rem; } }
 
-@media only screen and (max-width: 768px) {
-  .instagram-about {
-    margin-top: 3rem; } }
 /**
  * Vincent Ragosta - Twenty Sixteen
  * Widget CSS
@@ -352,21 +359,22 @@ html.swipebox-html {
   opacity: 1;
   color: #FFF;
   font-size: 2.8rem; }
+  @media only screen and (max-width: 991px) {
+    #notification-widget p {
+      flex-direction: column; } }
 #notification-widget a {
   border: 2px solid #FFF;
   color: #FFF; }
+  @media only screen and (max-width: 991px) {
+    #notification-widget a {
+      margin: 2rem 0 0 0; } }
+  @media only screen and (min-width: 992px) {
+    #notification-widget a {
+      margin: 0 0 0 2rem; } }
 #notification-widget a:hover {
   background: #FFF;
   color: #686868; }
 
-@media only screen and (max-width: 991px) {
-  #notification-widget p {
-    flex-direction: column; }
-  #notification-widget a {
-    margin: 2rem 0 0 0; } }
-@media only screen and (min-width: 992px) {
-  #notification-widget a {
-    margin: 0 0 0 2rem; } }
 /**
  * Vincent Ragosta - Twenty Sixteen
  * Templates Index CSS
@@ -414,11 +422,11 @@ html.swipebox-html {
   opacity: 0;
   visibility: hidden;
   transition: visibility 2s ease-in-out, opacity 0.5s ease-in-out; }
+  @media only screen and (max-width: 991px) {
+    .drop-down {
+      opacity: 1;
+      visibility: visible; } }
 
-@media only screen and (max-width: 991px) {
-  .drop-down {
-    opacity: 1;
-    visibility: visible; } }
 /*--- Prevent button from appearing in the header on the front page ---*/
 .home #header .featured-image .overlay a {
   display: none; }
@@ -430,6 +438,9 @@ html.swipebox-html {
 #footer {
   background-color: #26262A;
   padding: 6rem 0; }
+  @media only screen and (max-width: 767px) {
+    #footer {
+      padding: 2rem 0; } }
 #footer section > div {
   margin: 0.5rem 0; }
 #footer p {
@@ -438,9 +449,6 @@ html.swipebox-html {
   font-family: "Lato", sans-serif;
   font-weight: 300; }
 
-@media only screen and (max-width: 767px) {
-  #footer {
-    padding: 2rem 0; } }
 /*--- Contact Info ( Footer )---*/
 #contact-info h3 {
   color: #FFF; }
@@ -472,12 +480,12 @@ html.swipebox-html {
   max-width: 850px; }
 .archive .grid-container {
   padding: 1rem .5rem 0; }
+  @media only screen and (max-width: 767px) {
+    .archive .grid-container {
+      flex-direction: column; } }
 .archive .grid-container:last-child {
   padding-bottom: 0rem; }
 
-@media only screen and (max-width: 767px) {
-  .archive .grid-container {
-    flex-direction: column; } }
 #projects .featured-image .image {
   top: 10px;
   bottom: 10px;
@@ -485,18 +493,24 @@ html.swipebox-html {
   right: 10px; }
 
 /*--- Blog ---*/
-@media only screen and (min-width: 1500px) {
-  #blog {
-    padding: 4rem 16rem; } }
-@media only screen and (min-width: 992px) and (max-width: 1499px) {
-  #blog {
-    padding: 4rem 6rem; } }
 @media only screen and (max-width: 991px) {
   #blog {
     flex-direction: column;
     padding: 2rem; } }
+@media only screen and (min-width: 992px) and (max-width: 1499px) {
+  #blog {
+    padding: 4 6rem; } }
+@media only screen and (min-width: 1500px) {
+  #blog {
+    padding: 4rem 16rem; } }
 #blog h2, #blog p {
   text-align: left; }
+@media only screen and (max-width: 991px) {
+  #blog section {
+    width: 100%; } }
+@media only screen and (min-width: 992px) {
+  #blog section {
+    width: 70%; } }
 #blog .post {
   line-height: 1.5;
   padding: 2rem; }
@@ -543,12 +557,6 @@ html.swipebox-html {
 #blog #pagination-archive {
   margin: 4rem 0; }
 
-@media only screen and (min-width: 991px) {
-  #blog section {
-    width: 70%; } }
-@media only screen and (max-width: 992px) {
-  #blog section {
-    width: 100%; } }
 /*--- Archive Pagination ---*/
 #pagination-archive {
   margin: 0 0 6rem; }
@@ -572,6 +580,9 @@ html.swipebox-html {
   max-width: 1200px;
   margin: 0 auto 6rem;
   padding: 0 4rem; }
+  @media only screen and (max-width: 767px) {
+    #single-project {
+      padding: 0; } }
 #single-project p {
   font-size: 2em; }
 #single-project pre {
@@ -581,18 +592,15 @@ html.swipebox-html {
 #single-project img {
   height: 100%; }
 
-@media only screen and (max-width: 768px) {
-  #single-project {
-    padding: 0; }
-
-  #pagination-single a {
-    font-size: 2rem; } }
 #pagination-single {
   padding: 0 4rem; }
 #pagination-single a {
   border: none;
   padding: 0;
   font-size: 3rem; }
+  @media only screen and (max-width: 767px) {
+    #pagination-single a {
+      font-size: 2rem; } }
 #pagination-single a:hover {
   background: none;
   color: #686868; }
@@ -639,10 +647,22 @@ html.swipebox-html {
  */
 #contact-page > div {
   padding: 6rem 4rem; }
+  @media only screen and (max-width: 767px) {
+    #contact-page > div {
+      padding: 2rem; } }
+@media only screen and (max-width: 767px) {
+  #contact-page > div:first-child {
+    padding-top: 6rem; } }
+@media only screen and (max-width: 767px) {
+  #contact-page > div:last-child {
+    padding-bottom: 6rem; } }
 #contact-page h2, #contact-page h3 {
   font-family: "Lato", sans-serif;
   margin-bottom: 10px;
   text-align: left; }
+  @media only screen and (max-width: 767px) {
+    #contact-page h2, #contact-page h3 {
+      text-align: center; } }
 #contact-page h3 {
   text-transform: uppercase; }
 #contact-page p {
@@ -651,6 +671,9 @@ html.swipebox-html {
   font-size: 1.85rem;
   margin: 0 auto;
   text-align: left; }
+  @media only screen and (max-width: 767px) {
+    #contact-page p {
+      text-align: center; } }
 #contact-page h2 + p {
   margin-bottom: 50px; }
 #contact-page p a {
@@ -660,6 +683,9 @@ html.swipebox-html {
 #contact-page .social {
   padding: 2em 0;
   display: block; }
+  @media only screen and (max-width: 767px) {
+    #contact-page .social {
+      text-align: center; } }
 #contact-page .social a:first-child {
   margin-left: 0; }
 #contact-page .social a:hover {
@@ -701,19 +727,6 @@ html.swipebox-html {
 #contact-page .contact-btn:focus, #contact-page .contact-btn:focus:active {
   outline: none; }
 
-@media only screen and (max-width: 768px) {
-  #contact-page > div {
-    padding: 2rem; }
-  #contact-page > div:first-child {
-    padding-top: 6rem; }
-  #contact-page > div:last-child {
-    padding-bottom: 6rem; }
-  #contact-page h2, #contact-page h3 {
-    text-align: center; }
-  #contact-page p {
-    text-align: center; }
-  #contact-page .social {
-    text-align: center; } }
 .map {
   filter: grayscale(100%); }
 
@@ -723,6 +736,9 @@ html.swipebox-html {
  */
 #resume section {
   padding: 6rem 4rem; }
+@media only screen and (max-width: 767px) {
+  #resume section:first-child {
+    padding: 6rem 4rem 0; } }
 #resume h2, #resume h3, #resume h4, #resume p {
   text-align: left;
   font-family: "Lato", sans-serif; }
@@ -750,15 +766,13 @@ html.swipebox-html {
   font-size: 1.5rem; }
 #resume p span {
   font-weight: 500; }
-#resume .work-item:not(:last-child), #resume .education-item:not(:last-child), #resume .award-item:not(:last-child) {
-  margin-bottom: 100px; }
-
-@media only screen and (max-width: 768px) {
-  #resume section:first-child {
-    padding: 6rem 4rem 0; }
+@media only screen and (max-width: 767px) {
   #resume .day-to-day {
-    margin-bottom: 25px; }
+    margin-bottom: 25px; } }
+@media only screen and (max-width: 767px) {
   #resume .work-item, #resume .education-item, #resume .award-item {
     margin: 0; } }
+#resume .work-item:not(:last-child), #resume .education-item:not(:last-child), #resume .award-item:not(:last-child) {
+  margin-bottom: 100px; }
 
 /*# sourceMappingURL=vincentragosta---twenty-sixteen.css.map */

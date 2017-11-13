@@ -16,35 +16,29 @@
 		@include fade( 1 );
 		color: $white;
 		font-size: 2.8rem;
+
+		@media only screen and #{$break-tablet-max} {
+			flex-direction: column;
+		}
 	}
 
 	& a {
 		& {
 			border: 2px solid $white;
 			color: $white;
+
+			@media only screen and #{$break-tablet-max} {
+				margin: 2rem 0 0 0;
+			}
+
+			@media only screen and #{$break-desktop-min} {
+				margin: 0 0 0 2rem;
+			}
 		}
 
 		&:hover {
 			background: $white;
 			color: $dove-gray;
 		}
-	}
-}
-
-@media only screen and ( max-width: 991px ) {
-	#notification-widget {
-		& p {
-			flex-direction: column;
-		}
-
-		& a {
-			margin: 2rem 0 0 0;
-		}
-	}
-}
-
-@media only screen and ( min-width: 992px ) {
-	#notification-widget a {
-		margin: 0 0 0 2rem;
 	}
 }

@@ -6,6 +6,17 @@
 .aside {
 	& {
 		padding: 6rem 4rem;
+
+		@media only screen and #{$break-mobile-max} {
+			padding: 4rem;
+		}
+	}
+
+	& h2 {
+		@media only screen and #{$break-mobile-max} {
+			font-size: 3rem;
+			margin-bottom: 3rem;
+		}
 	}
 
 	& h1,
@@ -20,11 +31,20 @@
 		line-height: 1.5;
 		max-width: 1100px;
 		font-size: 1.85rem;
+
+		@media only screen and #{$break-mobile-max} {
+			font-size: 1.65rem;
+			line-height: 1.5;
+		}
 	}
 
 	& p + p {
 		margin-top: 4rem;
 		@include flex( $justify-content: center );
+
+		@media only screen and #{$break-mobile-max} {
+			margin-top: 3rem;
+		}
 	}
 
 	& a {
@@ -37,6 +57,10 @@
 			text-transform: uppercase;
 			transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 			text-align: center;
+
+			@media only screen and #{$break-mobile-max} {
+				font-size: 1.5rem;
+			}
 		}
 
 		&:hover {
@@ -47,32 +71,6 @@
 
 	&.excerpt {
 		@extend %col-flex-center;
-	}
-}
-
-@media only screen and ( max-width: 767px ) {
-	.aside {
-		& {
-			padding: 4rem;
-		}
-
-		& h2 {
-			font-size: 3rem;
-			margin-bottom: 3rem;
-		}
-
-		& p {
-			font-size: 1.65rem;
-			line-height: 1.5;
-		}
-
-		& p + p {
-			margin-top: 3rem;
-		}
-
-		& a {
-			font-size: 1.5rem;
-		}
 	}
 }
 
@@ -104,12 +102,10 @@
 
 	&.content {
 		padding: 6rem 0;
-	}
-}
 
-@media only screen and ( max-width: 768px ) {
-	.single .aside.content {
-		padding: 0;
+		@media only screen and #{$break-mobile-max} {
+			padding: 0;
+		}
 	}
 }
 
@@ -168,14 +164,12 @@
 	padding: 0 1.2rem;
 }
 
-@media only screen and ( min-width: 992px ) {
-	#sidebar {
-		width: 30%;
-	}
-}
-
-@media only screen and ( max-width: 991px ) {
-	#sidebar {
+#sidebar {
+	@media only screen and #{$break-tablet-max} {
 		width: 100%;
+	}
+
+	@media only screen and #{$break-desktop-min} {
+		width: 30%;
 	}
 }
