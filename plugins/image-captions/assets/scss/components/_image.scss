@@ -7,7 +7,7 @@
 	/*--- Image container element ---*/
 	& {
 		filter: grayscale( 100% );
-		opacity: 1;
+		@include fade( 1 );
 	}
 
 	/*--- Aspect Ratio 100% ---*/
@@ -40,11 +40,11 @@
 	/*--- Image inside the overlay ---*/
 	& .image {
 		@extend %normalize-image;
+		@include fade( 1 );
 		top: 0;
 		bottom: 0;
 		left: 0;
 		right: 0;
-		opacity: 1;
 		transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
 
 		@media only screen and #{$break-mobile-max} {
