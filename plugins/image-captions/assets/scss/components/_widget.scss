@@ -29,12 +29,10 @@
 	& > div:last-child {
 		@extend %full-width;
 		@extend %col-flex-center;
-	}
-}
 
-@media only screen and ( max-width: 768px ) {
-	#news-and-updates > div:last-child {
-		padding-top: 3rem;
+		@media only screen and #{$break-mobile-max} {
+			padding-top: 3rem;
+		}
 	}
 }
 
@@ -48,15 +46,13 @@
 		margin-top: 2rem;
 		padding: 1.5rem 3rem;
 		font-size: 1.5rem;
+
+		@media only screen and #{$break-mobile-max} {
+			font-size: 1.5rem;
+		}
 	}
 
 	& > div {
 		@extend %padding-none;
-	}
-}
-
-@media only screen and ( max-width: 767px ) {
-	#featured-page a {
-		font-size: 1.5rem;
 	}
 }

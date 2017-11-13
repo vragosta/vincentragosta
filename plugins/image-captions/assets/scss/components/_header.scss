@@ -34,6 +34,14 @@
 		/*--- Aspect ratio 10x4 ---*/
 		& .header {
 			max-width: 1000px;
+
+			@media only screen and #{$break-mobile-max} {
+				font-size: 4rem;
+			}
+
+			@media only screen and #{$break-tablet-min} and #{$break-tablet-max} {
+				font-size: 6rem;
+			}
 		}
 	}
 
@@ -41,45 +49,25 @@
 	&:not( .static ) .header {
 		font-size: 2.5rem;
 		max-width: 500px;
-	}
-}
 
-@media only screen and ( min-width: 768px ) and ( max-width: 991px ) {
-	.featured-image {
-		&.static .header {
-			font-size: 6rem;
+		@media only screen and #{$break-xs-max} {
+			font-size: 1.5rem;
 		}
 
-		&:not( .static ) .header {
+		@media only screen and #{$break-mobile-max} {
+			margin: 0;
+		}
+
+		@media only screen and #{$break-tablet-min} and #{$break-tablet-max} {
 			font-size: 1.5rem;
 		}
 	}
-}
 
-@media only screen and ( max-width: 767px ) {
-	.featured-image {
-		&.static .header {
-			font-size: 4rem;
-		}
-
-		/*--- Removes the margin ---*/
-		&:not( .static ) .header {
+	&:not( .static ):hover .header {
+		@media only screen and #{$break-tablet-min} {
+			opacity: 1;
+			visibility: visible;
 			margin: 0;
 		}
-	}
-}
-
-@media only screen and ( max-width: 480px ) {
-	.featured-image:not( .static ) .header {
-		font-size: 1.5rem;
-	}
-}
-
-/*--- Eliminates the hover on aspect ratio 1x1, prevents js behavior on featured-page ---*/
-@media only screen and ( min-width: 768px ) {
-	.featured-image:not( .static ):hover .header {
-		opacity: 1;
-		visibility: visible;
-		margin: 0;
 	}
 }
