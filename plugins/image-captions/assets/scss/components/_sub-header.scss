@@ -29,11 +29,13 @@
 	&.static .subheader {
 		& {
 			@media only screen and #{$break-mobile-max} {
-				font-size: 1.8rem;
+				// font-size: 1.8rem;
+				font-size: 18px;
 			}
 
 			@media only screen and #{$break-tablet-min} and #{$break-tablet-max} {
-				font-size: 2rem;
+				// font-size: 2rem;
+				font-size: 20px;
 			}
 		}
 
@@ -48,15 +50,19 @@
 
 	/*--- Styles for the non-static sub-header ---*/
 	&:not( .static ) .sub-header {
-		font-size: 1.5rem;
-		margin-bottom: .5rem;
+		// font-size: 1.5rem;
+		font-size: 15px;
+		// margin-bottom: .5rem;
+		margin-bottom: 5px;
 
 		@media only screen and #{$break-xs-max} {
-			font-size: 1rem;
+			// font-size: 1rem;
+			font-size: 10px;
 		}
 
 		@media only screen and #{$break-tablet-min} and #{$break-tablet-max} {
-			font-size: 1rem;
+			// font-size: 1rem;
+			font-size: 10px;
 		}
 	}
 }

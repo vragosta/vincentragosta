@@ -12,7 +12,8 @@
 		line-height: 1;
 		text-align: center;
 		text-shadow: $cod-gray 0 0 4px;
-		padding: 0 2rem;
+		// padding: 0 2rem;
+		padding: 0 20px;
 		font-family: $stack-lato;
 
 		/*--- Margin-bottom set for hover effect ---*/
@@ -34,22 +35,26 @@
 			max-width: 1000px;
 
 			@media only screen and #{$break-mobile-max} {
-				font-size: 4rem;
+				// font-size: 4rem;
+				font-size: 40px;
 			}
 
 			@media only screen and #{$break-tablet-min} and #{$break-tablet-max} {
-				font-size: 6rem;
+				// font-size: 6rem;
+				font-size: 60px;
 			}
 		}
 	}
 
 	/*--- Aspect ratio 1x1 ---*/
 	&:not( .static ) .header {
-		font-size: 2.5rem;
+		// font-size: 2.5rem;
+		font-size: 25px;
 		max-width: 500px;
 
 		@media only screen and #{$break-xs-max} {
-			font-size: 1.5rem;
+			// font-size: 1.5rem;
+			font-size: 15px;
 		}
 
 		@media only screen and #{$break-mobile-max} {
@@ -57,7 +62,8 @@
 		}
 
 		@media only screen and #{$break-tablet-min} and #{$break-tablet-max} {
-			font-size: 1.5rem;
+			// font-size: 1.5rem;
+			font-size: 15px;
 		}
 	}
 

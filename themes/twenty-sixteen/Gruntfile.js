@@ -6,11 +6,9 @@ module.exports = function (grunt) {
 		uglify: {
 			build: {
 				files: {
-					'assets/js/src/vincentragosta---twenty-sixteen.js' : 'assets/js/src/vincentragosta---twenty-sixteen.js',
+					'assets/js/vincentragosta---twenty-sixteen.js' : 'assets/js/vincentragosta---twenty-sixteen.js',
 					'../../plugins/image-captions/assets/js/image-captions---twenty-sixteen.js' : '../../plugins/image-captions/assets/js/image-captions---twenty-sixteen.js'
 				}
-				// src: 'assets/js/src/vincentragosta---twenty-sixteen.js',
-				// dest: 'assets/js/vincentragosta---twenty-sixteen.js'
 			},
 			dev: {
 				options: {
@@ -20,11 +18,9 @@ module.exports = function (grunt) {
 					preserveComments: 'all'
 				},
 				files: {
-					'assets/js/src/vincentragosta---twenty-sixteen.js' : 'assets/js/src/vincentragosta---twenty-sixteen.js',
+					'assets/js/vincentragosta---twenty-sixteen.js' : 'assets/js/vincentragosta---twenty-sixteen.js',
 					'../../plugins/image-captions/assets/js/image-captions---twenty-sixteen.js' : '../../plugins/image-captions/assets/js/image-captions---twenty-sixteen.js'
 				}
-				// src: 'assets/js/src/vincentragosta---twenty-sixteen.js',
-				// dest: 'assets/js/vincentragosta---twenty-sixteen.js'
 			}
 		},
 		sass: {

@@ -9,7 +9,7 @@
 ?>
 
 <?php if ( $image_caption->sub_header ) { ?>
-	<h4 class="sub-header unloaded padding-left-right">
+	<h4 class="sub-header unloaded">
 		<?php echo esc_html( $image_caption->sub_header ); ?>
 	</h4>
 <?php } ?>

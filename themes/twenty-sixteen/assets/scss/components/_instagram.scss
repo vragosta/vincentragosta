@@ -45,9 +45,11 @@ html.swipebox-html {
 }
 
 .instagram-about {
-	margin-top: 4rem;
+	// margin-top: 4rem;
+	margin-top: 40px;
 
 	@media only screen and #{$break-mobile-max} {
-		margin-top: 3rem;
+		// margin-top: 3rem;
+		margin-top: 30px;
 	}
 }
