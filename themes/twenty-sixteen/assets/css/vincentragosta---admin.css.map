@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA;;;;;;GAMG;AAEH,kCAAkC;AAClC,YAAa;EACZ,SAAS,EAAE,IAAI;EACf,UAAU,EAAE,MAAM;;AAGnB,MAAO;EACN,KAAK,EAAE,KAAK",
-"sources": ["../scss/vincentragosta---admin.scss"],
-"names": [],
-"file": "vincentragosta---admin.css"
-}

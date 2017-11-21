@@ -25,7 +25,8 @@ module.exports = function (grunt) {
 					outputStyle: 'compressed'
 				},
 				files: {
-					'assets/css/vincentragosta---twenty-sixteen.css' : 'assets/scss/vincentragosta---twenty-sixteen.scss'
+					'assets/css/vincentragosta---twenty-sixteen.css' : 'assets/scss/vincentragosta---twenty-sixteen.scss',
+					'assets/css/vincentragosta-admin---twenty-sixteen.css' : 'assets/scss/vincentragosta-admin---twenty-sixteen.scss'
 				}
 			},
 			dev: {
@@ -33,7 +34,8 @@ module.exports = function (grunt) {
 					outputStyle: 'expanded'
 				},
 				files: {
-					'assets/css/vincentragosta---twenty-sixteen.css' : 'assets/scss/vincentragosta---twenty-sixteen.scss'
+					'assets/css/vincentragosta---twenty-sixteen.css' : 'assets/scss/vincentragosta---twenty-sixteen.scss',
+					'assets/css/vincentragosta-admin---twenty-sixteen.css' : 'assets/scss/vincentragosta-admin---twenty-sixteen.scss'
 				}
 			}
 		},

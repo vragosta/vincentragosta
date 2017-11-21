@@ -187,30 +187,12 @@ add_action( 'wp_enqueue_scripts', 'styles' );
 function admin_styles() {
 	wp_enqueue_style(
 		'admin',
-		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---admin.css",
+		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta-admin---twenty-sixteen.css",
 		array(),
 		VINCENTRAGOSTA_VERSION
 	);
 }
 add_action( 'admin_enqueue_scripts', 'admin_styles' );
-
-/**
- * Allows for custom javascript in wp-admin.
- *
- * @since 0.1.0
- * @uses wp_enqueue_script()
- * @return void
- */
-function admin_scripts() {
-	wp_enqueue_script(
-		'admin',
-		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/js/admin.js",
-		array( 'jquery' ),
-		VINCENTRAGOSTA_VERSION,
-		true
-	);
-}
-add_action( 'admin_enqueue_scripts', 'admin_scripts' );
 
 /**
  * Register sidebars for back-end.
