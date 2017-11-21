@@ -6,7 +6,7 @@ module.exports = function (grunt) {
 		uglify: {
 			build: {
 				src: 'assets/js/src/vincentragosta---twenty-sixteen.js',
-				dest: 'assets/js/vincentragosta---twenty-sixteen.min.js'
+				dest: 'assets/js/vincentragosta---twenty-sixteen.js'
 			},
 			dev: {
 				options: {
@@ -16,13 +16,35 @@ module.exports = function (grunt) {
 					preserveComments: 'all'
 				},
 				src: 'assets/js/src/vincentragosta---twenty-sixteen.js',
-				dest: 'assets/js/vincentragosta---twenty-sixteen.min.js'
+				dest: 'assets/js/vincentragosta---twenty-sixteen.js'
+			}
+		},
+		sass: {
+			build: {
+				options: {
+					outputStyle: 'compressed'
+				},
+				files: {
+					'assets/css/vincentragosta---twenty-sixteen.css' : 'assets/scss/vincentragosta---twenty-sixteen.scss'
+				}
+			},
+			dev: {
+				options: {
+					outputStyle: 'expanded'
+				},
+				files: {
+					'assets/css/vincentragosta---twenty-sixteen.css' : 'assets/scss/vincentragosta---twenty-sixteen.scss'
+				}
 			}
 		},
 		watch: {
 			js: {
 				files: [ 'assets/js/src/vincentragosta---twenty-sixteen.js' ],
 				tasks: [ 'uglify:dev' ]
+			},
+			css: {
+				files: [ 'assets/scss/**/*.scss' ],
+				tasks: [ 'sass:dev' ]
 			}
 		}
 	});
@@ -30,9 +52,10 @@ module.exports = function (grunt) {
 	// Load the plugins
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
+	grunt.loadNpmTasks( 'grunt-sass' );
 
 	// Register task(s)
-	grunt.registerTask( 'default', [ 'uglify:dev' ] );
-	grunt.registerTask( 'build', [ 'uglify:build' ] );
+	grunt.registerTask( 'default', [ 'uglify:dev', 'sass:dev' ] );
+	grunt.registerTask( 'build', [ 'uglify:build', 'sass:build' ] );
 
 };

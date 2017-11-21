@@ -86,14 +86,6 @@ add_action( 'after_setup_theme', 'vincentragosta_setup' );
  * @return void
  */
 function scripts() {
-	/**
-	 * Flag whether to enable loading uncompressed/debugging assets. Default false.
-	 *
-	 * @param bool vincentragosta_script_debug
-	 */
-	$debug = apply_filters( 'vincentragosta_script_debug', false );
-	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-
 	wp_register_script(
 		'bootstrap',
 		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/lib/bootstrap/dist/js/bootstrap.min.js",
@@ -112,7 +104,7 @@ function scripts() {
 
 	wp_enqueue_script(
 		'vincentragosta_com',
-		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/js/vincentragosta---twenty-sixteen{$min}.js",
+		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/js/vincentragosta---twenty-sixteen.js",
 		array( 'jquery', 'bootstrap' ),
 		VINCENTRAGOSTA_COM_VERSION,
 		true
@@ -141,14 +133,6 @@ add_action( 'wp_enqueue_scripts', 'scripts' );
  * @return void
  */
 function styles() {
-	/**
-	 * Flag whether to enable loading uncompressed/debugging assets. Default false.
-	 *
-	 * @param bool vincentragosta_style_debug
-	 */
-	$debug = apply_filters( 'vincentragosta_style_debug', true );
-	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-
 	wp_register_style(
 		'fonts',
 		'https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i|Lato:100,100i,300,300i,400,400i,700,700i,900,900i',
@@ -186,7 +170,7 @@ function styles() {
 
 	wp_enqueue_style(
 		'vincentragosta',
-		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---twenty-sixteen{$min}.css",
+		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---twenty-sixteen.css",
 		array( 'fontawesome', 'ionicons', 'bootstrap', 'sanitize', 'fonts' ),
 		VINCENTRAGOSTA_COM_VERSION
 	);
@@ -201,17 +185,9 @@ add_action( 'wp_enqueue_scripts', 'styles' );
  * @return void
  */
 function admin_styles() {
-	/**
-	 * Flag whether to enable loading uncompressed/debugging assets. Default false.
-	 *
-	 * @param bool vincentragosta_style_debug
-	 */
-	$debug = apply_filters( 'vincentragosta_style_debug', false );
-	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-
 	wp_enqueue_style(
 		'admin',
-		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---admin{$min}.css",
+		VINCENTRAGOSTA_COM_TEMPLATE_URL . "/assets/css/vincentragosta---admin.css",
 		array(),
 		VINCENTRAGOSTA_VERSION
 	);
