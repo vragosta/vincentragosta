@@ -5,8 +5,12 @@ module.exports = function (grunt) {
 		pkg: grunt.file.readJSON( 'package.json' ),
 		uglify: {
 			build: {
-				src: 'assets/js/src/vincentragosta---twenty-sixteen.js',
-				dest: 'assets/js/vincentragosta---twenty-sixteen.js'
+				files: {
+					'assets/js/src/vincentragosta---twenty-sixteen.js' : 'assets/js/src/vincentragosta---twenty-sixteen.js',
+					'../../plugins/image-captions/assets/js/image-captions---twenty-sixteen.js' : '../../plugins/image-captions/assets/js/image-captions---twenty-sixteen.js'
+				}
+				// src: 'assets/js/src/vincentragosta---twenty-sixteen.js',
+				// dest: 'assets/js/vincentragosta---twenty-sixteen.js'
 			},
 			dev: {
 				options: {
@@ -15,8 +19,12 @@ module.exports = function (grunt) {
 					compress: false,
 					preserveComments: 'all'
 				},
-				src: 'assets/js/src/vincentragosta---twenty-sixteen.js',
-				dest: 'assets/js/vincentragosta---twenty-sixteen.js'
+				files: {
+					'assets/js/src/vincentragosta---twenty-sixteen.js' : 'assets/js/src/vincentragosta---twenty-sixteen.js',
+					'../../plugins/image-captions/assets/js/image-captions---twenty-sixteen.js' : '../../plugins/image-captions/assets/js/image-captions---twenty-sixteen.js'
+				}
+				// src: 'assets/js/src/vincentragosta---twenty-sixteen.js',
+				// dest: 'assets/js/vincentragosta---twenty-sixteen.js'
 			}
 		},
 		sass: {
@@ -26,7 +34,8 @@ module.exports = function (grunt) {
 				},
 				files: {
 					'assets/css/vincentragosta---twenty-sixteen.css' : 'assets/scss/vincentragosta---twenty-sixteen.scss',
-					'assets/css/vincentragosta-admin---twenty-sixteen.css' : 'assets/scss/vincentragosta-admin---twenty-sixteen.scss'
+					'assets/css/vincentragosta-admin---twenty-sixteen.css' : 'assets/scss/vincentragosta-admin---twenty-sixteen.scss',
+					'../../plugins/image-captions/assets/css/image-captions---twenty-sixteen.css' : '../../plugins/image-captions/assets/scss/image-captions---twenty-sixteen.scss'
 				}
 			},
 			dev: {
@@ -35,7 +44,8 @@ module.exports = function (grunt) {
 				},
 				files: {
 					'assets/css/vincentragosta---twenty-sixteen.css' : 'assets/scss/vincentragosta---twenty-sixteen.scss',
-					'assets/css/vincentragosta-admin---twenty-sixteen.css' : 'assets/scss/vincentragosta-admin---twenty-sixteen.scss'
+					'assets/css/vincentragosta-admin---twenty-sixteen.css' : 'assets/scss/vincentragosta-admin---twenty-sixteen.scss',
+					'../../plugins/image-captions/assets/css/image-captions---twenty-sixteen.css' : '../../plugins/image-captions/assets/scss/image-captions---twenty-sixteen.scss'
 				}
 			}
 		},
