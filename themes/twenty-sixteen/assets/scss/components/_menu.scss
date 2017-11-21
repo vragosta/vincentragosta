@@ -1,0 +1,134 @@
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Menu CSS
+ */
+
+.menu-container {
+	/*--- CSS transitions to toggle menu-container visibility ---*/
+	@include fade( 1, visible, opacity .4s ease-in-out, visibility .4s ease-in-out );
+
+	@media only screen and #{$break-tablet-max} {
+		@include fade( 0, hidden );
+
+		/*--- Needed to prevent the links in the menu from being clickable ---*/
+		z-index: -10;
+	}
+}
+
+.menu {
+	& {
+		@extend %row-flex-center;
+
+		/*--- CSS transitions to toggle menu visibility ( used just for .unloaded ) ---*/
+		@include fade( 1, visible, opacity .4s ease-in-out, visibility .4s ease-in-out );
+	}
+
+	/*--- Initial styles when the page is unloaded ---*/
+	&.unloaded {
+		@include fade( 0, hidden );
+	}
+
+	& a {
+		& {
+			margin: 0 1rem;
+			font-size: 1.5rem;
+			letter-spacing: .2rem;
+			text-transform: uppercase;
+			@include fade( 0.8, $opacity_transition : opacity 0.2s ease-in-out );
+		}
+
+		&:hover {
+			@include fade( 1 );
+		}
+	}
+}
+
+/*--- Contact button ---*/
+#contact {
+	@include flex();
+}
+
+#header {
+	/*-- Specifically targets the contact button in the header menu ---*/
+	& #contact {
+		& {
+			padding: 1rem;
+			border: 2px solid $white;
+			transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+		}
+
+		&:hover {
+			background: #fff;
+			color: #686868;
+		}
+	}
+
+}
+
+/*-- Specifically targets the contact button in the footer menu ---*/
+#footer .menu {
+	& {
+		margin: 2rem 0;
+
+		@media only screen and #{$break-mobile-max} {
+			flex-direction: column;
+		}
+	}
+
+	& a {
+		@media only screen and #{$break-mobile-max} {
+			margin: .5rem 0;
+		}
+	}
+}
+
+#footer .menu {
+	margin: 2rem 0;
+}
+
+/*--- Mobile Menu ---*/
+#mobile-menu {
+	& {
+		@extend %full-width;
+		position: fixed;
+		padding: 0;
+		margin: 0;
+		top: 0;
+		height: 100%;
+		background: $black-opacity;
+		display: none;
+		z-index: 10;
+	}
+
+	& .close-container {
+		& {
+			@include flex( $justify-content: flex-end );
+			padding: 4.4rem 3.5rem 1.5rem 2rem;
+		}
+
+		& i {
+			color: $white;
+		}
+	}
+
+	/*-- Specifically targets the contact button in the mobile menu menu ---*/
+	& .menu {
+		& {
+			flex-direction: column;
+		}
+
+		& a {
+			margin: 1rem 0;
+			font-size: 3rem;
+		}
+	}
+
+	& hr {
+		background-color: $white;
+	}
+
+	& .social {
+		padding: 0;
+	}
+
+}

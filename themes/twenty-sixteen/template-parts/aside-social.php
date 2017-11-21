@@ -14,7 +14,7 @@ $_twitter = get_user_meta( VINCENTRAGOSTA_SITE_ADMIN, '_twitter', true );
 $_instagram = get_user_meta( VINCENTRAGOSTA_SITE_ADMIN, '_instagram', true );
 $_github = get_user_meta( VINCENTRAGOSTA_SITE_ADMIN, '_github', true ); ?>
 
-<aside class="social row-flex-center">
+<aside class="social">
 	<?php if ( $_facebook ) { ?>
 		<a href="<?php echo esc_url( $_facebook ); ?>" target="_blank">
 			<i class="fa fa-facebook" aria-hidden="true"></i>

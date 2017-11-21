@@ -58,7 +58,7 @@ function image_captions_shortcode( $atts ) {
 	<main class="featured-image <?php echo implode( ' ', $image_caption->classes ); ?>">
 
 		<!-- Overlay container -->
-		<div class="overlay col-flex-center">
+		<div class="overlay">
 
 			<!-- Sub-header -->
 			<?php include( IMAGE_CAPTIONS_PATH . 'partials/content-sub-header.php' ); ?>

@@ -83,11 +83,11 @@ class Featured_Page_Widget extends WP_Widget {
 		# Initialize query.
 		$query = new WP_Query( $args ); ?>
 
-		<div id="featured-page" class="custom-widget full-width">
+		<div id="featured-page" class="custom-widget">
 			<?php if ( $query->have_posts() ) { ?>
 				<?php while ( $query->have_posts() ) { ?>
 					<?php $query->the_post(); ?>
-					<div class="col-xs-12 padding-none">
+					<div class="col-xs-12">
 
 						<!-- Featured image overlay -->
 						<?php do_shortcode( '[image-caption id="' . $post->ID . '" class="static"]' ); ?>

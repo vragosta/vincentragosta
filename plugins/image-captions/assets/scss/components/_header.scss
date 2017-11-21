@@ -1,0 +1,70 @@
+/**
+ * Image Captions - Twenty Sixteen
+ * Header CSS
+ */
+
+.featured-image {
+	/*--- Default header styles target non static elements ---*/
+	& .header {
+		color: #fff;
+		text-transform: uppercase;
+		font-weight: $font-weight-bold;
+		line-height: 1;
+		text-align: center;
+		text-shadow: $cod-gray 0 0 4px;
+		padding: 0 2rem;
+		font-family: $stack-lato;
+
+		/*--- Margin-bottom set for hover effect ---*/
+		margin: 0 0 20px 0;
+
+		/*--- CSS transitions to toggle header visibility ---*/
+		@include fade( 1, visible );
+		transition: opacity .4s ease-in-out, visibility .4s ease-in-out, margin .4s ease-in-out;
+	}
+
+	&.static {
+		/*--- Initial styles when the page is unloaded just for aspect ratio 10x4( needed for js functionality ) ---*/
+		& .header.unloaded {
+			@include fade( 0, hidden );
+		}
+
+		/*--- Aspect ratio 10x4 ---*/
+		& .header {
+			max-width: 1000px;
+
+			@media only screen and #{$break-mobile-max} {
+				font-size: 4rem;
+			}
+
+			@media only screen and #{$break-tablet-min} and #{$break-tablet-max} {
+				font-size: 6rem;
+			}
+		}
+	}
+
+	/*--- Aspect ratio 1x1 ---*/
+	&:not( .static ) .header {
+		font-size: 2.5rem;
+		max-width: 500px;
+
+		@media only screen and #{$break-xs-max} {
+			font-size: 1.5rem;
+		}
+
+		@media only screen and #{$break-mobile-max} {
+			margin: 0;
+		}
+
+		@media only screen and #{$break-tablet-min} and #{$break-tablet-max} {
+			font-size: 1.5rem;
+		}
+	}
+
+	&:not( .static ):hover .header {
+		@media only screen and #{$break-tablet-min} {
+			@include fade( 1, visible );
+			margin: 0;
+		}
+	}
+}

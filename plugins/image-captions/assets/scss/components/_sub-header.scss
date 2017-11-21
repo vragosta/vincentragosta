@@ -1,0 +1,62 @@
+/**
+ * Image Captions - Twenty Sixteen
+ * Sub Header CSS
+ */
+
+.featured-image {
+	&:hover .sub-header {
+		@media only screen and #{$break-tablet-min} {
+			@include fade( 1, visible );
+		}
+	}
+
+	/*--- Default sub-header styles target non static elements ---*/
+	& .sub-header {
+		color: $white;
+		font-style: italic;
+		letter-spacing: 1px;
+		margin: 0;
+		font-weight: $font-weight-light;
+		text-shadow: $cod-gray 0 0 4px;
+		text-align: center;
+		font-family: $stack-lato;
+
+		/*--- CSS transitions to toggle sub-header visibility ---*/
+		@include fade( 1, visible );
+		transition: opacity .4s ease-in-out, visibility .4s ease-in-out, margin .4s ease-in-out;
+	}
+
+	&.static .subheader {
+		& {
+			@media only screen and #{$break-mobile-max} {
+				font-size: 1.8rem;
+			}
+
+			@media only screen and #{$break-tablet-min} and #{$break-tablet-max} {
+				font-size: 2rem;
+			}
+		}
+
+		/*--- Initial styles when the page is unloaded for static elements only ---*/
+		&.unloaded {
+			@include fade( 0, hidden );
+
+			/*--- Margin-top for unloaded effect ---*/
+			margin: 20px 0 0 0;
+		}
+	}
+
+	/*--- Styles for the non-static sub-header ---*/
+	&:not( .static ) .sub-header {
+		font-size: 1.5rem;
+		margin-bottom: .5rem;
+
+		@media only screen and #{$break-xs-max} {
+			font-size: 1rem;
+		}
+
+		@media only screen and #{$break-tablet-min} and #{$break-tablet-max} {
+			font-size: 1rem;
+		}
+	}
+}

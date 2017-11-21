@@ -11,6 +11,6 @@
 <?php if ( $image_caption->image_source ) { ?>
 	<figure itemscope itemtype="http://schema.org/CreativeWork">
 		<meta itemprop="project-image" content="<?php echo esc_url( $image_caption->image_source ); ?>" />
-		<div class="image normalize-image" style="background-image: url( '<?php echo esc_attr( $image_caption->image_source ); ?>' );"></div>
+		<div class="image" style="background-image: url( '<?php echo esc_attr( $image_caption->image_source ); ?>' );"></div>
 	</figure>
 <?php } ?>

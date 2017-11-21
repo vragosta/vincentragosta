@@ -1,0 +1,61 @@
+/**
+ * Image Captions - Twenty Sixteen
+ * Image CSS
+ */
+
+.featured-image {
+	/*--- Image container element ---*/
+	& {
+		filter: grayscale( 100% );
+		@include fade( 1 );
+	}
+
+	/*--- Aspect Ratio 100% ---*/
+	&.aspect-ratio-1x1 {
+		padding-bottom: 100%;
+	}
+
+	/*--- Aspect Ratio 56.25% ---*/
+	&.aspect-ratio-16x9 {
+		padding-bottom: 56.25%;
+	}
+
+	/*--- Aspect Ratio 40% ---*/
+	&.aspect-ratio-10x4 {
+		padding-bottom: 40%;
+	}
+
+	/*--- Used in conjunction with aspect ratio 10x4 ---*/
+	&.image-min-height {
+		min-height: 600px;
+	}
+
+	&:hover .image {
+		@media only screen and #{$break-tablet-min} {
+			-webkit-filter: brightness( 40% );
+			filter: brightness( 40% );
+		}
+	}
+
+	/*--- Image inside the overlay ---*/
+	& .image {
+		@extend %normalize-image;
+		@include fade( 1 );
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
+
+		@media only screen and #{$break-mobile-max} {
+			-webkit-filter: brightness( 40% );
+			filter: brightness( 40% );
+		}
+	}
+
+	/*--- Adjust brightness on image if static ( used as header ) or on hover ---*/
+	&.static .image {
+		-webkit-filter: brightness( 40% );
+		filter: brightness( 40% );
+	}
+}

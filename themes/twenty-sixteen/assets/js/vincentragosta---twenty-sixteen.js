@@ -64,7 +64,7 @@
 					'<a href="{{image}}" data-rel="lightbox" title="{{caption}}">' +
 						'<figure itemscope itemtype="http://schema.org/CreativeWork">' +
 							'<meta itemprop="project-image" content="{{image}}" />' +
-							'<div class="image normalize-image" style="background-image: url( \'{{image}}\' );"></div>' +
+							'<div class="image" style="background-image: url( \'{{image}}\' );"></div>' +
 						'</figure>' +
 					'</a>' +
 				'</div>',

@@ -135,7 +135,7 @@ class News_And_Updates_Widget extends WP_Widget {
 		# Initialize query.
 		$query = new WP_Query( $args ); ?>
 
-		<div id="news-and-updates" class="custom-widget full-width">
+		<div id="news-and-updates" class="custom-widget">
 			<div class="row">
 				<?php if ( $query->have_posts() ) { ?>
 					<?php while ( $query->have_posts() ) { ?>
@@ -151,7 +151,7 @@ class News_And_Updates_Widget extends WP_Widget {
 				<?php } ?>
 			</div>
 
-			<div class="full-width col-flex-center">
+			<div>
 				<a href="<?php echo $button_href; ?>">View more <?php echo esc_html( $instance['post_type'] ); ?>s</a>
 			</div>
 		</div>

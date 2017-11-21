@@ -1,0 +1,53 @@
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Instagram CSS
+ */
+
+html.swipebox-html {
+	overflow-y: hidden;
+}
+
+#swipebox-title {
+	@extend %row-flex-center;
+	height: 100%;
+}
+
+#instagram-feed {
+	& {
+		@extend %full-width;
+		max-width: 1200px;
+	}
+
+	& a {
+		border: none;
+		padding: 0;
+	}
+
+	& .instagram-image {
+		& {
+			padding: 5px;
+		}
+
+		& .image {
+			@extend %normalize-image;
+		}
+
+		@media only screen and #{$break-mobile-max} {
+			padding: 5px 0;
+		}
+	}
+
+	& figure {
+		@extend %full-width;
+		position: relative;
+		padding-bottom: 100%;
+	}
+}
+
+.instagram-about {
+	margin-top: 4rem;
+
+	@media only screen and #{$break-mobile-max} {
+		margin-top: 3rem;
+	}
+}

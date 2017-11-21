@@ -5,14 +5,293 @@
  * Copyright (c) 2016
  * Licensed under the GPL-2.0+ license.
  */
+/**
+ * Image Captions - Twenty Sixteen
+ * Base Index CSS
+ */
+/**
+ * Image Captions - Twenty Sixteen
+ * Variable CSS
+ */
+/*--- Descriptive color variables ---*/
+/*--- Font stacks ---*/
+/*--- Font Properties ---*/
+/*--- Media Queries ---*/
+/**
+ * Image Captions - Twenty Sixteen
+ * Mixin Functions CSS
+ */
+/**
+ * Set flex settings.
+ * Used specifically in _extends.scss
+ */
+/**
+ * Set fade in/out settings.
+ * Must have opacity and visibility as css properties for mixin to be used.
+ */
+/**
+ * Image Captions - Twenty Sixteen
+ * Extend Helper CSS
+ */
+#news-and-updates, #news-and-updates > div:last-child, #featured-page {
+  width: 100%; }
 
-/*--- General ---*/
-@import "general/_plugin.css";
-@import "general/_helpers.css";
+.featured-image .overlay, #news-and-updates > div:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
 
-/*--- Components ---*/
-@import "components/_header.css";
-@import "components/_image.css";
-@import "components/_overlay.css";
-@import "components/_sub-header.css";
-@import "components/_widget.css";
+/*--- Padding on left and right edges ( ~10px ) ---*/
+#featured-page > div {
+  padding: 0 !important; }
+
+/*--- Normalizes image by centering and covering the parent container ---*/
+.featured-image .image {
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+/**
+ * Image Captions - Twenty Sixteen
+ * Base CSS
+ */
+.featured-image h1 {
+  font-size: 7.5rem; }
+.featured-image h4 {
+  font-size: 2.5rem; }
+
+/**
+ * Image Captions - Twenty Sixteen
+ * Header CSS
+ */
+.featured-image {
+  /*--- Default header styles target non static elements ---*/
+  /*--- Aspect ratio 1x1 ---*/ }
+  .featured-image .header {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    text-shadow: #080808 0 0 4px;
+    padding: 0 2rem;
+    font-family: "Lato", "sans-serif";
+    /*--- Margin-bottom set for hover effect ---*/
+    margin: 0 0 20px 0;
+    /*--- CSS transitions to toggle header visibility ---*/
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .4s ease-in-out, visibility .4s ease-in-out, margin .4s ease-in-out; }
+  .featured-image.static {
+    /*--- Initial styles when the page is unloaded just for aspect ratio 10x4( needed for js functionality ) ---*/
+    /*--- Aspect ratio 10x4 ---*/ }
+    .featured-image.static .header.unloaded {
+      opacity: 0;
+      visibility: hidden; }
+    .featured-image.static .header {
+      max-width: 1000px; }
+      @media only screen and (max-width: 767px) {
+        .featured-image.static .header {
+          font-size: 4rem; } }
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        .featured-image.static .header {
+          font-size: 6rem; } }
+  .featured-image:not(.static) .header {
+    font-size: 2.5rem;
+    max-width: 500px; }
+    @media only screen and (max-width: 479px) {
+      .featured-image:not(.static) .header {
+        font-size: 1.5rem; } }
+    @media only screen and (max-width: 767px) {
+      .featured-image:not(.static) .header {
+        margin: 0; } }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .featured-image:not(.static) .header {
+        font-size: 1.5rem; } }
+  @media only screen and (min-width: 768px) {
+    .featured-image:not(.static):hover .header {
+      opacity: 1;
+      visibility: visible;
+      margin: 0; } }
+
+/**
+ * Image Captions - Twenty Sixteen
+ * Image CSS
+ */
+.featured-image {
+  /*--- Image container element ---*/
+  /*--- Aspect Ratio 100% ---*/
+  /*--- Aspect Ratio 56.25% ---*/
+  /*--- Aspect Ratio 40% ---*/
+  /*--- Used in conjunction with aspect ratio 10x4 ---*/
+  /*--- Image inside the overlay ---*/
+  /*--- Adjust brightness on image if static ( used as header ) or on hover ---*/ }
+  .featured-image {
+    filter: grayscale(100%);
+    opacity: 1; }
+  .featured-image.aspect-ratio-1x1 {
+    padding-bottom: 100%; }
+  .featured-image.aspect-ratio-16x9 {
+    padding-bottom: 56.25%; }
+  .featured-image.aspect-ratio-10x4 {
+    padding-bottom: 40%; }
+  .featured-image.image-min-height {
+    min-height: 600px; }
+  @media only screen and (min-width: 768px) {
+    .featured-image:hover .image {
+      -webkit-filter: brightness(40%);
+      filter: brightness(40%); } }
+  .featured-image .image {
+    opacity: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out; }
+    @media only screen and (max-width: 767px) {
+      .featured-image .image {
+        -webkit-filter: brightness(40%);
+        filter: brightness(40%); } }
+  .featured-image.static .image {
+    -webkit-filter: brightness(40%);
+    filter: brightness(40%); }
+
+/**
+ * Image Captions - Twenty Sixteen
+ * Overlay CSS
+ */
+.featured-image {
+  /*--- Make sure that static and single instances of the overlay are displaying at all times. ---*/ }
+  @media only screen and (min-width: 768px) {
+    .featured-image:hover .overlay {
+      opacity: 1;
+      visibility: visible; } }
+  .featured-image .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: transparent;
+    /*--- CSS transitions to toggle overlay visibility ---*/
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out; }
+    @media only screen and (max-width: 767px) {
+      .featured-image .overlay {
+        opacity: 1;
+        visibility: visible; } }
+  .featured-image .overlay a {
+    font-size: 1.2rem;
+    padding: .5rem 1rem;
+    text-shadow: #080808 0 0 4px;
+    background: transparent;
+    border-color: #FFF;
+    color: #FFF;
+    margin-top: 1rem;
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out, text-shadow 0.5s ease-in-out; }
+    @media only screen and (max-width: 479px) {
+      .featured-image .overlay a {
+        font-size: 1rem;
+        padding: .5rem; } }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .featured-image .overlay a {
+        font-size: 1rem;
+        padding: .5rem; } }
+  .featured-image .overlay a:hover {
+    background: #FFF;
+    color: #686868;
+    text-shadow: none; }
+  .featured-image.static .overlay, .featured-image.single .overlay {
+    opacity: 1;
+    visibility: visible; }
+  .featured-image.static .overlay a {
+    font-size: 2rem;
+    border: 2px solid #FFF;
+    padding: 1rem 3rem;
+    text-transform: uppercase; }
+
+/**
+ * Image Captions - Twenty Sixteen
+ * Sub Header CSS
+ */
+.featured-image {
+  /*--- Default sub-header styles target non static elements ---*/
+  /*--- Styles for the non-static sub-header ---*/ }
+  @media only screen and (min-width: 768px) {
+    .featured-image:hover .sub-header {
+      opacity: 1;
+      visibility: visible; } }
+  .featured-image .sub-header {
+    color: #FFF;
+    font-style: italic;
+    letter-spacing: 1px;
+    margin: 0;
+    font-weight: 300;
+    text-shadow: #080808 0 0 4px;
+    text-align: center;
+    font-family: "Lato", "sans-serif";
+    /*--- CSS transitions to toggle sub-header visibility ---*/
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .4s ease-in-out, visibility .4s ease-in-out, margin .4s ease-in-out; }
+  .featured-image.static .subheader {
+    /*--- Initial styles when the page is unloaded for static elements only ---*/ }
+    @media only screen and (max-width: 767px) {
+      .featured-image.static .subheader {
+        font-size: 1.8rem; } }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .featured-image.static .subheader {
+        font-size: 2rem; } }
+    .featured-image.static .subheader.unloaded {
+      opacity: 0;
+      visibility: hidden;
+      /*--- Margin-top for unloaded effect ---*/
+      margin: 20px 0 0 0; }
+  .featured-image:not(.static) .sub-header {
+    font-size: 1.5rem;
+    margin-bottom: .5rem; }
+    @media only screen and (max-width: 479px) {
+      .featured-image:not(.static) .sub-header {
+        font-size: 1rem; } }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .featured-image:not(.static) .sub-header {
+        font-size: 1rem; } }
+
+/**
+ * Image Captions - Twenty Sixteen
+ * Widget CSS
+ */
+/*--- News & Updates Widget ---*/
+#news-and-updates {
+  max-width: 1200px; }
+#news-and-updates.marginally-center {
+  margin: 0 auto;
+  float: none !important; }
+#news-and-updates > div:last-child {
+  padding-top: 4.5rem; }
+#news-and-updates .featured-image .image {
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px; }
+@media only screen and (max-width: 767px) {
+  #news-and-updates > div:last-child {
+    padding-top: 3rem; } }
+
+/*--- Featured Post Widget ---*/
+#featured-page a {
+  margin-top: 2rem;
+  padding: 1.5rem 3rem;
+  font-size: 1.5rem; }
+  @media only screen and (max-width: 767px) {
+    #featured-page a {
+      font-size: 1.5rem; } }
+
+/*# sourceMappingURL=image-captions---twenty-sixteen.css.map */

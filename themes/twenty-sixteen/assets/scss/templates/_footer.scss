@@ -1,0 +1,70 @@
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Footer CSS
+ */
+
+#footer {
+	& {
+		@extend %col-flex-center;
+		background-color: $shark;
+		padding: 6rem 0;
+
+		@media only screen and #{$break-mobile-max} {
+			padding: 2rem 0;
+		}
+	}
+
+	& section > div {
+		margin: .5rem 0
+	}
+
+	& p {
+		@include fade( 0.5 );
+		color: $white;
+		font-family: $stack-lato;
+		font-weight: $font-weight-light;
+	}
+}
+
+/*--- Contact Info ( Footer )---*/
+#contact-info {
+	& h3 {
+		color: $white;
+	}
+
+	& span {
+		@include fade( 0.5 );
+	}
+}
+
+/*--- Documents ( Footer ) ---*/
+#docs {
+	& a {
+		@include fade( 0.5, $opacity_transition: opacity 0.4s ease-in-out );
+	}
+
+	& a:hover {
+		@include fade( 1 );
+	}
+
+	& a:nth-child(2) {
+		margin: 0 1rem;
+	}
+}
+
+#copyright {
+	@extend %padding-left-right;
+}
+
+/*--- Social ( Footer ) ---*/
+.social {
+	& {
+		@extend %row-flex-center;
+		padding: 2rem;
+	}
+
+	& a {
+		font-size: 2.5rem;
+		margin: 0 1rem;
+	}
+}

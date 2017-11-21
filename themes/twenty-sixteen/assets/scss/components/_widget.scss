@@ -1,0 +1,44 @@
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Widget CSS
+ */
+
+/*--- Notification Widget ---*/
+#notification-widget {
+	& {
+		@extend %full-width;
+		@extend %row-flex-center;
+		padding: 0;
+	}
+
+	& p {
+		@extend %row-flex-center;
+		@include fade( 1 );
+		color: $white;
+		font-size: 2.8rem;
+
+		@media only screen and #{$break-tablet-max} {
+			flex-direction: column;
+		}
+	}
+
+	& a {
+		& {
+			border: 2px solid $white;
+			color: $white;
+
+			@media only screen and #{$break-tablet-max} {
+				margin: 2rem 0 0 0;
+			}
+
+			@media only screen and #{$break-desktop-min} {
+				margin: 0 0 0 2rem;
+			}
+		}
+
+		&:hover {
+			background: $white;
+			color: $dove-gray;
+		}
+	}
+}

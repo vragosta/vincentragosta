@@ -1,0 +1,60 @@
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Header CSS
+ */
+
+#header {
+	position: relative;
+}
+
+/*--- Navigation ---*/
+.nav-container {
+	@extend %full-width;
+	position: absolute;
+	z-index: 1;
+}
+
+.controls-container {
+	@extend %row-flex-between;
+	padding: 2rem;
+}
+
+#logo {
+	& {
+		background-image: url( '../images/white-logo.png' );
+		background-size: contain;
+		background-position: center;
+		height: 75px;
+		min-width: 75px;
+
+		/*--- CSS transitions to toggle header visibility ---*/
+		@include fade( 1, visible, opacity .4s ease-in-out, visibility .4s ease-in-out );
+	}
+
+	/*--- Initial styles when the page is unloaded ( needed for js functionality ) ---*/
+	&.unloaded {
+		@include fade( 0, hidden );
+	}
+}
+
+/*--- Hamburger button styles ---*/
+.drop-down {
+	font-size: 4rem;
+	color: $white;
+	cursor: pointer;
+	position: absolute;
+	top: 40px;
+	right: 40px;
+
+	/*--- CSS transitions to toggle drop-down visibility ---*/
+	@include fade( 0, hidden, visibility 2s ease-in-out, opacity 0.5s ease-in-out );
+
+	@media only screen and #{$break-tablet-max} {
+		@include fade( 1, visible );
+	}
+}
+
+/*--- Prevent button from appearing in the header on the front page ---*/
+.home #header .featured-image .overlay a {
+	display: none;
+}

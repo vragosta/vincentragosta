@@ -1,0 +1,149 @@
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Contact CSS
+ */
+
+#contact-page {
+	& > div {
+		& {
+			padding: 6rem 4rem;
+
+			@media only screen and #{$break-mobile-max} {
+				padding: 2rem;
+			}
+		}
+
+		&:first-child {
+			@media only screen and #{$break-mobile-max} {
+				padding-top: 6rem;
+			}
+		}
+
+		&:last-child {
+			@media only screen and #{$break-mobile-max} {
+				padding-bottom: 6rem;
+			}
+		}
+	}
+
+	& h2,
+	& h3 {
+		font-family: $stack-lato;
+		margin-bottom: 10px;
+		text-align: left;
+
+		@media only screen and #{$break-mobile-max} {
+			text-align: center;
+		}
+	}
+
+	& h3 {
+		text-transform: uppercase;
+	}
+
+	& p {
+		@extend %full-width;
+		@include fade( 0.7 );
+		line-height: 1.5;
+		font-size: 1.85rem;
+		margin: 0 auto;
+		text-align: left;
+
+		@media only screen and #{$break-mobile-max} {
+			text-align: center;
+		}
+	}
+
+	& h2 + p {
+		margin-bottom: 50px;
+	}
+
+	& p a {
+		font-family: $stack-cormorant-garamond;
+	}
+
+	& a {
+		color: $mine-shaft;
+	}
+
+	& .social {
+		& {
+			padding: 2em 0;
+			display: block;
+
+			@media only screen and #{$break-mobile-max} {
+				text-align: center;
+			}
+		}
+
+		& a:first-child {
+			margin-left: 0;
+		}
+
+		& a:hover {
+			@include fade( 0.7 );
+		}
+	}
+
+	& .form {
+		& p {
+			padding: 0 15px;
+			line-height: 1;
+		}
+
+		& .full-label {
+			margin: 0;
+			font-size: 18px;
+			line-height: 1;
+			margin-bottom: 5px;
+			text-align: left;
+		}
+
+		& .descriptive-label {
+			font-size: 14px;
+			margin-bottom: 5px;
+			font-style: italic;
+			text-align: left;
+		}
+
+		& input,
+		& textarea {
+			background-color: $alabaster;
+			border-radius: 0;
+		}
+
+		& label {
+			@include fade( 0.7 );
+			margin: 5px 0;
+			line-height: 1;
+		}
+	}
+
+	& .contact-btn {
+		& {
+			border: 2px solid $dove-gray;
+			border-radius: 0;
+			background: transparent;
+			color: $dove-gray;
+			font-size: 1.5rem;
+			padding: .5rem 3rem;
+			text-transform: uppercase;
+			transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+			font-family: $stack-lato;
+		}
+
+		&:hover {
+			background: $dove-gray;
+			color: $white;
+		}
+
+		&:focus,
+		&:focus:active {
+			outline: none;
+		}
+	}
+}
+
+.map {
+	filter: grayscale( 100% );
+}

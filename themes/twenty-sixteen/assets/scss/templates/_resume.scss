@@ -1,0 +1,84 @@
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Resume CSS
+ */
+
+#resume {
+	& section {
+		padding: 6rem 4rem;
+	}
+
+	& section:first-child {
+		@media only screen and #{$break-mobile-max} {
+			padding: 6rem 4rem 0;
+		}
+	}
+
+	& h2,
+	& h3,
+	& h4,
+	& p {
+		text-align: left;
+		font-family: $stack-lato;
+	}
+
+	& h2 {
+		font-weight: $font-weight-light;
+	}
+
+	& h3 {
+		text-transform: uppercase;
+		margin-bottom: 25px;
+	}
+
+	& h4 {
+		margin-bottom: 10px;
+		text-transform: uppercase;
+	}
+
+	& li {
+		margin: 5px 0;
+		font-family: $stack-lato;
+		font-size: 1.8rem;
+		font-weight: $font-weight-light;
+	}
+
+	& a {
+		color: $mine-shaft;
+		font-weight: $font-weight-bold;
+	}
+
+	& a:hover {
+		text-decoration: underline;
+	}
+
+	& p {
+		line-height: 2;
+		font-weight: $font-weight-light;
+		font-size: 1.5rem;
+	}
+
+	& p span {
+		font-weight: $font-weight-regular;
+	}
+
+	& .day-to-day {
+		@media only screen and #{$break-mobile-max} {
+			margin-bottom: 25px;
+		}
+	}
+
+	& .work-item,
+	& .education-item,
+	& .award-item {
+		@media only screen and #{$break-mobile-max} {
+			margin: 0;
+		}
+	}
+
+	& .work-item:not( :last-child ),
+	& .education-item:not( :last-child ),
+	& .award-item:not( :last-child ) {
+		margin-bottom: 100px;
+	}
+}

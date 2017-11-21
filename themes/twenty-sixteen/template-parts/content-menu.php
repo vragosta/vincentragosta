@@ -8,7 +8,7 @@
  */
 ?>
 
-<section class="menu row-flex-center unloaded">
+<section class="menu unloaded">
 	<a href="<?php echo home_url(); ?>">Home</a>
 	<a href="<?php echo home_url( '/projects/' ); ?>">Projects</a>
 	<a href="<?php echo home_url( '/about/' ); ?>">About</a>

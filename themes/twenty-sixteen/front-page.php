@@ -14,37 +14,37 @@ get_header();
 ?>
 
 <?php if ( is_active_sidebar( 'cta-front-page-a' ) ) { ?>
-	<aside class="aside cta a col-flex-center">
+	<aside class="aside cta a">
 		<?php dynamic_sidebar( 'cta-front-page-a' ); ?>
 	</aside>
 <?php } ?>
 
 <?php if ( is_active_sidebar( 'cta-front-page-b' ) ) { ?>
-	<aside class="aside cta b col-flex-center">
+	<aside class="aside cta b">
 		<?php dynamic_sidebar( 'cta-front-page-b' ); ?>
 	</aside>
 <?php } ?>
 
 <?php if ( is_active_sidebar( 'cta-front-page-c' ) ) { ?>
-	<aside class="aside cta c col-flex-center">
+	<aside class="aside cta c">
 		<?php dynamic_sidebar( 'cta-front-page-c' ); ?>
 	</aside>
 <?php } ?>
 
 <?php if ( is_active_sidebar( 'cta-front-page-d' ) ) { ?>
-	<aside class="aside cta d col-flex-center">
+	<aside class="aside cta d">
 		<?php dynamic_sidebar( 'cta-front-page-d' ); ?>
 	</aside>
 <?php } ?>
 
 <?php if ( is_active_sidebar( 'cta-front-page-e' ) ) { ?>
-	<aside class="aside cta e col-flex-center">
+	<aside class="aside cta e">
 		<?php dynamic_sidebar( 'cta-front-page-e' ); ?>
 	</aside>
 <?php } ?>
 
 <?php if ( is_active_sidebar( 'cta-front-page-f' ) ) { ?>
-	<aside class="aside cta f col-flex-center">
+	<aside class="aside cta f">
 		<?php dynamic_sidebar( 'cta-front-page-f' ); ?>
 	</aside>
 <?php } ?>

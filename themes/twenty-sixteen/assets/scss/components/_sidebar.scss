@@ -1,0 +1,175 @@
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Sidebar CSS
+ */
+
+.aside {
+	& {
+		padding: 6rem 4rem;
+
+		@media only screen and #{$break-mobile-max} {
+			padding: 4rem;
+		}
+	}
+
+	& h2 {
+		@media only screen and #{$break-mobile-max} {
+			font-size: 3rem;
+			margin-bottom: 3rem;
+		}
+	}
+
+	& h1,
+	& h2 {
+		margin-bottom: 4rem;
+		font-family: $stack-lato;
+	}
+
+	& p {
+		@extend %full-width;
+		@include fade( 0.7 );
+		line-height: 1.5;
+		max-width: 1100px;
+		font-size: 1.85rem;
+
+		@media only screen and #{$break-mobile-max} {
+			font-size: 1.65rem;
+			line-height: 1.5;
+		}
+	}
+
+	& p + p {
+		margin-top: 4rem;
+		@include flex( $justify-content: center );
+
+		@media only screen and #{$break-mobile-max} {
+			margin-top: 3rem;
+		}
+	}
+
+	& a {
+		& {
+			border: 2px solid $dove-gray;
+			background: transparent;
+			color: $dove-gray;
+			font-size: 1.5rem;
+			padding: 1.5rem 3rem;
+			text-transform: uppercase;
+			transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+			text-align: center;
+
+			@media only screen and #{$break-mobile-max} {
+				font-size: 1.5rem;
+			}
+		}
+
+		&:hover {
+			background: $dove-gray;
+			color: $white;
+		}
+	}
+
+	&.excerpt {
+		@extend %col-flex-center;
+	}
+}
+
+#projects .aside {
+	&.archive {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	& p {
+		max-width: 750px;
+	}
+}
+
+/*--- Specifically target the excerpt on the archive page. ---*/
+.archive .aside.excerpt {
+	background: $porcelain;
+}
+
+#single-project .aside.excerpt {
+	max-width: 800px;
+}
+
+/*--- Accomodating for single template design ---*/
+.single .aside {
+	&.link {
+		@include flex();
+	}
+
+	&.content {
+		padding: 6rem 0;
+
+		@media only screen and #{$break-mobile-max} {
+			padding: 0;
+		}
+	}
+}
+
+.cta {
+	& {
+		@extend %col-flex-center;
+	}
+
+	&.a,
+	&.c,
+	&.f {
+		background: $porcelain;
+	}
+
+	&.b,
+	&.d,
+	&.e {
+		background: $white;
+	}
+
+	&.e,
+	&.about.c {
+		padding: 0;
+	}
+
+	&.d h2 {
+		max-width: 800px;
+	}
+
+	&.b p,
+	&.about.a p {
+		max-width: 800px;
+	}
+
+	&.about.d p {
+		max-width: 600px;
+	}
+
+	&.b p:first-child {
+		margin: 0 auto;
+	}
+
+	&.d:not( .about ) p {
+		max-width: 300px;
+		line-height: 1.9;
+	}
+
+	&.d h4 {
+		text-transform: uppercase;
+		font-weight: $font-weight-bold;
+		margin: 3rem 0 1.5rem 0;
+	}
+}
+
+.pre-footer {
+	padding: 0 1.2rem;
+}
+
+#sidebar {
+	@media only screen and #{$break-tablet-max} {
+		width: 100%;
+	}
+
+	@media only screen and #{$break-desktop-min} {
+		width: 30%;
+	}
+}

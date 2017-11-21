@@ -1,0 +1,76 @@
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Base CSS
+ */
+
+/*--- Needed to prevent the whitespace to the right of web page ---*/
+html, body {
+	@extend %full-width;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+body {
+	font-family: $stack-cormorant-garamond;
+}
+
+button {
+	outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+span {
+	margin: 0;
+	text-align: center;
+}
+
+h2 {
+	font-size: 3.5rem;
+}
+
+h3 {
+	font-size: 2rem;
+}
+
+a {
+	&,
+	&:hover,
+	&:focus,
+	&:active,
+	&:active:focus {
+		text-decoration: none;
+		font-family: $stack-lato;
+		font-weight: $font-weight-light;
+		color: $white;
+	}
+}
+
+hr {
+	@extend %full-width;
+	border-width: 0;
+	height: 1px;
+}
+
+pre {
+	border: none;
+	margin: 0;
+	text-align: center;
+	white-space: pre-wrap;
+	word-break: normal;
+}
+
+#separator {
+	& {
+		@include flex( center );
+		margin: 0 .5rem;
+	}
+
+	& i {
+		font-size: 3px;
+	}
+}
