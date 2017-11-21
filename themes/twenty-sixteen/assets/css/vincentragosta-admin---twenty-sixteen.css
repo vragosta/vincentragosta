@@ -1,1 +1,16 @@
-.description{font-size:10px;font-style:italic}.label{width:150px}
+/**
+ * VincentRagosta - Twenty Sixteen
+ * http://www.vincentragosta.com
+ *
+ * Copyright (c) 2016
+ * Licensed under the GPL-2.0+ license.
+ */
+/*--- Label description css  ---*/
+.description {
+  font-size: 10px;
+  font-style: italic;
+}
+
+.label {
+  width: 150px;
+}
