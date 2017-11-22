@@ -1,0 +1,8 @@
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Utilities CSS
+ */
+
+@function em( $target, $context : $base__font-size ) {
+	@return ( $target / $context ) * 1em;
+}

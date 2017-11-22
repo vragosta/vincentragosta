@@ -65,7 +65,7 @@
  * Base CSS
  */
 .featured-image h1 {
-  font-size: 75px;
+  font-size: em(75px);
 }
 
 .featured-image h4 {
