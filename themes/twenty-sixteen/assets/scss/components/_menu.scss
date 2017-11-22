@@ -30,11 +30,8 @@
 
 	& a {
 		& {
-			// margin: 0 1rem;
 			margin: 0 10px;
-			// font-size: 1.5rem;
 			font-size: 15px;
-			// letter-spacing: .2rem;
 			letter-spacing: 2px;
 			text-transform: uppercase;
 			@include fade( 0.8, $opacity_transition : opacity 0.2s ease-in-out );
@@ -55,7 +52,6 @@
 	/*-- Specifically targets the contact button in the header menu ---*/
 	& #contact {
 		& {
-			// padding: 1rem;
 			padding: 10px;
 			border: 2px solid $white;
 			transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
@@ -72,7 +68,6 @@
 /*-- Specifically targets the contact button in the footer menu ---*/
 #footer .menu {
 	& {
-		// margin: 2rem 0;
 		margin: 20px 0;
 
 		@media only screen and #{$break-mobile-max} {
@@ -82,14 +77,12 @@
 
 	& a {
 		@media only screen and #{$break-mobile-max} {
-			// margin: .5rem 0;
 			margin: 5px 0;
 		}
 	}
 }
 
 #footer .menu {
-	// margin: 2rem 0;
 	margin: 20px 0;
 }
 
@@ -110,7 +103,6 @@
 	& .close-container {
 		& {
 			@include flex( $justify-content: flex-end );
-			// padding: 4.4rem 3.5rem 1.5rem 2rem;
 			padding: 44px 35px 15px 20px;
 		}
 
@@ -126,9 +118,7 @@
 		}
 
 		& a {
-			// margin: 1rem 0;
 			margin: 10px 0;
-			// font-size: 3rem;
 			font-size: 30px;
 		}
 	}

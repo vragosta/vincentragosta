@@ -16,7 +16,6 @@
 
 .controls-container {
 	@extend %row-flex-between;
-	// padding: 2rem;
 	padding: 20px;
 }
 
@@ -40,7 +39,6 @@
 
 /*--- Hamburger button styles ---*/
 .drop-down {
-	// font-size: 4rem;
 	font-size: 40px;
 	color: $white;
 	cursor: pointer;

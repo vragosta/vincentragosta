@@ -5,11 +5,9 @@
 
 .aside {
 	& {
-		// padding: 6rem 4rem;
 		padding: 60px 40px;
 
 		@media only screen and #{$break-mobile-max} {
-			// padding: 4rem;
 			padding: 40px;
 		}
 	}
@@ -17,15 +15,12 @@
 	& h2 {
 		@media only screen and #{$break-mobile-max} {
 			font-size: 30px;
-			// font-size: 3rem;
-			// margin-bottom: 3rem;
 			margin-bottom: 30px;
 		}
 	}
 
 	& h1,
 	& h2 {
-		// margin-bottom: 4rem;
 		margin-bottom: 40px;
 		font-family: $stack-lato;
 	}
@@ -35,23 +30,19 @@
 		@include fade( 0.7 );
 		line-height: 1.5;
 		max-width: 1100px;
-		// font-size: 1.85rem;
 		font-size: 18.5px;
 
 		@media only screen and #{$break-mobile-max} {
-			// font-size: 1.65rem;
 			font-size: 16.5px;
 			line-height: 1.5;
 		}
 	}
 
 	& p + p {
-		// margin-top: 4rem;
 		margin-top: 40px;
 		@include flex( $justify-content: center );
 
 		@media only screen and #{$break-mobile-max} {
-			// margin-top: 3rem;
 			margin-top: 30px;
 		}
 	}
@@ -61,16 +52,13 @@
 			border: 2px solid $dove-gray;
 			background: transparent;
 			color: $dove-gray;
-			// font-size: 1.5rem;
 			font-size: 15px;
-			// padding: 1.5rem 3rem;
 			padding: 15px 30px;
 			text-transform: uppercase;
 			transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 			text-align: center;
 
 			@media only screen and #{$break-mobile-max} {
-				// font-size: 1.5rem;
 				font-size: 15px;
 			}
 		}
@@ -113,7 +101,6 @@
 	}
 
 	&.content {
-		// padding: 6rem 0;
 		padding: 60px 0;
 
 		@media only screen and #{$break-mobile-max} {
@@ -169,13 +156,11 @@
 	&.d h4 {
 		text-transform: uppercase;
 		font-weight: $font-weight-bold;
-		// margin: 3rem 0 1.5rem 0;
 		margin: 30px 0 15px 0;
 	}
 }
 
 .pre-footer {
-	// padding: 0 1.2rem;
 	padding: 0 12px;
 }
 
