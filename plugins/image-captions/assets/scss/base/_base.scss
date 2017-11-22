@@ -5,11 +5,10 @@
 
 .featured-image {
 	& h1 {
-		font-size: 75px;
-		// font-size: em( 75px );
+		font-size: em( 75px );
 	}
 
 	& h4 {
-		font-size: 25px;
+		font-size: em( 25px );
 	}
 }

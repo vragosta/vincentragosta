@@ -47,11 +47,11 @@ module.exports = function (grunt) {
 		},
 		watch: {
 			js: {
-				files: [ 'assets/js/src/vincentragosta---twenty-sixteen.js' ],
+				files: [ 'assets/js/vincentragosta---twenty-sixteen.js', '../../plugins/image-captions/assets/js/image-captions---twenty-sixteen.js' ],
 				tasks: [ 'uglify:dev' ]
 			},
 			css: {
-				files: [ 'assets/scss/**/*.scss' ],
+				files: [ 'assets/scss/**/*.scss', '../../plugins/image-captions/assets/scss/**/*.scss' ],
 				tasks: [ 'sass:dev' ]
 			}
 		}

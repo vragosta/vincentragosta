@@ -9,7 +9,7 @@
 		color: #fff;
 		text-transform: uppercase;
 		font-weight: $font-weight-bold;
-		line-height: 1;
+		line-height: ( 40px / 40px );
 		text-align: center;
 		text-shadow: $cod-gray 0 0 4px;
 		padding: 0 20px;
@@ -34,22 +34,22 @@
 			max-width: 1000px;
 
 			@media only screen and #{$break-mobile-max} {
-				font-size: 40px;
+				font-size: em( 40px );
 			}
 
 			@media only screen and #{$break-tablet-min} and #{$break-tablet-max} {
-				font-size: 60px;
+				font-size: em( 60px );
 			}
 		}
 	}
 
 	/*--- Aspect ratio 1x1 ---*/
 	&:not( .static ) .header {
-		font-size: 25px;
+		font-size: em( 25px );
 		max-width: 500px;
 
 		@media only screen and #{$break-xs-max} {
-			font-size: 15px;
+			font-size: em( 15px );
 		}
 
 		@media only screen and #{$break-mobile-max} {
@@ -57,7 +57,7 @@
 		}
 
 		@media only screen and #{$break-tablet-min} and #{$break-tablet-max} {
-			font-size: 15px;
+			font-size: em( 15px );
 		}
 	}
 

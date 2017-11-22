@@ -30,6 +30,10 @@
  * Must have opacity and visibility as css properties for mixin to be used.
  */
 /**
+ * Vincent Ragosta - Twenty Sixteen
+ * Utilities CSS
+ */
+/**
  * Image Captions - Twenty Sixteen
  * Extend Helper CSS
  */
@@ -65,11 +69,11 @@
  * Base CSS
  */
 .featured-image h1 {
-  font-size: em(75px);
+  font-size: 5.3571428571em;
 }
 
 .featured-image h4 {
-  font-size: 25px;
+  font-size: 1.7857142857em;
 }
 
 /**
@@ -114,24 +118,24 @@
 
 @media only screen and (max-width: 767px) {
   .featured-image.static .header {
-    font-size: 40px;
+    font-size: 2.8571428571em;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .featured-image.static .header {
-    font-size: 60px;
+    font-size: 4.2857142857em;
   }
 }
 
 .featured-image:not(.static) .header {
-  font-size: 25px;
+  font-size: 1.7857142857em;
   max-width: 500px;
 }
 
 @media only screen and (max-width: 479px) {
   .featured-image:not(.static) .header {
-    font-size: 15px;
+    font-size: 1.0714285714em;
   }
 }
 
@@ -143,7 +147,7 @@
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .featured-image:not(.static) .header {
-    font-size: 15px;
+    font-size: 1.0714285714em;
   }
 }
 
@@ -255,7 +259,7 @@
 }
 
 .featured-image .overlay a {
-  font-size: 12px;
+  font-size: 0.8571428571em;
   padding: 5px 10px;
   text-shadow: #080808 0 0 4px;
   background: transparent;
@@ -267,14 +271,14 @@
 
 @media only screen and (max-width: 479px) {
   .featured-image .overlay a {
-    font-size: 10px;
+    font-size: 0.7142857143em;
     padding: 5px;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .featured-image .overlay a {
-    font-size: 10px;
+    font-size: 0.7142857143em;
     padding: 5px;
   }
 }
@@ -292,7 +296,7 @@
 }
 
 .featured-image.static .overlay a {
-  font-size: 20px;
+  font-size: 1.4285714286em;
   border: 2px solid #FFF;
   padding: 10px 30px;
   text-transform: uppercase;
@@ -335,13 +339,13 @@
 
 @media only screen and (max-width: 767px) {
   .featured-image.static .subheader {
-    font-size: 18px;
+    font-size: 1.2857142857em;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .featured-image.static .subheader {
-    font-size: 20px;
+    font-size: 1.4285714286em;
   }
 }
 
@@ -353,19 +357,19 @@
 }
 
 .featured-image:not(.static) .sub-header {
-  font-size: 15px;
+  font-size: 1.0714285714em;
   margin-bottom: 5px;
 }
 
 @media only screen and (max-width: 479px) {
   .featured-image:not(.static) .sub-header {
-    font-size: 10px;
+    font-size: 0.7142857143em;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .featured-image:not(.static) .sub-header {
-    font-size: 10px;
+    font-size: 0.7142857143em;
   }
 }
 
@@ -404,11 +408,11 @@
 #featured-page a {
   margin-top: 20px;
   padding: 15px 30px;
-  font-size: 15px;
+  font-size: 1.0714285714em;
 }
 
 @media only screen and (max-width: 767px) {
   #featured-page a {
-    font-size: 15px;
+    font-size: 1.0714285714em;
   }
 }
