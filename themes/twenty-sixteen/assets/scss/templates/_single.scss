@@ -7,8 +7,10 @@
 	& {
 		@extend %col-flex-center;
 		max-width: 1200px;
-		margin: 0 auto 6rem;
-		padding: 0 4rem;
+		// margin: 0 auto 6rem;
+		margin: 0 auto 60px;
+		// padding: 0 4rem;
+		padding: 0 40px;
 
 		@media only screen and #{$break-mobile-max} {
 			padding: 0;
@@ -16,11 +18,13 @@
 	}
 
 	& p {
-		font-size: 2em;
+		// font-size: 2em;
+		font-size: 28px;
 	}
 
 	& pre {
-		padding: 4rem;
+		// padding: 4rem;
+		padding: 40px;
 	}
 
 	& pre h3 {
@@ -35,16 +39,19 @@
 
 #pagination-single {
 	& {
-		padding: 0 4rem;
+		// padding: 0 4rem;
+		padding: 0 40px;
 	}
 
 	& a {
 		border: none;
 		padding: 0;
-		font-size: 3rem;
+		// font-size: 3rem;
+		font-size: 30px;
 
 		@media only screen and #{$break-mobile-max} {
-			font-size: 2rem;
+			// font-size: 2rem;
+			font-size: 20px;
 		}
 	}
 
@@ -57,7 +64,8 @@
 .post-edit-link {
 	& {
 		color: $mine-shaft;
-		font-size: 2rem;
+		// font-size: 2rem;
+		font-size: 20px;
 		font-weight: $font-weight-regular;
 	}
 
@@ -73,7 +81,8 @@
 		@extend %full-width;
 		@include fade( 0, hidden, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out );
 		position: fixed;
-		bottom: 2rem;
+		// bottom: 2rem;
+		bottom: 20px;
 		text-align: center;
 		left: 0;
 	}
@@ -88,17 +97,21 @@
 		padding: 0;
 		background-color: $white;
 		border: 1px solid $thunder;
-		height: 5rem;
+		// height: 5rem;
+		height: 50px;
 		border-radius: 50%;
 		-moz-border-radius: 50%;
 		-webkit-border-radius: 50%;
-		width: 5rem;
+		// width: 5rem;
+		width: 50px;
 		cursor: pointer;
 		color: $mine-shaft;
 	}
 
 	& i {
-		font-size: 4rem;
-		padding-bottom: .2rem;
+		// font-size: 4rem;
+		font-size: 40px;
+		// padding-bottom: .2rem;
+		padding-bottom: 2px;
 	}
 }

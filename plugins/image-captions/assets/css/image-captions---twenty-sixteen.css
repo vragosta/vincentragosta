@@ -88,7 +88,7 @@
   line-height: 1;
   text-align: center;
   text-shadow: #080808 0 0 4px;
-  padding: 0 2rem;
+  padding: 0 20px;
   font-family: "Lato", "sans-serif";
   /*--- Margin-bottom set for hover effect ---*/
   margin: 0 0 20px 0;
@@ -114,24 +114,24 @@
 
 @media only screen and (max-width: 767px) {
   .featured-image.static .header {
-    font-size: 4rem;
+    font-size: 40px;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .featured-image.static .header {
-    font-size: 6rem;
+    font-size: 60px;
   }
 }
 
 .featured-image:not(.static) .header {
-  font-size: 2.5rem;
+  font-size: 25px;
   max-width: 500px;
 }
 
 @media only screen and (max-width: 479px) {
   .featured-image:not(.static) .header {
-    font-size: 1.5rem;
+    font-size: 15px;
   }
 }
 
@@ -143,7 +143,7 @@
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .featured-image:not(.static) .header {
-    font-size: 1.5rem;
+    font-size: 15px;
   }
 }
 
@@ -255,27 +255,27 @@
 }
 
 .featured-image .overlay a {
-  font-size: 1.2rem;
-  padding: .5rem 1rem;
+  font-size: 12px;
+  padding: 5px 10px;
   text-shadow: #080808 0 0 4px;
   background: transparent;
   border-color: #FFF;
   color: #FFF;
-  margin-top: 1rem;
+  margin-top: 10px;
   transition: background 0.5s ease-in-out, color 0.5s ease-in-out, text-shadow 0.5s ease-in-out;
 }
 
 @media only screen and (max-width: 479px) {
   .featured-image .overlay a {
-    font-size: 1rem;
-    padding: .5rem;
+    font-size: 10px;
+    padding: 5px;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .featured-image .overlay a {
-    font-size: 1rem;
-    padding: .5rem;
+    font-size: 10px;
+    padding: 5px;
   }
 }
 
@@ -292,9 +292,9 @@
 }
 
 .featured-image.static .overlay a {
-  font-size: 2rem;
+  font-size: 20px;
   border: 2px solid #FFF;
-  padding: 1rem 3rem;
+  padding: 10px 30px;
   text-transform: uppercase;
 }
 
@@ -335,13 +335,13 @@
 
 @media only screen and (max-width: 767px) {
   .featured-image.static .subheader {
-    font-size: 1.8rem;
+    font-size: 18px;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .featured-image.static .subheader {
-    font-size: 2rem;
+    font-size: 20px;
   }
 }
 
@@ -353,19 +353,19 @@
 }
 
 .featured-image:not(.static) .sub-header {
-  font-size: 1.5rem;
-  margin-bottom: .5rem;
+  font-size: 15px;
+  margin-bottom: 5px;
 }
 
 @media only screen and (max-width: 479px) {
   .featured-image:not(.static) .sub-header {
-    font-size: 1rem;
+    font-size: 10px;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .featured-image:not(.static) .sub-header {
-    font-size: 1rem;
+    font-size: 10px;
   }
 }
 
@@ -384,7 +384,7 @@
 }
 
 #news-and-updates > div:last-child {
-  padding-top: 4.5rem;
+  padding-top: 45px;
 }
 
 #news-and-updates .featured-image .image {
@@ -396,19 +396,19 @@
 
 @media only screen and (max-width: 767px) {
   #news-and-updates > div:last-child {
-    padding-top: 3rem;
+    padding-top: 30px;
   }
 }
 
 /*--- Featured Post Widget ---*/
 #featured-page a {
-  margin-top: 2rem;
-  padding: 1.5rem 3rem;
-  font-size: 1.5rem;
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 15px;
 }
 
 @media only screen and (max-width: 767px) {
   #featured-page a {
-    font-size: 1.5rem;
+    font-size: 15px;
   }
 }

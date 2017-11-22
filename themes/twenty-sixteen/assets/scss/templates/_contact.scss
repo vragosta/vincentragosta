@@ -6,22 +6,26 @@
 #contact-page {
 	& > div {
 		& {
-			padding: 6rem 4rem;
+			// padding: 6rem 4rem;
+			padding: 60px 40px;
 
 			@media only screen and #{$break-mobile-max} {
-				padding: 2rem;
+				// padding: 2rem;
+				padding: 20px;
 			}
 		}
 
 		&:first-child {
 			@media only screen and #{$break-mobile-max} {
-				padding-top: 6rem;
+				// padding-top: 6rem;
+				padding-top: 60px;
 			}
 		}
 
 		&:last-child {
 			@media only screen and #{$break-mobile-max} {
-				padding-bottom: 6rem;
+				// padding-bottom: 6rem;
+				padding-bottom: 60px;
 			}
 		}
 	}
@@ -45,7 +49,8 @@
 		@extend %full-width;
 		@include fade( 0.7 );
 		line-height: 1.5;
-		font-size: 1.85rem;
+		// font-size: 1.85rem;
+		font-size: 18.5px;
 		margin: 0 auto;
 		text-align: left;
 
@@ -68,7 +73,8 @@
 
 	& .social {
 		& {
-			padding: 2em 0;
+			// padding: 2em 0;
+			padding: 20px 0;
 			display: block;
 
 			@media only screen and #{$break-mobile-max} {
@@ -125,8 +131,10 @@
 			border-radius: 0;
 			background: transparent;
 			color: $dove-gray;
-			font-size: 1.5rem;
-			padding: .5rem 3rem;
+			// font-size: 1.5rem;
+			font-size: 15px;
+			// padding: .5rem 3rem;
+			padding: 5px 30px;
 			text-transform: uppercase;
 			transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 			font-family: $stack-lato;

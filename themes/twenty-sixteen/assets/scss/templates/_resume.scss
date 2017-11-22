@@ -5,12 +5,14 @@
 
 #resume {
 	& section {
-		padding: 6rem 4rem;
+		// padding: 6rem 4rem;
+		padding: 60px 40px;
 	}
 
 	& section:first-child {
 		@media only screen and #{$break-mobile-max} {
-			padding: 6rem 4rem 0;
+			// padding: 6rem 4rem 0;
+			padding: 60px 40px 0;
 		}
 	}
 
@@ -39,7 +41,8 @@
 	& li {
 		margin: 5px 0;
 		font-family: $stack-lato;
-		font-size: 1.8rem;
+		// font-size: 1.8rem;
+		font-size: 18px;
 		font-weight: $font-weight-light;
 	}
 
@@ -55,7 +58,8 @@
 	& p {
 		line-height: 2;
 		font-weight: $font-weight-light;
-		font-size: 1.5rem;
+		// font-size: 1.5rem;
+		font-size: 15px;
 	}
 
 	& p span {
