@@ -27,7 +27,11 @@
 
 	/*--- Used in conjunction with aspect ratio 10x4 ---*/
 	&.image-min-height {
-		min-height: 600px;
+		min-height: em( 600px );
+
+		@media only screen and #{$break-mobile-max} {
+			min-height: em( 600px, 8px );
+		}
 	}
 
 	&:hover .image {
