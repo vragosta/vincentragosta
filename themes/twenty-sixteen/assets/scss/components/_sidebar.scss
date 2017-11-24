@@ -5,7 +5,8 @@
 
 .aside {
 	& {
-		padding: 60px 40px;
+		// padding: 60px 40px;
+		padding: em( 60px ) em( 40px );
 
 		@media only screen and #{$break-mobile-max} {
 			padding: 40px;

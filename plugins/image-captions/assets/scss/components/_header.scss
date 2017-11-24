@@ -9,14 +9,17 @@
 		color: #fff;
 		text-transform: uppercase;
 		font-weight: $font-weight-bold;
-		line-height: ( 40px / 40px );
+
+		/*--- target line height in px / base font size ---*/
+		line-height: ( 14px / 14px );
 		text-align: center;
-		text-shadow: $cod-gray 0 0 4px;
-		padding: 0 20px;
+		text-shadow: $cod-gray 0 0 em( 4px, 75px );
+		padding: 0 em( 20px, 75px );
 		font-family: $stack-lato;
+		font-size: em( 75px );
 
 		/*--- Margin-bottom set for hover effect ---*/
-		margin: 0 0 20px 0;
+		margin: 0 0 em( 20px, 75px ) 0;
 
 		/*--- CSS transitions to toggle header visibility ---*/
 		@include fade( 1, visible );
@@ -31,33 +34,21 @@
 
 		/*--- Aspect ratio 10x4 ---*/
 		& .header {
-			max-width: 1000px;
-
-			@media only screen and #{$break-mobile-max} {
-				font-size: em( 40px );
-			}
-
-			@media only screen and #{$break-tablet-min} and #{$break-tablet-max} {
-				font-size: em( 60px );
-			}
+			max-width: em( 1000px, 75px );
 		}
 	}
 
 	/*--- Aspect ratio 1x1 ---*/
 	&:not( .static ) .header {
 		font-size: em( 25px );
-		max-width: 500px;
-
-		@media only screen and #{$break-xs-max} {
-			font-size: em( 15px );
-		}
+		max-width: em( 500px, 25px );
 
 		@media only screen and #{$break-mobile-max} {
 			margin: 0;
 		}
 
-		@media only screen and #{$break-tablet-min} and #{$break-tablet-max} {
-			font-size: em( 15px );
+		@media only screen and #{$break-xs-max} {
+			font-size: em( 25px, 8px );
 		}
 	}
 

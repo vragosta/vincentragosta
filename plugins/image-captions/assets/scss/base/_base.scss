@@ -4,11 +4,16 @@
  */
 
 .featured-image {
-	& h1 {
-		font-size: em( 75px );
-	}
+	& {
+		/*--- Sets base font-size for em usage. ---*/
+		font-size: 14px;
 
-	& h4 {
-		font-size: em( 25px );
+		@media only screen and #{$break-tablet-min} and #{$break-tablet-max} {
+			font-size: 12px;
+		}
+
+		@media only screen and #{$break-mobile-max} {
+			font-size: 8px;
+		}
 	}
 }

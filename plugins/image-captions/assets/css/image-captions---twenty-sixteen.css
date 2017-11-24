@@ -68,12 +68,21 @@
  * Image Captions - Twenty Sixteen
  * Base CSS
  */
-.featured-image h1 {
-  font-size: 5.3571428571em;
+.featured-image {
+  /*--- Sets base font-size for em usage. ---*/
+  font-size: 14px;
 }
 
-.featured-image h4 {
-  font-size: 1.7857142857em;
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .featured-image {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .featured-image {
+    font-size: 8px;
+  }
 }
 
 /**
@@ -89,13 +98,15 @@
   color: #fff;
   text-transform: uppercase;
   font-weight: 700;
+  /*--- target line height in px / base font size ---*/
   line-height: 1;
   text-align: center;
-  text-shadow: #080808 0 0 4px;
-  padding: 0 20px;
+  text-shadow: #080808 0 0 0.0533333333em;
+  padding: 0 0.2666666667em;
   font-family: "Lato", "sans-serif";
+  font-size: 5.3571428571em;
   /*--- Margin-bottom set for hover effect ---*/
-  margin: 0 0 20px 0;
+  margin: 0 0 0.2666666667em 0;
   /*--- CSS transitions to toggle header visibility ---*/
   opacity: 1;
   visibility: visible;
@@ -113,30 +124,12 @@
 }
 
 .featured-image.static .header {
-  max-width: 1000px;
-}
-
-@media only screen and (max-width: 767px) {
-  .featured-image.static .header {
-    font-size: 2.8571428571em;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .featured-image.static .header {
-    font-size: 4.2857142857em;
-  }
+  max-width: 13.3333333333em;
 }
 
 .featured-image:not(.static) .header {
   font-size: 1.7857142857em;
-  max-width: 500px;
-}
-
-@media only screen and (max-width: 479px) {
-  .featured-image:not(.static) .header {
-    font-size: 1.0714285714em;
-  }
+  max-width: 20em;
 }
 
 @media only screen and (max-width: 767px) {
@@ -145,9 +138,9 @@
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 479px) {
   .featured-image:not(.static) .header {
-    font-size: 1.0714285714em;
+    font-size: 3.125em;
   }
 }
 
@@ -327,29 +320,25 @@
   text-shadow: #080808 0 0 4px;
   text-align: center;
   font-family: "Lato", "sans-serif";
+  font-size: 1.7857142857em;
+  padding: 0 0.8em;
   /*--- CSS transitions to toggle sub-header visibility ---*/
   opacity: 1;
   visibility: visible;
   transition: opacity .4s ease-in-out, visibility .4s ease-in-out, margin .4s ease-in-out;
 }
 
-.featured-image.static .subheader {
+.featured-image.static .sub-header {
   /*--- Initial styles when the page is unloaded for static elements only ---*/
 }
 
 @media only screen and (max-width: 767px) {
-  .featured-image.static .subheader {
-    font-size: 1.2857142857em;
+  .featured-image.static .sub-header {
+    font-size: 2.0833333333em;
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .featured-image.static .subheader {
-    font-size: 1.4285714286em;
-  }
-}
-
-.featured-image.static .subheader.unloaded {
+.featured-image.static .sub-header.unloaded {
   opacity: 0;
   visibility: hidden;
   /*--- Margin-top for unloaded effect ---*/
@@ -363,13 +352,13 @@
 
 @media only screen and (max-width: 479px) {
   .featured-image:not(.static) .sub-header {
-    font-size: 0.7142857143em;
+    font-size: 1.875em;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .featured-image:not(.static) .sub-header {
-    font-size: 0.7142857143em;
+    font-size: 0.9375em;
   }
 }
 

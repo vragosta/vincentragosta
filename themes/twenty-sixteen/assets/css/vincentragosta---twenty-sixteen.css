@@ -85,6 +85,7 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  font-size: 10px;
 }
 
 body {
@@ -285,7 +286,7 @@ pre {
  * Sidebar CSS
  */
 .aside {
-  padding: 60px 40px;
+  padding: 6em 4em;
 }
 
 @media only screen and (max-width: 767px) {
