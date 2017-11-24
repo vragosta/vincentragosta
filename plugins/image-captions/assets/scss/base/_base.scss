@@ -6,7 +6,7 @@
 .featured-image {
 	& {
 		/*--- Sets base font-size for em usage. ---*/
-		font-size: 14px;
+		font-size: $base__font-size;
 
 		@media only screen and #{$break-tablet-min} and #{$break-tablet-max} {
 			font-size: 12px;

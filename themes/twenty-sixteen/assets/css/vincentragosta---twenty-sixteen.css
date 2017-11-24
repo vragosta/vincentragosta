@@ -85,7 +85,20 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  font-size: 10px;
+  /*--- Sets base font-size for em usage. ---*/
+  font-size: 14px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  html, body {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  html, body {
+    font-size: 8px;
+  }
 }
 
 body {
@@ -107,11 +120,15 @@ span {
 }
 
 h2 {
-  font-size: 35px;
+  font-size: 2.5em;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 1.4285714286em;
+}
+
+p {
+  font-size: 1.2857142857em;
 }
 
 a, a:hover, a:focus, a:active, a:active:focus {
@@ -123,7 +140,7 @@ a, a:hover, a:focus, a:active, a:active:focus {
 
 hr {
   border-width: 0;
-  height: 1px;
+  height: 0.0714285714em;
 }
 
 pre {
@@ -132,16 +149,6 @@ pre {
   text-align: center;
   white-space: pre-wrap;
   word-break: normal;
-}
-
-#separator {
-  display: flex;
-  align-items: center;
-  margin: 0 5px;
-}
-
-#separator i {
-  font-size: 3px;
 }
 
 /**
@@ -185,9 +192,9 @@ pre {
 }
 
 .menu a {
-  margin: 0 10px;
-  font-size: 15px;
-  letter-spacing: 2px;
+  margin: 0 0.7142857143em;
+  font-size: 1.0714285714em;
+  letter-spacing: 0.1428571429em;
   text-transform: uppercase;
   opacity: 0.8;
   transition: opacity 0.2s ease-in-out;
@@ -207,8 +214,8 @@ pre {
 }
 
 #header #contact {
-  padding: 10px;
-  border: 2px solid #FFF;
+  padding: 0.7142857143em;
+  border: 0.1428571429em solid #FFF;
   transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
@@ -219,7 +226,7 @@ pre {
 
 /*-- Specifically targets the contact button in the footer menu ---*/
 #footer .menu {
-  margin: 20px 0;
+  margin: 1.4285714286em 0;
 }
 
 @media only screen and (max-width: 767px) {
@@ -230,12 +237,12 @@ pre {
 
 @media only screen and (max-width: 767px) {
   #footer .menu a {
-    margin: 5px 0;
+    margin: 0.3571428571em 0;
   }
 }
 
 #footer .menu {
-  margin: 20px 0;
+  margin: 1.4285714286em 0;
 }
 
 /*--- Mobile Menu ---*/
@@ -257,7 +264,7 @@ pre {
 #mobile-menu .close-container {
   display: flex;
   justify-content: flex-end;
-  padding: 44px 35px 15px 20px;
+  padding: 3.1428571429em 2.5em 1.0714285714em 1.4285714286em;
 }
 
 #mobile-menu .close-container i {
@@ -269,8 +276,8 @@ pre {
 }
 
 #mobile-menu .menu a {
-  margin: 10px 0;
-  font-size: 30px;
+  margin: 0.7142857143em 0;
+  font-size: 3.75em;
 }
 
 #mobile-menu hr {
@@ -286,39 +293,30 @@ pre {
  * Sidebar CSS
  */
 .aside {
-  padding: 6em 4em;
-}
-
-@media only screen and (max-width: 767px) {
-  .aside {
-    padding: 40px;
-  }
+  padding: 4.2857142857em 2.8571428571em;
 }
 
 @media only screen and (max-width: 767px) {
   .aside h2 {
-    font-size: 30px;
-    margin-bottom: 30px;
+    font-size: 3.5em;
   }
 }
 
 .aside h1,
 .aside h2 {
-  margin-bottom: 40px;
+  margin-bottom: 1.0714285714em;
   font-family: "Lato", sans-serif;
 }
 
 .aside p {
   opacity: 0.7;
   line-height: 1.5;
-  max-width: 1100px;
-  font-size: 18.5px;
+  max-width: 61.1111111111em;
 }
 
 @media only screen and (max-width: 767px) {
   .aside p {
-    font-size: 16.5px;
-    line-height: 1.5;
+    font-size: 2em;
   }
 }
 
@@ -458,7 +456,7 @@ html.swipebox-html {
 }
 
 #instagram-feed {
-  max-width: 1200px;
+  max-width: 85.7142857143em;
 }
 
 #instagram-feed a {
@@ -467,12 +465,12 @@ html.swipebox-html {
 }
 
 #instagram-feed .instagram-image {
-  padding: 5px;
+  padding: 0.3571428571em;
 }
 
 @media only screen and (max-width: 767px) {
   #instagram-feed .instagram-image {
-    padding: 5px 0;
+    padding: 0.7142857143em 0;
   }
 }
 
@@ -482,13 +480,7 @@ html.swipebox-html {
 }
 
 .instagram-about {
-  margin-top: 40px;
-}
-
-@media only screen and (max-width: 767px) {
-  .instagram-about {
-    margin-top: 30px;
-  }
+  margin-top: 2.8571428571em;
 }
 
 /**

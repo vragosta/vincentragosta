@@ -30,9 +30,9 @@
 
 	& a {
 		& {
-			margin: 0 10px;
-			font-size: 15px;
-			letter-spacing: 2px;
+			margin: 0 em( 10px );
+			font-size: em( 15px );
+			letter-spacing: em( 2px );
 			text-transform: uppercase;
 			@include fade( 0.8, $opacity_transition : opacity 0.2s ease-in-out );
 		}
@@ -52,8 +52,8 @@
 	/*-- Specifically targets the contact button in the header menu ---*/
 	& #contact {
 		& {
-			padding: 10px;
-			border: 2px solid $white;
+			padding: em( 10px );
+			border: em( 2px ) solid $white;
 			transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 		}
 
@@ -68,7 +68,7 @@
 /*-- Specifically targets the contact button in the footer menu ---*/
 #footer .menu {
 	& {
-		margin: 20px 0;
+		margin: em( 20px ) 0;
 
 		@media only screen and #{$break-mobile-max} {
 			flex-direction: column;
@@ -77,13 +77,13 @@
 
 	& a {
 		@media only screen and #{$break-mobile-max} {
-			margin: 5px 0;
+			margin: em( 5px ) 0;
 		}
 	}
 }
 
 #footer .menu {
-	margin: 20px 0;
+	margin: em( 20px ) 0;
 }
 
 /*--- Mobile Menu ---*/
@@ -103,7 +103,7 @@
 	& .close-container {
 		& {
 			@include flex( $justify-content: flex-end );
-			padding: 44px 35px 15px 20px;
+			padding: em( 44px ) em( 35px ) em( 15px ) em( 20px );
 		}
 
 		& i {
@@ -118,8 +118,8 @@
 		}
 
 		& a {
-			margin: 10px 0;
-			font-size: 30px;
+			margin: em( 10px ) 0;
+			font-size: em( 30px, 8px );
 		}
 	}
 

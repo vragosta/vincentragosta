@@ -5,24 +5,18 @@
 
 .aside {
 	& {
-		// padding: 60px 40px;
 		padding: em( 60px ) em( 40px );
-
-		@media only screen and #{$break-mobile-max} {
-			padding: 40px;
-		}
 	}
 
 	& h2 {
 		@media only screen and #{$break-mobile-max} {
-			font-size: 30px;
-			margin-bottom: 30px;
+			font-size: em( 35px, 10px );
 		}
 	}
 
 	& h1,
 	& h2 {
-		margin-bottom: 40px;
+		margin-bottom: em( 15px );
 		font-family: $stack-lato;
 	}
 
@@ -30,12 +24,10 @@
 		@extend %full-width;
 		@include fade( 0.7 );
 		line-height: 1.5;
-		max-width: 1100px;
-		font-size: 18.5px;
+		max-width: em( 1100px, 18px );
 
 		@media only screen and #{$break-mobile-max} {
-			font-size: 16.5px;
-			line-height: 1.5;
+			font-size: em( 16px, 8px );
 		}
 	}
 

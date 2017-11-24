@@ -9,7 +9,17 @@ html, body {
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
-	font-size: 10px;
+
+	/*--- Sets base font-size for em usage. ---*/
+	font-size: $base__font-size;
+
+	@media only screen and #{$break-tablet-min} and #{$break-tablet-max} {
+		font-size: 12px;
+	}
+
+	@media only screen and #{$break-mobile-max} {
+		font-size: 8px;
+	}
 }
 
 body {
@@ -31,12 +41,15 @@ span {
 }
 
 h2 {
-	font-size: 35px;
-	// font-size: em( 35px );
+	font-size: em( 35px );
 }
 
 h3 {
-	font-size: 20px;
+	font-size: em( 20px );
+}
+
+p {
+	font-size: em( 18px );
 }
 
 a {
@@ -55,7 +68,7 @@ a {
 hr {
 	@extend %full-width;
 	border-width: 0;
-	height: 1px;
+	height: em( 1px );
 }
 
 pre {
@@ -66,13 +79,13 @@ pre {
 	word-break: normal;
 }
 
-#separator {
-	& {
-		@include flex( center );
-		margin: 0 5px;
-	}
-
-	& i {
-		font-size: 3px;
-	}
-}
+// #separator {
+// 	& {
+// 		@include flex( center );
+// 		margin: 0 em( 5px );
+// 	}
+//
+// 	& i {
+// 		font-size: em( 3px );
+// 	}
+// }
