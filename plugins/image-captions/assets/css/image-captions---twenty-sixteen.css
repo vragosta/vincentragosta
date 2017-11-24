@@ -364,7 +364,7 @@
  */
 /*--- News & Updates Widget ---*/
 #news-and-updates {
-  max-width: 1200px;
+  max-width: 120em;
 }
 
 #news-and-updates.marginally-center {
@@ -373,31 +373,20 @@
 }
 
 #news-and-updates > div:last-child {
-  padding-top: 45px;
+  padding-top: 4.5em;
 }
 
 #news-and-updates .featured-image .image {
-  top: 10px;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
+  top: 0.7142857143em;
+  bottom: 0.7142857143em;
+  left: 0.7142857143em;
+  right: 0.7142857143em;
 }
 
 @media only screen and (max-width: 767px) {
   #news-and-updates > div:last-child {
-    padding-top: 30px;
+    padding-top: 3em;
   }
 }
 
 /*--- Featured Post Widget ---*/
-#featured-page a {
-  margin-top: 20px;
-  padding: 15px 30px;
-  font-size: 1.0714285714em;
-}
-
-@media only screen and (max-width: 767px) {
-  #featured-page a {
-    font-size: 1.0714285714em;
-  }
-}
