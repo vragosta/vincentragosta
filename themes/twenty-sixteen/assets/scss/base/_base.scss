@@ -68,7 +68,7 @@ a {
 hr {
 	@extend %full-width;
 	border-width: 0;
-	height: em( 1px );
+	height: em( 1px, 10px );
 }
 
 pre {
@@ -78,14 +78,3 @@ pre {
 	white-space: pre-wrap;
 	word-break: normal;
 }
-
-// #separator {
-// 	& {
-// 		@include flex( center );
-// 		margin: 0 em( 5px );
-// 	}
-//
-// 	& i {
-// 		font-size: em( 3px );
-// 	}
-// }

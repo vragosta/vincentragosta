@@ -32,28 +32,20 @@
 	}
 
 	& p + p {
-		margin-top: 40px;
+		margin-top: em( 40px, 18px );
 		@include flex( $justify-content: center );
-
-		@media only screen and #{$break-mobile-max} {
-			margin-top: 30px;
-		}
 	}
 
 	& a {
 		& {
-			border: 2px solid $dove-gray;
+			border: em( 2px, 18px ) solid $dove-gray;
 			background: transparent;
 			color: $dove-gray;
-			font-size: 15px;
-			padding: 15px 30px;
+			font-size: em( 15px, 18px );
+			padding: em( 15px, 18px ) em( 30px, 18px );
 			text-transform: uppercase;
 			transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 			text-align: center;
-
-			@media only screen and #{$break-mobile-max} {
-				font-size: 15px;
-			}
 		}
 
 		&:hover {
