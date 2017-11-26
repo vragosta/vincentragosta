@@ -30,14 +30,12 @@
 		}
 
 		& a {
-			font-size: em( 14px );
-			padding: em( 5px, 12px ) em( 10px, 12px );
-			text-shadow: $cod-gray 0 0 em( 4px, 12px );
+			text-shadow: $cod-gray 0 0 em( 4px );
 			background: transparent;
 			border-color: $white;
 			color: $white;
-			margin-top: em( 10px, 12px );
 			transition: background 0.5s ease-in-out, color 0.5s ease-in-out, text-shadow 0.5s ease-in-out;
+			text-transform: uppercase;
 		}
 
 		& a:hover {
@@ -54,9 +52,30 @@
 	}
 
 	&.static .overlay a {
-		font-size: em( 24px );
+		font-size: em( 20px );
 		border: em( 2px, 20px ) solid $white;
 		padding: em( 10px, 20px ) em( 30px, 20px );
-		text-transform: uppercase;
+		margin-top: em( 10px, 20px );
+
+		@media only screen and #{$break-mobile-max} {
+			font-size: em( 26px );
+			padding: em( 10px, 26px ) em( 30px, 26px );
+		}
+	}
+
+	&:not( .static ) .overlay a {
+		font-size: em( 12px );
+		padding: em( 5px, 12px ) em( 10px, 12px );
+		margin-top: em( 10px, 12px );
+
+		@media only screen and #{$break-mobile-max} {
+			font-size: em( 20px );
+			padding: em( 5px, 20px ) em( 10px, 20px );
+			margin-top: em( 10px, 20px );
+		}
+
+		@media only screen and #{$break-xs-max} {
+			margin: 0;
+		}
 	}
 }

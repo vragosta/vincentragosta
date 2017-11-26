@@ -136,13 +136,15 @@
 @media only screen and (max-width: 767px) and (min-width: 480px) {
   .featured-image:not(.static) .header {
     font-size: 3.25em;
+    max-width: 8.6538461538em;
     margin: 0;
   }
 }
 
 @media only screen and (max-width: 479px) {
   .featured-image:not(.static) .header {
-    font-size: 2.625em;
+    font-size: 2.875em;
+    max-width: 9.7826086957em;
   }
 }
 
@@ -197,7 +199,7 @@
 
 @media only screen and (max-width: 767px) {
   .featured-image.image-min-height {
-    min-height: 62.5em;
+    min-height: 75em;
   }
 }
 
@@ -266,14 +268,12 @@
 }
 
 .featured-image .overlay a {
-  font-size: 0.875em;
-  padding: 0.4166666667em 0.8333333333em;
-  text-shadow: #080808 0 0 0.3333333333em;
+  text-shadow: #080808 0 0 0.25em;
   background: transparent;
   border-color: #FFF;
   color: #FFF;
-  margin-top: 0.8333333333em;
   transition: background 0.5s ease-in-out, color 0.5s ease-in-out, text-shadow 0.5s ease-in-out;
+  text-transform: uppercase;
 }
 
 .featured-image .overlay a:hover {
@@ -289,10 +289,37 @@
 }
 
 .featured-image.static .overlay a {
-  font-size: 1.5em;
+  font-size: 1.25em;
   border: 0.1em solid #FFF;
   padding: 0.5em 1.5em;
-  text-transform: uppercase;
+  margin-top: 0.5em;
+}
+
+@media only screen and (max-width: 767px) {
+  .featured-image.static .overlay a {
+    font-size: 1.625em;
+    padding: 0.3846153846em 1.1538461538em;
+  }
+}
+
+.featured-image:not(.static) .overlay a {
+  font-size: 0.75em;
+  padding: 0.4166666667em 0.8333333333em;
+  margin-top: 0.8333333333em;
+}
+
+@media only screen and (max-width: 767px) {
+  .featured-image:not(.static) .overlay a {
+    font-size: 1.25em;
+    padding: 0.25em 0.5em;
+    margin-top: 0.5em;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .featured-image:not(.static) .overlay a {
+    margin: 0;
+  }
 }
 
 /**

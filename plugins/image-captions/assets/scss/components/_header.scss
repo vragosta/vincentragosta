@@ -41,11 +41,13 @@
 
 			@media only screen and #{$break-mobile-max} and #{$break-mobile-min} {
 				font-size: em( 52px );
+				max-width: em( 450px, 52px );
 				margin: 0;
 			}
 
 			@media only screen and #{$break-xs-max} {
-				font-size: em( 42px );
+				font-size: em( 46px );
+				max-width: em( 450px, 46px );
 			}
 		}
 
