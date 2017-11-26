@@ -12,16 +12,16 @@
 
 	/*--- Default sub-header styles target non static elements ---*/
 	& .sub-header {
-		color: $white;
-		font-style: italic;
-		letter-spacing: 1px;
-		margin: 0;
-		font-weight: $font-weight-light;
-		text-shadow: $cod-gray 0 0 4px;
-		text-align: center;
-		font-family: $stack-lato;
 		font-size: em( 25px );
 		padding: 0 em( 20px, 25px );
+		letter-spacing: em( 1px, 25px );
+		font-family: $stack-lato;
+		font-weight: $font-weight-light;
+		font-style: italic;
+		text-align: center;
+		text-shadow: $cod-gray 0 0 em( 4px, 25px );
+		color: $white;
+		margin: 0;
 
 		/*--- CSS transitions to toggle sub-header visibility ---*/
 		@include fade( 1, visible );
@@ -30,8 +30,11 @@
 
 	&.static .sub-header {
 		& {
+			max-width: em( 1000px, 25px );
+
 			@media only screen and #{$break-mobile-max} {
-				font-size: em( 25px, 12px );
+				font-size: em( 36px );
+				max-width: em( 625px, 36px );
 			}
 		}
 
@@ -40,21 +43,17 @@
 			@include fade( 0, hidden );
 
 			/*--- Margin-top for unloaded effect ---*/
-			margin: 20px 0 0 0;
+			margin: em( 20px, 25px ) 0 0 0;
 		}
 	}
 
 	/*--- Styles for the non-static sub-header ---*/
 	&:not( .static ) .sub-header {
-		font-size: em( 15px );
+		font-size: em( 16px );
 		margin-bottom: 5px;
 
-		@media only screen and #{$break-xs-max} {
-			font-size: em( 15px, 8px );
-		}
-
-		@media only screen and #{$break-tablet-min} and #{$break-tablet-max} {
-			font-size: em( 15px, 16px );
+		@media only screen and #{$break-mobile-max} {
+			font-size: em( 30px );
 		}
 	}
 }

@@ -29,8 +29,12 @@
 	&.image-min-height {
 		min-height: em( 600px );
 
+		@media only screen and #{$break-tablet-min} and #{$break-tablet-max} {
+			min-height: em( 800px );
+		}
+
 		@media only screen and #{$break-mobile-max} {
-			min-height: em( 600px, 8px );
+			min-height: em( 1000px );
 		}
 	}
 
