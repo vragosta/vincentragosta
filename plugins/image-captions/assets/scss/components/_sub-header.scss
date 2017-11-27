@@ -13,11 +13,11 @@
 	/*--- Default sub-header styles target non static elements ---*/
 	& .sub-header {
 		font-size: em( 25px );
-		padding: 0 em( 20px, 25px );
-		letter-spacing: em( 1px, 25px );
 		font-family: $stack-lato;
 		font-weight: $font-weight-light;
 		font-style: italic;
+		letter-spacing: em( 1px, 25px );
+		padding: 0 em( 20px, 25px );
 		text-align: center;
 		text-shadow: $cod-gray 0 0 em( 4px, 25px );
 		color: $white;

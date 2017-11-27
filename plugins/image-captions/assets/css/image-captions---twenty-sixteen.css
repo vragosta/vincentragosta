@@ -340,11 +340,11 @@
 
 .featured-image .sub-header {
   font-size: 1.5625em;
-  padding: 0 0.8em;
-  letter-spacing: 0.04em;
   font-family: "Lato", "sans-serif";
   font-weight: 300;
   font-style: italic;
+  letter-spacing: 0.04em;
+  padding: 0 0.8em;
   text-align: center;
   text-shadow: #080808 0 0 0.16em;
   color: #FFF;
@@ -402,10 +402,6 @@
   float: none !important;
 }
 
-#news-and-updates > div:last-child {
-  padding-top: 4.5em;
-}
-
 #news-and-updates .featured-image .image {
   top: 0.625em;
   bottom: 0.625em;
@@ -413,10 +409,8 @@
   right: 0.625em;
 }
 
-@media only screen and (max-width: 767px) {
-  #news-and-updates > div:last-child {
-    padding-top: 3em;
-  }
+#news-and-updates > div:last-child {
+  padding-top: 2.8125em;
 }
 
 /*--- Featured Post Widget ---*/

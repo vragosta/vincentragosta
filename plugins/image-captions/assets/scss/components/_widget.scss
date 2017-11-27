@@ -15,10 +15,6 @@
 		float: none !important;
 	}
 
-	& > div:last-child {
-		padding-top: em( 45px, 10px );
-	}
-
 	& .featured-image .image {
 		top: em( 10px );
 		bottom: em( 10px );
@@ -29,10 +25,7 @@
 	& > div:last-child {
 		@extend %full-width;
 		@extend %col-flex-center;
-
-		@media only screen and #{$break-mobile-max} {
-			padding-top: em( 30px, 10px );
-		}
+		padding-top: em( 45px );
 	}
 }
 
