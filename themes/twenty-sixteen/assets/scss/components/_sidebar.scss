@@ -23,29 +23,33 @@
 	& p {
 		@extend %full-width;
 		@include fade( 0.7 );
-		line-height: 1.5;
-		max-width: em( 1100px, 18px );
+		line-height: ( 24px / 16px );
+		max-width: em( 880px );
+
+		@media only screen and #{$break-tablet-min} and #{$break-tablet-max} {
+			font-size: em( 26px );
+		}
 
 		@media only screen and #{$break-mobile-max} {
-			font-size: em( 16px, 8px );
+			font-size: em( 36px );
 		}
 	}
 
 	& p + p {
-		margin-top: em( 40px, 18px );
+		margin-top: em( 30px );
 		@include flex( $justify-content: center );
 	}
 
 	& a {
 		& {
-			border: em( 2px, 18px ) solid $dove-gray;
+			font-size: em( 20px );
+			padding: em( 10px, 20px ) em( 30px, 20px );
+			border: em( 2px, 20px ) solid $dove-gray;
 			background: transparent;
 			color: $dove-gray;
-			font-size: em( 15px, 18px );
-			padding: em( 15px, 18px ) em( 30px, 18px );
 			text-transform: uppercase;
-			transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 			text-align: center;
+			transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 		}
 
 		&:hover {
