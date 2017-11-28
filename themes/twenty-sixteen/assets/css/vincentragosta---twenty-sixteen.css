@@ -360,20 +360,6 @@ pre {
   color: #FFF;
 }
 
-#projects .aside.archive {
-  max-width: 75em;
-  margin: 0 auto;
-}
-
-#projects .aside p {
-  max-width: 750px;
-}
-
-/*--- Specifically target the excerpt on the archive page. ---*/
-.archive .aside.excerpt {
-  background: #EDEEEF;
-}
-
 #single-project .aside.excerpt {
   max-width: 50em;
 }
@@ -670,12 +656,28 @@ html.swipebox-html {
  * Archive CSS
  */
 /*--- Archive Project ---*/
+.archive .aside.archive {
+  max-width: 75em;
+  margin: 0 auto;
+}
+
+.archive .aside.archive .featured-image .image {
+  top: 0.625em;
+  bottom: 0.625em;
+  left: 0.625em;
+  right: 0.625em;
+}
+
 .archive .aside p {
-  max-width: 850px;
+  max-width: 46.875em;
+}
+
+.archive .aside.excerpt {
+  background: #EDEEEF;
 }
 
 .archive .grid-container {
-  padding: 10px 5px 0;
+  margin: 0;
 }
 
 @media only screen and (max-width: 767px) {
@@ -684,133 +686,15 @@ html.swipebox-html {
   }
 }
 
-.archive .grid-container:last-child {
-  padding-bottom: 0;
-}
-
-#projects .featured-image .image {
-  top: 10px;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
-}
-
-/*--- Blog ---*/
-@media only screen and (max-width: 991px) {
-  #blog {
-    flex-direction: column;
-    padding: 20px;
-  }
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1499px) {
-  #blog {
-    padding: 40px 60px;
-  }
-}
-
-@media only screen and (min-width: 1500px) {
-  #blog {
-    padding: 40px 160px;
-  }
-}
-
-#blog h2,
-#blog p {
-  text-align: left;
-}
-
-@media only screen and (max-width: 991px) {
-  #blog section {
-    width: 100%;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  #blog section {
-    width: 70%;
-  }
-}
-
-#blog .post {
-  line-height: 1.5;
-  padding: 20px;
-}
-
-#blog .category a {
-  opacity: 0.7;
-  color: #333;
-  text-transform: uppercase;
-  font-size: 15px;
-}
-
-#blog .header-container .header {
-  font-family: "Lato", sans-serif;
-  font-weight: 500;
-}
-
-#blog .sub-header {
-  display: flex;
-  opacity: 0.7;
-  font-size: 18px;
-}
-
-#blog .post-author,
-#blog .post-date {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-}
-
-#blog figure {
-  position: relative;
-  padding-bottom: 40%;
-  margin-top: 5px;
-}
-
-#blog .image {
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-#blog .excerpt {
-  margin-top: 5px;
-  font-size: 22px;
-  font-family: "Lato", sans-serif;
-}
-
-#blog .content {
-  opacity: 0.7;
-  font-size: 18px;
-}
-
-#blog .link-container {
-  margin-top: 5px;
-}
-
-#blog .link {
-  color: #333;
-  font-size: 18px;
-  font-weight: 300;
-}
-
-#blog #pagination-archive {
-  margin: 40px 0;
-}
-
 /*--- Archive Pagination ---*/
 #pagination-archive {
-  margin: 0 0 60px;
+  margin: 0 0 3.75em;
 }
 
 .page-numbers {
   border: none;
-  padding: 0 10px;
-  font-size: 20px;
+  font-size: 1.25em;
+  padding: 0 0.5em;
   color: #686868;
   font-family: "Lato", sans-serif;
   transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;

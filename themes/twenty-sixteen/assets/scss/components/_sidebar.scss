@@ -73,22 +73,6 @@
 	}
 }
 
-#projects .aside {
-	&.archive {
-		max-width: em( 1200px );
-		margin: 0 auto;
-	}
-
-	& p {
-		max-width: 750px;
-	}
-}
-
-/*--- Specifically target the excerpt on the archive page. ---*/
-.archive .aside.excerpt {
-	background: $porcelain;
-}
-
 #single-project .aside.excerpt {
 	max-width: em( 800px );
 }
