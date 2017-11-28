@@ -348,13 +348,20 @@ pre {
   transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
+@media only screen and (max-width: 767px) {
+  .aside a {
+    font-size: 1.625em;
+    padding: 0.3846153846em 1.1538461538em;
+  }
+}
+
 .aside a:hover {
   background: #686868;
   color: #FFF;
 }
 
 #projects .aside.archive {
-  max-width: 1200px;
+  max-width: 75em;
   margin: 0 auto;
 }
 
@@ -368,7 +375,7 @@ pre {
 }
 
 #single-project .aside.excerpt {
-  max-width: 800px;
+  max-width: 50em;
 }
 
 /*--- Accomodating for single template design ---*/
@@ -377,7 +384,7 @@ pre {
 }
 
 .single .aside.content {
-  padding: 60px 0;
+  padding: 3.75em 0;
 }
 
 @media only screen and (max-width: 767px) {
@@ -399,16 +406,16 @@ pre {
 }
 
 .cta.d h2 {
-  max-width: 800px;
+  max-width: 50em;
 }
 
 .cta.b p,
 .cta.about.a p {
-  max-width: 800px;
+  max-width: 50em;
 }
 
 .cta.about.d p {
-  max-width: 600px;
+  max-width: 37.5em;
 }
 
 .cta.b p:first-child {
@@ -416,18 +423,18 @@ pre {
 }
 
 .cta.d:not(.about) p {
-  max-width: 300px;
+  max-width: 18.75em;
   line-height: 1.9;
 }
 
 .cta.d h4 {
   text-transform: uppercase;
   font-weight: 700;
-  margin: 30px 0 15px 0;
+  margin: 1.875em 0 0.9375em 0;
 }
 
 .pre-footer {
-  padding: 0 12px;
+  padding: 0 0.75em;
 }
 
 @media only screen and (max-width: 991px) {
@@ -499,7 +506,7 @@ html.swipebox-html {
 #notification-widget p {
   opacity: 1;
   color: #FFF;
-  font-size: 28px;
+  font-size: 1.75em;
 }
 
 @media only screen and (max-width: 991px) {
@@ -509,19 +516,19 @@ html.swipebox-html {
 }
 
 #notification-widget a {
-  border: 2px solid #FFF;
+  border: 0.125em solid #FFF;
   color: #FFF;
-}
-
-@media only screen and (max-width: 991px) {
-  #notification-widget a {
-    margin: 20px 0 0 0;
-  }
 }
 
 @media only screen and (min-width: 992px) {
   #notification-widget a {
-    margin: 0 0 0 20px;
+    margin: 0 0 0 1.25em;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  #notification-widget a {
+    margin: 1.25em 0 0 0;
   }
 }
 

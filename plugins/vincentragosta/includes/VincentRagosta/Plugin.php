@@ -68,6 +68,7 @@ class Plugin {
 		$contact_api = new Contact();
 		$contact_api->register();
 
+		# Create WidgetSupport class.
 		remove_filter( 'widget_text_content', 'wpautop' );
 	}
 
