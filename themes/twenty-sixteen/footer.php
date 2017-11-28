@@ -21,15 +21,11 @@ namespace VincentRagosta;
 
 		<?php get_partial( 'template-parts/content-menu' ); ?>
 
-		<section>
+		<div class="copyright">
+			<p>&copy <?php echo date( 'Y' ); ?> Vincent Ragosta. All rights reserved. Brooklyn Web Design and Wordpress Expert</p>
+		</div>
 
-			<div id="copyright">
-				<p>&copy <?php echo date( 'Y' ); ?> Vincent Ragosta. All rights reserved. Brooklyn Web Design and Wordpress Expert</p>
-			</div>
-
-			<?php get_partial( 'template-parts/aside-social' ); ?>
-
-		</section>
+		<?php get_partial( 'template-parts/aside-social' ); ?>
 
 	</footer>
 

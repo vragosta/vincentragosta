@@ -1,0 +1,17 @@
+/**
+ * Vincent Ragosta - Twenty Sixteen
+ * Social CSS
+ */
+
+/*--- Social ( Footer ) ---*/
+.social {
+	& {
+		@extend %row-flex-center;
+		padding: em( 20px );
+	}
+
+	& a {
+		font-size: em( 25px );
+		margin: 0 em( 10px, 25px );
+	}
+}

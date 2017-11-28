@@ -62,24 +62,6 @@
 			color: #686868;
 		}
 	}
-
-}
-
-/*-- Specifically targets the contact button in the footer menu ---*/
-#footer .menu {
-	& {
-		margin: em( 20px ) 0;
-
-		@media only screen and #{$break-mobile-max} {
-			flex-direction: column;
-		}
-	}
-
-	& a {
-		@media only screen and #{$break-mobile-max} {
-			margin: em( 5px ) 0;
-		}
-	}
 }
 
 #footer .menu {

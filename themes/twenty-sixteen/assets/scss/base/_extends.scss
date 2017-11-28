@@ -35,10 +35,6 @@
 	@include flex( center, space-between );
 }
 
-%padding-left-right {
-	padding: 0 10px;
-}
-
 /*--- Normalizes image by centering and covering the parent container ---*/
 %normalize-image {
 	background-position: center;
