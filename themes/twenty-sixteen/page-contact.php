@@ -17,7 +17,7 @@ $_personal = get_user_meta( VINCENTRAGOSTA_SITE_ADMIN, '_personal', true );
 $_github = get_user_meta( VINCENTRAGOSTA_SITE_ADMIN, '_github', true ); ?>
 
 <main id="contact-page" class="container">
-	<div class="col-xs-12 col-sm-6">
+	<div class="col-xs-12 col-sm-6 content">
 		<?php echo $post->post_content; ?>
 		<?php get_partial( 'template-parts/aside-social' ); ?>
 	</div>

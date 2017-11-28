@@ -809,49 +809,26 @@ html.swipebox-html {
  * Contact CSS
  */
 #contact-page > div {
-  padding: 60px 40px;
+  padding: 3.75em 2.5em;
 }
 
-@media only screen and (max-width: 767px) {
-  #contact-page > div {
-    padding: 20px;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  #contact-page > div:first-child {
-    padding-top: 60px;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  #contact-page > div:last-child {
-    padding-bottom: 60px;
-  }
-}
-
-#contact-page h2,
-#contact-page h3 {
+#contact-page h2 {
   font-family: "Lato", sans-serif;
-  margin-bottom: 10px;
+  margin-bottom: 0.625em;
   text-align: left;
 }
 
 @media only screen and (max-width: 767px) {
-  #contact-page h2,
-  #contact-page h3 {
+  #contact-page h2 {
     text-align: center;
+    font-size: 3em;
   }
-}
-
-#contact-page h3 {
-  text-transform: uppercase;
 }
 
 #contact-page p {
   opacity: 0.7;
   line-height: 1.5;
-  font-size: 18.5px;
+  font-size: 1.15625em;
   margin: 0 auto;
   text-align: left;
 }
@@ -859,10 +836,11 @@ html.swipebox-html {
 @media only screen and (max-width: 767px) {
   #contact-page p {
     text-align: center;
+    font-size: 2.25em;
   }
 }
 
-#contact-page h2 + p {
+#contact-page .content > div:first-child h2 + p {
   margin-bottom: 50px;
 }
 
@@ -875,7 +853,7 @@ html.swipebox-html {
 }
 
 #contact-page .social {
-  padding: 20px 0;
+  padding: 1.25em 0;
   display: block;
 }
 
@@ -894,23 +872,35 @@ html.swipebox-html {
 }
 
 #contact-page .form p {
-  padding: 0 15px;
+  padding: 0 0.9375em;
   line-height: 1;
 }
 
 #contact-page .form .full-label {
   margin: 0;
-  font-size: 18px;
+  font-size: 1.125em;
   line-height: 1;
-  margin-bottom: 5px;
+  margin-bottom: 0.3125em;
   text-align: left;
 }
 
+@media only screen and (max-width: 767px) {
+  #contact-page .form .full-label {
+    font-size: 2em;
+  }
+}
+
 #contact-page .form .descriptive-label {
-  font-size: 14px;
-  margin-bottom: 5px;
+  font-size: 0.875em;
+  margin: 0 0 0.3125em 0.3125em;
   font-style: italic;
   text-align: left;
+}
+
+@media only screen and (max-width: 767px) {
+  #contact-page .form .descriptive-label {
+    font-size: 1.75em;
+  }
 }
 
 #contact-page .form input,
@@ -921,20 +911,25 @@ html.swipebox-html {
 
 #contact-page .form label {
   opacity: 0.7;
-  margin: 5px 0;
+  margin: 0.3125em 0;
   line-height: 1;
 }
 
+@media only screen and (max-width: 767px) {
+  #contact-page .form label {
+    font-size: 1.5em;
+  }
+}
+
 #contact-page .contact-btn {
-  border: 2px solid #686868;
+  font-family: "Lato", sans-serif;
+  padding: 0.3125em 1.875em;
+  border: 0.125em solid #686868;
   border-radius: 0;
   background: transparent;
   color: #686868;
-  font-size: 15px;
-  padding: 5px 30px;
   text-transform: uppercase;
   transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
-  font-family: "Lato", sans-serif;
 }
 
 #contact-page .contact-btn:hover {
