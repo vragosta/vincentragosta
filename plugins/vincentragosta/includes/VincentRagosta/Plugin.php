@@ -67,6 +67,8 @@ class Plugin {
 		# Add json endpoint register endpoints here.
 		$contact_api = new Contact();
 		$contact_api->register();
+
+		remove_filter( 'widget_text_content', 'wpautop' );
 	}
 
 	/**

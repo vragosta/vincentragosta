@@ -40,6 +40,11 @@
 		@include flex( $justify-content: center );
 	}
 
+	& p + a {
+		margin-top: em( 30px );
+		display: inline-block;
+	}
+
 	& a {
 		& {
 			font-size: em( 20px );

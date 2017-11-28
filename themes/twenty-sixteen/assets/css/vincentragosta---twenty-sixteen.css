@@ -332,6 +332,11 @@ pre {
   justify-content: center;
 }
 
+.aside p + a {
+  margin-top: 1.875em;
+  display: inline-block;
+}
+
 .aside a {
   font-size: 1.25em;
   padding: 0.5em 1.5em;
@@ -474,13 +479,18 @@ html.swipebox-html {
 }
 
 .instagram-about {
-  margin-top: 2.5em;
+  margin-top: 1.875em;
 }
 
 /**
  * Vincent Ragosta - Twenty Sixteen
  * Widget CSS
  */
+/*--- Core Widgets ---*/
+.textwidget {
+  text-align: center;
+}
+
 /*--- Notification Widget ---*/
 #notification-widget {
   padding: 0;
