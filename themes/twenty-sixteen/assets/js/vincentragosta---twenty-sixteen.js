@@ -5,7 +5,7 @@
         setupMenuToggle: function() {
             e(".drop-down").click(function() {
                 e(".nav-container").hide(), e("#mobile-menu").fadeIn();
-            }), e(".close-menu").click(function() {
+            }), e("#mobile-menu .fa-times").click(function() {
                 e(".nav-container").show(), e("#mobile-menu").fadeOut();
             });
         },

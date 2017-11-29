@@ -12,14 +12,8 @@ namespace VincentRagosta;
 ?>
 
 <section id="mobile-menu">
-	<div class="close-container">
-		<button type="button" class="close-menu">
-			<i class="fa fa-times fa-2x"></i>
-		</button>
-	</div>
-	<div>
-		<?php get_partial( 'template-parts/content-menu' ); ?>
-	</div>
+	<i class="fa fa-times fa-2x"></i>
+	<?php get_partial( 'template-parts/content-menu' ); ?>
 	<hr />
 	<?php get_partial( 'template-parts/aside-social' ); ?>
 </section>

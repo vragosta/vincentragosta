@@ -82,14 +82,17 @@
 		z-index: 10;
 	}
 
-	& .close-container {
-		& {
-			@include flex( $justify-content: flex-end );
-			padding: em( 44px ) em( 35px ) em( 15px ) em( 20px );
-		}
+	& .fa-times {
+		color: $white;
+		position: absolute;
+		top: em( 28px );
+		right: em( 28px );
+		cursor: pointer;
 
-		& i {
-			color: $white;
+		@media only screen and #{$break-mobile-max} {
+			font-size: em( 50px );
+			top: em( 80px, 50px );
+			right: em( 80px, 50px );
 		}
 	}
 
@@ -97,11 +100,16 @@
 	& .menu {
 		& {
 			flex-direction: column;
+			padding-top: em( 120px );
+
+			@media only screen and #{$break-mobile-max} {
+				padding-top: em( 200px );
+			}
 		}
 
 		& a {
-			margin: em( 10px ) 0;
-			font-size: em( 30px, 8px );
+			font-size: em( 50px );
+			margin: em( 10px, 50px ) 0;
 		}
 	}
 
@@ -111,6 +119,7 @@
 
 	& .social {
 		padding: 0;
+		font-size: em( 25px );
 	}
 
 }
