@@ -136,7 +136,8 @@ a, a:hover, a:focus, a:active, a:active:focus {
 
 hr {
   border-width: 0;
-  height: 0.1em;
+  /*--- We do not need em here since we want the height and width to remain 1px. ---*/
+  height: 1px;
 }
 
 pre {
@@ -528,6 +529,11 @@ html.swipebox-html {
   position: relative;
 }
 
+/*--- Prevent button from appearing in the header on the front page ---*/
+.home #header .featured-image .ovrerlay a {
+  display: none;
+}
+
 /*--- Navigation ---*/
 .nav-container {
   position: absolute;
@@ -552,6 +558,7 @@ html.swipebox-html {
   background-image: url("../images/white-logo.png");
   background-size: contain;
   background-position: center;
+  /*--- We do not need em here since we want the height and width to remain 75px. ---*/
   height: 75px;
   min-width: 75px;
   /*--- CSS transitions to toggle header visibility ---*/
@@ -568,11 +575,11 @@ html.swipebox-html {
 /*--- Hamburger button styles ---*/
 .drop-down {
   font-size: 3.75em;
+  top: 0.6666666667em;
+  right: 0.75em;
   color: #FFF;
   cursor: pointer;
   position: absolute;
-  top: 0.625em;
-  right: 0.9375em;
   /*--- CSS transitions to toggle drop-down visibility ---*/
   opacity: 0;
   visibility: hidden;
@@ -589,14 +596,9 @@ html.swipebox-html {
 @media only screen and (max-width: 767px) {
   .drop-down {
     font-size: 5em;
-    top: 0.9375em;
+    top: 0.875em;
     right: 0.9375em;
   }
-}
-
-/*--- Prevent button from appearing in the header on the front page ---*/
-.home #header .featured-image .overlay a {
-  display: none;
 }
 
 /**
@@ -918,12 +920,12 @@ html.swipebox-html {
  * Resume CSS
  */
 #resume section {
-  padding: 60px 40px;
+  padding: 3.75em 2.5em;
 }
 
 @media only screen and (max-width: 767px) {
   #resume section:first-child {
-    padding: 60px 40px 0;
+    padding-bottom: 0;
   }
 }
 
@@ -939,21 +941,41 @@ html.swipebox-html {
   font-weight: 300;
 }
 
+@media only screen and (max-width: 767px) {
+  #resume h2 {
+    font-size: 3.75em;
+  }
+}
+
 #resume h3 {
   text-transform: uppercase;
-  margin-bottom: 25px;
+  margin-bottom: 1.5625em;
+}
+
+@media only screen and (max-width: 767px) {
+  #resume h3 {
+    font-size: 2.25em;
+    margin-bottom: 0.6944444444em;
+  }
 }
 
 #resume h4 {
-  margin-bottom: 10px;
+  margin-bottom: 0.625em;
   text-transform: uppercase;
 }
 
 #resume li {
-  margin: 5px 0;
+  font-size: 1.125em;
+  margin: 0.2777777778em 0;
   font-family: "Lato", sans-serif;
-  font-size: 18px;
   font-weight: 300;
+}
+
+@media only screen and (max-width: 767px) {
+  #resume li {
+    font-size: 2em;
+    margin: 0.15625em;
+  }
 }
 
 #resume a {
@@ -966,18 +988,29 @@ html.swipebox-html {
 }
 
 #resume p {
+  font-size: 0.9375em;
   line-height: 2;
   font-weight: 300;
-  font-size: 15px;
+}
+
+@media only screen and (max-width: 767px) {
+  #resume p {
+    font-size: 1.75em;
+  }
 }
 
 #resume p span {
   font-weight: 500;
 }
 
+#resume hr {
+  color: rgba(26, 26, 26, 0.15);
+  background-color: rgba(26, 26, 26, 0.15);
+}
+
 @media only screen and (max-width: 767px) {
   #resume .day-to-day {
-    margin-bottom: 25px;
+    margin-bottom: 1.5625em;
   }
 }
 
@@ -992,5 +1025,5 @@ html.swipebox-html {
 #resume .work-item:not(:last-child),
 #resume .education-item:not(:last-child),
 #resume .award-item:not(:last-child) {
-  margin-bottom: 100px;
+  margin-bottom: 6.25em;
 }

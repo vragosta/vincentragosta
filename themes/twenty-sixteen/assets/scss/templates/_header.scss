@@ -7,6 +7,11 @@
 	position: relative;
 }
 
+/*--- Prevent button from appearing in the header on the front page ---*/
+.home #header .featured-image .ovrerlay a {
+	display: none;
+}
+
 /*--- Navigation ---*/
 .nav-container {
 	@extend %full-width;
@@ -28,6 +33,8 @@
 		background-image: url( '../images/white-logo.png' );
 		background-size: contain;
 		background-position: center;
+
+		/*--- We do not need em here since we want the height and width to remain 75px. ---*/
 		height: 75px;
 		min-width: 75px;
 
@@ -44,11 +51,11 @@
 /*--- Hamburger button styles ---*/
 .drop-down {
 	font-size: em( 60px );
+	top: em( 40px, 60px );
+	right: em( 45px, 60px );
 	color: $white;
 	cursor: pointer;
 	position: absolute;
-	top: em( 10px );
-	right: em( 15px );
 
 	/*--- CSS transitions to toggle drop-down visibility ---*/
 	@include fade( 0, hidden, visibility 2s ease-in-out, opacity 0.5s ease-in-out );
@@ -59,12 +66,7 @@
 
 	@media only screen and #{$break-mobile-max} {
 		font-size: em( 80px );
-		top: em( 75px, 80px );
+		top: em( 70px, 80px );
 		right: em( 75px, 80px );
 	}
-}
-
-/*--- Prevent button from appearing in the header on the front page ---*/
-.home #header .featured-image .overlay a {
-	display: none;
 }

@@ -68,7 +68,8 @@ a {
 hr {
 	@extend %full-width;
 	border-width: 0;
-	height: em( 1px, 10px );
+	/*--- We do not need em here since we want the height and width to remain 1px. ---*/
+	height: 1px;
 }
 
 pre {

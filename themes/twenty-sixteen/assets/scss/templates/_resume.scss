@@ -5,12 +5,13 @@
 
 #resume {
 	& section {
-		padding: 60px 40px;
+		padding: em( 60px) em( 40px );
 	}
 
 	& section:first-child {
 		@media only screen and #{$break-mobile-max} {
-			padding: 60px 40px 0;
+			// padding: em( 60px) em( 40px ) 0;
+			padding-bottom: 0;
 		}
 	}
 
@@ -24,23 +25,37 @@
 
 	& h2 {
 		font-weight: $font-weight-light;
+
+		@media only screen and #{$break-mobile-max} {
+			font-size: em( 60px );
+		}
 	}
 
 	& h3 {
 		text-transform: uppercase;
-		margin-bottom: 25px;
+		margin-bottom: em( 25px );
+
+		@media only screen and #{$break-mobile-max} {
+			font-size: em( 36px );
+			margin-bottom: em( 25px, 36px );
+		}
 	}
 
 	& h4 {
-		margin-bottom: 10px;
+		margin-bottom: em( 10px );
 		text-transform: uppercase;
 	}
 
 	& li {
-		margin: 5px 0;
+		font-size: em( 18px );
+		margin: em( 5px, 18px ) 0;
 		font-family: $stack-lato;
-		font-size: 18px;
 		font-weight: $font-weight-light;
+
+		@media only screen and #{$break-mobile-max} {
+			font-size: em( 32px );
+			margin: em( 5px, 32px );
+		}
 	}
 
 	& a {
@@ -53,18 +68,27 @@
 	}
 
 	& p {
-		line-height: 2;
+		font-size: em( 15px );
+		line-height: ( 32 / 16 );
 		font-weight: $font-weight-light;
-		font-size: 15px;
+
+		@media only screen and #{$break-mobile-max} {
+			font-size: em( 28px );
+		}
 	}
 
 	& p span {
 		font-weight: $font-weight-regular;
 	}
 
+	& hr {
+		color: rgba( 26, 26, 26, .15 );
+		background-color: rgba( 26, 26, 26, .15 );
+	}
+
 	& .day-to-day {
 		@media only screen and #{$break-mobile-max} {
-			margin-bottom: 25px;
+			margin-bottom: em( 25px );
 		}
 	}
 
@@ -79,6 +103,6 @@
 	& .work-item:not( :last-child ),
 	& .education-item:not( :last-child ),
 	& .award-item:not( :last-child ) {
-		margin-bottom: 100px;
+		margin-bottom: em( 100px );
 	}
 }
