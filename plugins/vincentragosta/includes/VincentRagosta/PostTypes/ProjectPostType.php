@@ -14,19 +14,19 @@ class ProjectPostType extends BasePostType {
 
 	public function get_labels() {
 		return array(
-			'name'               => __( 'Projects', 'listen' ),
-			'singular_name'      => __( 'Project', 'listen' ),
-			'menu_name'          => __( 'Projects', 'listen' ),
-			'parent_item_colon'  => __( 'Parent Project:', 'listen' ),
-			'all_items'          => __( 'All Projects', 'listen' ),
-			'view_item'          => __( 'View Project', 'listen' ),
-			'add_new_item'       => __( 'Add New Project', 'listen' ),
-			'add_new'            => __( 'Add New', 'listen' ),
-			'edit_item'          => __( 'Edit Project', 'listen' ),
-			'update_item'        => __( 'Update Project', 'listen' ),
-			'search_items'       => __( 'Search Projects', 'listen' ),
-			'not_found'          => __( 'Not found', 'listen' ),
-			'not_found_in_trash' => __( 'Not found in Trash', 'listen' )
+			'name'               => __( 'Projects', 'vincentragosta_com' ),
+			'singular_name'      => __( 'Project', 'vincentragosta_com' ),
+			'menu_name'          => __( 'Projects', 'vincentragosta_com' ),
+			'parent_item_colon'  => __( 'Parent Project:', 'vincentragosta_com' ),
+			'all_items'          => __( 'All Projects', 'vincentragosta_com' ),
+			'view_item'          => __( 'View Project', 'vincentragosta_com' ),
+			'add_new_item'       => __( 'Add New Project', 'vincentragosta_com' ),
+			'add_new'            => __( 'Add New', 'vincentragosta_com' ),
+			'edit_item'          => __( 'Edit Project', 'vincentragosta_com' ),
+			'update_item'        => __( 'Update Project', 'vincentragosta_com' ),
+			'search_items'       => __( 'Search Projects', 'vincentragosta_com' ),
+			'not_found'          => __( 'Not found', 'vincentragosta_com' ),
+			'not_found_in_trash' => __( 'Not found in Trash', 'vincentragosta_com' )
 		);
 	}
 
