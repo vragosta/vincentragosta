@@ -535,7 +535,13 @@ html.swipebox-html {
 }
 
 .controls-container {
-  padding: 20px;
+  padding: 1.25em;
+}
+
+@media only screen and (max-width: 767px) {
+  .controls-container {
+    padding: 2.5em;
+  }
 }
 
 #logo {
@@ -561,12 +567,12 @@ html.swipebox-html {
 
 /*--- Hamburger button styles ---*/
 .drop-down {
-  font-size: 40px;
+  font-size: 3.75em;
   color: #FFF;
   cursor: pointer;
   position: absolute;
-  top: 40px;
-  right: 40px;
+  top: 0.625em;
+  right: 0.9375em;
   /*--- CSS transitions to toggle drop-down visibility ---*/
   opacity: 0;
   visibility: hidden;
@@ -577,6 +583,14 @@ html.swipebox-html {
   .drop-down {
     opacity: 1;
     visibility: visible;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .drop-down {
+    font-size: 5em;
+    top: 0.9375em;
+    right: 0.9375em;
   }
 }
 

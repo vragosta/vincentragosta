@@ -16,7 +16,11 @@
 
 .controls-container {
 	@extend %row-flex-between;
-	padding: 20px;
+	padding: em( 20px );
+
+	@media only screen and #{$break-mobile-max} {
+		padding: em( 40px );
+	}
 }
 
 #logo {
@@ -39,18 +43,24 @@
 
 /*--- Hamburger button styles ---*/
 .drop-down {
-	font-size: 40px;
+	font-size: em( 60px );
 	color: $white;
 	cursor: pointer;
 	position: absolute;
-	top: 40px;
-	right: 40px;
+	top: em( 10px );
+	right: em( 15px );
 
 	/*--- CSS transitions to toggle drop-down visibility ---*/
 	@include fade( 0, hidden, visibility 2s ease-in-out, opacity 0.5s ease-in-out );
 
 	@media only screen and #{$break-tablet-max} {
 		@include fade( 1, visible );
+	}
+
+	@media only screen and #{$break-mobile-max} {
+		font-size: em( 80px );
+		top: em( 75px, 80px );
+		right: em( 75px, 80px );
 	}
 }
 
