@@ -10,7 +10,6 @@
 
 	& section:first-child {
 		@media only screen and #{$break-mobile-max} {
-			// padding: em( 60px) em( 40px ) 0;
 			padding-bottom: 0;
 		}
 	}

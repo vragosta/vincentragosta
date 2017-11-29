@@ -676,9 +676,9 @@ html.swipebox-html {
  * Single CSS
  */
 #single-project {
-  max-width: 1200px;
-  margin: 0 auto 60px;
-  padding: 0 40px;
+  max-width: 75em;
+  margin: 0 auto 3.75em;
+  padding: 0 2.5em;
 }
 
 @media only screen and (max-width: 767px) {
@@ -688,11 +688,11 @@ html.swipebox-html {
 }
 
 #single-project p {
-  font-size: 28px;
+  font-size: 1.75em;
 }
 
 #single-project pre {
-  padding: 40px;
+  padding: 2.5em;
 }
 
 #single-project pre h3 {
@@ -708,19 +708,13 @@ html.swipebox-html {
 }
 
 #pagination-single {
-  padding: 0 40px;
+  padding: 0 2.5em;
 }
 
 #pagination-single a {
   border: none;
   padding: 0;
-  font-size: 30px;
-}
-
-@media only screen and (max-width: 767px) {
-  #pagination-single a {
-    font-size: 20px;
-  }
+  font-size: 1.5em;
 }
 
 #pagination-single a:hover {
@@ -730,7 +724,7 @@ html.swipebox-html {
 
 .post-edit-link {
   color: #333;
-  font-size: 20px;
+  font-size: 1.25em;
   font-weight: 500;
 }
 
@@ -745,7 +739,7 @@ html.swipebox-html {
   visibility: hidden;
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
   position: fixed;
-  bottom: 20px;
+  bottom: 1.25em;
   text-align: center;
   left: 0;
 }
@@ -760,18 +754,19 @@ html.swipebox-html {
   padding: 0;
   background-color: #FFF;
   border: 1px solid #221E1F;
+  /*--- We do not need em here since we want the height and width to remain 50px. ---*/
   height: 50px;
+  width: 50px;
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
-  width: 50px;
   cursor: pointer;
   color: #333;
 }
 
 .arrow-top i {
-  font-size: 40px;
-  padding-bottom: 2px;
+  font-size: 2.5em;
+  padding-bottom: 0.05em;
 }
 
 /**
