@@ -63,9 +63,6 @@ function vincentragosta_setup() {
 	add_post_type_support( 'page', 'excerpt' );
 	add_image_size( 'hero', 1920, 1200 );
 
-	# If set to 'false', the admin bar will not display on front end.
-	show_admin_bar( false );
-
 	# Add additional images to any post type.
 	if ( class_exists( 'MultiPostThumbnails' ) ) {
 		new MultiPostThumbnails( array(

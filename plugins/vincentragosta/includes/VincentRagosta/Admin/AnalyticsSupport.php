@@ -19,4 +19,5 @@ class AnalyticsSupport {
 			ga('send', 'pageview');
 		</script><?php
 	}
+
 }

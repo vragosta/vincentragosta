@@ -11,4 +11,5 @@ class WidgetSupport {
 	function remove_auto_p() {
 		remove_filter( 'widget_text_content', 'wpautop' );
 	}
+
 }

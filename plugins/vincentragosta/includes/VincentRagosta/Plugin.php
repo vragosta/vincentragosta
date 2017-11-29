@@ -12,6 +12,7 @@ use VincentRagosta\Taxonomies\TaxonomyFactory;
 use VincentRagosta\Tables\TableFactory;
 use VincentRagosta\Admin\ProjectColumnsSupport;
 use VincentRagosta\Admin\AnalyticsSupport;
+use VincentRagosta\Admin\AdminSupport;
 use VincentRagosta\Admin\WidgetSupport;
 
 /**
@@ -64,6 +65,9 @@ class Plugin {
 
 		$analytics_support = new AnalyticsSupport();
 		$analytics_support->register();
+
+		$admin_support = new AdminSupport();
+		$admin_support->register();
 
 		$widget_support = new WidgetSupport();
 		$widget_support->register();
