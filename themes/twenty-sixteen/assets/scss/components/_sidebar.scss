@@ -127,11 +127,6 @@
 		margin: 0 auto;
 	}
 
-	&.d:not( .about ) p {
-		max-width: em( 300px );
-		line-height: 1.9;
-	}
-
 	&.d h4 {
 		text-transform: uppercase;
 		font-weight: $font-weight-bold;
