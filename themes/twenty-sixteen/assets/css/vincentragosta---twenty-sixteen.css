@@ -340,10 +340,6 @@ pre {
   color: #FFF;
 }
 
-#single-project .aside.excerpt {
-  max-width: 50em;
-}
-
 /*--- Accomodating for single template design ---*/
 .single .aside.link {
   display: flex;
@@ -705,6 +701,10 @@ html.swipebox-html {
 
 #single-project img {
   height: 100%;
+}
+
+#single-project .aside.excerpt {
+  max-width: 50em;
 }
 
 #pagination-single {

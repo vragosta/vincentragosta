@@ -4,14 +4,15 @@
  */
 
 /*--- Descriptive color variables ---*/
-$white      : #FFF;
-$black      : #000;
-$mine-shaft : #333;
-$shark      : #26262A;
-$dove-gray  : #686868;
-$porcelain  : #EDEEEF;
-$alabaster  : #FAFAFA;
-$thunder    : #221E1F;
+$white          : #FFF;
+$black          : #000;
+$mine-shaft     : #333;
+$shark          : #26262A;
+$dove-gray      : #686868;
+$porcelain      : #EDEEEF;
+$alabaster      : #FAFAFA;
+$thunder        : #221E1F;
+$cod-gray-light : rgba(26, 26, 26, 0.15);
 
 /*--- Functional color variables ---*/
 $black-opacity : rgba( $black, .95 );

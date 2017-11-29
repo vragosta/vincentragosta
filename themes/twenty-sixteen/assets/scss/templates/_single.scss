@@ -31,6 +31,10 @@
 		@extend %full-width;
 		height: 100%;
 	}
+
+	& .aside.excerpt {
+		max-width: em( 800px );
+	}
 }
 
 #pagination-single {
