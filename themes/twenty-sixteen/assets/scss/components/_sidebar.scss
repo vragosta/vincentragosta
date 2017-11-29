@@ -144,11 +144,11 @@
 }
 
 #sidebar {
-	@media only screen and #{$break-tablet-max} {
-		width: 100%;
-	}
-
 	@media only screen and #{$break-desktop-min} {
 		width: 30%;
+	}
+
+	@media only screen and #{$break-tablet-max} {
+		width: 100%;
 	}
 }

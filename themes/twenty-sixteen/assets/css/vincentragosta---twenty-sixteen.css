@@ -413,15 +413,15 @@ pre {
   padding: 0 0.75em;
 }
 
-@media only screen and (max-width: 991px) {
-  #sidebar {
-    width: 100%;
-  }
-}
-
 @media only screen and (min-width: 992px) {
   #sidebar {
     width: 30%;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  #sidebar {
+    width: 100%;
   }
 }
 
