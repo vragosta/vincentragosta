@@ -12,6 +12,7 @@ use VincentRagosta\Taxonomies\TaxonomyFactory;
 use VincentRagosta\Tables\TableFactory;
 use VincentRagosta\Admin\ProjectColumnsSupport;
 use VincentRagosta\Admin\AnalyticsSupport;
+use VincentRagosta\Admin\WidgetSupport;
 
 /**
  * Plugin is the main entry point into the Vincent Ragosta plugin
@@ -64,12 +65,12 @@ class Plugin {
 		$analytics_support = new AnalyticsSupport();
 		$analytics_support->register();
 
+		$widget_support = new WidgetSupport();
+		$widget_support->register();
+
 		# Add json endpoint register endpoints here.
 		$contact_api = new Contact();
 		$contact_api->register();
-
-		# Create WidgetSupport class.
-		remove_filter( 'widget_text_content', 'wpautop' );
 	}
 
 	/**
