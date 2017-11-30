@@ -12,7 +12,7 @@
  */
 
 # Global plugin defines.
-define( 'IMAGE_CAPTIONS_VERSION', '0.1.0' );
+define( 'IMAGE_CAPTIONS_VERSION', '1.0.0' );
 define( 'IMAGE_CAPTIONS_URL', plugin_dir_url( __FILE__ ) );
 define( 'IMAGE_CAPTIONS_PATH', dirname( __FILE__ ) . '/' );
 define( 'IMAGE_CAPTIONS_HERO_SIZE', 'hero' );
