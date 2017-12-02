@@ -95,23 +95,18 @@
 
 	&.a,
 	&.c,
-	&.f {
+	&.e {
 		background: $porcelain;
 	}
 
 	&.b,
-	&.d,
-	&.e {
+	&.d {
 		background: $white;
 	}
 
-	&.e,
+	&.d,
 	&.about.c {
 		padding: 0;
-	}
-
-	&.d h2 {
-		max-width: em( 800px );
 	}
 
 	&.b p,
@@ -125,12 +120,6 @@
 
 	&.b p:first-child {
 		margin: 0 auto;
-	}
-
-	&.d h4 {
-		text-transform: uppercase;
-		font-weight: $font-weight-bold;
-		margin: em( 30px ) 0 em( 15px ) 0;
 	}
 }
 

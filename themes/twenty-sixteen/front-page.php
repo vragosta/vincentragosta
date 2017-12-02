@@ -43,10 +43,4 @@ get_header();
 	</aside>
 <?php } ?>
 
-<?php if ( is_active_sidebar( 'cta-front-page-f' ) ) { ?>
-	<aside class="aside cta f">
-		<?php dynamic_sidebar( 'cta-front-page-f' ); ?>
-	</aside>
-<?php } ?>
-
 <?php get_footer(); ?>

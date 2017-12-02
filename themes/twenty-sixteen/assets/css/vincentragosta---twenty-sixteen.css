@@ -369,20 +369,16 @@ pre {
   }
 }
 
-.cta.a, .cta.c, .cta.f {
+.cta.a, .cta.c, .cta.e {
   background: #EDEEEF;
 }
 
-.cta.b, .cta.d, .cta.e {
+.cta.b, .cta.d {
   background: #FFF;
 }
 
-.cta.e, .cta.about.c {
+.cta.d, .cta.about.c {
   padding: 0;
-}
-
-.cta.d h2 {
-  max-width: 50em;
 }
 
 .cta.b p,
@@ -396,17 +392,6 @@ pre {
 
 .cta.b p:first-child {
   margin: 0 auto;
-}
-
-.cta.d:not(.about) p {
-  max-width: 18.75em;
-  line-height: 1.9;
-}
-
-.cta.d h4 {
-  text-transform: uppercase;
-  font-weight: 700;
-  margin: 1.875em 0 0.9375em 0;
 }
 
 .pre-footer {
