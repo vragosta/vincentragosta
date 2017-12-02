@@ -369,7 +369,7 @@ pre {
   }
 }
 
-.cta.a, .cta.c, .cta.e {
+.cta.a, .cta.c, .cta.e, .cta.about.f {
   background: #EDEEEF;
 }
 
@@ -377,7 +377,7 @@ pre {
   background: #FFF;
 }
 
-.cta.d, .cta.about.c {
+.cta:not(.about).d, .cta.about.c {
   padding: 0;
 }
 
