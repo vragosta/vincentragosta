@@ -1,7 +1,7 @@
 <?php
 
 # Useful global constants
-define( 'VINCENTRAGOSTA_VERSION'    , '0.1.0' );
+define( 'VINCENTRAGOSTA_VERSION'    , '2.0.0' );
 define( 'VINCENTRAGOSTA_PLUGIN'     , __DIR__ . '/vincentragosta.php' );
 define( 'VINCENTRAGOSTA_PLUGIN_DIR' , __DIR__ );
 define( 'VINCENTRAGOSTA_PLUGIN_URL' , plugin_dir_url( __FILE__ ) );
