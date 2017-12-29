@@ -1,2 +1,4 @@
 /uploads
 /themes/twenty-sixteen/node_modules
+/themes/twenty-sixteen/.sass-cache
+*/vendor
